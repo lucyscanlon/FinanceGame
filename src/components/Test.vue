@@ -2,6 +2,7 @@
     <div class="test-container">
         <h1>{{testMessage}}</h1>
         <p>{{testDescription}}</p>
+        <p>You currently have £{{ state.currentPocketMoney }}</p>
     </div>
 
     
