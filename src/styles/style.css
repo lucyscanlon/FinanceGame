@@ -174,3 +174,129 @@ body {
     background-size: 100%;
     overflow: hidden;
 }
+
+
+/* living options display */
+
+.map-location-wrapper {
+    /*top: 200px;
+    left: 300px;*/
+    height: auto;
+    width: 200px;
+    background-color: #1F1E2F;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
+    box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
+    transition-duration: 0.5s;
+  }
+  
+  .map-location-wrapper:hover {
+    -webkit-box-shadow: 0px 0px 21px 5px rgba(153,211,66,1);
+    -moz-box-shadow: 0px 0px 21px 5px rgba(153,211,66,1);
+    box-shadow: 0px 0px 21px 5px rgba(153,211,66,1);
+    transition-duration: 0.5s;
+  }
+  
+  .map-location-content-wrapper {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  
+  .map-location-content-wrapper {
+    font-family: unbounded-reg;
+  }
+  
+  .map-location-content-wrapper h4 {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .map-location-content-wrapper p {
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    padding-top: 7px;
+  }
+  
+  .map-location-content-wrapper .map-location-description {
+    color: #99D342;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+  
+  .map-location-rent-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    height: 70px;
+    color: #FF48C8;
+    padding-top: 20px;
+    text-align: left;
+  
+  }
+  
+  .map-location-rent-wrapper p {
+    color: #FF48C8;
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  .colour-white {
+    color: white;
+  }
+  
+ .map-location-content-wrapper button {
+    width: 120px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #FF48C8;
+    border: 2px solid #FF48C8;
+    font-family: unbounded-reg;
+    margin-bottom: 5px;
+    transition-duration: 0.5s;
+ }
+
+ .map-location-content-wrapper button p {
+    font-size: 15px;
+    padding-bottom: 6px;
+ }
+
+ .map-location-content-wrapper button:hover {
+    border: 2px solid white;
+    background-color: #1F1E2F;
+    transition-duration: 0.5s;
+    cursor: pointer;
+ }
+
+
+  
+  .poppy27 {
+    position: absolute;
+    top: 420px;
+    left: 490px;
+  }
+  
+  .rodeo19 {
+    position: absolute;
+    left: 600px;
+    top: 300px;
+  }
+  
+  .coronationE1 {
+    position: absolute;
+    top: -60px;
+    left: 200px;
+  }
+  
+  .dandsdrive32 {
+    position: absolute;
+    top: -60px;
+    left: 650px;
+  }
+  

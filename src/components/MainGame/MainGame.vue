@@ -8,21 +8,21 @@ Elements that will be inside this container include:
 
 <template>
     <div class="maingame-wrapper">
-        <div className="gameplay-topbanner-wrapper">
-               <div className="current-date-wrapper">
-                        <p>Current Date: <span className="colour-white">01/01/2023</span></p>
+        <div class="gameplay-topbanner-wrapper">
+               <div class="current-date-wrapper">
+                        <p>Current Date: <span class="colour-white">01/01/2023</span></p>
                     </div>
-                    <div className="payday-date-wrapper">
-                        <p>Payday: <span className="colour-white">The last day of the month</span></p>
+                    <div class="payday-date-wrapper">
+                        <p>Payday: <span class="colour-white">The last day of the month</span></p>
                     </div>
             </div>
         <MapDisplay></MapDisplay>
-        <div className="gameplay-topbanner-wrapper">
-               <div className="current-date-wrapper">
-                        <p>Current Date: <span className="colour-white">01/01/2023</span></p>
+        <div class="gameplay-topbanner-wrapper">
+               <div class="current-date-wrapper">
+                        <p>Current Date: <span class="colour-white">01/01/2023</span></p>
                     </div>
-                    <div className="payday-date-wrapper">
-                        <p>Payday: <span className="colour-white">The last day of the month</span></p>
+                    <div class="payday-date-wrapper">
+                        <p>Payday: <span class="colour-white">The last day of the month</span></p>
                     </div>
             </div>
 
