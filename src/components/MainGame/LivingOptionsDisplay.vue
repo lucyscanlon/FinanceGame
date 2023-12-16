@@ -4,7 +4,7 @@
 
 
 <template>
-    <div class="map-location-wrapper poppy27">
+    <div class="map-location-wrapper" :class="classtag">
                 <div class="map-location-content-wrapper">
                     <h4>{{streetAddress}}</h4>
                     <p>{{districtDesc}}</p>
@@ -35,6 +35,7 @@ export default {
         homeDesc: String,
         rent: Number,
         commute: Number,
+        classtag: String,
     }, methods: {
         commuteDisplay(c) {
 
