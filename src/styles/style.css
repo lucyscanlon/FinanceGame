@@ -102,3 +102,75 @@ body {
 .characterstats-set hr {
     border-color: #7DAB3D;
 }
+
+
+/* top and bottom banner */
+
+.gameplay-topbanner-wrapper {
+    width: 100%;
+    height: 50px;
+   
+  }
+  
+  .gameplay-topbanner-wrapper {
+    display: flex;
+  }
+  
+  .current-date-wrapper p {
+    font-family: unbounded-reg;
+    color: #FF48C8;
+    font-size: 13px;
+    padding-left: 20px;
+    padding-top: 15px;
+  }
+  
+  .current-date-wrapper {
+    width: 50%;
+    height: auto;
+    float: left; 
+  }
+  
+  .payday-date-wrapper {
+    width: 50%;
+    height: auto;
+    float: right;
+  }
+  
+  .payday-date-wrapper p {
+    font-family: unbounded-reg;
+    color: #FF48C8;
+    text-align: right;
+    font-size: 13px;
+    padding-right: 20px;
+    padding-top: 15px;
+  }
+  
+  .colour-white {
+    color: white;
+  }
+
+  .gameplay-bottombanner-wrapper {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0px;
+  }
+  
+  .monthly-outgoings-wrapper p  {
+    font-family: unbounded-reg;
+    color: #FF48C8;
+    font-size: 13px;
+    padding-left: 20px;
+    padding-top: 15px;
+  }
+
+
+/*  map layout display */
+
+.map-display-wrapper {
+    width: 100%;
+    height: 88%;
+    background-image: url('../assets/img/mapbw.jpg');
+    background-size: 100%;
+    overflow: hidden;
+}
