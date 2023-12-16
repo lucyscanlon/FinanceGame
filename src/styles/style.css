@@ -1,3 +1,4 @@
+/* global styles */
 * {
     margin: 0px;
     padding: 0px;
@@ -5,5 +6,99 @@
 }
 
 html {
-    background-color: lightpink;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+/* fonts */
+
+/* fonts */
+
+@font-face {
+    font-family: unbounded-reg;
+    src: url("../assets/fonts/Unbounded-Regular.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: unbounded-medium;
+    src: url("../assets/fonts/Unbounded-Medium.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: unbounded-heavy;
+    src: url("../assets/fonts/Unbounded-SemiBold.ttf") format("truetype");
+  }
+
+.wholegame-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+
+.characterstats-sidebar-wrapper {
+    width: 25%;
+    height: 100%;
+    float: left;
+    background-color: #1F1E2F;
+}
+
+.maingame-wrapper {
+    width: 75%;
+    height: 100%;
+    float: right;
+    background-color: #15141D;
+}
+
+.charactertstats-padding {
+    width: 80%;
+    height: auto;
+    margin: 40px auto;
+}
+
+.responsibility-barometer-wrapper {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    border: 1px solid #FFFFFF;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(255,72,200,1);
+    -moz-box-shadow: 0px 0px 24px 0px rgba(255,72,200,1);
+    box-shadow: 0px 0px 24px 0px rgba(255,72,200,1);
+}
+
+.characterstats-set {
+    padding-bottom: 30px;
+}
+  
+.characterstats-set h4 {
+    font-family: unbounded-medium;
+    text-align: center;
+    font-size: 17px;
+    color: #FF48C8;
+  
+}
+  
+.characterstats-set h5 {
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    font-family: unbounded-medium;
+    font-size: 19px;
+}
+  
+.characterstats-set hr {
+    border-color: #7DAB3D;
 }
