@@ -103,6 +103,47 @@ body {
     border-color: #7DAB3D;
 }
 
+.livingstatsdisplay {
+    text-align: center;
+  }
+  
+  .livingstatsdisplay p {
+    font-family: unbounded-reg;
+    color: white;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  
+  .colour-pink {
+    color: #FF48C8;
+  }
+  
+  .livingstatsdisplay button {
+    background-color: #FF48C8;
+    border: solid 2px #FF48C8;
+    font-family: unbounded-medium;
+    color: white;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+    border-radius: 20px;
+    height: 40px;
+    margin-bottom: 40px;
+    transition-duration: 0.5s;
+  }
+  
+  .livingstatsdisplay button:hover {
+    border: solid 2px white;
+    background-color: #1F1E2F;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  
+  }
+
+
 
 /* top and bottom banner */
 
@@ -274,6 +315,7 @@ body {
     cursor: pointer;
  }
 
+ /* individual placements for living options */
 
   
   .pinecrest27 {
@@ -298,5 +340,38 @@ body {
     position: absolute;
     top: 100px;
     left: 1150px;
+  }
+
+  /* You work here section */
+
+  .map-work-location-wrapper {
+    font-size: 30px;
+    color: #1F1E2F;
+    position: relative;
+    top: 100px;
+    left: 50px;
+  }
+
+  .map-work-location-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 120px;
+    background-color: #1F1E2F;
+    position: relative;
+    bottom: 60px;
+    left: 30px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
+    box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
+  }
+  
+  .map-work-location-circle p {
+    text-align: center;
+    color: white;
+    font-family: unbounded-reg;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   

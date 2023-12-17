@@ -16,6 +16,7 @@
             <h5>£2,105.00</h5>
             <hr />
           </div>
+          <CurrentlyLivingDisplay></CurrentlyLivingDisplay>
 
             
         </div>
@@ -26,8 +27,14 @@
   </template>
 
 <script>
+
+import CurrentlyLivingDisplay from './CurrentlyLiving.vue'
+
 export default {
     name: 'CharacterStatsSidebarWrapper',
+    components: {
+      CurrentlyLivingDisplay,
+    }
 }
 
 </script>
