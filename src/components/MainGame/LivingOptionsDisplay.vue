@@ -11,7 +11,7 @@
                     <p class="map-location-description">{{homeDesc}}</p>
                     <div class="map-location-rent-wrapper">
                         <div class="map-location-rent-label-wrapper">
-                            <p>Rent: <span class="colour-white">£{{rent}}</span></p>
+                            <p>Rent: <span class="colour-white">£{{rent}}pm</span></p>
                             <p>Commute: <span class="colour-white">£{{ commuteDisplay(commute)}}</span></p>
                         </div>
                     </div>

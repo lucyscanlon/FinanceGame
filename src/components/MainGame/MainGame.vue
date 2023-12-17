@@ -17,14 +17,11 @@ Elements that will be inside this container include:
                     </div>
             </div>
         <MapDisplay></MapDisplay>
-        <div class="gameplay-topbanner-wrapper">
-               <div class="current-date-wrapper">
-                        <p>Current Date: <span class="colour-white">01/01/2023</span></p>
-                    </div>
-                    <div class="payday-date-wrapper">
-                        <p>Payday: <span class="colour-white">The last day of the month</span></p>
-                    </div>
-            </div>
+        <div className="gameplay-bottombanner-wrapper">
+            <div className="monthly-outgoings-wrapper">
+                <p>Total monthly outgoings: <span className="colour-white">£0</span></p>
+             </div>
+        </div>
 
     </div>
 
