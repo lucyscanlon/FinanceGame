@@ -12,7 +12,7 @@
                     <div class="map-location-rent-wrapper">
                         <div class="map-location-rent-label-wrapper">
                             <p>Rent: <span class="colour-white">£{{rent}}</span></p>
-                            <p>Commute: <span class="colour-white">£{{ commuteDisplay(commute) }}</span></p>
+                            <p>Commute: <span class="colour-white">£{{ commuteDisplay(commute)}}</span></p>
                         </div>
                     </div>
                     <button class="map-location-livehere-button">
@@ -39,16 +39,13 @@ export default {
     }, methods: {
         commuteDisplay(c) {
 
-            let commuteStat;
-
             if (c === 0) {
-                commuteStat = '0'
+                return '0'
             } else if (c === 1) {
-                commuteStat = '+'
-            } else {
-                commuteStat = '++'
+                return '+'
+            } else if (c === 2) {
+                return '++'
             }
-            return commuteStat;
         }
     }
 }
