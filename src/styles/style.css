@@ -42,7 +42,7 @@ body {
 .wholegame-wrapper {
     width: 100%;
     height: 100%;
-    background-color: blue;
+    background-color: #1F1E2F;
 }
 
 .characterstats-sidebar-wrapper {
@@ -50,6 +50,7 @@ body {
     height: 100%;
     float: left;
     background-color: #1F1E2F;
+    overflow-y: scroll;
 }
 
 .maingame-wrapper {
@@ -94,13 +95,13 @@ body {
     color: white;
     text-align: center;
     padding-top: 15px;
-    padding-bottom: 30px;
     font-family: unbounded-medium;
-    font-size: 19px;
+    font-size: 17px;
 }
   
 .characterstats-set hr {
     border-color: #7DAB3D;
+    margin-top: 30px;
 }
 
 .livingstatsdisplay {
@@ -131,7 +132,6 @@ body {
     width: 160px;
     border-radius: 20px;
     height: 40px;
-    margin-bottom: 40px;
     transition-duration: 0.5s;
   }
   
@@ -141,6 +141,10 @@ body {
     transition-duration: 0.5s;
     cursor: pointer;
   
+  }
+
+  .livingstatsdisplay .commute-cost {
+    padding-bottom: 20px;
   }
 
 
