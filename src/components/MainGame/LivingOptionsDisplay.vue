@@ -15,15 +15,28 @@
                             <p>Commute: <span class="colour-white">£{{ commuteDisplay(commute)}}</span></p>
                         </div>
                     </div>
-                    <button class="map-location-livehere-button">
+                    <button @click="livingOptions.confirmLivingOptionChosen(), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent)" class="map-location-livehere-button">
                         <p>Live Here</p>
                     </button>
+
                 </div>
             </div>
     
 
     
 </template>
+
+<script setup>
+
+import { useLivingOptionsStore } from '../../store/LivingOptionsStore'
+
+const livingOptions = useLivingOptionsStore()
+
+import { registerLivingOptionChoiceStore } from '../../store/LivingOptionsStore'
+
+const registerLivingChoice = registerLivingOptionChoiceStore()
+
+</script>
 
 <script>
 

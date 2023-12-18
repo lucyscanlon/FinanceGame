@@ -1,4 +1,11 @@
 <!-- Template for the character statistics sidebar -->
+<script setup>
+  import { useLivingOptionsStore } from '../../store/LivingOptionsStore'
+
+  const livingOptions = useLivingOptionsStore()
+
+</script>
+
 
 <template>
     <div class="characterstats-sidebar-wrapper">
@@ -16,7 +23,7 @@
             <h5>£2,105.00</h5>
             <hr />
           </div>
-          <CurrentlyLivingDisplay></CurrentlyLivingDisplay>
+          <CurrentlyLivingDisplay v-if="livingOptions.livingLocationChosen"></CurrentlyLivingDisplay>
 
             
         </div>
@@ -26,6 +33,8 @@
     
   </template>
 
+  
+
 <script>
 
 import CurrentlyLivingDisplay from './CurrentlyLiving.vue'
@@ -34,7 +43,7 @@ export default {
     name: 'CharacterStatsSidebarWrapper',
     components: {
       CurrentlyLivingDisplay,
-    }
+    } 
 }
 
 </script>

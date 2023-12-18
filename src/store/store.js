@@ -20,4 +20,15 @@ export const useMoneyManageStore = defineStore({
 
 })
 
+export const useLivingOptionsStore = defineStore({
+    id: 'pickLivingOption',
+    state: () => ({
+        livingLocationChosen: false,
+    }),
+    actions: {
+        confirmLivingOptionChosen() {
+            this.livingLocationChosen = true;
+        }
+    }
+})
 
