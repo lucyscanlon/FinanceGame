@@ -15,7 +15,7 @@
                             <p>Commute: <span class="colour-white">£{{ commuteDisplay(commute)}}</span></p>
                         </div>
                     </div>
-                    <button @click="livingOptions.confirmLivingOptionChosen(), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commute)" class="map-location-livehere-button">
+                    <button @click="livingOptions.confirmLivingOptionChosen(), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute))" class="map-location-livehere-button">
                         <p>Live Here</p>
                     </button>
 
