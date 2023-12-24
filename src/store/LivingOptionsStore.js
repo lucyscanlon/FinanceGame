@@ -5,10 +5,15 @@ export const useLivingOptionsStore = defineStore({
     id: 'pickLivingOption',
     state: () => ({
         livingLocationChosen: false,
+        beginChoosingLivingOptions: false,
     }),
     actions: {
         confirmLivingOptionChosen() {
             this.livingLocationChosen = true;
+        },
+        
+        beginToChoseLivingOption() {
+            this.beginChoosingLivingOptions = true;
         }
     }
 })

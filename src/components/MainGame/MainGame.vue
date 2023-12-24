@@ -16,8 +16,8 @@ Elements that will be inside this container include:
                         <p>Payday: <span class="colour-white">The last day of the month</span></p>
                     </div>
             </div>
-        <!--<MapDisplay></MapDisplay>-->
-        <RentInformationDisplay></RentInformationDisplay>
+        <RentInformationDisplay v-if="!livingOptions.beginChoosingLivingOptions"></RentInformationDisplay>
+        <MapDisplay v-if="livingOptions.beginChoosingLivingOptions"></MapDisplay>
         <div className="gameplay-bottombanner-wrapper">
             <div className="monthly-outgoings-wrapper">
                 <p>Total monthly outgoings: <span className="colour-white">£0</span></p>
@@ -28,6 +28,14 @@ Elements that will be inside this container include:
 
     
 </template>
+
+<script setup>
+
+import { useLivingOptionsStore } from '../../store/LivingOptionsStore'
+
+const livingOptions = useLivingOptionsStore()
+
+</script>
 
 <script>
 

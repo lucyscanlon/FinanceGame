@@ -157,6 +157,27 @@ body {
     padding-bottom: 20px;
   }
 
+  .mapdisplay-gametips-wrapper {
+    position: relative;
+    top: 75%;
+
+  }
+
+  .mapdisplay-gametips-wrapper marquee {
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    font-family: unbounded-reg;
+    color: white;
+    background-color: #1F1E2F;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .marquee-padding {
+    padding-right: 200px;
+  }
+
 
 
 /* top and bottom banner */
@@ -224,7 +245,7 @@ body {
 
 .map-display-wrapper {
     width: 100%;
-    height: 88%;
+    height: 87%;
     background-image: url('../assets/img/mapbw.jpg');
     background-size: 100%;
     overflow: hidden;
@@ -334,25 +355,25 @@ body {
   
   .pinecrest27 {
     position: absolute;
-    top: 430px;
+    top: 380px;
     left: 490px;
   }
   
   .rodeo19 {
     position: absolute;
     left: 1100px;
-    top: 450px;
+    top: 400px;
   }
   
   .harmonyE1 {
     position: absolute;
-    top: 100px;
+    top: 60px;
     left: 600px;
   }
   
   .brickyard32 {
     position: absolute;
-    top: 100px;
+    top: 60px;
     left: 1150px;
   }
 
