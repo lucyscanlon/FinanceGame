@@ -19,11 +19,11 @@ Components that will be inside this container include:
         <LivingOptionsDisplay streetAddress="Apt E1, Harmony Lane" districtDesc="Arts Quarter" homeDesc="A standard apartment, a walkable distance to work" :rent=550 :commute=0 classtag="harmonyE1" deposit="687.50"></LivingOptionsDisplay>
         <LivingOptionsDisplay streetAddress="32 Brickyard Lane" districtDesc="Industrial Quarter" homeDesc="A standard apartment, the other side of town" :rent=500 :commute=2 classtag="brickyard32" deposit="625"></LivingOptionsDisplay>
         <div class="mapdisplay-gametips-wrapper">
-            <marquee>
-                <span class="marquee-padding">Choose a place to call your new home.</span>
-                <span class="marquee-padding">Remember to stick to the 30-35% rule.</span>
-                <span class="marquee-padding">35% of your monthly income after tax is: £599.14</span> 
-            </marquee>
+            <p>
+                <span class="livingoptions-movingbanner first-movingbanner">Choose a place to call your new home.</span>
+                <span class="livingoptions-movingbanner">Remember to stick to the 30-35% rule.</span>
+                <span class="livingoptions-movingbanner">35% of your monthly income after tax is: £599.14</span> 
+            </p>
         </div>
     </div>
     
