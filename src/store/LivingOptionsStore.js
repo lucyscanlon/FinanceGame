@@ -9,7 +9,6 @@ export const useLivingOptionsStore = defineStore({
     actions: {
         livingOptionsNextStageOfGame() {
             this.livingOptionsGameStage = this.livingOptionsGameStage + 1;
-            console.log("changed");
         }
     }
 })

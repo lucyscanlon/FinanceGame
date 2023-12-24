@@ -22,7 +22,7 @@
             <h5>£{{manageMoney.moneyInPocket}}</h5>
             <hr />
           </div>
-          <div class="characterstats-set">
+          <div v-if="livingOptions.livingOptionsGameStage > 0" class="characterstats-set">
             <h4>Monthly Salary Income:</h4>
             <h4 class="characterset-subheading">Before Tax:</h4>
             <h5>£{{manageMoney.monthlySalaryBeforeTax}}</h5>
@@ -30,7 +30,7 @@
             <h5>£{{manageMoney.monthlySalaryAfterTax}}</h5>
             <hr />
           </div>
-          <CurrentlyLivingDisplay v-if="livingOptions.livingOptionsGameStage ===2"></CurrentlyLivingDisplay> 
+          <CurrentlyLivingDisplay v-if="livingOptions.livingOptionsGameStage === 3"></CurrentlyLivingDisplay> 
         </div>
 
     </div>
