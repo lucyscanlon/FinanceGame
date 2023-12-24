@@ -97,11 +97,17 @@ body {
     padding-top: 15px;
     font-family: unbounded-medium;
     font-size: 17px;
+    letter-spacing: 1px;
 }
   
 .characterstats-set hr {
     border-color: #7DAB3D;
     margin-top: 30px;
+}
+
+.characterset-subheading {
+    padding-top: 20px;
+    
 }
 
 .livingstatsdisplay {
@@ -119,6 +125,10 @@ body {
   
   .colour-pink {
     color: #FF48C8;
+  }
+
+  .colour-green {
+    color: #8CC044;
   }
   
   .livingstatsdisplay button {
@@ -377,5 +387,65 @@ body {
     padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+
+
+  /*  choose a place to live styling */
+
+  .rentintro-mainwrapper {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .rentintro-title-wrapper h1 {
+    font-family: unbounded-reg;
+    color: #FF48C8;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 30px;
+  }
+
+  .rentintro-description-wrapper {
+    font-family: unbounded-reg;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.9em;
+  }
+
+  .rentintro-description-wrapper p {
+    padding-bottom: 15px;
+  }
+
+  .rentintro-rentrecommendation {
+    padding-top: 20px;
+  }
+
+  .rentinfo-button-wrapper {
+    padding-top: 20px;
+  }
+
+  .rentinfo-button {
+    width: 330px;
+    height: 50px;
+    background-color: #FF48C8;
+    border: 2px solid #FF48C8;
+    font-family: unbounded-reg;
+    color: white;
+    font-size: 16px;
+    border-radius: 200px;
+    transition-duration: 0.5s;
+  }
+
+  .rentinfo-button:hover {
+    color: white;
+    border: 2px solid #FF48C8;
+    background-color: #1F1E2F;
+    cursor: pointer;
+    transition-duration: 0.5s;
   }
   

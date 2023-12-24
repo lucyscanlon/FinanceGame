@@ -5,6 +5,8 @@ export const useMoneyManageStore = defineStore({
     state: () => ({
         moneyInBank: 2000,
         moneyInPocket: 1000,
+        monthlySalaryBeforeTax: 2024.25, 
+        monthlySalaryAfterTax: 1711.84,
     }),
     actions: {
         removeFromBank(val) {
@@ -20,15 +22,5 @@ export const useMoneyManageStore = defineStore({
 
 })
 
-export const useLivingOptionsStore = defineStore({
-    id: 'pickLivingOption',
-    state: () => ({
-        livingLocationChosen: false,
-    }),
-    actions: {
-        confirmLivingOptionChosen() {
-            this.livingLocationChosen = true;
-        }
-    }
-})
+
 

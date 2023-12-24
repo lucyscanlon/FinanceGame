@@ -16,7 +16,8 @@ Elements that will be inside this container include:
                         <p>Payday: <span class="colour-white">The last day of the month</span></p>
                     </div>
             </div>
-        <MapDisplay></MapDisplay>
+        <!--<MapDisplay></MapDisplay>-->
+        <RentInformationDisplay></RentInformationDisplay>
         <div className="gameplay-bottombanner-wrapper">
             <div className="monthly-outgoings-wrapper">
                 <p>Total monthly outgoings: <span className="colour-white">£0</span></p>
@@ -31,11 +32,13 @@ Elements that will be inside this container include:
 <script>
 
 import MapDisplay from './MapLayout.vue';
+import RentInformationDisplay from './RentIntroductionInfo.vue';
 
 export default {
     name: 'MainGameWrapper',
     components: {
         MapDisplay,
+        RentInformationDisplay,
     }
 }
 

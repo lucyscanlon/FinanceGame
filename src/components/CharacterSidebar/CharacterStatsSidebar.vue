@@ -4,6 +4,10 @@
 
   const livingOptions = useLivingOptionsStore()
 
+  import { useMoneyManageStore } from '../../store/store'
+
+  const manageMoney = useMoneyManageStore()
+
 </script>
 
 
@@ -15,17 +19,18 @@
           </div>
           <div class="characterstats-set">
             <h4>Money In Pocket:</h4>
-            <h5>£2,500.00</h5>
+            <h5>£{{manageMoney.moneyInPocket}}</h5>
             <hr />
           </div>
           <div class="characterstats-set">
             <h4>Monthly Salary Income:</h4>
-            <h5>£2,105.00</h5>
+            <h4 class="characterset-subheading">Before Tax:</h4>
+            <h5>£{{manageMoney.monthlySalaryBeforeTax}}</h5>
+            <h4 class="characterset-subheading">After Tax:</h4>
+            <h5>£{{manageMoney.monthlySalaryAfterTax}}</h5>
             <hr />
           </div>
-          <CurrentlyLivingDisplay v-if="livingOptions.livingLocationChosen"></CurrentlyLivingDisplay>
-
-            
+          <CurrentlyLivingDisplay v-if="livingOptions.livingLocationChosen"></CurrentlyLivingDisplay> 
         </div>
 
     </div>
