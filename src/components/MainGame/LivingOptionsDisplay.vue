@@ -16,7 +16,7 @@
                             <p>Deposit: <span class="colour-white">£{{deposit}}</span></p>
                         </div>
                     </div>
-                    <button @click="livingOptions.confirmLivingOptionChosen(), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute))" class="map-location-livehere-button">
+                    <button @click="livingOptions.livingOptionsNextStageOfGame(), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute))" class="map-location-livehere-button">
                         <p>Live Here</p>
                     </button>
 

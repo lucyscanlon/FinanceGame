@@ -16,8 +16,8 @@ Elements that will be inside this container include:
                         <p>Payday: <span class="colour-white">The last day of the month</span></p>
                     </div>
             </div>
-        <RentInformationDisplay v-if="!livingOptions.beginChoosingLivingOptions"></RentInformationDisplay>
-        <MapDisplay v-if="livingOptions.beginChoosingLivingOptions"></MapDisplay>
+        <RentInformationDisplay v-if="livingOptions.livingOptionsGameStage === 0"></RentInformationDisplay>
+        <MapDisplay v-if="livingOptions.livingOptionsGameStage === 1"></MapDisplay>
         <div className="gameplay-bottombanner-wrapper">
             <div className="monthly-outgoings-wrapper">
                 <p>Total monthly outgoings: <span className="colour-white">£0</span></p>

@@ -4,16 +4,12 @@ import { defineStore } from "pinia"
 export const useLivingOptionsStore = defineStore({
     id: 'pickLivingOption',
     state: () => ({
-        livingLocationChosen: false,
-        beginChoosingLivingOptions: false,
+        livingOptionsGameStage: 0,
     }),
     actions: {
-        confirmLivingOptionChosen() {
-            this.livingLocationChosen = true;
-        },
-        
-        beginToChoseLivingOption() {
-            this.beginChoosingLivingOptions = true;
+        livingOptionsNextStageOfGame() {
+            this.livingOptionsGameStage = this.livingOptionsGameStage + 1;
+            console.log("changed");
         }
     }
 })

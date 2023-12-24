@@ -30,7 +30,7 @@
             <h5>£{{manageMoney.monthlySalaryAfterTax}}</h5>
             <hr />
           </div>
-          <CurrentlyLivingDisplay v-if="livingOptions.livingLocationChosen"></CurrentlyLivingDisplay> 
+          <CurrentlyLivingDisplay v-if="livingOptions.livingOptionsGameStage ===2"></CurrentlyLivingDisplay> 
         </div>
 
     </div>
