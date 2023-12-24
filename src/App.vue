@@ -8,16 +8,12 @@
 </template>
 
 <script>
-import TestComponent from './components/Test.vue'
-import bankComponent from './components/Bank.vue'
 import MainGameWrapper from './components/MainGame/MainGame.vue'
 import CharacterStatsSidebarWrapper from './components/CharacterSidebar/CharacterStatsSidebar.vue'
 
 export default {
   name: 'App',
   components: {
-    TestComponent,
-    bankComponent,
     MainGameWrapper,
     CharacterStatsSidebarWrapper,
   }
