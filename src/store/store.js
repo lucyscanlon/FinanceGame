@@ -3,20 +3,26 @@ import { defineStore } from "pinia"
 export const useMoneyManageStore = defineStore({
     id: 'moveMoney',
     state: () => ({
-        moneyInBank: 2000,
-        moneyInPocket: 1000,
+        moneyInPocket: 3000,
         monthlySalaryBeforeTax: 2024.25, 
         monthlySalaryAfterTax: 1711.84,
+        monthlyOutGoingsSum: 0,
     }),
     actions: {
-        removeFromBank(val) {
-            this.moneyInBank = this.moneyInBank - val;
+        increasePocketMoney(val) {
             this.moneyInPocket = this.moneyInPocket + val;
         },
 
-        addToBank(val) {
-            this.moneyInBank = this.moneyInBank + val;
+        decreasePocketMoney(val) {
             this.moneyInPocket = this.moneyInPocket - val;
+        },
+
+        increaseMonthlyOutGoings(val) {
+            this.monthlyOutGoingsSum = this.monthlyOutGoingsSum + val;
+        },
+
+        decreaseMonthlyOutGoings(val) {
+            this.monthlyOutGoingsSum = this.monthlyOutGoingsSum - val;
         }
     }
 

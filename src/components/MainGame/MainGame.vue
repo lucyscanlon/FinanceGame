@@ -21,7 +21,7 @@ Elements that will be inside this container include:
         <MapDisplay v-if="livingOptions.livingOptionsGameStage === 2"></MapDisplay>
         <div className="gameplay-bottombanner-wrapper">
             <div className="monthly-outgoings-wrapper">
-                <p>Total monthly outgoings: <span className="colour-white">£0</span></p>
+                <p>Total monthly outgoings: <span className="colour-white">£{{ manageMoney.monthlyOutGoingsSum }}</span></p>
              </div>
         </div>
 
@@ -35,6 +35,10 @@ Elements that will be inside this container include:
 import { useLivingOptionsStore } from '../../store/LivingOptionsStore'
 
 const livingOptions = useLivingOptionsStore()
+
+import { useMoneyManageStore } from '../../store/store.js'
+
+const manageMoney = useMoneyManageStore()
 
 </script>
 
