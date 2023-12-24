@@ -13,6 +13,7 @@
                         <div class="map-location-rent-label-wrapper">
                             <p>Rent: <span class="colour-white">£{{rent}}pm</span></p>
                             <p>Commute: <span class="colour-white">£{{ commuteDisplay(commute)}}</span></p>
+                            <p>Deposit: <span class="colour-white">£{{deposit}}</span></p>
                         </div>
                     </div>
                     <button @click="livingOptions.confirmLivingOptionChosen(), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute))" class="map-location-livehere-button">
@@ -49,6 +50,7 @@ export default {
         rent: Number,
         commute: Number,
         classtag: String,
+        deposit: String,
     }, methods: {
         commuteDisplay(c) {
 
