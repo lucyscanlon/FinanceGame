@@ -20,6 +20,7 @@
           <div class="characterstats-set">
             <h4>Money In Pocket:</h4>
             <h5>£{{manageMoney.moneyInPocket}}</h5>
+            <h6 :class="!pocketMoneyValueChangeActive && 'display-none'">-£{{manageMoney.increaseordecreaseofPocketMoney}})</h6>
             <hr />
           </div>
           <div v-if="livingOptions.livingOptionsGameStage > 0" class="characterstats-set">
@@ -48,7 +49,23 @@ export default {
     name: 'CharacterStatsSidebarWrapper',
     components: {
       CurrentlyLivingDisplay,
-    } 
+    },
+    data() {
+      return {
+        pocketMoneyValueChangeActive: false,
+        additionorsubtractiontoPocketMoney: 0,
+      }
+    }
 }
 
+
+
+
 </script>
+<style>
+
+.display-none {
+  display: none;
+}
+
+</style>

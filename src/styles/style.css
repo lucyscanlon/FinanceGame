@@ -99,6 +99,19 @@ body {
     font-size: 17px;
     letter-spacing: 1px;
 }
+
+.characterstats-set h6 {
+    text-align: center;
+    font-family: unbounded-medium;
+    color: #7DAB3D;
+    font-size: 14px;
+    position: relative;
+    top: 10px;
+}
+
+.display-none {
+  
+}
   
 .characterstats-set hr {
     border-color: #7DAB3D;

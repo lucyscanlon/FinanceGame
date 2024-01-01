@@ -7,6 +7,7 @@ export const useMoneyManageStore = defineStore({
         monthlySalaryBeforeTax: 2024.25, 
         monthlySalaryAfterTax: 1711.84,
         monthlyOutGoingsSum: 0,
+        increaseordecreaseofPocketMoney: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -23,7 +24,17 @@ export const useMoneyManageStore = defineStore({
 
         decreaseMonthlyOutGoings(val) {
             this.monthlyOutGoingsSum = this.monthlyOutGoingsSum - val;
+        },
+
+        increaseOrDecreasePocketMoneyAnimation(val) {
+            this.increaseordecreaseofPocketMoney = val;
+        },
+
+        resetPocketMoneyAnimation() {
+            this.increaseordecreaseofPocketMoney = 0;
         }
+
+
     }
 
 })
