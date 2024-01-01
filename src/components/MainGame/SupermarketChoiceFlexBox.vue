@@ -1,5 +1,12 @@
+<script setup>
+import { supermarketChoiceStore } from '../../store/LivingOptionsStore'
+
+const manageSupermarket = supermarketChoiceStore()
+
+</script>
+
 <template>
-    <div class="supermarketchoice-box">
+    <div v-bind:class="(manageSupermarket.selectedActiveSupermarket === SupermarketIdentifier) ? 'supermarket-active' : ''" @click="manageSupermarket.changeSelectedSupermarketNumber(SupermarketIdentifier), manageSupermarket.updateCurrentlyChosenSupermarket(SupermarketName, SupermarketDesc, SupermarketCost, SupermarketTransportCost)" class="supermarketchoice-box">
                 <div class="supermarketchoice-heading-wrap">
                     <h4>{{ SupermarketName }}</h4>
                     <p>{{SupermarketDesc}}</p>
@@ -7,12 +14,13 @@
                 <div class="supermarketchoice-costs-wrap">
                     <p><span class="colour-pink">Cost:</span> £{{SupermarketCost}}</p>
                     <p><span class="colour-pink">Transport Cost:</span> £{{ SupermarketTransportCost }}</p>
-                    
                 </div>
             </div>
 </template>
 
 <script>
+
+
 
 export default {
     name: 'SupermarketChoiceFlexBox', 
@@ -21,7 +29,9 @@ export default {
         SupermarketDesc: String,
         SupermarketCost: String,
         SupermarketTransportCost: String,
+        SupermarketIdentifier: Number,
     }
+   
    
 }
 

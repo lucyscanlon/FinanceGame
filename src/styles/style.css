@@ -629,13 +629,10 @@ body {
   }
 
   .supermarketchoice-box:hover {
-    -webkit-box-shadow: 0px 0px 17px -1px rgba(255,72,200,1);
-    -moz-box-shadow: 0px 0px 17px -1px rgba(255,72,200,1);
-    box-shadow: 0px 0px 17px -1px rgba(255,72,200,1); 
     cursor: pointer;     
   }
 
-  .supermarketchoice-box-active {
+  .supermarket-active {
     -webkit-box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
     -moz-box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
     box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
@@ -669,9 +666,15 @@ body {
     background-color: #1F1E2F;
   }
 
-  .supermarketchoice-display-wrapper button {
+  .supermarketchoice-button-wrap {
+    text-align: center;
+    padding-bottom: 25px;
+    padding-top: 20px;
+  }
+
+  .supermarketchoice-button-wrap button {
     height: 50px;
-    width: 190px;
+    width: 160px;
     background-color: #FF48C8;
     border: 2px solid #FF48C8;
     font-family: unbounded-reg;
@@ -682,11 +685,6 @@ body {
 
   }
 
-  .supermarketchoice-button-wrap {
-    text-align: center;
-    width: 100%;
-    padding-top: 20px;
-}
 
 .supermarketchoice-description {
     color: white;
@@ -731,6 +729,8 @@ body {
 .supermarketchoice-costs-wrap p {
     padding-bottom: 5px;
 }
+
+
 
  
   
