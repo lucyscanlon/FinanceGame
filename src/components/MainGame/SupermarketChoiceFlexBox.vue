@@ -15,7 +15,7 @@ const manageSupermarket = supermarketChoiceStore()
                     <p><span class="colour-pink">Perk: </span>{{ SupermarketPerk }}</p>
                 </div>
                 <div class="supermarketchoice-costs-wrap">
-                    <p><span class="colour-pink">Cost:</span> £{{SupermarketCost}}</p>
+                    <p><span class="colour-pink">Cost:</span> £{{SupermarketCost}}pm</p>
                     <p><span class="colour-pink">Transport Cost:</span> £{{ SupermarketTransportCost }}</p>
                 </div>
             </div>
@@ -30,7 +30,7 @@ export default {
     props: {
         SupermarketName: String,
         SupermarketDesc: String,
-        SupermarketCost: String,
+        SupermarketCost: Number,
         SupermarketTransportCost: String,
         SupermarketIdentifier: Number,
         SupermarketPerk: String,

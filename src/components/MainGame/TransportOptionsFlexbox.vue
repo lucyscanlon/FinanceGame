@@ -51,6 +51,8 @@ import { registerLivingOptionChoiceStore } from '../../store/LivingOptionsStore'
 
 const registerLivingChoice = registerLivingOptionChoiceStore()
 
+
+
 </script>
 
 <script>
