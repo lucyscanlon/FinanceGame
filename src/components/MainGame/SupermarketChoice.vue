@@ -10,6 +10,10 @@ Components that will be inside this container include:
 
     const manageSupermarket = supermarketChoiceStore()
 
+    import { useLivingOptionsStore } from '../../store/LivingOptionsStore'
+
+const livingOptions = useLivingOptionsStore()
+
 </script>
 <template>
     <div class="supermarketchoice-display-wrapper">
@@ -21,7 +25,7 @@ Components that will be inside this container include:
             <SupermarketChoiceFlexBox :SupermarketIdentifier=3 SupermarketName="Swiftbite Delivery" SupermarketDesc="A food delivery app delivering from local restaurants." SupermarketCost="300pm" SupermarketTransportCost="0"></SupermarketChoiceFlexBox>
             <SupermarketChoiceFlexBox :SupermarketIdentifier=4 SupermarketName="Weekly Mart Deliveries" SupermarketDesc="A weekly grocery delivery service with budget prices." SupermarketCost="100pm" SupermarketTransportCost="0"></SupermarketChoiceFlexBox>
         </div>
-        <div @click="manageSupermarket.confirmSupermarketChoice()" class="supermarketchoice-button-wrap">
+        <div @click="manageSupermarket.confirmSupermarketChoice(), livingOptions.livingOptionsNextStageOfGame()" class="supermarketchoice-button-wrap">
                     <button>Shop here</button>
          </div>
     </div>

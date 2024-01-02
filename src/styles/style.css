@@ -685,6 +685,14 @@ body {
 
   }
 
+  .supermarketchoice-button-wrap button:hover {
+    background-color: #1F1E2F;
+    border: 2px solid white;
+    transition-duration: 0.5s;
+    cursor: pointer;
+
+  }
+
 
 .supermarketchoice-description {
     color: white;
@@ -729,6 +737,48 @@ body {
 .supermarketchoice-costs-wrap p {
     padding-bottom: 5px;
 }
+
+
+
+/* supermarket choices sidebar */
+
+.currentlyshoppingatdisplay p {
+    font-family: unbounded-reg;
+    color: #8CC044;
+    font-size: 13px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .currentlyshoppingatdisplay h5 {
+    font-size: 16px;
+  }
+
+  .currentlyshopping-wrap {
+    text-align: center;
+    padding-top: 20px;
+  } 
+
+  .currentlyshoppingatdisplay button {
+    width: 120px;
+    height: 40px;
+    font-family: unbounded-reg;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: #FF48C8;
+    border: solid 2px #FF48C8;
+    color: white;
+    transition-duration: 0.5s;
+  }
+  
+  .currentlyshoppingatdisplay button:hover {
+    border: solid 2px white;
+    background-color: #1F1E2F;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  
+  }
 
 
 

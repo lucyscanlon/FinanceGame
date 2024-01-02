@@ -4,11 +4,12 @@ import { defineStore } from "pinia"
 export const useLivingOptionsStore = defineStore({
     id: 'pickLivingOption',
     state: () => ({
-        livingOptionsGameStage: 3,
+        livingOptionsGameStage: 0,
     }),
     actions: {
         livingOptionsNextStageOfGame() {
             this.livingOptionsGameStage = this.livingOptionsGameStage + 1;
+            console.log(this.livingOptionsGameStage);
         }
     }
 })
@@ -41,7 +42,6 @@ export const supermarketChoiceStore = defineStore({
     actions: {
         changeSelectedSupermarketNumber(num) {
             this.selectedActiveSupermarket = num;
-            console.log(this.selectedActiveSupermarket);
         },
 
         updateCurrentlyChosenSupermarket(SName, SDesc, SCost, STCost) {
@@ -55,7 +55,7 @@ export const supermarketChoiceStore = defineStore({
 
         confirmSupermarketChoice() {
             this.chosenSupermarketInfo = this.currentlySelectedSupermarketInfo;
-            console.log(this.chosenSupermarketInfo);
+            
         }
     }
 

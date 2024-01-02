@@ -31,7 +31,8 @@
             <h5>£{{manageMoney.monthlySalaryAfterTax}}</h5>
             <hr />
           </div>
-          <CurrentlyLivingDisplay v-if="livingOptions.livingOptionsGameStage === 3"></CurrentlyLivingDisplay> 
+          <CurrentlyLivingDisplay v-if="livingOptions.livingOptionsGameStage >= 3"></CurrentlyLivingDisplay> 
+          <CurrentlyShoppingAt v-if="livingOptions.livingOptionsGameStage >= 4"></CurrentlyShoppingAt>
         </div>
 
     </div>
@@ -44,11 +45,13 @@
 <script>
 
 import CurrentlyLivingDisplay from './CurrentlyLiving.vue'
+import CurrentlyShoppingAt from './CurrentlyShoppingAt.vue'
 
 export default {
     name: 'CharacterStatsSidebarWrapper',
     components: {
       CurrentlyLivingDisplay,
+      CurrentlyShoppingAt,
     },
     data() {
       return {
