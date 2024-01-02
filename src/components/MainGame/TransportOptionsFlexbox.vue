@@ -32,8 +32,8 @@
                             <th>-{{ TransportDiscount }}</th>
                         </tr>
                         <tr>
-                            <th class="colour-green">Total Cost:</th>
-                            <th class="colour-green">£450</th>
+                            <th class="colour-green">Monthly Total Cost:</th>
+                            <th class="colour-green">£{{ calculateMonthlyTotal(TransportCost, TransportCommuteCost, TransportGroceryCost, TransportDiscount) }}</th>
                         </tr>
                     </table>
                 </div>
@@ -55,6 +55,18 @@ export default {
         TransportGroceryCost: String,
         TransportDiscount: String,
         
+    },
+    methods: {
+        calculateMonthlyTotal(cost, commuteCost, groceryCost, discount) {
+            this.newCost = Number(cost);
+            this.numberCommuteCost = Number(commuteCost);
+            this.numberGroceryCost = Number(groceryCost);
+            this.numberDiscount = Number(discount);
+            
+            this.totalCost = ((this.newCost + this.numberCommuteCost + this.numberGroceryCost) - this.numberDiscount);
+
+            return this.totalCost;
+        }
     }
    
    

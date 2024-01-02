@@ -884,6 +884,10 @@ body {
     padding: 10px;
   }
 
+  .transport-choice-button button {
+    width: 270px;
+  }
+
   
 
 
