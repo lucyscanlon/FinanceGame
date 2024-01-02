@@ -21,6 +21,7 @@ Elements that will be inside this container include:
         <MapDisplay v-if="livingOptions.livingOptionsGameStage === 2"></MapDisplay>
         <SupermarketInfoDisplay v-if="livingOptions.livingOptionsGameStage === 3"></SupermarketInfoDisplay>
         <SupermarketChoiceDisplay v-if="livingOptions.livingOptionsGameStage === 4"></SupermarketChoiceDisplay>
+        <TransportMethodDisplay v-if="livingOptions.livingOptionsGameStage === 5"></TransportMethodDisplay>
         <div className="gameplay-bottombanner-wrapper">
             <div className="monthly-outgoings-wrapper">
                 <p>Total monthly outgoings: <span className="colour-white">£{{ manageMoney.monthlyOutGoingsSum }}</span></p>
@@ -51,6 +52,7 @@ import RentInformationDisplay from './RentIntroductionInfo.vue';
 import salaryAndTaxInfoDisplay from './YouHaveAJobOffer.vue';
 import SupermarketChoiceDisplay from './SupermarketChoice.vue';
 import SupermarketInfoDisplay from './SupermarketInfo.vue';
+import TransportMethodDisplay from './TransportOptionsDisplay.vue';
 
 export default {
     name: 'MainGameWrapper',
@@ -60,6 +62,7 @@ export default {
         salaryAndTaxInfoDisplay,
         SupermarketChoiceDisplay,
         SupermarketInfoDisplay,
+        TransportMethodDisplay,
     }
 }
 

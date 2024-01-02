@@ -18,7 +18,7 @@ const livingOptions = useLivingOptionsStore()
 <template>
     <div class="supermarketchoice-display-wrapper">
         <h1>Choose a supermarket or food service to purchase your groceries</h1>
-        <p class="supermarketchoice-description">Choose from one of the options below and press the 'confirm selection' button.</p>
+        <p class="supermarketchoice-description">Choose from one of the options below and press the 'shop here' button to confirm your choice.</p>
         <div class="supermarketchoice-flex-wrapper">
             <SupermarketChoiceFlexBox :SupermarketIdentifier=1 SupermarketName="Saver Superstore" SupermarketDesc="An affordable supermarket with both budget and luxury products." SupermarketCost="80pm" SupermarketTransportCost="+" SupermarketPerk="10% off with loyalty card."></SupermarketChoiceFlexBox>
             <SupermarketChoiceFlexBox :SupermarketIdentifier=2 SupermarketName="Gourmet Grove" SupermarketDesc="A luxury organic supermarket with high prices." SupermarketCost="150pm" SupermarketTransportCost="+" SupermarketPerk="Specialises in luxury cuisine."></SupermarketChoiceFlexBox>

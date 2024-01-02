@@ -60,3 +60,18 @@ export const supermarketChoiceStore = defineStore({
     }
 
 })
+
+export const transportChoiceStore = defineStore({
+    id: 'transportChoiceOptionsStore',
+    state: () => ({
+        selectedActiveTransportChoice: 0,
+        currentlySelectedTransportChoice: [],
+        chosenTransportChoice: [],
+    }),
+    actions: {
+        changedSelectedTransportChoice(num) {
+            this.selectedActiveTransportChoice = num;
+        },
+
+    }
+})

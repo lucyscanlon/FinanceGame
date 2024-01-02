@@ -801,5 +801,25 @@ body {
 
 
 
+  /* transport choice display */
+
+  .transport-choice-box {
+    width: 90%;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .transport-choice-box {
+    width: 45%;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #1F1E2F;
+  }
+
+
+
  
   
