@@ -1,7 +1,7 @@
 
 
 <template>
-    <div v-bind:class="(manageTransport.selectedActiveTransportChoice === TransportIdentifier) ? 'supermarket-active' : ''" @click="manageTransport.changedSelectedTransportChoice(TransportIdentifier), manageTransport.updatedCurrentlyChosenTransport(TransportName, TransportDesc, (calculateMonthlyTotal(TransportCost, TransportCommuteCost, TransportGroceryCost, TransportDiscount)))" class="transport-choice-box">
+    <div v-bind:class="(manageTransport.selectedActiveTransportChoice === TransportIdentifier) ? 'supermarket-active' : ''" @click="manageTransport.changedSelectedTransportChoice(TransportIdentifier), manageTransport.updatedCurrentlyChosenTransport(TransportName, TransportDesc, (calculateMonthlyTotal(TransportCost, calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateDiscount(TransportCost, calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), TransportDiscount))))" class="transport-choice-box">
                 <div class="transport-name-desc-wrap">
                     <h4>{{ TransportName }}</h4>
                     <p>{{ TransportDesc }}</p>

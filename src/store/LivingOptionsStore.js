@@ -70,6 +70,7 @@ export const transportChoiceStore = defineStore({
         selectedActiveTransportChoice: 0,
         currentlySelectedTransportChoice: [],
         chosenTransportChoice: [],
+        totalTransportCost: 0,
     }),
     actions: {
         changedSelectedTransportChoice(num) {
@@ -91,6 +92,10 @@ export const transportChoiceStore = defineStore({
             this.chosenTransportChoice = this.currentlySelectedTransportChoice;
 
             console.log(this.chosenTransportChoice);
+        },
+
+        confirmTotalTransportCost(val) {
+            this.totalTransportCost = val;
         }
 
     }
