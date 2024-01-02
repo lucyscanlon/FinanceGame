@@ -97,7 +97,6 @@ body {
     padding-top: 15px;
     font-family: unbounded-medium;
     font-size: 17px;
-    letter-spacing: 1px;
 }
 
 .characterstats-set h6 {
@@ -819,10 +818,73 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     background-color: #1F1E2F;
-    height: 200px;
+    overflow: auto;
     border-radius: 20px;
   }
 
+  .transport-name-desc-wrap {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: unbounded-reg;
+  }
+
+  .transport-name-desc-wrap h4 {
+    color: #FF48C8;
+    padding-top: 20px;
+    font-size: 18px;
+  }
+
+  .transport-name-desc-wrap p {
+    color: #8CC044;
+    font-size: 13px;
+    padding-top: 10px;
+  }
+
+  .transport-perk-wrap {
+    padding-top: 20px;
+    color: white;
+    font-size: 14px;
+    font-family: unbounded-reg;
+    text-align: center;
+  }
+
+  .transport-total-cost-wrap {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .transport-total-cost-wrap p {
+    font-family: unbounded-reg;
+    color: #FF48C8;
+    padding-top: 20px;
+  }
+
+  .transport-total-cost-wrap table {
+    text-align: left;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    width: 95%;
+    font-family: unbounded-reg;
+    font-size: 13px;
+    color: white;
+    border-radius: 20px;
+
+  }
+
+  .transport-total-cost-wrap tr {
+    border: solid 1px white;
+    border-collapse: collapse;
+  }
+
+   th {
+    border: solid 1px white;
+    padding: 10px;
+  }
+
+  
 
 
  
