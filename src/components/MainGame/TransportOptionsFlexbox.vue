@@ -18,19 +18,19 @@
                         </tr>
                         <tr>
                             <th>Commute Cost:</th>
-                            <th>+{{ TransportCommuteCost }}</th>
+                            <th>+{{ calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost) }}</th>
                         </tr>
                         <tr>
                             <th>Grocery Transport:</th>
-                            <th>+{{ TransportGroceryCost }}</th>
+                            <th>+{{ calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost) }}</th>
                         </tr>
                         <tr>
                             <th>Discount:</th>
-                            <th>-{{ TransportDiscount }}</th>
+                            <th>-{{ calculateDiscount(TransportCost, calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), TransportDiscount) }}</th>
                         </tr>
                         <tr>
                             <th class="colour-green">Monthly Total Cost:</th>
-                            <th class="colour-green">£{{ calculateMonthlyTotal(TransportCost, TransportCommuteCost, TransportGroceryCost, TransportDiscount) }}</th>
+                            <th class="colour-green">£{{ calculateMonthlyTotal(TransportCost, calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateDiscount(TransportCost, calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), TransportDiscount)) }}</th>
                         </tr>
                     </table>
                 </div>
@@ -42,6 +42,14 @@
 import { transportChoiceStore } from '../../store/LivingOptionsStore.js';
 
 const manageTransport = transportChoiceStore();
+
+import { supermarketChoiceStore } from '../../store/LivingOptionsStore.js'
+
+const manageSupermarket = supermarketChoiceStore()
+
+import { registerLivingOptionChoiceStore } from '../../store/LivingOptionsStore'
+
+const registerLivingChoice = registerLivingOptionChoiceStore()
 
 </script>
 
@@ -58,7 +66,7 @@ export default {
         TransportCost: String,
         TransportCommuteCost: String,
         TransportGroceryCost: String,
-        TransportDiscount: String,
+        TransportDiscount: Number,
         TransportIdentifier: Number,
         
     },
@@ -72,6 +80,34 @@ export default {
             this.totalCost = ((this.newCost + this.numberCommuteCost + this.numberGroceryCost) - this.numberDiscount);
 
             return this.totalCost;
+        },
+
+        calculateCost(amountOfIncrease, normalCharge) {
+            if (amountOfIncrease === '0') {
+                this.supermarketTravelIncrease = 0;
+            } else if (amountOfIncrease === '+') {
+                this.supermarketTravelIncrease = 1;
+            } else if (amountOfIncrease === '++') {
+                this.supermarketTravelIncrease = 2;
+            }
+
+            this.totalSupermarketCost = normalCharge * this.supermarketTravelIncrease;
+
+            return this.totalSupermarketCost;
+        },
+
+        calculateDiscount(cost, transportcost, commutecost, discount) {
+
+            this.newcost = Number(cost);
+
+            this.newDiscount = discount / 100;
+
+            this.sum = this.newcost + transportcost + commutecost;
+            this.discountedAmount = this.sum * this.newDiscount;
+
+            console.log(this.sum);
+
+            return this.discountedAmount;
         }
     }
    

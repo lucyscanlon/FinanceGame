@@ -27,7 +27,10 @@ export const registerLivingOptionChoiceStore = defineStore({
                 district: districtInfo,
                 rentPrice: rent,
                 commutePrice: commute,
+
             }
+
+            console.log(this.selectedLivingOptionInfo.commutePrice);
         }
     }
 })
