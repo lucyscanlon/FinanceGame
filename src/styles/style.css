@@ -624,7 +624,7 @@ body {
   .supermarketchoice-display-wrapper {
     width: 70%;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 15px;
     padding-bottom: 10px;
   }
 
@@ -669,7 +669,7 @@ body {
   .supermarketchoice-button-wrap {
     text-align: center;
     padding-bottom: 25px;
-    padding-top: 20px;
+    padding-top: 10px;
   }
 
   .supermarketchoice-button-wrap button {
@@ -684,6 +684,8 @@ body {
     transition-duration: 0.5s;
 
   }
+
+
 
   .supermarketchoice-button-wrap button:hover {
     background-color: #1F1E2F;
@@ -702,10 +704,23 @@ body {
     padding-bottom: 20px;
 }
 
+.supermarket-choice-perk {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.supermarket-choice-perk p {
+    font-family: unbounded-reg;
+    color: white;
+    font-size: 13px;
+}
+
 .supermarketchoice-heading-wrap {
     width: 85%;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .supermarketchoice-heading-wrap h4 {
@@ -731,7 +746,7 @@ body {
     font-family: unbounded-reg;
     font-size: 15px;
     padding-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .supermarketchoice-costs-wrap p {
@@ -778,6 +793,10 @@ body {
     transition-duration: 0.5s;
     cursor: pointer;
   
+  }
+
+  .supermarketinfo-title {
+    padding-top: 20px;
   }
 
 

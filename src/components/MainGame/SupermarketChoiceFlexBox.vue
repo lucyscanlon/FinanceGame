@@ -11,6 +11,9 @@ const manageSupermarket = supermarketChoiceStore()
                     <h4>{{ SupermarketName }}</h4>
                     <p>{{SupermarketDesc}}</p>
                 </div>
+                <div class="supermarket-choice-perk">
+                    <p><span class="colour-pink">Perk: </span>{{ SupermarketPerk }}</p>
+                </div>
                 <div class="supermarketchoice-costs-wrap">
                     <p><span class="colour-pink">Cost:</span> £{{SupermarketCost}}</p>
                     <p><span class="colour-pink">Transport Cost:</span> £{{ SupermarketTransportCost }}</p>
@@ -30,6 +33,7 @@ export default {
         SupermarketCost: String,
         SupermarketTransportCost: String,
         SupermarketIdentifier: Number,
+        SupermarketPerk: String,
     }
    
    

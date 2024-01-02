@@ -7,8 +7,8 @@ Components that will be inside this container include:
 
 
 <template>
-    <div class="rentintro-mainwrapper">
-        <div class="rentintro-title-wrapper">
+    <div class="rentintro-mainwrapper supermarket-info-wrap">
+        <div class="rentintro-title-wrapper supermarketinfo-title">
             <h1>Choosing a supermarket to shop at</h1>
         </div>
         <div class="rentintro-description-wrapper">
