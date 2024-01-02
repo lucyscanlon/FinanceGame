@@ -24,7 +24,7 @@ Components that will be inside this container include:
             <TransportChoicesFlex TransportName="Uber Driving Service" TransportDesc="A mobile app providing a private taxi service." TransportPerk="Private Driver" TransportCost="300" TransportCommuteCost="100" TransportGroceryCost="50" TransportDiscount="0" :TransportIdentifier=1></TransportChoicesFlex>
             <TransportChoicesFlex TransportName="Public Transport" TransportDesc="A well connected public transport service." TransportPerk="Under 25s get 33% off" TransportCost="150" TransportCommuteCost="40" TransportGroceryCost="15" TransportDiscount="50" :TransportIdentifier=2></TransportChoicesFlex>
         </div>
-        <div @click="livingOptions.livingOptionsNextStageOfGame(), manageTransport.confirmChosenTransport()" class="supermarketchoice-button-wrap transport-choice-button">
+        <div @click="(manageTransport.currentlySelectedTransportChoice != '') ? livingOptions.livingOptionsNextStageOfGame() : '', manageTransport.confirmChosenTransport()" class="supermarketchoice-button-wrap transport-choice-button">
                     <button>Choose this method</button>
          </div>
     </div>

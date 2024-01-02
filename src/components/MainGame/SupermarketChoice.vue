@@ -25,7 +25,7 @@ const livingOptions = useLivingOptionsStore()
             <SupermarketChoiceFlexBox :SupermarketIdentifier=3 SupermarketName="Swiftbite Delivery" SupermarketDesc="A food delivery app delivering from local restaurants." SupermarketCost="300pm" SupermarketTransportCost="0" SupermarketPerk="Offers a wide range of cuisines."></SupermarketChoiceFlexBox>
             <SupermarketChoiceFlexBox :SupermarketIdentifier=4 SupermarketName="Weekly Mart Deliveries" SupermarketDesc="A weekly grocery delivery service with budget prices." SupermarketCost="100pm" SupermarketTransportCost="0" SupermarketPerk="Free delivery for members."></SupermarketChoiceFlexBox>
         </div>
-        <div @click="manageSupermarket.confirmSupermarketChoice(), livingOptions.livingOptionsNextStageOfGame()" class="supermarketchoice-button-wrap">
+        <div @click="(manageSupermarket.currentlySelectedSupermarketInfo != '') ? livingOptions.livingOptionsNextStageOfGame() : '', manageSupermarket.confirmSupermarketChoice()" class="supermarketchoice-button-wrap">
                     <button>Shop here</button>
          </div>
     </div>

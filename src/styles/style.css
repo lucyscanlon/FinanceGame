@@ -374,7 +374,7 @@ body {
  }
 
  .map-location-content-wrapper button:hover {
-    border: 2px solid white;
+    border: 2px solid #FF48C8;
     background-color: #1F1E2F;
     transition-duration: 0.5s;
     cursor: pointer;
@@ -631,10 +631,15 @@ body {
     cursor: pointer;     
   }
 
+  .transport-choice-box:hover {
+    cursor: pointer;    
+  }
+
   .supermarket-active {
     -webkit-box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
     -moz-box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
     box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
+
   }
 
   .supermarketchoice-display-wrapper h1 {
@@ -688,7 +693,7 @@ body {
 
   .supermarketchoice-button-wrap button:hover {
     background-color: #1F1E2F;
-    border: 2px solid white;
+    border: 2px solid #FF48C8;
     transition-duration: 0.5s;
     cursor: pointer;
 
