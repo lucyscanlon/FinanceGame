@@ -33,6 +33,7 @@
           </div>
           <CurrentlyLivingDisplay v-if="livingOptions.livingOptionsGameStage >= 3"></CurrentlyLivingDisplay> 
           <CurrentlyShoppingAt v-if="livingOptions.livingOptionsGameStage >= 5"></CurrentlyShoppingAt>
+          <TransportMethodSidebar v-if="livingOptions.livingOptionsGameStage >= 6"></TransportMethodSidebar>
         </div>
 
     </div>
@@ -46,12 +47,14 @@
 
 import CurrentlyLivingDisplay from './CurrentlyLiving.vue'
 import CurrentlyShoppingAt from './CurrentlyShoppingAt.vue'
+import TransportMethodSidebar from './TransportMethodChoice.vue'
 
 export default {
     name: 'CharacterStatsSidebarWrapper',
     components: {
       CurrentlyLivingDisplay,
       CurrentlyShoppingAt,
+      TransportMethodSidebar,
     },
     data() {
       return {
