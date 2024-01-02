@@ -73,5 +73,22 @@ export const transportChoiceStore = defineStore({
             this.selectedActiveTransportChoice = num;
         },
 
+        updatedCurrentlyChosenTransport(name, desc, total) {
+            this.currentlySelectedTransportChoice = {
+                TName: name,
+                TDesc: desc,
+                TTotal: total,
+
+            }
+
+            console.log(this.currentlySelectedTransportChoice);
+        }, 
+
+        confirmChosenTransport() {
+            this.chosenTransportChoice = this.currentlySelectedTransportChoice;
+
+            console.log(this.chosenTransportChoice);
+        }
+
     }
 })
