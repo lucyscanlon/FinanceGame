@@ -32,7 +32,7 @@
             <hr />
           </div>
           <CurrentlyLivingDisplay v-if="livingOptions.livingOptionsGameStage >= 3"></CurrentlyLivingDisplay> 
-          <CurrentlyShoppingAt v-if="livingOptions.livingOptionsGameStage >= 4"></CurrentlyShoppingAt>
+          <CurrentlyShoppingAt v-if="livingOptions.livingOptionsGameStage >= 5"></CurrentlyShoppingAt>
         </div>
 
     </div>
