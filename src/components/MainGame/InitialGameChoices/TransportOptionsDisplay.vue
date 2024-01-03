@@ -7,15 +7,15 @@ Components that will be inside this container include:
 
 <script setup>
 
-    import { useLivingOptionsStore } from '../../store/LivingOptionsStore'
+    import { useLivingOptionsStore } from '../../../store/LivingOptionsStore'
 
     const livingOptions = useLivingOptionsStore()
 
-    import { transportChoiceStore } from '../../store/LivingOptionsStore.js';
+    import { transportChoiceStore } from '../../../store/LivingOptionsStore.js';
 
     const manageTransport = transportChoiceStore();
 
-    import { useMoneyManageStore } from '../../store/store.js'
+    import { useMoneyManageStore } from '../../../store/store.js'
 
     const manageMoney = useMoneyManageStore()
 

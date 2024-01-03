@@ -6,15 +6,15 @@ Components that will be inside this container include:
 -->
 
 <script setup>
-    import { supermarketChoiceStore } from '../../store/LivingOptionsStore'
+    import { supermarketChoiceStore } from '../../../store/LivingOptionsStore'
 
     const manageSupermarket = supermarketChoiceStore()
 
-    import { useLivingOptionsStore } from '../../store/LivingOptionsStore'
+    import { useLivingOptionsStore } from '../../../store/LivingOptionsStore'
 
     const livingOptions = useLivingOptionsStore()
 
-    import { useMoneyManageStore } from '../../store/store.js'
+    import { useMoneyManageStore } from '../../../store/store.js'
 
     const manageMoney = useMoneyManageStore()
 

@@ -47,12 +47,12 @@ const manageMoney = useMoneyManageStore()
 
 <script>
 
-import MapDisplay from './MapLayout.vue';
-import RentInformationDisplay from './RentIntroductionInfo.vue';
-import salaryAndTaxInfoDisplay from './YouHaveAJobOffer.vue';
-import SupermarketChoiceDisplay from './SupermarketChoice.vue';
-import SupermarketInfoDisplay from './SupermarketInfo.vue';
-import TransportMethodDisplay from './TransportOptionsDisplay.vue';
+import MapDisplay from './InitialGameChoices/MapLayout.vue'
+import RentInformationDisplay from './InformationPages/RentIntroductionInfo.vue'
+import salaryAndTaxInfoDisplay from './InformationPages/YouHaveAJobOffer.vue';
+import SupermarketChoiceDisplay from './InitialGameChoices/SupermarketChoice.vue';
+import SupermarketInfoDisplay from './InformationPages/SupermarketInfo.vue';
+import TransportMethodDisplay from './InitialGameChoices/TransportOptionsDisplay.vue';
 
 export default {
     name: 'MainGameWrapper',

@@ -94,9 +94,6 @@ export const transportChoiceStore = defineStore({
             console.log(this.chosenTransportChoice);
         },
 
-        confirmTotalTransportCost(val) {
-            this.totalTransportCost = val;
-        }
 
     }
 })
