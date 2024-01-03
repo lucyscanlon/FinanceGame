@@ -107,8 +107,6 @@ export default {
             this.sum = this.newcost + transportcost + commutecost;
             this.discountedAmount = this.sum * this.newDiscount;
 
-            console.log(this.sum);
-
             return this.discountedAmount;
         }
     }

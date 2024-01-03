@@ -14,7 +14,6 @@ export const useLivingOptionsStore = defineStore({
     actions: {
         livingOptionsNextStageOfGame() {
             this.livingOptionsGameStage = this.livingOptionsGameStage + 1;
-            console.log(this.livingOptionsGameStage);
         }
     }
 })
@@ -68,6 +67,8 @@ export const supermarketChoiceStore = defineStore({
 
         confirmSupermarketChoice() {
             this.chosenSupermarketInfo = this.currentlySelectedSupermarketInfo;
+
+            console.log(this.chosenSupermarketInfo);
             
         }
     }
