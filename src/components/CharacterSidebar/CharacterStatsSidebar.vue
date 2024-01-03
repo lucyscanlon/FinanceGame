@@ -1,10 +1,10 @@
 <!-- Template for the character statistics sidebar -->
 <script setup>
-  import { useLivingOptionsStore } from '../../store/LivingOptionsStore'
+  import { useLivingOptionsStore } from '../../store/InitialGameChoicesStore'
 
   const livingOptions = useLivingOptionsStore()
 
-  import { useMoneyManageStore } from '../../store/store'
+  import { useMoneyManageStore } from '../../store/MoneyStore'
 
   const manageMoney = useMoneyManageStore()
 

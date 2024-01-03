@@ -35,11 +35,11 @@ Elements that will be inside this container include:
 
 <script setup>
 
-import { useLivingOptionsStore } from '../../store/LivingOptionsStore'
+import { useLivingOptionsStore } from '../../store/InitialGameChoicesStore'
 
 const livingOptions = useLivingOptionsStore()
 
-import { useMoneyManageStore } from '../../store/store.js'
+import { useMoneyManageStore } from '../../store/MoneyStore.js'
 
 const manageMoney = useMoneyManageStore()
 

@@ -1,6 +1,6 @@
 <!-- Template for the currently living display component -->
 <script setup>
-import { transportChoiceStore } from '../../store/LivingOptionsStore.js';
+import { transportChoiceStore } from '../../store/InitialGameChoicesStore.js';
 
 const manageTransport = transportChoiceStore();
 

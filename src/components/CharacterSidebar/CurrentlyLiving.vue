@@ -1,7 +1,7 @@
 <!-- Template for the currently living display component -->
 <script setup>
 
-import { registerLivingOptionChoiceStore } from '../../store/LivingOptionsStore'
+import { registerLivingOptionChoiceStore } from '../../store/InitialGameChoicesStore'
 
 const registerLivingChoice = registerLivingOptionChoiceStore()
 

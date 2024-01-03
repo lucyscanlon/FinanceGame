@@ -29,15 +29,15 @@
 
 <script setup>
 
-import { useLivingOptionsStore } from '../../../store/LivingOptionsStore'
+import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
 
 const livingOptions = useLivingOptionsStore()
 
-import { registerLivingOptionChoiceStore } from '../../../store/LivingOptionsStore'
+import { registerLivingOptionChoiceStore } from '../../../store/InitialGameChoicesStore'
 
 const registerLivingChoice = registerLivingOptionChoiceStore()
 
-import { useMoneyManageStore } from '../../../store/store.js'
+import { useMoneyManageStore } from '../../../store/MoneyStore.js'
 
 const manageMoney = useMoneyManageStore()
 

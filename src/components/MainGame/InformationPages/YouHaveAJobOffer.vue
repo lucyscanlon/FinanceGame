@@ -49,7 +49,7 @@ Components that will be inside this container include:
 
 <script setup>
 
-import { useLivingOptionsStore } from '../../../store/LivingOptionsStore'
+import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
 
 const livingOptions = useLivingOptionsStore()
 

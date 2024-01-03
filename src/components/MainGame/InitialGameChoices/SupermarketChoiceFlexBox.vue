@@ -1,5 +1,5 @@
 <script setup>
-import { supermarketChoiceStore } from '../../../store/LivingOptionsStore'
+import { supermarketChoiceStore } from '../../../store/InitialGameChoicesStore'
 
 const manageSupermarket = supermarketChoiceStore()
 

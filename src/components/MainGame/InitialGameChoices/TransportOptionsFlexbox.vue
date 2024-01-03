@@ -39,15 +39,15 @@
 
 <script setup>
 
-import { transportChoiceStore } from '../../../store/LivingOptionsStore.js';
+import { transportChoiceStore } from '../../../store/InitialGameChoicesStore.js';
 
 const manageTransport = transportChoiceStore();
 
-import { supermarketChoiceStore } from '../../../store/LivingOptionsStore.js'
+import { supermarketChoiceStore } from '../../../store/InitialGameChoicesStore.js'
 
 const manageSupermarket = supermarketChoiceStore()
 
-import { registerLivingOptionChoiceStore } from '../../../store/LivingOptionsStore'
+import { registerLivingOptionChoiceStore } from '../../../store/InitialGameChoicesStore'
 
 const registerLivingChoice = registerLivingOptionChoiceStore()
 

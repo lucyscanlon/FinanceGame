@@ -1,6 +1,6 @@
 <!-- Template for the currently living display component -->
 <script setup>
-import { supermarketChoiceStore } from '../../store/LivingOptionsStore'
+import { supermarketChoiceStore } from '../../store/InitialGameChoicesStore'
 
 const manageSupermarket = supermarketChoiceStore()
 
