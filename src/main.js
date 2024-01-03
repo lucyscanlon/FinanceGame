@@ -11,10 +11,4 @@ const app = createApp(App);
 
 app.use(createPinia());
 
-app.config.globalProperties.$global= {
-    currentmoney: 2000,
-    bankmoney: 1000,
-}
-
-
 app.component('font-awesome-icon', FontAwesomeIcon).mount("#app");

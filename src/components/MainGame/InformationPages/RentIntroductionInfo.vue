@@ -1,11 +1,9 @@
-<!-- Template for the rent information page
+<!-- Template for displaying the text information introducing rent to the player
 
-Components that will be inside this container include:
-- living options information display components
+The parent of this component:
+- Main game
 
 -->
-
-
 <template>
     <div class="rentintro-mainwrapper">
         <div class="rentintro-title-wrapper">
@@ -17,25 +15,20 @@ Components that will be inside this container include:
             <p>For this game, you are a new graduate, looking for a cozy one-bedroom space to call your new home. Stay mindful of their rent prices and the costs they will add to your monthly outgoings due to commute costs to work. In the UK it is expected of you to pay <span class="colour-green">5 weeks</span> of rent upfront as a deposit for your rented space.</p>
             <p class="colour-green rentintro-rentrecommendation">35% of your monthly income after tax is: £599.14</p>
             <div class="rentinfo-button-wrapper">
+                <!-- Call store method on click -->
                 <button @click="livingOptions.livingOptionsNextStageOfGame()" class="rentinfo-button">Choose a new place to rent</button>
             </div>
         </div>
     </div>
-   
 </template>
-
 <script setup>
-
-import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
-
-const livingOptions = useLivingOptionsStore()
-
+    // import stores
+    import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
+    const livingOptions = useLivingOptionsStore()
 </script>
-
 <script>
-
-export default {
-    name: 'RentInformationDisplay',
-}
-
+    // export component data
+    export default {
+      name: 'RentInformationDisplay',
+    }
 </script>

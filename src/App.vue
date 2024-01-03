@@ -3,8 +3,6 @@
     <CharacterStatsSidebarWrapper></CharacterStatsSidebarWrapper>
     <MainGameWrapper></MainGameWrapper>
   </div>
-  <!--<TestComponent testMessage="This is a test heading" testDescription="This is a test description"></TestComponent>-->
-  <!-- <bankComponent></bankComponent> -->
 </template>
 
 <script>

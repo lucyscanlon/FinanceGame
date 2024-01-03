@@ -1,11 +1,9 @@
-<!-- Template for the you have a job offer info display
+<!-- Template for displaying the text information introducing salaries and taxes
 
-Components that will be inside this container include:
-- living options information display components
+The parent of this component:
+- Main game
 
 -->
-
-
 <template>
     <div class="joboffer-mainwrapper">
         <div class="joboffer-title-wrapper">
@@ -37,6 +35,7 @@ Components that will be inside this container include:
                 </tr>
             </table>
             <div class="joboffer-button-wrapper">
+                <!-- Call store method on click -->
                 <button @click="livingOptions.livingOptionsNextStageOfGame()" class="joboffer-button">Accept job offer</button>
                 <a href="https://www.tax.service.gov.uk/estimate-paye-take-home-pay/your-pay" target="blank">
                     <button class="joboffer-calculator">Check out the UK tax calculator</button>
@@ -44,21 +43,16 @@ Components that will be inside this container include:
             </div>
         </div>
     </div>
-   
 </template>
-
 <script setup>
-
-import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
-
-const livingOptions = useLivingOptionsStore()
-
+    // import stores
+    import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
+    const livingOptions = useLivingOptionsStore()
 </script>
-
 <script>
-
-export default {
-    name: 'salaryAndTaxInfoDisplay',
-}
+    // export component data
+    export default {
+        name: 'salaryAndTaxInfoDisplay',
+    }
 
 </script>

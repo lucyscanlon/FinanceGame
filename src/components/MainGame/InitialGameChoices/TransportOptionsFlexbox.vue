@@ -1,6 +1,11 @@
+<!-- Template containing the layout and information for each transport choice
 
+The parent of this component:
+- Transport Options Display
 
+-->
 <template>
+    <!-- Add an active class if the component is clicked, pass transport choice clicked info to store -->
     <div v-bind:class="(manageTransport.selectedActiveTransportChoice === TransportIdentifier) ? 'supermarket-active' : ''" @click="manageTransport.changedSelectedTransportChoice(TransportIdentifier), manageTransport.updatedCurrentlyChosenTransport(TransportName, TransportDesc, (calculateMonthlyTotal(TransportCost, calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateDiscount(TransportCost, calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), TransportDiscount))))" class="transport-choice-box">
                 <div class="transport-name-desc-wrap">
                     <h4>{{ TransportName }}</h4>
@@ -18,6 +23,7 @@
                         </tr>
                         <tr>
                             <th>Commute Cost:</th>
+                            <!-- Call component methods to determine the costs as these change dynamically based upon what choices the player has previously made -->
                             <th>+{{ calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost) }}</th>
                         </tr>
                         <tr>
@@ -38,27 +44,18 @@
 </template>
 
 <script setup>
+    // import stores
+    import { transportChoiceStore } from '../../../store/InitialGameChoicesStore.js';
+    const manageTransport = transportChoiceStore();
 
-import { transportChoiceStore } from '../../../store/InitialGameChoicesStore.js';
+    import { supermarketChoiceStore } from '../../../store/InitialGameChoicesStore.js'
+    const manageSupermarket = supermarketChoiceStore()
 
-const manageTransport = transportChoiceStore();
-
-import { supermarketChoiceStore } from '../../../store/InitialGameChoicesStore.js'
-
-const manageSupermarket = supermarketChoiceStore()
-
-import { registerLivingOptionChoiceStore } from '../../../store/InitialGameChoicesStore'
-
-const registerLivingChoice = registerLivingOptionChoiceStore()
-
-
-
+    import { registerLivingOptionChoiceStore } from '../../../store/InitialGameChoicesStore'
+    const registerLivingChoice = registerLivingOptionChoiceStore()
 </script>
-
 <script>
-
-
-
+// export component data
 export default {
     name: 'TransportChoicesFlex', 
     props: {
@@ -74,13 +71,16 @@ export default {
     },
     methods: {
         calculateMonthlyTotal(cost, commuteCost, groceryCost, discount) {
+            // Turn string values into numbers
             this.newCost = Number(cost);
             this.numberCommuteCost = Number(commuteCost);
             this.numberGroceryCost = Number(groceryCost);
             this.numberDiscount = Number(discount);
             
+            // determine calculation
             this.totalCost = ((this.newCost + this.numberCommuteCost + this.numberGroceryCost) - this.numberDiscount);
 
+            // return result
             return this.totalCost;
         },
 
@@ -112,8 +112,5 @@ export default {
             return this.discountedAmount;
         }
     }
-   
-   
 }
-
 </script>

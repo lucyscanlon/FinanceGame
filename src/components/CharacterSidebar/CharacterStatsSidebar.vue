@@ -1,16 +1,19 @@
-<!-- Template for the character statistics sidebar -->
-<script setup>
-  import { useLivingOptionsStore } from '../../store/InitialGameChoicesStore'
+<!-- Template for the Character Statistics Sidebar
 
+Components that will be inside this container include:
+- Currently living 
+- Currently Shopping at
+- Current method of transport
+
+-->
+<script setup>
+  // import stores 
+  import { useLivingOptionsStore } from '../../store/InitialGameChoicesStore'
   const livingOptions = useLivingOptionsStore()
 
   import { useMoneyManageStore } from '../../store/MoneyStore'
-
   const manageMoney = useMoneyManageStore()
-
 </script>
-
-
 <template>
     <div class="characterstats-sidebar-wrapper">
         <div class="charactertstats-padding">
@@ -19,10 +22,12 @@
           </div>
           <div class="characterstats-set">
             <h4>Money In Pocket:</h4>
+            <!--Use values from moneyStore.js-->
             <h5>£{{manageMoney.moneyInPocket}}</h5>
             <h6 :class="!pocketMoneyValueChangeActive && 'display-none'">-£{{manageMoney.increaseordecreaseofPocketMoney}})</h6>
             <hr />
           </div>
+          <!-- Display this component depending on the stage of the game e.g. if they have accepted the job offer -->
           <div v-if="livingOptions.livingOptionsGameStage > 0" class="characterstats-set">
             <h4>Monthly Salary Income:</h4>
             <h4 class="characterset-subheading">Before Tax:</h4>
@@ -31,24 +36,24 @@
             <h5>£{{manageMoney.monthlySalaryAfterTax}}</h5>
             <hr />
           </div>
+          <!-- Display this component depending on the stage of the game e.g. if they have chosen a place to live -->
           <CurrentlyLivingDisplay v-if="livingOptions.livingOptionsGameStage >= 3"></CurrentlyLivingDisplay> 
+          <!-- Display this component depending on the stage of the game e.g. if they have chosen a supermarket option -->
           <CurrentlyShoppingAt v-if="livingOptions.livingOptionsGameStage >= 5"></CurrentlyShoppingAt>
+          <!-- Display this component depending on the stage of the game e.g. if they have chosen a transport method -->
           <TransportMethodSidebar v-if="livingOptions.livingOptionsGameStage >= 6"></TransportMethodSidebar>
         </div>
-
     </div>
-
-    
   </template>
-
-  
-
 <script>
+
+// import components
 
 import CurrentlyLivingDisplay from './CurrentlyLiving.vue'
 import CurrentlyShoppingAt from './CurrentlyShoppingAt.vue'
 import TransportMethodSidebar from './TransportMethodChoice.vue'
 
+// export component data
 export default {
     name: 'CharacterStatsSidebarWrapper',
     components: {

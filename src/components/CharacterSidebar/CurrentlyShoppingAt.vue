@@ -1,14 +1,18 @@
-<!-- Template for the currently living display component -->
+<!-- Template for displaying the supermarket option the player has chosen
+
+The parent of this component:
+- Character Stats Sidebar
+
+-->
 <script setup>
-import { supermarketChoiceStore } from '../../store/InitialGameChoicesStore'
-
-const manageSupermarket = supermarketChoiceStore()
-
+    // import stores
+    import { supermarketChoiceStore } from '../../store/InitialGameChoicesStore'
+    const manageSupermarket = supermarketChoiceStore()
 </script>
-
 <template>
     <div className="characterstats-set currentlyshoppingatdisplay">
         <h4>Shopping At:</h4>
+        <!-- Use values from store -->
         <h5>{{manageSupermarket.chosenSupermarketInfo.SMName}}</h5>
         <p>{{manageSupermarket.chosenSupermarketInfo.SMDesc}}</p>
         <h5><span className="colour-pink">Cost: </span>£{{ manageSupermarket.chosenSupermarketInfo.SMCost }}</h5>
@@ -18,11 +22,10 @@ const manageSupermarket = supermarketChoiceStore()
         </div>
         <hr />
     </div>
-
 </template>
-
 <script>
-export default {
-    name: 'CurrentlyShoppingAt',
-}
+    // export component data
+    export default {
+        name: 'CurrentlyShoppingAt',
+    }
 </script>
