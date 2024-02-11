@@ -10,9 +10,15 @@ The parent of this component:
             <h1>Choosing a place to rent</h1>
         </div>
         <div class="rentintro-description-wrapper">
-            <p>Welcome to the next exciting chapter of your life—living independently! The UK government recommends allocating <span class="colour-green">30-35%</span> of your monthly income to be spent on rent. This guideline, often referred to as the 30% rule, ensures a healthy balance between housing expenses and overall financial well-being. </p>
-            <p>Whilst the 30% rule is encouraged, every persons situation is unique and other factors such as marital status, having children or having family dependancies can effect how much you have available for rent each month. </p>
-            <p>For this game, you are a new graduate, looking for a cozy one-bedroom space to call your new home. Stay mindful of their rent prices and the costs they will add to your monthly outgoings due to commute costs to work. In the UK it is expected of you to pay <span class="colour-green">5 weeks</span> of rent upfront as a deposit for your rented space.</p>
+            <p>Welcome to the next exciting chapter of your life—living independently! Here are some tips to help you choose a place to live:</p>
+            <div class="rentintro-list">
+                <ul>
+                    <li>The UK government reccomends allocating <span class="colour-green">30-35%</span> of your monthly income to be spent on rent. (This is known as the 30% rule).</li>
+                    <li>You are expected to pay <span class="colour-green">5 weeks</span> worth of rent upfront as a deposit.</li>
+                    <li>Many factors can also influence how much you have to spend on rent such as marital status and having family or child dependancies.</li>
+                    <li>For this game, you are a new graduate, looking for a cozy one bedroom space to call home!</li>
+                </ul>
+            </div>
             <p class="colour-green rentintro-rentrecommendation">35% of your monthly income after tax is: £599.14</p>
             <div class="rentinfo-button-wrapper">
                 <!-- Call store method on click -->

@@ -14,6 +14,7 @@ export const useLivingOptionsStore = defineStore({
     actions: {
         livingOptionsNextStageOfGame() {
             this.livingOptionsGameStage = this.livingOptionsGameStage + 1;
+            console.log("stage of game increased");
         }
     }
 })
@@ -33,6 +34,8 @@ export const registerLivingOptionChoiceStore = defineStore({
                 commutePrice: commute,
 
             }
+
+            console.log("Living at: Street " + streetAd + ", district: " + districtInfo + ", rentPrice: " + rent + ", commutePrice: " + commute);
 
         }
     }
@@ -63,12 +66,14 @@ export const supermarketChoiceStore = defineStore({
                 SMCost: SCost,
                 SMTCost: STCost,
             }
+
+            console.log("Currently Selected Supermarket: " + SName);
         },
 
         confirmSupermarketChoice() {
             this.chosenSupermarketInfo = this.currentlySelectedSupermarketInfo;
 
-            console.log(this.chosenSupermarketInfo);
+            console.log("Confirmed Supermarket Choice: " + this.chosenSupermarketInfo.SMName);
             
         }
     }
@@ -102,10 +107,14 @@ export const transportChoiceStore = defineStore({
 
             }
 
+            console.log("Currently selected transport choice: " + this.currentlySelectedTransportChoice.TName);
+
         }, 
 
         confirmChosenTransport() {
             this.chosenTransportChoice = this.currentlySelectedTransportChoice;
+
+            console.log("Confirmed transpose choice: " + this.chosenTransportChoice.TName);
 
         },
 

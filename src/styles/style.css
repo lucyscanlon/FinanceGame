@@ -472,6 +472,19 @@ body {
     padding-bottom: 15px;
   }
 
+  .rentintro-list li {
+    text-align: left;
+    font-size: 13px;
+    padding-bottom: 1.1em;
+  }
+
+  .rentintro-list {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
   .rentintro-rentrecommendation {
     padding-top: 20px;
   }
@@ -531,6 +544,19 @@ body {
     padding-bottom: 15px;
   }
 
+  .joboffer-description-wrapper li {
+    text-align: left;
+    font-size: 13px;
+    padding-bottom: 1em;
+  }
+
+  .joboffer-list {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
   .joboffer-rentrecommendation {
     padding-top: 20px;
   }
@@ -586,6 +612,10 @@ body {
     transition-duration: 0.5s;
   }
 
+  .job-offer-padding {
+    padding-top: 20px;
+  }
+
 
 
 
@@ -618,7 +648,11 @@ body {
 
 
 
+
+
   /* supermarket choice page */
+
+
 
   .supermarketchoice-display-wrapper {
     width: 70%;
@@ -801,6 +835,19 @@ body {
 
   .supermarketinfo-title {
     padding-top: 20px;
+  }
+
+  .supermarketinfo-list li {
+    text-align: left;
+    padding-bottom: 1.1em;
+    font-size: 13px;
+  }
+
+  .supermarketinfo-list {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
 
