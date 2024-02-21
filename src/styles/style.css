@@ -940,6 +940,81 @@ body {
     width: 270px;
   }
 
+
+  /* pensions page */
+
+  .previous-next-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    padding-top: 50px;
+    font-size: 12px;
+  }
+
+  .previous-container {
+    width: 30%;
+    float: left;
+    height: auto;
+    text-align: left;
+  }
+
+  .next-container {
+    width: 30%;
+    float: right;
+    height: auto;
+    text-align: right;
+  }
+
+  .next-container .fa-arrow-right {
+    padding-left: 8px;
+  }
+
+  .previous-container .fa-arrow-left {
+    padding-right: 8px;
+  }
+
+  .currentslide-circles-container {
+    width: 40%;
+    float: left;
+    height: auto;
+    text-align: center;
+  }
+
+  .pensionintro {
+    padding-top: 40px;
+    min-height: 290px;
+  }
+
+  .pensionSlideInactive {
+    display: none;
+  }
+
+  .pension-title {
+    padding-top: -20px;
+    font-size: 17px;
+  }
+
+  .pension-title p:hover  {
+    color: #7DAB3D;
+    cursor: pointer;
+  }
+
+  .next-title p:hover {
+    color: #7DAB3D;
+    cursor: pointer;
+  }
+
+  .currentslide-circles-container .fa-circle {
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 7px;
+  }
+
+  .currentslide-circles-container .circleactive {
+    color: #7DAB3D;
+  }
+
   
 
 

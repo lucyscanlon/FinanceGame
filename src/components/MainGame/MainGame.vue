@@ -26,6 +26,7 @@ Components:
         <SupermarketInfoDisplay v-if="livingOptions.livingOptionsGameStage === 3"></SupermarketInfoDisplay>
         <SupermarketChoiceDisplay v-if="livingOptions.livingOptionsGameStage === 4"></SupermarketChoiceDisplay>
         <TransportMethodDisplay v-if="livingOptions.livingOptionsGameStage === 5"></TransportMethodDisplay>
+        <PensionInformationDisplay v-if="livingOptions.livingOptionsGameStage === 6"></PensionInformationDisplay>
         <div className="gameplay-bottombanner-wrapper">
             <div className="monthly-outgoings-wrapper">
                 <p>Total monthly outgoings: <span className="colour-white">£{{ manageMoney.monthlyOutGoingsSum }}</span></p>
@@ -49,6 +50,7 @@ Components:
     import SupermarketChoiceDisplay from './InitialGameChoices/SupermarketChoice.vue';
     import SupermarketInfoDisplay from './InformationPages/SupermarketInfo.vue';
     import TransportMethodDisplay from './InitialGameChoices/TransportOptionsDisplay.vue';
+    import PensionInformationDisplay from './InformationPages/PensionIntroduction.vue';
 
 // export component data
 export default {
@@ -60,6 +62,7 @@ export default {
         SupermarketChoiceDisplay,
         SupermarketInfoDisplay,
         TransportMethodDisplay,
+        PensionInformationDisplay,
     }
 }
 </script>
