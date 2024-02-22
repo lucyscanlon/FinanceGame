@@ -4,13 +4,17 @@ The parent of this component:
 - Main game
 
 -->
+<script setup>
+    import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
+    const managePension = usePensionChoicesStore()
+</script>
 <template>
     <div class="rentintro-mainwrapper">
         <div class="pensionintro-title-wrapper">
             <h1>Setting up your pension</h1>
         </div>
         <div class="pensionintro-description-wrapper">
-            <div :class="this.currentSlide !== 0 && 'pensionSlideInactive'" class="pension-slidecontainer">
+            <div :class="currentSlide !== 0 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>What is a pension?</p>
                 <div class="rentintro-list pensionintro pensionslideactive">
                     <ul>
@@ -21,7 +25,7 @@ The parent of this component:
                     </ul>
                 </div>
             </div>
-            <div :class="this.currentSlide !== 1 && 'pensionSlideInactive'" class="pension-slidecontainer">
+            <div :class="currentSlide !== 1 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>What different types of pensions are there?</p>
                 <div class="rentintro-list pensionintro pensionslideactive">
                     <ul>
@@ -32,7 +36,7 @@ The parent of this component:
                     </ul>
                 </div>
             </div>
-            <div :class="this.currentSlide !== 2 && 'pensionSlideInactive'" class="pension-slidecontainer">
+            <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>What is a workplace pension?</p>
                 <div class="rentintro-list pensionintro pensionslideactive">
                     <ul>
@@ -43,120 +47,46 @@ The parent of this component:
                     </ul>
                 </div>
             </div>
-            <div :class="this.currentSlide !== 3 && 'pensionSlideInactive'" class="pension-slidecontainer">
+            <div :class="currentSlide !== 3 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>How much would you like to contribute each month?</p>
+                <div class="pension-contribution-choices-padding">
                 <div class="pension-contributionchoices-container">
-                    <div class="pension-contribution-box">
-                        <div class="pension-contribution-padding">
-                            <div class="pension-contribution-option-container">
-                                <h2>Option One:</h2>
-                            </div>
-                        <div class="pension-contribution-title">
-                            <h3>Your contribution:</h3>
-                            <div class="pension-contribution-percentage-container">
-                                <span class="colour-green"><p>5%</p></span>
-                                <p class="pension-amount">(£101.21)</p>
-                            </div>
-                        </div>
-                        <div class="pension-contribution-title">
-                            <h3>Your employer contribution:</h3>
-                            <div class="pension-contribution-percentage-container">
-                                <span class="colour-green"><p>3%</p></span>
-                                <p class="pension-amount">(£60.73)</p>
-                            </div>
-                        </div>
-                        <div class="pension-contribution-title">
-                            <h3>Total contribution:</h3>
-                            <div class="pension-contribution-percentage-container">
-                                <span class="colour-green"><p>8%</p></span>
-                                <p class="pension-amount">(£161.94)</p>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="pension-contribution-box">
-                        <div class="pension-contribution-padding">
-                            <div class="pension-contribution-option-container">
-                                <h2>Option Two:</h2>
-                            </div>
-                        <div class="pension-contribution-title">
-                            <h3>Your contribution:</h3>
-                            <div class="pension-contribution-percentage-container">
-                                <span class="colour-green"><p>7%</p></span>
-                                <p class="pension-amount">(£141.70)</p>
-                            </div>
-                        </div>
-                        <div class="pension-contribution-title">
-                            <h3>Your employer contribution:</h3>
-                            <div class="pension-contribution-percentage-container">
-                                <span class="colour-green"><p>4%</p></span>
-                                <p class="pension-amount">(£80.97)</p>
-                            </div>
-                        </div>
-                        <div class="pension-contribution-title">
-                            <h3>Total contribution:</h3>
-                            <div class="pension-contribution-percentage-container">
-                                <span class="colour-green"><p>11%</p></span>
-                                <p class="pension-amount">(£222.67)</p>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="pension-contribution-box">
-                        <div class="pension-contribution-padding">
-                            <div class="pension-contribution-option-container">
-                                <h2>Option Two:</h2>
-                            </div>
-                        <div class="pension-contribution-title">
-                            <h3>Your contribution:</h3>
-                            <div class="pension-contribution-percentage-container">
-                                <span class="colour-green"><p>8%</p></span>
-                                <p class="pension-amount">(£161.94)</p>
-                            </div>
-                        </div>
-                        <div class="pension-contribution-title">
-                            <h3>Your employer contribution:</h3>
-                            <div class="pension-contribution-percentage-container">
-                                <span class="colour-green"><p>4.5%</p></span>
-                                <p class="pension-amount">(£91.09)</p>
-                            </div>
-                        </div>
-                        <div class="pension-contribution-title">
-                            <h3>Total contribution:</h3>
-                            <div class="pension-contribution-percentage-container">
-                                <span class="colour-green"><p>12.5%</p></span>
-                                <p class="pension-amount">(£253.03)</p>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+                    <PensionChoiceFlexbox :PensionIdentifier=1 :PensionYCPerc=5 :PensionYCAmount=101.21 :PensionECPerc=3 :PensionECAmount=60.73 :PensionTCPerc=8 :PensionTCAmount=161.94></PensionChoiceFlexbox>
+                    <PensionChoiceFlexbox :PensionIdentifier=2 :PensionYCPerc=7 :PensionYCAmount=141.70 :PensionECPerc=4 :PensionECAmount=80.97 :PensionTCPerc=11 :PensionTCAmount=222.67></PensionChoiceFlexbox>
+                    <PensionChoiceFlexbox :PensionIdentifier=3 :PensionYCPerc=8 :PensionYCAmount=161.94 :PensionECPerc=4.5 :PensionECAmount=91.09 :PensionTCPerc=12.5 :PensionTCAmount=253.03></PensionChoiceFlexbox>
+                </div>
+                <div class="pension-contribution-button-container">
+                        <button @click="managePension.confirmCurrentlySelectedPensionChoice()">Confirm Choice</button>
+                 </div>
                 </div>
             </div>
             <div class="previous-next-container">
                 <div class="previous-container">
-                    <p @click="this.previousSlide()"><font-awesome-icon icon="fa-solid fa-arrow-left" /> Previous</p>
+                    <p @click="previousSlide()"><font-awesome-icon icon="fa-solid fa-arrow-left" /> Previous</p>
                 </div>
-                <div :class="this.removeNextButton && 'displaynone'" class="currentslide-circles-container">
-                    <span :class="this.currentSlide === 0 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
-                    <span :class="this.currentSlide === 1 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
-                    <span :class="this.currentSlide === 2 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
-                    <span :class="this.currentSlide === 3 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
+                <div :class="removeNextButton && 'displaynone'" class="currentslide-circles-container">
+                    <span :class="currentSlide === 0 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
+                    <span :class="currentSlide === 1 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
+                    <span :class="currentSlide === 2 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
+                    <span :class="currentSlide === 3 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
                 </div>
-                <div :class="this.removeNextButton && 'displaynone'" class="next-container">
-                    <p @click="this.nextSlide()">Next <font-awesome-icon icon="fa-solid fa-arrow-right" /></p>
+                <div :class="removeNextButton && 'displaynone'" class="next-container">
+                    <p @click="nextSlide()">Next <font-awesome-icon icon="fa-solid fa-arrow-right" /></p>
                 </div>
             </div>
         </div>
     </div>
 </template>
-<script setup>
-
-
-</script>
 <script>
+
+    import PensionChoiceFlexbox from '../MainGameChoices/PensionChoicesFlexbox';
+
     // export component data
     export default {
       name: 'PensionInformationDisplay',
+      components: {
+        PensionChoiceFlexbox,
+      },
       data() {
         return {
             currentSlide: 0, 
