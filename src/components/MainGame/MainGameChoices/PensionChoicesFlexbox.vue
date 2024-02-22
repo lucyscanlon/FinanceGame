@@ -8,13 +8,13 @@ The parent of this component:
     // import store 
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
     const managePension = usePensionChoicesStore()
-    
+
 </script>
 <template>
     <div v-bind:class="(managePension.selectedActivePensionChoice === PensionIdentifier) ? 'pension-active' : ''" @click="managePension.changeSelectedPensionChoice(PensionIdentifier), managePension.updateCurrentlySelectedPensionChoice(PensionYCPerc, PensionYCAmount, PensionECPerc, PensionECAmount, PensionTCPerc, PensionTCAmount)" class="pension-contribution-box">
                         <div class="pension-contribution-padding">
                             <div class="pension-contribution-option-container">
-                                <h2>Option One:</h2>
+                                <h2>Option {{ PensionIdentifier }}:</h2>
                             </div>
                         <div class="pension-contribution-title">
                             <h3>Your contribution:</h3>

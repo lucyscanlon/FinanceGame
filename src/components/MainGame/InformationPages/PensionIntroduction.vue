@@ -41,13 +41,23 @@ The parent of this component:
                 <div class="rentintro-list pensionintro pensionslideactive">
                     <ul>
                         <li>You must be <span class="colour-green">aged 22</span> and earn over <span class="colour-green">£10,000</span> a year in the UK to benefit from a workplace pension.</li>
-                        <li>You and your employer will contribute and you will also recieve a tax relief e.g. if you paid <span class="colour-green">£40</span>, your employer would pay <span class="colour-green">£30</span> and you would recieve a <span class="colour-green">£10</span> tax relief.</li>
-                        <li>The minimum contribution you must make to your pension is <span class="colour-green">5%</span> of your salary, with your employer contributing <span class="colour-green">3%</span>.</li>
-                        <li>It is generally recommended to contribute <span class="colour-green">12.5%</span> of your monthly salary.</li>
+                        <li>You and your employer will contribute. The minimum contribution you must make to your pension is <span class="colour-green">5%</span> of your salary, with your employer contributing <span class="colour-green">3%</span>.</li>
+                        <li>It is generally recommended to contribute a total of <span class="colour-green">12.5%</span> of your monthly salary if you are able to.</li>
                     </ul>
                 </div>
             </div>
             <div :class="currentSlide !== 3 && 'pensionSlideInactive'" class="pension-slidecontainer">
+                <p>What are the benefits of investing your pension?</p>
+                <div class="rentintro-list pensionintro pensionslideactive">
+                    <ul>
+                        <li>Investing is a great way to help counteract the impact of <span class="colour-green">inflation</span> (the increase of prices and costs) over time on your savings.</li>
+                        <li>You are also able to benefit from <span class="colour-green">compound interest</span>. When you recieve a return from an investment, this is then able to be reinvested to continue making more money. Compound interest can have a large effect on your pension over your life.</li>
+                        <li>If investment values fall, they do tend to increase again over time.</li>
+                        <li>Whilst investment value can <span class="colour-green">never be guaranteed</span>, there are investment options which are deemed as safer options such as the <span class="colour-green">FTSE 100</span>, a share index of the top 100 companies listed in the UK in terms of their value.</li>
+                    </ul>
+                </div>
+            </div>
+            <div :class="currentSlide !== 4 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>How much would you like to contribute each month?</p>
                 <div class="pension-contribution-choices-padding">
                 <div class="pension-contributionchoices-container">
@@ -56,9 +66,21 @@ The parent of this component:
                     <PensionChoiceFlexbox :PensionIdentifier=3 :PensionYCPerc=8 :PensionYCAmount=161.94 :PensionECPerc=4.5 :PensionECAmount=91.09 :PensionTCPerc=12.5 :PensionTCAmount=253.03></PensionChoiceFlexbox>
                 </div>
                 <div class="pension-contribution-button-container">
-                        <button @click="managePension.confirmCurrentlySelectedPensionChoice()">Confirm Choice</button>
+                        <button @click="managePension.confirmCurrentlySelectedPensionChoice(), nextSlide()">Confirm Choice</button>
                  </div>
                 </div>
+            </div>
+            <div :class="currentSlide !== 5 && 'pensionSlideInactive'" class="pension-slidecontainer">
+                <p>Would you like to invest your pension in stocks and shares?</p>
+                <div class="pension-investment-container-padding">
+                <div class="pension-investment-container">
+                    <PensionInvestmentFlexbox :PensionInvIndentifier=1 PensionInvDesc="Do not invest pension."></PensionInvestmentFlexbox>
+                    <PensionInvestmentFlexbox :PensionInvIndentifier=2 PensionInvDesc="Invest pension in:"></PensionInvestmentFlexbox>
+                </div>
+                <div class="pension-contribution-button-container">
+                        <button @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide()">Confirm Choice</button>
+                 </div>
+            </div>
             </div>
             <div class="previous-next-container">
                 <div class="previous-container">
@@ -69,23 +91,26 @@ The parent of this component:
                     <span :class="currentSlide === 1 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
                     <span :class="currentSlide === 2 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
                     <span :class="currentSlide === 3 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
+                    <span :class="currentSlide === 4 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
                 </div>
                 <div :class="removeNextButton && 'displaynone'" class="next-container">
                     <p @click="nextSlide()">Next <font-awesome-icon icon="fa-solid fa-arrow-right" /></p>
                 </div>
             </div>
+            
         </div>
     </div>
 </template>
 <script>
 
     import PensionChoiceFlexbox from '../MainGameChoices/PensionChoicesFlexbox';
-
+    import PensionInvestmentFlexbox from '../MainGameChoices/PensionInvestmentChoiceFlexbox';
     // export component data
     export default {
       name: 'PensionInformationDisplay',
       components: {
         PensionChoiceFlexbox,
+        PensionInvestmentFlexbox,
       },
       data() {
         return {
@@ -94,11 +119,11 @@ The parent of this component:
         }
       }, methods: {
         nextSlide() {
-            if(this.currentSlide < 4) {
+            if(this.currentSlide < 6) {
                 this.currentSlide = this.currentSlide + 1;
             }
 
-            if (this.currentSlide === 3) {
+            if (this.currentSlide === 4) {
                 this.removeNextButton = true;
             }
         },
@@ -106,7 +131,7 @@ The parent of this component:
             if(this.currentSlide > 0) {
                 this.currentSlide = this.currentSlide - 1;
                 
-                if (this.currentSlide < 3) {
+                if (this.currentSlide < 4) {
                     this.removeNextButton = false;
                 }
             }

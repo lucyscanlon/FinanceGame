@@ -1115,6 +1115,57 @@ body {
 
   }
 
+  .pension-investment-container {
+    width: 85%;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .pension-investment-container-padding {
+    min-height: 380px;
+    padding-top: 30px;
+  }
+
+  .pension-investment-flex {
+    width: 48%;
+    overflow: auto;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 15px;
+    background-color: #1F1E2F;
+  }
+
+  .pension-investment-title {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .pension-investment-description {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10px;
+    color: #FF48C8;
+  }
+
+  .pension-investment-share {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10px;
+    font-size: 18px;
+    color: #7DAB3D;
+  }
+
+
+  .pension-investment-padding {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+
   
 
 

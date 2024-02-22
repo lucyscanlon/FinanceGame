@@ -5,7 +5,11 @@ export const usePensionChoicesStore = defineStore({
     state: () => ({
         selectedActivePensionChoice: 0,
         currentlySelectedPensionChoice: [],
-        chosenPensionChoice: []
+        chosenPensionChoice: [],
+
+        SelectedActivePensionInvestmentChoice: 0,
+        currentlySelectedPensionInvestmentChoice: 0,
+        chosenPensionInvestmentChoice: 0,
     }), 
     actions: {
         changeSelectedPensionChoice(num) {
@@ -30,6 +34,20 @@ export const usePensionChoicesStore = defineStore({
             this.chosenPensionChoice = this.currentlySelectedPensionChoice;
 
             console.log(this.chosenPensionChoice);
+        },
+
+        changeSelectedPensionInvestmentChoice(num) {
+            this.SelectedActivePensionInvestmentChoice = num;
+        },
+
+        updateCurrentlySelectedPensionInvestmentChoice(PIIdentifier) {
+            this.currentlySelectedPensionInvestmentChoice = PIIdentifier;
+        },
+
+        confirmCurrentlySelectedPensionInvestmentChoice() {
+            this.chosenPensionInvestmentChoice = this.currentlySelectedPensionInvestmentChoice;
+
+            console.log("Chosen pension choice: " + this.chosenPensionInvestmentChoice);
         }
     }
     
