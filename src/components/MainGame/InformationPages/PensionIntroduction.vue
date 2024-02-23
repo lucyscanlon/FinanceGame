@@ -7,6 +7,9 @@ The parent of this component:
 <script setup>
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
     const managePension = usePensionChoicesStore()
+
+    import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
+    const livingOptions = useLivingOptionsStore()
 </script>
 <template>
     <div class="rentintro-mainwrapper">
@@ -78,7 +81,7 @@ The parent of this component:
                     <PensionInvestmentFlexbox :PensionInvIndentifier=2 PensionInvDesc="Invest pension in:"></PensionInvestmentFlexbox>
                 </div>
                 <div class="pension-contribution-button-container">
-                        <button @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide()">Confirm Choice</button>
+                        <button @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide(), livingOptions.livingOptionsNextStageOfGame()">Confirm Choice</button>
                  </div>
             </div>
             </div>

@@ -27,6 +27,18 @@ Components:
         <SupermarketChoiceDisplay v-if="livingOptions.livingOptionsGameStage === 4"></SupermarketChoiceDisplay>
         <TransportMethodDisplay v-if="livingOptions.livingOptionsGameStage === 5"></TransportMethodDisplay>
         <PensionInformationDisplay v-if="livingOptions.livingOptionsGameStage === 6"></PensionInformationDisplay>
+        <div class="maingameplay-interaction-container">
+            <div class="maingameplay-top-row-container">
+                <PensionInteractionComponent></PensionInteractionComponent>
+                <EverydaySavingInteractiveComponent></EverydaySavingInteractiveComponent>
+                <EmergencyFundsInteractiveComponent></EmergencyFundsInteractiveComponent>
+            </div>
+            <div class="maingameplay-bottom-row-container">
+                <HouseDepositInteractiveComponent></HouseDepositInteractiveComponent>
+                <IncomeStreamsInteractiveComponent></IncomeStreamsInteractiveComponent> 
+                <InvestmentPortfolioInteractiveComponent></InvestmentPortfolioInteractiveComponent>
+            </div>   
+        </div>
         <div className="gameplay-bottombanner-wrapper">
             <div className="monthly-outgoings-wrapper">
                 <p>Total monthly outgoings: <span className="colour-white">£{{ manageMoney.monthlyOutGoingsSum }}</span></p>
@@ -51,6 +63,12 @@ Components:
     import SupermarketInfoDisplay from './InformationPages/SupermarketInfo.vue';
     import TransportMethodDisplay from './InitialGameChoices/TransportOptionsDisplay.vue';
     import PensionInformationDisplay from './InformationPages/PensionIntroduction.vue';
+    import PensionInteractionComponent from './MainGameplayComponents/PensionComponent.vue';
+    import EverydaySavingInteractiveComponent from './MainGameplayComponents/EverydaySavingsComponent.vue';
+    import EmergencyFundsInteractiveComponent from './MainGameplayComponents/EmergencyFundsComponent.vue';
+    import HouseDepositInteractiveComponent from './MainGameplayComponents/HouseDepositComponent.vue';
+    import IncomeStreamsInteractiveComponent from './MainGameplayComponents/IncomeStreamsComponent.vue';
+    import InvestmentPortfolioInteractiveComponent from './MainGameplayComponents/InvestmentPortfolioComponent.vue';
 
 // export component data
 export default {
@@ -63,6 +81,12 @@ export default {
         SupermarketInfoDisplay,
         TransportMethodDisplay,
         PensionInformationDisplay,
+        PensionInteractionComponent,
+        EverydaySavingInteractiveComponent,
+        EmergencyFundsInteractiveComponent,
+        HouseDepositInteractiveComponent,
+        IncomeStreamsInteractiveComponent,
+        InvestmentPortfolioInteractiveComponent,
     }
 }
 </script>
