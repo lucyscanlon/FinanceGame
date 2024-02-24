@@ -7,11 +7,13 @@ import { faMapPin } from '@fortawesome/free-solid-svg-icons'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPersonCane } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMapPin)
 library.add(faArrowRight)
 library.add(faArrowLeft)
 library.add(faCircle)
+library.add(faPersonCane)
 
 
 const app = createApp(App);

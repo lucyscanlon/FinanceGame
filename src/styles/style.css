@@ -1180,18 +1180,19 @@ body {
 
 .maingameplay-interaction-container {
   width: 100%;
-  height: 87%;
+  height: 88%;
 }
 
 .maingameplay-top-row-container {
-  width: 99%;
+  width: 98%;
   height: 50%;
   margin: 0 auto;
   display: flex;
+  margin-top: 5px;
 }
 
 .maingameplay-bottom-row-container {
-  width: 99%;
+  width: 98%;
   height: 50%;
   margin: 0 auto;
   display: flex;
@@ -1202,7 +1203,117 @@ body {
   height: 95%;
   margin-left: 10px;
   margin-right: 10px;
-  background-color: purple;
+  background-color: #1F1E2F;
+  border-radius: 15px;
+}
+
+.pension-interactive-title-container {
+  padding-top: 20px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: unbounded-reg;
+  color: #FF48C8;
+  font-size: 15px;
+}
+
+.pension-interactive-title-container h1 {
+  font-size: 20px;
+}
+
+.fa-person-cane {
+  padding-right: 5px;
+}
+
+.pension-interactive-contributions-container {
+  width: 75%;
+  margin: 0 auto;
+  overflow: auto;
+  margin-top: 20px;
+  font-family: unbounded-reg;
+}
+
+.pension-interactive-contributions-container p {
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+
+.pension-interactive-left {
+  width: 80%;
+  float: left;
+  height: 50px;
+  color: white;
+}
+
+.pension-interactive-right {
+  width: 20%;
+  height: 50px;
+  color: #7DAB3D;
+  float: right;
+  text-align: right;
+}
+
+.pension-interactive-total-container {
+ width: 80%;
+ margin: 0 auto;
+ margin-top: 15px;
+ height: 70px;
+ background-color: #15141D;
+ border-radius: 8px;
+}
+
+.pension-interactive-total-title-container {
+  width: 95%;
+  margin: 0 auto;
+  font-family: unbounded-reg;
+  padding-top: 10px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.pension-interactive-money-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 15px;
+  color: #7DAB3D;
+  font-family: unbounded-reg;
+  font-size: 14px;
+}
+
+.pension-interactive-money-container p {
+  letter-spacing: 1px;
+}
+
+.pension-interactive-button-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.pension-interactive-button-container button {
+  width: 85%;
+  background-color: #1F1E2F;
+  height: 33px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  color: white;
+  font-family: unbounded-reg;
+  border: solid white 1px;
+  transition-duration: 0.3s;
+}
+
+.pension-interactive-button-container button:hover {
+  background-color: #FF48C8;
+  border: solid #FF48C8 1px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.border-pink button {
+  border: solid 1.5px #FF48C8;
 }
 
   
