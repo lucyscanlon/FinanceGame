@@ -1316,6 +1316,139 @@ body {
   border: solid 1.5px #FF48C8;
 }
 
+
+/* everyday savings interactive component */
+
+.everydaysavings-title h1 {
+  font-size: 18px;
+}
+
+.everydaysavings-title {
+  width: 85%;
+}
+
+.everydaysavings-title .fa-piggy-bank {
+  padding-right: 8px;
+}
+
+
+.currentaccount-button-wrapper {
+  padding-top: 20px;
+}
+
+.currentaccount-button {
+  width: 280px;
+  height: 50px;
+  background-color: #FF48C8;
+  border: 2px solid #FF48C8;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 16px;
+  border-radius: 200px;
+  transition-duration: 0.5s;
+}
+
+.currentaccount-button:hover {
+  color: white;
+  border: 2px solid #FF48C8;
+  background-color: #1F1E2F;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.everydayaccount-info-title {
+  padding-top: 40px;
+}
+
+.currentaccount-info-total-container {
+  width: 80%;
+  margin: 0 auto;
+  height: 70px;
+  background-color: #15141D;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.currentaccount-total-text-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: unbounded-reg;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.currentaccount-total-number-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: unbounded-reg;
+  color:#7DAB3D;
+  font-size: 14px;
+  padding-top: 15px;
+}
+
+.currentaccount-addwithdraw-title-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color:#FF48C8;
+  font-family: unbounded-reg;
+  padding-top: 15px;
+  font-size: 13px;
+}
+
+.currentaccount-addwithdraw-box-container {
+  width: 80%;
+  margin: 0 auto;
+  height: 50px;
+  background-color:#15141D;
+  margin-top: 10px;
+}
+
+.currentaccount-addwithdraw-change {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color:#7DAB3D;
+  font-family: unbounded-reg;
+  padding-top: 15px;
+}
+
+.currentaccount-add-withdraw-buttons {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.currentaccount-add-withdraw-buttons button {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 35px;
+  border-radius: 20px;
+  font-family: unbounded-reg;
+  background-color:#1F1E2F;
+  border: solid 1.5px #FF48C8;
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.currentaccount-withdraw-button button {
+  border: solid 1px white;
+}
+
+.currentaccount-add-withdraw-buttons button:hover {
+  background-color:#FF48C8;
+  border: solid #FF48C8 1px;
+  transition-duration: 0.3s;
+
+}
+
+
   
 
 

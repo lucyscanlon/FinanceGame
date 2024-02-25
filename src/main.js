@@ -8,12 +8,14 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 import { faPersonCane } from '@fortawesome/free-solid-svg-icons'
+import { faPiggyBank } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMapPin)
 library.add(faArrowRight)
 library.add(faArrowLeft)
 library.add(faCircle)
 library.add(faPersonCane)
+library.add(faPiggyBank)
 
 
 const app = createApp(App);

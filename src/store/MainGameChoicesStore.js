@@ -3,8 +3,8 @@ import { defineStore } from "pinia"
 export const useMainGameplayNavigationStore = defineStore({
     id: 'MainGameNavigationStore',
     state: () => ({
-        mainGameComponentsUnlocked: 0,
-        currentPage: 0,
+        mainGameComponentsUnlocked: 2,
+        currentPage: 3,
     }),
     actions: {
         navigateToPage(num) {

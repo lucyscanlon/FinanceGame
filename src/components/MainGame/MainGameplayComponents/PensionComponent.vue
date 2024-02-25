@@ -9,7 +9,7 @@
 <template>
     <div class="pension-interactive-component-container maingameplay-flex-container">
         <div class="pension-interactive-title-container">
-            <h1><font-awesome-icon icon="fa-solid fa-person-cane" />Your pension</h1>
+            <h1><font-awesome-icon icon="fa-solid fa-person-cane" />Pension</h1>
         </div>
         <div class="pension-interactive-contributions-container">
             <div class="pension-interactive-left">
