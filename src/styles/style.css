@@ -1241,13 +1241,13 @@ body {
 .pension-interactive-left {
   width: 80%;
   float: left;
-  height: 50px;
+  overflow: auto;
   color: white;
 }
 
 .pension-interactive-right {
   width: 20%;
-  height: 50px;
+  overflow: auto;
   color: #7DAB3D;
   float: right;
   text-align: right;
@@ -1256,7 +1256,7 @@ body {
 .pension-interactive-total-container {
  width: 80%;
  margin: 0 auto;
- margin-top: 15px;
+ margin-top: 5px;
  height: 70px;
  background-color: #15141D;
  border-radius: 8px;
@@ -1290,7 +1290,7 @@ body {
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 14px;
 }
 
 .pension-interactive-button-container button {

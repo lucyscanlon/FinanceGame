@@ -10,6 +10,10 @@ The parent of this component:
 
     import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
     const livingOptions = useLivingOptionsStore()
+
+    import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    const manageMainGameNav = useMainGameplayNavigationStore()
+
 </script>
 <template>
     <div class="rentintro-mainwrapper">
@@ -69,7 +73,8 @@ The parent of this component:
                     <PensionChoiceFlexbox :PensionIdentifier=3 :PensionYCPerc=8 :PensionYCAmount=161.94 :PensionECPerc=4.5 :PensionECAmount=91.09 :PensionTCPerc=12.5 :PensionTCAmount=253.03></PensionChoiceFlexbox>
                 </div>
                 <div class="pension-contribution-button-container">
-                        <button @click="managePension.confirmCurrentlySelectedPensionChoice(), nextSlide()">Confirm Choice</button>
+                        <button v-if="livingOptions.livingOptionsGameStage === 6" @click="managePension.confirmCurrentlySelectedPensionChoice(), nextSlide()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 2" @click="managePension.confirmCurrentlySelectedPensionChoice(), nextSlide()">Confirm Choice</button>
                  </div>
                 </div>
             </div>
@@ -81,7 +86,8 @@ The parent of this component:
                     <PensionInvestmentFlexbox :PensionInvIndentifier=2 PensionInvDesc="Invest pension in:"></PensionInvestmentFlexbox>
                 </div>
                 <div class="pension-contribution-button-container">
-                        <button @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide(), livingOptions.livingOptionsNextStageOfGame()">Confirm Choice</button>
+                        <button v-if="livingOptions.livingOptionsGameStage === 6" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide(), livingOptions.livingOptionsNextStageOfGame()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 2" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), manageMainGameNav.navigateToPage(1)">Confirm Choice</button>
                  </div>
             </div>
             </div>
@@ -115,9 +121,12 @@ The parent of this component:
         PensionChoiceFlexbox,
         PensionInvestmentFlexbox,
       },
+      props: {
+        startingSlide: Number,
+      },
       data() {
         return {
-            currentSlide: 0, 
+            currentSlide: this.startingSlide, 
             removeNextButton: false,
         }
       }, methods: {

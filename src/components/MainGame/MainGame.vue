@@ -26,8 +26,9 @@ Components:
         <SupermarketInfoDisplay v-if="livingOptions.livingOptionsGameStage === 3"></SupermarketInfoDisplay>
         <SupermarketChoiceDisplay v-if="livingOptions.livingOptionsGameStage === 4"></SupermarketChoiceDisplay>
         <TransportMethodDisplay v-if="livingOptions.livingOptionsGameStage === 5"></TransportMethodDisplay>
-        <PensionInformationDisplay v-if="livingOptions.livingOptionsGameStage === 6"></PensionInformationDisplay>
-        <div class="maingameplay-interaction-container">
+        <PensionInformationDisplay v-if="livingOptions.livingOptionsGameStage === 6" :startingSlide=0></PensionInformationDisplay>
+        <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 2" :startingSlide=4></PensionInformationDisplay>
+        <div v-if="manageMainGameNav.currentPage === 1 && livingOptions.livingOptionsGameStage > 6" class="maingameplay-interaction-container">
             <div class="maingameplay-top-row-container">
                 <PensionInteractionComponent></PensionInteractionComponent>
                 <EverydaySavingInteractiveComponent></EverydaySavingInteractiveComponent>
@@ -53,6 +54,10 @@ Components:
 
     import { useMoneyManageStore } from '../../store/MoneyStore.js'
     const manageMoney = useMoneyManageStore()
+
+    import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
+    const manageMainGameNav = useMainGameplayNavigationStore()
+
 </script>
 <script>
     // import components

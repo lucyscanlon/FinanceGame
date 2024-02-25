@@ -1,3 +1,11 @@
+<script setup>
+    import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
+    const managePension = usePensionChoicesStore()
+
+    import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    const manageMainGameNav = useMainGameplayNavigationStore()
+</script>
+
 <template>
     <div class="pension-interactive-component-container maingameplay-flex-container">
         <div class="pension-interactive-title-container">
@@ -7,10 +15,12 @@
             <div class="pension-interactive-left">
                 <p>Your contribution:</p>
                 <p>Employer contribution:</p>
+                <p>FTSE Value:</p>
             </div>
             <div class="pension-interactive-right">
-                <p>5%</p>
-                <p>3%</p>
+                <p>{{managePension.chosenPensionChoice.YContPercentage}}%</p>
+                <p>{{managePension.chosenPensionChoice.EContPercentage}}%</p>
+                <p>{{managePension.chosenPensionChoice.FTSEValue}}</p>
             </div>
         </div>
         <div class="pension-interactive-total-container">
@@ -18,11 +28,11 @@
                 <p>Current Total:</p>
             </div>
             <div class="pension-interactive-money-container">
-                <p>£6000.00</p>
+                <p>£{{managePension.pensionCurrentTotal}}</p>
             </div>
         </div>
         <div class="pension-interactive-button-container">
-            <span class="border-pink"><button>Change contributions</button></span>
+            <span class="border-pink"><button @click="manageMainGameNav.navigateToPage(2)">Change contributions</button></span>
             <button>See predictions</button>
         </div>
     </div>

@@ -1,5 +1,29 @@
 import { defineStore } from "pinia"
 
+export const useMainGameplayNavigationStore = defineStore({
+    id: 'MainGameNavigationStore',
+    state: () => ({
+        mainGameComponentsUnlocked: 0,
+        currentPage: 0,
+    }),
+    actions: {
+        navigateToPage(num) {
+            this.currentPage = num;
+            console.log(this.currentPage);
+        },
+
+        unlockComponent() {
+            this.mainGameComponentsUnlocked = this.mainGameComponentsUnlocked + 1;
+
+        },
+    }
+})
+
+
+
+
+
+
 export const usePensionChoicesStore = defineStore({
     id: 'PensionChoicesStore',
     state: () => ({
@@ -10,6 +34,9 @@ export const usePensionChoicesStore = defineStore({
         SelectedActivePensionInvestmentChoice: 0,
         currentlySelectedPensionInvestmentChoice: 0,
         chosenPensionInvestmentChoice: 0,
+
+        pensionCurrentTotal: 0,
+        FTSEValue: 1.73,
     }), 
     actions: {
         changeSelectedPensionChoice(num) {

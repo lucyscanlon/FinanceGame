@@ -17,6 +17,10 @@ Components:
 
     import { useMoneyManageStore } from '../../../store/MoneyStore.js'
     const manageMoney = useMoneyManageStore()
+
+    import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    const useMainGameNav = useMainGameplayNavigationStore()
+
 </script>
 <template>
     <div class="supermarketchoice-display-wrapper">
@@ -27,7 +31,7 @@ Components:
             <TransportChoicesFlex TransportName="Public Transport" TransportDesc="A well connected public transport service." TransportPerk="Under 25s get 33% off" TransportCost="150" TransportCommuteCost="40" TransportGroceryCost="15" :TransportDiscount=33 :TransportIdentifier=2></TransportChoicesFlex>
         </div>
         <!-- call store methods on click -->
-        <div @click="(manageTransport.currentlySelectedTransportChoice != '') ? livingOptions.livingOptionsNextStageOfGame() : '', manageTransport.confirmChosenTransport(), manageMoney.increaseMonthlyOutGoings(manageTransport.chosenTransportChoice.TTotal)" class="supermarketchoice-button-wrap transport-choice-button">
+        <div @click="(manageTransport.currentlySelectedTransportChoice != '') ? livingOptions.livingOptionsNextStageOfGame() : '', manageTransport.confirmChosenTransport(), manageMoney.increaseMonthlyOutGoings(manageTransport.chosenTransportChoice.TTotal), useMainGameNav.navigateToPage(1), useMainGameNav.unlockComponent()" class="supermarketchoice-button-wrap transport-choice-button">
                     <button>Choose this method</button>
          </div>
     </div> 
