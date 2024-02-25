@@ -1321,6 +1321,7 @@ body {
 
 .everydaysavings-title h1 {
   font-size: 18px;
+  padding-top: 8px;
 }
 
 .everydaysavings-title {
@@ -1408,12 +1409,40 @@ body {
 }
 
 .currentaccount-addwithdraw-change {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   color:#7DAB3D;
   font-family: unbounded-reg;
   padding-top: 15px;
+}
+
+.currentaccount-addwithdraw-change input {
+  height: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: #15141D;
+  border: none;
+  color:#7DAB3D;
+  font-family: unbounded-reg;
+  height: 20px;
+}
+
+input:focus {
+  outline-width: 0;
+  border: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .currentaccount-add-withdraw-buttons {

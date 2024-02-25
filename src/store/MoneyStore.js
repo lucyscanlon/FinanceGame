@@ -8,6 +8,7 @@ export const useMoneyManageStore = defineStore({
         monthlySalaryAfterTax: 1711.84,
         monthlyOutGoingsSum: 0,
         increaseordecreaseofPocketMoney: 0,
+        currentAccountCurrentTotal: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -32,11 +33,26 @@ export const useMoneyManageStore = defineStore({
 
         resetPocketMoneyAnimation() {
             this.increaseordecreaseofPocketMoney = 0;
-        }
+        },
 
+        addToCurrentAccountTotal(num) {
+            if(this.moneyInPocket > num) {
+                this.currentAccountCurrentTotal = this.currentAccountCurrentTotal + num;
+                this.moneyInPocket = this.moneyInPocket - num;
+            } else {
+                return;
+            }
+        },
 
+        withdrawFromCurrentAccountTotal(num) {
+            if(this.currentAccountCurrentTotal > num) {
+                this.currentAccountCurrentTotal = this.currentAccountCurrentTotal - num;
+                this.moneyInPocket = this.moneyInPocket + num;
+            } else {
+                return;
+            }
+        },
     }
-
 })
 
 

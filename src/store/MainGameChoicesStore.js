@@ -19,11 +19,6 @@ export const useMainGameplayNavigationStore = defineStore({
     }
 })
 
-
-
-
-
-
 export const usePensionChoicesStore = defineStore({
     id: 'PensionChoicesStore',
     state: () => ({
