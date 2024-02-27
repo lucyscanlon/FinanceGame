@@ -30,7 +30,7 @@
 </template>
 <script setup>
 
-    import { useMoneyManageStore } from '../../../store/MoneyStore.js'
+    import { useMoneyManageStore } from '../../../store/MoneyStore'
     const manageMoney = useMoneyManageStore()
 
 </script>

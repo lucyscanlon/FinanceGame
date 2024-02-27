@@ -29,6 +29,7 @@ Components:
         <PensionInformationDisplay v-if="livingOptions.livingOptionsGameStage === 6" :startingSlide=0></PensionInformationDisplay>
         <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 2" :startingSlide=4></PensionInformationDisplay>
         <currentAccountIntroduction v-if="manageMainGameNav.currentPage === 3"></currentAccountIntroduction>
+        <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 4"></EmergencyFundIntroduction>
         <div v-if="manageMainGameNav.currentPage === 1 && livingOptions.livingOptionsGameStage > 6" class="maingameplay-interaction-container">
             <div class="maingameplay-top-row-container">
                 <PensionInteractionComponent></PensionInteractionComponent>
@@ -76,6 +77,7 @@ Components:
     import IncomeStreamsInteractiveComponent from './MainGameplayComponents/IncomeStreamsComponent.vue';
     import InvestmentPortfolioInteractiveComponent from './MainGameplayComponents/InvestmentPortfolioComponent.vue';
     import currentAccountIntroduction from './InformationPages/CurrentAccountIntroduction.vue';
+    import EmergencyFundIntroduction from './InformationPages/EmergencyFundIntroduction.vue';
 
 // export component data
 export default {
@@ -95,6 +97,7 @@ export default {
         IncomeStreamsInteractiveComponent,
         InvestmentPortfolioInteractiveComponent,
         currentAccountIntroduction,
+        EmergencyFundIntroduction,
     }
 }
 </script>
