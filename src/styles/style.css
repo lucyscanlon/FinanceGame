@@ -1478,6 +1478,18 @@ input[type=number] {
 }
 
 
+/* emergency fund */
+
+.emergency-fund-list {
+  min-height: 350px;
+}
+
+.emergencyfund-list-intro {
+  padding-top: 20px;
+  min-height: 350px;
+}
+
+
   
 
 
