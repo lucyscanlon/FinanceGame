@@ -1486,7 +1486,110 @@ input[type=number] {
 
 .emergencyfund-list-intro {
   padding-top: 20px;
-  min-height: 350px;
+  min-height: 376px;
+}
+
+.emergencyfund-box-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: auto;
+  background-color: #1F1E2F;
+  width: 30%;
+  border-radius: 10px;
+}
+
+.emergencyfund-flex-padding {
+  min-height: 406px;
+}
+
+.emergencyfund-flexbox-container {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+.ef-choice-optiontitle-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+.ef-choice-title-container {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  color:#FF48C8;
+  font-size: 16px;
+  line-height: 1.2em;
+  padding-top: 15px;
+}
+
+.ef-choice-deposit-text-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.2em;
+  padding-top: 15px;
+}
+
+.ef-choice-deposit-value {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: #7DAB3D;
+  padding-top: 10px;
+}
+
+.ef-choice-access-title-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  padding-top: 15px;
+}
+
+.ef-choice-access-value p {
+  line-height: 1.2em;
+  padding-top: 10px;
+}
+
+.ef-choice-access-value {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: #7DAB3D;
+  padding-bottom: 20px;
+}
+
+.ef-interest-title-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  padding-top: 15px;
+}
+
+.ef-interest-value {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: #7DAB3D;
+}
+
+.emergencyfund-description-wrapper {
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.9em;
 }
 
 

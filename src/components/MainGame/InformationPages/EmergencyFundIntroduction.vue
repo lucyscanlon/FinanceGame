@@ -9,7 +9,7 @@ The parent of this component:
         <div class="rentintro-title-wrapper everydayaccount-info-title">
             <h1>Creating an emergency fund</h1>
         </div>
-        <div class="rentintro-description-wrapper">
+        <div class="emergencyfund-description-wrapper">
             <div :class="currentSlide !== 0 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>What is an emergency fund and why is it important?</p>
                 <div class="rentintro-list emergencyfund-list-intro pensionslideactive">
@@ -34,7 +34,12 @@ The parent of this component:
             </div>
             <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>Choose an account to hold your emergency fund</p>
-                <div class="rentintro-list emergencyfund-list-intro pensionslideactive">
+                <div class="emergencyfund-flex-padding">
+                    <div class="emergencyfund-flexbox-container">
+                        <EmergencyFundChoicesFlexbox :EFIdentifier=1 EFName="High Interest Savings Account" :EFInterest=4.4 EFDeposit="250" EFWithdrawalTime="Instant" ></EmergencyFundChoicesFlexbox>
+                        <EmergencyFundChoicesFlexbox :EFIdentifier=2 EFName="1 Year Fixed Rate Bond Account" :EFInterest=7 EFDeposit="1000" EFWithdrawalTime="Money is held for 1 year" ></EmergencyFundChoicesFlexbox>
+                        <EmergencyFundChoicesFlexbox :EFIdentifier=3 EFName="Regular Savings Account" :EFInterest=2.8 EFDeposit="No deposit" EFWithdrawalTime="Instant"></EmergencyFundChoicesFlexbox>
+                    </div>
                 </div>
             </div>
             <div class="previous-next-container">
@@ -58,14 +63,19 @@ The parent of this component:
     //import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
     //const manageMainGameNav = useMainGameplayNavigationStore()
 
+    import EmergencyFundChoicesFlexbox from '../MainGameChoices/EmergencyFundFlexbox';
+
 </script>
 <script>
     // export component data
     export default {
       name: 'EmergencyFundIntroduction',
+      components: {
+        EmergencyFundChoicesFlexbox,
+      },
       data() {
         return {
-            currentSlide: 0,
+            currentSlide: 2,
         }
       }, methods: {
         nextSlide() {
