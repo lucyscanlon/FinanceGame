@@ -13,7 +13,7 @@ Components:
     <div class="maingame-wrapper">
         <div class="gameplay-topbanner-wrapper">
             <div class="current-date-wrapper">
-                <p>Current Date: <span class="colour-white">01/01/2023</span></p>
+                <p>Days until payday:<span class="colour-white">30</span></p>
             </div>
             <div class="payday-date-wrapper">
                 <p>Payday: <span class="colour-white">The last day of the month</span></p>

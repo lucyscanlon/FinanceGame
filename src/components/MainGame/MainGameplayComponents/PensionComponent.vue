@@ -1,8 +1,8 @@
 <script setup>
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
-    const managePension = usePensionChoicesStore()
-
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    
+    const managePension = usePensionChoicesStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
 </script>
 
