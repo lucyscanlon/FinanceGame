@@ -1669,8 +1669,56 @@ input[type=number] {
   color: #F02E2E;
 }
 
-.colour-orange {
-  color: #F08D2E;
+.emergencyfund-add-withdraw-buttons {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.emergencyfund-add-withdraw-buttons button {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 35px;
+  border-radius: 20px;
+  font-family: unbounded-reg;
+  background-color:#1F1E2F;
+  border: solid 1.5px #FF48C8;
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.emergencyfund-withdraw-button button {
+  border: solid 1px white;
+}
+
+.emergencyfund-add-withdraw-buttons button:hover {
+  background-color:#FF48C8;
+  border: solid #FF48C8 1px;
+  transition-duration: 0.3s;
+
+}
+
+.emergencyfund-addwithdraw-box-container {
+  width: 80%;
+  margin: 0 auto;
+  height: 40px;
+  background-color:#15141D;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.emergencyfund-addwithdraw-change input {
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  background-color: #15141D;
+  border: none;
+  color:#7DAB3D;
+  font-family: unbounded-reg;
+  margin-top: 5px;
 }
 
   

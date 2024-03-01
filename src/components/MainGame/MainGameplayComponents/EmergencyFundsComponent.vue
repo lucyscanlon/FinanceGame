@@ -2,6 +2,7 @@
     <div class="maingameplay-flex-container">
         <div class="pension-interactive-title-container emergencyfund-interactive-title">
             <h1><font-awesome-icon icon="fa-solid fa-triangle-exclamation" />Emergency Fund</h1>
+            <p>{{ manageEmergencyFund.chosenEmergencyFundChoice.EmergFName }}</p>
             <p>Interest: {{manageEmergencyFund.chosenEmergencyFundChoice.EmergFInterest}}% <span v-bind:class="(manageEmergencyFund.emergencyFundGoal > manageMoney.emergencyFundCurrentTotal) ? 'colour-red' : 'colour-green'" class="emergencyfund-goal-container">Goal: £{{ manageEmergencyFund.emergencyFundGoal}}</span></p>
         </div>
         <div class="emergencyfund-interactive-info-total-container">
@@ -15,16 +16,16 @@
         <div class="currentaccount-addwithdraw-title-container">
             <p>Change amount:</p>
         </div>
-        <div class="currentaccount-addwithdraw-box-container">
-            <div class="currentaccount-addwithdraw-change">
+        <div class="emergencyfund-addwithdraw-box-container">
+            <div class="emergencyfund-addwithdraw-change">
                 <form>
                     <input type="number" placeholder="__" v-model="amountToChange">
                 </form>
             </div>
         </div>
-        <div class="currentaccount-add-withdraw-buttons">
+        <div class="emergencyfund-add-withdraw-buttons">
             <button @click="manageMoney.addToEmergencyFundTotal(amountToChange), rerenderComponent()">Add</button>
-            <span class="currentaccount-withdraw-button"><button @click="manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
+            <span class="emergencyfund-withdraw-button"><button @click="manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
         </div>
 
     </div>

@@ -41,7 +41,7 @@ The parent of this component:
                         <EmergencyFundChoicesFlexbox :EFIdentifier=3 EFName="Regular Savings Account" :EFInterest=2.8 EFDeposit="No deposit" EFWithdrawalTime="Instant"></EmergencyFundChoicesFlexbox>
                     </div>
                     <div class="emergencyfundchoice-button-container">
-                        <button @click="manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(), useMainGameplayNav.navigateToPage(1)">Confirm Choice</button>
+                        <button @click="manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(), useMainGameplayNav.navigateToPage(1), manageMoney.addToEmergencyFundTotal(parseInt(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit))">Confirm Choice</button>
                  </div>
                 </div>
             </div>
@@ -65,10 +65,12 @@ The parent of this component:
     // import stores
     import { useEmergencyFundChoicesStore } from '../../../store/MainGameChoicesStore.js'
     import {useMainGameplayNavigationStore} from '../../../store/MainGameChoicesStore.js'
+    import { useMoneyManageStore } from '../../../store/MoneyStore'
     import EmergencyFundChoicesFlexbox from '../MainGameChoices/EmergencyFundFlexbox';
 
     const manageEmergencyFund = useEmergencyFundChoicesStore()
     const useMainGameplayNav = useMainGameplayNavigationStore()
+    const manageMoney = useMoneyManageStore()
 
 </script>
 <script>

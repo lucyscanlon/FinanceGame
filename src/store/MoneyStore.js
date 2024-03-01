@@ -71,7 +71,7 @@ export const useMoneyManageStore = defineStore({
             } else {
                 return;
             }
-        }
+        },
     }
 })
 
