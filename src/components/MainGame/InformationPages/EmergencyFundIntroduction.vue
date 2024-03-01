@@ -14,7 +14,7 @@ The parent of this component:
                 <p>What is an emergency fund and why is it important?</p>
                 <div class="rentintro-list emergencyfund-list-intro pensionslideactive">
                     <ul>
-                        <li>An emergency fund is an amount of money that is set aside to deal with <span class="colour-green">unexpected</span> or <span class="colour-green">unplanned financial circumstances</span>.</li>
+                        <li>An emergency fund is an amount of money that is set aside to deal with <span class="colour-green">unexpected or unplanned financial circumstances</span>.</li>
                         <li>These circumstances can range from <span class="colour-green">unexpected bills</span>, <span class="colour-green">home or car repairs</span>, or <span class="colour-green">replacement of essential electronics</span>.</li>
                         <li>Your emergency fund can be used for large or small payments which are not normally part of your monthly outgoings.</li>
                         <li>Emergency funds can protect you from building up <span class="colour-green">debt</span>.</li>

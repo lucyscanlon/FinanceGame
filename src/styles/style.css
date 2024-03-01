@@ -1721,6 +1721,17 @@ input[type=number] {
   margin-top: 5px;
 }
 
+.emergencyfund-withdraw-button-inactive button {
+  border: solid 1.5px #3F3F5E;
+  color: #3F3F5E;
+}
+
+.emergencyfund-withdraw-button-inactive button:hover {
+  border: solid 1.5px #3F3F5E;
+  color: #3F3F5E;
+  background-color:#1F1E2F;
+}
+
   
 
 

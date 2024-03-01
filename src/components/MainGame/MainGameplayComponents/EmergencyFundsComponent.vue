@@ -25,7 +25,8 @@
         </div>
         <div class="emergencyfund-add-withdraw-buttons">
             <button @click="manageMoney.addToEmergencyFundTotal(amountToChange), rerenderComponent()">Add</button>
-            <span class="emergencyfund-withdraw-button"><button @click="manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
+            <span v-if="manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit !== '1000'" class="emergencyfund-withdraw-button"><button @click="manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
+            <span v-if="manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit === '1000'" class="emergencyfund-withdraw-button-inactive"><button>Withdraw</button></span>
         </div>
 
     </div>
