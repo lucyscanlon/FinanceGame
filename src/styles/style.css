@@ -1358,7 +1358,7 @@ body {
 }
 
 .everydayaccount-info-title {
-  padding-top: 40px;
+  padding-top: 12px;
 }
 
 .currentaccount-info-total-container {
@@ -1486,7 +1486,11 @@ input[type=number] {
 
 .emergencyfund-list-intro {
   padding-top: 20px;
-  min-height: 376px;
+  min-height: 440px;
+}
+
+.emergencyfund-list-intro ul {
+  padding-top: 20px;
 }
 
 .emergencyfund-box-container {
@@ -1499,7 +1503,7 @@ input[type=number] {
 }
 
 .emergencyfund-flex-padding {
-  min-height: 406px;
+  min-height: 470px;
 }
 
 .emergencyfund-flexbox-container {
@@ -1592,6 +1596,82 @@ input[type=number] {
   line-height: 1.9em;
 }
 
+.emergencyfundchoice-button-container {
+  width: 200px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.emergencyfundchoice-button-container button {
+  width: 170px;
+  border-radius: 20px;
+  background-color: #FF48C8;
+  height: 40px;
+  border: solid #FF48C8 1px;
+  color: white;
+  font-family: unbounded-reg;
+  transition-duration: 0.5s;
+}
+
+.emergencyfundchoice-button-container button:hover {
+  transition-duration: 0.5s;
+  color: white;
+  border: white 1px solid;
+  background-color: #1F1E2F;
+  cursor: pointer;
+}
+
+.emergencyfund-intro-title-wrapper h1 {
+  font-family: unbounded-reg;
+  color: #FF48C8;
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+
+/* emergency fund interactive component*/
+
+.fa-triangle-exclamation {
+  padding-right: 7px;
+}
+
+.emergencyfund-interactive-title p {
+  font-size: 13px;
+  color: white;
+  padding-top: 9px;
+}
+
+.emergencyfund-interactive-info-total-container {
+  width: 80%;
+  margin: 0 auto;
+  height: 70px;
+  background-color: #15141D;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.emergencyfund-interactive-title h1 {
+  font-size: 18px;
+  padding-top: 0px;
+}
+
+.emergencyfund-interactive-title {
+  width: 85%;
+}
+
+.emergencyfund-goal-container {
+  padding-left: 10px;
+}
+
+.colour-red {
+  color: #F02E2E;
+}
+
+.colour-orange {
+  color: #F08D2E;
+}
 
   
 

@@ -52,12 +52,11 @@ Components:
 <script setup>
     // import stores
     import { useLivingOptionsStore } from '../../store/InitialGameChoicesStore'
-    const livingOptions = useLivingOptionsStore()
-
     import { useMoneyManageStore } from '../../store/MoneyStore.js'
-    const manageMoney = useMoneyManageStore()
-
     import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
+
+    const livingOptions = useLivingOptionsStore()
+    const manageMoney = useMoneyManageStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
 
 </script>

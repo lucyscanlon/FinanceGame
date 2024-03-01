@@ -3,8 +3,8 @@ import { defineStore } from "pinia"
 export const useMainGameplayNavigationStore = defineStore({
     id: 'MainGameNavigationStore',
     state: () => ({
-        mainGameComponentsUnlocked: 3,
-        currentPage: 4,
+        mainGameComponentsUnlocked: 0,
+        currentPage: 1,
     }),
     actions: {
         navigateToPage(num) {
@@ -73,4 +73,36 @@ export const usePensionChoicesStore = defineStore({
         }
     }
     
+})
+
+export const useEmergencyFundChoicesStore = defineStore({
+    id: 'EmergencyFundChoicesStore',
+    state: () => ({
+        selectedEmergencyFundChoice: 0,
+        currentlySelectedEmergencyFundChoice: [],
+        chosenEmergencyFundChoice: [],
+        emergencyFundGoal: 5000,
+    }),
+    actions: {
+        changeSelectedEmergencyFundChoice(num) {
+            this.selectedEmergencyFundChoice = num;
+        },
+
+        updateCurrentlySelectedEmergencyFundChoice(EFName, EFInterest, EFDeposit, EFAccess) {
+            this.currentlySelectedEmergencyFundChoice = {
+                EmergFName: EFName,
+                EmergFInterest: EFInterest,
+                EmergFDeposit: EFDeposit,
+                EmergFAccess: EFAccess,
+            }
+
+            console.log(this.currentlySelectedEmergencyFundChoice);
+        },
+
+        confirmCurrentlySelectedEmergencyFundChoice() {
+            this.chosenEmergencyFundChoice = this.currentlySelectedEmergencyFundChoice;
+
+            console.log(this.chosenEmergencyFundChoice);
+        }
+    }
 })

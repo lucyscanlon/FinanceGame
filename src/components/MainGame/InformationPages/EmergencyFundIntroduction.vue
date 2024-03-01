@@ -6,7 +6,7 @@ The parent of this component:
 -->
 <template>
     <div class="rentintro-mainwrapper">
-        <div class="rentintro-title-wrapper everydayaccount-info-title">
+        <div class="emergencyfund-intro-title-wrapper everydayaccount-info-title">
             <h1>Creating an emergency fund</h1>
         </div>
         <div class="emergencyfund-description-wrapper">
@@ -26,9 +26,9 @@ The parent of this component:
                 <div class="rentintro-list emergencyfund-list-intro pensionslideactive">
                     <ul>
                         <li>Keep the money in a place that is <span class="colour-green">easily accessible</span> - you never know when you will need it!</li>
-                        <li>You can choose to store your fund in a <span class="colour-green">high interest savings account</span>, meaning your money can grow over time from interest. Some accounts may need an <span class="colour-green">initial deposit</span> to set up, always check the requirements.</li>
+                        <li>You can choose to store your fund in a <span class="colour-green">high interest savings account</span>, meaning your money can grow even more over time from interest. Some accounts may need an <span class="colour-green">initial deposit</span> to set up, always check the requirements.</li>
                         <li>Don't invest the money in stocks and shares - This way the value of your emergency fund will not be subject to market fluctuations.</li>
-                        <li>Only use the fund for <span class="colour-green">true emergnecies</span> and remember to replenish your emergency fund as soon as possible after using it.</li>
+                        <li>Only use the fund for <span class="colour-green">true emergencies</span> and remember to replenish your emergency fund as soon as possible after using it.</li>
                     </ul>
                 </div>
             </div>
@@ -40,18 +40,21 @@ The parent of this component:
                         <EmergencyFundChoicesFlexbox :EFIdentifier=2 EFName="1 Year Fixed Rate Bond Account" :EFInterest=7 EFDeposit="1000" EFWithdrawalTime="Money is held for 1 year" ></EmergencyFundChoicesFlexbox>
                         <EmergencyFundChoicesFlexbox :EFIdentifier=3 EFName="Regular Savings Account" :EFInterest=2.8 EFDeposit="No deposit" EFWithdrawalTime="Instant"></EmergencyFundChoicesFlexbox>
                     </div>
+                    <div class="emergencyfundchoice-button-container">
+                        <button @click="manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(), useMainGameplayNav.navigateToPage(1)">Confirm Choice</button>
+                 </div>
                 </div>
             </div>
             <div class="previous-next-container">
                 <div class="previous-container">
                     <p @click="previousSlide()"><font-awesome-icon icon="fa-solid fa-arrow-left" /> Previous</p>
                 </div>
-                <div :class="removeNextButton && 'displaynone'" class="currentslide-circles-container">
+                <div v-if="currentSlide < 2" :class="removeNextButton && 'displaynone'" class="currentslide-circles-container">
                     <span :class="currentSlide === 0 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
                     <span :class="currentSlide === 1 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
                     <span :class="currentSlide === 2 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
                 </div>
-                <div :class="removeNextButton && 'displaynone'" class="next-container">
+                <div v-if="currentSlide < 2" :class="removeNextButton && 'displaynone'" class="next-container">
                     <p @click="nextSlide()">Next <font-awesome-icon icon="fa-solid fa-arrow-right" /></p>
                 </div>
             </div>
@@ -60,10 +63,12 @@ The parent of this component:
 </template>
 <script setup>
     // import stores
-    //import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
-    //const manageMainGameNav = useMainGameplayNavigationStore()
-
+    import { useEmergencyFundChoicesStore } from '../../../store/MainGameChoicesStore.js'
+    import {useMainGameplayNavigationStore} from '../../../store/MainGameChoicesStore.js'
     import EmergencyFundChoicesFlexbox from '../MainGameChoices/EmergencyFundFlexbox';
+
+    const manageEmergencyFund = useEmergencyFundChoicesStore()
+    const useMainGameplayNav = useMainGameplayNavigationStore()
 
 </script>
 <script>
@@ -75,7 +80,7 @@ The parent of this component:
       },
       data() {
         return {
-            currentSlide: 2,
+            currentSlide: 0,
         }
       }, methods: {
         nextSlide() {

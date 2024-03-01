@@ -9,6 +9,7 @@ export const useMoneyManageStore = defineStore({
         monthlyOutGoingsSum: 0,
         increaseordecreaseofPocketMoney: 0,
         currentAccountCurrentTotal: 0,
+        emergencyFundCurrentTotal: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -52,6 +53,25 @@ export const useMoneyManageStore = defineStore({
                 return;
             }
         },
+
+        addToEmergencyFundTotal(num) {
+            if(this.moneyInPocket > num) {
+                this.emergencyFundCurrentTotal = this.emergencyFundCurrentTotal + num;
+                this.moneyInPocket = this.moneyInPocket - num;
+            } else {
+                return;
+            }
+            
+        },
+
+        withdrawFromEmergencyFundTotal(num) {
+            if(this.emergencyFundCurrentTotal > num) {
+                this.emergencyFundCurrentTotal = this.emergencyFundCurrentTotal - num;
+                this.moneyInPocket = this.moneyInPocket + num;
+            } else {
+                return;
+            }
+        }
     }
 })
 

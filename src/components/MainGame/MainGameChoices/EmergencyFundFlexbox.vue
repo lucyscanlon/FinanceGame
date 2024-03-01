@@ -5,11 +5,12 @@ The parent of this component:
 
 -->
 <script setup>
-
+    import { useEmergencyFundChoicesStore } from '../../../store/MainGameChoicesStore.js'
+    const manageEmergencyFund = useEmergencyFundChoicesStore()
 
 </script>
 <template>
-    <div class="emergencyfund-box-container">
+    <div v-bind:class="(manageEmergencyFund.selectedEmergencyFundChoice === EFIdentifier) ? 'pension-active' : ''" @click="manageEmergencyFund.changeSelectedEmergencyFundChoice(EFIdentifier), manageEmergencyFund.updateCurrentlySelectedEmergencyFundChoice(EFName, EFInterest, EFDeposit, EFWithdrawalTime)" class="emergencyfund-box-container">
         <div class="ef-choice-optiontitle-container">
             <h2>Option {{ EFIdentifier }}</h2>
         </div>
