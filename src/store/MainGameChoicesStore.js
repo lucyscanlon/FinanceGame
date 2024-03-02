@@ -72,9 +72,9 @@ export const usePensionChoicesStore = defineStore({
             console.log("Chosen pension choice: " + this.chosenPensionInvestmentChoice);
         },
 
-        addYourContributionToPension(salaryBeforeTax, yourContributionPerc) {
+        addContributionToPension(salaryBeforeTax, contributionPerc) {
 
-            var amountToAdd = Number(salaryBeforeTax) * Number(yourContributionPerc / 100)
+            var amountToAdd = Number(salaryBeforeTax) * Number(contributionPerc / 100)
             this.pensionCurrentTotal = this.pensionCurrentTotal + amountToAdd;
 
         }
