@@ -89,6 +89,7 @@ export const useGameTimerStore = defineStore({
     state: () => ({
         timer: null,
         countdown: 30,
+        monthsPassed: 0,
     }),
     actions: {
         startCountdown() {
@@ -108,9 +109,10 @@ export const useGameTimerStore = defineStore({
                     useMoneyManageStore().increasePocketMoney((useMoneyManageStore().monthlySalaryAfterTax) - (useMoneyManageStore().monthlySalaryBeforeTax) * (usePensionChoicesStore().chosenPensionChoice.YContPercentage / 100))
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.YContPercentage)
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.EContPercentage)
+                    this.monthsPassed = this.monthsPassed + 1;
                     this.resetCountdown()
                 }
-            }, 500)
+            }, 1500)
         }, 
 
         resetCountdown() {
