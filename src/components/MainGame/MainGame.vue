@@ -16,7 +16,7 @@ Components:
                 <p>Days until payday: <span class="colour-white">{{manageGameTimer.countdown}}</span></p>
             </div>
             <div class="payday-date-wrapper">
-                <p>Payday: <span class="colour-white">The last day of the month</span></p>
+                <p>Current Month and Year: <span class="colour-white">{{manageGameTimer.currentMonth}} {{ manageGameTimer.currentYear }}</span></p>
             </div>
         </div>
         <!-- display component dependant on the stage of game - located in the initialgamechoicesstore-->

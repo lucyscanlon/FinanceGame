@@ -9,9 +9,9 @@ Components that will be inside this container include:
 <script setup>
   // import stores 
   import { useLivingOptionsStore } from '../../store/InitialGameChoicesStore'
-  const livingOptions = useLivingOptionsStore()
-
   import { useMoneyManageStore } from '../../store/MoneyStore'
+  
+  const livingOptions = useLivingOptionsStore()
   const manageMoney = useMoneyManageStore()
 </script>
 <template>

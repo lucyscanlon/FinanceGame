@@ -89,7 +89,10 @@ export const useGameTimerStore = defineStore({
     state: () => ({
         timer: null,
         countdown: 30,
+        monthCounter: 0,
         monthsPassed: 0,
+        currentMonth: 'January',
+        currentYear: 2023,
     }),
     actions: {
         startCountdown() {
@@ -111,8 +114,9 @@ export const useGameTimerStore = defineStore({
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.EContPercentage)
                     this.monthsPassed = this.monthsPassed + 1;
                     this.resetCountdown()
+                    this.increaseMonth()
                 }
-            }, 1500)
+            }, 20)
         }, 
 
         resetCountdown() {
@@ -120,6 +124,56 @@ export const useGameTimerStore = defineStore({
             clearInterval(this.timer)
             this.timer = null
             this.startCountdown()
+        },
+
+        increaseMonth() {
+
+            if (this.monthCounter === 0 ) {
+                this.currentMonth = 'January'
+                if(this.monthsPassed > 1) {
+                    this.increaseYear()
+                }
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 1 ) {
+                this.currentMonth = 'February'
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 2) {
+                this.currentMonth = 'March'
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 3 ) {
+                this.currentMonth = 'April'
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 4 ) {
+                this.currentMonth = 'May'
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 5 ) {
+                this.currentMonth = 'June'
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 6 ) {
+                this.currentMonth = 'July'
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 7 ) {
+                this.currentMonth = 'August'
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 8 ) {
+                this.currentMonth = 'September'
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 9) {
+                this.currentMonth = 'October'
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 10 ) {
+                this.currentMonth = 'November'
+                this.monthCounter = this.monthCounter + 1
+            } else if (this.monthCounter === 11 ) {
+                this.currentMonth = 'December'
+                this.monthCounter = 0
+                
+            }
+
+        },
+
+        increaseYear() {
+            this.currentYear = this.currentYear + 1
         }
     }
 })
