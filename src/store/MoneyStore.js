@@ -1,4 +1,6 @@
 import { defineStore } from "pinia"
+import {useMainGameplayNavigationStore } from './MainGameChoicesStore'
+import { usePensionChoicesStore } from './MainGameChoicesStore'
 
 export const useMoneyManageStore = defineStore({
     id: 'moveMoney',
@@ -10,6 +12,8 @@ export const useMoneyManageStore = defineStore({
         increaseordecreaseofPocketMoney: 0,
         currentAccountCurrentTotal: 0,
         emergencyFundCurrentTotal: 0,
+        daysUntilPayday: 30,
+        decreaseTime: true,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -72,6 +76,48 @@ export const useMoneyManageStore = defineStore({
                 return;
             }
         },
+
+        decreaseDaysUntilPayday() {
+            this.daysUntilPayday = this.daysUntilPayday - 1;
+            
+        },
+    }
+})
+
+export const useGameTimerStore = defineStore({
+    id: 'GameTimerStore',
+    state: () => ({
+        timer: null,
+        countdown: 30,
+    }),
+    actions: {
+        startCountdown() {
+            if (this.timer) {
+                clearInterval(this.timer)
+            }
+
+            this.timer = setInterval (() => {
+                if(this.countdown > 0) {
+                    if(useMainGameplayNavigationStore().currentPage === 1) {
+                        this.countdown = this.countdown - 1;
+
+                        // add pension automatically with each payday
+                        // pension total = pension total + (salary before tax * player tax contribution)
+                    }
+                } else {
+                    useMoneyManageStore().increasePocketMoney((useMoneyManageStore().monthlySalaryAfterTax) - (useMoneyManageStore().monthlySalaryBeforeTax) * (usePensionChoicesStore().chosenPensionChoice.YContPercentage / 100))
+                    usePensionChoicesStore().addYourContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.YContPercentage)
+                    this.resetCountdown()
+                }
+            }, 500)
+        }, 
+
+        resetCountdown() {
+            this.countdown = 30
+            clearInterval(this.timer)
+            this.timer = null
+            this.startCountdown()
+        }
     }
 })
 

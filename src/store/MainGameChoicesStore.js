@@ -4,7 +4,7 @@ export const useMainGameplayNavigationStore = defineStore({
     id: 'MainGameNavigationStore',
     state: () => ({
         mainGameComponentsUnlocked: 0,
-        currentPage: 4,
+        currentPage: 2,
     }),
     actions: {
         navigateToPage(num) {
@@ -70,6 +70,13 @@ export const usePensionChoicesStore = defineStore({
             this.chosenPensionInvestmentChoice = this.currentlySelectedPensionInvestmentChoice;
 
             console.log("Chosen pension choice: " + this.chosenPensionInvestmentChoice);
+        },
+
+        addYourContributionToPension(salaryBeforeTax, yourContributionPerc) {
+
+            var amountToAdd = Number(salaryBeforeTax) * Number(yourContributionPerc / 100)
+            this.pensionCurrentTotal = this.pensionCurrentTotal + amountToAdd;
+
         }
     }
     

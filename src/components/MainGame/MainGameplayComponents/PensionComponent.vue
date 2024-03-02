@@ -1,7 +1,7 @@
 <script setup>
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
-    
+
     const managePension = usePensionChoicesStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
 </script>
@@ -28,7 +28,7 @@
                 <p>Current Total:</p>
             </div>
             <div class="pension-interactive-money-container">
-                <p>£{{managePension.pensionCurrentTotal}}</p>
+                <p>£{{Number(managePension.pensionCurrentTotal).toFixed(2)}}</p>
             </div>
         </div>
         <div class="pension-interactive-button-container">

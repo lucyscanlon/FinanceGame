@@ -13,7 +13,7 @@ Components:
     <div class="maingame-wrapper">
         <div class="gameplay-topbanner-wrapper">
             <div class="current-date-wrapper">
-                <p>Days until payday:<span class="colour-white">30</span></p>
+                <p>Days until payday: <span class="colour-white">{{manageGameTimer.countdown}}</span></p>
             </div>
             <div class="payday-date-wrapper">
                 <p>Payday: <span class="colour-white">The last day of the month</span></p>
@@ -54,10 +54,12 @@ Components:
     import { useLivingOptionsStore } from '../../store/InitialGameChoicesStore'
     import { useMoneyManageStore } from '../../store/MoneyStore.js'
     import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
+    import {useGameTimerStore} from '../../store/MoneyStore.js'
 
     const livingOptions = useLivingOptionsStore()
     const manageMoney = useMoneyManageStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageGameTimer = useGameTimerStore()
 
 </script>
 <script>
@@ -97,6 +99,7 @@ export default {
         InvestmentPortfolioInteractiveComponent,
         currentAccountIntroduction,
         EmergencyFundIntroduction,
-    }
+    },
+   
 }
 </script>

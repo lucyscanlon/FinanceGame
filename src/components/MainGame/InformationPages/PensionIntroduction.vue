@@ -6,13 +6,14 @@ The parent of this component:
 -->
 <script setup>
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
-    const managePension = usePensionChoicesStore()
-
     import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
-    const livingOptions = useLivingOptionsStore()
-
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import {useGameTimerStore} from '../../../store/MoneyStore.js'
+
+    const managePension = usePensionChoicesStore()
+    const livingOptions = useLivingOptionsStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageGameTimer = useGameTimerStore()
 
 </script>
 <template>
@@ -86,8 +87,8 @@ The parent of this component:
                     <PensionInvestmentFlexbox :PensionInvIndentifier=2 PensionInvDesc="Invest pension in:"></PensionInvestmentFlexbox>
                 </div>
                 <div class="pension-contribution-button-container">
-                        <button v-if="livingOptions.livingOptionsGameStage === 6" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide(), livingOptions.livingOptionsNextStageOfGame()">Confirm Choice</button>
-                        <button v-if="manageMainGameNav.currentPage === 2" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), manageMainGameNav.navigateToPage(1)">Confirm Choice</button>
+                        <button v-if="livingOptions.livingOptionsGameStage === 6" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide(), livingOptions.livingOptionsNextStageOfGame(), manageGameTimer.startCountdown()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 2" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), manageMainGameNav.navigateToPage(1), manageGameTimer.startCountdown()">Confirm Choice</button>
                  </div>
             </div>
             </div>

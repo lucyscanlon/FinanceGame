@@ -23,7 +23,7 @@ Components that will be inside this container include:
           <div class="characterstats-set">
             <h4>Money In Pocket:</h4>
             <!--Use values from moneyStore.js-->
-            <h5>£{{manageMoney.moneyInPocket}}</h5>
+            <h5>£{{Number(manageMoney.moneyInPocket).toFixed(2)}}</h5>
             <h6 :class="!pocketMoneyValueChangeActive && 'display-none'">-£{{manageMoney.increaseordecreaseofPocketMoney}})</h6>
             <hr />
           </div>
