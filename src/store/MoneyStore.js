@@ -116,7 +116,7 @@ export const useGameTimerStore = defineStore({
                     this.resetCountdown()
                     this.increaseMonth()
                 }
-            }, 20)
+            }, 1500)
         }, 
 
         resetCountdown() {
@@ -167,7 +167,7 @@ export const useGameTimerStore = defineStore({
             } else if (this.monthCounter === 11 ) {
                 this.currentMonth = 'December'
                 this.monthCounter = 0
-                
+
             }
 
         },
