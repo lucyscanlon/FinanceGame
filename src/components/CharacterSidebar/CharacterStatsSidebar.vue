@@ -32,10 +32,16 @@ Components that will be inside this container include:
           <!-- Display this component depending on the stage of the game e.g. if they have accepted the job offer -->
           <div v-if="livingOptions.livingOptionsGameStage > 0" class="characterstats-set">
             <h4>Monthly Salary Income:</h4>
-            <h4 class="characterset-subheading">Before Tax:</h4>
-            <h5>£{{manageMoney.monthlySalaryBeforeTax}}</h5>
-            <h4 class="characterset-subheading">After Tax:</h4>
-            <h5>£{{manageMoney.monthlySalaryAfterTax}}</h5>
+            <div class="charactersidebar-salaryincome-container">
+              <div class="charactersidebar-salarytype">
+                <p>Before Tax:</p>
+                <p>After Tax:</p>
+              </div>
+              <div class="charactersidebar-salaryamount">
+                <p>£{{manageMoney.monthlySalaryBeforeTax}}</p>
+                <p>£{{manageMoney.monthlySalaryAfterTax}}</p>
+              </div>
+            </div>
             <hr />
           </div>
           <!-- Display this component depending on the stage of the game e.g. if they have chosen a place to live -->

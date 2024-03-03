@@ -205,9 +205,43 @@ body {
   cursor:auto;
 }
 
+.charactersidebar-salaryincome-container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+  margin-top: 20px;
+}
+
+.charactersidebar-salarytype {
+  width: 65%;
+  float: left;
+  overflow: auto;
+}
+
+.charactersidebar-salaryamount {
+  width: 35%;
+  overflow: auto;
+  float: right;
+}
+
 .notifications-current-focus {
   border: 1px solid #FF48C8;
   transition-duration: 0.5s;
+}
+
+.charactersidebar-salarytype p {
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.charactersidebar-salaryamount p {
+  font-family: unbounded-reg;
+  color: #7DAB3D;
+  font-size: 14px;
+  padding-bottom: 10px;
+  text-align: right;
 }
 
 .livingstatsdisplay {
