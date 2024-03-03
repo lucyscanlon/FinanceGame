@@ -20,6 +20,9 @@ The parent of this component:
                 </div>
             </div>
         </div>
+        <div class="pay-monthly-outgoings-container pay-monthly-inactive">
+                <button>Pay monthly outgoings</button>
+            </div>
         <hr>
     </div>
 </template>

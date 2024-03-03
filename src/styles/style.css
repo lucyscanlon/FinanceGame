@@ -168,8 +168,46 @@ body {
   margin: 0 auto;
 }
 
+.pay-monthly-outgoings-container {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.pay-monthly-outgoings-container button {
+  width: 250px;
+  background-color: #FF48C8;
+  height: 35px;
+  border-radius: 20px;
+  border: solid 1px #FF48C8;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 13px;
+
+}
+
+.pay-monthly-outgoings-container button:hover {
+  background-color: #1F1E2F;
+  border: solid 1px white;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.pay-monthly-inactive button {
+  color: #3F3F5E;
+  border: solid 1px #3F3F5E;
+  background-color: #1F1E2F;
+}
+
+.pay-monthly-inactive button:hover {
+  color: #3F3F5E;
+  border: solid 1px #3F3F5E;
+  background-color: #1F1E2F;
+  cursor:auto;
+}
+
 .notifications-current-focus {
   border: 1px solid #FF48C8;
+  transition-duration: 0.5s;
 }
 
 .livingstatsdisplay {
