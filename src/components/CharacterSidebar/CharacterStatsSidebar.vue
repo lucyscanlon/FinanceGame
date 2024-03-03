@@ -23,10 +23,12 @@ Components that will be inside this container include:
           <div class="characterstats-set">
             <h4>Money In Pocket:</h4>
             <!--Use values from moneyStore.js-->
-            <h5>£{{Number(manageMoney.moneyInPocket).toFixed(2)}}</h5>
-            <h6 :class="!pocketMoneyValueChangeActive && 'display-none'">-£{{manageMoney.increaseordecreaseofPocketMoney}})</h6>
+            <div class="charactersidebar-pocketmoney-container">
+              <h5>£{{Number(manageMoney.moneyInPocket).toFixed(2)}}</h5>
+            </div>
             <hr />
           </div>
+          <GameNotificationPanel></GameNotificationPanel>
           <!-- Display this component depending on the stage of the game e.g. if they have accepted the job offer -->
           <div v-if="livingOptions.livingOptionsGameStage > 0" class="characterstats-set">
             <h4>Monthly Salary Income:</h4>
@@ -52,6 +54,7 @@ Components that will be inside this container include:
 import CurrentlyLivingDisplay from './CurrentlyLiving.vue'
 import CurrentlyShoppingAt from './CurrentlyShoppingAt.vue'
 import TransportMethodSidebar from './TransportMethodChoice.vue'
+import GameNotificationPanel from './GameNotifications.vue'
 
 // export component data
 export default {
@@ -60,11 +63,11 @@ export default {
       CurrentlyLivingDisplay,
       CurrentlyShoppingAt,
       TransportMethodSidebar,
+      GameNotificationPanel,
     },
     data() {
       return {
-        pocketMoneyValueChangeActive: false,
-        additionorsubtractiontoPocketMoney: 0,
+
       }
     }
 }

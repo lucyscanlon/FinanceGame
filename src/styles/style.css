@@ -22,8 +22,6 @@ body {
 
 /* fonts */
 
-/* fonts */
-
 @font-face {
     font-family: unbounded-reg;
     src: url("../assets/fonts/Unbounded-Regular.ttf") format("truetype");
@@ -84,19 +82,37 @@ body {
 }
   
 .characterstats-set h4 {
-    font-family: unbounded-medium;
+    font-family: unbounded-reg;
     text-align: center;
     font-size: 17px;
     color: #FF48C8;
   
 }
+
+.charactersidebar-pocketmoney-container {
+  width: 100%;
+  margin: 0 auto;
+  height: 55px;
+  background-color:#15141D;
+  margin-top: 15px;
+  border-radius: 10px;
+}
   
 .characterstats-set h5 {
-    color: white;
-    text-align: center;
-    padding-top: 15px;
-    font-family: unbounded-medium;
-    font-size: 17px;
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+  font-family: unbounded-reg;
+  font-size: 17px;
+}
+
+.charactersidebar-pocketmoney-container h5 {
+  color: #7DAB3D;
+  text-align: center;
+  padding-top: 15px;
+  font-family: unbounded-reg;
+  font-size: 15px;
+  letter-spacing: 0.5px;
 }
 
 .characterstats-set h6 {
@@ -116,6 +132,44 @@ body {
 .characterset-subheading {
     padding-top: 20px;
     
+}
+
+.characterstats-notifications-panel {
+  width: 100%;
+  margin: 0 auto;
+  height: 200px;
+  background-color:#15141D;
+  border-radius: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.game-notification-container {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid 1px #7DAB3D;
+  border-radius: 5px;
+}
+
+.game-notification-container p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  font-family: unbounded-reg;
+  font-size: 12px;
+}
+
+.notifications-padding {
+  padding-top: 4px;
+  width: 92%;
+  margin: 0 auto;
+}
+
+.notifications-current-focus {
+  border: 1px solid #FF48C8;
 }
 
 .livingstatsdisplay {
