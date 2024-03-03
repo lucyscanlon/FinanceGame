@@ -251,11 +251,49 @@ body {
 .livingstatsdisplay p {
     font-family: unbounded-reg;
     color: white;
-    font-size: 15px;
+    font-size: 13px;
     padding-top: 20px;
     padding-bottom: 10px;
     text-align: center;
   }
+
+  .livingstats-display-rent-commute-cost-container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: auto;
+    padding-top: 20px;
+  }
+
+  .livingstats-rent-display {
+    width: 65%;
+    float: left;
+    overflow: auto;
+    text-align: left;
+  }
+
+  .livingstats-commute-display {
+    width: 35%;
+    float: right;
+    height: 100px;
+    overflow: auto;
+    text-align: right;
+  }
+
+  .livingstats-rent-display p {
+    padding: 0px;
+    text-align: left;
+    padding-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .livingstats-commute-display p {
+    padding: 0px;
+    text-align: right;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #7DAB3D;
+  }
+
   
   .colour-pink {
     color: #FF48C8;
@@ -267,20 +305,20 @@ body {
   
   .livingstatsdisplay button {
     background-color: #FF48C8;
-    border: solid 2px #FF48C8;
-    font-family: unbounded-medium;
+    border: solid 1px #FF48C8;
+    font-family: unbounded-reg;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     margin-left: auto;
     margin-right: auto;
-    width: 160px;
+    width: 140px;
     border-radius: 20px;
     height: 40px;
     transition-duration: 0.5s;
   }
   
   .livingstatsdisplay button:hover {
-    border: solid 2px white;
+    border: solid 1px white;
     background-color: #1F1E2F;
     transition-duration: 0.5s;
     cursor: pointer;

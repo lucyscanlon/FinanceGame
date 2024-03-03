@@ -14,8 +14,16 @@ The parent of this component:
         <h4>Living:</h4>
         <!--Use values from the store -->
         <p>{{registerLivingChoice.selectedLivingOptionInfo.street}}, <br/> {{registerLivingChoice.selectedLivingOptionInfo.district}}</p>
-        <h5><span className="colour-pink">Rent: </span>£{{registerLivingChoice.selectedLivingOptionInfo.rentPrice}}pm</h5>
-        <h5 class="commute-cost"><span className="colour-pink">Commute Cost: </span>£{{registerLivingChoice.selectedLivingOptionInfo.commutePrice}}</h5>
+        <div class="livingstats-display-rent-commute-cost-container">
+            <div class="livingstats-rent-display">
+                <p>Rent:</p>
+                <p>Commute Costs:</p>
+            </div>
+            <div class="livingstats-commute-display">
+                <p>£{{registerLivingChoice.selectedLivingOptionInfo.rentPrice}}pm</p>
+                <p>£{{registerLivingChoice.selectedLivingOptionInfo.commutePrice}}</p>
+            </div>
+        </div>
         <button className="moveout-button">Move Out</button>
         <hr />
     </div>
