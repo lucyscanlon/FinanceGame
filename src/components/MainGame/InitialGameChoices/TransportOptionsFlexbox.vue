@@ -24,19 +24,19 @@ The parent of this component:
                         <tr>
                             <th>Commute Cost:</th>
                             <!-- Call component methods to determine the costs as these change dynamically based upon what choices the player has previously made -->
-                            <th>+{{ calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost) }}</th>
+                            <th>+{{ Number(calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost)).toFixed(2) }}</th>
                         </tr>
                         <tr>
                             <th>Grocery Transport:</th>
-                            <th>+{{ calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost) }}</th>
+                            <th>+{{ Number(calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost)).toFixed(2) }}</th>
                         </tr>
                         <tr>
                             <th>Discount:</th>
-                            <th>-{{ calculateDiscount(TransportCost, calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), TransportDiscount) }}</th>
+                            <th>-{{ Number(calculateDiscount(TransportCost, calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), TransportDiscount)).toFixed(2) }}</th>
                         </tr>
                         <tr>
                             <th class="colour-green">Monthly Total Cost:</th>
-                            <th class="colour-green">£{{ calculateMonthlyTotal(TransportCost, calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateDiscount(TransportCost, calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), TransportDiscount)) }}</th>
+                            <th class="colour-green">£{{ Number(calculateMonthlyTotal(TransportCost, calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateDiscount(TransportCost, calculateCost(manageSupermarket.chosenSupermarketInfo.SMTCost, TransportGroceryCost), calculateCost(registerLivingChoice.selectedLivingOptionInfo.commutePrice, TransportCommuteCost), TransportDiscount))).toFixed(2) }}</th>
                         </tr>
                     </table>
                 </div>
@@ -46,12 +46,11 @@ The parent of this component:
 <script setup>
     // import stores
     import { transportChoiceStore } from '../../../store/InitialGameChoicesStore.js';
-    const manageTransport = transportChoiceStore();
-
     import { supermarketChoiceStore } from '../../../store/InitialGameChoicesStore.js'
-    const manageSupermarket = supermarketChoiceStore()
-
     import { registerLivingOptionChoiceStore } from '../../../store/InitialGameChoicesStore'
+    
+    const manageTransport = transportChoiceStore();
+    const manageSupermarket = supermarketChoiceStore()
     const registerLivingChoice = registerLivingOptionChoiceStore()
 </script>
 <script>

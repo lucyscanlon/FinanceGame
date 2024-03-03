@@ -15,7 +15,9 @@ The parent of this component:
         <!-- Use values from store -->
         <h5>{{manageTransport.chosenTransportChoice.TName}}</h5>
         <p>{{manageTransport.chosenTransportChoice.TDesc}}</p>
-        <h5><span className="colour-pink">Cost: </span>£{{ manageTransport.chosenTransportChoice.TTotal }}</h5>
+        <div class="transport-cost-container-sidebar">
+            <h5>Cost: <span class="colour-green">£{{ manageTransport.chosenTransportChoice.TTotal }}</span></h5>
+        </div>
         <div class="currentlyshopping-wrap">
             <button className="moveout-button">Change</button>
         </div>

@@ -252,8 +252,8 @@ body {
     font-family: unbounded-reg;
     color: white;
     font-size: 14px;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
     text-align: center;
   }
 
@@ -961,9 +961,9 @@ body {
 
 .currentlyshoppingatdisplay p {
     font-family: unbounded-reg;
-    color: #8CC044;
+    color: white;
     font-size: 13px;
-    padding-top: 15px;
+    padding-top: 5px;
     padding-bottom: 10px;
     text-align: center;
   }
@@ -974,7 +974,7 @@ body {
 
   .currentlyshopping-wrap {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
   } 
 
   .currentlyshopping-costs-container {
@@ -1051,6 +1051,13 @@ body {
 
   /* transport choice display */
 
+  .transport-cost-container-sidebar h5 {
+    font-family: unbounded-reg;
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
+  
+  
   .transportchoice-flexbox-wrap {
     width: 90%;
     margin: auto;
