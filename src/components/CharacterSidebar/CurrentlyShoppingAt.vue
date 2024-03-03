@@ -15,8 +15,16 @@ The parent of this component:
         <!-- Use values from store -->
         <h5>{{manageSupermarket.chosenSupermarketInfo.SMName}}</h5>
         <p>{{manageSupermarket.chosenSupermarketInfo.SMDesc}}</p>
-        <h5><span className="colour-pink">Cost: </span>£{{ manageSupermarket.chosenSupermarketInfo.SMCost }}</h5>
-        <h5 class="commute-cost"><span className="colour-pink">Transport Cost: </span>£{{ manageSupermarket.chosenSupermarketInfo.SMTCost }}</h5>
+        <div class="currentlyshopping-costs-container">
+            <div class="currentlyshopping-shoppingcost">
+                <p>Monthly Cost:</p>
+                <p>Transport Costs:</p>
+            </div>
+            <div class="currentlyshopping-transportcosts">
+                <p>£{{ manageSupermarket.chosenSupermarketInfo.SMCost }}</p>
+                <p>£{{ manageSupermarket.chosenSupermarketInfo.SMTCost }}</p>
+            </div>
+        </div>
         <div class="currentlyshopping-wrap">
             <button className="moveout-button">Change</button>
         </div>
