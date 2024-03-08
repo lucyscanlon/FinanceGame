@@ -142,14 +142,73 @@ body {
   border-radius: 10px;
   margin-top: 20px;
   overflow: hidden;
+  transition-duration: 2s;
 }
 
 .game-notification-container {
-  width: 100%;
+  width: 99%;
+  margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 10px;
   border: solid 1px #7DAB3D;
   border-radius: 5px;
+}
+
+.goal-notif-completed {
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: 2s;
+
+}
+
+.goal-notif-completed p {
+  transition-duration: 2s;
+  display: none;
+}
+
+.notifications-padding {
+  margin-top: 4px;
+  width: 92%;
+  margin: 0 auto;
+  position: relative;
+  top: 300px;
+  max-height: 30vh;
+  overflow-y: auto;
+  -webkit-animation: slidein 0.5s forwards;
+    -webkit-animation-delay: 1s;
+    animation: slidein 0.5s forwards;
+    animation-delay: 1s;
+}
+
+@-webkit-keyframes slidein {
+  100% {top: 0; }
+}
+
+@keyframes slidein {
+  100% { top: 0; }
+
+}
+
+
+
+@keyframes slide-out {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-300px); }
+}
+
+@-webkit-keyframes slide-out {
+  0% { -webkit-transform: translateY(0%); }
+  100% { -webkit-transform: translateY(-300px); }
+}
+
+.goal-notif-completed p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  font-family: unbounded-reg;
+  font-size: 12px;
 }
 
 .game-notification-container p {
@@ -162,10 +221,9 @@ body {
   font-size: 12px;
 }
 
-.notifications-padding {
-  padding-top: 4px;
-  width: 92%;
-  margin: 0 auto;
+
+.current-goal-notif {
+  color: #FF48C8;
 }
 
 .pay-monthly-outgoings-container {
