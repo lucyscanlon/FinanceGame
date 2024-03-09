@@ -55,6 +55,7 @@ body {
   height: 100%;
   float: right;
   background-color: #15141d;
+  overflow-y: scroll;
 }
 
 .charactertstats-padding {
@@ -1950,6 +1951,7 @@ input[type="number"] {
   width: 100%;
   margin: 0 auto;
   display: flex;
+  margin-bottom: 10px;
 }
 
 .incomestreams-choice {
@@ -1959,7 +1961,7 @@ input[type="number"] {
   overflow: auto;
   background-color: #1f1e2f;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .incomestreams-icon-container {
@@ -2024,4 +2026,12 @@ input[type="number"] {
   font-size: 13px;
   padding-bottom: 0px;
   color:#7dab3d;
+}
+
+.incomestreams-slide3 {
+  padding-bottom: 30px;
+}
+
+.no-incomestream-padding {
+  padding-top: 80px;
 }
