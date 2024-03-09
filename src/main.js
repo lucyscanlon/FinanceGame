@@ -10,6 +10,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons'
 import { faPersonCane } from '@fortawesome/free-solid-svg-icons'
 import { faPiggyBank } from '@fortawesome/free-solid-svg-icons'
 import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons'
+import { faShop } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMapPin)
 library.add(faArrowRight)
@@ -18,6 +19,7 @@ library.add(faCircle)
 library.add(faPersonCane)
 library.add(faPiggyBank)
 library.add(faTriangleExclamation)
+library.add(faShop)
 
 
 const app = createApp(App);

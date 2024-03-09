@@ -10,96 +10,139 @@ Components:
 
 -->
 <template>
-    <div class="maingame-wrapper">
-        <div class="gameplay-topbanner-wrapper">
-            <div class="current-date-wrapper">
-                <p>Days until payday: <span class="colour-white">{{manageGameTimer.countdown}}</span></p>
-            </div>
-            <div class="payday-date-wrapper">
-                <p>Current Month and Year: <span class="colour-white">{{manageGameTimer.currentMonth}} {{ manageGameTimer.currentYear }}</span></p>
-            </div>
-        </div>
-        <!-- display component dependant on the stage of game - located in the initialgamechoicesstore-->
-        <salaryAndTaxInfoDisplay v-if="livingOptions.livingOptionsGameStage === 0"></salaryAndTaxInfoDisplay>
-        <RentInformationDisplay v-if="livingOptions.livingOptionsGameStage === 1"></RentInformationDisplay>
-        <MapDisplay v-if="livingOptions.livingOptionsGameStage === 2"></MapDisplay>
-        <SupermarketInfoDisplay v-if="livingOptions.livingOptionsGameStage === 3"></SupermarketInfoDisplay>
-        <SupermarketChoiceDisplay v-if="livingOptions.livingOptionsGameStage === 4"></SupermarketChoiceDisplay>
-        <TransportMethodDisplay v-if="livingOptions.livingOptionsGameStage === 5"></TransportMethodDisplay>
-        <PensionInformationDisplay v-if="livingOptions.livingOptionsGameStage === 6" :startingSlide=0></PensionInformationDisplay>
-        <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 2" :startingSlide=4></PensionInformationDisplay>
-        <currentAccountIntroduction v-if="manageMainGameNav.currentPage === 3"></currentAccountIntroduction>
-        <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 4"></EmergencyFundIntroduction>
-        <div v-if="manageMainGameNav.currentPage === 1 && livingOptions.livingOptionsGameStage > 6" class="maingameplay-interaction-container">
-            <div class="maingameplay-top-row-container">
-                <PensionInteractionComponent></PensionInteractionComponent>
-                <EverydaySavingInteractiveComponent></EverydaySavingInteractiveComponent>
-                <EmergencyFundsInteractiveComponent></EmergencyFundsInteractiveComponent>
-            </div>
-            <div class="maingameplay-bottom-row-container">
-                <HouseDepositInteractiveComponent></HouseDepositInteractiveComponent>
-                <IncomeStreamsInteractiveComponent></IncomeStreamsInteractiveComponent> 
-                <InvestmentPortfolioInteractiveComponent></InvestmentPortfolioInteractiveComponent>
-            </div>   
-        </div>
-        <div className="gameplay-bottombanner-wrapper">
-            <div className="monthly-outgoings-wrapper">
-                <p>Total monthly outgoings: <span className="colour-white">£{{ manageMoney.monthlyOutGoingsSum }}</span></p>
-             </div>
-        </div>
+  <div class="maingame-wrapper">
+    <div class="gameplay-topbanner-wrapper">
+      <div class="current-date-wrapper">
+        <p>
+          Days until payday:
+          <span class="colour-white">{{ manageGameTimer.countdown }}</span>
+        </p>
+      </div>
+      <div class="payday-date-wrapper">
+        <p>
+          Current Month and Year:
+          <span class="colour-white"
+            >{{ manageGameTimer.currentMonth }}
+            {{ manageGameTimer.currentYear }}</span
+          >
+        </p>
+      </div>
     </div>
+    <!-- display component dependant on the stage of game - located in the initialgamechoicesstore-->
+    <salaryAndTaxInfoDisplay
+      v-if="livingOptions.livingOptionsGameStage === 0"
+    ></salaryAndTaxInfoDisplay>
+    <RentInformationDisplay
+      v-if="livingOptions.livingOptionsGameStage === 1"
+    ></RentInformationDisplay>
+    <MapDisplay v-if="livingOptions.livingOptionsGameStage === 2"></MapDisplay>
+    <SupermarketInfoDisplay
+      v-if="livingOptions.livingOptionsGameStage === 3"
+    ></SupermarketInfoDisplay>
+    <SupermarketChoiceDisplay
+      v-if="livingOptions.livingOptionsGameStage === 4"
+    ></SupermarketChoiceDisplay>
+    <TransportMethodDisplay
+      v-if="livingOptions.livingOptionsGameStage === 5"
+    ></TransportMethodDisplay>
+    <PensionInformationDisplay
+      v-if="livingOptions.livingOptionsGameStage === 6"
+      :startingSlide="0"
+    ></PensionInformationDisplay>
+    <PensionInformationDisplay
+      v-if="manageMainGameNav.currentPage === 2"
+      :startingSlide="4"
+    ></PensionInformationDisplay>
+    <currentAccountIntroduction
+      v-if="manageMainGameNav.currentPage === 3"
+    ></currentAccountIntroduction>
+    <EmergencyFundIntroduction
+      v-if="manageMainGameNav.currentPage === 4"
+    ></EmergencyFundIntroduction>
+    <incomeStreamsIntroduction
+      v-if="manageMainGameNav.currentPage === 5"
+    ></incomeStreamsIntroduction>
+    <div
+      v-if="
+        manageMainGameNav.currentPage === 1 &&
+        livingOptions.livingOptionsGameStage > 6
+      "
+      class="maingameplay-interaction-container"
+    >
+      <div class="maingameplay-top-row-container">
+        <PensionInteractionComponent></PensionInteractionComponent>
+        <EverydaySavingInteractiveComponent></EverydaySavingInteractiveComponent>
+        <EmergencyFundsInteractiveComponent></EmergencyFundsInteractiveComponent>
+      </div>
+      <div class="maingameplay-bottom-row-container">
+        <HouseDepositInteractiveComponent></HouseDepositInteractiveComponent>
+        <IncomeStreamsInteractiveComponent></IncomeStreamsInteractiveComponent>
+        <InvestmentPortfolioInteractiveComponent></InvestmentPortfolioInteractiveComponent>
+      </div>
+    </div>
+    <div className="gameplay-bottombanner-wrapper">
+      <div className="monthly-outgoings-wrapper">
+        <p>
+          Total monthly outgoings:
+          <span className="colour-white"
+            >£{{ manageMoney.monthlyOutGoingsSum }}</span
+          >
+        </p>
+      </div>
+    </div>
+  </div>
 </template>
 <script setup>
-    // import stores
-    import { useLivingOptionsStore } from '../../store/InitialGameChoicesStore'
-    import { useMoneyManageStore } from '../../store/MoneyStore.js'
-    import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
-    import {useGameTimerStore} from '../../store/MoneyStore.js'
+// import stores
+import { useLivingOptionsStore } from "../../store/InitialGameChoicesStore";
+import { useMoneyManageStore } from "../../store/MoneyStore.js";
+import { useMainGameplayNavigationStore } from "../../store/MainGameChoicesStore.js";
+import { useGameTimerStore } from "../../store/MoneyStore.js";
 
-    const livingOptions = useLivingOptionsStore()
-    const manageMoney = useMoneyManageStore()
-    const manageMainGameNav = useMainGameplayNavigationStore()
-    const manageGameTimer = useGameTimerStore()
-
+const livingOptions = useLivingOptionsStore();
+const manageMoney = useMoneyManageStore();
+const manageMainGameNav = useMainGameplayNavigationStore();
+const manageGameTimer = useGameTimerStore();
 </script>
 <script>
-    // import components
-    import MapDisplay from './InitialGameChoices/MapLayout.vue'
-    import RentInformationDisplay from './InformationPages/RentIntroductionInfo.vue'
-    import salaryAndTaxInfoDisplay from './InformationPages/YouHaveAJobOffer.vue';
-    import SupermarketChoiceDisplay from './InitialGameChoices/SupermarketChoice.vue';
-    import SupermarketInfoDisplay from './InformationPages/SupermarketInfo.vue';
-    import TransportMethodDisplay from './InitialGameChoices/TransportOptionsDisplay.vue';
-    import PensionInformationDisplay from './InformationPages/PensionIntroduction.vue';
-    import PensionInteractionComponent from './MainGameplayComponents/PensionComponent.vue';
-    import EverydaySavingInteractiveComponent from './MainGameplayComponents/EverydaySavingsComponent.vue';
-    import EmergencyFundsInteractiveComponent from './MainGameplayComponents/EmergencyFundsComponent.vue';
-    import HouseDepositInteractiveComponent from './MainGameplayComponents/HouseDepositComponent.vue';
-    import IncomeStreamsInteractiveComponent from './MainGameplayComponents/IncomeStreamsComponent.vue';
-    import InvestmentPortfolioInteractiveComponent from './MainGameplayComponents/InvestmentPortfolioComponent.vue';
-    import currentAccountIntroduction from './InformationPages/CurrentAccountIntroduction.vue';
-    import EmergencyFundIntroduction from './InformationPages/EmergencyFundIntroduction.vue';
+// import components
+import MapDisplay from "./InitialGameChoices/MapLayout.vue";
+import RentInformationDisplay from "./InformationPages/RentIntroductionInfo.vue";
+import salaryAndTaxInfoDisplay from "./InformationPages/YouHaveAJobOffer.vue";
+import SupermarketChoiceDisplay from "./InitialGameChoices/SupermarketChoice.vue";
+import SupermarketInfoDisplay from "./InformationPages/SupermarketInfo.vue";
+import TransportMethodDisplay from "./InitialGameChoices/TransportOptionsDisplay.vue";
+import PensionInformationDisplay from "./InformationPages/PensionIntroduction.vue";
+import PensionInteractionComponent from "./MainGameplayComponents/PensionComponent.vue";
+import EverydaySavingInteractiveComponent from "./MainGameplayComponents/EverydaySavingsComponent.vue";
+import EmergencyFundsInteractiveComponent from "./MainGameplayComponents/EmergencyFundsComponent.vue";
+import HouseDepositInteractiveComponent from "./MainGameplayComponents/HouseDepositComponent.vue";
+import IncomeStreamsInteractiveComponent from "./MainGameplayComponents/IncomeStreamsComponent.vue";
+import InvestmentPortfolioInteractiveComponent from "./MainGameplayComponents/InvestmentPortfolioComponent.vue";
+import currentAccountIntroduction from "./InformationPages/CurrentAccountIntroduction.vue";
+import EmergencyFundIntroduction from "./InformationPages/EmergencyFundIntroduction.vue";
+import incomeStreamsIntroduction from "./InformationPages/IncomeStreamsIntroduction.vue";
 
 // export component data
 export default {
-    name: 'MainGameWrapper',
-    components: {
-        MapDisplay,
-        RentInformationDisplay,
-        salaryAndTaxInfoDisplay,
-        SupermarketChoiceDisplay,
-        SupermarketInfoDisplay,
-        TransportMethodDisplay,
-        PensionInformationDisplay,
-        PensionInteractionComponent,
-        EverydaySavingInteractiveComponent,
-        EmergencyFundsInteractiveComponent,
-        HouseDepositInteractiveComponent,
-        IncomeStreamsInteractiveComponent,
-        InvestmentPortfolioInteractiveComponent,
-        currentAccountIntroduction,
-        EmergencyFundIntroduction,
-    },
-   
-}
+  name: "MainGameWrapper",
+  components: {
+    MapDisplay,
+    RentInformationDisplay,
+    salaryAndTaxInfoDisplay,
+    SupermarketChoiceDisplay,
+    SupermarketInfoDisplay,
+    TransportMethodDisplay,
+    PensionInformationDisplay,
+    PensionInteractionComponent,
+    EverydaySavingInteractiveComponent,
+    EmergencyFundsInteractiveComponent,
+    HouseDepositInteractiveComponent,
+    IncomeStreamsInteractiveComponent,
+    InvestmentPortfolioInteractiveComponent,
+    currentAccountIntroduction,
+    EmergencyFundIntroduction,
+    incomeStreamsIntroduction,
+  },
+};
 </script>

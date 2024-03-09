@@ -1,103 +1,101 @@
 /* global styles */
 * {
-    margin: 0px;
-    padding: 0px;
-
+  margin: 0px;
+  padding: 0px;
 }
 
 html {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #app {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /* fonts */
 
 @font-face {
-    font-family: unbounded-reg;
-    src: url("../assets/fonts/Unbounded-Regular.ttf") format("truetype");
-  }
-  
-  @font-face {
-    font-family: unbounded-medium;
-    src: url("../assets/fonts/Unbounded-Medium.ttf") format("truetype");
-  }
-  
-  @font-face {
-    font-family: unbounded-heavy;
-    src: url("../assets/fonts/Unbounded-SemiBold.ttf") format("truetype");
-  }
+  font-family: unbounded-reg;
+  src: url("../assets/fonts/Unbounded-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: unbounded-medium;
+  src: url("../assets/fonts/Unbounded-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: unbounded-heavy;
+  src: url("../assets/fonts/Unbounded-SemiBold.ttf") format("truetype");
+}
 
 .wholegame-wrapper {
-    width: 100%;
-    height: 100%;
-    background-color: #1F1E2F;
+  width: 100%;
+  height: 100%;
+  background-color: #1f1e2f;
 }
 
 .characterstats-sidebar-wrapper {
-    width: 25%;
-    height: 100%;
-    float: left;
-    background-color: #1F1E2F;
-    overflow-y: scroll;
+  width: 25%;
+  height: 100%;
+  float: left;
+  background-color: #1f1e2f;
+  overflow-y: scroll;
 }
 
 .maingame-wrapper {
-    width: 75%;
-    height: 100%;
-    float: right;
-    background-color: #15141D;
+  width: 75%;
+  height: 100%;
+  float: right;
+  background-color: #15141d;
 }
 
 .charactertstats-padding {
-    width: 80%;
-    height: auto;
-    margin: 40px auto;
+  width: 80%;
+  height: auto;
+  margin: 40px auto;
 }
 
 .responsibility-barometer-wrapper {
-    width: 200px;
-    height: 200px;
-    border-radius: 200px;
-    border: 1px solid #FFFFFF;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    -webkit-box-shadow: 0px 0px 24px 0px rgba(255,72,200,1);
-    -moz-box-shadow: 0px 0px 24px 0px rgba(255,72,200,1);
-    box-shadow: 0px 0px 24px 0px rgba(255,72,200,1);
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  border: 1px solid #ffffff;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
+  -moz-box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
+  box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
 }
 
 .characterstats-set {
-    padding-bottom: 30px;
+  padding-bottom: 30px;
 }
-  
+
 .characterstats-set h4 {
-    font-family: unbounded-reg;
-    text-align: center;
-    font-size: 17px;
-    color: #FF48C8;
-  
+  font-family: unbounded-reg;
+  text-align: center;
+  font-size: 17px;
+  color: #ff48c8;
 }
 
 .charactersidebar-pocketmoney-container {
   width: 100%;
   margin: 0 auto;
   height: 55px;
-  background-color:#15141D;
+  background-color: #15141d;
   margin-top: 15px;
   border-radius: 10px;
 }
-  
+
 .characterstats-set h5 {
   color: white;
   text-align: center;
@@ -107,7 +105,7 @@ body {
 }
 
 .charactersidebar-pocketmoney-container h5 {
-  color: #7DAB3D;
+  color: #7dab3d;
   text-align: center;
   padding-top: 15px;
   font-family: unbounded-reg;
@@ -116,29 +114,28 @@ body {
 }
 
 .characterstats-set h6 {
-    text-align: center;
-    font-family: unbounded-medium;
-    color: #7DAB3D;
-    font-size: 14px;
-    position: relative;
-    top: 10px;
+  text-align: center;
+  font-family: unbounded-medium;
+  color: #7dab3d;
+  font-size: 14px;
+  position: relative;
+  top: 10px;
 }
-  
+
 .characterstats-set hr {
-    border-color: #7DAB3D;
-    margin-top: 30px;
+  border-color: #7dab3d;
+  margin-top: 30px;
 }
 
 .characterset-subheading {
-    padding-top: 20px;
-    
+  padding-top: 20px;
 }
 
 .characterstats-notifications-panel {
   width: 100%;
   margin: 0 auto;
   height: 200px;
-  background-color:#15141D;
+  background-color: #15141d;
   border-radius: 10px;
   margin-top: 20px;
   overflow: hidden;
@@ -150,7 +147,7 @@ body {
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: solid 1px #7DAB3D;
+  border: solid 1px #7dab3d;
   border-radius: 5px;
 }
 
@@ -158,7 +155,6 @@ body {
   opacity: 0;
   visibility: hidden;
   transition-duration: 2s;
-
 }
 
 .goal-notif-completed p {
@@ -175,30 +171,39 @@ body {
   max-height: 30vh;
   overflow-y: auto;
   -webkit-animation: slidein 0.5s forwards;
-    -webkit-animation-delay: 1s;
-    animation: slidein 0.5s forwards;
-    animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation: slidein 0.5s forwards;
+  animation-delay: 1s;
 }
 
 @-webkit-keyframes slidein {
-  100% {top: 0; }
+  100% {
+    top: 0;
+  }
 }
 
 @keyframes slidein {
-  100% { top: 0; }
-
+  100% {
+    top: 0;
+  }
 }
 
-
-
 @keyframes slide-out {
-  0% { transform: translateY(0%); }
-  100% { transform: translateY(-300px); }
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-300px);
+  }
 }
 
 @-webkit-keyframes slide-out {
-  0% { -webkit-transform: translateY(0%); }
-  100% { -webkit-transform: translateY(-300px); }
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(-300px);
+  }
 }
 
 .goal-notif-completed p {
@@ -221,9 +226,8 @@ body {
   font-size: 12px;
 }
 
-
 .current-goal-notif {
-  color: #FF48C8;
+  color: #ff48c8;
 }
 
 .pay-monthly-outgoings-container {
@@ -233,34 +237,33 @@ body {
 
 .pay-monthly-outgoings-container button {
   width: 250px;
-  background-color: #FF48C8;
+  background-color: #ff48c8;
   height: 35px;
   border-radius: 20px;
-  border: solid 1px #FF48C8;
+  border: solid 1px #ff48c8;
   font-family: unbounded-reg;
   color: white;
   font-size: 13px;
-
 }
 
 .pay-monthly-outgoings-container button:hover {
-  background-color: #1F1E2F;
+  background-color: #1f1e2f;
   border: solid 1px white;
   transition-duration: 0.5s;
   cursor: pointer;
 }
 
 .pay-monthly-inactive button {
-  color: #3F3F5E;
-  border: solid 1px #3F3F5E;
-  background-color: #1F1E2F;
+  color: #3f3f5e;
+  border: solid 1px #3f3f5e;
+  background-color: #1f1e2f;
 }
 
 .pay-monthly-inactive button:hover {
-  color: #3F3F5E;
-  border: solid 1px #3F3F5E;
-  background-color: #1F1E2F;
-  cursor:auto;
+  color: #3f3f5e;
+  border: solid 1px #3f3f5e;
+  background-color: #1f1e2f;
+  cursor: auto;
 }
 
 .charactersidebar-salaryincome-container {
@@ -283,7 +286,7 @@ body {
 }
 
 .notifications-current-focus {
-  border: 1px solid #FF48C8;
+  border: 1px solid #ff48c8;
   transition-duration: 0.5s;
 }
 
@@ -296,1149 +299,1097 @@ body {
 
 .charactersidebar-salaryamount p {
   font-family: unbounded-reg;
-  color: #7DAB3D;
+  color: #7dab3d;
   font-size: 14px;
   padding-bottom: 10px;
   text-align: right;
 }
 
 .livingstatsdisplay {
-    text-align: center;
-  }
-  
+  text-align: center;
+}
+
 .livingstatsdisplay p {
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 14px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    text-align: center;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.livingstats-display-rent-commute-cost-container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+  padding-top: 20px;
+}
+
+.livingstats-rent-display {
+  width: 65%;
+  float: left;
+  overflow: auto;
+  text-align: left;
+}
+
+.livingstats-commute-display {
+  width: 35%;
+  float: right;
+  overflow: auto;
+  text-align: right;
+}
+
+.livingstats-rent-display p {
+  padding: 0px;
+  text-align: left;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+.livingstats-commute-display p {
+  padding: 0px;
+  text-align: right;
+  padding-bottom: 10px;
+  font-size: 14px;
+  color: #7dab3d;
+}
+
+.colour-pink {
+  color: #ff48c8;
+}
+
+.colour-green {
+  color: #8cc044;
+}
+
+.livingstatsdisplay button {
+  background-color: #ff48c8;
+  border: solid 1px #ff48c8;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 13px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 135px;
+  border-radius: 20px;
+  height: 35px;
+  transition-duration: 0.5s;
+  margin-top: 20px;
+}
+
+.livingstatsdisplay button:hover {
+  border: solid 1px #ff48c8;
+  background-color: #1f1e2f;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.livingstatsdisplay .commute-cost {
+  padding-bottom: 20px;
+}
+
+.mapdisplay-gametips-wrapper {
+  position: relative;
+  top: 75%;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: #1f1e2f;
+  height: 50px;
+  white-space: nowrap;
+}
+
+.mapdisplay-gametips-wrapper p {
+  padding-top: 10px;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 0 1em;
+  animation: move-left 20000ms linear infinite;
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(0);
   }
-
-  .livingstats-display-rent-commute-cost-container {
-    width: 90%;
-    margin: 0 auto;
-    overflow: auto;
-    padding-top: 20px;
+  100% {
+    transform: translateX(-100%);
   }
+}
 
-  .livingstats-rent-display {
-    width: 65%;
-    float: left;
-    overflow: auto;
-    text-align: left;
-  }
+.livingoptions-movingbanner {
+  padding-right: 100px;
+  position: relative;
+  top: 10px;
+}
 
-  .livingstats-commute-display {
-    width: 35%;
-    float: right;
-    overflow: auto;
-    text-align: right;
-  }
-
-  .livingstats-rent-display p {
-    padding: 0px;
-    text-align: left;
-    padding-bottom: 10px;
-    font-size: 14px;
-  }
-
-  .livingstats-commute-display p {
-    padding: 0px;
-    text-align: right;
-    padding-bottom: 10px;
-    font-size: 14px;
-    color: #7DAB3D;
-  }
-
-  
-  .colour-pink {
-    color: #FF48C8;
-  }
-
-  .colour-green {
-    color: #8CC044;
-  }
-  
-  .livingstatsdisplay button {
-    background-color: #FF48C8;
-    border: solid 1px #FF48C8;
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 13px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 135px;
-    border-radius: 20px;
-    height: 35px;
-    transition-duration: 0.5s;
-    margin-top: 20px;
-  }
-  
-  .livingstatsdisplay button:hover {
-    border: solid 1px #FF48C8;
-    background-color: #1F1E2F;
-    transition-duration: 0.5s;
-    cursor: pointer;
-  
-  }
-
-  .livingstatsdisplay .commute-cost {
-    padding-bottom: 20px;
-  }
-
-  .mapdisplay-gametips-wrapper {
-    position: relative;
-    top: 75%;
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    background-color: #1F1E2F;
-    height: 50px;
-    white-space: nowrap;
-
-
-  }
-
-  .mapdisplay-gametips-wrapper p {
-    padding-top: 10px;
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 11px;
-    letter-spacing: 1px;
-    padding: 0 1em;
-    animation: move-left 20000ms linear infinite;
-  }
-
-  @keyframes move-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-  }
-
-  .livingoptions-movingbanner {
-    padding-right: 100px;
-    position: relative;
-    top: 10px;
-  }
-
-  .first-movingbanner {
-    padding-left: 1000px;
-  }
-
-
-
+.first-movingbanner {
+  padding-left: 1000px;
+}
 
 /* top and bottom banner */
 
 .gameplay-topbanner-wrapper {
-    width: 100%;
-    height: 50px;
-   
-  }
-  
-  .gameplay-topbanner-wrapper {
-    display: flex;
-  }
-  
-  .current-date-wrapper p {
-    font-family: unbounded-reg;
-    color: #FF48C8;
-    font-size: 13px;
-    padding-left: 20px;
-    padding-top: 15px;
-  }
-  
-  .current-date-wrapper {
-    width: 50%;
-    height: auto;
-    float: left; 
-  }
-  
-  .payday-date-wrapper {
-    width: 50%;
-    height: auto;
-    float: right;
-  }
-  
-  .payday-date-wrapper p {
-    font-family: unbounded-reg;
-    color: #FF48C8;
-    text-align: right;
-    font-size: 13px;
-    padding-right: 20px;
-    padding-top: 15px;
-  }
-  
-  .colour-white {
-    color: white;
-  }
+  width: 100%;
+  height: 50px;
+}
 
-  .gameplay-bottombanner-wrapper {
-    width: 100%;
-    height: 50px;
-    position: fixed;
-    bottom: 0px;
-  }
-  
-  .monthly-outgoings-wrapper p  {
-    font-family: unbounded-reg;
-    color: #FF48C8;
-    font-size: 13px;
-    padding-left: 20px;
-    padding-top: 15px;
-  }
+.gameplay-topbanner-wrapper {
+  display: flex;
+}
 
+.current-date-wrapper p {
+  font-family: unbounded-reg;
+  color: #ff48c8;
+  font-size: 13px;
+  padding-left: 20px;
+  padding-top: 15px;
+}
+
+.current-date-wrapper {
+  width: 50%;
+  height: auto;
+  float: left;
+}
+
+.payday-date-wrapper {
+  width: 50%;
+  height: auto;
+  float: right;
+}
+
+.payday-date-wrapper p {
+  font-family: unbounded-reg;
+  color: #ff48c8;
+  text-align: right;
+  font-size: 13px;
+  padding-right: 20px;
+  padding-top: 15px;
+}
+
+.colour-white {
+  color: white;
+}
+
+.gameplay-bottombanner-wrapper {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+}
+
+.monthly-outgoings-wrapper p {
+  font-family: unbounded-reg;
+  color: #ff48c8;
+  font-size: 13px;
+  padding-left: 20px;
+  padding-top: 15px;
+}
 
 /*  map layout display */
 
 .map-display-wrapper {
-    width: 100%;
-    height: 87%;
-    background-image: url('../assets/img/mapbw.jpg');
-    background-size: 100%;
-    overflow: hidden;
+  width: 100%;
+  height: 87%;
+  background-image: url("../assets/img/mapbw.jpg");
+  background-size: 100%;
+  overflow: hidden;
 }
-
 
 /* living options display */
 
 .map-location-wrapper {
-    /*top: 200px;
+  /*top: 200px;
     left: 300px;*/
-    height: auto;
-    width: 200px;
-    background-color: #1F1E2F;
-    border-radius: 15px;
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
-    box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
-    transition-duration: 0.5s;
-  }
-  
-  .map-location-wrapper:hover {
-    -webkit-box-shadow: 0px 0px 21px 5px rgba(153,211,66,1);
-    -moz-box-shadow: 0px 0px 21px 5px rgba(153,211,66,1);
-    box-shadow: 0px 0px 21px 5px rgba(153,211,66,1);
-    transition-duration: 0.5s;
-  }
-  
-  .map-location-content-wrapper {
-    width: 85%;
-    margin: 0 auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-  }
-  
-  .map-location-content-wrapper {
-    font-family: unbounded-reg;
-  }
-  
-  .map-location-content-wrapper h4 {
-    text-align: center;
-    color: white;
-    font-size: 16px;
-  }
-  
-  .map-location-content-wrapper p {
-    text-align: center;
-    color: white;
-    font-size: 11px;
-    padding-top: 7px;
-  }
-  
-  .map-location-content-wrapper .map-location-description {
-    color: #99D342;
-    font-size: 12px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-  }
-  
-  .map-location-rent-wrapper {
-    width: 90%;
-    margin: 0 auto;
-    height: 90px;
-    color: #FF48C8;
-    padding-top: 20px;
-    text-align: left;
-  
-  }
-  
-  .map-location-rent-wrapper p {
-    color: #FF48C8;
-    font-size: 14px;
-    text-align: left;
-  }
-  
-  .colour-white {
-    color: white;
-  }
-  
- .map-location-content-wrapper button {
-    width: 120px;
-    height: 40px;
-    border-radius: 50px;
-    background-color: #FF48C8;
-    border: 2px solid #FF48C8;
-    font-family: unbounded-reg;
-    margin-bottom: 5px;
-    transition-duration: 0.5s;
- }
-
- .map-location-content-wrapper button p {
-    font-size: 15px;
-    padding-bottom: 6px;
- }
-
- .map-location-content-wrapper button:hover {
-    border: 2px solid #FF48C8;
-    background-color: #1F1E2F;
-    transition-duration: 0.5s;
-    cursor: pointer;
- }
-
- /* individual placements for living options */
-
-  
-  .pinecrest27 {
-    position: absolute;
-    top: 360px;
-    left: 390px;
-  }
-  
-  .rodeo19 {
-    position: absolute;
-    left: 950px;
-    top: 380px;
-  }
-  
-  .harmonyE1 {
-    position: absolute;
-    top: 60px;
-    left: 650px;
-  }
-  
-  .brickyard32 {
-    position: absolute;
-    top: 60px;
-    left: 1150px;
-  }
-
-  /* You work here section */
-
-  .map-work-location-wrapper {
-    font-size: 30px;
-    color: #1F1E2F;
-    position: relative;
-    top: 100px;
-    left: 50px;
-  }
-
-  .map-work-location-circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 120px;
-    background-color: #1F1E2F;
-    position: relative;
-    bottom: 60px;
-    left: 30px;
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
-    box-shadow: 0px 0px 15px 0px rgba(255,72,200,1);
-  }
-  
-  .map-work-location-circle p {
-    text-align: center;
-    color: white;
-    font-family: unbounded-reg;
-    font-size: 15px;
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-
-
-  /*  choose a place to live styling */
-
-  .rentintro-mainwrapper {
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-
-  .rentintro-title-wrapper h1 {
-    font-family: unbounded-reg;
-    color: #FF48C8;
-    font-size: 25px;
-    text-align: center;
-    padding-bottom: 40px;
-    padding-top: 30px;
-  }
-
-  .rentintro-description-wrapper {
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 15px;
-    text-align: center;
-    line-height: 1.9em;
-  }
-
-  .rentintro-description-wrapper p {
-    padding-bottom: 15px;
-  }
-
-  .rentintro-list li {
-    text-align: left;
-    font-size: 13px;
-    padding-bottom: 1.1em;
-  }
-
-  .rentintro-list {
-    width: 85%;
-    margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .rentintro-rentrecommendation {
-    padding-top: 20px;
-  }
-
-  .rentinfo-button-wrapper {
-    padding-top: 20px;
-  }
-
-  .rentinfo-button {
-    width: 330px;
-    height: 50px;
-    background-color: #FF48C8;
-    border: 2px solid #FF48C8;
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 16px;
-    border-radius: 200px;
-    transition-duration: 0.5s;
-  }
-
-  .rentinfo-button:hover {
-    color: white;
-    border: 2px solid #FF48C8;
-    background-color: #1F1E2F;
-    cursor: pointer;
-    transition-duration: 0.5s;
-  }
-
-
-  /* you have a job offer */
-
-  .joboffer-mainwrapper {
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 30px;
-
-  }
-
-  .joboffer-title-wrapper h1 {
-    font-family: unbounded-reg;
-    color: #FF48C8;
-    font-size: 25px;
-    text-align: center;
-    padding-bottom: 40px;
-    padding-top: 20px;
-  }
-
-  .joboffer-description-wrapper {
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 14px;
-    text-align: center;
-    line-height: 1.9em;
-  }
-
-  .joboffer-description-wrapper p {
-    padding-bottom: 15px;
-  }
-
-  .joboffer-description-wrapper li {
-    text-align: left;
-    font-size: 13px;
-    padding-bottom: 1em;
-  }
-
-  .joboffer-list {
-    width: 85%;
-    margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 5px;
-  }
-
-  .joboffer-rentrecommendation {
-    padding-top: 20px;
-  }
-
-  .joboffer-button-wrapper {
-    padding-top: 20px;
-    width: 100%;
-  
-  }
-
-  .joboffer-button {
-    height: 50px;
-    background-color: #FF48C8;
-    border: 2px solid #FF48C8;
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 16px;
-    border-radius: 200px;
-    transition-duration: 0.5s;
-  }
-
-  .joboffer-button-wrapper button {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-
-  .joboffer-button:hover {
-    color: white;
-    border: 2px solid #FF48C8;
-    background-color: #1F1E2F;
-    cursor: pointer;
-    transition-duration: 0.5s;
-  }
-
-  .joboffer-calculator {
-    height: 50px;
-    background-color: #8CC044;
-    border: 2px solid #8CC044;
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 16px;
-    border-radius: 200px;
-    transition-duration: 0.5s;
-  }
-
-  .joboffer-calculator:hover {
-    color: white;
-    border: 2px solid #8CC044;
-    background-color: #1F1E2F;
-    cursor: pointer;
-    transition-duration: 0.5s;
-  }
-
-  .job-offer-padding {
-    padding-top: 20px;
-  }
-
-
-
-
-
-
-
-  .joboffer-description-wrapper table {
-    text-align: left;
-    width: 90%;
-    border-collapse: collapse;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 15px;
-  }
-
-  .joboffer-description-wrapper tr {
-    border: solid 1px white;
-    border-collapse: collapse;
-  }
-
-  .joboffer-description-wrapper th {
-    border: solid 1px white;
-    padding: 5px;
-  }
-
-  .align-right {
-    text-align: right;
-  }
-
-
-
-
-
-
-  /* supermarket choice page */
-
-
-
-  .supermarketchoice-display-wrapper {
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 15px;
-    padding-bottom: 10px;
-  }
-
-  .supermarketchoice-box:hover {
-    cursor: pointer;     
-  }
-
-  .transport-choice-box:hover {
-    cursor: pointer;    
-  }
-
-  .supermarket-active {
-    -webkit-box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
-    -moz-box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
-    box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
-
-  }
-
-  .supermarketchoice-display-wrapper h1 {
-    font-family: unbounded-reg;
-    color: #FF48C8;
-    font-size: 23px;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  .supermarketchoice-flex-wrapper {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
- 
-  }
-
-  .supermarketchoice-box {
-    width: 47%;
-    margin-left: 10px;
-    margin-right: 10px;
-    overflow: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    background-color: #1F1E2F;
-  }
-
-  .supermarketchoice-button-wrap {
-    text-align: center;
-    padding-bottom: 25px;
-    padding-top: 10px;
-  }
-
-  .supermarketchoice-button-wrap button {
-    height: 50px;
-    width: 160px;
-    background-color: #FF48C8;
-    border: 2px solid #FF48C8;
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 16px;
-    border-radius: 200px;
-    transition-duration: 0.5s;
-
-  }
-
-
-
-  .supermarketchoice-button-wrap button:hover {
-    background-color: #1F1E2F;
-    border: 2px solid #FF48C8;
-    transition-duration: 0.5s;
-    cursor: pointer;
-
-  }
-
+  height: auto;
+  width: 200px;
+  background-color: #1f1e2f;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(255, 72, 200, 1);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(255, 72, 200, 1);
+  box-shadow: 0px 0px 15px 0px rgba(255, 72, 200, 1);
+  transition-duration: 0.5s;
+}
+
+.map-location-wrapper:hover {
+  -webkit-box-shadow: 0px 0px 21px 5px rgba(153, 211, 66, 1);
+  -moz-box-shadow: 0px 0px 21px 5px rgba(153, 211, 66, 1);
+  box-shadow: 0px 0px 21px 5px rgba(153, 211, 66, 1);
+  transition-duration: 0.5s;
+}
+
+.map-location-content-wrapper {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.map-location-content-wrapper {
+  font-family: unbounded-reg;
+}
+
+.map-location-content-wrapper h4 {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+
+.map-location-content-wrapper p {
+  text-align: center;
+  color: white;
+  font-size: 11px;
+  padding-top: 7px;
+}
+
+.map-location-content-wrapper .map-location-description {
+  color: #99d342;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.map-location-rent-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  height: 90px;
+  color: #ff48c8;
+  padding-top: 20px;
+  text-align: left;
+}
+
+.map-location-rent-wrapper p {
+  color: #ff48c8;
+  font-size: 14px;
+  text-align: left;
+}
+
+.colour-white {
+  color: white;
+}
+
+.map-location-content-wrapper button {
+  width: 120px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #ff48c8;
+  border: 2px solid #ff48c8;
+  font-family: unbounded-reg;
+  margin-bottom: 5px;
+  transition-duration: 0.5s;
+}
+
+.map-location-content-wrapper button p {
+  font-size: 15px;
+  padding-bottom: 6px;
+}
+
+.map-location-content-wrapper button:hover {
+  border: 2px solid #ff48c8;
+  background-color: #1f1e2f;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+/* individual placements for living options */
+
+.pinecrest27 {
+  position: absolute;
+  top: 360px;
+  left: 390px;
+}
+
+.rodeo19 {
+  position: absolute;
+  left: 950px;
+  top: 380px;
+}
+
+.harmonyE1 {
+  position: absolute;
+  top: 60px;
+  left: 650px;
+}
+
+.brickyard32 {
+  position: absolute;
+  top: 60px;
+  left: 1150px;
+}
+
+/* You work here section */
+
+.map-work-location-wrapper {
+  font-size: 30px;
+  color: #1f1e2f;
+  position: relative;
+  top: 100px;
+  left: 50px;
+}
+
+.map-work-location-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 120px;
+  background-color: #1f1e2f;
+  position: relative;
+  bottom: 60px;
+  left: 30px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(255, 72, 200, 1);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(255, 72, 200, 1);
+  box-shadow: 0px 0px 15px 0px rgba(255, 72, 200, 1);
+}
+
+.map-work-location-circle p {
+  text-align: center;
+  color: white;
+  font-family: unbounded-reg;
+  font-size: 15px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*  choose a place to live styling */
+
+.rentintro-mainwrapper {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.rentintro-title-wrapper h1 {
+  font-family: unbounded-reg;
+  color: #ff48c8;
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 30px;
+}
+
+.rentintro-description-wrapper {
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.9em;
+}
+
+.rentintro-description-wrapper p {
+  padding-bottom: 15px;
+}
+
+.rentintro-list li {
+  text-align: left;
+  font-size: 13px;
+  padding-bottom: 1.1em;
+}
+
+.rentintro-list {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.rentintro-rentrecommendation {
+  padding-top: 20px;
+}
+
+.rentinfo-button-wrapper {
+  padding-top: 20px;
+}
+
+.rentinfo-button {
+  width: 330px;
+  height: 50px;
+  background-color: #ff48c8;
+  border: 2px solid #ff48c8;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 16px;
+  border-radius: 200px;
+  transition-duration: 0.5s;
+}
+
+.rentinfo-button:hover {
+  color: white;
+  border: 2px solid #ff48c8;
+  background-color: #1f1e2f;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+/* you have a job offer */
+
+.joboffer-mainwrapper {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.joboffer-title-wrapper h1 {
+  font-family: unbounded-reg;
+  color: #ff48c8;
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+
+.joboffer-description-wrapper {
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.9em;
+}
+
+.joboffer-description-wrapper p {
+  padding-bottom: 15px;
+}
+
+.joboffer-description-wrapper li {
+  text-align: left;
+  font-size: 13px;
+  padding-bottom: 1em;
+}
+
+.joboffer-list {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.joboffer-rentrecommendation {
+  padding-top: 20px;
+}
+
+.joboffer-button-wrapper {
+  padding-top: 20px;
+  width: 100%;
+}
+
+.joboffer-button {
+  height: 50px;
+  background-color: #ff48c8;
+  border: 2px solid #ff48c8;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 16px;
+  border-radius: 200px;
+  transition-duration: 0.5s;
+}
+
+.joboffer-button-wrapper button {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.joboffer-button:hover {
+  color: white;
+  border: 2px solid #ff48c8;
+  background-color: #1f1e2f;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.joboffer-calculator {
+  height: 50px;
+  background-color: #8cc044;
+  border: 2px solid #8cc044;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 16px;
+  border-radius: 200px;
+  transition-duration: 0.5s;
+}
+
+.joboffer-calculator:hover {
+  color: white;
+  border: 2px solid #8cc044;
+  background-color: #1f1e2f;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.job-offer-padding {
+  padding-top: 20px;
+}
+
+.joboffer-description-wrapper table {
+  text-align: left;
+  width: 90%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.joboffer-description-wrapper tr {
+  border: solid 1px white;
+  border-collapse: collapse;
+}
+
+.joboffer-description-wrapper th {
+  border: solid 1px white;
+  padding: 5px;
+}
+
+.align-right {
+  text-align: right;
+}
+
+/* supermarket choice page */
+
+.supermarketchoice-display-wrapper {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.supermarketchoice-box:hover {
+  cursor: pointer;
+}
+
+.transport-choice-box:hover {
+  cursor: pointer;
+}
+
+.supermarket-active {
+  -webkit-box-shadow: 0px 0px 17px -1px rgba(140, 192, 68, 1);
+  -moz-box-shadow: 0px 0px 17px -1px rgba(140, 192, 68, 1);
+  box-shadow: 0px 0px 17px -1px rgba(140, 192, 68, 1);
+}
+
+.supermarketchoice-display-wrapper h1 {
+  font-family: unbounded-reg;
+  color: #ff48c8;
+  font-size: 23px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.supermarketchoice-flex-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.supermarketchoice-box {
+  width: 47%;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: #1f1e2f;
+}
+
+.supermarketchoice-button-wrap {
+  text-align: center;
+  padding-bottom: 25px;
+  padding-top: 10px;
+}
+
+.supermarketchoice-button-wrap button {
+  height: 50px;
+  width: 160px;
+  background-color: #ff48c8;
+  border: 2px solid #ff48c8;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 16px;
+  border-radius: 200px;
+  transition-duration: 0.5s;
+}
+
+.supermarketchoice-button-wrap button:hover {
+  background-color: #1f1e2f;
+  border: 2px solid #ff48c8;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
 
 .supermarketchoice-description {
-    color: white;
-    font-family: unbounded-reg;
-    text-align: center;
-    font-size: 13px;
-    padding-bottom: 20px;
+  color: white;
+  font-family: unbounded-reg;
+  text-align: center;
+  font-size: 13px;
+  padding-bottom: 20px;
 }
 
 .supermarket-choice-perk {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 15px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 15px;
 }
 
 .supermarket-choice-perk p {
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 13px;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 13px;
 }
 
 .supermarketchoice-heading-wrap {
-    width: 85%;
-    margin: 0 auto;
-    padding-top: 20px;
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
 .supermarketchoice-heading-wrap h4 {
-    text-align: center;
-    color: white;
-    font-family: unbounded-reg;
+  text-align: center;
+  color: white;
+  font-family: unbounded-reg;
 }
 
 .supermarketchoice-heading-wrap p {
-    text-align: center;
-    color: #8CC044;
-    font-family: unbounded-reg;
-    font-size: 13px;
-    padding-top: 10px;
-    
+  text-align: center;
+  color: #8cc044;
+  font-family: unbounded-reg;
+  font-size: 13px;
+  padding-top: 10px;
 }
 
 .supermarketchoice-costs-wrap {
-    width: 85%;
-    margin: 0 auto;
-    text-align: left;
-    color: white;
-    font-family: unbounded-reg;
-    font-size: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  width: 85%;
+  margin: 0 auto;
+  text-align: left;
+  color: white;
+  font-family: unbounded-reg;
+  font-size: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .supermarketchoice-costs-wrap p {
-    padding-bottom: 5px;
+  padding-bottom: 5px;
 }
-
-
 
 /* supermarket choices sidebar */
 
 .currentlyshoppingatdisplay p {
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 13px;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    text-align: center;
-  }
-
-  .currentlyshoppingatdisplay h5 {
-    font-size: 16px;
-  }
-
-  .currentlyshopping-wrap {
-    text-align: center;
-    padding-top: 10px;
-  } 
-
-  .currentlyshopping-costs-container {
-    width: 90%;
-    margin: 0 auto;
-    overflow: auto;
-    padding-top: 20px;
-  }
-
-  .currentlyshopping-shoppingcost {
-    width: 65%;
-    float: left;
-    overflow: auto;
-  }
-
-  .currentlyshopping-shoppingcost p {
-    text-align: left;
-    padding: 0;
-    padding-bottom: 10px;
-    color: white;
-  }
-
-  .currentlyshopping-transportcosts {
-    width: 35%;
-    float: right;
-    overflow: auto;
-  }
-
-  .currentlyshopping-transportcosts p {
-    text-align: right;
-    padding: 0;
-    padding-bottom: 10px;
-    color:#7DAB3D;
-  }
-
-  .currentlyshoppingatdisplay button {
-    width: 120px;
-    height: 35px;
-    font-family: unbounded-reg;
-    font-size: 13px;
-    border-radius: 20px;
-    background-color: #FF48C8;
-    border: solid 1px #FF48C8;
-    color: white;
-    transition-duration: 0.5s;
-  }
-  
-  .currentlyshoppingatdisplay button:hover {
-    border: solid 1px #FF48C8;
-    background-color: #1F1E2F;
-    transition-duration: 0.5s;
-    cursor: pointer;
-  
-  }
-
-  .supermarketinfo-title {
-    padding-top: 20px;
-  }
-
-  .supermarketinfo-list li {
-    text-align: left;
-    padding-bottom: 1.1em;
-    font-size: 13px;
-  }
-
-  .supermarketinfo-list {
-    width: 85%;
-    margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-
-
-  /* transport choice display */
-
-  .transport-cost-container-sidebar h5 {
-    font-family: unbounded-reg;
-    font-size: 14px;
-    padding-bottom: 10px;
-  }
-  
-  
-  .transportchoice-flexbox-wrap {
-    width: 90%;
-    margin: auto;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-bottom: 20px;
-
-  }
-
-  .transport-choice-box {
-    width: 47%;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: #1F1E2F;
-    overflow: auto;
-    border-radius: 20px;
-  }
-
-  .transport-name-desc-wrap {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    font-family: unbounded-reg;
-  }
-
-  .transport-name-desc-wrap h4 {
-    color: #FF48C8;
-    padding-top: 20px;
-    font-size: 18px;
-  }
-
-  .transport-name-desc-wrap p {
-    color: #8CC044;
-    font-size: 13px;
-    padding-top: 10px;
-  }
-
-  .transport-perk-wrap {
-    padding-top: 20px;
-    color: white;
-    font-size: 14px;
-    font-family: unbounded-reg;
-    text-align: center;
-  }
-
-  .transport-total-cost-wrap {
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  .transport-total-cost-wrap p {
-    font-family: unbounded-reg;
-    color: #FF48C8;
-    padding-top: 20px;
-  }
-
-  .transport-total-cost-wrap table {
-    text-align: left;
-    border-collapse: collapse;
-    margin: 0 auto;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    width: 95%;
-    font-family: unbounded-reg;
-    font-size: 13px;
-    color: white;
-    border-radius: 20px;
-
-  }
-
-  .transport-total-cost-wrap tr {
-    border: solid 1px white;
-    border-collapse: collapse;
-  }
-
-   th {
-    border: solid 1px white;
-    padding: 10px;
-  }
-
-  .transport-choice-button button {
-    width: 270px;
-  }
-
-
-  /* pensions page */
-
-  .previous-next-container {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    font-size: 12px;
-  }
-
-  .previous-container {
-    width: 30%;
-    float: left;
-    height: auto;
-    text-align: left;
-  }
-
-  .next-container {
-    width: 30%;
-    float: right;
-    height: auto;
-    text-align: right;
-  }
-
-  .next-container .fa-arrow-right {
-    padding-left: 8px;
-  }
-
-  .previous-container .fa-arrow-left {
-    padding-right: 8px;
-  }
-
-  .currentslide-circles-container {
-    width: 40%;
-    float: left;
-    height: auto;
-    text-align: center;
-  }
-
-  .pensionintro {
-    padding-top: 40px;
-    min-height: 360px;
-  }
-
-  .pensionSlideInactive {
-    display: none;
-  }
-
-  .pension-title {
-    font-size: 17px;
-  }
-
-  .next-container:hover p {
-    color: #7DAB3D;
-    cursor: pointer;
-  }
-
-  .previous-container:hover p {
-    color: #7DAB3D;
-    cursor: pointer;
-  }
-
-  .currentslide-circles-container .fa-circle {
-    padding-left: 7px;
-    padding-right: 7px;
-    font-size: 7px;
-  }
-
-  .currentslide-circles-container .circleactive {
-    color: #7DAB3D;
-  }
-
-  .pension-contributionchoices-container {
-    width: 100%;
-    margin: 0 auto;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    padding-top: 20px;
-  }
-
-  .pension-contribution-box {
-    width: 32%;
-    overflow: auto;
-    margin-left: 5px;
-    margin-right: 10px;
-    background-color: #1F1E2F;
-    border-radius: 10px;
-  }
-
-  .pension-contribution-title {
-    width: 90%;
-    margin: 0 auto;
-    font-size: 13px;
-    color: #FF48C8;
-    padding-top: 5px;
-    line-height: 1.5em;;
-  }
-
-
-  .pension-contribution-percentage-container {
-    text-align: center;
-    color: white;
-    padding-top: 10px;
-  }
-
-  .pension-contribution-amount-container {
-    text-align: center;
-    color: white;
-    padding-top: -30px;
-  }
-
-  .pensionintro-description-wrapper {
-    font-family: unbounded-reg;
-    color: white;
-    font-size: 15px;
-    text-align: center;
-    line-height: 1.9em;
-  }
-
-  .pension-contribution-padding {
-    padding-bottom: 30px;
-    padding-top: 20px;
-  }
-
-  .pension-contribution-option-container {
-    width: 955;
-    margin: 0 auto;
-  }
-
-  .pension-contribution-option-container h2 {
-    font-size: 15px;
-  }
-
-  .pensionintro-title-wrapper h1 {
-    font-family: unbounded-reg;
-    color: #FF48C8;
-    font-size: 25px;
-    text-align: center;
-    padding-bottom: 20px;
-    padding-top: 30px;
-  }
-
-  .displaynone {
-    display: none;
-  }
-
-  .pension-contribution-button-container {
-    width: 200px;
-    margin: 0 auto;
-    padding-top: 20px;
-  }
-
-  .pension-contribution-button-container button {
-    width: 170px;
-    border-radius: 20px;
-    background-color: #FF48C8;
-    height: 40px;
-    border: solid #FF48C8 1px;
-    color: white;
-    font-family: unbounded-reg;
-    transition-duration: 0.5s;
-  }
-
-  .pension-contribution-button-container button:hover {
-    transition-duration: 0.5s;
-    color: white;
-    border: white 1px solid;
-    background-color: #1F1E2F;
-    cursor: pointer;
-  }
-
-  .pension-contribution-choices-padding {
-    min-height: 410px;
-  }
-
-  .pension-active {
-    -webkit-box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
-    -moz-box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
-    box-shadow: 0px 0px 17px -1px rgba(140,192,68,1);
-
-  }
-
-  .pension-investment-container {
-    width: 85%;
-    margin: 0 auto;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  .pension-investment-container-padding {
-    min-height: 380px;
-    padding-top: 30px;
-  }
-
-  .pension-investment-flex {
-    width: 48%;
-    overflow: auto;
-    margin-left: 8px;
-    margin-right: 8px;
-    border-radius: 15px;
-    background-color: #1F1E2F;
-  }
-
-  .pension-investment-title {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .pension-investment-description {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 10px;
-    color: #FF48C8;
-  }
-
-  .pension-investment-share {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 10px;
-    font-size: 18px;
-    color: #7DAB3D;
-  }
-
-
-  .pension-investment-padding {
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-
-
-
-  /* main gameplay components */
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 13px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.currentlyshoppingatdisplay h5 {
+  font-size: 16px;
+}
+
+.currentlyshopping-wrap {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.currentlyshopping-costs-container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+  padding-top: 20px;
+}
+
+.currentlyshopping-shoppingcost {
+  width: 65%;
+  float: left;
+  overflow: auto;
+}
+
+.currentlyshopping-shoppingcost p {
+  text-align: left;
+  padding: 0;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.currentlyshopping-transportcosts {
+  width: 35%;
+  float: right;
+  overflow: auto;
+}
+
+.currentlyshopping-transportcosts p {
+  text-align: right;
+  padding: 0;
+  padding-bottom: 10px;
+  color: #7dab3d;
+}
+
+.currentlyshoppingatdisplay button {
+  width: 120px;
+  height: 35px;
+  font-family: unbounded-reg;
+  font-size: 13px;
+  border-radius: 20px;
+  background-color: #ff48c8;
+  border: solid 1px #ff48c8;
+  color: white;
+  transition-duration: 0.5s;
+}
+
+.currentlyshoppingatdisplay button:hover {
+  border: solid 1px #ff48c8;
+  background-color: #1f1e2f;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.supermarketinfo-title {
+  padding-top: 20px;
+}
+
+.supermarketinfo-list li {
+  text-align: left;
+  padding-bottom: 1.1em;
+  font-size: 13px;
+}
+
+.supermarketinfo-list {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* transport choice display */
+
+.transport-cost-container-sidebar h5 {
+  font-family: unbounded-reg;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.transportchoice-flexbox-wrap {
+  width: 90%;
+  margin: auto;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+.transport-choice-box {
+  width: 47%;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #1f1e2f;
+  overflow: auto;
+  border-radius: 20px;
+}
+
+.transport-name-desc-wrap {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: unbounded-reg;
+}
+
+.transport-name-desc-wrap h4 {
+  color: #ff48c8;
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+.transport-name-desc-wrap p {
+  color: #8cc044;
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+.transport-perk-wrap {
+  padding-top: 20px;
+  color: white;
+  font-size: 14px;
+  font-family: unbounded-reg;
+  text-align: center;
+}
+
+.transport-total-cost-wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.transport-total-cost-wrap p {
+  font-family: unbounded-reg;
+  color: #ff48c8;
+  padding-top: 20px;
+}
+
+.transport-total-cost-wrap table {
+  text-align: left;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  width: 95%;
+  font-family: unbounded-reg;
+  font-size: 13px;
+  color: white;
+  border-radius: 20px;
+}
+
+.transport-total-cost-wrap tr {
+  border: solid 1px white;
+  border-collapse: collapse;
+}
+
+th {
+  border: solid 1px white;
+  padding: 10px;
+}
+
+.transport-choice-button button {
+  width: 270px;
+}
+
+/* pensions page */
+
+.previous-next-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+}
+
+.previous-container {
+  width: 30%;
+  float: left;
+  height: auto;
+  text-align: left;
+}
+
+.next-container {
+  width: 30%;
+  float: right;
+  height: auto;
+  text-align: right;
+}
+
+.next-container .fa-arrow-right {
+  padding-left: 8px;
+}
+
+.previous-container .fa-arrow-left {
+  padding-right: 8px;
+}
+
+.currentslide-circles-container {
+  width: 40%;
+  float: left;
+  height: auto;
+  text-align: center;
+}
+
+.pensionintro {
+  padding-top: 40px;
+  min-height: 360px;
+}
+
+.pensionSlideInactive {
+  display: none;
+}
+
+.pension-title {
+  font-size: 17px;
+}
+
+.next-container:hover p {
+  color: #7dab3d;
+  cursor: pointer;
+}
+
+.previous-container:hover p {
+  color: #7dab3d;
+  cursor: pointer;
+}
+
+.currentslide-circles-container .fa-circle {
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 7px;
+}
+
+.currentslide-circles-container .circleactive {
+  color: #7dab3d;
+}
+
+.pension-contributionchoices-container {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+
+.pension-contribution-box {
+  width: 32%;
+  overflow: auto;
+  margin-left: 5px;
+  margin-right: 10px;
+  background-color: #1f1e2f;
+  border-radius: 10px;
+}
+
+.pension-contribution-title {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #ff48c8;
+  padding-top: 5px;
+  line-height: 1.5em;
+}
+
+.pension-contribution-percentage-container {
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+}
+
+.pension-contribution-amount-container {
+  text-align: center;
+  color: white;
+  padding-top: -30px;
+}
+
+.pensionintro-description-wrapper {
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.9em;
+}
+
+.pension-contribution-padding {
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
+.pension-contribution-option-container {
+  width: 955;
+  margin: 0 auto;
+}
+
+.pension-contribution-option-container h2 {
+  font-size: 15px;
+}
+
+.pensionintro-title-wrapper h1 {
+  font-family: unbounded-reg;
+  color: #ff48c8;
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.displaynone {
+  display: none;
+}
+
+.pension-contribution-button-container {
+  width: 200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.pension-contribution-button-container button {
+  width: 170px;
+  border-radius: 20px;
+  background-color: #ff48c8;
+  height: 40px;
+  border: solid #ff48c8 1px;
+  color: white;
+  font-family: unbounded-reg;
+  transition-duration: 0.5s;
+}
+
+.pension-contribution-button-container button:hover {
+  transition-duration: 0.5s;
+  color: white;
+  border: white 1px solid;
+  background-color: #1f1e2f;
+  cursor: pointer;
+}
+
+.pension-contribution-choices-padding {
+  min-height: 410px;
+}
+
+.pension-active {
+  -webkit-box-shadow: 0px 0px 17px -1px rgba(140, 192, 68, 1);
+  -moz-box-shadow: 0px 0px 17px -1px rgba(140, 192, 68, 1);
+  box-shadow: 0px 0px 17px -1px rgba(140, 192, 68, 1);
+}
+
+.pension-investment-container {
+  width: 85%;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.pension-investment-container-padding {
+  min-height: 380px;
+  padding-top: 30px;
+}
+
+.pension-investment-flex {
+  width: 48%;
+  overflow: auto;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 15px;
+  background-color: #1f1e2f;
+}
+
+.pension-investment-title {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.pension-investment-description {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 10px;
+  color: #ff48c8;
+}
+
+.pension-investment-share {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 18px;
+  color: #7dab3d;
+}
+
+.pension-investment-padding {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+/* main gameplay components */
 
 .maingameplay-interaction-container {
   width: 100%;
@@ -1465,7 +1416,7 @@ body {
   height: 95%;
   margin-left: 10px;
   margin-right: 10px;
-  background-color: #1F1E2F;
+  background-color: #1f1e2f;
   border-radius: 15px;
 }
 
@@ -1475,7 +1426,7 @@ body {
   margin: 0 auto;
   text-align: center;
   font-family: unbounded-reg;
-  color: #FF48C8;
+  color: #ff48c8;
   font-size: 15px;
 }
 
@@ -1510,18 +1461,18 @@ body {
 .pension-interactive-right {
   width: 20%;
   overflow: auto;
-  color: #7DAB3D;
+  color: #7dab3d;
   float: right;
   text-align: right;
 }
 
 .pension-interactive-total-container {
- width: 80%;
- margin: 0 auto;
- margin-top: 5px;
- height: 70px;
- background-color: #15141D;
- border-radius: 8px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5px;
+  height: 70px;
+  background-color: #15141d;
+  border-radius: 8px;
 }
 
 .pension-interactive-total-title-container {
@@ -1539,7 +1490,7 @@ body {
   margin: 0 auto;
   text-align: center;
   padding-top: 15px;
-  color: #7DAB3D;
+  color: #7dab3d;
   font-family: unbounded-reg;
   font-size: 14px;
 }
@@ -1557,7 +1508,7 @@ body {
 
 .pension-interactive-button-container button {
   width: 85%;
-  background-color: #1F1E2F;
+  background-color: #1f1e2f;
   height: 33px;
   margin-bottom: 10px;
   border-radius: 20px;
@@ -1568,16 +1519,15 @@ body {
 }
 
 .pension-interactive-button-container button:hover {
-  background-color: #FF48C8;
-  border: solid #FF48C8 1px;
+  background-color: #ff48c8;
+  border: solid #ff48c8 1px;
   cursor: pointer;
   transition-duration: 0.3s;
 }
 
 .border-pink button {
-  border: solid 1.5px #FF48C8;
+  border: solid 1.5px #ff48c8;
 }
-
 
 /* everyday savings interactive component */
 
@@ -1594,7 +1544,6 @@ body {
   padding-right: 8px;
 }
 
-
 .currentaccount-button-wrapper {
   padding-top: 20px;
 }
@@ -1602,8 +1551,8 @@ body {
 .currentaccount-button {
   width: 280px;
   height: 50px;
-  background-color: #FF48C8;
-  border: 2px solid #FF48C8;
+  background-color: #ff48c8;
+  border: 2px solid #ff48c8;
   font-family: unbounded-reg;
   color: white;
   font-size: 16px;
@@ -1613,8 +1562,8 @@ body {
 
 .currentaccount-button:hover {
   color: white;
-  border: 2px solid #FF48C8;
-  background-color: #1F1E2F;
+  border: 2px solid #ff48c8;
+  background-color: #1f1e2f;
   cursor: pointer;
   transition-duration: 0.5s;
 }
@@ -1627,7 +1576,7 @@ body {
   width: 80%;
   margin: 0 auto;
   height: 70px;
-  background-color: #15141D;
+  background-color: #15141d;
   margin-top: 20px;
   border-radius: 10px;
 }
@@ -1647,7 +1596,7 @@ body {
   margin: 0 auto;
   text-align: center;
   font-family: unbounded-reg;
-  color:#7DAB3D;
+  color: #7dab3d;
   font-size: 14px;
   padding-top: 15px;
 }
@@ -1656,7 +1605,7 @@ body {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  color:#FF48C8;
+  color: #ff48c8;
   font-family: unbounded-reg;
   padding-top: 15px;
   font-size: 13px;
@@ -1666,7 +1615,7 @@ body {
   width: 80%;
   margin: 0 auto;
   height: 50px;
-  background-color:#15141D;
+  background-color: #15141d;
   margin-top: 10px;
 }
 
@@ -1674,7 +1623,7 @@ body {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  color:#7DAB3D;
+  color: #7dab3d;
   font-family: unbounded-reg;
   padding-top: 15px;
 }
@@ -1683,9 +1632,9 @@ body {
   height: 20px;
   width: 100%;
   text-align: center;
-  background-color: #15141D;
+  background-color: #15141d;
   border: none;
-  color:#7DAB3D;
+  color: #7dab3d;
   font-family: unbounded-reg;
   height: 20px;
 }
@@ -1703,7 +1652,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -1722,8 +1671,8 @@ input[type=number] {
   height: 35px;
   border-radius: 20px;
   font-family: unbounded-reg;
-  background-color:#1F1E2F;
-  border: solid 1.5px #FF48C8;
+  background-color: #1f1e2f;
+  border: solid 1.5px #ff48c8;
   color: white;
   transition-duration: 0.3s;
 }
@@ -1733,12 +1682,10 @@ input[type=number] {
 }
 
 .currentaccount-add-withdraw-buttons button:hover {
-  background-color:#FF48C8;
-  border: solid #FF48C8 1px;
+  background-color: #ff48c8;
+  border: solid #ff48c8 1px;
   transition-duration: 0.3s;
-
 }
-
 
 /* emergency fund */
 
@@ -1759,7 +1706,7 @@ input[type=number] {
   margin-left: 10px;
   margin-right: 10px;
   overflow: auto;
-  background-color: #1F1E2F;
+  background-color: #1f1e2f;
   width: 30%;
   border-radius: 10px;
 }
@@ -1790,7 +1737,7 @@ input[type=number] {
   width: 85%;
   margin: 0 auto;
   text-align: center;
-  color:#FF48C8;
+  color: #ff48c8;
   font-size: 16px;
   line-height: 1.2em;
   padding-top: 15px;
@@ -1809,7 +1756,7 @@ input[type=number] {
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  color: #7DAB3D;
+  color: #7dab3d;
   padding-top: 10px;
 }
 
@@ -1831,7 +1778,7 @@ input[type=number] {
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  color: #7DAB3D;
+  color: #7dab3d;
   padding-bottom: 20px;
 }
 
@@ -1847,7 +1794,7 @@ input[type=number] {
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  color: #7DAB3D;
+  color: #7dab3d;
 }
 
 .emergencyfund-description-wrapper {
@@ -1867,9 +1814,9 @@ input[type=number] {
 .emergencyfundchoice-button-container button {
   width: 170px;
   border-radius: 20px;
-  background-color: #FF48C8;
+  background-color: #ff48c8;
   height: 40px;
-  border: solid #FF48C8 1px;
+  border: solid #ff48c8 1px;
   color: white;
   font-family: unbounded-reg;
   transition-duration: 0.5s;
@@ -1879,19 +1826,18 @@ input[type=number] {
   transition-duration: 0.5s;
   color: white;
   border: white 1px solid;
-  background-color: #1F1E2F;
+  background-color: #1f1e2f;
   cursor: pointer;
 }
 
 .emergencyfund-intro-title-wrapper h1 {
   font-family: unbounded-reg;
-  color: #FF48C8;
+  color: #ff48c8;
   font-size: 25px;
   text-align: center;
   padding-bottom: 20px;
   padding-top: 30px;
 }
-
 
 /* emergency fund interactive component*/
 
@@ -1909,7 +1855,7 @@ input[type=number] {
   width: 80%;
   margin: 0 auto;
   height: 70px;
-  background-color: #15141D;
+  background-color: #15141d;
   margin-top: 15px;
   border-radius: 10px;
 }
@@ -1928,7 +1874,7 @@ input[type=number] {
 }
 
 .colour-red {
-  color: #F02E2E;
+  color: #f02e2e;
 }
 
 .emergencyfund-add-withdraw-buttons {
@@ -1946,8 +1892,8 @@ input[type=number] {
   height: 35px;
   border-radius: 20px;
   font-family: unbounded-reg;
-  background-color:#1F1E2F;
-  border: solid 1.5px #FF48C8;
+  background-color: #1f1e2f;
+  border: solid 1.5px #ff48c8;
   color: white;
   transition-duration: 0.3s;
 }
@@ -1957,17 +1903,16 @@ input[type=number] {
 }
 
 .emergencyfund-add-withdraw-buttons button:hover {
-  background-color:#FF48C8;
-  border: solid #FF48C8 1px;
+  background-color: #ff48c8;
+  border: solid #ff48c8 1px;
   transition-duration: 0.3s;
-
 }
 
 .emergencyfund-addwithdraw-box-container {
   width: 80%;
   margin: 0 auto;
   height: 40px;
-  background-color:#15141D;
+  background-color: #15141d;
   margin-top: 10px;
   border-radius: 10px;
 }
@@ -1976,26 +1921,107 @@ input[type=number] {
   height: 30px;
   width: 100%;
   text-align: center;
-  background-color: #15141D;
+  background-color: #15141d;
   border: none;
-  color:#7DAB3D;
+  color: #7dab3d;
   font-family: unbounded-reg;
   margin-top: 5px;
 }
 
 .emergencyfund-withdraw-button-inactive button {
-  border: solid 1.5px #3F3F5E;
-  color: #3F3F5E;
+  border: solid 1.5px #3f3f5e;
+  color: #3f3f5e;
 }
 
 .emergencyfund-withdraw-button-inactive button:hover {
-  border: solid 1.5px #3F3F5E;
-  color: #3F3F5E;
-  background-color:#1F1E2F;
+  border: solid 1.5px #3f3f5e;
+  color: #3f3f5e;
+  background-color: #1f1e2f;
 }
 
-  
+/* income streams */
+
+.incomestreams-slidecontainer {
+  min-height: 400px;
+}
 
 
- 
-  
+.incomestreams-choices-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.incomestreams-choice {
+  width: 45%;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: auto;
+  background-color: #1f1e2f;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.incomestreams-icon-container {
+  padding-top: 30px;
+  font-size: 35px;
+  color: #ff48c8;
+}
+
+.incomestreams-title-container {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.2em;
+  padding-top: 20px;
+  font-size: 15px;
+}
+
+.incomestreams-title-container p {
+  font-size: 12px;
+  color: #7dab3d;
+  padding-top: 5px;
+}
+
+.incomestreams-costs-container  {
+  width: 85%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.incomestreams-costs-title {
+  text-align: left;
+  font-size: 15px;
+  color:#ff48c8;
+}
+
+.incomestreams-costs-table {
+  width: 100%;
+  overflow: auto;
+}
+
+.incomestreams-label {
+  width: 65%;
+  overflow: auto;
+  float: left;
+  text-align: left;
+}
+
+.incomestreams-label p {
+  font-size: 13px;
+  padding-bottom: 0px;
+}
+
+.incomestreams-price {
+  width: 35%;
+  overflow: auto;
+  float: right;
+  float: right;
+  text-align: right;
+}
+
+.incomestreams-price p {
+  font-size: 13px;
+  padding-bottom: 0px;
+  color:#7dab3d;
+}
