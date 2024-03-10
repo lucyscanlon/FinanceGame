@@ -4,34 +4,31 @@ The parent of this component:
 - Supermarket Choice
 
 -->
-<script setup>
-
-</script>
 <template>
-    <div class="incomestreams-choice">
-            <div v-if="Identifier === 0" class="incomestreams-icon-container">
+    <div :class="(manageIncomeStream.selectedIncomeStreamChoice === Identifier) ? 'pension-active' : ''" @click="manageIncomeStream.changeSelectedIncomeStream(Identifier), manageIncomeStream.updateCurrentlySelectedIncomeStreamChoice(Identifier, Name, Hours, SetUpCost, MonthlyIncome, MonthlyCost, ExpansionPotential)" class="incomestreams-choice">
+            <div v-if="Identifier === 1" class="incomestreams-icon-container">
                 <font-awesome-icon icon="fa-solid fa-shop" />
             </div>
-            <div v-if="Identifier === 1" class="incomestreams-icon-container">
+            <div v-if="Identifier === 2" class="incomestreams-icon-container">
                 <font-awesome-icon icon="fa-solid fa-microphone" />
             </div>
-            <div v-if="Identifier === 2" class="incomestreams-icon-container">
+            <div v-if="Identifier === 3" class="incomestreams-icon-container">
                 <font-awesome-icon icon="fa-solid fa-martini-glass-citrus" />
             </div>
-            <div v-if="Identifier === 3" class="incomestreams-icon-container">
+            <div v-if="Identifier === 4" class="incomestreams-icon-container">
                 <font-awesome-icon icon="fa-solid fa-hashtag" />
             </div>
-            <div v-if="Identifier === 4" class="incomestreams-icon-container">
+            <div v-if="Identifier === 5" class="incomestreams-icon-container">
                 <font-awesome-icon icon="fa-solid fa-computer" />
             </div>
-            <div v-if="Identifier === 5" class="incomestreams-icon-container no-incomestream-padding">
+            <div v-if="Identifier === 6" class="incomestreams-icon-container no-incomestream-padding">
                 <font-awesome-icon icon="fa-solid fa-ban" />
             </div>
             <div class="incomestreams-title-container">
               <h4>{{ Name }}</h4>
-              <p v-if="Identifier < 5">{{ Hours }} hrs per month</p>
+              <p v-if="Identifier < 6">{{ Hours }} hrs per month</p>
             </div>
-            <div v-if="Identifier < 5" class="incomestreams-costs-container">
+            <div v-if="Identifier < 6" class="incomestreams-costs-container">
               <h6 class="incomestreams-costs-title">Costs:</h6>
               <div class="incomestreams-costs-table">
                 <div class="incomestreams-label">
@@ -50,6 +47,11 @@ The parent of this component:
             </div>
           </div>
 </template>
+<script setup>
+    import { useIncomeStreamsChoicesStore } from '../../../store/MainGameChoicesStore.js'
+    const manageIncomeStream = useIncomeStreamsChoicesStore()
+
+</script>
 <script>
     // export component data
     export default {

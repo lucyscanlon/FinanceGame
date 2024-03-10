@@ -1817,7 +1817,7 @@ input[type="number"] {
   border-radius: 20px;
   background-color: #ff48c8;
   height: 40px;
-  border: solid #ff48c8 1px;
+  border: solid #ff48c8 1.5px;
   color: white;
   font-family: unbounded-reg;
   transition-duration: 0.5s;
@@ -1826,7 +1826,7 @@ input[type="number"] {
 .emergencyfundchoice-button-container button:hover {
   transition-duration: 0.5s;
   color: white;
-  border: white 1px solid;
+  border: #ff48c8 1.5px solid;
   background-color: #1f1e2f;
   cursor: pointer;
 }

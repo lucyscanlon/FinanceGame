@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
-    mainGameComponentsUnlocked: 0,
+    mainGameComponentsUnlocked: 5,
     currentPage: 5,
   }),
   actions: {
@@ -122,6 +122,38 @@ export const useEmergencyFundChoicesStore = defineStore({
         this.currentlySelectedEmergencyFundChoice;
 
       console.log(this.chosenEmergencyFundChoice);
+    },
+  },
+});
+
+export const useIncomeStreamsChoicesStore = defineStore({
+  id: 'IncomeStreamsStore',
+  state: () => ({
+    selectedIncomeStreamChoice: 0,
+    currentlySelectedIncomeStreamChoice: [],
+    chosenIncomeStreamChoice: [],
+  }),
+  actions: {
+    changeSelectedIncomeStream(num) {
+      this.selectedIncomeStreamChoice = num;
+    },
+
+    updateCurrentlySelectedIncomeStreamChoice(identifier, name, hours, setupcost, monthlyincome, monthlycost, expansionpotential) {
+      this.currentlySelectedIncomeStreamChoice = {
+        ISidentifier: identifier,
+        ISname: name, 
+        IShours: hours,
+        ISsetupcost: setupcost,
+        ISmonthlyincome: monthlyincome,
+        ISmonthlycost: monthlycost,
+        ISexpansionpotential: expansionpotential,
+      }
+    },
+
+    confirmIncomeStreamChoice() {
+      this.chosenIncomeStreamChoice = this.currentlySelectedIncomeStreamChoice;
+
+      console.log(this.chosenIncomeStreamChoice)
     },
   },
 });

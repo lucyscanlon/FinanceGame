@@ -27,17 +27,26 @@
       <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="incomestreams-slidecontainer">
         <p>Would you like to set up a secondary income stream?</p>
         <div class="incomestreams-choices-container">
-          <IncomeStreamsFlexbox :Identifier=0  Name="Open Online Store" :Hours=20 :SetUpCost=20 :MonthlyIncome=250 MonthlyCost="10-200" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
-          <IncomeStreamsFlexbox :Identifier=1  Name="Start a podcast" :Hours=10 :SetUpCost=200 :MonthlyIncome=150 MonthlyCost="50" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
+          <IncomeStreamsFlexbox :Identifier=1  Name="Open Online Store" :Hours=20 :SetUpCost=20 :MonthlyIncome=250 MonthlyCost="10-200" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
+          <IncomeStreamsFlexbox :Identifier=2  Name="Start a podcast" :Hours=10 :SetUpCost=200 :MonthlyIncome=150 MonthlyCost="50" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
         </div>
         <div class="incomestreams-choices-container">
-          <IncomeStreamsFlexbox :Identifier=2  Name="Part Time Bar Work" :Hours=30 :SetUpCost=0 :MonthlyIncome=300 MonthlyCost="0" ExpansionPotential="+"></IncomeStreamsFlexbox>
-          <IncomeStreamsFlexbox :Identifier=3  Name="Post on Social Media" :Hours=20 :SetUpCost=0 :MonthlyIncome=200 MonthlyCost="0" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
+          <IncomeStreamsFlexbox :Identifier=3  Name="Part Time Bar Work" :Hours=30 :SetUpCost=0 :MonthlyIncome=300 MonthlyCost="0" ExpansionPotential="+"></IncomeStreamsFlexbox>
+          <IncomeStreamsFlexbox :Identifier=4  Name="Post on Social Media" :Hours=20 :SetUpCost=0 :MonthlyIncome=200 MonthlyCost="0" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
       </div>
       <div class="incomestreams-choices-container">
-        <IncomeStreamsFlexbox :Identifier=4  Name="Do freelance Work Online" :Hours=20 :SetUpCost=0 :MonthlyIncome=200 MonthlyCost="30" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
-        <IncomeStreamsFlexbox :Identifier=5  Name="Do not set up a secondary income stream" :Hours=40 :SetUpCost=300 :MonthlyIncome=250 MonthlyCost="100" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
+        <IncomeStreamsFlexbox :Identifier=5  Name="Do freelance Work Online" :Hours=20 :SetUpCost=0 :MonthlyIncome=200 MonthlyCost="30" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
+        <IncomeStreamsFlexbox :Identifier=6  Name="Do not set up a secondary income stream" :Hours=0 :SetUpCost=0 :MonthlyIncome=0 MonthlyCost="0" ExpansionPotential=""></IncomeStreamsFlexbox>
       </div>
+      <div class="emergencyfundchoice-button-container">
+            <button
+              @click="
+                manageIncomeStream.confirmIncomeStreamChoice(),
+                  useMainGameplayNav.navigateToPage(1)"
+            >
+              Confirm Choice
+            </button>
+          </div>
       </div>
       <div class="previous-next-container incomestreams-slide3">
         <div class="previous-container">
@@ -61,10 +70,7 @@
           /></span>
         </div>
         <div
-          v-if="currentSlide < 2"
-          :class="removeNextButton && 'displaynone'"
-          class="next-container"
-        >
+          v-if="currentSlide < 2" class="next-container">
           <p @click="nextSlide()">
             Next <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </p>
@@ -76,7 +82,11 @@
 <script setup>
 // import stores
 import IncomeStreamsFlexbox from "../MainGameChoices/IncomeStreamsFlexbox";
+import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
 
+import { useIncomeStreamsChoicesStore } from '../../../store/MainGameChoicesStore.js'
+    const manageIncomeStream = useIncomeStreamsChoicesStore()
+    const useMainGameplayNav = useMainGameplayNavigationStore();
 
 </script>
 <script>
