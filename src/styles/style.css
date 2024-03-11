@@ -2035,3 +2035,107 @@ input[type="number"] {
 .no-incomestream-padding {
   padding-top: 80px;
 }
+
+.incomestreams-editinfo-container {
+  width: 50%;
+  margin: 0 auto;
+  height: 170px;
+  background-color:#1f1e2f;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.incomestreams-input-container {
+  padding-top: 20px;
+}
+
+.incomestreams-input-container input {
+  height: 50px;
+  background-color:#15141d;
+  width: 270px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: unbounded-reg;
+  color:#7dab3d;
+  text-align: center;
+  font-size: 15px;
+}
+
+.incomestreams-input-container input::placeholder {
+  color: white;
+}
+
+.incomestreams-namechoice-button-container {
+  padding-top: 30px;
+}
+
+.incomestreams-namechoice-button-container button {
+  width: 170px;
+  height: 40px;
+  border-radius: 50px;
+  border: solid #ff48c8 1.5px;
+  background-color: #ff48c8;
+  color: white;
+  font-family: unbounded-reg;
+  transition-duration: 0.5s;
+}
+
+.incomestreams-namechoice-button-container button:hover {
+  background-color:#1f1e2f;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.barwork-container {
+  height: 300px;
+}
+
+.barwork-container button {
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: unbounded-reg;
+  color: white;
+  border-radius: 20px;
+  background-color:#1f1e2f;
+  border: solid 1px white;
+  margin-bottom: 10px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  transition-duration: 0.5s;
+}
+
+.barwork-container button:hover {
+  border: solid 1px #7dab3d;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.barwork-button-active button {
+  border: solid 1px #7dab3d;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.barwork-buttons {
+  padding-top: 30px;
+}
+
+.barwork-confirm-container {
+  padding-top: 30px;
+}
+
+.barwork-confirm-container button {
+  background-color: #ff48c8;
+  border: solid 1px #ff48c8;
+  transition-duration: 0.5s;
+}
+
+.barwork-confirm-container button:hover {
+  background-color:#1f1e2f;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+

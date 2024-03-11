@@ -51,13 +51,79 @@
       </div>
       <div class="emergencyfundchoice-button-container">
             <button
-              @click="
-                manageIncomeStream.confirmIncomeStreamChoice(),
-                  useMainGameplayNav.navigateToPage(1)"
-            >
+              @click="manageIncomeStream.confirmIncomeStreamChoice(), nextSlide(), (manageIncomeStream.currentlySelectedIncomeStreamChoice.ISidentifier === 6) ? useMainGameplayNav.navigateToPage(1) : '' ">
               Confirm Choice
             </button>
           </div>
+      </div>
+      <div :class="currentSlide !== 3 && 'pensionSlideInactive'" class="incomestreams-slidecontainer">
+        <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 1" class="onlinestore-choosename-slide">
+          <p>Choose a name for your online shop</p>
+          <div class="incomestreams-editinfo-container">
+            <div class="incomestreams-input-container">
+              <form>
+                <input type="text" placeholder="Enter name" v-model="onlineStoreName">
+              </form>
+              <div class="incomestreams-namechoice-button-container">
+               <button @click="useMainGameplayNav.navigateToPage(1), manageIncomeStream.confirmOnlineStoreName(onlineStoreName)">Confirm Name</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 2" class="onlinestore-choosename-slide">
+          <p>Choose a name for your podcast</p>
+          <div class="incomestreams-editinfo-container">
+            <div class="incomestreams-input-container">
+              <form>
+                <input type="text" placeholder="Enter name" v-model="podcastName">
+              </form>
+              <div class="incomestreams-namechoice-button-container">
+               <button @click="useMainGameplayNav.navigateToPage(1), manageIncomeStream.confirmPodcastName(podcastName)">Confirm Name</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 3" class="onlinestore-choosename-slide">
+          <p>Choose where you would like to work</p>
+          <div class="incomestreams-editinfo-container barwork-container">
+            <div class="barwork-buttons">
+              <span :class="(barChoice === 'The White Horse') ? 'barwork-button-active' : ''"><button @click="barChoice = 'The White Horse'">The White Horse Pub</button></span>
+              <span :class="(barChoice === 'Cornerstone Spirits') ? 'barwork-button-active' : ''"><button class="barwork-button-active" @click="barChoice = 'Cornerstone Spirits'">Cornerstone Spirits</button></span>
+              <span :class="(barChoice === 'Bullet Bar') ? 'barwork-button-active' : ''"><button @click="barChoice = 'Bullet Bar'">Bullet Bar</button></span>
+              <span :class="(barChoice === 'Martins Martini Bar') ? 'barwork-button-active' : ''"><button @click="barChoice = 'Martins Martini Bar'">Martin's Martini Bar</button></span>
+            </div>
+            <div class="barwork-confirm-container">
+               <button @click="useMainGameplayNav.navigateToPage(1), manageIncomeStream.confirmBarChoiceName(barChoice)">Confirm Name</button>
+              </div>
+          </div>
+        </div>
+        <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 4" class="onlinestore-choosename-slide">
+          <p>Choose your social media username</p>
+          <div class="incomestreams-editinfo-container">
+            <div class="incomestreams-input-container">
+              <form>
+                <input type="text" placeholder="Enter username" v-model="socialMediaUsername">
+              </form>
+              <div class="incomestreams-namechoice-button-container">
+               <button @click="useMainGameplayNav.navigateToPage(1), manageIncomeStream.confirmSocialMediaUsername(socialMediaUsername)">Confirm Name</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 5" class="onlinestore-choosename-slide">
+          <p>Choose a skill for your freelance work</p>
+          <div class="incomestreams-editinfo-container barwork-container">
+            <div class="barwork-buttons">
+              <span :class="(freelanceChosenSkill === 'Web Development') ? 'barwork-button-active' : ''"><button @click="freelanceChosenSkill = 'Web Development'">Web Development</button></span>
+              <span :class="(freelanceChosenSkill === 'Video Editing') ? 'barwork-button-active' : ''"><button class="barwork-button-active" @click="freelanceChosenSkill = 'Video Editing'">Video Editing</button></span>
+              <span :class="(freelanceChosenSkill === 'Social Media Management') ? 'barwork-button-active' : ''"><button @click="freelanceChosenSkill = 'Social Media Management'">Social Media Management</button></span>
+              <span :class="(freelanceChosenSkill === 'Digital Marketing') ? 'barwork-button-active' : ''"><button @click="freelanceChosenSkill = 'Digital Marketing'">Digital Marketing</button></span>
+            </div>
+            <div class="barwork-confirm-container">
+               <button @click="useMainGameplayNav.navigateToPage(1), manageIncomeStream.confirmFreelanceSkill(freelanceChosenSkill)">Confirm Name</button>
+              </div>
+          </div>
+        </div>
       </div>
       <div class="previous-next-container incomestreams-slide3">
         <div class="previous-container">
@@ -68,8 +134,7 @@
         <div
           v-if="currentSlide < 2"
           :class="removeNextButton && 'displaynone'"
-          class="currentslide-circles-container"
-        >
+          class="currentslide-circles-container">
           <span :class="currentSlide === 0 && 'circleactive'"
             ><font-awesome-icon icon="fa-solid fa-circle"
           /></span>
@@ -77,6 +142,9 @@
             ><font-awesome-icon icon="fa-solid fa-circle"
           /></span>
           <span :class="currentSlide === 2 && 'circleactive'"
+            ><font-awesome-icon icon="fa-solid fa-circle"
+          /></span>
+          <span :class="currentSlide === 3 && 'circleactive'"
             ><font-awesome-icon icon="fa-solid fa-circle"
           /></span>
         </div>
@@ -109,7 +177,12 @@ export default {
   },
   data() {
     return {
-      currentSlide: 1,
+      currentSlide: 3,
+      onlineStoreName: '',
+      podcastName: '',
+      socialMediaUsername: '',
+      barChoice: '',
+      freelanceChosenSkill: '',
     };
   },
   methods: {

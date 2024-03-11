@@ -132,6 +132,11 @@ export const useIncomeStreamsChoicesStore = defineStore({
     selectedIncomeStreamChoice: 0,
     currentlySelectedIncomeStreamChoice: [],
     chosenIncomeStreamChoice: [],
+    onlineStoreName: '',
+    podcastName: '',
+    socialMediaUsername: '',
+    barChoiceName: '',
+    freelanceChosenSkill: '',
   }),
   actions: {
     changeSelectedIncomeStream(num) {
@@ -155,5 +160,27 @@ export const useIncomeStreamsChoicesStore = defineStore({
 
       console.log(this.chosenIncomeStreamChoice)
     },
+
+    confirmOnlineStoreName(string) {
+        this.onlineStoreName = string;
+    },
+
+    confirmPodcastName(string) {
+        this.podcastName = string;
+    },
+
+    confirmBarChoiceName(string) {
+        this.barChoiceName = string;
+        console.log(this.barChoiceName)
+    },
+
+    confirmSocialMediaUsername(string) {
+        this.socialMediaUsername = string;
+    },
+
+    confirmFreelanceSkill(string) {
+        this.freelanceChosenSkill = string;
+        console.log(this.freelanceChosenSkill)
+    }
   },
 });
