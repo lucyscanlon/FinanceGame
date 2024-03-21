@@ -24,7 +24,9 @@
 <script setup>
     import IncomeStreamsType from './incomeStreamsType.vue'
     import { useIncomeStreamsChoicesStore } from '../../../store/MainGameChoicesStore.js'
+    import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
 
+    const manageMainGameNav = useMainGameplayNavigationStore()
     const manageIncomeStreams = useIncomeStreamsChoicesStore()
 </script>
 <script>
