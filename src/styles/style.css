@@ -2232,3 +2232,30 @@ input[type="number"] {
   padding-right: 5px;
 }
 
+.incomesteams-nochoice-desc {
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: unbounded-reg;
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+.incomestreams-nochoice-icon {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  color: #7dab3d;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.noincomestreamchosen-component-container {
+  padding-top: 20px;
+}
+
+.setupincomestreams-button button {
+  width: 150px;
+}
+

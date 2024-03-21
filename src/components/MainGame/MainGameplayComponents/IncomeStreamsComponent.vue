@@ -5,6 +5,20 @@
         <IncomeStreamsType v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 4" :icon=4 type="Your Social Media" :name=manageIncomeStreams.socialMediaUsername :monthlyIncome=200 :monthlyCost=50></IncomeStreamsType>
         <IncomeStreamsType v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 5" :icon=5 type="Freelance Work" :name=manageIncomeStreams.freelanceChosenSkill :monthlyIncome=200 :monthlyCost=50></IncomeStreamsType>
         <IncomeStreamsType v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 3" :icon=3 type="Part Time Bar Work" :name=manageIncomeStreams.barChoiceName :monthlyIncome=200 :monthlyCost=50></IncomeStreamsType>
+        <div v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 6" class="noincomestreamchosen-component-container">
+            <div class="incomestreams-interactive-title">
+                <h4>Secondary Income Stream</h4>
+            </div>
+            <div class="incomestreams-nochoice-icon">
+                <font-awesome-icon icon="fa-solid fa-ban" />
+            </div>
+            <div class="incomesteams-nochoice-desc">
+                <p>You have chosen to not set up a secondary income stream</p>
+            </div>
+            <div class="incomestreams-interactive-edit-choice setupincomestreams-button">
+                <button @click="manageMainGameNav.navigateToPage(6)">Set Up</button>
+            </div>
+        </div>
     </div>
 </template>
 <script setup>
