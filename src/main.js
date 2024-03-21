@@ -16,6 +16,7 @@ import { faMartiniGlassCitrus } from '@fortawesome/free-solid-svg-icons'
 import { faHashtag } from '@fortawesome/free-solid-svg-icons'
 import { faComputer } from '@fortawesome/free-solid-svg-icons'
 import { faBan } from '@fortawesome/free-solid-svg-icons'
+import { faAt } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMapPin)
 library.add(faArrowRight)
@@ -30,6 +31,7 @@ library.add(faMartiniGlassCitrus)
 library.add(faHashtag)
 library.add(faComputer)
 library.add(faBan)
+library.add(faAt)
 
 
 const app = createApp(App);

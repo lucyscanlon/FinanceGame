@@ -2139,3 +2139,96 @@ input[type="number"] {
   cursor: pointer;
 }
 
+.incomestreams-interactive-title {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  color:#ff48c8;
+  padding-top: 27.5px;
+  font-family: unbounded-reg;
+  font-size: 18px;
+}
+
+.incomestream-type-container {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  font-family: unbounded-reg;
+  font-size: 13px;
+}
+
+.incomestream-name-container {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 10px;
+  text-align: center;
+  font-family: unbounded-reg;
+  color:#7dab3d;
+  padding-top: 15px;
+}
+
+.incomestream-name-container .fa-shop {
+  padding-right: 5px;
+}
+
+.incomestreams-info-container {
+  width: 75%;
+  margin: 0 auto;
+  overflow: auto;
+  margin-top: 30px;
+  font-family: unbounded-reg;
+  font-size: 13px;
+  color: white;
+}
+
+.incomestreams-info-container p {
+  padding-bottom: 10px;
+}
+
+.incomestreams-interactive-labels {
+  width: 65%;
+  overflow: auto;
+  float: left;
+}
+
+.incomestreams-interactive-costs {
+  width: 35%;
+  float: right;
+  overflow: auto;
+  text-align: right;
+  color:#7dab3d;
+}
+
+.incomestreams-interactive-edit-choice {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 30px;
+  font-family: unbounded-reg;
+
+}
+
+.incomestreams-interactive-edit-choice button {
+  color: white;
+  background-color:#1f1e2f;
+  border: solid 1.5px #ff48c8;
+  height: 40px;
+  width: 230px;
+  border-radius: 20px;
+  font-family: unbounded-reg;
+  font-size: 13px;
+  transition-duration: 0.5s;
+}
+
+.incomestreams-interactive-edit-choice button:hover {
+  background: #ff48c8;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.incomestream-name-container .fa-microphone {
+  padding-right: 5px;
+}
+

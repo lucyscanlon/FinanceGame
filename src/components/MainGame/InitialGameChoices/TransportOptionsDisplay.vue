@@ -10,15 +10,13 @@ Components:
 <script setup>
     // import stores
     import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
-    const livingOptions = useLivingOptionsStore()
-
     import { transportChoiceStore } from '../../../store/InitialGameChoicesStore.js';
-    const manageTransport = transportChoiceStore();
-
     import { useMoneyManageStore } from '../../../store/MoneyStore.js'
-    const manageMoney = useMoneyManageStore()
-
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+
+    const livingOptions = useLivingOptionsStore()
+    const manageTransport = transportChoiceStore();
+    const manageMoney = useMoneyManageStore()
     const useMainGameNav = useMainGameplayNavigationStore()
 
 </script>
