@@ -175,9 +175,12 @@ export default {
   components: {
     IncomeStreamsFlexbox,
   },
+  props: {
+    startingSlide: Number,
+  },
   data() {
     return {
-      currentSlide: 3,
+      currentSlide: this.startingSlide,
       onlineStoreName: '',
       podcastName: '',
       socialMediaUsername: '',

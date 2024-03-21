@@ -61,7 +61,10 @@ Components:
     ></EmergencyFundIntroduction>
     <incomeStreamsIntroduction
       v-if="manageMainGameNav.currentPage === 5"
-    ></incomeStreamsIntroduction>
+    :startingSlide="0"></incomeStreamsIntroduction>
+    <incomeStreamsIntroduction
+      v-if="manageMainGameNav.currentPage === 6"
+      :startingSlide="2"></incomeStreamsIntroduction>
     <div
       v-if="
         manageMainGameNav.currentPage === 1 &&

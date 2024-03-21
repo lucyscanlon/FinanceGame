@@ -25,9 +25,16 @@
             </div>
         </div>
         <div class="incomestreams-interactive-edit-choice">
-            <button>Change income stream</button>
+            <button @click="manageMainGameNav.navigateToPage(6)">Change income stream</button>
         </div>
 </template>
+<script setup>
+    
+    import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+
+    const manageMainGameNav = useMainGameplayNavigationStore()
+
+</script>
 <script>
 
 export default {
