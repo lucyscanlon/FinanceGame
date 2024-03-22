@@ -2259,3 +2259,15 @@ input[type="number"] {
   width: 150px;
 }
 
+.housedepositinfo-title {
+  padding-top: 0px;
+}
+
+.housedepositslide-container {
+  min-height: 500px;
+}
+
+.housedepositslide-container ul ul {
+  padding-left: 30px;
+}
+
