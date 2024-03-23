@@ -5,7 +5,7 @@ The parent of this component:
 
 -->
 <template>
-    <div class="housedeposit-choice-flex">
+    <div :class="(manageHouseDeposit.currentlySelectedHouseDepositChoice === Identifier) ? 'pension-active' : ''" @click="manageHouseDeposit.updateCurrentlySelectedHouseDepositChoice(Identifier)" class="housedeposit-choice-flex">
         <div class="housedep-title">
             <h4>{{ Name }}</h4>
         </div>
@@ -30,6 +30,9 @@ The parent of this component:
     
 </template>
 <script setup>
+
+    import { useHouseDepositChoiceStore } from '../../../store/MainGameChoicesStore'
+    const manageHouseDeposit = useHouseDepositChoiceStore()
 
 
 </script>

@@ -46,6 +46,12 @@ The parent of this component:
                     <HouseDepositChoiceFlexbox :Identifier="2" Name="3 Year Fixed Rate Savings Account" Desc="A high interest bank account which cannot be accessed for 3 years" Perk="4.8% interest" Deposit="£1,500" ContLimit="None"></HouseDepositChoiceFlexbox>
                     <HouseDepositChoiceFlexbox :Identifier="3" Name="Savings Account" Desc="An ordinary savings account" Perk="Withdraw at any time" Deposit="No Deposit" ContLimit="None"></HouseDepositChoiceFlexbox>
                 </div>
+                <div class="emergencyfundchoice-button-container">
+            <button
+              @click="manageHouseDeposit.confirmHouseDepositChoice(), useMainGameplayNav.navigateToPage(1)">
+              Confirm Choice
+            </button>
+          </div>
             </div>
             <div class="previous-next-container incomestreams-slide3">
                 <div class="previous-container">
@@ -83,10 +89,14 @@ The parent of this component:
 </template>
 <script setup>
 
-import HouseDepositChoiceFlexbox from "../MainGameChoices/HouseDepositFlexbox.vue";
+    import HouseDepositChoiceFlexbox from "../MainGameChoices/HouseDepositFlexbox.vue";
+
+    import { useHouseDepositChoiceStore } from '../../../store/MainGameChoicesStore'
+    import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
+
+    const manageHouseDeposit = useHouseDepositChoiceStore()
+    const useMainGameplayNav = useMainGameplayNavigationStore();
     // import stores
-    //import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
-    //const livingOptions = useLivingOptionsStore()
 </script>
 <script>
     // export component data

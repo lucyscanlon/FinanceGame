@@ -200,10 +200,12 @@ export const useHouseDepositChoiceStore = defineStore({
 
         updateCurrentlySelectedHouseDepositChoice(name) {
             this.currentlySelectedHouseDepositChoice = name;
+            console.log(this.currentlySelectedHouseDepositChoice);
         },
 
         confirmHouseDepositChoice() {
             this.chosenHouseDepositChoice = this.currentlySelectedHouseDepositChoice;
+            console.log(this.chosenHouseDepositChoice);
         }
     }
 })
