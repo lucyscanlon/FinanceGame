@@ -184,3 +184,26 @@ export const useIncomeStreamsChoicesStore = defineStore({
     }
   },
 });
+
+export const useHouseDepositChoiceStore = defineStore({
+    id: 'HouseDepositStore',
+    state: () => ({
+        selectedHouseDepositChoice: 0,
+        currentlySelectedHouseDepositChoice: '',
+        chosenHouseDepositChoice: '',
+
+    }),
+    actions: {
+        changeSelectedHouseDepositChoice(num) {
+            this.selectedHouseDepositChoice = num;
+        },
+
+        updateCurrentlySelectedHouseDepositChoice(name) {
+            this.currentlySelectedHouseDepositChoice = name;
+        },
+
+        confirmHouseDepositChoice() {
+            this.chosenHouseDepositChoice = this.currentlySelectedHouseDepositChoice;
+        }
+    }
+})
