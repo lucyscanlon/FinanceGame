@@ -191,6 +191,7 @@ export const useHouseDepositChoiceStore = defineStore({
         selectedHouseDepositChoice: 0,
         currentlySelectedHouseDepositChoice: '',
         chosenHouseDepositChoice: '',
+        houseDepositGoal: 15000,
 
     }),
     actions: {

@@ -14,6 +14,7 @@ export const useMoneyManageStore = defineStore({
         emergencyFundCurrentTotal: 0,
         daysUntilPayday: 30,
         decreaseTime: true,
+        houseDepositCurrentTotal: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -59,7 +60,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         addToEmergencyFundTotal(num) {
-            if(this.moneyInPocket > num) {
+            if(this.moneyInPocket >= num) {
                 this.emergencyFundCurrentTotal = this.emergencyFundCurrentTotal + num;
                 this.moneyInPocket = this.moneyInPocket - num;
             } else {
@@ -69,7 +70,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         withdrawFromEmergencyFundTotal(num) {
-            if(this.emergencyFundCurrentTotal > num) {
+            if(this.emergencyFundCurrentTotal >= num) {
                 this.emergencyFundCurrentTotal = this.emergencyFundCurrentTotal - num;
                 this.moneyInPocket = this.moneyInPocket + num;
             } else {
@@ -81,6 +82,24 @@ export const useMoneyManageStore = defineStore({
             this.daysUntilPayday = this.daysUntilPayday - 1;
             
         },
+
+        addToHouseDeposit(num) {
+            if(this.moneyInPocket >= num) {
+                this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
+                this.moneyInPocket = this.moneyInPocket - num;
+            } else {
+                return;
+            }
+        },
+
+        withdrawFromHouseDeposit(num) {
+            if(this.houseDepositCurrentTotal >= num) {
+                this.houseDepositCurrentTotal = this.houseDepositCurrentTotal - num;
+                this.moneyInPocket = this.moneyInPocket + num;
+            } else {
+                return;
+            }
+        }
     }
 })
 

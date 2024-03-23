@@ -2376,9 +2376,10 @@ input[type="number"] {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  padding-top: 5px;
-  color: #7dab3d;
+  padding-top: 10px;
+  color: white;
   font-family: unbounded-reg;
+  
 }
 
 .home-dep-comp-desc p {
@@ -2396,7 +2397,7 @@ input[type="number"] {
 }
 
 .housedeposit-interactive-title-container h1 {
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .housedeposit-buttons button {
