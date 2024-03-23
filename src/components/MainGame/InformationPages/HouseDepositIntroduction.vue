@@ -9,7 +9,7 @@ The parent of this component:
         <div class="rentintro-title-wrapper housedepositinfo-title">
             <h1>Saving for a house deposit</h1>
         </div>
-        <div class="rentintro-description-wrapper">
+        <div class="homedeposit-description-wrapper">
             <div :class="currentSlide !== 0 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>Your career has been going well and you feel its time to start saving for a house! The first step is to save for a house deposit</p>
                 <div class="supermarketinfo-list">
@@ -37,13 +37,16 @@ The parent of this component:
                 </div>
             </div>
             <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="housedepositslide-container">
-                <p>What schemes are available to help first time buyers?</p>
-                <div class="supermarketinfo-list">
-                <ul>
-                    <li>A Lifetime ISA - Allows up to £4000 a year to be added into the account. Each year the government will automatically add a 25% bonus to your total. This means if you contribute £4000 in a year, the government will grant you £1000 making your total £5000 for the year.</li>
-                    <li></li>
-                </ul>
+                <p>How would you like to save for your deposit?</p>
+                <div class="housedeposit-goal-container">
+                    <p class="colour-green deposit-goal">Deposit Goal: £15,000</p>
                 </div>
+                <div class="housedeposit-choices-container">
+                    <HouseDepositChoiceFlexbox :Identifier="1" Name="Lifetime Isa" Desc="A bank account with a yearly limit" Perk="A 25% yearly bonus" Deposit="No Deposit" ContLimit="£4000"></HouseDepositChoiceFlexbox>
+                    <HouseDepositChoiceFlexbox :Identifier="2" Name="3 Year Fixed Rate Savings Account" Desc="A high interest bank account which cannot be accessed for 3 years" Perk="4.8% interest" Deposit="£1,500" ContLimit="None"></HouseDepositChoiceFlexbox>
+                    <HouseDepositChoiceFlexbox :Identifier="3" Name="Savings Account" Desc="An ordinary savings account" Perk="Withdraw at any time" Deposit="No Deposit" ContLimit="None"></HouseDepositChoiceFlexbox>
+                </div>
+                
             </div>
             <div class="previous-next-container incomestreams-slide3">
                 <div class="previous-container">
@@ -80,6 +83,8 @@ The parent of this component:
     </div>
 </template>
 <script setup>
+
+import HouseDepositChoiceFlexbox from "../MainGameChoices/HouseDepositFlexbox.vue";
     // import stores
     //import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
     //const livingOptions = useLivingOptionsStore()
@@ -88,9 +93,12 @@ The parent of this component:
     // export component data
     export default {
         name: 'HouseDepositIntroduction',
+        components: {
+            HouseDepositChoiceFlexbox,
+        },
         data() {
             return {
-                currentSlide: 0,
+                currentSlide: 2,
             }
         },
         methods: {

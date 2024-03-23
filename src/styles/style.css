@@ -2271,3 +2271,85 @@ input[type="number"] {
   padding-left: 30px;
 }
 
+.housedeposit-goal-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.housedeposit-choices-container {
+  width: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.housedeposit-choice-flex {
+  width: 30%;
+  overflow: auto;
+  background-color: #1f1e2f;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.homedeposit-description-wrapper h4 {
+  line-height: 1.2em;
+  font-size: 13px;
+}
+
+.housedep-title {
+  padding-top: 20px;
+  color:#ff48c8;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+}
+
+.housedep-title h4 {
+  font-size: 16px;
+}
+
+.housedep-desc {
+  width: 85%;
+  margin: 0 auto;
+  color: white;
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+.housedep-desc p {
+  line-height: 1.4em;
+  
+}
+
+.housedep-perks-container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.housedep-perks-container p {
+  color: #7dab3d;
+  font-size: 14px;
+}
+
+.homedeposit-description-wrapper {
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.9em;
+}
+
+.housedep-padding {
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+.deposit-goal {
+  padding-top: 15px;
+}
+
