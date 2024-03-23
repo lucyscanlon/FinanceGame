@@ -2355,3 +2355,51 @@ input[type="number"] {
   padding-top: 15px;
 }
 
+.fa-house {
+  padding-right: 5px;
+}
+
+.home-dep-comp-goal {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: unbounded-reg;
+  padding-top: 5px;
+}
+
+.home-dep-comp-goal p {
+  font-size: 13px;
+}
+
+.home-dep-comp-desc {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 5px;
+  color: #7dab3d;
+  font-family: unbounded-reg;
+}
+
+.home-dep-comp-desc p {
+  font-size: 12px;
+}
+
+.housedeposit-interactive-title-container {
+  padding-top: 10px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: unbounded-reg;
+  color: #ff48c8;
+  font-size: 15px;
+}
+
+.housedeposit-interactive-title-container h1 {
+  font-size: 20px;
+}
+
+.housedeposit-buttons button {
+  height: 28px;
+}
+
