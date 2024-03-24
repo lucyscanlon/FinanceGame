@@ -72,9 +72,6 @@ The parent of this component:
                 <span :class="currentSlide === 2 && 'circleactive'">
                     <font-awesome-icon icon="fa-solid fa-circle"/>
                 </span>
-                <span :class="currentSlide === 3 && 'circleactive'">
-                    <font-awesome-icon icon="fa-solid fa-circle"/>
-                </span>
             </div>
         <div
           v-if="currentSlide < 2" class="next-container">
@@ -107,7 +104,7 @@ The parent of this component:
         },
         data() {
             return {
-                currentSlide: 2,
+                currentSlide: 0,
             }
         },
         methods: {
