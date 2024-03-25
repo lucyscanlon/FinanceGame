@@ -7,7 +7,7 @@ The parent of this component:
 <template>
     <div class="rentintro-mainwrapper supermarket-info-wrap">
         <div class="rentintro-title-wrapper housedepositinfo-title">
-            <h1>Saving for a house deposit</h1>
+            <h1>Investing in the Stock Market</h1>
         </div>
         <div class="homedeposit-description-wrapper">
             <div :class="currentSlide !== 0 && 'pensionSlideInactive'" class="housedepositslide-container">
@@ -99,9 +99,6 @@ The parent of this component:
     // export component data
     export default {
         name: 'InvestingIntroduction',
-        components: {
-            HouseDepositChoiceFlexbox,
-        },
         data() {
             return {
                 currentSlide: 0,

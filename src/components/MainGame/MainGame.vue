@@ -66,6 +66,7 @@ Components:
       v-if="manageMainGameNav.currentPage === 6"
       :startingSlide="2"></incomeStreamsIntroduction>
       <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 7"></HouseDepositIntroduction>
+      <InvestingIntroduction v-if="manageMainGameNav.currentPage === 8"></InvestingIntroduction>
     <div
       v-if="
         manageMainGameNav.currentPage === 1 &&
@@ -127,6 +128,7 @@ import currentAccountIntroduction from "./InformationPages/CurrentAccountIntrodu
 import EmergencyFundIntroduction from "./InformationPages/EmergencyFundIntroduction.vue";
 import incomeStreamsIntroduction from "./InformationPages/IncomeStreamsIntroduction.vue";
 import HouseDepositIntroduction from "./InformationPages/HouseDepositIntroduction.vue";
+import InvestingIntroduction from "./InformationPages/InvestingIntroduction.vue";
 
 // export component data
 export default {
@@ -149,6 +151,7 @@ export default {
     EmergencyFundIntroduction,
     incomeStreamsIntroduction,
     HouseDepositIntroduction,
+    InvestingIntroduction,
   },
 };
 </script>
