@@ -11,47 +11,48 @@ The parent of this component:
         </div>
         <div class="homedeposit-description-wrapper">
             <div :class="currentSlide !== 0 && 'pensionSlideInactive'" class="housedepositslide-container">
-                <p>Your career has been going well and you feel its time to start saving for a house! The first step is to save for a house deposit</p>
+                <p>What is the stock market?</p>
                 <div class="supermarketinfo-list">
                 <ul>
-                    <li>The average first time buyer puts down a <span class="colour-green">20% upfront deposit payment</span> when buying a new home. The exact figure will vary depending on which home you want to buy.</li>
-                    <li>The government provides <span class="colour-green">schemes to first time buyers</span> to help you get on the property ladder.</li>
-                    <li>It's great to get on the property ladder early as houses normally hold or increase in value, meaning you can sell it for more than you bought it when you are ready to move.</li>
-                    <li><span class="colour-green">Stay realistic</span> about what you can afford and what space will be suitable for your needs.</li>
+                    <li>The ‘stock market’ or ‘stock exchange’ is a place where you can <span class="colour-green">buy or sell shares or stocks</span> of public companies.</li>
+                    <li>Companies sell shares of their companies to <span class="colour-green">raise funds from investors</span> in the public.</li>
+                    <li>Investors will own a share in a company with the hopes that its <span class="colour-green">value will rise over time</span>, as well as that they will receive <span class="colour-green">dividend payments</span> every 3 months. </li>
+                    <li>The stock market is open for trading <span class="colour-green">Monday-Friday 8am-4.30pm.</span></li>
                 </ul>
                 </div>
             </div>
             <div :class="currentSlide !== 1 && 'pensionSlideInactive'" class="housedepositslide-container">
-                <p>What is the process for buying a home for the first time?</p>
+                <p>What are the benefits to investing in the stock market?</p>
                 <div class="supermarketinfo-list">
                 <ul>
-                    <li><span class="colour-green">Start saving your deposit.</span> The larger your deposit, the more varied mortgage options will be available to you.</li>
-                    <li><span class="colour-green">Check your credit score,</span> a good credit score will be beneficial when applying for mortgages.</li>
-                    <li>Consider all your options and opportunities:</li>
-                    <ul>
-                        <li class="housedeposit-list-tab"><span class="colour-green">Shared Ownership</span> - this allows you to purchase a portion of the property and pay rent on the remaining portion.</li>
-                        <li class="housedeposit-list-tab"><span class="colour-green">First Homes Scheme</span> - this scheme offers new builds to first time buyers at a discounted rate of up to 30% compared to the market value.</li>
-                        <li class="housedeposit-list-tab"><span class="colour-green">Lifetime ISA</span> - this scheme helps you save a deposit for your first time. Contribute up to £4000 a year and recieve a 25% bonus from the government to use for your deposit.</li>
-                    </ul>
+                    <li>Owning stocks can help you <span class="colour-green">build your savings</span> over time.</li>
+                    <li>It can <span class="colour-green">protect your money from inflation</span> as the value of a stock can increase.</li>
+                    <li>As the price of a stock can rise and fall over time. When it rises you can sell a <span class="colour-green">share at a profit.</span></li>
+                    <li>You can earn <span class="colour-green">dividends,</span> a portion of company profits, which are paid on a quarterly basis.</li>
                 </ul>
                 </div>
             </div>
             <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="housedepositslide-container">
-                <p>How would you like to save for your deposit?</p>
-                <div class="housedeposit-goal-container">
-                    <p class="colour-green deposit-goal">Deposit Goal: £15,000</p>
+                <p>What are the risks of investing in the stock market?</p>
+                <div class="supermarketinfo-list">
+                <ul>
+                    <li>The stock market can be <span class="colour-green">unpredictable</span> and share values can <span class="colour-green">fluctuate unexpectedly.</span></li>
+                    <li>Stocks may fall in value, meaning if you cash out on that stock you may get <span class="colour-green">less money than your initial investment back.</span></li>
+                    <li>Stock Market crashes such as the <span class="colour-green">2008 global financial crisis</span> can negatively affect the value of all stocks.</li>
+                    <li>The rate of inflation can affect your investment return. If the <span class="colour-green">inflation rate exceeds</span> the rate of return for your investment you may lose out overall.</li>
+                </ul>
                 </div>
-                <div class="housedeposit-choices-container">
-                    <HouseDepositChoiceFlexbox :Identifier="1" Name="Lifetime Isa" Desc="A bank account with a yearly limit" Perk="A 25% yearly bonus" Deposit="No Deposit" ContLimit="£4000"></HouseDepositChoiceFlexbox>
-                    <HouseDepositChoiceFlexbox :Identifier="2" Name="3 Year Fixed Rate Savings Account" Desc="A high interest bank account which cannot be accessed for 3 years" Perk="4.8% interest" Deposit="£1,500" ContLimit="None"></HouseDepositChoiceFlexbox>
-                    <HouseDepositChoiceFlexbox :Identifier="3" Name="Savings Account" Desc="An ordinary savings account" Perk="Withdraw at any time" Deposit="No Deposit" ContLimit="None"></HouseDepositChoiceFlexbox>
+            </div>
+            <div :class="currentSlide !== 3 && 'pensionSlideInactive'" class="housedepositslide-container">
+                <p>How to manage the risk of investing in the stock market</p>
+                <div class="supermarketinfo-list">
+                <ul>
+                    <li>Invest in the stock market <span class="colour-green">for the long run.</span> This is a marathon not a sprint!</li>
+                    <li>Determine <span class="colour-green">how much you can afford to invest</span> and how regularly by accessing your financial circumstances.</li>
+                    <li>Invest in stable stocks with a <span class="colour-green">steady forecasted growth</span> such as the FTSE 100.</li>
+                    <li>Avoid investing in <span class="colour-green">volatile and unpredictable</span> stocks which rise and fall in value rapidly.</li>
+                </ul>
                 </div>
-                <div class="emergencyfundchoice-button-container">
-            <button
-              @click="manageHouseDeposit.confirmHouseDepositChoice(), useMainGameplayNav.navigateToPage(1)">
-              Confirm Choice
-            </button>
-          </div>
             </div>
             <div class="previous-next-container incomestreams-slide3">
                 <div class="previous-container">
@@ -60,7 +61,7 @@ The parent of this component:
                     </p>
                 </div>
             <div
-                v-if="currentSlide < 2"
+                v-if="currentSlide < 5"
                 :class="removeNextButton && 'displaynone'"
                 class="currentslide-circles-container">
                 <span :class="currentSlide === 0 && 'circleactive'">
@@ -72,9 +73,15 @@ The parent of this component:
                 <span :class="currentSlide === 2 && 'circleactive'">
                     <font-awesome-icon icon="fa-solid fa-circle"/>
                 </span>
+                <span :class="currentSlide === 3 && 'circleactive'">
+                    <font-awesome-icon icon="fa-solid fa-circle"/>
+                </span>
+                <span :class="currentSlide === 4 && 'circleactive'">
+                    <font-awesome-icon icon="fa-solid fa-circle"/>
+                </span>
             </div>
         <div
-          v-if="currentSlide < 2" class="next-container">
+          v-if="currentSlide < 5" class="next-container">
           <p @click="nextSlide()">
             Next <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </p>
@@ -85,14 +92,6 @@ The parent of this component:
     </div>
 </template>
 <script setup>
-
-    import HouseDepositChoiceFlexbox from "../MainGameChoices/HouseDepositFlexbox.vue";
-
-    import { useHouseDepositChoiceStore } from '../../../store/MainGameChoicesStore'
-    import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
-
-    const manageHouseDeposit = useHouseDepositChoiceStore()
-    const useMainGameplayNav = useMainGameplayNavigationStore();
     // import stores
 </script>
 <script>
@@ -103,6 +102,15 @@ The parent of this component:
             return {
                 currentSlide: 0,
             }
+        },
+        methods: {
+            nextSlide() {
+                this.currentSlide = this.currentSlide + 1;
+            },
+
+            previousSlide() {
+                this.currentSlide = this.currentSlide - 1;
+            },
         },
     }
 </script>
