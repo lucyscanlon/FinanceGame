@@ -53,6 +53,9 @@ The parent of this component:
                     <li>Avoid investing in <span class="colour-green">volatile and unpredictable</span> stocks which rise and fall in value rapidly.</li>
                 </ul>
                 </div>
+                <div class="investingintro-portfoliolink-button-container">
+                    <button @click="useMainGameplayNav.navigateToPage(1)">View Investment Portfolio</button>
+                </div>
             </div>
             <div class="previous-next-container incomestreams-slide3">
                 <div class="previous-container">
@@ -61,7 +64,7 @@ The parent of this component:
                     </p>
                 </div>
             <div
-                v-if="currentSlide < 5"
+                v-if="currentSlide < 4"
                 :class="removeNextButton && 'displaynone'"
                 class="currentslide-circles-container">
                 <span :class="currentSlide === 0 && 'circleactive'">
@@ -76,12 +79,9 @@ The parent of this component:
                 <span :class="currentSlide === 3 && 'circleactive'">
                     <font-awesome-icon icon="fa-solid fa-circle"/>
                 </span>
-                <span :class="currentSlide === 4 && 'circleactive'">
-                    <font-awesome-icon icon="fa-solid fa-circle"/>
-                </span>
             </div>
         <div
-          v-if="currentSlide < 5" class="next-container">
+          v-if="currentSlide < 4" class="next-container">
           <p @click="nextSlide()">
             Next <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </p>
@@ -93,6 +93,9 @@ The parent of this component:
 </template>
 <script setup>
     // import stores
+    import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
+
+    const useMainGameplayNav = useMainGameplayNavigationStore();
 </script>
 <script>
     // export component data

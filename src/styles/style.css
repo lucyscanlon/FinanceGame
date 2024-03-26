@@ -2404,3 +2404,30 @@ input[type="number"] {
   height: 28px;
 }
 
+
+/* investing */
+
+.investingintro-portfoliolink-button-container {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.investingintro-portfoliolink-button-container button {
+  width: 270px;
+  border-radius: 20px;
+  background-color: #ff48c8;
+  height: 40px;
+  border: solid #ff48c8 1.5px;
+  color: white;
+  font-family: unbounded-reg;
+  transition-duration: 0.5s;
+}
+
+.investingintro-portfoliolink-button-container button:hover {
+  transition-duration: 0.5s;
+  color: white;
+  border: #ff48c8 1.5px solid;
+  background-color: #1f1e2f;
+  cursor: pointer;
+}
