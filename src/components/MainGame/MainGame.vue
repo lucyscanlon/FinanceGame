@@ -67,13 +67,8 @@ Components:
       :startingSlide="2"></incomeStreamsIntroduction>
       <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 7"></HouseDepositIntroduction>
       <InvestingIntroduction v-if="manageMainGameNav.currentPage === 8"></InvestingIntroduction>
-    <div
-      v-if="
-        manageMainGameNav.currentPage === 1 &&
-        livingOptions.livingOptionsGameStage > 6
-      "
-      class="maingameplay-interaction-container"
-    >
+      <InvestmentPortfolioFull v-if="manageMainGameNav.currentPage === 9"></InvestmentPortfolioFull>
+    <div v-if="manageMainGameNav.currentPage === 1 && livingOptions.livingOptionsGameStage > 6" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
         <PensionInteractionComponent></PensionInteractionComponent>
         <EverydaySavingInteractiveComponent></EverydaySavingInteractiveComponent>
@@ -129,6 +124,7 @@ import EmergencyFundIntroduction from "./InformationPages/EmergencyFundIntroduct
 import incomeStreamsIntroduction from "./InformationPages/IncomeStreamsIntroduction.vue";
 import HouseDepositIntroduction from "./InformationPages/HouseDepositIntroduction.vue";
 import InvestingIntroduction from "./InformationPages/InvestingIntroduction.vue";
+import InvestmentPortfolioFull from "./MainGameplayComponents/InvestingPortfolio.vue";
 
 // export component data
 export default {
@@ -152,6 +148,7 @@ export default {
     incomeStreamsIntroduction,
     HouseDepositIntroduction,
     InvestingIntroduction,
+    InvestmentPortfolioFull,
   },
 };
 </script>
