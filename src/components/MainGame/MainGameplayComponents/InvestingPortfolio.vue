@@ -8,7 +8,7 @@
         </div>
         <div class="investing-port-full-stock-container">
             <div class="investing-port-stock-flex">
-                <div class="investing-port-share-name">
+                <div class="investing-port-share-name gear-share">
                     <p><font-awesome-icon icon="fa-solid fa-gear" /> EWG <span class="stock-value colour-green">1.73% <font-awesome-icon icon="fa-solid fa-arrow-up" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="investing-port-stock-flex">
-                <div class="investing-port-share-name">
+                <div class="investing-port-share-name eye-share">
                     <p><font-awesome-icon icon="fa-solid fa-eye" /> FEU <span class="stock-value colour-red">1.23% <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="investing-port-stock-flex">
-                <div class="investing-port-share-name">
+                <div class="investing-port-share-name ghost-share">
                     <p><font-awesome-icon icon="fa-solid fa-ghost" /> GHU <span class="stock-value colour-green">1.59% <font-awesome-icon icon="fa-solid fa-arrow-up" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="investing-port-stock-flex">
-                <div class="investing-port-share-name">
+                <div class="investing-port-share-name wheat-share">
                     <p><font-awesome-icon icon="fa-solid fa-wheat-awn" /> WRF <span class="stock-value colour-red">1.98% <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
@@ -56,7 +56,7 @@
                 </div> 
             </div>
             <div class="investing-port-stock-flex">
-                <div class="investing-port-share-name">
+                <div class="investing-port-share-name book-share">
                     <p><font-awesome-icon icon="fa-solid fa-book" /> PSW <span class="stock-value colour-red">1.13% <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">

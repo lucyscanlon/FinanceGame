@@ -2570,7 +2570,7 @@ input[type="number"] {
   width: 100%;
   height: 100px;
   margin-top: 10px;
-  background-color: #99d342;
+  background-color: #15141d;
 }
 
 .investing-port-stockprice {
@@ -2681,19 +2681,19 @@ input[type="number"] {
 }
 
 .investment1-bar {
-  background-color: purple;
+  background-color: #E95629;
 }
 .investment2-bar {
-  background-color: red;
+  background-color: #2EAB48;
 }
 .investment3-bar {
-  background-color: blue;
+  background-color: #6D5887;
 }
 .investment4-bar {
-  background-color: orange;
+  background-color: #F5C143;
 }
 .investment5-bar {
-  background-color: green;
+  background-color: #468D90;
 }
 
 
@@ -2702,4 +2702,24 @@ input[type="number"] {
   margin: 0 auto;
   padding-top: 30px;
   color: white;
+}
+
+.fa-ghost {
+  color: #6D5887;
+}
+
+.fa-gear {
+  color: #E95629;
+}
+
+.fa-wheat-awn {
+  color: #F5C143;
+}
+
+.fa-book {
+  color: #468D90;
+}
+
+.fa-eye {
+  color: #2EAB48;
 }
