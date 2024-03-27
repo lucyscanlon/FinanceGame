@@ -241,11 +241,24 @@ export const useInvestmentPortfolioChoiceStore = defineStore({
         sellShare(num, amount) {
             this.ShareTotalAmounts[num] = this.ShareTotalAmounts[num] - amount;
             this.TotalNumberOfShares = this.TotalNumberOfShares - amount;
+
+            this.Share1BarPercentage = ((this.ShareTotalAmounts[0] / this.TotalNumberOfShares) * 100);
+            this.Share2BarPercentage = ((this.ShareTotalAmounts[1] / this.TotalNumberOfShares) * 100);
+            this.Share3BarPercentage = ((this.ShareTotalAmounts[2] / this.TotalNumberOfShares) * 100);
+            this.Share4BarPercentage = ((this.ShareTotalAmounts[3] / this.TotalNumberOfShares) * 100);
+            this.Share5BarPercentage = ((this.ShareTotalAmounts[4] / this.TotalNumberOfShares) * 100);
         },
 
         sellAllShare(num) {
             this.TotalNumberOfShares = this.TotalNumberOfShares - this.ShareTotalAmounts[num];
             this.ShareTotalAmounts[num] = 0;
+
+            this.Share1BarPercentage = ((this.ShareTotalAmounts[0] / this.TotalNumberOfShares) * 100);
+            this.Share2BarPercentage = ((this.ShareTotalAmounts[1] / this.TotalNumberOfShares) * 100);
+            this.Share3BarPercentage = ((this.ShareTotalAmounts[2] / this.TotalNumberOfShares) * 100);
+            this.Share4BarPercentage = ((this.ShareTotalAmounts[3] / this.TotalNumberOfShares) * 100);
+            this.Share5BarPercentage = ((this.ShareTotalAmounts[4] / this.TotalNumberOfShares) * 100);
+ 
         }
 
     }
