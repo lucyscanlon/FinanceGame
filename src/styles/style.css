@@ -2447,6 +2447,7 @@ input[type="number"] {
   background-color:#1f1e2f;
   margin-top: 20px;
   border-radius: 20px;
+  font-family: unbounded-reg;
 }
 
 .investing-port-full-title {
@@ -2503,7 +2504,7 @@ input[type="number"] {
   width: 20%;
   margin-left: 5px;
   margin-right: 5px;
-  height: 100px;
+  height: 145px;
   background-color:#15141d;
   border-radius: 10px;
 }
@@ -2517,7 +2518,7 @@ input[type="number"] {
 
 .investing-port-total-number-container {
   width: 40%;
-  height: 150px;
+  height: 120px;
   background-color: #15141d;
   border-radius: 15px;
   float: left;
@@ -2528,7 +2529,160 @@ input[type="number"] {
   width: 57%;
   float: right;
   margin-right: 5px;
-  height: 150px;
+  height: 120px;
   background-color: #15141d;
   border-radius: 15px;
+}
+
+.investing-port-totalbalance-title {
+  width: 85%;
+  margin: 0 auto;
+  color:#ffffff;
+  padding-top: 30px;
+  
+}
+
+.investing-port-totalbalance-figure {
+  width: 85%;
+  margin: 0 auto;
+  color:#7dab3d;
+  font-size: 24px;
+  padding-top: 10px;
+}
+
+.investing-port-stock-flex {
+  font-size: 15px;
+  color: white;
+  
+}
+
+.investing-port-share-name {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.stock-value {
+  padding-left: 5px;
+}
+
+.investing-port-stock-visual {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  background-color: #99d342;
+}
+
+.investing-port-stockprice {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 8px;
+}
+
+.investing-port-stockprice h6 {
+  font-size: 13px;
+}
+
+.investing-port-stockprice p {
+  padding-top: 5px;
+  color: #7dab3d;
+  font-size: 15px;
+}
+
+.investing-port-stocks-owned {
+  width: 85%;
+  margin: 0 auto;
+  font-size: 15px;
+  color: white;
+  padding-top: 10px;
+}
+
+.investing-port-stocks-owned p {
+  font-size: 12px;
+}
+
+.shares-owned {
+  padding-left: 1px;
+}
+
+.investing-port-buy-sell-flex form {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.investing-port-buy-sell-flex input {
+  width: 85%;
+  margin: 0 auto;
+  background-color: #1f1e2f;
+  border: none;
+  color: #7dab3d;
+  text-align: center;
+  height: 30px;
+  border-radius: 5px;
+  font-family: unbounded-reg;
+}
+
+.investing-port-buy-sell-flex input::placeholder {
+  color:#7dab3d;
+  font-family: unbounded-reg;
+}
+
+.investingport-buy-sell-buttons {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.investingport-buy-sell-buttons button {
+  width: 70px;
+  height: 25px;
+  border-radius: 20px;
+  border: solid 1.5px #ff48c8;
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color: #15141d;
+  color: white;
+  font-family: unbounded-reg;
+  font-size: 12px;
+  transition-duration: 0.5s;
+}
+
+.investing-port-sell-button button {
+  border: solid 1px white;
+}
+
+.investing-port-sell-all-button button {
+  margin-top: 5px;
+  width: 85%;
+  border: solid 1px white;
+}
+
+.investingport-buy-sell-buttons button:hover {
+  background-color: #ff48c8;
+  color: white;
+  border: solid 1px #ff48c8;
+  transition-duration: 0.5s;
+}
+
+.investing-port-bar-container {
+  width: 90%;
+  margin: 0 auto;
+  height: 5px;
+  background-color: yellow;
+  margin-top: 25px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.stock-bar {
+  height: 30px;
+}
+
+.investing-port-percentage-split-title {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px;
+  color: white;
 }

@@ -18,6 +18,13 @@ import { faComputer } from '@fortawesome/free-solid-svg-icons'
 import { faBan } from '@fortawesome/free-solid-svg-icons'
 import { faAt } from '@fortawesome/free-solid-svg-icons'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import { faGear } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUp} from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown} from '@fortawesome/free-solid-svg-icons'
+import { faEye} from '@fortawesome/free-solid-svg-icons'
+import { faGhost } from '@fortawesome/free-solid-svg-icons'
+import { faWheatAwn } from '@fortawesome/free-solid-svg-icons'
+import { faBook } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMapPin)
 library.add(faArrowRight)
@@ -34,7 +41,13 @@ library.add(faComputer)
 library.add(faBan)
 library.add(faAt)
 library.add(faHouse)
-
+library.add(faGear)
+library.add(faArrowUp)
+library.add(faArrowDown)
+library.add(faEye)
+library.add(faGhost)
+library.add(faWheatAwn)
+library.add(faBook)
 
 const app = createApp(App);
 
