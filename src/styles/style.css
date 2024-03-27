@@ -2479,7 +2479,7 @@ input[type="number"] {
   display: flex;
   flex-direction: row;
   overflow: auto;
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .investing-port-stock-flex {
@@ -2518,7 +2518,7 @@ input[type="number"] {
 
 .investing-port-total-number-container {
   width: 40%;
-  height: 120px;
+  height: 100px;
   background-color: #15141d;
   border-radius: 15px;
   float: left;
@@ -2529,7 +2529,7 @@ input[type="number"] {
   width: 57%;
   float: right;
   margin-right: 5px;
-  height: 120px;
+  height: 100px;
   background-color: #15141d;
   border-radius: 15px;
 }
@@ -2538,7 +2538,7 @@ input[type="number"] {
   width: 85%;
   margin: 0 auto;
   color:#ffffff;
-  padding-top: 30px;
+  padding-top: 20px;
   
 }
 
@@ -2700,7 +2700,7 @@ input[type="number"] {
 .investing-port-percentage-split-title {
   width: 90%;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 20px;
   color: white;
 }
 
@@ -2722,4 +2722,28 @@ input[type="number"] {
 
 .fa-eye {
   color: #2EAB48;
+}
+
+.investing-port-close-portfolio-button {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.investing-port-close-portfolio-button button {
+  width: 180px;
+  height: 35px;
+  background-color: #1f1e2f;
+  color: white;
+  font-family: unbounded-reg;
+  border-radius: 20px;
+  border: solid 1px #ff48c8;
+  transition-duration: 0.5s;
+}
+
+.investing-port-close-portfolio-button button:hover {
+  background-color: #ff48c8;
+  transition-duration: 0.5s;
+  cursor: pointer;
 }

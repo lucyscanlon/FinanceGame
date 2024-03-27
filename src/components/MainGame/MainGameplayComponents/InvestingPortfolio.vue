@@ -174,6 +174,9 @@
 
             </div>
         </div>
+        <div class="investing-port-close-portfolio-button">
+            <button @click="useMainGameplayNav.navigateToPage(1)">Close Portfolio</button>
+        </div>
         
 
     </div>
@@ -183,8 +186,10 @@
 <script setup>
 
     import { useInvestmentPortfolioChoiceStore } from '../../../store/MainGameChoicesStore.js'
+    import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
 
     const manageInvestmentPortfolio = useInvestmentPortfolioChoiceStore()
+    const useMainGameplayNav = useMainGameplayNavigationStore();
 
 </script>
 <script>
