@@ -148,26 +148,25 @@
                 <div class="investing-port-totalbalance-figure">
                     <p>£14,000</p>
                 </div>
-
             </div>
             <div class="investing-port-visual-container">
                 <div class="investing-port-percentage-split-title">
                     <h5>Investment Portfolio Split:</h5>
                 </div>
                 <div class="investing-port-bar-container">
-                    <div style="width: 20%; float: left; background-color: purple;" class="investment1-bar stock-bar">
+                    <div :style="{ width: manageInvestmentPortfolio.Share1BarPercentage + '%' }" class="investment1-bar stock-bar">
 
                     </div>
-                    <div style="width: 20%; float: left; background-color: red;" class="investment2-bar stock-bar">
+                    <div :style="{ width: manageInvestmentPortfolio.Share2BarPercentage + '%' }" class="investment2-bar stock-bar">
                         
                     </div>
-                    <div style="width: 10%; float: left; background-color: green;" class="investment3-bar stock-bar">
+                    <div :style="{ width: manageInvestmentPortfolio.Share3BarPercentage + '%' }" class="investment3-bar stock-bar">
                         
                     </div>
-                    <div style="width: 30%; float: left; background-color: blue;" class="investment4-bar stock-bar">
+                    <div :style="{ width: manageInvestmentPortfolio.Share4BarPercentage + '%' }" class="investment4-bar stock-bar">
                         
                     </div>
-                    <div style="width: 20%; float: left; background-color: orange;" class="investment5-bar stock-bar">
+                    <div :style="{ width: manageInvestmentPortfolio.Share5BarPercentage + '%' }" class="investment5-bar stock-bar">
                         
                     </div>
                     
@@ -180,6 +179,7 @@
     </div>
    
 </template>
+
 <script setup>
 
     import { useInvestmentPortfolioChoiceStore } from '../../../store/MainGameChoicesStore.js'
@@ -198,7 +198,6 @@ export default {
             GHUAmountToBuyOrSell: '',
             WRFAmountToBuyOrSell: '',
             PSWAmountToBuyOrSell: '',
-
         }
     },
     methods: {

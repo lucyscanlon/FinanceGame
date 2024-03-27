@@ -214,18 +214,37 @@ export const useHouseDepositChoiceStore = defineStore({
 export const useInvestmentPortfolioChoiceStore = defineStore({
     id: 'InvestmentPortfolioStore',
     state: () => ({
-        ShareTotalAmounts: [0, 0, 0, 0, 0]
+        ShareTotalAmounts: [0, 0, 0, 0, 0],
+        TotalNumberOfShares: 0,
+        ShareBarPercentages: [0, 0, 0, 0, 0],
+        Share1BarPercentage: 0,
+        Share2BarPercentage: 0,
+        Share3BarPercentage: 0,
+        Share4BarPercentage: 0,
+        Share5BarPercentage: 0,
     }),
     actions: {
         buyMoreShare(num, amount) {
             this.ShareTotalAmounts[num] = this.ShareTotalAmounts[num] + amount;
+            this.TotalNumberOfShares = this.TotalNumberOfShares + amount;
+
+            this.Share1BarPercentage = ((this.ShareTotalAmounts[0] / this.TotalNumberOfShares) * 100);
+            this.Share2BarPercentage = ((this.ShareTotalAmounts[1] / this.TotalNumberOfShares) * 100);
+            this.Share3BarPercentage = ((this.ShareTotalAmounts[2] / this.TotalNumberOfShares) * 100);
+            this.Share4BarPercentage = ((this.ShareTotalAmounts[3] / this.TotalNumberOfShares) * 100);
+            this.Share5BarPercentage = ((this.ShareTotalAmounts[4] / this.TotalNumberOfShares) * 100);
+
+            console.log(this.Share1BarPercentage, this.Share2BarPercentage, this.Share3BarPercentage, this.Share4BarPercentage, this.Share5BarPercentage);
+
         },
 
         sellShare(num, amount) {
             this.ShareTotalAmounts[num] = this.ShareTotalAmounts[num] - amount;
+            this.TotalNumberOfShares = this.TotalNumberOfShares - amount;
         },
 
         sellAllShare(num) {
+            this.TotalNumberOfShares = this.TotalNumberOfShares - this.ShareTotalAmounts[num];
             this.ShareTotalAmounts[num] = 0;
         }
 

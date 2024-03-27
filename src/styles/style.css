@@ -2668,7 +2668,7 @@ input[type="number"] {
   width: 90%;
   margin: 0 auto;
   height: 5px;
-  background-color: yellow;
+  background-color: #1f1e2f;
   margin-top: 25px;
   border-radius: 20px;
   display: flex;
@@ -2679,6 +2679,23 @@ input[type="number"] {
 .stock-bar {
   height: 30px;
 }
+
+.investment1-bar {
+  background-color: purple;
+}
+.investment2-bar {
+  background-color: red;
+}
+.investment3-bar {
+  background-color: blue;
+}
+.investment4-bar {
+  background-color: orange;
+}
+.investment5-bar {
+  background-color: green;
+}
+
 
 .investing-port-percentage-split-title {
   width: 90%;
