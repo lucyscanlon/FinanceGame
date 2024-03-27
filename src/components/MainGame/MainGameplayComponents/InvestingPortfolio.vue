@@ -71,71 +71,71 @@
         <div class="investing-port-buy-sell-buttons-container">
             <div class="investing-port-buy-sell-flex">
                 <div class="investing-port-stocks-owned">
-                    <p>Owned Shares: <span class="shares-owned colour-green">15</span></p>
+                    <p>Owned Shares: <span class="shares-owned colour-green">{{ manageInvestmentPortfolio.ShareTotalAmounts[0] }}</span></p>
                 </div>
                 <form>
-                    <input type="number" placeholder="__" v-model="amountToChange">
+                    <input type="number" placeholder="__" v-model="EWGAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button>Buy</button>
-                    <span class="investing-port-sell-button"><button>Sell</button></span>
-                    <span class="investing-port-sell-all-button"><button>Sell All</button></span>
+                    <button @click="manageInvestmentPortfolio.buyMoreShare(0, EWGAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(0, EWGAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-all-button"><button @click="manageInvestmentPortfolio.sellAllShare(0), rerenderComponent()">Sell All</button></span>
                 </div>
 
             </div>
             <div class="investing-port-buy-sell-flex">
                 <div class="investing-port-stocks-owned">
-                    <p>Owned Shares: <span class="shares-owned colour-green">15</span></p>
+                    <p>Owned Shares: <span class="shares-owned colour-green">{{ manageInvestmentPortfolio.ShareTotalAmounts[1] }}</span></p>
                 </div>
                 <form>
-                    <input type="number" placeholder="__" v-model="amountToChange">
+                    <input type="number" placeholder="__" v-model="FEUAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button>Buy</button>
-                    <span class="investing-port-sell-button"><button>Sell</button></span>
-                    <span class="investing-port-sell-all-button"><button>Sell All</button></span>
+                    <button @click="manageInvestmentPortfolio.buyMoreShare(1, FEUAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(1, FEUAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-all-button"><button @click="manageInvestmentPortfolio.sellAllShare(1), rerenderComponent()">Sell All</button></span>
                 </div>
                 
             </div>
             <div class="investing-port-buy-sell-flex">
                 <div class="investing-port-stocks-owned">
-                    <p>Owned Shares: <span class="shares-owned colour-green">15</span></p>
+                    <p>Owned Shares: <span class="shares-owned colour-green">{{ manageInvestmentPortfolio.ShareTotalAmounts[2] }}</span></p>
                 </div>
                 <form>
-                    <input type="number" placeholder="__" v-model="amountToChange">
+                    <input type="number" placeholder="__" v-model="GHUAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button>Buy</button>
-                    <span class="investing-port-sell-button"><button>Sell</button></span>
-                    <span class="investing-port-sell-all-button"><button>Sell All</button></span>
+                    <button @click="manageInvestmentPortfolio.buyMoreShare(2, GHUAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(2, GHUAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-all-button"><button @click="manageInvestmentPortfolio.sellAllShare(2), rerenderComponent()">Sell All</button></span>
                 </div>
                 
             </div>
             <div class="investing-port-buy-sell-flex">
                 <div class="investing-port-stocks-owned">
-                    <p>Owned Shares: <span class="shares-owned colour-green">15</span></p>
+                    <p>Owned Shares: <span class="shares-owned colour-green">{{ manageInvestmentPortfolio.ShareTotalAmounts[3] }}</span></p>
                 </div>
                 <form>
-                    <input type="number" placeholder="__" v-model="amountToChange">
+                    <input type="number" placeholder="__" v-model="WRFAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button>Buy</button>
-                    <span class="investing-port-sell-button"><button>Sell</button></span>
-                    <span class="investing-port-sell-all-button"><button>Sell All</button></span>
+                    <button @click="manageInvestmentPortfolio.buyMoreShare(3, WRFAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(3, WRFAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-all-button"><button @click="manageInvestmentPortfolio.sellAllShare(3), rerenderComponent()">Sell All</button></span>
                 </div>
                 
             </div>
             <div class="investing-port-buy-sell-flex">
                 <div class="investing-port-stocks-owned">
-                    <p>Owned Shares: <span class="shares-owned colour-green">15</span></p>
+                    <p>Owned Shares: <span class="shares-owned colour-green">{{ manageInvestmentPortfolio.ShareTotalAmounts[4] }}</span></p>
                 </div>
                 <form>
-                    <input type="number" placeholder="__" v-model="amountToChange">
+                    <input type="number" placeholder="__" v-model="PSWAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button>Buy</button>
-                    <span class="investing-port-sell-button"><button>Sell</button></span>
-                    <span class="investing-port-sell-all-button"><button>Sell All</button></span>
+                    <button @click="manageInvestmentPortfolio.buyMoreShare(4, PSWAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(4, PSWAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-all-button"><button @click="manageInvestmentPortfolio.sellAllShare(4), rerenderComponent()">Sell All</button></span>
                 </div>
                 
             </div>
@@ -182,12 +182,35 @@
 </template>
 <script setup>
 
+    import { useInvestmentPortfolioChoiceStore } from '../../../store/MainGameChoicesStore.js'
+
+    const manageInvestmentPortfolio = useInvestmentPortfolioChoiceStore()
+
 </script>
 <script>
 
 export default {
-name: 'InvestmentPortfolioFull',
+    name: 'InvestmentPortfolioFull',
+    data() {
+        return {
+            EWGAmountToBuyOrSell: '',
+            FEUAmountToBuyOrSell: '',
+            GHUAmountToBuyOrSell: '',
+            WRFAmountToBuyOrSell: '',
+            PSWAmountToBuyOrSell: '',
 
+        }
+    },
+    methods: {
+        rerenderComponent() {
+            this.EWGAmountToBuyOrSell = '';
+            this.FEUAmountToBuyOrSell = '';
+            this.GHUAmountToBuyOrSell = '';
+            this.WRFAmountToBuyOrSell = '';
+            this.PSWAmountToBuyOrSell = '';
+            this.$forceUpdate();
+        }
+    }
 }
 
 </script>

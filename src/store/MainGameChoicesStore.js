@@ -210,3 +210,24 @@ export const useHouseDepositChoiceStore = defineStore({
         }
     }
 })
+
+export const useInvestmentPortfolioChoiceStore = defineStore({
+    id: 'InvestmentPortfolioStore',
+    state: () => ({
+        ShareTotalAmounts: [0, 0, 0, 0, 0]
+    }),
+    actions: {
+        buyMoreShare(num, amount) {
+            this.ShareTotalAmounts[num] = this.ShareTotalAmounts[num] + amount;
+        },
+
+        sellShare(num, amount) {
+            this.ShareTotalAmounts[num] = this.ShareTotalAmounts[num] - amount;
+        },
+
+        sellAllShare(num) {
+            this.ShareTotalAmounts[num] = 0;
+        }
+
+    }
+})
