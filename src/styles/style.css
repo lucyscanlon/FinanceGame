@@ -2747,3 +2747,57 @@ input[type="number"] {
   transition-duration: 0.5s;
   cursor: pointer;
 }
+
+.fa-chart-line {
+  padding-right: 10px;
+}
+
+.maingameplay-flex-container {
+  font-family: unbounded-reg;
+}
+
+.investments-percentage-gainloss-container {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+.investments-interactive-total-container {
+  width: 80%;
+  margin: 0 auto;
+  height: 70px;
+  background-color: #15141d;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.investments-percentage-gainloss-container .fa-arrow-up {
+  padding-left: 5px;
+}
+
+.investments-openportfolio-button {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.investments-openportfolio-button button {
+  background-color: #1f1e2f;
+  height: 40px;
+  border: solid #ff48c8 1.5px;
+  width: 220px;
+  border-radius: 20px;
+  color: white;
+  font-family: unbounded-reg;
+  font-size: 13px;
+  transition-duration: 0.5s;
+}
+
+.investments-openportfolio-button button:hover {
+  background: #ff48c8;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
