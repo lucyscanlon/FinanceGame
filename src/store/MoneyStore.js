@@ -112,6 +112,17 @@ export const useGameTimerStore = defineStore({
         monthsPassed: 0,
         currentMonth: 'January',
         currentYear: 2023,
+        stock1Value: 5.50,
+        stock2Value: 14.03,
+        stock3Value: 10.51,
+        stock4Value: 16.98,
+        stock5Value: 5.67,
+        stock1CrashProbability: 0.05,
+        stock2CrashProbability: 0.05,
+        stock3CrashProbability: 0.3,
+        stock4CrashProbability: 0.2,
+        stock5CrashProbability: 0.01,
+
     }),
     actions: {
         startCountdown() {
@@ -123,6 +134,12 @@ export const useGameTimerStore = defineStore({
                 if(this.countdown > 0) {
                     if((useMainGameplayNavigationStore().currentPage === 1) || (useMainGameplayNavigationStore().currentPage === 9)) {
                         this.countdown = this.countdown - 1;
+
+                        // flucuate prices of stocks
+
+                        if(this.countdown%3 === 0) {
+                            this.flucuateStockPrices();
+                        }
 
                         // add pension automatically with each payday
                         // pension total = pension total + (salary before tax * player tax contribution)
@@ -137,6 +154,27 @@ export const useGameTimerStore = defineStore({
                 }
             }, 1500)
         }, 
+
+        flucuateStockPrices() {
+            const fluctuation1 = Math.random() * 0.1 - 0.04;
+            const fluctuation2 = Math.random() * 0.5 - 0.5;
+            const fluctuation3 = Math.random() * 2 - 0.5;
+            const fluctuation4 = Math.random() * 5 - 1;
+            const fluctuation5 = Math.random() * 0.2 - 0.2;
+
+            this.stock1Value += fluctuation1;
+            this.stock2Value += fluctuation2;
+            this.stock3Value += fluctuation3;
+            this.stock4Value += fluctuation4;
+            this.stock5Value += fluctuation5;
+
+            this.stock1Value = Math.max(this.stock1Value, 1);
+            this.stock2Value = Math.max(this.stock2Value, 1);
+            this.stock3Value = Math.max(this.stock3Value, 1);
+            this.stock4Value = Math.max(this.stock4Value, 1);
+            this.stock5Value = Math.max(this.stock5Value, 1);
+
+        },
 
         resetCountdown() {
             this.countdown = 30
@@ -193,7 +231,7 @@ export const useGameTimerStore = defineStore({
 
         increaseYear() {
             this.currentYear = this.currentYear + 1
-        }
+        },
     }
 })
 

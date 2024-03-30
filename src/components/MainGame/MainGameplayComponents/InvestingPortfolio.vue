@@ -16,7 +16,7 @@
                 </div>
                 <div class="investing-port-stockprice">
                     <h6>Price/Value:</h6>
-                    <p>£11.72</p>
+                    <p>£{{ manageGameTimer.stock1Value.toFixed(2) }}</p>
                 </div>
             </div>
             <div class="investing-port-stock-flex">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="investing-port-stockprice">
                     <h6>Price/Value:</h6>
-                    <p>£11.72</p>
+                    <p>£{{ manageGameTimer.stock2Value.toFixed(2) }}</p>
                 </div>
             </div>
             <div class="investing-port-stock-flex">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="investing-port-stockprice">
                     <h6>Price/Value:</h6>
-                    <p>£11.72</p>
+                    <p>£{{ manageGameTimer.stock3Value.toFixed(2) }}</p>
                 </div>
             </div>
             <div class="investing-port-stock-flex">
@@ -52,7 +52,7 @@
                 </div>
                 <div class="investing-port-stockprice">
                     <h6>Price/Value:</h6>
-                    <p>£11.72</p>
+                    <p>£{{ manageGameTimer.stock4Value.toFixed(2) }}</p>
                 </div> 
             </div>
             <div class="investing-port-stock-flex">
@@ -64,7 +64,7 @@
                 </div>
                 <div class="investing-port-stockprice">
                     <h6>Price/Value:</h6>
-                    <p>£11.72</p>
+                    <p>£{{ manageGameTimer.stock5Value.toFixed(2) }}</p>
                 </div>
             </div>
         </div>
@@ -187,9 +187,11 @@
 
     import { useInvestmentPortfolioChoiceStore } from '../../../store/MainGameChoicesStore.js'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import {useGameTimerStore} from '../../../store/MoneyStore.js'
     
     const manageInvestmentPortfolio = useInvestmentPortfolioChoiceStore()
     const useMainGameplayNav = useMainGameplayNavigationStore();
+    const manageGameTimer = useGameTimerStore()
 
 </script>
 <script>
