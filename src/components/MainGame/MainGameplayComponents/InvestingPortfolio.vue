@@ -4,7 +4,7 @@
             <h1>Your Investment Portfolio</h1>
         </div>
         <div class="investing-port-full-desc">
-            <p>View and manage your stocks and shares. Trading open from <span class="colour-green">Monday-Friday.</span></p>
+            <p>View and manage your stocks and shares.</p>
         </div>
         <div class="investing-port-full-stock-container">
             <div class="investing-port-stock-flex">
@@ -187,7 +187,7 @@
 
     import { useInvestmentPortfolioChoiceStore } from '../../../store/MainGameChoicesStore.js'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
-
+    
     const manageInvestmentPortfolio = useInvestmentPortfolioChoiceStore()
     const useMainGameplayNav = useMainGameplayNavigationStore();
 

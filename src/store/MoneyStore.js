@@ -121,7 +121,7 @@ export const useGameTimerStore = defineStore({
 
             this.timer = setInterval (() => {
                 if(this.countdown > 0) {
-                    if(useMainGameplayNavigationStore().currentPage === 1) {
+                    if((useMainGameplayNavigationStore().currentPage === 1) || (useMainGameplayNavigationStore().currentPage === 9)) {
                         this.countdown = this.countdown - 1;
 
                         // add pension automatically with each payday

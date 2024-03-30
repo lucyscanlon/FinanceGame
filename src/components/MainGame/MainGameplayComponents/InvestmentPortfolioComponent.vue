@@ -1,6 +1,6 @@
 <template>
     <div class="maingameplay-flex-container">
-        <div class="pension-interactive-title-container">
+        <div class="pension-interactive-title-container investment-interactive-title">
             <h1><font-awesome-icon icon="fa-solid fa-chart-line" />Investments</h1>
         </div>
         <div class="investments-percentage-gainloss-container">
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="investments-openportfolio-button">
-            <button>Open Trading Portfolio</button>
+            <button @click="useMainGameplayNav.navigateToPage(9)">Open Trading Portfolio</button>
         </div>
         <div class="investments-stock-bar">
             <div class="investments-bar-overflow">
@@ -30,6 +30,11 @@
         </div>
     </div>
 </template>
+<script setup>
+    import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
+    const useMainGameplayNav = useMainGameplayNavigationStore();
+
+</script>
 <script>
 
 export default {
