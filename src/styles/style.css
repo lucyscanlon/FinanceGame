@@ -2801,3 +2801,79 @@ input[type="number"] {
   transition-duration: 0.5s;
   cursor: pointer;
 }
+
+.investments-stock-bar {
+  width: inherit;
+  background-color: #15141d;
+  height: 40px;
+  margin-top: 30px;
+  overflow: hidden;
+  
+}
+
+.investments-stock-bar ul {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  position: relative;
+  left: 350px;
+  animation: move-left-more 20000ms linear infinite;
+}
+
+.investments-stock-bar li {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  font-size: 13px;
+  padding-top: 2px;
+
+}
+
+.investments-bar-overflow {
+  width: 400%;
+}
+/*
+.investments-stock-bar p {
+  padding-top: 15px;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 0 1em;
+  animation: move-left 20000ms linear infinite;
+  white-space: nowrap;
+  position: absolute;
+
+  
+}*/
+
+@keyframes move-left-more {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  0% {left: 100%;}
+  100% {left: 0;}
+}
+
+.investments-moving-banner {
+  padding-right: 30px;
+  position: relative;
+  top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+

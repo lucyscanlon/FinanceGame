@@ -33,12 +33,11 @@ The parent of this component:
 <script setup>
     //import stores
     import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
-    const livingOptions = useLivingOptionsStore()
-
     import { registerLivingOptionChoiceStore } from '../../../store/InitialGameChoicesStore'
-    const registerLivingChoice = registerLivingOptionChoiceStore()
-
     import { useMoneyManageStore } from '../../../store/MoneyStore.js'
+
+    const livingOptions = useLivingOptionsStore()
+    const registerLivingChoice = registerLivingOptionChoiceStore()
     const manageMoney = useMoneyManageStore()
 </script>
 <script>
