@@ -15,6 +15,7 @@ export const useMoneyManageStore = defineStore({
         daysUntilPayday: 30,
         decreaseTime: true,
         houseDepositCurrentTotal: 0,
+        InvestmentPortfolioCurrentValue: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -99,6 +100,30 @@ export const useMoneyManageStore = defineStore({
             } else {
                 return;
             }
+        },
+
+        buyNumOfStocks(stockValue, amount) {
+            let cost = stockValue * amount
+
+            this.moneyInPocket = this.moneyInPocket - cost;
+        },
+
+        sellNumOfStocks(stockValue, amount) {
+            let cost = stockValue * amount
+
+            this.moneyInPocket = this.moneyInPocket + cost;
+        },
+
+        sellAllOfStock(stockValue, totalAmount) {
+            let cost = stockValue * totalAmount
+
+            Number(cost).toFixed(2)
+
+            console.log(stockValue)
+            console.log(totalAmount)
+            console.log(cost)
+
+            this.moneyInPocket = this.moneyInPocket + cost;
         }
     }
 })
