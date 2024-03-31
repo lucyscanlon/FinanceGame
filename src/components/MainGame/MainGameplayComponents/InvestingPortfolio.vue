@@ -142,7 +142,7 @@
         <div class="investing-port-total-visual-container">
             <div class="investing-port-total-number-container">
                 <div class="investing-port-totalbalance-title">
-                    <h5>Total Balance:</h5>
+                    <h5>Total Balance: ({{ Number(manageMoney.totalBalancePercentageChange).toFixed(2)}}%)</h5>
                 </div>
                 <div class="investing-port-totalbalance-figure">
                     <p>£{{ manageMoney.InvestmentPortfolioCurrentValue.toFixed(2) }}</p>

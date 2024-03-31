@@ -17,6 +17,8 @@ export const useMoneyManageStore = defineStore({
         decreaseTime: true,
         houseDepositCurrentTotal: 0,
         InvestmentPortfolioCurrentValue: 0,
+        totalBalancePreviousValue: 0,
+        totalBalancePercentageChange: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -128,6 +130,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         workOutPortfolioValue() {
+
             // stock one value 
             let stock1portfoliobalance = useGameTimerStore().stock1Value * useInvestmentPortfolioChoiceStore().ShareTotalAmounts[0]
             let stock2portfoliobalance = useGameTimerStore().stock2Value * useInvestmentPortfolioChoiceStore().ShareTotalAmounts[1]
@@ -137,6 +140,17 @@ export const useMoneyManageStore = defineStore({
 
             this.InvestmentPortfolioCurrentValue = stock1portfoliobalance + stock2portfoliobalance + stock3portfoliobalance + stock4portfoliobalance + stock5portfoliobalance
 
+        },
+
+        setTotalBalancePreviousPrice() {
+            this.totalBalancePreviousValue = this.InvestmentPortfolioCurrentValue
+        },
+
+        workoutInvestmentTotalBalancePercentage() {
+            this.totalBalancePercentageChange = ((this.InvestmentPortfolioCurrentValue - this.totalBalancePreviousValue) / this.totalBalancePreviousValue) * 100
+            if((this.InvestmentPortfolioCurrentValue === 0) && (this.totalBalancePreviousValue === 0)) {
+                this.totalBalancePercentageChange = 0
+            }
         }
     }
 })
@@ -170,7 +184,7 @@ export const useGameTimerStore = defineStore({
         stock3ChangePerc: 7.29,
         stock4ChangePerc: 4.62,
         stock5ChangePerc: 7.34,
-        sharesStocksTotalBalance: 0,
+
     }),
     actions: {
         startCountdown() {
@@ -186,10 +200,18 @@ export const useGameTimerStore = defineStore({
                         // flucuate prices of stocks
 
                         if(this.countdown%3 === 0) {
+
+                            // change the prices
                             this.flucuateStockPrices();
 
-                            useMoneyManageStore().workOutPortfolioValue()
+                            // store the previous balance as current balance
+                            useMoneyManageStore().setTotalBalancePreviousPrice()
                             
+                            // update the current balance with new price changes
+                            useMoneyManageStore().workOutPortfolioValue()
+
+                            // workout the value change percentage
+                            useMoneyManageStore().workoutInvestmentTotalBalancePercentage()
                             
                         }
 
