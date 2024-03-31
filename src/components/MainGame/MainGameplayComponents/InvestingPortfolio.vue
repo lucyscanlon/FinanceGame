@@ -9,7 +9,7 @@
         <div class="investing-port-full-stock-container">
             <div class="investing-port-stock-flex">
                 <div class="investing-port-share-name gear-share">
-                    <p><font-awesome-icon icon="fa-solid fa-gear" /> EWG <span :class="(manageGameTimer.stock1ChangePerc > 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock1ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock1ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock1ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
+                    <p><font-awesome-icon icon="fa-solid fa-gear" /> EWG <span :class="(manageGameTimer.stock1ChangePerc >= 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock1ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock1ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock1ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
 
@@ -21,7 +21,7 @@
             </div>
             <div class="investing-port-stock-flex">
                 <div class="investing-port-share-name eye-share">
-                    <p><font-awesome-icon icon="fa-solid fa-eye" /> FEU <span :class="(manageGameTimer.stock2ChangePerc > 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock2ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock2ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock2ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
+                    <p><font-awesome-icon icon="fa-solid fa-eye" /> FEU <span :class="(manageGameTimer.stock2ChangePerc >= 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock2ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock2ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock2ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
                     
@@ -33,7 +33,7 @@
             </div>
             <div class="investing-port-stock-flex">
                 <div class="investing-port-share-name ghost-share">
-                    <p><font-awesome-icon icon="fa-solid fa-ghost" /> GHU <span :class="(manageGameTimer.stock3ChangePerc > 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock3ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock3ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock3ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
+                    <p><font-awesome-icon icon="fa-solid fa-ghost" /> GHU <span :class="(manageGameTimer.stock3ChangePerc >= 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock3ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock3ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock3ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
 
@@ -45,7 +45,7 @@
             </div>
             <div class="investing-port-stock-flex">
                 <div class="investing-port-share-name wheat-share">
-                    <p><font-awesome-icon icon="fa-solid fa-wheat-awn" /> WRF <span :class="(manageGameTimer.stock4ChangePerc > 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock4ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock4ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock4ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
+                    <p><font-awesome-icon icon="fa-solid fa-wheat-awn" /> WRF <span :class="(manageGameTimer.stock4ChangePerc >= 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock4ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock4ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock4ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
 
@@ -57,7 +57,7 @@
             </div>
             <div class="investing-port-stock-flex">
                 <div class="investing-port-share-name book-share">
-                    <p><font-awesome-icon icon="fa-solid fa-book" /> PSW <span :class="(manageGameTimer.stock5ChangePerc > 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock5ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock5ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock5ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
+                    <p><font-awesome-icon icon="fa-solid fa-book" /> PSW <span :class="(manageGameTimer.stock5ChangePerc >= 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock5ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock5ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock5ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
 
@@ -142,7 +142,7 @@
         <div class="investing-port-total-visual-container">
             <div class="investing-port-total-number-container">
                 <div class="investing-port-totalbalance-title">
-                    <h5>Total Balance: ({{ Number(manageMoney.totalBalancePercentageChange).toFixed(2)}}%)</h5>
+                    <h5>Total Balance: <span :class="(manageMoney.totalBalancePercentageChange >= 0) ? 'colour-green' : 'colour-red'">({{ Number(manageMoney.totalBalancePercentageChange).toFixed(2)}}%)<font-awesome-icon v-if="manageMoney.totalBalancePercentageChange > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageMoney.totalBalancePercentageChange < 0" icon="fa-solid fa-arrow-down" /></span></h5>
                 </div>
                 <div class="investing-port-totalbalance-figure">
                     <p>£{{ manageMoney.InvestmentPortfolioCurrentValue.toFixed(2) }}</p>
