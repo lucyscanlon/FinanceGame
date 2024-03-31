@@ -112,15 +112,15 @@ export const useGameTimerStore = defineStore({
         monthsPassed: 0,
         currentMonth: 'January',
         currentYear: 2023,
-        stock1Value: 5.50,
+        stock1Value: 25.50,
         stock2Value: 14.03,
-        stock3Value: 10.51,
+        stock3Value: 50.51,
         stock4Value: 16.98,
-        stock5Value: 5.67,
+        stock5Value: 35.67,
         stock1CrashProbability: 0.05,
         stock2CrashProbability: 0.05,
-        stock3CrashProbability: 0.3,
-        stock4CrashProbability: 0.2,
+        stock3CrashProbability: 0.1,
+        stock4CrashProbability: 0.02,
         stock5CrashProbability: 0.01,
 
     }),
@@ -156,18 +156,43 @@ export const useGameTimerStore = defineStore({
         }, 
 
         flucuateStockPrices() {
-            const fluctuation1 = Math.random() * 0.1 - 0.04;
-            const fluctuation2 = Math.random() * 0.5 - 0.5;
-            const fluctuation3 = Math.random() * 2 - 0.5;
-            const fluctuation4 = Math.random() * 5 - 1;
-            const fluctuation5 = Math.random() * 0.2 - 0.2;
 
+            // set the fluctuation of each stock
+            let fluctuation1 = Math.random() * 0.1 - 0.04;
+            let fluctuation2 = Math.random() * 0.5 - 0.5;
+            let fluctuation3 = Math.random() * 2 - 0.5;
+            let fluctuation4 = Math.random() * 5 - 1;
+            let fluctuation5 = Math.random() * 0.2 - 0.2;
+
+            if (Math.random() < this.stock1CrashProbability) {
+                fluctuation1 = -Math.random() * 5; 
+                console.log("Stock 1 crashed")
+            }
+            if (Math.random() < this.stock2CrashProbability) {
+                fluctuation2 = -Math.random() * 3; 
+                console.log("Stock 2 crashed")
+            }
+            if (Math.random() < this.stock3CrashProbability) {
+                fluctuation3 = -Math.random() * 7; 
+                console.log("Stock 3 crashed")
+            }
+            if (Math.random() < this.stock4CrashProbability) {
+                fluctuation4 = -Math.random() * 4; 
+                console.log("Stock 4 crashed")
+            }
+            if (Math.random() < this.stock5CrashProbability) {
+                fluctuation5 = -Math.random() * 3;
+                console.log("Stock 5 crashed") 
+            }
+
+            // add or minus fluctuation from the stock price
             this.stock1Value += fluctuation1;
             this.stock2Value += fluctuation2;
             this.stock3Value += fluctuation3;
             this.stock4Value += fluctuation4;
             this.stock5Value += fluctuation5;
 
+            // make sure the price doesnt go negative.
             this.stock1Value = Math.max(this.stock1Value, 1);
             this.stock2Value = Math.max(this.stock2Value, 1);
             this.stock3Value = Math.max(this.stock3Value, 1);
