@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useMoneyManageStore } from './MoneyStore'
 
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
@@ -236,6 +237,8 @@ export const useInvestmentPortfolioChoiceStore = defineStore({
 
             console.log(this.Share1BarPercentage, this.Share2BarPercentage, this.Share3BarPercentage, this.Share4BarPercentage, this.Share5BarPercentage);
 
+            useMoneyManageStore().workOutPortfolioValue()
+
         },
 
         sellShare(num, amount) {
@@ -247,6 +250,8 @@ export const useInvestmentPortfolioChoiceStore = defineStore({
             this.Share3BarPercentage = ((this.ShareTotalAmounts[2] / this.TotalNumberOfShares) * 100);
             this.Share4BarPercentage = ((this.ShareTotalAmounts[3] / this.TotalNumberOfShares) * 100);
             this.Share5BarPercentage = ((this.ShareTotalAmounts[4] / this.TotalNumberOfShares) * 100);
+
+            useMoneyManageStore().workOutPortfolioValue()
         },
 
         sellAllShare(num) {
@@ -258,6 +263,8 @@ export const useInvestmentPortfolioChoiceStore = defineStore({
             this.Share3BarPercentage = ((this.ShareTotalAmounts[2] / this.TotalNumberOfShares) * 100);
             this.Share4BarPercentage = ((this.ShareTotalAmounts[3] / this.TotalNumberOfShares) * 100);
             this.Share5BarPercentage = ((this.ShareTotalAmounts[4] / this.TotalNumberOfShares) * 100);
+
+            useMoneyManageStore().workOutPortfolioValue()
  
         }
 

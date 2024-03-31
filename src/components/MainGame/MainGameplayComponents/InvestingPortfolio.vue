@@ -145,7 +145,7 @@
                     <h5>Total Balance:</h5>
                 </div>
                 <div class="investing-port-totalbalance-figure">
-                    <p>£{{ manageMoney.InvestmentPortfolioCurrentValue }}</p>
+                    <p>£{{ manageMoney.InvestmentPortfolioCurrentValue.toFixed(2) }}</p>
                 </div>
             </div>
             <div class="investing-port-visual-container">

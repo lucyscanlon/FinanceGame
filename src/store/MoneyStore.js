@@ -1,6 +1,7 @@
 import { defineStore } from "pinia"
 import {useMainGameplayNavigationStore } from './MainGameChoicesStore'
 import { usePensionChoicesStore } from './MainGameChoicesStore'
+import { useInvestmentPortfolioChoiceStore } from './MainGameChoicesStore'
 
 export const useMoneyManageStore = defineStore({
     id: 'moveMoney',
@@ -124,6 +125,18 @@ export const useMoneyManageStore = defineStore({
             console.log(cost)
 
             this.moneyInPocket = this.moneyInPocket + cost;
+        },
+
+        workOutPortfolioValue() {
+            // stock one value 
+            let stock1portfoliobalance = useGameTimerStore().stock1Value * useInvestmentPortfolioChoiceStore().ShareTotalAmounts[0]
+            let stock2portfoliobalance = useGameTimerStore().stock2Value * useInvestmentPortfolioChoiceStore().ShareTotalAmounts[1]
+            let stock3portfoliobalance = useGameTimerStore().stock3Value * useInvestmentPortfolioChoiceStore().ShareTotalAmounts[2]
+            let stock4portfoliobalance = useGameTimerStore().stock4Value * useInvestmentPortfolioChoiceStore().ShareTotalAmounts[3]
+            let stock5portfoliobalance = useGameTimerStore().stock5Value * useInvestmentPortfolioChoiceStore().ShareTotalAmounts[4]
+
+            this.InvestmentPortfolioCurrentValue = stock1portfoliobalance + stock2portfoliobalance + stock3portfoliobalance + stock4portfoliobalance + stock5portfoliobalance
+
         }
     }
 })
@@ -157,6 +170,7 @@ export const useGameTimerStore = defineStore({
         stock3ChangePerc: 7.29,
         stock4ChangePerc: 4.62,
         stock5ChangePerc: 7.34,
+        sharesStocksTotalBalance: 0,
     }),
     actions: {
         startCountdown() {
@@ -173,6 +187,10 @@ export const useGameTimerStore = defineStore({
 
                         if(this.countdown%3 === 0) {
                             this.flucuateStockPrices();
+
+                            useMoneyManageStore().workOutPortfolioValue()
+                            
+                            
                         }
 
                         // add pension automatically with each payday
@@ -306,6 +324,7 @@ export const useGameTimerStore = defineStore({
         increaseYear() {
             this.currentYear = this.currentYear + 1
         },
+
     }
 })
 
