@@ -157,7 +157,6 @@ export const useGameTimerStore = defineStore({
         stock3ChangePerc: 7.29,
         stock4ChangePerc: 4.62,
         stock5ChangePerc: 7.34,
-
     }),
     actions: {
         startCountdown() {
@@ -191,6 +190,14 @@ export const useGameTimerStore = defineStore({
         }, 
 
         flucuateStockPrices() {
+
+            // store the current price as the previous price
+            this.stock1PreviousPrice = this.stock1Value
+            this.stock2PreviousPrice = this.stock2Value
+            this.stock3PreviousPrice = this.stock3Value
+            this.stock4PreviousPrice = this.stock4Value
+            this.stock5PreviousPrice = this.stock5Value
+
 
             // set the fluctuation of each stock
             let fluctuation1 = Math.random() * 0.1 - 0.04;
@@ -226,6 +233,13 @@ export const useGameTimerStore = defineStore({
             this.stock3Value += fluctuation3;
             this.stock4Value += fluctuation4;
             this.stock5Value += fluctuation5;
+
+            // work out the percentage increase or decrease
+            this.stock1ChangePerc = ((this.stock1Value - this.stock1PreviousPrice) / this.stock1PreviousPrice) * 100;
+            this.stock2ChangePerc = ((this.stock2Value - this.stock2PreviousPrice) / this.stock2PreviousPrice) * 100;
+            this.stock3ChangePerc = ((this.stock3Value - this.stock3PreviousPrice) / this.stock3PreviousPrice) * 100;
+            this.stock4ChangePerc = ((this.stock4Value - this.stock4PreviousPrice) / this.stock4PreviousPrice) * 100;
+            this.stock5ChangePerc = ((this.stock5Value - this.stock5PreviousPrice) / this.stock5PreviousPrice) * 100;
 
             // make sure the price doesnt go negative.
             this.stock1Value = Math.max(this.stock1Value, 1);

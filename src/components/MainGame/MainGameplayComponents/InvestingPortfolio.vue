@@ -9,7 +9,7 @@
         <div class="investing-port-full-stock-container">
             <div class="investing-port-stock-flex">
                 <div class="investing-port-share-name gear-share">
-                    <p><font-awesome-icon icon="fa-solid fa-gear" /> EWG <span class="stock-value colour-green">{{manageGameTimer.stock1ChangePerc}}% <font-awesome-icon icon="fa-solid fa-arrow-up" /></span></p>
+                    <p><font-awesome-icon icon="fa-solid fa-gear" /> EWG <span class="stock-value colour-green">{{manageGameTimer.stock1ChangePerc.toFixed(2)}}% <font-awesome-icon icon="fa-solid fa-arrow-up" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
 
@@ -21,7 +21,7 @@
             </div>
             <div class="investing-port-stock-flex">
                 <div class="investing-port-share-name eye-share">
-                    <p><font-awesome-icon icon="fa-solid fa-eye" /> FEU <span class="stock-value colour-red">{{manageGameTimer.stock2ChangePerc}}% <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
+                    <p><font-awesome-icon icon="fa-solid fa-eye" /> FEU <span class="stock-value colour-red">{{manageGameTimer.stock2ChangePerc.toFixed(2)}}% <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
                     
@@ -33,7 +33,7 @@
             </div>
             <div class="investing-port-stock-flex">
                 <div class="investing-port-share-name ghost-share">
-                    <p><font-awesome-icon icon="fa-solid fa-ghost" /> GHU <span class="stock-value colour-green">{{manageGameTimer.stock3ChangePerc}}% <font-awesome-icon icon="fa-solid fa-arrow-up" /></span></p>
+                    <p><font-awesome-icon icon="fa-solid fa-ghost" /> GHU <span class="stock-value colour-green">{{manageGameTimer.stock3ChangePerc.toFixed(2)}}% <font-awesome-icon icon="fa-solid fa-arrow-up" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
 
@@ -45,7 +45,7 @@
             </div>
             <div class="investing-port-stock-flex">
                 <div class="investing-port-share-name wheat-share">
-                    <p><font-awesome-icon icon="fa-solid fa-wheat-awn" /> WRF <span class="stock-value colour-red">{{manageGameTimer.stock4ChangePerc}}% <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
+                    <p><font-awesome-icon icon="fa-solid fa-wheat-awn" /> WRF <span class="stock-value colour-red">{{manageGameTimer.stock4ChangePerc.toFixed(2)}}% <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
 
@@ -57,7 +57,7 @@
             </div>
             <div class="investing-port-stock-flex">
                 <div class="investing-port-share-name book-share">
-                    <p><font-awesome-icon icon="fa-solid fa-book" /> PSW <span class="stock-value colour-red">{{manageGameTimer.stock5ChangePerc}}% <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
+                    <p><font-awesome-icon icon="fa-solid fa-book" /> PSW <span class="stock-value colour-red">{{manageGameTimer.stock5ChangePerc.toFixed(2)}}% <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
 
