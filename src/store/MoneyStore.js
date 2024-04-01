@@ -199,7 +199,7 @@ export const useGameTimerStore = defineStore({
 
                         // flucuate prices of stocks
 
-                        if(this.countdown%3 === 0) {
+                        if(this.countdown%5 === 0) {
 
                             // change the prices
                             this.flucuateStockPrices();

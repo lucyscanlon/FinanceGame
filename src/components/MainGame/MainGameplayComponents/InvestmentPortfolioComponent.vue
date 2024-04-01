@@ -4,14 +4,14 @@
             <h1><font-awesome-icon icon="fa-solid fa-chart-line" />Investments</h1>
         </div>
         <div class="investments-percentage-gainloss-container">
-            <p class="colour-green">1.25%<font-awesome-icon icon="fa-solid fa-arrow-up" /></p>
+            <p :class="(manageMoney.totalBalancePercentageChange >= 0) ? 'colour-green' : 'colour-red'">{{ Number(manageMoney.totalBalancePercentageChange).toFixed(2)}}%<font-awesome-icon v-if="manageMoney.totalBalancePercentageChange > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageMoney.totalBalancePercentageChange <= 0" icon="fa-solid fa-arrow-down" /></p>
         </div>
         <div class="investments-interactive-total-container">
             <div class="currentaccount-total-text-container">
                 <p>Current Total:</p>
             </div>
             <div class="currentaccount-total-number-container">
-                <p>£14,000</p>
+                <p>£{{ Number(manageMoney.InvestmentPortfolioCurrentValue).toFixed(2) }}</p>
             </div>
         </div>
         <div class="investments-openportfolio-button">
@@ -20,11 +20,11 @@
         <div class="investments-stock-bar">
             <div class="investments-bar-overflow">
                 <ul>
-                    <li><span class="investments-moving-banner"><font-awesome-icon icon="fa-solid fa-gear" /> EWG <span class="colour-green">1.73%<font-awesome-icon icon="fa-solid fa-arrow-up" /></span></span></li>
-                    <li><span class="investments-moving-banner"><font-awesome-icon icon="fa-solid fa-eye" /> FEU <span class="colour-red">1.23%<font-awesome-icon icon="fa-solid fa-arrow-down" /></span></span></li>
-                    <li><span class="investments-moving-banner"><font-awesome-icon icon="fa-solid fa-ghost" /> GHU <span class="colour-green">1.59%<font-awesome-icon icon="fa-solid fa-arrow-up" /></span></span></li>
-                    <li><span class="investments-moving-banner"><font-awesome-icon icon="fa-solid fa-wheat-awn" /> WRF <span class="colour-red">1.98%<font-awesome-icon icon="fa-solid fa-arrow-down" /></span></span></li>
-                    <li><span class="investments-moving-banner"><font-awesome-icon icon="fa-solid fa-book" /> PSW <span class="colour-red">1.13%<font-awesome-icon icon="fa-solid fa-arrow-down" /></span></span></li>
+                    <li><span class="investments-moving-banner"><font-awesome-icon icon="fa-solid fa-gear" /> EWG <span :class="(manageGameTimer.stock1ChangePerc >= 0) ? 'colour-green' : 'colour-red'">{{ Number(manageGameTimer.stock1ChangePerc).toFixed(2) }}%<font-awesome-icon v-if="manageGameTimer.stock1ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock1ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></span></li>
+                    <li><span class="investments-moving-banner"><font-awesome-icon icon="fa-solid fa-eye" /> FEU <span :class="(manageGameTimer.stock2ChangePerc >= 0) ? 'colour-green' : 'colour-red'">{{ Number(manageGameTimer.stock2ChangePerc).toFixed(2) }}%<font-awesome-icon v-if="manageGameTimer.stock2ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock2ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></span></li>
+                    <li><span class="investments-moving-banner"><font-awesome-icon icon="fa-solid fa-ghost" /> GHU <span :class="(manageGameTimer.stock3ChangePerc >= 0) ? 'colour-green' : 'colour-red'">{{ Number(manageGameTimer.stock3ChangePerc).toFixed(2) }}%<font-awesome-icon v-if="manageGameTimer.stock3ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock3ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></span></li>
+                    <li><span class="investments-moving-banner"><font-awesome-icon icon="fa-solid fa-wheat-awn" /> WRF <span :class="(manageGameTimer.stock4ChangePerc >= 0) ? 'colour-green' : 'colour-red'">{{ Number(manageGameTimer.stock4ChangePerc).toFixed(2) }}%<font-awesome-icon v-if="manageGameTimer.stock4ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock4ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></span></li>
+                    <li><span class="investments-moving-banner"><font-awesome-icon icon="fa-solid fa-book" /> PSW <span :class="(manageGameTimer.stock5ChangePerc >= 0) ? 'colour-green' : 'colour-red'">{{ Number(manageGameTimer.stock5ChangePerc).toFixed(2) }}%<font-awesome-icon v-if="manageGameTimer.stock5ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock5ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></span></li>
                 </ul>
             </div>
         </div>
@@ -32,7 +32,12 @@
 </template>
 <script setup>
     import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
+    import {useGameTimerStore} from '../../../store/MoneyStore.js'
+    import { useMoneyManageStore } from '../../../store/MoneyStore'
+
     const useMainGameplayNav = useMainGameplayNavigationStore();
+    const manageGameTimer = useGameTimerStore()
+    const manageMoney = useMoneyManageStore()
 
 </script>
 <script>
