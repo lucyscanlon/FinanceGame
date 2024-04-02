@@ -12,40 +12,7 @@
                     <p><font-awesome-icon icon="fa-solid fa-gear" /> EWG <span :class="(manageGameTimer.stock1ChangePerc >= 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock1ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock1ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock1ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
-                    <CChart
-                        type="line"
-                        :wrapper="false"
-                        :data="{
-                            labels: ['', '', '', '', '', ''],
-                            datasets: [{
-                                label: '',
-                                backgroundColor: 'rgba(160, 211, 235, 1)',
-                                borderColor: 'rgba(160, 211, 235, 1)',
-                                pointBackgroundColor: 'rgba(160, 211, 235, 0.8)',
-                                pointBorderColor: 'rgba(160, 211, 235, 1)',
-                                data: manageGameTimer.stock1FivePrices,
-                                
-                            },
-                        ]}"
-                        :options="{
-                            plugins: {
-                                legend: {
-                                    display: false,
-                                }
-                            },
-                            scales: {
-                                alignToPixels: true,
-                                x: {
-                                    display: false,
-                                },
-                                y: {
-                                    display: true,
-                                }
-                            },
-                            animation: {
-                                duration: 0,
-                            }
-                        }"/>
+                    <PortfolioLineChart :dataArray="manageGameTimer.stock1SixPrices"></PortfolioLineChart>
                 </div>
                 <div class="investing-port-stockprice">
                     <h6>Price/Value:</h6>
@@ -217,8 +184,7 @@
 
 <script setup>
 
-    import { CChart } from '@coreui/vue-chartjs'
-
+    import PortfolioLineChart from './PortfolioLineChart.vue'
     import { useInvestmentPortfolioChoiceStore } from '../../../store/MainGameChoicesStore.js'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
     import {useGameTimerStore} from '../../../store/MoneyStore.js'

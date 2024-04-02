@@ -184,7 +184,11 @@ export const useGameTimerStore = defineStore({
         stock3ChangePerc: 7.29,
         stock4ChangePerc: 4.62,
         stock5ChangePerc: 7.34,
-        stock1FivePrices: [22.12, 22.32, 22.83, 23.12, 25.22, 25.50],
+        stock1SixPrices: [22.12, 22.32, 22.83, 23.12, 25.22, 25.50],
+        stock2SixPrices: [22.12, 22.32, 22.83, 23.12, 13.54, 14.03],
+        stock3SixPrices: [42.54, 43.34, 47.87, 48.67, 47.08, 50.51],
+        stock4SixPrices: [16.31, 16.38, 18.98, 17.78, 16.23, 16.98],
+        stock5SixPrices: [28.03, 30.29, 31.67, 31.82, 33.23, 35.67],
 
     }),
     actions: {
@@ -275,8 +279,12 @@ export const useGameTimerStore = defineStore({
             this.stock4Value += fluctuation4;
             this.stock5Value += fluctuation5;
 
-            this.stock1FivePrices = [this.stock1FivePrices[1], this.stock1FivePrices[2], this.stock1FivePrices[3], this.stock1FivePrices[4], this.stock1FivePrices[5], this.stock1Value]
-            console.log(this.stock1FivePrices);
+            // update the values for the line graphs
+            this.stock1SixPrices = [this.stock1SixPrices[1], this.stock1SixPrices[2], this.stock1SixPrices[3], this.stock1SixPrices[4], this.stock1SixPrices[5], this.stock1Value]
+            this.stock2SixPrices = [this.stock2SixPrices[1], this.stock2SixPrices[2], this.stock2SixPrices[3], this.stock2SixPrices[4], this.stock2SixPrices[5], this.stock2Value]
+            this.stock3SixPrices = [this.stock3SixPrices[1], this.stock3SixPrices[2], this.stock3SixPrices[3], this.stock3SixPrices[4], this.stock3SixPrices[5], this.stock3Value]
+            this.stock4SixPrices = [this.stock4SixPrices[1], this.stock4SixPrices[2], this.stock4SixPrices[3], this.stock4SixPrices[4], this.stock4SixPrices[5], this.stock4Value]
+            this.stock5SixPrices = [this.stock5SixPrices[1], this.stock5SixPrices[2], this.stock5SixPrices[3], this.stock5SixPrices[4], this.stock5SixPrices[5], this.stock5Value]
 
             //this.$patch({ stock1FivePrices: this.stock1FivePrices });
 
