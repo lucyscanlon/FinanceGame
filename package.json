@@ -8,12 +8,15 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@coreui/vue-chartjs": "^3.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.5",
+    "chart.js": "^4.4.2",
     "core-js": "^3.8.3",
     "pinia": "^2.1.7",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-chartjs": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

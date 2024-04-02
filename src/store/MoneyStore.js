@@ -184,6 +184,7 @@ export const useGameTimerStore = defineStore({
         stock3ChangePerc: 7.29,
         stock4ChangePerc: 4.62,
         stock5ChangePerc: 7.34,
+        stock1FivePrices: [22.12, 22.32, 22.83, 23.12, 25.22, 25.50],
 
     }),
     actions: {
@@ -274,6 +275,12 @@ export const useGameTimerStore = defineStore({
             this.stock4Value += fluctuation4;
             this.stock5Value += fluctuation5;
 
+            this.stock1FivePrices = [this.stock1FivePrices[1], this.stock1FivePrices[2], this.stock1FivePrices[3], this.stock1FivePrices[4], this.stock1FivePrices[5], this.stock1Value]
+            console.log(this.stock1FivePrices);
+
+            //this.$patch({ stock1FivePrices: this.stock1FivePrices });
+
+
             // work out the percentage increase or decrease
             this.stock1ChangePerc = ((this.stock1Value - this.stock1PreviousPrice) / this.stock1PreviousPrice) * 100;
             this.stock2ChangePerc = ((this.stock2Value - this.stock2PreviousPrice) / this.stock2PreviousPrice) * 100;
@@ -347,6 +354,7 @@ export const useGameTimerStore = defineStore({
             this.currentYear = this.currentYear + 1
         },
 
+    
     }
 })
 
