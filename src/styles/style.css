@@ -2883,6 +2883,177 @@ input[type="number"] {
   width: 100%!important;
 }
 
+/* current goals component */
+
+.fa-bullseye {
+  padding-right: 5px;
+}
+
+.currentgoal-goal-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: black;
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 1.5em;
+  color: white;
+  border-radius: 10px;
+  border: solid 1px #ff48c8;
+}
+
+.currentgoal-goal-container p {
+  padding: 5px;
+  padding-bottom: 7px;
+}
+
+.currentgoal-status-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+.currentgoal-tips-container {
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+  font-size: 12.5px;
+  padding-top: 15px;
+  text-align: center;
+  color:#7dab3d;
+}
+
+.currentgoal-info-total-container {
+  width: 80%;
+  margin: 0 auto;
+  height: 60px;
+  background-color: #15141d;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.currentgoal-total-text-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: unbounded-reg;
+  font-size: 12px;
+  padding-top: 10px;
+}
+
+.currentgoal-total-number-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: unbounded-reg;
+  color: #7dab3d;
+  font-size: 12px;
+  padding-top: 10px;
+}
+
+.currentgoal-addwithdraw-title-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: #ff48c8;
+  font-family: unbounded-reg;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.currentgoal-addwithdraw-box-container {
+  width: 80%;
+  margin: 0 auto;
+  height: 35px;
+  background-color: #15141d;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.currentgoal-addwithdraw-change {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #7dab3d;
+  font-family: unbounded-reg;
+  padding-top: 10px;
+}
+
+.currentgoal-addwithdraw-change input {
+  width: 100%;
+  text-align: center;
+  background-color: #15141d;
+  border: none;
+  color: #7dab3d;
+  font-family: unbounded-reg;
+  height: 20px;
+  font-size: 12px;
+}
+
+input:focus {
+  outline-width: 0;
+  border: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.currentgoal-add-withdraw-buttons {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.currentgoal-add-withdraw-buttons button {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 25px;
+  border-radius: 20px;
+  font-family: unbounded-reg;
+  background-color: #1f1e2f;
+  border: solid 1.5px #ff48c8;
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 12px;
+}
+
+.currentgoal-withdraw-button button {
+  border: solid 1px white;
+}
+
+.currentgoal-add-withdraw-buttons button:hover {
+  background-color: #ff48c8;
+  border: solid #ff48c8 1px;
+  transition-duration: 0.3s;
+}
+
+.current-goal-title {
+  padding-top: 15px;
+}
+
+.current-goal-title h1 {
+  font-size: 18px;
+}
+
+.fa-piggy-bank {
+  padding-right: 5px;
+}
 
 
 

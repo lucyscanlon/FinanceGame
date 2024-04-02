@@ -9,7 +9,7 @@ import { defineStore } from "pinia"
 export const useLivingOptionsStore = defineStore({
     id: 'pickLivingOption',
     state: () => ({
-        livingOptionsGameStage: 0,
+        livingOptionsGameStage: 8,
     }),
     actions: {
         livingOptionsNextStageOfGame() {

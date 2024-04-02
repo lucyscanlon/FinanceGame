@@ -44,7 +44,8 @@ Components:
     <div v-if="manageMainGameNav.currentPage === 1 && livingOptions.livingOptionsGameStage > 6" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
         <PensionInteractionComponent></PensionInteractionComponent>
-        <EverydaySavingInteractiveComponent></EverydaySavingInteractiveComponent>
+        <!--<EverydaySavingInteractiveComponent></EverydaySavingInteractiveComponent>-->
+        <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>
         <EmergencyFundsInteractiveComponent></EmergencyFundsInteractiveComponent>
       </div>
       <div class="maingameplay-bottom-row-container">
@@ -85,7 +86,7 @@ import SupermarketInfoDisplay from "./InformationPages/SupermarketInfo.vue";
 import TransportMethodDisplay from "./InitialGameChoices/TransportOptionsDisplay.vue";
 import PensionInformationDisplay from "./InformationPages/PensionIntroduction.vue";
 import PensionInteractionComponent from "./MainGameplayComponents/PensionComponent.vue";
-import EverydaySavingInteractiveComponent from "./MainGameplayComponents/EverydaySavingsComponent.vue";
+//import EverydaySavingInteractiveComponent from "./MainGameplayComponents/EverydaySavingsComponent.vue";
 import EmergencyFundsInteractiveComponent from "./MainGameplayComponents/EmergencyFundsComponent.vue";
 import HouseDepositInteractiveComponent from "./MainGameplayComponents/HouseDepositComponent.vue";
 import IncomeStreamsInteractiveComponent from "./MainGameplayComponents/IncomeStreamsComponent.vue";
@@ -96,6 +97,7 @@ import incomeStreamsIntroduction from "./InformationPages/IncomeStreamsIntroduct
 import HouseDepositIntroduction from "./InformationPages/HouseDepositIntroduction.vue";
 import InvestingIntroduction from "./InformationPages/InvestingIntroduction.vue";
 import InvestmentPortfolioFull from "./MainGameplayComponents/InvestingPortfolio.vue";
+import CurrentGoalInteractiveComponent from "./MainGameplayComponents/CurrentGoalComponent.vue";
 
 // export component data
 export default {
@@ -109,7 +111,7 @@ export default {
     TransportMethodDisplay,
     PensionInformationDisplay,
     PensionInteractionComponent,
-    EverydaySavingInteractiveComponent,
+    //EverydaySavingInteractiveComponent,
     EmergencyFundsInteractiveComponent,
     HouseDepositInteractiveComponent,
     IncomeStreamsInteractiveComponent,
@@ -120,6 +122,7 @@ export default {
     HouseDepositIntroduction,
     InvestingIntroduction,
     InvestmentPortfolioFull,
+    CurrentGoalInteractiveComponent,
   },
 };
 </script>

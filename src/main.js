@@ -26,6 +26,7 @@ import { faGhost } from '@fortawesome/free-solid-svg-icons'
 import { faWheatAwn } from '@fortawesome/free-solid-svg-icons'
 import { faBook } from '@fortawesome/free-solid-svg-icons'
 import { faChartLine } from '@fortawesome/free-solid-svg-icons'
+import { faBullseye } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMapPin)
 library.add(faArrowRight)
@@ -50,6 +51,7 @@ library.add(faGhost)
 library.add(faWheatAwn)
 library.add(faBook)
 library.add(faChartLine)
+library.add(faBullseye)
 
 const app = createApp(App);
 

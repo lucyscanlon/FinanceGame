@@ -21,7 +21,7 @@ Components that will be inside this container include:
             <!-- This is where the responsibility barometer will go -->
           </div>
           <div class="characterstats-set">
-            <h4>Money In Pocket:</h4>
+            <h4><font-awesome-icon icon="fa-solid fa-piggy-bank" />Current Account:</h4>
             <!--Use values from moneyStore.js-->
             <div class="charactersidebar-pocketmoney-container">
               <h5>£{{Number(manageMoney.moneyInPocket).toFixed(2)}}</h5>

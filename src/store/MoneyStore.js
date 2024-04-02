@@ -19,6 +19,7 @@ export const useMoneyManageStore = defineStore({
         InvestmentPortfolioCurrentValue: 0,
         totalBalancePreviousValue: 0,
         totalBalancePercentageChange: 0,
+        furnitureFundTotal: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -150,6 +151,29 @@ export const useMoneyManageStore = defineStore({
             this.totalBalancePercentageChange = ((this.InvestmentPortfolioCurrentValue - this.totalBalancePreviousValue) / this.totalBalancePreviousValue) * 100
             if((this.InvestmentPortfolioCurrentValue === 0) && (this.totalBalancePreviousValue === 0)) {
                 this.totalBalancePercentageChange = 0
+            }
+        },
+
+        addToFurnitureFund(num) {
+            if(this.moneyInPocket >= num) {
+
+                let amount = Number(num)
+                this.furnitureFundTotal = this.furnitureFundTotal + amount;
+                this.moneyInPocket = this.moneyInPocket - amount;
+            } else {
+                return
+            }
+        },
+
+        WithdrawFromFurnitureFund(num) {
+            if(this.furnitureFundTotal >= num) {
+
+                let amount = Number(num)
+                this.furnitureFundTotal = this.furnitureFundTotal - amount;
+                this.moneyInPocket = this.moneyInPocket + amount;
+
+            } else {
+                return
             }
         }
     }
