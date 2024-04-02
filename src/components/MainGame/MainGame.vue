@@ -26,22 +26,23 @@ Components:
       </div>
     </div>
     <!-- display component dependant on the stage of game - located in the initialgamechoicesstore-->
-    <salaryAndTaxInfoDisplay v-if="livingOptions.livingOptionsGameStage === 0"></salaryAndTaxInfoDisplay>
-    <RentInformationDisplay v-if="livingOptions.livingOptionsGameStage === 1"></RentInformationDisplay>
-    <MapDisplay v-if="livingOptions.livingOptionsGameStage === 2"></MapDisplay>
-    <SupermarketInfoDisplay v-if="livingOptions.livingOptionsGameStage === 3"></SupermarketInfoDisplay>
-    <SupermarketChoiceDisplay v-if="livingOptions.livingOptionsGameStage === 4"></SupermarketChoiceDisplay>
-    <TransportMethodDisplay v-if="livingOptions.livingOptionsGameStage === 5"></TransportMethodDisplay>
-    <PensionInformationDisplay v-if="livingOptions.livingOptionsGameStage === 6" :startingSlide="0"></PensionInformationDisplay>
-    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 2" :startingSlide="4"></PensionInformationDisplay>
-    <currentAccountIntroduction v-if="manageMainGameNav.currentPage === 3"></currentAccountIntroduction>
-    <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 4"></EmergencyFundIntroduction>
-    <incomeStreamsIntroduction v-if="manageMainGameNav.currentPage === 5" :startingSlide="0"></incomeStreamsIntroduction>
-    <incomeStreamsIntroduction v-if="manageMainGameNav.currentPage === 6" :startingSlide="2"></incomeStreamsIntroduction>
-    <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 7"></HouseDepositIntroduction>
-    <InvestingIntroduction v-if="manageMainGameNav.currentPage === 8"></InvestingIntroduction>
-    <InvestmentPortfolioFull v-if="manageMainGameNav.currentPage === 9"></InvestmentPortfolioFull>
-    <div v-if="manageMainGameNav.currentPage === 1 && livingOptions.livingOptionsGameStage > 6" class="maingameplay-interaction-container">
+    <salaryAndTaxInfoDisplay v-if="manageMainGameNav.currentPage === 1"></salaryAndTaxInfoDisplay>
+    <currentAccountIntroduction v-if="manageMainGameNav.currentPage === 2"></currentAccountIntroduction>
+    <RentInformationDisplay v-if="manageMainGameNav.currentPage === 3"></RentInformationDisplay>
+    <MapDisplay v-if="manageMainGameNav.currentPage === 4"></MapDisplay>
+    <SupermarketInfoDisplay v-if="manageMainGameNav.currentPage === 5"></SupermarketInfoDisplay>
+    <SupermarketChoiceDisplay v-if="manageMainGameNav.currentPage === 6"></SupermarketChoiceDisplay>
+    <TransportMethodDisplay v-if="manageMainGameNav.currentPage === 7"></TransportMethodDisplay>
+    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 8" :startingSlide="0"></PensionInformationDisplay>
+    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 9" :startingSlide="4"></PensionInformationDisplay>
+    // current goal info
+    <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 12"></EmergencyFundIntroduction>
+    <incomeStreamsIntroduction v-if="manageMainGameNav.currentPage === 13" :startingSlide="0"></incomeStreamsIntroduction>
+    <incomeStreamsIntroduction v-if="manageMainGameNav.currentPage === 14" :startingSlide="2"></incomeStreamsIntroduction>
+    <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 15"></HouseDepositIntroduction>
+    <InvestingIntroduction v-if="manageMainGameNav.currentPage === 16"></InvestingIntroduction>
+    <InvestmentPortfolioFull v-if="manageMainGameNav.currentPage === 17"></InvestmentPortfolioFull>
+    <div v-if="manageMainGameNav.currentPage === 10" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
         <PensionInteractionComponent></PensionInteractionComponent>
         <!--<EverydaySavingInteractiveComponent></EverydaySavingInteractiveComponent>-->
@@ -66,12 +67,12 @@ Components:
 </template>
 <script setup>
 // import stores
-import { useLivingOptionsStore } from "../../store/InitialGameChoicesStore";
+//import { useLivingOptionsStore } from "../../store/InitialGameChoicesStore";
 import { useMoneyManageStore } from "../../store/MoneyStore.js";
 import { useMainGameplayNavigationStore } from "../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../store/MoneyStore.js";
 
-const livingOptions = useLivingOptionsStore();
+//const livingOptions = useLivingOptionsStore();
 const manageMoney = useMoneyManageStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
