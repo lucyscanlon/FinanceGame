@@ -24,6 +24,7 @@
                     <p><font-awesome-icon icon="fa-solid fa-eye" /> FEU <span :class="(manageGameTimer.stock2ChangePerc >= 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock2ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock2ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock2ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
+                    <PortfolioLineChart :dataArray="manageGameTimer.stock2SixPrices"></PortfolioLineChart>
                     
                 </div>
                 <div class="investing-port-stockprice">
@@ -36,6 +37,7 @@
                     <p><font-awesome-icon icon="fa-solid fa-ghost" /> GHU <span :class="(manageGameTimer.stock3ChangePerc >= 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock3ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock3ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock3ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
+                    <PortfolioLineChart :dataArray="manageGameTimer.stock3SixPrices"></PortfolioLineChart>
 
                 </div>
                 <div class="investing-port-stockprice">
@@ -48,6 +50,7 @@
                     <p><font-awesome-icon icon="fa-solid fa-wheat-awn" /> WRF <span :class="(manageGameTimer.stock4ChangePerc >= 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock4ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock4ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock4ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
+                    <PortfolioLineChart :dataArray="manageGameTimer.stock4SixPrices"></PortfolioLineChart>
 
                 </div>
                 <div class="investing-port-stockprice">
@@ -60,6 +63,7 @@
                     <p><font-awesome-icon icon="fa-solid fa-book" /> PSW <span :class="(manageGameTimer.stock5ChangePerc >= 0) ? 'colour-green' : 'colour-red'" class="stock-value">{{manageGameTimer.stock5ChangePerc.toFixed(2)}}% <font-awesome-icon v-if="manageGameTimer.stock5ChangePerc > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageGameTimer.stock5ChangePerc <= 0" icon="fa-solid fa-arrow-down" /></span></p>
                 </div>
                 <div class="investing-port-stock-visual">
+                    <PortfolioLineChart :dataArray="manageGameTimer.stock5SixPrices"></PortfolioLineChart>
 
                 </div>
                 <div class="investing-port-stockprice">

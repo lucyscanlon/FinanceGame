@@ -2879,6 +2879,9 @@ input[type="number"] {
   padding-left: 5px;
 }
 
+.investing-port-stock-visual canvas {
+  width: 100%!important;
+}
 
 
 
