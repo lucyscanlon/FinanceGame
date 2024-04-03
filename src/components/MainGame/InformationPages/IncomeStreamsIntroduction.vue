@@ -65,7 +65,7 @@
                 <input type="text" placeholder="Enter name" v-model="onlineStoreName">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmOnlineStoreName(onlineStoreName)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmOnlineStoreName(onlineStoreName), manageGameTimer.startCountdown()">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@
                 <input type="text" placeholder="Enter name" v-model="podcastName">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmPodcastName(podcastName)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmPodcastName(podcastName), manageGameTimer.startCountdown()">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@
               <span :class="(barChoice === 'Martins Martini Bar') ? 'barwork-button-active' : ''"><button @click="barChoice = 'Martins Martini Bar'">Martin's Martini Bar</button></span>
             </div>
             <div class="barwork-confirm-container">
-               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmBarChoiceName(barChoice)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmBarChoiceName(barChoice), manageGameTimer.startCountdown()">Confirm Name</button>
               </div>
           </div>
         </div>
@@ -105,7 +105,7 @@
                 <input type="text" placeholder="Enter username" v-model="socialMediaUsername">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmSocialMediaUsername(socialMediaUsername)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmSocialMediaUsername(socialMediaUsername), manageGameTimer.startCountdown()">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@
               <span :class="(freelanceChosenSkill === 'Digital Marketing') ? 'barwork-button-active' : ''"><button @click="freelanceChosenSkill = 'Digital Marketing'">Digital Marketing</button></span>
             </div>
             <div class="barwork-confirm-container">
-               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmFreelanceSkill(freelanceChosenSkill)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmFreelanceSkill(freelanceChosenSkill), manageGameTimer.startCountdown()">Confirm Name</button>
               </div>
           </div>
         </div>
@@ -164,8 +164,11 @@ import IncomeStreamsFlexbox from "../MainGameChoices/IncomeStreamsFlexbox";
 import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
 
 import { useIncomeStreamsChoicesStore } from '../../../store/MainGameChoicesStore.js'
+import { useGameTimerStore } from "../../../store/MoneyStore.js";
+
     const manageIncomeStream = useIncomeStreamsChoicesStore()
     const useMainGameplayNav = useMainGameplayNavigationStore();
+    const manageGameTimer = useGameTimerStore();
 
 </script>
 <script>

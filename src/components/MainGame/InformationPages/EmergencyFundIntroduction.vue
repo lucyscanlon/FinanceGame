@@ -109,6 +109,7 @@ The parent of this component:
               @click="
                 manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(),
                   useMainGameplayNav.navigateToPage(11),
+                  manageGameTimer.startCountdown();
                   manageMoney.addToEmergencyFundTotal(
                     parseInt(
                       manageEmergencyFund.chosenEmergencyFundChoice
@@ -161,11 +162,13 @@ The parent of this component:
 import { useEmergencyFundChoicesStore } from "../../../store/MainGameChoicesStore.js";
 import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
 import { useMoneyManageStore } from "../../../store/MoneyStore";
+import { useGameTimerStore } from "../../../store/MoneyStore";
 import EmergencyFundChoicesFlexbox from "../MainGameChoices/EmergencyFundFlexbox";
 
 const manageEmergencyFund = useEmergencyFundChoicesStore();
 const useMainGameplayNav = useMainGameplayNavigationStore();
 const manageMoney = useMoneyManageStore();
+const manageGameTimer = useGameTimerStore();
 </script>
 <script>
 // export component data
