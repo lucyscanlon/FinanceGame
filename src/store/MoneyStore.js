@@ -227,21 +227,22 @@ export const useGameTimerStore = defineStore({
                         this.countdown = this.countdown - 1;
 
                         // flucuate prices of stocks
+                        if(useMainGameplayNavigationStore().mainGameComponentsUnlocked > 5 ) {
+                            if(this.countdown%5 === 0) {
 
-                        if(this.countdown%5 === 0) {
-
-                            // change the prices
-                            this.flucuateStockPrices();
-
-                            // store the previous balance as current balance
-                            useMoneyManageStore().setTotalBalancePreviousPrice()
-                            
-                            // update the current balance with new price changes
-                            useMoneyManageStore().workOutPortfolioValue()
-
-                            // workout the value change percentage
-                            useMoneyManageStore().workoutInvestmentTotalBalancePercentage()
-                            
+                                // change the prices
+                                this.flucuateStockPrices();
+    
+                                // store the previous balance as current balance
+                                useMoneyManageStore().setTotalBalancePreviousPrice()
+                                
+                                // update the current balance with new price changes
+                                useMoneyManageStore().workOutPortfolioValue()
+    
+                                // workout the value change percentage
+                                useMoneyManageStore().workoutInvestmentTotalBalancePercentage()
+                                
+                            }
                         }
 
                         // add pension automatically with each payday
