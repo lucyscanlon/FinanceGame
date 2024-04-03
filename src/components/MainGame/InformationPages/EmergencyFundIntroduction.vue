@@ -108,7 +108,7 @@ The parent of this component:
             <button
               @click="
                 manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(),
-                  useMainGameplayNav.navigateToPage(1),
+                  useMainGameplayNav.navigateToPage(11),
                   manageMoney.addToEmergencyFundTotal(
                     parseInt(
                       manageEmergencyFund.chosenEmergencyFundChoice

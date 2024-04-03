@@ -33,25 +33,26 @@ Components:
     <SupermarketInfoDisplay v-if="manageMainGameNav.currentPage === 5"></SupermarketInfoDisplay>
     <SupermarketChoiceDisplay v-if="manageMainGameNav.currentPage === 6"></SupermarketChoiceDisplay>
     <TransportMethodDisplay v-if="manageMainGameNav.currentPage === 7"></TransportMethodDisplay>
-    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 8" :startingSlide="0"></PensionInformationDisplay>
-    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 9" :startingSlide="4"></PensionInformationDisplay>
-    // current goal info
+    <!--current goal info --> 
+    <CurrentGoalIntroduction v-if="manageMainGameNav.currentPage === 8"></CurrentGoalIntroduction>
+    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 9" :startingSlide="0"></PensionInformationDisplay>
+    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 10" :startingSlide="4"></PensionInformationDisplay>
     <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 12"></EmergencyFundIntroduction>
     <incomeStreamsIntroduction v-if="manageMainGameNav.currentPage === 13" :startingSlide="0"></incomeStreamsIntroduction>
     <incomeStreamsIntroduction v-if="manageMainGameNav.currentPage === 14" :startingSlide="2"></incomeStreamsIntroduction>
     <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 15"></HouseDepositIntroduction>
     <InvestingIntroduction v-if="manageMainGameNav.currentPage === 16"></InvestingIntroduction>
     <InvestmentPortfolioFull v-if="manageMainGameNav.currentPage === 17"></InvestmentPortfolioFull>
-    <div v-if="manageMainGameNav.currentPage === 10" class="maingameplay-interaction-container">
+    <div v-if="manageMainGameNav.currentPage === 11" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
+        <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>
         <PensionInteractionComponent></PensionInteractionComponent>
         <!--<EverydaySavingInteractiveComponent></EverydaySavingInteractiveComponent>-->
-        <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>
         <EmergencyFundsInteractiveComponent></EmergencyFundsInteractiveComponent>
       </div>
       <div class="maingameplay-bottom-row-container">
-        <HouseDepositInteractiveComponent></HouseDepositInteractiveComponent>
         <IncomeStreamsInteractiveComponent></IncomeStreamsInteractiveComponent>
+        <HouseDepositInteractiveComponent></HouseDepositInteractiveComponent>
         <InvestmentPortfolioInteractiveComponent></InvestmentPortfolioInteractiveComponent>
       </div>
     </div>
@@ -99,7 +100,7 @@ import HouseDepositIntroduction from "./InformationPages/HouseDepositIntroductio
 import InvestingIntroduction from "./InformationPages/InvestingIntroduction.vue";
 import InvestmentPortfolioFull from "./MainGameplayComponents/InvestingPortfolio.vue";
 import CurrentGoalInteractiveComponent from "./MainGameplayComponents/CurrentGoalComponent.vue";
-
+import CurrentGoalIntroduction from "./InformationPages/CurrentGoalIntroduction.vue";
 // export component data
 export default {
   name: "MainGameWrapper",
@@ -124,6 +125,7 @@ export default {
     InvestingIntroduction,
     InvestmentPortfolioFull,
     CurrentGoalInteractiveComponent,
+    CurrentGoalIntroduction,
   },
 };
 </script>

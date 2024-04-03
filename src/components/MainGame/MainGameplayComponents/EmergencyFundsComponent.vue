@@ -1,6 +1,7 @@
 <template>
     <div class="maingameplay-flex-container">
-        <div class="pension-interactive-title-container emergencyfund-interactive-title">
+        <div v-if="useMainGameplayNav.mainGameComponentsUnlocked > 2" class="emergencyfund-content-container">
+            <div class="pension-interactive-title-container emergencyfund-interactive-title">
             <h1><font-awesome-icon icon="fa-solid fa-triangle-exclamation" />Emergency Fund</h1>
             <p>{{ manageEmergencyFund.chosenEmergencyFundChoice.EmergFName }}</p>
             <p>Interest: {{manageEmergencyFund.chosenEmergencyFundChoice.EmergFInterest}}% <span v-bind:class="(manageEmergencyFund.emergencyFundGoal > manageMoney.emergencyFundCurrentTotal) ? 'colour-red' : 'colour-green'" class="emergencyfund-goal-container">Goal: £{{ manageEmergencyFund.emergencyFundGoal}}</span></p>
@@ -28,6 +29,7 @@
             <span v-if="manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit !== '1000'" class="emergencyfund-withdraw-button"><button @click="manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
             <span v-if="manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit === '1000'" class="emergencyfund-withdraw-button-inactive"><button>Withdraw</button></span>
         </div>
+        </div>
 
     </div>
 </template>
@@ -35,6 +37,9 @@
 
     import { useMoneyManageStore } from '../../../store/MoneyStore'
     import {useEmergencyFundChoicesStore} from '../../../store/MainGameChoicesStore'
+    import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+
+const useMainGameplayNav = useMainGameplayNavigationStore();
 
     const manageMoney = useMoneyManageStore()
     const manageEmergencyFund = useEmergencyFundChoicesStore()

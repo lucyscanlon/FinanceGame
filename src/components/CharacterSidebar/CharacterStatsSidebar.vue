@@ -8,10 +8,10 @@ Components that will be inside this container include:
 -->
 <script setup>
   // import stores 
-  import { useLivingOptionsStore } from '../../store/InitialGameChoicesStore'
+  import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore'
   import { useMoneyManageStore } from '../../store/MoneyStore'
   
-  const livingOptions = useLivingOptionsStore()
+  const manageMainGameNav = useMainGameplayNavigationStore()
   const manageMoney = useMoneyManageStore()
 </script>
 <template>
@@ -21,7 +21,8 @@ Components that will be inside this container include:
             <!-- This is where the responsibility barometer will go -->
           </div>
           <div class="characterstats-set">
-            <h4><font-awesome-icon icon="fa-solid fa-piggy-bank" />Current Account:</h4>
+            <h4 v-if="manageMainGameNav.currentPage >= 3"><font-awesome-icon icon="fa-solid fa-piggy-bank" />Current Account:</h4>
+            <h4 v-if="manageMainGameNav.currentPage < 3"><font-awesome-icon icon="fa-solid fa-money-bill" />Money In Pocket:</h4>
             <!--Use values from moneyStore.js-->
             <div class="charactersidebar-pocketmoney-container">
               <h5>£{{Number(manageMoney.moneyInPocket).toFixed(2)}}</h5>
@@ -30,7 +31,7 @@ Components that will be inside this container include:
           </div>
           <GameNotificationPanel></GameNotificationPanel>
           <!-- Display this component depending on the stage of the game e.g. if they have accepted the job offer -->
-          <div v-if="livingOptions.livingOptionsGameStage > 0" class="characterstats-set">
+          <div v-if="manageMainGameNav.currentPage >= 2" class="characterstats-set">
             <h4>Monthly Salary Income:</h4>
             <div class="charactersidebar-salaryincome-container">
               <div class="charactersidebar-salarytype">
@@ -45,11 +46,11 @@ Components that will be inside this container include:
             <hr />
           </div>
           <!-- Display this component depending on the stage of the game e.g. if they have chosen a place to live -->
-          <CurrentlyLivingDisplay v-if="livingOptions.livingOptionsGameStage >= 3"></CurrentlyLivingDisplay> 
+          <CurrentlyLivingDisplay v-if="manageMainGameNav.currentPage >= 5"></CurrentlyLivingDisplay> 
           <!-- Display this component depending on the stage of the game e.g. if they have chosen a supermarket option -->
-          <CurrentlyShoppingAt v-if="livingOptions.livingOptionsGameStage >= 5"></CurrentlyShoppingAt>
+          <CurrentlyShoppingAt v-if="manageMainGameNav.currentPage >= 7"></CurrentlyShoppingAt>
           <!-- Display this component depending on the stage of the game e.g. if they have chosen a transport method -->
-          <TransportMethodSidebar v-if="livingOptions.livingOptionsGameStage >= 6"></TransportMethodSidebar>
+          <TransportMethodSidebar v-if="manageMainGameNav.currentPage >= 8"></TransportMethodSidebar>
         </div>
     </div>
   </template>

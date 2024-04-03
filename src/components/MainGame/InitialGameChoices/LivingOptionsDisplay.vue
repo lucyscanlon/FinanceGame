@@ -20,7 +20,7 @@ The parent of this component:
                         </div>
                     </div>
                     <!-- Call store methods on click -->
-                    <button @click="livingOptions.livingOptionsNextStageOfGame(), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute)), manageMoney.decreasePocketMoney(deposit), manageMoney.increaseMonthlyOutGoings(rent), manageMoney.increaseOrDecreasePocketMoneyAnimation(deposit)" class="map-location-livehere-button">
+                    <button @click="manageMainGameNav.navigateToPage(5), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute)), manageMoney.decreasePocketMoney(deposit), manageMoney.increaseMonthlyOutGoings(rent), manageMoney.increaseOrDecreasePocketMoneyAnimation(deposit)" class="map-location-livehere-button">
                         <p>Live Here</p>
                     </button>
 
@@ -32,11 +32,11 @@ The parent of this component:
 </template>
 <script setup>
     //import stores
-    import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
     import { registerLivingOptionChoiceStore } from '../../../store/InitialGameChoicesStore'
     import { useMoneyManageStore } from '../../../store/MoneyStore.js'
-
-    const livingOptions = useLivingOptionsStore()
+    import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    
+    const manageMainGameNav = useMainGameplayNavigationStore()
     const registerLivingChoice = registerLivingOptionChoiceStore()
     const manageMoney = useMoneyManageStore()
 </script>

@@ -54,7 +54,7 @@ The parent of this component:
                 </ul>
                 </div>
                 <div class="investingintro-portfoliolink-button-container">
-                    <button @click="useMainGameplayNav.navigateToPage(9), manageGameTimer.startCountdown()">View Investment Portfolio</button>
+                    <button @click="useMainGameplayNav.navigateToPage(17), manageGameTimer.startCountdown()">View Investment Portfolio</button>
                 </div>
             </div>
             <div class="previous-next-container incomestreams-slide3">

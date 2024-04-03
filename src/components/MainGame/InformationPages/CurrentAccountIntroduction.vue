@@ -21,7 +21,7 @@ The parent of this component:
             </div>
             <div class="rentinfo-button-wrapper">
                 <!-- Call store method on click -->
-                <button @click="manageMainGameNav.navigateToPage(1)" class="currentaccount-button">Open current account</button>
+                <button @click="manageMainGameNav.navigateToPage(3)" class="currentaccount-button">Open current account</button>
             </div>
         </div>
     </div>

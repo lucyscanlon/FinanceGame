@@ -7,7 +7,7 @@ The parent of this component:
 <template>
     <div class="rentintro-mainwrapper supermarket-info-wrap">
         <div class="rentintro-title-wrapper supermarketinfo-title">
-            <h1>Choosing a supermarket to shop at</h1>
+            <h1>Current Goal Info</h1>
         </div>
         <div class="rentintro-description-wrapper">
             <p>Your next task is to choose a place to shop for groceries! There are a wide range of different supermarkets to shop from in the UK, each providing different benefits. Heres some tips for how to choose the best supermarket for your budget!</p>
@@ -21,7 +21,7 @@ The parent of this component:
             </div>
             <div class="rentinfo-button-wrapper">
                 <!-- Call store method on click -->
-                <button @click="manageMainGameNav.navigateToPage(6)" class="rentinfo-button">View Supermarket Options</button>
+                <button @click="manageMainGameNav.navigateToPage(11), manageMainGameNav.unlockComponent()" class="rentinfo-button">View Supermarket Options</button>
             </div>
         </div>
     </div>
@@ -35,6 +35,6 @@ The parent of this component:
 <script>
     // export component data
     export default {
-        name: 'SupermarketInfoDisplay',
+        name: 'CurrentGoalIntroduction',
     }
 </script>

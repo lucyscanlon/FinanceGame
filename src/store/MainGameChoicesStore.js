@@ -4,8 +4,8 @@ import { useMoneyManageStore } from './MoneyStore'
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
-    mainGameComponentsUnlocked: 0,
-    currentPage: 1,
+    mainGameComponentsUnlocked: 6,
+    currentPage: 15,
   }),
   actions: {
     navigateToPage(num) {

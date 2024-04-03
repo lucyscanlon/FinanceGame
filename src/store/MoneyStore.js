@@ -223,7 +223,7 @@ export const useGameTimerStore = defineStore({
 
             this.timer = setInterval (() => {
                 if(this.countdown > 0) {
-                    if((useMainGameplayNavigationStore().currentPage === 1) || (useMainGameplayNavigationStore().currentPage === 9)) {
+                    if((useMainGameplayNavigationStore().currentPage === 11) || (useMainGameplayNavigationStore().currentPage === 17)) {
                         this.countdown = this.countdown - 1;
 
                         // flucuate prices of stocks

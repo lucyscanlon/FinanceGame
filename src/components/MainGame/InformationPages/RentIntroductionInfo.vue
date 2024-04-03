@@ -22,15 +22,17 @@ The parent of this component:
             <p class="colour-green rentintro-rentrecommendation">35% of your monthly income after tax is: £599.14</p>
             <div class="rentinfo-button-wrapper">
                 <!-- Call store method on click -->
-                <button @click="livingOptions.livingOptionsNextStageOfGame()" class="rentinfo-button">Choose a new place to rent</button>
+                <button @click="manageMainGameNav.navigateToPage(4)" class="rentinfo-button">Choose a new place to rent</button>
             </div>
         </div>
     </div>
 </template>
 <script setup>
     // import stores
-    import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
-    const livingOptions = useLivingOptionsStore()
+    import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    const manageMainGameNav = useMainGameplayNavigationStore()
+
+
 </script>
 <script>
     // export component data

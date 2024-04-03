@@ -1,5 +1,4 @@
 <template>
-    <div class="maingameplay-flex-container">
         <div class="pension-interactive-title-container current-goal-title">
             <h1><font-awesome-icon icon="fa-solid fa-bullseye" />Current Goal</h1>
         </div>
@@ -31,7 +30,6 @@
             <button @click="manageMoney.addToFurnitureFund(amountToChange)">Add</button>
             <span @click="manageMoney.WithdrawFromFurnitureFund(amountToChange)" class="currentgoal-withdraw-button"><button>Withdraw</button></span>
         </div>
-    </div>
 </template>
 <script setup>
 

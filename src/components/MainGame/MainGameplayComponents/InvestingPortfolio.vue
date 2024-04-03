@@ -178,7 +178,7 @@
             </div>
         </div>
         <div class="investing-port-close-portfolio-button">
-            <button @click="useMainGameplayNav.navigateToPage(1)">Close Portfolio</button>
+            <button @click="useMainGameplayNav.navigateToPage(11)">Close Portfolio</button>
         </div>
         
 

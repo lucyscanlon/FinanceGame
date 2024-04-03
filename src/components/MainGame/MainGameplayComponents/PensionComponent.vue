@@ -4,11 +4,14 @@
 
     const managePension = usePensionChoicesStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
+
+    console.log(manageMainGameNav.mainGameComponentsUnlocked);
 </script>
 
 <template>
     <div class="pension-interactive-component-container maingameplay-flex-container">
-        <div class="pension-interactive-title-container">
+        <div v-if="manageMainGameNav.mainGameComponentsUnlocked > 1" class="pension-component-content">
+            <div class="pension-interactive-title-container">
             <h1><font-awesome-icon icon="fa-solid fa-person-cane" />Pension</h1>
         </div>
         <div class="pension-interactive-contributions-container">
@@ -32,9 +35,11 @@
             </div>
         </div>
         <div class="pension-interactive-button-container">
-            <span class="border-pink"><button @click="manageMainGameNav.navigateToPage(2)">Change contributions</button></span>
+            <span class="border-pink"><button @click="manageMainGameNav.navigateToPage(10)">Change contributions</button></span>
             <button>See predictions</button>
         </div>
+        </div>
+        
     </div>
 </template>
 <script>

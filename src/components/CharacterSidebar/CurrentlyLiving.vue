@@ -7,7 +7,11 @@ The parent of this component:
 <script setup>
     // import stores
     import { registerLivingOptionChoiceStore } from '../../store/InitialGameChoicesStore'
+    import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
     const registerLivingChoice = registerLivingOptionChoiceStore()
+    const manageMainGameNav = useMainGameplayNavigationStore()
+
+    
 </script>
 <template>
     <div className="characterstats-set livingstatsdisplay">
@@ -24,7 +28,7 @@ The parent of this component:
                 <p>£{{registerLivingChoice.selectedLivingOptionInfo.commutePrice}}</p>
             </div>
         </div>
-        <button className="moveout-button">Move Out</button>
+        <button @click="manageMainGameNav.navigateToPage(4)" className="moveout-button">Move Out</button>
         <hr />
     </div>
 </template>

@@ -6,12 +6,10 @@ The parent of this component:
 -->
 <script setup>
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
-    import { useLivingOptionsStore } from '../../../store/InitialGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
     import {useGameTimerStore} from '../../../store/MoneyStore.js'
 
     const managePension = usePensionChoicesStore()
-    const livingOptions = useLivingOptionsStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageGameTimer = useGameTimerStore()
 
@@ -74,8 +72,8 @@ The parent of this component:
                     <PensionChoiceFlexbox :PensionIdentifier=3 :PensionYCPerc=8 :PensionYCAmount=161.94 :PensionECPerc=4.5 :PensionECAmount=91.09 :PensionTCPerc=12.5 :PensionTCAmount=253.03></PensionChoiceFlexbox>
                 </div>
                 <div class="pension-contribution-button-container">
-                        <button v-if="livingOptions.livingOptionsGameStage === 6" @click="managePension.confirmCurrentlySelectedPensionChoice(), nextSlide()">Confirm Choice</button>
-                        <button v-if="manageMainGameNav.currentPage === 2" @click="managePension.confirmCurrentlySelectedPensionChoice(), nextSlide()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 8" @click="managePension.confirmCurrentlySelectedPensionChoice(), nextSlide()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 9" @click="managePension.confirmCurrentlySelectedPensionChoice(), nextSlide()">Confirm Choice</button>
                  </div>
                 </div>
             </div>
@@ -87,8 +85,8 @@ The parent of this component:
                     <PensionInvestmentFlexbox :PensionInvIndentifier=2 PensionInvDesc="Invest pension in:"></PensionInvestmentFlexbox>
                 </div>
                 <div class="pension-contribution-button-container">
-                        <button v-if="livingOptions.livingOptionsGameStage === 6" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide(), livingOptions.livingOptionsNextStageOfGame(), manageGameTimer.startCountdown()">Confirm Choice</button>
-                        <button v-if="manageMainGameNav.currentPage === 2" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), manageMainGameNav.navigateToPage(1), manageGameTimer.startCountdown()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 8" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 9" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Confirm Choice</button>
                  </div>
             </div>
             </div>

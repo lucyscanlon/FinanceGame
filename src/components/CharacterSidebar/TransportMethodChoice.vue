@@ -7,7 +7,11 @@ The parent of this component:
 <script setup>
     //import stores 
     import { transportChoiceStore } from '../../store/InitialGameChoicesStore.js';
+    import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
+
     const manageTransport = transportChoiceStore();
+    const manageMainGameNav = useMainGameplayNavigationStore()
+
 </script>
 <template>
     <div className="characterstats-set currentlyshoppingatdisplay">
@@ -19,7 +23,7 @@ The parent of this component:
             <h5>Cost: <span class="colour-green">£{{ manageTransport.chosenTransportChoice.TTotal }}</span></h5>
         </div>
         <div class="currentlyshopping-wrap">
-            <button className="moveout-button">Change</button>
+            <button @click="manageMainGameNav.navigateToPage(7)" className="moveout-button">Change</button>
         </div>
         <hr />
     </div>

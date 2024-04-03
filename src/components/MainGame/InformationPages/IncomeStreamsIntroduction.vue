@@ -65,7 +65,7 @@
                 <input type="text" placeholder="Enter name" v-model="onlineStoreName">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="useMainGameplayNav.navigateToPage(1), manageIncomeStream.confirmOnlineStoreName(onlineStoreName)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmOnlineStoreName(onlineStoreName)">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@
                 <input type="text" placeholder="Enter name" v-model="podcastName">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="useMainGameplayNav.navigateToPage(1), manageIncomeStream.confirmPodcastName(podcastName)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmPodcastName(podcastName)">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@
               <span :class="(barChoice === 'Martins Martini Bar') ? 'barwork-button-active' : ''"><button @click="barChoice = 'Martins Martini Bar'">Martin's Martini Bar</button></span>
             </div>
             <div class="barwork-confirm-container">
-               <button @click="useMainGameplayNav.navigateToPage(1), manageIncomeStream.confirmBarChoiceName(barChoice)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmBarChoiceName(barChoice)">Confirm Name</button>
               </div>
           </div>
         </div>
@@ -105,7 +105,7 @@
                 <input type="text" placeholder="Enter username" v-model="socialMediaUsername">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="useMainGameplayNav.navigateToPage(1), manageIncomeStream.confirmSocialMediaUsername(socialMediaUsername)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmSocialMediaUsername(socialMediaUsername)">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@
               <span :class="(freelanceChosenSkill === 'Digital Marketing') ? 'barwork-button-active' : ''"><button @click="freelanceChosenSkill = 'Digital Marketing'">Digital Marketing</button></span>
             </div>
             <div class="barwork-confirm-container">
-               <button @click="useMainGameplayNav.navigateToPage(1), manageIncomeStream.confirmFreelanceSkill(freelanceChosenSkill)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmFreelanceSkill(freelanceChosenSkill)">Confirm Name</button>
               </div>
           </div>
         </div>

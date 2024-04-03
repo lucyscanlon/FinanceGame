@@ -7,7 +7,10 @@ The parent of this component:
 <script setup>
     // import stores
     import { supermarketChoiceStore } from '../../store/InitialGameChoicesStore'
+    import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
+
     const manageSupermarket = supermarketChoiceStore()
+    const manageMainGameNav = useMainGameplayNavigationStore()
 </script>
 <template>
     <div className="characterstats-set currentlyshoppingatdisplay">
@@ -26,7 +29,7 @@ The parent of this component:
             </div>
         </div>
         <div class="currentlyshopping-wrap">
-            <button className="moveout-button">Change</button>
+            <button @click="manageMainGameNav.navigateToPage(6)" className="moveout-button">Change</button>
         </div>
         <hr />
     </div>
