@@ -20,13 +20,6 @@ Components:
         <LivingOptionsDisplay streetAddress="19 Rodeo Square" districtDesc="Nebula Plaza" homeDesc="A luxury apartment, the other side of town" :rent=650 :commute=2 classtag="rodeo19" deposit="812.50"></LivingOptionsDisplay>
         <LivingOptionsDisplay streetAddress="Apt E1, Harmony Lane" districtDesc="Arts Quarter" homeDesc="A standard apartment, a walkable distance to work" :rent=550 :commute=0 classtag="harmonyE1" deposit="687.50"></LivingOptionsDisplay>
         <LivingOptionsDisplay streetAddress="32 Brickyard Lane" districtDesc="Industrial Quarter" homeDesc="A standard apartment, the other side of town" :rent=500 :commute=2 classtag="brickyard32" deposit="625"></LivingOptionsDisplay>
-        <div class="mapdisplay-gametips-wrapper">
-            <p>
-                <span class="livingoptions-movingbanner first-movingbanner">Choose a place to call your new home.</span>
-                <span class="livingoptions-movingbanner">Remember to stick to the 30-35% rule.</span>
-                <span class="livingoptions-movingbanner">35% of your monthly income after tax is: £599.14</span> 
-            </p>
-        </div>
     </div>
 </template>
 <script>
