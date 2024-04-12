@@ -21,6 +21,7 @@ export const useMoneyManageStore = defineStore({
         totalBalancePercentageChange: 0,
         furnitureFundTotal: 0,
         billsPaid: 0,
+        billsLate: false,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -181,6 +182,10 @@ export const useMoneyManageStore = defineStore({
         payMonthlyOutgoings() {
             this.moneyInPocket = this.moneyInPocket - this.monthlyOutGoingsSum;
             this.billsPaid = this.billsPaid + 1;
+        },
+
+        payLateBill() {
+            this.billsLate = false;
         }
     }
 })
@@ -259,6 +264,7 @@ export const useGameTimerStore = defineStore({
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.YContPercentage)
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.EContPercentage)
                     this.monthsPassed = this.monthsPassed + 1;
+                    this.checkIfBillsAreLate()
                     this.resetCountdown()
                     this.increaseMonth()
                 }
@@ -392,6 +398,16 @@ export const useGameTimerStore = defineStore({
         increaseYear() {
             this.currentYear = this.currentYear + 1
         },
+
+        checkIfBillsAreLate() {
+            if (useMoneyManageStore().billsPaid !== this.monthsPassed) {
+                useMoneyManageStore().billsLate = true;
+
+                console.log(useMoneyManageStore().billsLate);
+            } else {
+                return
+            }
+        }
 
     
     }

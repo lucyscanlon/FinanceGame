@@ -268,6 +268,11 @@ body {
   cursor: auto;
 }
 
+.bills-late-button button {
+  background-color: #f02e2e;
+  border: solid 1px #f02e2e;
+}
+
 .charactersidebar-salaryincome-container {
   width: 90%;
   margin: 0 auto;

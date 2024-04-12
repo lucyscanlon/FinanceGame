@@ -58,10 +58,13 @@ The parent of this component:
 
             </div>
         </div>
-        <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed)" class="pay-monthly-outgoings-container">
+        <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false)" class="pay-monthly-outgoings-container">
                 <button @click="manageMoney.payMonthlyOutgoings()">Pay monthly outgoings</button>
         </div>
-        <div v-if="(manageGameTimer.countdown > 5) || (manageMoney.billsPaid !== manageGameTimer.monthsPassed)" class="pay-monthly-outgoings-container pay-monthly-inactive">
+        <div v-if="(manageMoney.billsLate === true)" class="pay-monthly-outgoings-container bills-late-button">
+                <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill()">Pay monthly outgoings</button>
+        </div>
+        <div v-if="(manageGameTimer.countdown > 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false)" class="pay-monthly-outgoings-container pay-monthly-inactive">
                 <button>Pay monthly outgoings</button>
         </div>
         <hr>
