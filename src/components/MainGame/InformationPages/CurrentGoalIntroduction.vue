@@ -7,21 +7,22 @@ The parent of this component:
 <template>
     <div class="rentintro-mainwrapper supermarket-info-wrap">
         <div class="rentintro-title-wrapper supermarketinfo-title">
-            <h1>Current Goal Info</h1>
+            <h1>Your first goal!</h1>
         </div>
         <div class="rentintro-description-wrapper">
-            <p>Your next task is to choose a place to shop for groceries! There are a wide range of different supermarkets to shop from in the UK, each providing different benefits. Heres some tips for how to choose the best supermarket for your budget!</p>
-            <div class="supermarketinfo-list">
+            <p>Your first goal is to pay your bills on time.</p>
+            <div class="supermarketinfo-list first-goal-padding">
                 <ul>
-                    <li>Keep factors such as <span class="colour-green">location</span> and <span class="colour-green">accessibility</span> in mind as these can increase overall costs.</li>
-                    <li>Opt for a supermarket that is either close to home, or delivers to save in transport costs.</li>
-                    <li>Take advantage of <span class="colour-green">deals, discounts, memberships</span> and <span class="colour-green">loyalty programmes</span>. Joining a loyalty scheme can save you an average of <span class="colour-green">£360</span> a year!</li>
-                    <li>Minimise spending on fast food delivery apps. A survey from BBC Good Food found that under 24s spend an average of <span class="colour-green">£20</span> a week using these services.</li>
+                    <li>Goals will appear on your <span class="colour-green">game homepage.</span></li>
+                    <li><span class="colour-green">Complete the tasks</span> to complete the goal</li>
+                    <li>When the end of the month approaches, press the <span class="colour-green">'Pay monthly outgoings'</span> button to pay your bills.</li>
+                    <li>Bills can be paid up to <span class="colour-green">five days</span> before the end of the month.</li>
+                    <li>Not paying bills can have <span class="colour-green">consequences.</span></li>
                 </ul>
             </div>
-            <div class="rentinfo-button-wrapper">
+            <div class="rentinfo-button-wrapper first-goal-button-padding">
                 <!-- Call store method on click -->
-                <button @click="manageMainGameNav.navigateToPage(11), manageMainGameNav.unlockComponent()" class="rentinfo-button">View Supermarket Options</button>
+                <button @click="manageMainGameNav.navigateToPage(11), manageMainGameNav.unlockComponent(), manageGameTimer.startCountdown()" class="rentinfo-button">Continue to main game</button>
             </div>
         </div>
     </div>
@@ -29,8 +30,11 @@ The parent of this component:
 <script setup>
     // import stores
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import { useGameTimerStore } from '../../../store/MoneyStore.js'
     
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageGameTimer = useGameTimerStore()
+
 </script>
 <script>
     // export component data

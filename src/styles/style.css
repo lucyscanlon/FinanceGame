@@ -171,9 +171,9 @@ body {
   top: 300px;
   max-height: 30vh;
   overflow-y: auto;
-  -webkit-animation: slidein 0.5s forwards;
+  -webkit-animation: slidein 0.2s forwards;
   -webkit-animation-delay: 1s;
-  animation: slidein 0.5s forwards;
+  animation: slidein 0.2s forwards;
   animation-delay: 1s;
 }
 
@@ -225,6 +225,7 @@ body {
   color: white;
   font-family: unbounded-reg;
   font-size: 12px;
+  line-height: 1.5em;
 }
 
 .current-goal-notif {
@@ -3058,6 +3059,45 @@ input[type="number"] {
 .fa-money-bill {
   padding-right: 5px;
 }
+
+
+/* goals */
+
+.first-goal-padding {
+  padding-top: 40px;
+}
+
+.first-goal-button-padding {
+  padding-top: 50px;
+
+}
+
+.first-goal-button-padding button {
+  width: 280px;
+}
+
+.pay-bills-goal {
+  margin-top: 20px;
+}
+
+.pay-bills-title {
+  padding-top: 30px;
+}
+
+.currentgoal-tips-container {
+  text-align: left;
+  color: white;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.currentgoal-tips-container li {
+  padding-bottom: 10px;
+  line-height: 1.7em;
+  font-size: 12px;
+}
+
+
 
 
 

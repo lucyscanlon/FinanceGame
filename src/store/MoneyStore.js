@@ -20,6 +20,7 @@ export const useMoneyManageStore = defineStore({
         totalBalancePreviousValue: 0,
         totalBalancePercentageChange: 0,
         furnitureFundTotal: 0,
+        billsPaid: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -175,6 +176,11 @@ export const useMoneyManageStore = defineStore({
             } else {
                 return
             }
+        },
+
+        payMonthlyOutgoings() {
+            this.moneyInPocket = this.moneyInPocket - this.monthlyOutGoingsSum;
+            this.billsPaid = this.billsPaid + 1;
         }
     }
 })
