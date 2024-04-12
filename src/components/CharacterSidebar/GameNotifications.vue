@@ -8,10 +8,12 @@ The parent of this component:
     import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
     import { useGameTimerStore } from '../../store/MoneyStore.js'
     import { useMoneyManageStore } from '../../store/MoneyStore.js'
+    import { useGoalsStore } from '../../store/MainGameChoicesStore.js'
 
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageGameTimer = useGameTimerStore()
     const manageMoney = useMoneyManageStore()
+    const manageGoals = useGoalsStore()
 
 </script>
 <template>
@@ -68,13 +70,25 @@ The parent of this component:
                         </div>
             </div>
         </div>
-        <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false)" class="pay-monthly-outgoings-container">
-                <button @click="manageMoney.payMonthlyOutgoings()">Pay monthly outgoings</button>
+        <!-- Buttons for the first goal - pay bills on time -->
+        <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal === 1)" class="pay-monthly-outgoings-container">
+                <button @click="manageMoney.payMonthlyOutgoings(), manageGoals.completedGoal()">Pay monthly outgoings</button>
         </div>
-        <div v-if="(manageMoney.billsLate === true)" class="pay-monthly-outgoings-container bills-late-button">
+        <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal === 1)" class="pay-monthly-outgoings-container bills-late-button">
                 <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill()">Pay monthly outgoings</button>
         </div>
-        <div v-if="(manageGameTimer.countdown > 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false)" class="pay-monthly-outgoings-container pay-monthly-inactive">
+        <div v-if="(manageGameTimer.countdown > 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal === 1)" class="pay-monthly-outgoings-container pay-monthly-inactive">
+                <button>Pay monthly outgoings</button>
+        </div>
+
+        <!-- Buttons for the rest of gameplay-->
+        <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1)" class="pay-monthly-outgoings-container">
+                <button @click="manageMoney.payMonthlyOutgoings()">Pay monthly outgoings</button>
+        </div>
+        <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal > 1)" class="pay-monthly-outgoings-container bills-late-button">
+                <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill()">Pay monthly outgoings</button>
+        </div>
+        <div v-if="(manageGameTimer.countdown > 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1)" class="pay-monthly-outgoings-container pay-monthly-inactive">
                 <button>Pay monthly outgoings</button>
         </div>
         <hr>

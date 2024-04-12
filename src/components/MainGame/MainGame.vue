@@ -77,6 +77,7 @@ import { useGameTimerStore } from "../../store/MoneyStore.js";
 const manageMoney = useMoneyManageStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
+
 </script>
 <script>
 // import components

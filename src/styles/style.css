@@ -3102,6 +3102,19 @@ input[type="number"] {
   font-size: 12px;
 }
 
+.current-goal-colour-container {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.goal-completed-styling h1  {
+  color: rgba(125, 171, 61);
+}
+
+.currentgoal-completed-border {
+  border: solid 1px #7dab3d;
+}
 
 
 
