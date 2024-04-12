@@ -57,6 +57,16 @@ The parent of this component:
                         </div>
 
             </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && (manageGameTimer.countdown <= 5) && (manageMoney.billsLate === false) && (manageMoney.billsPaid === manageGameTimer.monthsPassed)" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>Your bills are due!</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && (manageMoney.billsLate === true)" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>Your bills are late!</p>
+                        </div>
+            </div>
         </div>
         <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false)" class="pay-monthly-outgoings-container">
                 <button @click="manageMoney.payMonthlyOutgoings()">Pay monthly outgoings</button>
