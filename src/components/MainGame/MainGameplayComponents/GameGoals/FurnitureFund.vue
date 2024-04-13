@@ -1,11 +1,12 @@
 <template>
-        <div class="pension-interactive-title-container current-goal-title">
+        <div :class="(manageGoals.completedGoals > 1) ? 'goal-completed-styling' : ''" class="pension-interactive-title-container current-goal-title">
             <h1><font-awesome-icon icon="fa-solid fa-bullseye" />Current Goal</h1>
         </div>
         <div class="currentgoal-status-container">
-            <p>Status: <span class="colour-red">Uncompleted</span></p>
+            <p v-if="manageMoney.furnitureFundTotal < 1000">Status: <span class="colour-red">Uncompleted</span></p>
+            <p v-if="manageMoney.furnitureFundTotal >= 1000">Status: <span class="colour-green">Completed</span></p>
         </div>
-        <div class="currentgoal-goal-container">
+        <div :class="(manageGoals.completedGoals > 0) ? 'currentgoal-completed-border' : ''" class="currentgoal-goal-container">
             <p><span class="colour-green">Goal:</span> Save £1000 for new furniture for your apartment</p>
         </div>
         <div class="currentgoal-info-total-container">
@@ -34,8 +35,10 @@
 <script setup>
 
     import { useMoneyManageStore } from '../../../../store/MoneyStore'
+    import { useGoalsStore } from "../../../../store/MainGameChoicesStore.js";
 
     const manageMoney = useMoneyManageStore()
+    const manageGoals = useGoalsStore();
 
 </script>
 <script>

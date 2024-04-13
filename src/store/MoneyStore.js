@@ -2,6 +2,7 @@ import { defineStore } from "pinia"
 import {useMainGameplayNavigationStore } from './MainGameChoicesStore'
 import { usePensionChoicesStore } from './MainGameChoicesStore'
 import { useInvestmentPortfolioChoiceStore } from './MainGameChoicesStore'
+import { useGoalsStore } from './MainGameChoicesStore'
 
 export const useMoneyManageStore = defineStore({
     id: 'moveMoney',
@@ -162,6 +163,10 @@ export const useMoneyManageStore = defineStore({
                 let amount = Number(num)
                 this.furnitureFundTotal = this.furnitureFundTotal + amount;
                 this.moneyInPocket = this.moneyInPocket - amount;
+
+                if(this.furnitureFundTotal >= 1000) {
+                    useGoalsStore().completedGoals = 2;
+                }
             } else {
                 return
             }
@@ -420,9 +425,11 @@ export const useGameTimerStore = defineStore({
                 useMainGameplayNavigationStore().currentPage = 9;
             }
 
-        }
+            if((useGoalsStore().completedGoals === 1) && (countdown === 25)) {
+                useGoalsStore().currentGoal = 2;
+            }
 
-    
+        }
     }
 })
 
