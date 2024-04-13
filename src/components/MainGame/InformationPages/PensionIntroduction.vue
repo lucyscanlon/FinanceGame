@@ -86,7 +86,7 @@ The parent of this component:
                 </div>
                 <div class="pension-contribution-button-container">
                         <button v-if="manageMainGameNav.currentPage === 8" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Confirm Choice</button>
-                        <button v-if="manageMainGameNav.currentPage === 9" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 9" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageMainGameNav.unlockComponent()">Confirm Choice</button>
                  </div>
             </div>
             </div>

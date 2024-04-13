@@ -195,7 +195,7 @@ export const useGameTimerStore = defineStore({
     state: () => ({
         timer: null,
         countdown: 30,
-        monthCounter: 0,
+        monthCounter: 1,
         monthsPassed: 0,
         currentMonth: 'January',
         currentYear: 2023,
@@ -236,6 +236,7 @@ export const useGameTimerStore = defineStore({
                 if(this.countdown > 0) {
                     if((useMainGameplayNavigationStore().currentPage === 11) || (useMainGameplayNavigationStore().currentPage === 17)) {
                         this.countdown = this.countdown - 1;
+                        this.checkTheDate(this.countdown, this.currentMonth, this.currentYear);
 
                         // flucuate prices of stocks
                         if(useMainGameplayNavigationStore().mainGameComponentsUnlocked > 5 ) {
@@ -264,9 +265,9 @@ export const useGameTimerStore = defineStore({
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.YContPercentage)
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.EContPercentage)
                     this.monthsPassed = this.monthsPassed + 1;
+                    this.increaseMonth()
                     this.checkIfBillsAreLate()
                     this.resetCountdown()
-                    this.increaseMonth()
                 }
             }, 1500)
         }, 
@@ -393,6 +394,10 @@ export const useGameTimerStore = defineStore({
 
             }
 
+            console.log("Months Passed: " + this.monthsPassed);
+            console.log("Month Counter: " + this.monthCounter);
+            console.log("Current Month: " + this.currentMonth);
+
         },
 
         increaseYear() {
@@ -407,6 +412,14 @@ export const useGameTimerStore = defineStore({
             } else {
                 return
             }
+        },
+
+        checkTheDate(countdown, currentMonth, currentYear) {
+
+            if((countdown === 15) && (currentMonth === 'January') && (currentYear === 2023)) {
+                useMainGameplayNavigationStore().currentPage = 9;
+            }
+
         }
 
     
