@@ -288,3 +288,28 @@ export const useGoalsStore = defineStore({
     },
   }
 })
+
+export const usePopUpStore = defineStore({
+  id: 'PopUpStore',
+  state: () => ({
+    phonePlanChoice: 0,
+  }),
+  actions: {
+    choosePhonePlan(num) {
+      if(num === 1) {
+        this.phonePlanChoice = 1;
+        useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 0;
+        useMoneyManageStore().monthlyOutGoingsSum = useMoneyManageStore().monthlyOutGoingsSum + 50;
+        
+      } else if (num === 2) {
+        this.phonePlanChoice = 2;
+        useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 300;
+        useMoneyManageStore().monthlyOutGoingsSum = useMoneyManageStore().monthlyOutGoingsSum + 15;
+      } else if (num === 3) {
+        this.phonePlanChoice = 3;
+        useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 800;
+        useMoneyManageStore().monthlyOutGoingsSum = useMoneyManageStore().monthlyOutGoingsSum + 15;
+      }
+    }
+  }
+})

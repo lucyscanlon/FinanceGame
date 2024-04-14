@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button>Choose</button>
+                <button @click="managePopUps.choosePhonePlan(1)">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container">
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button>Choose</button>
+                <button @click="managePopUps.choosePhonePlan(2)">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container">
@@ -66,13 +66,17 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button>Choose</button>
+                <button @click="managePopUps.choosePhonePlan(3)">Choose</button>
             </div>
             
         </div>
     </div>
 </template>
 <script setup>
+
+import { usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
+
+const managePopUps = usePopUpStore();
 
 </script>
 <script>
