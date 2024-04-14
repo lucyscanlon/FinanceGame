@@ -3249,6 +3249,56 @@ input[type="number"] {
   cursor: pointer;
 }
 
+.popup-title-container .fa-martini-glass-citrus {
+  padding-right: 7px;
+}
+
+.workdrinks-desc {
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+.popup-work-drinks-choice-container {
+  width: 60%;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.popup-work-drinks-flex-container {
+  width: 50%;
+  margin-left: 8px;
+  margin-right: 8px;
+  height: 240px;
+  background-color: #15141d;
+  border-radius: 15px;
+}
+
+.popup-work-drinks-desc {
+  width: 75%;
+  margin: 0 auto;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 10px;
+  line-height: 1.5em;
+}
+
+.popup-workdrinks-cost {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+  padding-top: 15px;
+}
+
+.workdrinks-button {
+  padding-top: 25px;
+}
+
 
 
 

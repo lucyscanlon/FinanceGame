@@ -1,86 +1,50 @@
 <template>
     <div class="popup-title-container">
-        <h1><font-awesome-icon icon="fa-solid fa-phone" />Choose a phone plan</h1>
+        <h1><font-awesome-icon icon="fa-solid fa-martini-glass-citrus" />Drinks with Work!</h1>
     </div> 
-    <div class="popup-description-container">
-        <p>Choose a phone plan from the options below. Charges may be added to your monthly outgoings.</p>
+    <div class="popup-description-container workdrinks-desc">
+        <p>A group of your new collegues have invited you out for drinks after work to get to know you better. You estimate it will cost <span class="colour-green">£100.</span> What would you like to do?</p>
     </div>
-    <div class="popup-phonebill-options-container">
-        <div class="popup-phonebill-flex-container">
+    <div class="popup-work-drinks-choice-container">
+        <div class="popup-work-drinks-flex-container">
             <div class="popup-phonebill-option-container">
                 <h4>Option 1</h4>
             </div>
-            <div class="popup-phonebill-desc-container">
-                <p>Monthly contract covers all costs</p>
+            <div class="popup-work-drinks-desc">
+                <p>Agree to go for drinks! It's a great opportunity to make friends at my new job.</p>
             </div>
-            <div class="popup-phonebill-costs-container">
-                <div class="popup-phonebill-upfront-title">
-                    <h5>Up Front Cost:</h5>
-                    <p class="colour-green">£0</p>
-                </div>
-                <div class="popup-phonebill-upfront-title">
-                    <h5>Monthly Cost:</h5>
-                    <p class="colour-green">£50</p>
-                </div>
+            <div class="popup-workdrinks-cost">
+                <p>Cost: <span class="colour-green">£100</span></p>
             </div>
-            <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+            <div class="popup-phonebill-button workdrinks-button">
+                <button>Choose</button>
             </div>
         </div>
-        <div class="popup-phonebill-flex-container">
+        <div class="popup-work-drinks-flex-container">
             <div class="popup-phonebill-option-container">
                 <h4>Option 2</h4>
             </div>
-            <div class="popup-phonebill-desc-container">
-                <p>Up front payment for second hand phone</p>
+            <div class="popup-work-drinks-desc">
+                <p>Politely decline. It's not something I can afford at the moment!</p>
             </div>
-            <div class="popup-phonebill-costs-container">
-                <div class="popup-phonebill-upfront-title">
-                    <h5>Up Front Cost:</h5>
-                    <p class="colour-green">£300</p>
-                </div>
-                <div class="popup-phonebill-upfront-title">
-                    <h5>Monthly Cost:</h5>
-                    <p class="colour-green">£15</p>
-                </div>
+            <div class="popup-workdrinks-cost">
+                <p>Cost: <span class="colour-green">£0</span></p>
             </div>
-            <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+            <div class="popup-phonebill-button workdrinks-button">
+                <button>Choose</button>
             </div>
-        </div>
-        <div class="popup-phonebill-flex-container">
-            <div class="popup-phonebill-option-container">
-                <h4>Option 3</h4>
-            </div>
-            <div class="popup-phonebill-desc-container">
-                <p>Up front payment for brand new phone</p>
-            </div>
-            <div class="popup-phonebill-costs-container">
-                <div class="popup-phonebill-upfront-title">
-                    <h5>Up Front Cost:</h5>
-                    <p class="colour-green">£800</p>
-                </div>
-                <div class="popup-phonebill-upfront-title">
-                    <h5>Monthly Cost:</h5>
-                    <p class="colour-green">£15</p>
-                </div>
-            </div>
-            <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
-            </div>
-            
         </div>
     </div>
 </template>
 <script setup>
 
-import { usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
-import { useMainGameplayNavigationStore } from "../../../../store/MainGameChoicesStore.js";
-import { useGameTimerStore } from "../../../../store/MoneyStore.js";
+//import { usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
+//import { useMainGameplayNavigationStore } from "../../../../store/MainGameChoicesStore.js";
+//import { useGameTimerStore } from "../../../../store/MoneyStore.js";
 
-const managePopUps = usePopUpStore();
-const manageMainGameNav = useMainGameplayNavigationStore();
-const manageGameTimer = useGameTimerStore();
+//const managePopUps = usePopUpStore();
+//const manageMainGameNav = useMainGameplayNavigationStore();
+//const manageGameTimer = useGameTimerStore();
 
 </script>
 <script>
