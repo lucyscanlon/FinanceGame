@@ -71,6 +71,10 @@ export const useMoneyManageStore = defineStore({
             if(this.moneyInPocket >= num) {
                 this.emergencyFundCurrentTotal = this.emergencyFundCurrentTotal + num;
                 this.moneyInPocket = this.moneyInPocket - num;
+
+                if(this.emergencyFundCurrentTotal >= 5000) {
+                    useGoalsStore().completedGoals = 3;
+                }
             } else {
                 return;
             }
@@ -427,6 +431,14 @@ export const useGameTimerStore = defineStore({
 
             if((useGoalsStore().completedGoals === 1) && (countdown === 25)) {
                 useGoalsStore().currentGoal = 2;
+            }
+
+            if((useGoalsStore().completedGoals === 2) && (countdown === 25)) {
+                useMainGameplayNavigationStore().currentPage = 12;
+            }
+
+            if((useGoalsStore().completedGoals === 2) && (countdown === 25)) {
+                useMainGameplayNavigationStore().currentPage = 12;
             }
 
         }

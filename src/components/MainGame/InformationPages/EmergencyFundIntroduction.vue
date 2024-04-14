@@ -7,7 +7,7 @@ The parent of this component:
 <template>
   <div class="rentintro-mainwrapper">
     <div class="emergencyfund-intro-title-wrapper everydayaccount-info-title">
-      <h1>You have a new goal: Create an emergency fund!</h1>
+      <h1>Creating an emergency fund</h1>
     </div>
     <div class="emergencyfund-description-wrapper">
       <div :class="currentSlide !== 0 && 'pensionSlideInactive'" class="pension-slidecontainer">
@@ -59,7 +59,7 @@ The parent of this component:
             ></EmergencyFundChoicesFlexbox>
           </div>
           <div class="emergencyfundchoice-button-container">
-            <button @click="manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(), useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown(); manageMoney.addToEmergencyFundTotal(parseInt(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit)), useMainGameplayNav.unlockComponent()">Confirm Choice</button>
+            <button @click="manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(), useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown(); manageMoney.addToEmergencyFundTotal(parseInt(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit)), useMainGameplayNav.unlockComponent(), manageGoals.nextGoal()">Confirm Choice</button>
           </div>
         </div>
       </div>
@@ -89,12 +89,14 @@ import { useEmergencyFundChoicesStore } from "../../../store/MainGameChoicesStor
 import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
 import { useMoneyManageStore } from "../../../store/MoneyStore";
 import { useGameTimerStore } from "../../../store/MoneyStore";
+import { useGoalsStore } from "../../../store/MainGameChoicesStore.js";
 import EmergencyFundChoicesFlexbox from "../MainGameChoices/EmergencyFundFlexbox";
 
 const manageEmergencyFund = useEmergencyFundChoicesStore();
 const useMainGameplayNav = useMainGameplayNavigationStore();
 const manageMoney = useMoneyManageStore();
 const manageGameTimer = useGameTimerStore();
+const manageGoals = useGoalsStore();
 </script>
 <script>
 // export component data
