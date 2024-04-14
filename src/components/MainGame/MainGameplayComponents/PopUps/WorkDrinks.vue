@@ -86,7 +86,7 @@ const manageGameTimer = useGameTimerStore();
 <script>
 
 export default {
-name: 'PhoneBillPopUp',
+name: 'WorkDrinksPopUp',
 
 }
 
