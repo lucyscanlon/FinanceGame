@@ -311,6 +311,14 @@ export const usePopUpStore = defineStore({
         useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 800;
         useMoneyManageStore().monthlyOutGoingsSum = useMoneyManageStore().monthlyOutGoingsSum + 15;
       }
+    }, 
+
+    workDrinksChoice(num) {
+      if(num === 1) {
+        useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 100;
+      } else if (num === 2) {
+        useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 0;
+      }
     }
   }
 })
