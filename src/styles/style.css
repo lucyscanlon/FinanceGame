@@ -3118,6 +3118,139 @@ input[type="number"] {
 
 
 
+/* pop ups */
+
+.popups-main-container-wrapper {
+  position: absolute;
+  z-index: 999;
+  top: 18%;
+  left: 38%;
+  background-color: #1f1e2f;
+  width: 50%;
+  height: 450px;
+  border-radius: 20px;
+  font-family: unbounded-reg;
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
+  -moz-box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
+  box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
+}
+
+.popups-maingameplay-black-overlay {
+  height: 100vh;
+  width: 75vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0; 
+  left: 25%;
+  
+}
+
+.popup-title-container {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 35px;
+ 
+}
+
+.popup-title-container h1 {
+  font-size: 22px;
+  color: #ff48c8;
+  
+}
+
+.popup-description-container {
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  padding-top: 10px;
+  line-height: 1.5em;
+}
+
+.popup-phonebill-options-container {
+  width: 85%;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.popup-phonebill-flex-container {
+  width: 50%;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color:#15141d;
+  height: 270px;
+  border-radius: 20px;
+}
+
+.fa-phone {
+  padding-right: 7px;
+}
+
+.popup-phonebill-option-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 15px;
+  color: #ff48c8;
+}
+
+.popup-phonebill-desc-container {
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  font-size: 12.5px;
+  padding-top: 10px;
+}
+
+.popup-phonebill-upfront-title {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  padding-top: 15px;
+}
+
+.popup-phonebill-upfront-title p {
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+.popup-phonebill-costs-container {
+  padding-top: 6px;
+}
+
+.popup-phonebill-button {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.popup-phonebill-button button {
+  background-color: #15141d;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  font-family: unbounded-reg;
+  color: white;
+  border: solid 1px #ff48c8;
+  transition-duration: 0.3s;
+}
+
+.popup-phonebill-button button:hover {
+  background-color: #ff48c8;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+
+
 
 
 

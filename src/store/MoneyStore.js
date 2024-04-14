@@ -23,6 +23,7 @@ export const useMoneyManageStore = defineStore({
         furnitureFundTotal: 0,
         billsPaid: 0,
         billsLate: false,
+        appliancesFundTotal: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -195,6 +196,24 @@ export const useMoneyManageStore = defineStore({
 
         payLateBill() {
             this.billsLate = false;
+        },
+
+        addToAppliancesFund(num) {
+            if(this.moneyInPocket >= num) {
+                this.appliancesFundTotal = this.appliancesFundTotal + num;
+                this.moneyInPocket = this.moneyInPocket - num;
+            } else {
+                return
+            }
+        },
+
+        withdrawFromAppliancesFund(num) {
+            if(this.appliancesFundTotal <= num) {
+                this.moneyInPocket = this.moneyInPocket + num;
+                this.appliancesFundTotal = this.appliancesFundTotal - num;
+            } else {
+                return
+            }
         }
     }
 })
@@ -437,8 +456,13 @@ export const useGameTimerStore = defineStore({
                 useMainGameplayNavigationStore().currentPage = 12;
             }
 
-            if((useGoalsStore().completedGoals === 2) && (countdown === 25)) {
+            if((useGoalsStore().completedGoals === 2) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 2)) {
                 useMainGameplayNavigationStore().currentPage = 12;
+            }
+
+            if((useGoalsStore().completedGoals === 3) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 3)) {
+                useMainGameplayNavigationStore().currentPage = 13;
+                useGoalsStore().currentGoal = 4;
             }
 
         }

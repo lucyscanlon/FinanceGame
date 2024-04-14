@@ -4,8 +4,8 @@ import { useMoneyManageStore } from './MoneyStore'
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
-    mainGameComponentsUnlocked: 0,
-    currentPage: 8,
+    mainGameComponentsUnlocked: 7,
+    currentPage: 18,
   }),
   actions: {
     navigateToPage(num) {
@@ -284,6 +284,7 @@ export const useGoalsStore = defineStore({
     },
     nextGoal() {
       this.currentGoal = this.currentGoal + 1;
-    }
+      console.log(this.currentGoal);
+    },
   }
 })

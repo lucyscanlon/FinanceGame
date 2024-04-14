@@ -43,7 +43,8 @@ Components:
     <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 15"></HouseDepositIntroduction>
     <InvestingIntroduction v-if="manageMainGameNav.currentPage === 16"></InvestingIntroduction>
     <InvestmentPortfolioFull v-if="manageMainGameNav.currentPage === 17"></InvestmentPortfolioFull>
-    <div v-if="manageMainGameNav.currentPage === 11" class="maingameplay-interaction-container">
+    <PopUpComponent v-if="manageMainGameNav.currentPage === 18"></PopUpComponent>
+    <div v-if="(manageMainGameNav.currentPage === 11) || (manageMainGameNav.currentPage === 18)" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
         <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>
         <PensionInteractionComponent></PensionInteractionComponent>
@@ -63,6 +64,9 @@ Components:
           <span className="colour-white">£{{ manageMoney.monthlyOutGoingsSum }}</span>
         </p>
       </div>
+    </div>
+    <div v-if="manageMainGameNav.currentPage === 18" class="popups-maingameplay-black-overlay">
+        <!-- Black overlay for popups-->
     </div>
   </div>
 </template>
@@ -102,6 +106,7 @@ import InvestingIntroduction from "./InformationPages/InvestingIntroduction.vue"
 import InvestmentPortfolioFull from "./MainGameplayComponents/InvestingPortfolio.vue";
 import CurrentGoalInteractiveComponent from "./MainGameplayComponents/CurrentGoalComponent.vue";
 import CurrentGoalIntroduction from "./InformationPages/CurrentGoalIntroduction.vue";
+import PopUpComponent from "./MainGameplayComponents/PopUpsComponent.vue";
 // export component data
 export default {
   name: "MainGameWrapper",
@@ -127,6 +132,7 @@ export default {
     InvestmentPortfolioFull,
     CurrentGoalInteractiveComponent,
     CurrentGoalIntroduction,
+    PopUpComponent,
   },
 };
 </script>

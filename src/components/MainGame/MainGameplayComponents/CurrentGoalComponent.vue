@@ -3,6 +3,7 @@
         <PayBillsGoal v-if="manageGameGoals.currentGoal === 1"></PayBillsGoal>
         <FurnitureFundGoal v-if="manageGameGoals.currentGoal === 2"></FurnitureFundGoal>
         <EmergencyFundGoal v-if="manageGameGoals.currentGoal === 3"></EmergencyFundGoal>
+        <AppliancesFundGoal v-if="manageGameGoals.currentGoal === 4"></AppliancesFundGoal>
     </div>
 </template>
 <script setup>
@@ -10,6 +11,8 @@
 import FurnitureFundGoal from './GameGoals/FurnitureFund'
 import PayBillsGoal from './GameGoals/PayBillsGoal'
 import EmergencyFundGoal from './GameGoals/EmergencyFund.vue'
+import AppliancesFundGoal from './GameGoals/AppliancesFund.vue'
+
 import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
 import { useGoalsStore } from '../../../store/MainGameChoicesStore.js'
 
@@ -25,6 +28,7 @@ export default {
         FurnitureFundGoal,
         PayBillsGoal,
         EmergencyFundGoal,
+        AppliancesFundGoal,
     },
     data() {
         return {
