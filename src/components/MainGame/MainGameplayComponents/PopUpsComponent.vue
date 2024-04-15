@@ -5,6 +5,7 @@
         <InvestmentOpportunityPopUp v-if="managePopUps.currentPopUp === 3"></InvestmentOpportunityPopUp>
         <InvestmentOpportunitySuccessfulPopUp v-if="managePopUps.currentPopUp === 4"></InvestmentOpportunitySuccessfulPopUp>
         <InvestmentOpportunityFailedPopUp v-if="managePopUps.currentPopUp === 5"></InvestmentOpportunityFailedPopUp>
+        <HolidayChoicePopUp v-if="managePopUps.currentPopUp === 6"></HolidayChoicePopUp>
    
     </div>
 </template>
@@ -15,6 +16,7 @@ import WorkDrinksPopUp from '../MainGameplayComponents/PopUps/WorkDrinks.vue'
 import InvestmentOpportunityPopUp from '../MainGameplayComponents/PopUps/InvestmentOpportunity.vue'
 import InvestmentOpportunitySuccessfulPopUp from '../MainGameplayComponents/PopUps/InvestmentOpportunitySuccessful.vue'
 import InvestmentOpportunityFailedPopUp from '../MainGameplayComponents/PopUps/InvestmentOpportunityFailed.vue'
+import HolidayChoicePopUp from '../MainGameplayComponents/PopUps/HolidayChoice.vue'
 import {usePopUpStore} from '../../../store/MainGameChoicesStore';
 
 const managePopUps = usePopUpStore();
@@ -30,6 +32,7 @@ export default {
         InvestmentOpportunityPopUp,
         InvestmentOpportunitySuccessfulPopUp,
         InvestmentOpportunityFailedPopUp,
+        HolidayChoicePopUp,
     }
 }
 

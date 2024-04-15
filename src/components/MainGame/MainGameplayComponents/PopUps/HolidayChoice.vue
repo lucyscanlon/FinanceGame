@@ -1,27 +1,23 @@
 <template>
     <div class="popup-title-container">
-        <h1><font-awesome-icon icon="fa-solid fa-phone" />Choose a phone plan</h1>
+        <h1><font-awesome-icon icon="fa-solid fa-map-location-dot" />New Goal: You're going on holiday!</h1>
     </div> 
     <div class="popup-description-container">
-        <p>Choose a phone plan from the options below. Charges may be added to your monthly outgoings.</p>
+        <p>You are going on holiday. Choose a holiday package that is appropriate for your budget from the options below and start saving to complete the goal.</p>
     </div>
-    <div class="popup-phonebill-options-container">
-        <div class="popup-phonebill-flex-container">
-            <div class="popup-phonebill-padding">
+    <div class="popup-phonebill-options-container holidaychoice-flex-wholecontainer">
+        <div class="popup-phonebill-flex-container holidaychoice-flex">
+            <div class="popup-holidaychoice-padding">
                 <div class="popup-phonebill-option-container">
                     <h4>Option 1</h4>
                 </div>
                 <div class="popup-phonebill-desc-container">
-                    <p>Monthly contract covers all costs</p>
+                    <p>A luxury all inclusive holiday in the Caribbean</p>
                 </div>
                 <div class="popup-phonebill-costs-container">
                     <div class="popup-phonebill-upfront-title">
-                        <h5>Up Front Cost:</h5>
-                        <p class="colour-green">£0</p>
-                    </div>
-                    <div class="popup-phonebill-upfront-title">
-                        <h5>Monthly Cost:</h5>
-                        <p class="colour-green">£50</p>
+                        <h5>Cost:</h5>
+                        <p class="colour-green">£4000</p>
                     </div>
                 </div>
             </div>
@@ -29,22 +25,18 @@
                 <button @click="managePopUps.choosePhonePlan(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
         </div>
-        <div class="popup-phonebill-flex-container">
-            <div class="popup-phonebill-padding">
+        <div class="popup-phonebill-flex-container holidaychoice-flex">
+            <div class="popup-holidaychoice-padding">
                 <div class="popup-phonebill-option-container">
                     <h4>Option 2</h4>
                 </div>
                 <div class="popup-phonebill-desc-container">
-                    <p>Up front payment for second hand phone</p>
+                    <p>A hotel package on a Greek Island</p>
                 </div>
                 <div class="popup-phonebill-costs-container">
                     <div class="popup-phonebill-upfront-title">
-                        <h5>Up Front Cost:</h5>
-                        <p class="colour-green">£300</p>
-                    </div>
-                    <div class="popup-phonebill-upfront-title">
-                        <h5>Monthly Cost:</h5>
-                        <p class="colour-green">£15</p>
+                        <h5>Cost:</h5>
+                        <p class="colour-green">£1000</p>
                     </div>
                 </div>
             </div>
@@ -52,22 +44,18 @@
                 <button @click="managePopUps.choosePhonePlan(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
         </div>
-        <div class="popup-phonebill-flex-container">
-            <div class="popup-phonebill-padding">
+        <div class="popup-phonebill-flex-container holidaychoice-flex">
+            <div class="popup-holidaychoice-padding">
                 <div class="popup-phonebill-option-container">
                     <h4>Option 3</h4>
                 </div>
                 <div class="popup-phonebill-desc-container">
-                    <p>Up front payment for brand new phone</p>
+                    <p>A cosy cottage stay in Cornwall</p>
                 </div>
                 <div class="popup-phonebill-costs-container">
                     <div class="popup-phonebill-upfront-title">
-                        <h5>Up Front Cost:</h5>
-                        <p class="colour-green">£800</p>
-                    </div>
-                    <div class="popup-phonebill-upfront-title">
-                        <h5>Monthly Cost:</h5>
-                        <p class="colour-green">£15</p>
+                        <h5>Cost:</h5>
+                        <p class="colour-green">£300</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +80,7 @@ const manageGameTimer = useGameTimerStore();
 <script>
 
 export default {
-name: 'PhoneBillPopUp',
+name: 'HolidayChoicePopUp',
 
 }
 

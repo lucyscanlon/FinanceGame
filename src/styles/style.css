@@ -3232,6 +3232,14 @@ input[type="number"] {
   padding-top: 15px;
 }
 
+.popup-holidaychoice-padding {
+  min-height: 150px;
+}
+
+.popup-phonebill-padding {
+  min-height: 205px;
+}
+
 .popup-phonebill-button button {
   background-color: #15141d;
   width: 100px;
@@ -3373,6 +3381,18 @@ input[type="number"] {
 
 .investfailed-button button {
   width: 100px;
+}
+
+.popup-title-container .fa-map-location-dot {
+  padding-right: 7px;
+}
+
+.holidaychoice-flex {
+  height: 220px;
+}
+
+.holidaychoice-flex-wholecontainer {
+  margin-top: 40px;
 }
 
 

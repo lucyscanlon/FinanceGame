@@ -292,7 +292,7 @@ export const useGoalsStore = defineStore({
 export const usePopUpStore = defineStore({
   id: 'PopUpStore',
   state: () => ({
-    currentPopUp: 5,
+    currentPopUp: 1,
     phonePlanChoice: 0,
   }),
   actions: {
@@ -331,6 +331,6 @@ export const usePopUpStore = defineStore({
 
     InvestmentOpportunitySuccessful() {
       useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket + 4500;
-    }
+    },
   }
 })
