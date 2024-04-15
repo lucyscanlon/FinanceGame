@@ -17,7 +17,7 @@
                 <p>Cost: <span class="colour-green">£1500</span></p>
             </div>
             <div class="popup-phonebill-button workdrinks-button">
-                <button @click="managePopUps.workDrinksChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="managePopUps.investmentOpportunityChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
         </div>
         <div class="popup-work-drinks-flex-container investmentop-flex">
@@ -31,7 +31,7 @@
                 <p>Cost: <span class="colour-green">£0</span></p>
             </div>
             <div class="popup-phonebill-button workdrinks-button">
-                <button @click="managePopUps.workDrinksChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="managePopUps.investmentOpportunityChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
         </div>
     </div>

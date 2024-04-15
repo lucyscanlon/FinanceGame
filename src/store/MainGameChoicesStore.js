@@ -319,6 +319,14 @@ export const usePopUpStore = defineStore({
       } else if (num === 2) {
         useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 0;
       }
+    },
+
+    investmentOpportunityChoice(num) {
+      if(num === 1) {
+        useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 1500;
+      } else if (num === 2) {
+        useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 0;
+      }
     }
   }
 })
