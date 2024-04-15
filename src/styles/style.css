@@ -3317,6 +3317,60 @@ input[type="number"] {
   height: 210px;
 }
 
+.popup-investmentsuccessful-flex-container {
+  width: 270px;
+  height: 210px;
+  background-color: #15141d;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+
+.popup-investsucc-title-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+  color: #ff48c8;
+}
+
+.popup-investsucc-desc-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+.investsucc-amount {
+  padding-top: 10px;
+}
+
+.popup-investsucc-button-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.popup-investsucc-button-container button {
+  width: 200px;
+  background-color: #15141d;
+  height: 35px;
+  font-family: unbounded-reg;
+  color: white;
+  border-radius: 20px;
+  border: solid #ff48c8 1px;
+  transition-duration: 0.3s;
+}
+
+.popup-investsucc-button-container button:hover {
+  background-color: #ff48c8;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
 
 
 
