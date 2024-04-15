@@ -292,7 +292,7 @@ export const useGoalsStore = defineStore({
 export const usePopUpStore = defineStore({
   id: 'PopUpStore',
   state: () => ({
-    currentPopUp: 2,
+    currentPopUp: 3,
     phonePlanChoice: 0,
   }),
   actions: {

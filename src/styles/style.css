@@ -3299,6 +3299,24 @@ input[type="number"] {
   padding-top: 25px;
 }
 
+.workdrinks-button-padding {
+  padding-top: 43px;
+}
+
+.popup-title-container .fa-sack-dollar {
+  padding-right: 7px;
+}
+
+.investmentop-popup-desc {
+  width: 80%;
+  font-size: 13px;
+  line-height: 1.7em;
+}
+
+.investmentop-flex {
+  height: 210px;
+}
+
 
 
 
