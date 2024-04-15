@@ -24,6 +24,7 @@ export const useMoneyManageStore = defineStore({
         billsPaid: 0,
         billsLate: false,
         appliancesFundTotal: 0,
+        holidayFundTotal: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -211,6 +212,24 @@ export const useMoneyManageStore = defineStore({
             if(this.appliancesFundTotal <= num) {
                 this.moneyInPocket = this.moneyInPocket + num;
                 this.appliancesFundTotal = this.appliancesFundTotal - num;
+            } else {
+                return
+            }
+        },
+
+        addToHolidayFund(num) {
+            if(this.moneyInPocket >= num) {
+                this.holidayFundTotal = this.holidayFundTotal + num;
+                this.moneyInPocket = this.moneyInPocket - num;
+            } else {
+                return
+            }
+        },
+
+        withdrawFromHolidayFund(num) {
+            if(this.holidayFundTotal <= num) {
+                this.moneyInPocket = this.moneyInPocket + num;
+                this.holidayFundTotal = this.holidayFundTotal - num;
             } else {
                 return
             }

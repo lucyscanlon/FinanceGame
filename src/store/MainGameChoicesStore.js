@@ -287,6 +287,10 @@ export const useGoalsStore = defineStore({
       this.currentGoal = this.currentGoal + 1;
       console.log(this.currentGoal);
     },
+
+    setUpSpecificGoal(num) {
+      this.currentGoal = num;
+    }
   }
 })
 
