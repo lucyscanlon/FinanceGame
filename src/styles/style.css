@@ -3371,6 +3371,10 @@ input[type="number"] {
   cursor: pointer;
 }
 
+.investfailed-button button {
+  width: 100px;
+}
+
 
 
 
