@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="managePopUps.HolidayBudgetChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container holidaychoice-flex">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="managePopUps.HolidayBudgetChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container holidaychoice-flex">
@@ -60,9 +60,8 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="managePopUps.HolidayBudgetChoice(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
-            
         </div>
     </div>
 </template>
