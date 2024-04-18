@@ -469,6 +469,7 @@ export const useGameTimerStore = defineStore({
                 this.monthCounter = this.monthCounter + 1
             } else if (this.monthCounter === 3 ) {
                 this.currentMonth = 'April'
+                this.financialYearPassed()
                 this.monthCounter = this.monthCounter + 1
             } else if (this.monthCounter === 4 ) {
                 this.currentMonth = 'May'
@@ -558,6 +559,12 @@ export const useGameTimerStore = defineStore({
             if((useGoalsStore().completedGoals === 4) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 4)) {
                 useMainGameplayNavigationStore().currentPage = 15;
             }
+        },
+
+        financialYearPassed() {
+
+            useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().LISAYearlyAdditions * 0.25);
+            useMoneyManageStore().LISAYearlyAdditions = 0;
         }
     }
 })
