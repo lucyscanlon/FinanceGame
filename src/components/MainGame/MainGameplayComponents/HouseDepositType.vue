@@ -27,15 +27,19 @@
             </div>
         </div>
         <div class="emergencyfund-add-withdraw-buttons housedeposit-buttons">
-            <button @click="manageMoney.addToHouseDeposit(amountToChange), rerenderComponent()">Add</button>
-            <span  @click="manageMoney.withdrawFromHouseDeposit(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>
+            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 1" @click="manageMoney.addToHouseDepositLISA(amountToChange), rerenderComponent()">Add</button>
+            <!--<button @click="manageMoney.addToHouseDeposit(amountToChange), rerenderComponent()">Add</button>-->
+            <span v-if="manageHouseDeposit.chosenHouseDepositChoice === 1" @click="manageMoney.withdrawFromHouseDepositLISA(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>
+            <!--<span  @click="manageMoney.withdrawFromHouseDeposit(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>-->
         </div>
 </template>
 <script setup>
 
     import { useMoneyManageStore } from '../../../store/MoneyStore'
+    import { useHouseDepositChoiceStore } from '../../../store/MainGameChoicesStore';
 
     const manageMoney = useMoneyManageStore()
+    const manageHouseDeposit = useHouseDepositChoiceStore();
 
 </script>
 <script>

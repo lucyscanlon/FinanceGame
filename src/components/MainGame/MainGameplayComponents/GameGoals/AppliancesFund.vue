@@ -1,12 +1,12 @@
 <template>
-    <div :class="(manageGoals.completedGoals > 1) ? 'goal-completed-styling' : ''" class="pension-interactive-title-container current-goal-title">
+    <div :class="(manageGoals.completedGoals > 3) ? 'goal-completed-styling' : ''" class="pension-interactive-title-container current-goal-title">
         <h1><font-awesome-icon icon="fa-solid fa-bullseye" />Current Goal</h1>
     </div>
     <div class="currentgoal-status-container">
-        <p v-if="manageMoney.furnitureFundTotal < 1000">Status: <span class="colour-red">Uncompleted</span></p>
-        <p v-if="manageMoney.furnitureFundTotal >= 1000">Status: <span class="colour-green">Completed</span></p>
+        <p v-if="manageMoney.appliancesFundTotal < 2000">Status: <span class="colour-red">Uncompleted</span></p>
+        <p v-if="manageMoney.appliancesFundTotal >= 2000">Status: <span class="colour-green">Completed</span></p>
     </div>
-    <div :class="(manageGoals.completedGoals > 0) ? 'currentgoal-completed-border' : ''" class="currentgoal-goal-container">
+    <div :class="(manageGoals.completedGoals > 3) ? 'currentgoal-completed-border' : ''" class="currentgoal-goal-container">
         <p><span class="colour-green">Goal:</span> Save £2000 for new appliances for your apartment</p>
     </div>
     <div class="currentgoal-info-total-container">
@@ -28,8 +28,8 @@
         </div>
     </div>
     <div class="currentgoal-add-withdraw-buttons">
-        <button @click="manageMoney.addToAppliancesFund(amountToChange)">Add</button>
-        <span @click="manageMoney.withdrawFromAppliancesFund(amountToChange)" class="currentgoal-withdraw-button"><button>Withdraw</button></span>
+        <button @click="manageMoney.addToAppliancesFund(amountToChange), rerenderComponent()">Add</button>
+        <span @click="manageMoney.withdrawFromAppliancesFund(amountToChange), rerenderComponent()" class="currentgoal-withdraw-button"><button>Withdraw</button></span>
     </div>
 </template>
 <script setup>
@@ -49,7 +49,12 @@ data() {
     return {
         amountToChange: '',
     }
-}
+}, methods: {
+        rerenderComponent() {
+            this.amountToChange = '',
+            this.$forceUpdate();
+        }
+    }
 
 }
 

@@ -48,7 +48,7 @@ The parent of this component:
                 </div>
                 <div class="emergencyfundchoice-button-container">
             <button
-              @click="manageHouseDeposit.confirmHouseDepositChoice(), useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown()">
+              @click="manageHouseDeposit.confirmHouseDepositChoice(), useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">
               Confirm Choice
             </button>
           </div>

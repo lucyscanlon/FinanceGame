@@ -28,8 +28,8 @@
             </div>
         </div>
         <div class="currentgoal-add-withdraw-buttons">
-            <button @click="manageMoney.addToFurnitureFund(amountToChange)">Add</button>
-            <span @click="manageMoney.WithdrawFromFurnitureFund(amountToChange)" class="currentgoal-withdraw-button"><button>Withdraw</button></span>
+            <button @click="manageMoney.addToFurnitureFund(amountToChange), rerenderComponent()">Add</button>
+            <span @click="manageMoney.WithdrawFromFurnitureFund(amountToChange), rerenderComponent()" class="currentgoal-withdraw-button"><button>Withdraw</button></span>
         </div>
 </template>
 <script setup>
@@ -48,6 +48,11 @@ export default {
     data() {
         return {
             amountToChange: '',
+        }
+    }, methods: {
+        rerenderComponent() {
+            this.amountToChange = '',
+            this.$forceUpdate();
         }
     }
    

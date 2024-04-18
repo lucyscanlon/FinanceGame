@@ -28,8 +28,8 @@
         </div>
     </div>
     <div class="currentgoal-add-withdraw-buttons">
-        <button @click="manageMoney.addToHolidayFund(amountToChange)">Add</button>
-        <span @click="manageMoney.withdrawFromHolidayFund(amountToChange)" class="currentgoal-withdraw-button"><button>Withdraw</button></span>
+        <button @click="manageMoney.addToHolidayFund(amountToChange), rerenderComponent()">Add</button>
+        <span @click="manageMoney.withdrawFromHolidayFund(amountToChange), rerenderComponent()" class="currentgoal-withdraw-button"><button>Withdraw</button></span>
     </div>
 </template>
 <script setup>
@@ -49,7 +49,12 @@ data() {
     return {
         amountToChange: '',
     }
-}
+}, methods: {
+        rerenderComponent() {
+            this.amountToChange = '',
+            this.$forceUpdate();
+        }
+    }
 
 }
 
