@@ -233,6 +233,10 @@ export const useMoneyManageStore = defineStore({
             } else {
                 return
             }
+        },
+
+        increaseSalary(val) {
+            this.monthlySalaryAfterTax = this.monthlySalaryAfterTax + val;
         }
     }
 })

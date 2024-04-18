@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="incomestreams-interactive-edit-choice">
-            <button @click="manageMainGameNav.navigateToPage(6)">Change income stream</button>
+            <button @click="manageMainGameNav.navigateToPage(14)">Change income stream</button>
         </div>
 </template>
 <script setup>

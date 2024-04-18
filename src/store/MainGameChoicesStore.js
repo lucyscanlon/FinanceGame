@@ -4,8 +4,8 @@ import { useMoneyManageStore } from './MoneyStore'
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
-    mainGameComponentsUnlocked: 0,
-    currentPage: 1,
+    mainGameComponentsUnlocked: 5,
+    currentPage: 13,
   }),
   actions: {
     navigateToPage(num) {
@@ -138,6 +138,8 @@ export const useIncomeStreamsChoicesStore = defineStore({
     socialMediaUsername: '',
     barChoiceName: '',
     freelanceChosenSkill: '',
+    IncomeStreamMonthlyCost: 0,
+    IncomeStreamMonthlyProfit: 0,
   }),
   actions: {
     changeSelectedIncomeStream(num) {
@@ -182,7 +184,14 @@ export const useIncomeStreamsChoicesStore = defineStore({
     confirmFreelanceSkill(string) {
         this.freelanceChosenSkill = string;
         console.log(this.freelanceChosenSkill)
-    }
+    },
+
+    declareMonthlyCostProfit(num, val) {
+      this.IncomeStreamMonthlyCost = num;
+
+      this.IncomeStreamMonthlyProfit = val;
+    },
+
   },
 });
 
