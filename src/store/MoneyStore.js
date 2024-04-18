@@ -4,7 +4,7 @@ import { usePensionChoicesStore } from './MainGameChoicesStore'
 import { useInvestmentPortfolioChoiceStore } from './MainGameChoicesStore'
 import { useGoalsStore } from './MainGameChoicesStore'
 import { usePopUpStore } from './MainGameChoicesStore'
-import { useHouseDepositChoiceStore } from './MainGameChoicesStore'
+//import { useHouseDepositChoiceStore } from './MainGameChoicesStore'
 
 export const useMoneyManageStore = defineStore({
     id: 'moveMoney',
@@ -102,31 +102,19 @@ export const useMoneyManageStore = defineStore({
         },
 
         addToHouseDeposit(num) {
-
-            if(this.LISAYearlyAdditions < 4001) {
                 if(this.moneyInPocket >= num) {
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
                     this.moneyInPocket = this.moneyInPocket - num;
     
-                    if(useHouseDepositChoiceStore().chosenHouseDepositChoice === 'Lifetime Isa') {
-                        this.LISAYearlyAdditions = this.LISAYearlyAdditions + num;
-                    } else {
-                        return;
-                    }
-
                 } else {
                     return;
                 }
-            }
             
         },
 
         addToHouseDepositLISA(num) {
             if((this.LISAYearlyAdditions + num) <= 4000) {
-
-                console.log("BEFORE: " + this.LISAYearlyAdditions);
                 this.LISAYearlyAdditions = this.LISAYearlyAdditions + num;
-                console.log("AFTER: " + this.LISAYearlyAdditions);
 
                 if(this.moneyInPocket >= num) {
                     this.moneyInPocket = this.moneyInPocket - num;
