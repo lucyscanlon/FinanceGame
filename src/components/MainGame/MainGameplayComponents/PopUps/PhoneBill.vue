@@ -83,10 +83,12 @@
 import { usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
 import { useMainGameplayNavigationStore } from "../../../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../../../store/MoneyStore.js";
+//import { useMoneyManageStore } from "../../../../store/MoneyStore.js";
 
 const managePopUps = usePopUpStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
+//const manageMoney = useMoneyManageStore();
 
 </script>
 <script>

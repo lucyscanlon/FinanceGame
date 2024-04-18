@@ -3,6 +3,7 @@ import {useMainGameplayNavigationStore } from './MainGameChoicesStore'
 import { usePensionChoicesStore } from './MainGameChoicesStore'
 import { useInvestmentPortfolioChoiceStore } from './MainGameChoicesStore'
 import { useGoalsStore } from './MainGameChoicesStore'
+import { usePopUpStore } from './MainGameChoicesStore'
 
 export const useMoneyManageStore = defineStore({
     id: 'moveMoney',
@@ -275,6 +276,8 @@ export const useGameTimerStore = defineStore({
         stock3SixPrices: [42.54, 43.34, 47.87, 48.67, 47.08, 50.51],
         stock4SixPrices: [16.31, 16.38, 18.98, 17.78, 16.23, 16.98],
         stock5SixPrices: [28.03, 30.29, 31.67, 31.82, 33.23, 35.67],
+        workDrinksLoopCounter: 0,
+        workDrinksDisplayed: false,
 
     }),
     actions: {
@@ -475,12 +478,27 @@ export const useGameTimerStore = defineStore({
                 useGoalsStore().currentGoal = 2;
             }
 
-            if((useGoalsStore().completedGoals === 2) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked < 3)) {
-                useMainGameplayNavigationStore().currentPage = 12;
+            if((useGoalsStore().completedGoals === 1) && (countdown === 25)) {
+                useMainGameplayNavigationStore().currentPage = 18;
+                usePopUpStore().currentPopUp = 1;
+
             }
 
             if((useGoalsStore().completedGoals === 2) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 2)) {
                 useMainGameplayNavigationStore().currentPage = 12;
+            }
+
+            if((useGoalsStore().completedGoals === 2) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 3)) {
+
+                if(countdown === 25) {
+                    this.workDrinksLoopCounter = this.workDrinksLoopCounter + 1;
+                }
+
+                if((this.workDrinksLoopCounter === 2) && (this.workDrinksDisplayed === false)) {
+                    useMainGameplayNavigationStore().currentPage = 18;
+                    usePopUpStore().currentPopUp = 2;
+                    this.workDrinksDisplayed = true;
+                }
             }
 
             if((useGoalsStore().completedGoals === 3) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 3)) {
