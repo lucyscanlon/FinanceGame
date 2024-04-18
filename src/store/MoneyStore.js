@@ -28,6 +28,7 @@ export const useMoneyManageStore = defineStore({
         appliancesFundTotal: 0,
         holidayFundTotal: 0,
         LISAYearlyAdditions: 0,
+        HouseDepositFixedYearOpen: true,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -132,6 +133,23 @@ export const useMoneyManageStore = defineStore({
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
                 } else {
                     return
+                }
+            } else {
+                return;
+            }
+        },
+
+        addToFixedRateHouseDeposit(num) {
+            console.log("house deposit added");
+            if(this.HouseDepositFixedYearOpen === true) {
+                console.log("house deposit added");
+                if(this.moneyInPocket >= num) {
+                    this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
+                    this.moneyInPocket = this.moneyInPocket - num;
+
+                    this.HouseDepositFixedYearOpen = false;
+                } else {
+                    return;
                 }
             } else {
                 return;
@@ -565,6 +583,8 @@ export const useGameTimerStore = defineStore({
 
             useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().LISAYearlyAdditions * 0.25);
             useMoneyManageStore().LISAYearlyAdditions = 0;
+
+            useMoneyManageStore().HouseDepositFixedYearOpen = true;
         }
     }
 })
