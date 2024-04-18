@@ -471,7 +471,7 @@ export const useGameTimerStore = defineStore({
                 useGoalsStore().currentGoal = 2;
             }
 
-            if((useGoalsStore().completedGoals === 2) && (countdown === 25)) {
+            if((useGoalsStore().completedGoals === 2) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked < 3)) {
                 useMainGameplayNavigationStore().currentPage = 12;
             }
 
