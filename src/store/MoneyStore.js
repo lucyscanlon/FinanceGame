@@ -4,7 +4,8 @@ import { usePensionChoicesStore } from './MainGameChoicesStore'
 import { useInvestmentPortfolioChoiceStore } from './MainGameChoicesStore'
 import { useGoalsStore } from './MainGameChoicesStore'
 import { usePopUpStore } from './MainGameChoicesStore'
-//import { useHouseDepositChoiceStore } from './MainGameChoicesStore'
+import { useHouseDepositChoiceStore } from './MainGameChoicesStore'
+import { useEmergencyFundChoicesStore } from './MainGameChoicesStore'
 
 export const useMoneyManageStore = defineStore({
     id: 'moveMoney',
@@ -569,10 +570,24 @@ export const useGameTimerStore = defineStore({
 
         financialYearPassed() {
 
-            useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().LISAYearlyAdditions * 0.25);
-            useMoneyManageStore().LISAYearlyAdditions = 0;
+            if(useHouseDepositChoiceStore().chosenHouseDepositChoice === 1) {
+                useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().LISAYearlyAdditions * 0.25);
+                useMoneyManageStore().LISAYearlyAdditions = 0;
+            }
 
             useMoneyManageStore().HouseDepositFixedYearOpen = true;
+
+            if(useHouseDepositChoiceStore().chosenHouseDepositChoice === 2) {
+                useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().houseDepositCurrentTotal * 0.048);
+            }
+
+            if(useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'High Interest Savings Account') {
+                useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.044);
+            } else if(useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account') {
+                useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.07);
+            } else if (useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'Regular Savings Account') {
+                useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.028);
+            }
         }
     }
 })
