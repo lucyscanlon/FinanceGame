@@ -376,6 +376,8 @@ export const useGameTimerStore = defineStore({
     
                                 // workout the value change percentage
                                 useMoneyManageStore().workoutInvestmentTotalBalancePercentage()
+
+                                console.log("flucuate");
                                 
                             }
                         }
@@ -595,6 +597,11 @@ export const useGameTimerStore = defineStore({
             if((countdown === this.queuePayRisePopUp.day) && (monthsPassed === (this.queuePayRisePopUp.monthsPassed + 2)) && (currentYear === this.queuePayRisePopUp.year)) {
                 useMainGameplayNavigationStore().currentPage = 18;
                 usePopUpStore().currentPopUp = 6;
+
+            }
+
+            if((countdown === 25) && (useGoalsStore().completedGoals === 5) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 5)) {
+                useMainGameplayNavigationStore().currentPage = 16;
 
             }
 
