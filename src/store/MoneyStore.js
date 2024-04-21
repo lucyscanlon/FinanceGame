@@ -319,12 +319,12 @@ export const useGameTimerStore = defineStore({
         currentMonth: 'January',
         currentYear: 2023,
         stock1Value: 25.50,
-        stock2Value: 14.03,
+        stock2Value: 67.03,
         stock3Value: 50.51,
         stock4Value: 16.98,
         stock5Value: 35.67,
         stock1PreviousPrice: 25.22,
-        stock2PreviousPrice: 13.54,
+        stock2PreviousPrice: 64.56,
         stock3PreviousPrice: 47.08,
         stock4PreviousPrice: 16.23,
         stock5PreviousPrice: 33.23,
@@ -339,7 +339,7 @@ export const useGameTimerStore = defineStore({
         stock4ChangePerc: 4.62,
         stock5ChangePerc: 7.34,
         stock1SixPrices: [22.12, 22.32, 22.83, 23.12, 25.22, 25.50],
-        stock2SixPrices: [22.12, 22.32, 22.83, 23.12, 13.54, 14.03],
+        stock2SixPrices: [62.10, 63.21, 64.83, 66.78, 64.56, 67.03],
         stock3SixPrices: [42.54, 43.34, 47.87, 48.67, 47.08, 50.51],
         stock4SixPrices: [16.31, 16.38, 18.98, 17.78, 16.23, 16.98],
         stock5SixPrices: [28.03, 30.29, 31.67, 31.82, 33.23, 35.67],
@@ -347,6 +347,7 @@ export const useGameTimerStore = defineStore({
         workDrinksDisplayed: false,
         emergencyFundFixedRateUnlocked: false,
         queuePayRisePopUp: {},
+        queueAfterInvestmentComponent: {},
 
     }),
     actions: {
@@ -409,7 +410,7 @@ export const useGameTimerStore = defineStore({
 
             // set the fluctuation of each stock
             let fluctuation1 = Math.random() * 0.1 - 0.04;
-            let fluctuation2 = Math.random() * 0.5 - 0.5;
+            let fluctuation2 = Math.random() * 0.2 - 0.03;
             let fluctuation3 = Math.random() * 2 - 0.5;
             let fluctuation4 = Math.random() * 5 - 1;
             let fluctuation5 = Math.random() * 0.2 - 0.2;
@@ -602,6 +603,15 @@ export const useGameTimerStore = defineStore({
 
             if((countdown === 25) && (useGoalsStore().completedGoals === 5) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 5)) {
                 useMainGameplayNavigationStore().currentPage = 16;
+                this.queueAfterInvestmentComponent = {day: countdown, monthsPassed: monthsPassed, year: currentYear};
+                console.log(this.queueAfterInvestmentComponent.day);
+                console.log(this.queueAfterInvestmentComponent.month);
+                console.log(this.queueAfterInvestmentComponent.year);
+            }
+
+            if ((countdown === this.queueAfterInvestmentComponent.day) && (monthsPassed === (this.queueAfterInvestmentComponent.monthsPassed + 2)) && (currentYear === this.queueAfterInvestmentComponent.year)){
+                useMainGameplayNavigationStore().currentPage = 18;
+                usePopUpStore().currentPopUp = 3;
 
             }
 
