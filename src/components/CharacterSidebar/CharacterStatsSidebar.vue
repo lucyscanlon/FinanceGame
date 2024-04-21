@@ -39,8 +39,8 @@ Components that will be inside this container include:
                 <p>After Tax:</p>
               </div>
               <div class="charactersidebar-salaryamount">
-                <p>£{{manageMoney.monthlySalaryBeforeTax}}</p>
-                <p>£{{manageMoney.monthlySalaryAfterTax}}</p>
+                <p>£{{Number(manageMoney.monthlySalaryBeforeTax).toFixed(2)}}</p>
+                <p>£{{Number(manageMoney.monthlySalaryAfterTax).toFixed(2)}}</p>
               </div>
             </div>
             <hr />

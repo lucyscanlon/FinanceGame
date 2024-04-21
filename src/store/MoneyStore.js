@@ -16,7 +16,7 @@ export const useMoneyManageStore = defineStore({
         monthlyOutGoingsSum: 0,
         increaseordecreaseofPocketMoney: 0,
         currentAccountCurrentTotal: 0,
-        emergencyFundCurrentTotal: 0,
+        emergencyFundCurrentTotal: 4999,
         daysUntilPayday: 30,
         decreaseTime: true,
         houseDepositCurrentTotal: 0,
@@ -30,6 +30,9 @@ export const useMoneyManageStore = defineStore({
         holidayFundTotal: 0,
         LISAYearlyAdditions: 0,
         HouseDepositFixedYearOpen: true,
+        payRiseSalaryBeforeTax: 2328.00,
+        payRiseSalaryAfterTax: 1969.61,
+        incomeStreamProfit: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -292,9 +295,13 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
-        increaseSalary(val) {
-            this.monthlySalaryAfterTax = this.monthlySalaryAfterTax + val;
+        increaseSalary() {
+            this.monthlySalaryBeforeTax = this.payRiseSalaryBeforeTax;
+            this.monthlySalaryAfterTax = this.payRiseSalaryAfterTax;
         },
+
+
+
     }
 })
 
@@ -335,6 +342,7 @@ export const useGameTimerStore = defineStore({
         workDrinksLoopCounter: 0,
         workDrinksDisplayed: false,
         emergencyFundFixedRateUnlocked: false,
+        queuePayRisePopUp: {},
 
     }),
     actions: {
@@ -347,7 +355,7 @@ export const useGameTimerStore = defineStore({
                 if(this.countdown > 0) {
                     if((useMainGameplayNavigationStore().currentPage === 11) || (useMainGameplayNavigationStore().currentPage === 17)) {
                         this.countdown = this.countdown - 1;
-                        this.checkTheDate(this.countdown, this.currentMonth, this.currentYear);
+                        this.checkTheDate(this.countdown, this.currentMonth, this.currentYear, this.monthsPassed);
 
                         // flucuate prices of stocks
                         if(useMainGameplayNavigationStore().mainGameComponentsUnlocked > 5 ) {
@@ -372,7 +380,7 @@ export const useGameTimerStore = defineStore({
                         // pension total = pension total + (salary before tax * player tax contribution)
                     }
                 } else {
-                    useMoneyManageStore().increasePocketMoney((useMoneyManageStore().monthlySalaryAfterTax) - (useMoneyManageStore().monthlySalaryBeforeTax) * (usePensionChoicesStore().chosenPensionChoice.YContPercentage / 100))
+                    useMoneyManageStore().increasePocketMoney((useMoneyManageStore().monthlySalaryAfterTax + useMoneyManageStore().incomeStreamProfit) - ((useMoneyManageStore().monthlySalaryBeforeTax) * (usePensionChoicesStore().chosenPensionChoice.YContPercentage / 100)))
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.YContPercentage)
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.EContPercentage)
                     this.monthsPassed = this.monthsPassed + 1;
@@ -380,7 +388,7 @@ export const useGameTimerStore = defineStore({
                     this.checkIfBillsAreLate()
                     this.resetCountdown()
                 }
-            }, 600)
+            }, 200)
         }, 
 
         flucuateStockPrices() {
@@ -526,7 +534,7 @@ export const useGameTimerStore = defineStore({
             }
         },
 
-        checkTheDate(countdown, currentMonth, currentYear) {
+        checkTheDate(countdown, currentMonth, currentYear, monthsPassed) {
 
             if((countdown === 15) && (currentMonth === 'January') && (currentYear === 2023)) {
                 useMainGameplayNavigationStore().currentPage = 9;
@@ -561,12 +569,32 @@ export const useGameTimerStore = defineStore({
 
             if((useGoalsStore().completedGoals === 3) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 3)) {
                 useMainGameplayNavigationStore().currentPage = 13;
+                
+            }
+
+            if((useGoalsStore().completedGoals === 3) && (countdown === 20) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 4)) {
                 useGoalsStore().currentGoal = 4;
             }
 
             if((useGoalsStore().completedGoals === 4) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 4)) {
                 useMainGameplayNavigationStore().currentPage = 15;
+                this.queuePayRisePopUp = {day: countdown, monthsPassed: monthsPassed, year: currentYear};
+                console.log(this.queuePayRisePopUp.day);
+                console.log(this.queuePayRisePopUp.month);
+                console.log(this.queuePayRisePopUp.year);
             }
+
+            if((countdown === this.queuePayRisePopUp.day) && (monthsPassed === (this.queuePayRisePopUp.monthsPassed + 1)) && (currentYear === this.queuePayRisePopUp.year)) {
+                useMainGameplayNavigationStore().currentPage = 18;
+                usePopUpStore().currentPopUp = 7;
+            }
+
+            if((countdown === this.queuePayRisePopUp.day) && (monthsPassed === (this.queuePayRisePopUp.monthsPassed + 2)) && (currentYear === this.queuePayRisePopUp.year)) {
+                useGoalsStore().currentGoal = 5;
+            }
+
+
+            // emergency funds
 
             if(((currentMonth === 'April') && (currentYear === 2024)) || (currentYear > 2024)) {
                 this.emergencyFundFixedRateUnlocked = true;
@@ -577,6 +605,8 @@ export const useGameTimerStore = defineStore({
                     useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFInterest = 4;
                 }
             }
+
+
         },
 
         financialYearPassed() {
