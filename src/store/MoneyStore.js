@@ -281,6 +281,10 @@ export const useMoneyManageStore = defineStore({
             if(this.moneyInPocket >= num) {
                 this.holidayFundTotal = this.holidayFundTotal + num;
                 this.moneyInPocket = this.moneyInPocket - num;
+
+                if(this.holidayFundTotal >= useGoalsStore().holidayBudget) {
+                    useGoalsStore().completedGoals = 5;
+                }
             } else {
                 return
             }
@@ -445,7 +449,6 @@ export const useGameTimerStore = defineStore({
 
             //this.$patch({ stock1FivePrices: this.stock1FivePrices });
 
-
             // work out the percentage increase or decrease
             this.stock1ChangePerc = ((this.stock1Value - this.stock1PreviousPrice) / this.stock1PreviousPrice) * 100;
             this.stock2ChangePerc = ((this.stock2Value - this.stock2PreviousPrice) / this.stock2PreviousPrice) * 100;
@@ -590,9 +593,10 @@ export const useGameTimerStore = defineStore({
             }
 
             if((countdown === this.queuePayRisePopUp.day) && (monthsPassed === (this.queuePayRisePopUp.monthsPassed + 2)) && (currentYear === this.queuePayRisePopUp.year)) {
-                useGoalsStore().currentGoal = 5;
-            }
+                useMainGameplayNavigationStore().currentPage = 18;
+                usePopUpStore().currentPopUp = 6;
 
+            }
 
             // emergency funds
 

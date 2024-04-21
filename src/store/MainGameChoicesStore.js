@@ -351,11 +351,11 @@ export const usePopUpStore = defineStore({
 
     HolidayBudgetChoice(num) {
       if(num === 1) {
-        useGoalsStore().holidayBudget = 4000;
+        useGoalsStore().holidayBudget = 6000;
       } else if (num === 2) {
-        useGoalsStore().holidayBudget = 1000;
+        useGoalsStore().holidayBudget = 2000;
       } else if (num === 3) {
-        useGoalsStore().holidayBudget = 300;
+        useGoalsStore().holidayBudget = 900;
       }
     }
   }

@@ -17,7 +17,7 @@
                 <div class="popup-phonebill-costs-container">
                     <div class="popup-phonebill-upfront-title">
                         <h5>Cost:</h5>
-                        <p class="colour-green">£4000</p>
+                        <p class="colour-green">£6000</p>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <div class="popup-phonebill-costs-container">
                     <div class="popup-phonebill-upfront-title">
                         <h5>Cost:</h5>
-                        <p class="colour-green">£1000</p>
+                        <p class="colour-green">£2000</p>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 <div class="popup-phonebill-costs-container">
                     <div class="popup-phonebill-upfront-title">
                         <h5>Cost:</h5>
-                        <p class="colour-green">£300</p>
+                        <p class="colour-green">£900</p>
                     </div>
                 </div>
             </div>
