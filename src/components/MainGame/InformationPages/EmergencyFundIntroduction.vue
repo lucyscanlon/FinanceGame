@@ -46,9 +46,9 @@ The parent of this component:
             <EmergencyFundChoicesFlexbox
               :EFIdentifier="2"
               EFName="1 Year Fixed Rate Bond Account"
-              :EFInterest="7"
+              EFInterest="7-4"
               EFDeposit="1000"
-              EFWithdrawalTime="Money is held for 1 year"
+              EFWithdrawalTime="Money is held for 1 year. Account then unlocked and interest is reduced."
             ></EmergencyFundChoicesFlexbox>
             <EmergencyFundChoicesFlexbox
               :EFIdentifier="3"

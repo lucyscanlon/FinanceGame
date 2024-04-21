@@ -334,6 +334,7 @@ export const useGameTimerStore = defineStore({
         stock5SixPrices: [28.03, 30.29, 31.67, 31.82, 33.23, 35.67],
         workDrinksLoopCounter: 0,
         workDrinksDisplayed: false,
+        emergencyFundFixedRateUnlocked: false,
 
     }),
     actions: {
@@ -566,6 +567,16 @@ export const useGameTimerStore = defineStore({
             if((useGoalsStore().completedGoals === 4) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 4)) {
                 useMainGameplayNavigationStore().currentPage = 15;
             }
+
+            if(((currentMonth === 'April') && (currentYear === 2024)) || (currentYear > 2024)) {
+                this.emergencyFundFixedRateUnlocked = true;
+            }
+
+            if(this.emergencyFundFixedRateUnlocked === true) {
+                if(useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFInterest === 7) {
+                    useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFInterest = 4;
+                }
+            }
         },
 
         financialYearPassed() {
@@ -583,8 +594,10 @@ export const useGameTimerStore = defineStore({
 
             if(useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'High Interest Savings Account') {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.044);
-            } else if(useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account') {
+            } else if((useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account') && (this.currentYear < 2024))  {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.07);
+            } else if ((useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account') && (this.currentYear >= 2024)) {
+                useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.04);
             } else if (useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'Regular Savings Account') {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.028);
             }

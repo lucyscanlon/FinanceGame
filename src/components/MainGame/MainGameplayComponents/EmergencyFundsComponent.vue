@@ -11,7 +11,7 @@
                 <p>Current Total:</p>
             </div>
             <div class="currentaccount-total-number-container">
-                <p>£{{ manageMoney.emergencyFundCurrentTotal }}</p>
+                <p>£{{ Number(manageMoney.emergencyFundCurrentTotal).toFixed(2) }}</p>
             </div>
         </div>
         <div class="currentaccount-addwithdraw-title-container">
@@ -26,8 +26,9 @@
         </div>
         <div class="emergencyfund-add-withdraw-buttons">
             <button @click="manageMoney.addToEmergencyFundTotal(amountToChange), rerenderComponent()">Add</button>
-            <span v-if="manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit !== '1000'" class="emergencyfund-withdraw-button"><button @click="manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
-            <span v-if="manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit === '1000'" class="emergencyfund-withdraw-button-inactive"><button>Withdraw</button></span>
+            <span v-if="(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit !== '1000')" class="emergencyfund-withdraw-button"><button @click="manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
+            <span v-if="(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit === '1000') && (manageGameTimer.emergencyFundFixedRateUnlocked === false)" class="emergencyfund-withdraw-button-inactive"><button>Withdraw</button></span>
+            <span v-if="(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit === '1000') && (manageGameTimer.emergencyFundFixedRateUnlocked === true)" class="emergencyfund-withdraw-button"><button @click="manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
         </div>
         </div>
 
@@ -38,11 +39,13 @@
     import { useMoneyManageStore } from '../../../store/MoneyStore'
     import {useEmergencyFundChoicesStore} from '../../../store/MainGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import { useGameTimerStore } from '../../../store/MoneyStore'
 
 const useMainGameplayNav = useMainGameplayNavigationStore();
 
     const manageMoney = useMoneyManageStore()
     const manageEmergencyFund = useEmergencyFundChoicesStore()
+    const manageGameTimer = useGameTimerStore();
 
 </script>
 <script>
