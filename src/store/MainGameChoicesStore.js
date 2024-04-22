@@ -4,8 +4,8 @@ import { useMoneyManageStore } from './MoneyStore'
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
-    mainGameComponentsUnlocked: 6,
-    currentPage: 17,
+    mainGameComponentsUnlocked: 0,
+    currentPage: 1,
   }),
   actions: {
     navigateToPage(num) {
@@ -234,6 +234,7 @@ export const useInvestmentPortfolioChoiceStore = defineStore({
         Share3BarPercentage: 0,
         Share4BarPercentage: 0,
         Share5BarPercentage: 0,
+        totalInvested: 0,
     }),
     actions: {
         buyMoreShare(num, amount) {
@@ -301,6 +302,10 @@ export const useGoalsStore = defineStore({
 
     setUpSpecificGoal(num) {
       this.currentGoal = num;
+    },
+
+    completeSpecificGoal(num) {
+      this.completedGoals = num;
     }
   }
 })

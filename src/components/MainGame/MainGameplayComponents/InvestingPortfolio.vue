@@ -85,7 +85,7 @@
                 </form>
                 <div class="investingport-buy-sell-buttons">
                     <button @click="manageInvestmentPortfolio.buyMoreShare(0, EWGAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell), rerenderComponent()">Buy</button>
-                    <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(0, EWGAmountToBuyOrSell), manageMoney.sellNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-button"><button @click="manageMoney.sellNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell), manageInvestmentPortfolio.sellShare(0, EWGAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
                     <span class="investing-port-sell-all-button"><button @click="manageMoney.sellAllOfStock(manageGameTimer.stock1Value, manageInvestmentPortfolio.ShareTotalAmounts[0]), manageInvestmentPortfolio.sellAllShare(0), rerenderComponent()">Sell All</button></span>
                 </div>
             </div>
@@ -183,12 +183,13 @@
         <div class="investmentport-total-profitloss-container">
                 <div class="investmentport-invested-amount">
                     <div class="investment-port-total-invested">
-                        <p>Total Invested: <span class="colour-green right-align">£3000.00</span></p>
+                        <p>Total Invested: <span class="colour-green right-align">£{{ Number(manageMoney.totalInvested).toFixed(2) }}</span></p>
                     </div>
                 </div>
                 <div class="investmentport-lossprof-container">
                     <div class="investment-port-total-invested">
-                        <p>Total Profit/Loss: <span class="colour-green right-align">£3000.00</span></p>
+                        <p v-if="manageMoney.totalProfitOrLoss >= 0">Total Profit/Loss: <span class="colour-green right-align">£{{ Number(manageMoney.totalProfitOrLoss).toFixed(2) }} <font-awesome-icon icon="fa-solid fa-arrow-up" /></span></p>
+                        <p v-if="manageMoney.totalProfitOrLoss < 0">Total Profit/Loss: <span class="colour-red right-align">£{{ Number(manageMoney.totalProfitOrLoss).toFixed(2) }} <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
         <h1><font-awesome-icon icon="fa-solid fa-money-bills" />You got a pay rise!</h1>
     </div> 
     <div class="popup-description-container workdrinks-desc investmentop-popup-desc">
-        <p>You have been working hard at your job and your effort has been recognised. You have been promoted and will now recieve a salary of £{{ Number(manageMoney.payRiseSalaryBeforeTax).toFixed(2)}} per month before tax. </p>
+        <p>You have been working hard at your job and your effort has been recognised. You have been promoted and will now recieve a salary of <span class="colour-green">£{{ Number(manageMoney.payRiseSalaryBeforeTax).toFixed(2)}}</span> per month before tax. </p>
     </div>
     <div class="popup-investmentsuccessful-flex-container payrise-container">
         <div class="popup-investsucc-title-container">

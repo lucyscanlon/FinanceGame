@@ -33,6 +33,8 @@ export const useMoneyManageStore = defineStore({
         payRiseSalaryBeforeTax: 2328.00,
         payRiseSalaryAfterTax: 1969.61,
         incomeStreamProfit: 0,
+        totalInvested: 0,
+        totalProfitOrLoss: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -173,13 +175,22 @@ export const useMoneyManageStore = defineStore({
         buyNumOfStocks(stockValue, amount) {
             let cost = stockValue * amount
 
-            this.moneyInPocket = this.moneyInPocket - cost;
+            if(this.moneyInPocket >= cost) {
+                this.moneyInPocket = this.moneyInPocket - cost;
+                this.totalInvested = this.totalInvested + cost;
+
+                console.log(useInvestmentPortfolioChoiceStore().ShareTotalAmounts);
+            } else {
+                return;
+            }
         },
 
         sellNumOfStocks(stockValue, amount) {
             let cost = stockValue * amount
 
             this.moneyInPocket = this.moneyInPocket + cost;
+            this.totalInvested = this.totalInvested - cost;
+            
         },
 
         sellAllOfStock(stockValue, totalAmount) {
@@ -450,8 +461,6 @@ export const useGameTimerStore = defineStore({
             this.stock4SixPrices = [this.stock4SixPrices[1], this.stock4SixPrices[2], this.stock4SixPrices[3], this.stock4SixPrices[4], this.stock4SixPrices[5], this.stock4Value]
             this.stock5SixPrices = [this.stock5SixPrices[1], this.stock5SixPrices[2], this.stock5SixPrices[3], this.stock5SixPrices[4], this.stock5SixPrices[5], this.stock5Value]
 
-            //this.$patch({ stock1FivePrices: this.stock1FivePrices });
-
             // work out the percentage increase or decrease
             this.stock1ChangePerc = ((this.stock1Value - this.stock1PreviousPrice) / this.stock1PreviousPrice) * 100;
             this.stock2ChangePerc = ((this.stock2Value - this.stock2PreviousPrice) / this.stock2PreviousPrice) * 100;
@@ -465,6 +474,13 @@ export const useGameTimerStore = defineStore({
             this.stock3Value = Math.max(this.stock3Value, 1);
             this.stock4Value = Math.max(this.stock4Value, 1);
             this.stock5Value = Math.max(this.stock5Value, 1);
+
+            // work out the total profit / loss from initial investment
+            useMoneyManageStore().totalProfitOrLoss = useMoneyManageStore().InvestmentPortfolioCurrentValue - useMoneyManageStore().totalInvested;
+
+            if(useMoneyManageStore().totalProfitOrLoss >= 3000) {
+                useGoalsStore().completedGoals = 6;
+            }
 
         },
 
@@ -617,6 +633,7 @@ export const useGameTimerStore = defineStore({
 
             if ((countdown === this.queueAfterInvestmentComponent.day) && (monthsPassed === (this.queueAfterInvestmentComponent.monthsPassed + 3)) && (currentYear === this.queueAfterInvestmentComponent.year)){
                 useGoalsStore().currentGoal = 6;
+                useMainGameplayNavigationStore().currentPage = 11;
 
             }
 
