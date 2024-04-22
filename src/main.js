@@ -32,6 +32,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faSackDollar } from '@fortawesome/free-solid-svg-icons'
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { faMoneyBills } from '@fortawesome/free-solid-svg-icons'
+import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMapPin)
 library.add(faArrowRight)
@@ -62,6 +63,7 @@ library.add(faPhone)
 library.add(faSackDollar)
 library.add(faMapLocationDot)
 library.add(faMoneyBills)
+library.add(faRectangleXmark)
 
 const app = createApp(App);
 

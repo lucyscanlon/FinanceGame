@@ -2455,11 +2455,12 @@ input[type="number"] {
 .investing-port-full-container {
   width: 90%;
   margin: 0 auto;
-  height: 82vh;
+  height: 84vh;
   background-color:#1f1e2f;
   margin-top: 20px;
   border-radius: 20px;
   font-family: unbounded-reg;
+  position: relative;
 }
 
 .investing-port-full-title {
@@ -2894,6 +2895,45 @@ input[type="number"] {
 .investing-port-stock-visual canvas {
   width: 100%!important;
 }
+
+.investmentport-total-profitloss-container {
+  width: 89%;
+  margin: 0 auto;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.investmentport-invested-amount {
+  width: 49.5%;
+  float: left;
+  height: 50px;
+  background-color: #15141d;
+  border-radius: 15px;
+}
+
+.investmentport-lossprof-container {
+  width: 49%;
+  float: right;
+  height: 50px;
+  background-color: #15141d;
+  border-radius: 15px;
+}
+
+.investment-port-total-invested {
+  width: 90%;
+  margin: 0 auto;
+  color: white;
+  padding-top: 15px;
+  font-size: 14px;
+
+}
+
+.right-align {
+  padding-left: 10px;
+}
+
+
+
 
 /* current goals component */
 
@@ -3407,6 +3447,27 @@ input[type="number"] {
 
 .payrise-container {
   height: 200px;
+}
+
+.investing-close-portfolio-button {
+  position: absolute;
+  top: 30px;
+  right: 55px;
+  color: #ff48c8;
+}
+
+.investing-close-portfolio-button button {
+  color: #ff48c8;
+  font-size: 30px;
+  background-color: #15141d;
+  border: none;
+  transition-duration: 0.3s;
+}
+
+.investing-close-portfolio-button button:hover {
+  color: white;
+  transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 

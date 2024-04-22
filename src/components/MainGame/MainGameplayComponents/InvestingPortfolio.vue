@@ -1,5 +1,8 @@
 <template>
     <div class="investing-port-full-container">
+        <div class="investing-close-portfolio-button">
+            <button @click="useMainGameplayNav.navigateToPage(11)"><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></button>
+        </div>
         <div class="investing-port-full-title">
             <h1>Your Investment Portfolio</h1>
         </div>
@@ -177,9 +180,21 @@
 
             </div>
         </div>
-        <div class="investing-port-close-portfolio-button">
+        <div class="investmentport-total-profitloss-container">
+                <div class="investmentport-invested-amount">
+                    <div class="investment-port-total-invested">
+                        <p>Total Invested: <span class="colour-green right-align">£3000.00</span></p>
+                    </div>
+                </div>
+                <div class="investmentport-lossprof-container">
+                    <div class="investment-port-total-invested">
+                        <p>Total Profit/Loss: <span class="colour-green right-align">£3000.00</span></p>
+                    </div>
+                </div>
+            </div>
+        <!--<div class="investing-port-close-portfolio-button">
             <button @click="useMainGameplayNav.navigateToPage(11)">Close Portfolio</button>
-        </div>
+        </div>-->
         
 
     </div>
