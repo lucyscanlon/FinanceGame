@@ -615,6 +615,11 @@ export const useGameTimerStore = defineStore({
 
             }
 
+            if ((countdown === this.queueAfterInvestmentComponent.day) && (monthsPassed === (this.queueAfterInvestmentComponent.monthsPassed + 3)) && (currentYear === this.queueAfterInvestmentComponent.year)){
+                useGoalsStore().currentGoal = 6;
+
+            }
+
             // emergency funds
 
             if(((currentMonth === 'April') && (currentYear === 2024)) || (currentYear > 2024)) {
