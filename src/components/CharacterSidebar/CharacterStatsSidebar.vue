@@ -18,7 +18,7 @@ Components that will be inside this container include:
     <div class="characterstats-sidebar-wrapper">
         <div class="charactertstats-padding">
           <div class="responsibility-barometer-wrapper">
-            <!-- This is where the responsibility barometer will go -->
+            <BarometerComponent></BarometerComponent>
           </div>
           <div class="characterstats-set">
             <h4 v-if="manageMainGameNav.currentPage >= 3"><font-awesome-icon icon="fa-solid fa-piggy-bank" />Current Account:</h4>
@@ -62,6 +62,7 @@ import CurrentlyLivingDisplay from './CurrentlyLiving.vue'
 import CurrentlyShoppingAt from './CurrentlyShoppingAt.vue'
 import TransportMethodSidebar from './TransportMethodChoice.vue'
 import GameNotificationPanel from './GameNotifications.vue'
+import BarometerComponent from './Barometer.vue'
 
 // export component data
 export default {
@@ -71,6 +72,7 @@ export default {
       CurrentlyShoppingAt,
       TransportMethodSidebar,
       GameNotificationPanel,
+      BarometerComponent
     },
     data() {
       return {

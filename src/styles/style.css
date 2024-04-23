@@ -3477,6 +3477,20 @@ input[type="number"] {
 
 
 
+/* responsibility barometer */
+
+.arrow-container img {
+  height: 100px;
+  position: relative;
+  left: 45%;
+  top: 5%;
+  transform-origin: 50% 100%;
+  transform: rotate(45deg);
+}
+
+
+
+
 
 
 
