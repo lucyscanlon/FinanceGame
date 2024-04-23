@@ -17,9 +17,7 @@ Components that will be inside this container include:
 <template>
     <div class="characterstats-sidebar-wrapper">
         <div class="charactertstats-padding">
-          <div class="responsibility-barometer-wrapper">
             <BarometerComponent></BarometerComponent>
-          </div>
           <div class="characterstats-set">
             <h4 v-if="manageMainGameNav.currentPage >= 3"><font-awesome-icon icon="fa-solid fa-piggy-bank" />Current Account:</h4>
             <h4 v-if="manageMainGameNav.currentPage < 3"><font-awesome-icon icon="fa-solid fa-money-bill" />Money In Pocket:</h4>

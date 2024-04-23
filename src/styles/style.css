@@ -71,7 +71,7 @@ body {
   border: 1px solid #ffffff;
   margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   -webkit-box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
   -moz-box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
   box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
@@ -3479,13 +3479,55 @@ input[type="number"] {
 
 /* responsibility barometer */
 
-.arrow-container img {
+/*.arrow-container img {
   height: 100px;
-  position: relative;
+  position: absolute;
   left: 45%;
   top: 5%;
   transform-origin: 50% 100%;
   transform: rotate(45deg);
+}
+
+.arrow-container {
+  position: absolute;
+}*/
+
+.responsibility-barometer-wrapper {
+  position: relative;
+}
+
+.barometer-pie-container img {
+  width: 95%;
+  height: auto;
+  position: relative;
+  left: 5px;
+  top: 5px;
+}
+
+.barometer-pie-container {
+  position: relative;
+}
+
+.arrow-container {
+  position: absolute;
+  left: 44%;
+  top: 2%;
+}
+
+.arrow-container img {
+  height: 95px;
+  width: auto;
+  transform-origin: 50% 100%;
+  
+}
+
+.responsibility-score {
+  text-align: center;
+  padding-bottom: 30px;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 13px;
+  padding-top: 10px;
 }
 
 
