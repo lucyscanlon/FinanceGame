@@ -15,6 +15,7 @@ export const useMainGameplayNavigationStore = defineStore({
 
     unlockComponent() {
       this.mainGameComponentsUnlocked = this.mainGameComponentsUnlocked + 1;
+      console.log(this.mainGameComponentsUnlocked);
     },
   },
 });
@@ -313,7 +314,7 @@ export const useGoalsStore = defineStore({
 export const usePopUpStore = defineStore({
   id: 'PopUpStore',
   state: () => ({
-    currentPopUp: 1,
+    currentPopUp: 0,
     phonePlanChoice: 0,
   }),
   actions: {
@@ -361,6 +362,14 @@ export const usePopUpStore = defineStore({
         useGoalsStore().holidayBudget = 2000;
       } else if (num === 3) {
         useGoalsStore().holidayBudget = 900;
+      }
+    },
+
+    brokenLaptopChoice(num) {
+      if(num === 1) {
+        useMoneyManageStore().useEmergencyFund(1500);
+      } else if(num === 2) {
+        useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket = 1500;
       }
     }
   }

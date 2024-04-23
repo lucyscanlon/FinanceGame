@@ -3470,6 +3470,11 @@ input[type="number"] {
   cursor: pointer;
 }
 
+.popup-work-drinks-desc {
+  min-height: 55px;
+}
+
+
 
 
 

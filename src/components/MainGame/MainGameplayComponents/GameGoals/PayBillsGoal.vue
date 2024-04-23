@@ -29,11 +29,6 @@
 
 export default {
 name: 'PayBillsGoal',
-data() {
-    return {
-        amountToChange: '',
-    }
-}
 
 }
 

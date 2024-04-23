@@ -111,6 +111,10 @@ export const useMoneyManageStore = defineStore({
                 if(this.moneyInPocket >= num) {
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
                     this.moneyInPocket = this.moneyInPocket - num;
+
+                    if(this.houseDepositCurrentTotal >= 15000) {
+                        useGoalsStore().completedGoals = 7;
+                    }
     
                 } else {
                     return;
@@ -125,6 +129,10 @@ export const useMoneyManageStore = defineStore({
                 if(this.moneyInPocket >= num) {
                     this.moneyInPocket = this.moneyInPocket - num;
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
+
+                    if(this.houseDepositCurrentTotal >= 15000) {
+                        useGoalsStore().completedGoals = 7;
+                    }
                 } else {
                     return
                 }
@@ -142,6 +150,10 @@ export const useMoneyManageStore = defineStore({
                     this.moneyInPocket = this.moneyInPocket - num;
 
                     this.HouseDepositFixedYearOpen = false;
+
+                    if(this.houseDepositCurrentTotal >= 15000) {
+                        useGoalsStore().completedGoals = 7;
+                    }
                 } else {
                     return;
                 }
@@ -315,6 +327,16 @@ export const useMoneyManageStore = defineStore({
             this.monthlySalaryAfterTax = this.payRiseSalaryAfterTax;
         },
 
+        useEmergencyFund(num) {
+
+            if( this.emergencyFundCurrentTotal >= num) {
+                this.emergencyFundCurrentTotal = this.emergencyFundCurrentTotal - num;
+            } else {
+                return;
+            }
+            
+        }
+
 
 
     }
@@ -359,6 +381,7 @@ export const useGameTimerStore = defineStore({
         emergencyFundFixedRateUnlocked: false,
         queuePayRisePopUp: {},
         queueAfterInvestmentComponent: {},
+        queueFinalGoalsAndPopUps: {},
 
     }),
     actions: {
@@ -389,7 +412,7 @@ export const useGameTimerStore = defineStore({
                                 // workout the value change percentage
                                 useMoneyManageStore().workoutInvestmentTotalBalancePercentage()
 
-                                console.log("flucuate");
+                                console.log("Current Goal: " + useGoalsStore().currentGoal + ". Completed Goal: " + useGoalsStore().completedGoals);
                                 
                             }
                         }
@@ -637,6 +660,37 @@ export const useGameTimerStore = defineStore({
 
             }
 
+            if((countdown === 25) && (useGoalsStore().completedGoals === 6) && (useGoalsStore().currentGoal === 6)) {
+                useGoalsStore().currentGoal = 7;
+                this.queueFinalGoalsAndPopUps = {day: countdown, monthsPassed: monthsPassed, year: currentYear};
+                console.log(this.queueFinalGoalsAndPopUps.day);
+                console.log(this.queueFinalGoalsAndPopUps.monthsPassed);
+                console.log(this.queueFinalGoalsAndPopUps.year);
+            }
+
+            if ((countdown === this.queueFinalGoalsAndPopUps.day) && (monthsPassed === (this.queueFinalGoalsAndPopUps.monthsPassed + 1)) && (currentYear === this.queueFinalGoalsAndPopUps.year)){
+                useMainGameplayNavigationStore().currentPage = 18;
+                
+                let randomNum = Math.random(0, 10) * 10;
+
+                if(randomNum <= 5) {
+                    usePopUpStore().currentPopUp = 4;
+                } else if (randomNum > 5) {
+                    usePopUpStore().currentPopUp = 5;
+                }
+
+            }
+
+            if ((countdown === this.queueFinalGoalsAndPopUps.day) && (monthsPassed === (this.queueFinalGoalsAndPopUps.monthsPassed + 4)) && (currentYear === this.queueFinalGoalsAndPopUps.year)){
+                useMainGameplayNavigationStore().currentPage = 18;
+                usePopUpStore().currentPopUp = 8;
+            }
+
+            if ((countdown === this.queueFinalGoalsAndPopUps.day) && (monthsPassed === (this.queueFinalGoalsAndPopUps.monthsPassed + 4)) && (currentYear === this.queueFinalGoalsAndPopUps.year)){
+                useMainGameplayNavigationStore().currentPage = 18;
+                usePopUpStore().currentPopUp = 8;
+            }
+
             // emergency funds
 
             if(((currentMonth === 'April') && (currentYear === 2024)) || (currentYear > 2024)) {
@@ -657,12 +711,17 @@ export const useGameTimerStore = defineStore({
             if(useHouseDepositChoiceStore().chosenHouseDepositChoice === 1) {
                 useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().LISAYearlyAdditions * 0.25);
                 useMoneyManageStore().LISAYearlyAdditions = 0;
+
             }
 
             useMoneyManageStore().HouseDepositFixedYearOpen = true;
 
             if(useHouseDepositChoiceStore().chosenHouseDepositChoice === 2) {
                 useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().houseDepositCurrentTotal * 0.048);
+            }
+
+            if(useMoneyManageStore().houseDepositCurrentTotal >= 15000) {
+                useGoalsStore().completedGoals = 7;
             }
 
             if(useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'High Interest Savings Account') {

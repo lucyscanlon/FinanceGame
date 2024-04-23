@@ -6,6 +6,7 @@
         <AppliancesFundGoal v-if="manageGameGoals.currentGoal === 4"></AppliancesFundGoal>
         <HolidayFundGoal v-if="manageGameGoals.currentGoal === 5"></HolidayFundGoal>
         <InvestmentGoal  v-if="manageGameGoals.currentGoal === 6"></InvestmentGoal>
+        <HouseDepositGoal v-if="manageGameGoals.currentGoal === 7"></HouseDepositGoal>
     </div>
 </template>
 <script setup>
@@ -16,6 +17,7 @@ import EmergencyFundGoal from './GameGoals/EmergencyFund.vue'
 import AppliancesFundGoal from './GameGoals/AppliancesFund.vue'
 import HolidayFundGoal from './GameGoals/HolidayFund.vue'
 import InvestmentGoal from './GameGoals/InvestmentGoal.vue'
+import HouseDepositGoal from './GameGoals/HouseDepositGoal.vue'
 
 import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
 import { useGoalsStore } from '../../../store/MainGameChoicesStore.js'
@@ -35,13 +37,8 @@ export default {
         AppliancesFundGoal,
         HolidayFundGoal,
         InvestmentGoal,
-    },
-    data() {
-        return {
-            amountToChange: '',
-        }
-    }
-   
+        HouseDepositGoal,
+    }, 
 }
 
 </script>

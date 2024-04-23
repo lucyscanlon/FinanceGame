@@ -7,6 +7,7 @@
         <InvestmentOpportunityFailedPopUp v-if="managePopUps.currentPopUp === 5"></InvestmentOpportunityFailedPopUp>
         <HolidayChoicePopUp v-if="managePopUps.currentPopUp === 6"></HolidayChoicePopUp>
         <PayRisePopUp v-if="managePopUps.currentPopUp === 7"></PayRisePopUp>
+        <brokenLaptopPopUp v-if="managePopUps.currentPopUp === 8"></brokenLaptopPopUp>
    
     </div>
 </template>
@@ -19,6 +20,7 @@ import InvestmentOpportunitySuccessfulPopUp from '../MainGameplayComponents/PopU
 import InvestmentOpportunityFailedPopUp from '../MainGameplayComponents/PopUps/InvestmentOpportunityFailed.vue'
 import HolidayChoicePopUp from '../MainGameplayComponents/PopUps/HolidayChoice.vue'
 import PayRisePopUp from '../MainGameplayComponents/PopUps/PayRise.vue'
+import brokenLaptopPopUp from '../MainGameplayComponents/PopUps/BrokenLaptop.vue'
 import {usePopUpStore} from '../../../store/MainGameChoicesStore';
 
 const managePopUps = usePopUpStore();
@@ -36,6 +38,7 @@ export default {
         InvestmentOpportunityFailedPopUp,
         HolidayChoicePopUp,
         PayRisePopUp,
+        brokenLaptopPopUp,
     }
 }
 
