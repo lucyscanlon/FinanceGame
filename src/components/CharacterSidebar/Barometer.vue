@@ -3,15 +3,18 @@
             <div class="barometer-pie-container">
                 <img src="/BarometerPieChart.PNG"/>
                 <div class="arrow-container">
-                    <img :style="{ transform: 'rotate(' + arrowRotation + 'deg)' }" src="/Arrow.PNG"/>
+                    <img :style="{ transform: 'rotate(' + manageBarometer.arrowRotation + 'deg)' }" src="/Arrow.PNG"/>
                 </div>
             </div> 
     </div>
     <div class="responsibility-score">
-        <p>Responsibility Score: {{ responsibilityScore }}%</p>
+        <p>Responsibility Score: {{ manageBarometer.barometerScore }}%</p>
     </div>
 </template>
 <script setup>
+
+    import { useBarometerStore } from '../../store/MainGameChoicesStore'
+    const manageBarometer = useBarometerStore()
 
 
 </script>
@@ -20,12 +23,6 @@
 // export component data
 export default {
     name: 'BarometerComponent',
-    data() {
-      return {
-        arrowRotation: 300,
-        responsibilityScore: 50,
-      }
-    }
 }
 
 </script>

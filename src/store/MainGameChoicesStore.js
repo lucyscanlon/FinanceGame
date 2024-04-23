@@ -375,3 +375,27 @@ export const usePopUpStore = defineStore({
   }
 })
 
+
+export const useBarometerStore = defineStore({
+  id: 'barometerStore',
+  state: () => ({
+    arrowRotation: 300,
+    barometerScore: 60,
+  }),
+  actions: {
+    decreaseScore(num) {
+      let angle = 360 / num;
+
+      this.arrowRotation = this.arrowRotation - angle;
+      this.barometerScore = this.barometerScore - num;
+    },
+
+    increaseScore(num) {
+      let angle = 360 / num;
+
+      this.arrowRotation = this.arrowRotation + angle;
+      this.barometerScore = this.barometerScore + num;
+    }
+
+  }
+})
