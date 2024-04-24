@@ -379,14 +379,15 @@ export const usePopUpStore = defineStore({
 export const useBarometerStore = defineStore({
   id: 'barometerStore',
   state: () => ({
-    arrowRotation: 40,
+    arrowRotation: 200,
     barometerScore: 60,
     modulatedAngle: 0,
     glowColour: 'orange-glow',
   }),
   actions: {
     decreaseScore(num) {
-      let angle = 360 / num;
+      let perc = num/100;
+      let angle = 360 * perc;
 
       if((this.arrowRotation - angle) < 0) {
         let difference = (0 - angle) + this.arrowRotation;
@@ -408,7 +409,8 @@ export const useBarometerStore = defineStore({
 
     increaseScore(num) {
       // work out the angle that the arrow needs to move based on the percentage given
-      let angle = 360 / num;
+      let perc = num/100;
+      let angle = 360 * perc;
 
       if((this.arrowRotation + angle) > 360) {
         let difference = (this.arrowRotation + angle) - 360;
@@ -421,6 +423,9 @@ export const useBarometerStore = defineStore({
       } else {
         this.arrowRotation = this.arrowRotation + angle;
       }
+
+      // scores 
+
     
       //this.barometerScore = this.barometerScore + num;
       this.modulatedAngle = this.arrowRotation % 360;
