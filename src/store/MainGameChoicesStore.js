@@ -379,7 +379,7 @@ export const usePopUpStore = defineStore({
 export const useBarometerStore = defineStore({
   id: 'barometerStore',
   state: () => ({
-    arrowRotation: 330,
+    arrowRotation: 200,
     barometerScore: 90,
     modulatedAngle: 0,
     glowColour: 'orange-glow',
@@ -441,13 +441,19 @@ export const useBarometerStore = defineStore({
       }
     
       //this.barometerScore = this.barometerScore + num;
-      this.modulatedAngle = this.arrowRotation % 360;
+      this.modulatedAngle = this.arrowRotation % 361;
       // work out the glow colour based on the segment
       this.workOutGlowColour(this.modulatedAngle);
+
+      console.log(this.modulatedAngle)
     },
 
     workOutGlowColour(posOfArrow) {
-      if((posOfArrow >= 0) && (posOfArrow < 130))  {
+      if (posOfArrow === 360) {
+        this.glowColour = 'green-glow'
+      } else if (posOfArrow === 0) {
+        this.glowColour = 'red-glow'
+      } else if ((posOfArrow >= 0) && (posOfArrow < 130))  {
         this.glowColour = 'red-glow'
       } else if ((posOfArrow >= 130) && (posOfArrow < 281)) {
         this.glowColour = 'orange-glow'
@@ -455,7 +461,6 @@ export const useBarometerStore = defineStore({
         this.glowColour = 'green-glow'
       }
 
-      
     }
 
   }
