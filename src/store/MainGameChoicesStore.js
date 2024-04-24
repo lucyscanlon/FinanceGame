@@ -379,7 +379,7 @@ export const usePopUpStore = defineStore({
 export const useBarometerStore = defineStore({
   id: 'barometerStore',
   state: () => ({
-    arrowRotation: 200,
+    arrowRotation: 360,
     barometerScore: 90,
     modulatedAngle: 0,
     glowColour: 'orange-glow',
