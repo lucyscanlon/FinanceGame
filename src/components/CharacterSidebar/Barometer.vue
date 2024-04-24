@@ -8,7 +8,7 @@
             </div> 
     </div>
     <div class="responsibility-score">
-        <p>Responsibility Score: {{ manageBarometer.barometerScore }}%</p>
+        <p>Responsibility Score: <span :class="manageBarometer.scoreColor">{{ manageBarometer.barometerScore }}%</span></p>
     </div>
 </template>
 <script setup>

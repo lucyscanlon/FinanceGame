@@ -383,6 +383,7 @@ export const useBarometerStore = defineStore({
     barometerScore: 90,
     modulatedAngle: 0,
     glowColour: 'orange-glow',
+    scoreColor: 'orange-score',
   }),
   actions: {
     decreaseScore(num) {
@@ -451,14 +452,19 @@ export const useBarometerStore = defineStore({
     workOutGlowColour(posOfArrow) {
       if (posOfArrow === 360) {
         this.glowColour = 'green-glow'
+        this.scoreColor = 'green-score'
       } else if (posOfArrow === 0) {
         this.glowColour = 'red-glow'
+        this.scoreColor = 'red-score'
       } else if ((posOfArrow >= 0) && (posOfArrow < 130))  {
         this.glowColour = 'red-glow'
+        this.scoreColor = 'red-score'
       } else if ((posOfArrow >= 130) && (posOfArrow < 281)) {
         this.glowColour = 'orange-glow'
+        this.scoreColor = 'orange-score'
       } else if ((posOfArrow >= 281) && (posOfArrow <= 360)) {
         this.glowColour = 'green-glow'
+        this.scoreColor = 'green-score'
       }
 
     }
