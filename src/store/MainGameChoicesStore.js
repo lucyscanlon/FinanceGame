@@ -379,48 +379,65 @@ export const usePopUpStore = defineStore({
 export const useBarometerStore = defineStore({
   id: 'barometerStore',
   state: () => ({
-    arrowRotation: 300,
+    arrowRotation: 40,
     barometerScore: 60,
-    positionOfArrow: 351,
+    modulatedAngle: 0,
     glowColour: 'orange-glow',
   }),
   actions: {
     decreaseScore(num) {
       let angle = 360 / num;
 
-      this.arrowRotation = this.arrowRotation - angle;
-      this.barometerScore = this.barometerScore - num;
+      if((this.arrowRotation - angle) < 0) {
+        let difference = (0 - angle) + this.arrowRotation;
 
-      this.positionOfArrow = (this.arrowRotation % 360);
-      console.log("Position of arrow: " + this.positionOfArrow);
-      console.log("Arrow rotation: " + this.arrowRotation);
+        this.arrowRotation = this.arrowRotation - (angle + difference);
 
-      this.workOutGlowColour(this.positionOfArrow);
+        console.log("Difference:" + difference);
+        console.log("Angle:" + angle);
+        console.log("total:" + this.arrowRotation);
+      } else {
+        this.arrowRotation = this.arrowRotation - angle;
+      }
+    
+      //this.barometerScore = this.barometerScore + num;
+      this.modulatedAngle = this.arrowRotation % 360;
+      // work out the glow colour based on the segment
+      this.workOutGlowColour(this.modulatedAngle);
     },
 
     increaseScore(num) {
+      // work out the angle that the arrow needs to move based on the percentage given
       let angle = 360 / num;
 
-      this.arrowRotation = this.arrowRotation + angle;
-      this.barometerScore = this.barometerScore + num;
+      if((this.arrowRotation + angle) > 360) {
+        let difference = (this.arrowRotation + angle) - 360;
 
-      this.positionOfArrow = (this.arrowRotation % 360);
-      console.log("Position of arrow: " + this.positionOfArrow);
-      console.log("Arrow rotation: " + this.arrowRotation);
+        this.arrowRotation = this.arrowRotation + (angle - difference);
 
-      this.workOutGlowColour(this.positionOfArrow);
+        console.log("Difference:" + difference);
+        console.log("Angle:" + angle);
+        console.log("total:" + this.arrowRotation);
+      } else {
+        this.arrowRotation = this.arrowRotation + angle;
+      }
+    
+      //this.barometerScore = this.barometerScore + num;
+      this.modulatedAngle = this.arrowRotation % 360;
+      // work out the glow colour based on the segment
+      this.workOutGlowColour(this.modulatedAngle);
     },
 
     workOutGlowColour(posOfArrow) {
-      if(((posOfArrow >= 220) && (posOfArrow <= 360)) || ((posOfArrow >= 0) && (posOfArrow < 10))) {
-        this.glowColour = 'orange-glow';
-      } else if ((posOfArrow >= 10) && (posOfArrow < 90)) {
-        this.glowColour = 'green-glow';
-      } else if ((posOfArrow >= 90) && (posOfArrow < 220)) {
-        this.glowColour = 'red-glow';
+      if((posOfArrow >= 0) && (posOfArrow < 130))  {
+        this.glowColour = 'red-glow'
+      } else if ((posOfArrow >= 130) && (posOfArrow < 281)) {
+        this.glowColour = 'orange-glow'
+      } else if ((posOfArrow >= 281) && (posOfArrow <= 360)) {
+        this.glowColour = 'green-glow'
       }
 
-      console.log("glow-colour");
+      
     }
 
   }

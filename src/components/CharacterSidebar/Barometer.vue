@@ -2,8 +2,8 @@
     <div :class="manageBarometer.glowColour" class="responsibility-barometer-wrapper">
             <div class="barometer-pie-container">
                 <img src="/wheelColours.PNG"/>
-                <div class="arrow-container">
-                    <img :style="{ transform: 'rotate(' + manageBarometer.arrowRotation + 'deg)' }" src="/Arrow.PNG"/>
+                <div class="arrow-rotated-container">
+                    <img :style="{ transform: 'rotate(' + manageBarometer.arrowRotation + 'deg)' }" class="arrow" src="/Arrow.PNG">
                 </div>
             </div> 
     </div>
