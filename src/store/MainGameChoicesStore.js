@@ -379,15 +379,15 @@ export const usePopUpStore = defineStore({
 export const useBarometerStore = defineStore({
   id: 'barometerStore',
   state: () => ({
-    arrowRotation: 200,
-    barometerScore: 60,
+    arrowRotation: 330,
+    barometerScore: 90,
     modulatedAngle: 0,
     glowColour: 'orange-glow',
   }),
   actions: {
     decreaseScore(num) {
-      let perc = num/100;
-      let angle = 360 * perc;
+      let dec = num/100;
+      let angle = 360 * dec;
 
       if((this.arrowRotation - angle) < 0) {
         let difference = (0 - angle) + this.arrowRotation;
@@ -400,6 +400,14 @@ export const useBarometerStore = defineStore({
       } else {
         this.arrowRotation = this.arrowRotation - angle;
       }
+
+      // work out responsibility score
+      if((this.barometerScore - (100 * dec)) < 0) {
+        let scoreDifference = (0 - (100 * dec)) + this.barometerScore;
+        this.barometerScore = this.barometerScore - ((100 * dec) + scoreDifference);
+      } else {
+        this.barometerScore = this.barometerScore - (100 * dec);
+      }
     
       //this.barometerScore = this.barometerScore + num;
       this.modulatedAngle = this.arrowRotation % 360;
@@ -409,8 +417,8 @@ export const useBarometerStore = defineStore({
 
     increaseScore(num) {
       // work out the angle that the arrow needs to move based on the percentage given
-      let perc = num/100;
-      let angle = 360 * perc;
+      let dec = num/100;
+      let angle = 360 * dec;
 
       if((this.arrowRotation + angle) > 360) {
         let difference = (this.arrowRotation + angle) - 360;
@@ -424,8 +432,13 @@ export const useBarometerStore = defineStore({
         this.arrowRotation = this.arrowRotation + angle;
       }
 
-      // scores 
-
+      // work out responsibility score
+      if((this.barometerScore + (100 * dec)) > 100) {
+        let scoreDifference = (this.barometerScore + (100 * dec)) - 100;
+        this.barometerScore = this.barometerScore + ((100 * dec) - scoreDifference);
+      } else {
+        this.barometerScore = this.barometerScore + (100 * dec);
+      }
     
       //this.barometerScore = this.barometerScore + num;
       this.modulatedAngle = this.arrowRotation % 360;
