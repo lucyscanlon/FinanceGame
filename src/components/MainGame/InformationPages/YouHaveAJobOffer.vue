@@ -39,7 +39,7 @@ The parent of this component:
             </table>
             <div class="joboffer-button-wrapper">
                 <!-- Call store method on click -->
-                <button @click="manageMainGameNav.navigateToPage(2)" class="joboffer-button">Accept job offer</button>
+                <button @click="manageMainGameNav.navigateToPage(2), manageBarometer.increaseScore(20)" class="joboffer-button">Accept job offer</button>
                 <a href="https://www.tax.service.gov.uk/estimate-paye-take-home-pay/your-pay" target="blank">
                     <button class="joboffer-calculator">Check out the UK tax calculator</button>
                 </a>
@@ -51,7 +51,9 @@ The parent of this component:
 <script setup>
     // import stores
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore'
+    import { useBarometerStore } from '../../../store/MainGameChoicesStore'
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageBarometer = useBarometerStore()
 </script>
 <script>
     // export component data

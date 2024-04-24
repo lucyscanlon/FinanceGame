@@ -1,7 +1,7 @@
 <template>
-    <div class="responsibility-barometer-wrapper">
+    <div :class="manageBarometer.glowColour" class="responsibility-barometer-wrapper">
             <div class="barometer-pie-container">
-                <img src="/BarometerPieChart.PNG"/>
+                <img src="/wheelColours.PNG"/>
                 <div class="arrow-container">
                     <img :style="{ transform: 'rotate(' + manageBarometer.arrowRotation + 'deg)' }" src="/Arrow.PNG"/>
                 </div>

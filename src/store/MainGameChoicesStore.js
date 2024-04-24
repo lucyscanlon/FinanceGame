@@ -381,6 +381,8 @@ export const useBarometerStore = defineStore({
   state: () => ({
     arrowRotation: 300,
     barometerScore: 60,
+    positionOfArrow: 351,
+    glowColour: 'orange-glow',
   }),
   actions: {
     decreaseScore(num) {
@@ -388,6 +390,12 @@ export const useBarometerStore = defineStore({
 
       this.arrowRotation = this.arrowRotation - angle;
       this.barometerScore = this.barometerScore - num;
+
+      this.positionOfArrow = (this.arrowRotation % 360);
+      console.log("Position of arrow: " + this.positionOfArrow);
+      console.log("Arrow rotation: " + this.arrowRotation);
+
+      this.workOutGlowColour(this.positionOfArrow);
     },
 
     increaseScore(num) {
@@ -395,6 +403,24 @@ export const useBarometerStore = defineStore({
 
       this.arrowRotation = this.arrowRotation + angle;
       this.barometerScore = this.barometerScore + num;
+
+      this.positionOfArrow = (this.arrowRotation % 360);
+      console.log("Position of arrow: " + this.positionOfArrow);
+      console.log("Arrow rotation: " + this.arrowRotation);
+
+      this.workOutGlowColour(this.positionOfArrow);
+    },
+
+    workOutGlowColour(posOfArrow) {
+      if(((posOfArrow >= 220) && (posOfArrow <= 360)) || ((posOfArrow >= 0) && (posOfArrow < 10))) {
+        this.glowColour = 'orange-glow';
+      } else if ((posOfArrow >= 10) && (posOfArrow < 90)) {
+        this.glowColour = 'green-glow';
+      } else if ((posOfArrow >= 90) && (posOfArrow < 220)) {
+        this.glowColour = 'red-glow';
+      }
+
+      console.log("glow-colour");
     }
 
   }
