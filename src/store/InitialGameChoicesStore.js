@@ -2,6 +2,7 @@
 // in which must make a series of decisions that affect their monthly outgoings
 
 import { defineStore } from "pinia"
+import { useBarometerStore } from './MainGameChoicesStore'
 
 // This controls which stage of the game the player is in
 // It is increased each time a user confirms their decision 
@@ -14,7 +15,7 @@ export const useLivingOptionsStore = defineStore({
     actions: {
         livingOptionsNextStageOfGame() {
             this.livingOptionsGameStage = this.livingOptionsGameStage + 1;
-            console.log("stage of game increased");
+            //console.log("stage of game increased");
         }
     }
 })
@@ -35,7 +36,7 @@ export const registerLivingOptionChoiceStore = defineStore({
 
             }
 
-            console.log("Living at: Street " + streetAd + ", district: " + districtInfo + ", rentPrice: " + rent + ", commutePrice: " + commute);
+            //console.log("Living at: Street " + streetAd + ", district: " + districtInfo + ", rentPrice: " + rent + ", commutePrice: " + commute);
 
         }
     }
@@ -67,13 +68,23 @@ export const supermarketChoiceStore = defineStore({
                 SMTCost: STCost,
             }
 
-            console.log("Currently Selected Supermarket: " + SName);
+            //console.log("Currently Selected Supermarket: " + SName);
         },
 
         confirmSupermarketChoice() {
             this.chosenSupermarketInfo = this.currentlySelectedSupermarketInfo;
 
-            console.log("Confirmed Supermarket Choice: " + this.chosenSupermarketInfo.SMName);
+            //console.log("Confirmed Supermarket Choice: " + this.chosenSupermarketInfo.SMName);
+
+            if(this.chosenSupermarketInfo.SMName === 'Saver Superstore') {
+                useBarometerStore().increaseScore(10);
+            } else if (this.chosenSupermarketInfo.SMName === 'Gourmet Grove') {
+                useBarometerStore().decreaseScore(10);
+            } else if (this.chosenSupermarketInfo.SMName === 'Swiftbite Delivery') {
+                useBarometerStore().decreaseScore(20);
+            } else if (this.chosenSupermarketInfo.SMName === 'Weekly Mart Deliveries') {
+                useBarometerStore().increaseScore(10);
+            }
             
         }
     }
@@ -107,14 +118,20 @@ export const transportChoiceStore = defineStore({
 
             }
 
-            console.log("Currently selected transport choice: " + this.currentlySelectedTransportChoice.TName);
+            //console.log("Currently selected transport choice: " + this.currentlySelectedTransportChoice.TName);
 
         }, 
 
         confirmChosenTransport() {
             this.chosenTransportChoice = this.currentlySelectedTransportChoice;
 
-            console.log("Confirmed transpose choice: " + this.chosenTransportChoice.TName);
+            //console.log("Confirmed transpose choice: " + this.chosenTransportChoice.TName);
+
+            if(this.chosenTransportChoice.TName === 'Uber Driving Service') {
+                useBarometerStore().decreaseScore(25);
+            } else if (this.chosenTransportChoice.TName === 'Public Transport') {
+                useBarometerStore().increaseScore(5);
+            }
 
         },
 

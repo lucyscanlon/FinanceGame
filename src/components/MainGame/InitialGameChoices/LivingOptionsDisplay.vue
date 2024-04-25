@@ -20,7 +20,7 @@ The parent of this component:
                         </div>
                     </div>
                     <!-- Call store methods on click -->
-                    <button @click="manageMainGameNav.navigateToPage(5), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute)), manageMoney.decreasePocketMoney(deposit), manageMoney.increaseMonthlyOutGoings(rent), manageMoney.increaseOrDecreasePocketMoneyAnimation(deposit)" class="map-location-livehere-button">
+                    <button @click="manageMainGameNav.navigateToPage(5), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute)), manageMoney.decreasePocketMoney(deposit), manageMoney.increaseMonthlyOutGoings(rent), manageMoney.increaseOrDecreasePocketMoneyAnimation(deposit), manageBarometer.increaseScore(increasePerc), manageBarometer.decreaseScore(decreasePerc)" class="map-location-livehere-button">
                         <p>Live Here</p>
                     </button>
 
@@ -35,10 +35,12 @@ The parent of this component:
     import { registerLivingOptionChoiceStore } from '../../../store/InitialGameChoicesStore'
     import { useMoneyManageStore } from '../../../store/MoneyStore.js'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import { useBarometerStore } from '../../../store/MainGameChoicesStore'
     
     const manageMainGameNav = useMainGameplayNavigationStore()
     const registerLivingChoice = registerLivingOptionChoiceStore()
     const manageMoney = useMoneyManageStore()
+    const manageBarometer = useBarometerStore()
 </script>
 <script>
 export default {
@@ -52,6 +54,8 @@ export default {
         commute: Number,
         classtag: String,
         deposit: String,
+        increasePerc: Number,
+        decreasePerc: Number,
     }, methods: {
         commuteDisplay(c) {
 

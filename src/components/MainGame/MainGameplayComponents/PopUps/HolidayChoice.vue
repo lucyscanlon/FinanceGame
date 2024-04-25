@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.HolidayBudgetChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5)">Choose</button>
+                <button @click="managePopUps.HolidayBudgetChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.decreaseScore(30)">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container holidaychoice-flex">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.HolidayBudgetChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5)">Choose</button>
+                <button @click="managePopUps.HolidayBudgetChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(15)">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container holidaychoice-flex">
@@ -60,14 +60,14 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.HolidayBudgetChoice(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5)">Choose</button>
+                <button @click="managePopUps.HolidayBudgetChoice(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(20)">Choose</button>
             </div>
         </div>
     </div>
 </template>
 <script setup>
 
-import { usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
+import { useBarometerStore, usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
 import { useMainGameplayNavigationStore } from "../../../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../../../store/MoneyStore.js";
 import { useGoalsStore } from "../../../../store/MainGameChoicesStore.js";
@@ -76,6 +76,7 @@ const managePopUps = usePopUpStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
 const manageGameGoals = useGoalsStore();
+const manageBarometer = useBarometerStore();
 
 </script>
 <script>

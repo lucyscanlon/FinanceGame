@@ -10,12 +10,12 @@ export const useMainGameplayNavigationStore = defineStore({
   actions: {
     navigateToPage(num) {
       this.currentPage = num;
-      console.log(this.currentPage);
+      //console.log(this.currentPage);
     },
 
     unlockComponent() {
       this.mainGameComponentsUnlocked = this.mainGameComponentsUnlocked + 1;
-      console.log(this.mainGameComponentsUnlocked);
+      //console.log(this.mainGameComponentsUnlocked);
     },
   },
 });
@@ -56,13 +56,21 @@ export const usePensionChoicesStore = defineStore({
         TContAmount: TCAmount,
       };
 
-      console.log(YCPerc);
+      //console.log(YCPerc);
     },
 
     confirmCurrentlySelectedPensionChoice() {
       this.chosenPensionChoice = this.currentlySelectedPensionChoice;
 
-      console.log(this.chosenPensionChoice);
+      //console.log(this.chosenPensionChoice);
+
+      if(this.chosenPensionChoice.YContPercentage === 5) {
+        useBarometerStore().increaseScore(5);
+      } else if (this.chosenPensionChoice.YContPercentage === 7) {
+        useBarometerStore().increaseScore(8);
+      } else if (this.chosenPensionChoice.YContPercentage === 8) {
+        useBarometerStore().increaseScore(12);
+      }
     },
 
     changeSelectedPensionInvestmentChoice(num) {
@@ -77,9 +85,7 @@ export const usePensionChoicesStore = defineStore({
       this.chosenPensionInvestmentChoice =
         this.currentlySelectedPensionInvestmentChoice;
 
-      console.log(
-        "Chosen pension choice: " + this.chosenPensionInvestmentChoice
-      );
+      //console.log("Chosen pension choice: " + this.chosenPensionInvestmentChoice);
     },
 
     addContributionToPension(salaryBeforeTax, contributionPerc) {
@@ -116,14 +122,22 @@ export const useEmergencyFundChoicesStore = defineStore({
         EmergFAccess: EFAccess,
       };
 
-      console.log(this.currentlySelectedEmergencyFundChoice);
+      //console.log(this.currentlySelectedEmergencyFundChoice);
     },
 
     confirmCurrentlySelectedEmergencyFundChoice() {
       this.chosenEmergencyFundChoice =
         this.currentlySelectedEmergencyFundChoice;
 
-      console.log(this.chosenEmergencyFundChoice);
+      //console.log(this.chosenEmergencyFundChoice);
+
+      if(this.chosenEmergencyFundChoice.EmergFName === 'High Interest Savings Account') {
+        useBarometerStore().increaseScore(15);
+      } else if (this.chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account') {
+        useBarometerStore().decreaseScore(25);
+      } else if (this.chosenEmergencyFundChoice.EmergFName === 'Regular Savings Account') {
+        useBarometerStore().decreaseScore(10);
+      }
     },
   },
 });
@@ -162,7 +176,7 @@ export const useIncomeStreamsChoicesStore = defineStore({
     confirmIncomeStreamChoice() {
       this.chosenIncomeStreamChoice = this.currentlySelectedIncomeStreamChoice;
 
-      console.log(this.chosenIncomeStreamChoice)
+      //console.log(this.chosenIncomeStreamChoice)
     },
 
     confirmOnlineStoreName(string) {
@@ -175,7 +189,7 @@ export const useIncomeStreamsChoicesStore = defineStore({
 
     confirmBarChoiceName(string) {
         this.barChoiceName = string;
-        console.log(this.barChoiceName)
+        //console.log(this.barChoiceName)
     },
 
     confirmSocialMediaUsername(string) {
@@ -184,7 +198,7 @@ export const useIncomeStreamsChoicesStore = defineStore({
 
     confirmFreelanceSkill(string) {
         this.freelanceChosenSkill = string;
-        console.log(this.freelanceChosenSkill)
+        //console.log(this.freelanceChosenSkill)
     },
 
     declareMonthlyCostProfit(num, val) {
@@ -212,14 +226,24 @@ export const useHouseDepositChoiceStore = defineStore({
             this.selectedHouseDepositChoice = num;
         },
 
-        updateCurrentlySelectedHouseDepositChoice(name) {
-            this.currentlySelectedHouseDepositChoice = name;
-            console.log(this.currentlySelectedHouseDepositChoice);
+        updateCurrentlySelectedHouseDepositChoice(num) {
+            this.currentlySelectedHouseDepositChoice = num;
+            //console.log(this.currentlySelectedHouseDepositChoice);
         },
 
         confirmHouseDepositChoice() {
             this.chosenHouseDepositChoice = this.currentlySelectedHouseDepositChoice;
-            console.log(this.chosenHouseDepositChoice);
+            //console.log(this.chosenHouseDepositChoice);
+
+            if(this.chosenHouseDepositChoice === 1) {
+              useBarometerStore().increaseScore(10);
+            } else if (this.chosenHouseDepositChoice === 2) {
+              useBarometerStore().increaseScore(10);
+            } else if (this.chosenHouseDepositChoice === 3) {
+              useBarometerStore().decreaseScore(20);
+            }
+
+            
         }
     }
 })
@@ -248,7 +272,14 @@ export const useInvestmentPortfolioChoiceStore = defineStore({
             this.Share4BarPercentage = ((this.ShareTotalAmounts[3] / this.TotalNumberOfShares) * 100);
             this.Share5BarPercentage = ((this.ShareTotalAmounts[4] / this.TotalNumberOfShares) * 100);
 
-            console.log(this.Share1BarPercentage, this.Share2BarPercentage, this.Share3BarPercentage, this.Share4BarPercentage, this.Share5BarPercentage);
+            //console.log(this.Share1BarPercentage, this.Share2BarPercentage, this.Share3BarPercentage, this.Share4BarPercentage, this.Share5BarPercentage);
+
+            if(useGoalsStore().currentGoal === 6) {
+              if(this.TotalNumberOfShares >= 10) {
+                useGoalsStore().completedGoals = 6;
+              }
+            }
+            
 
             useMoneyManageStore().workOutPortfolioValue()
 
@@ -298,7 +329,7 @@ export const useGoalsStore = defineStore({
     },
     nextGoal() {
       this.currentGoal = this.currentGoal + 1;
-      console.log("current Goal: " + this.currentGoal);
+      //console.log("current Goal: " + this.currentGoal);
     },
 
     setUpSpecificGoal(num) {
@@ -395,9 +426,9 @@ export const useBarometerStore = defineStore({
 
         this.arrowRotation = this.arrowRotation - (angle + difference);
 
-        console.log("Difference:" + difference);
-        console.log("Angle:" + angle);
-        console.log("total:" + this.arrowRotation);
+        //console.log("Difference:" + difference);
+        //console.log("Angle:" + angle);
+        //console.log("total:" + this.arrowRotation);
       } else {
         this.arrowRotation = this.arrowRotation - angle;
       }
@@ -426,9 +457,9 @@ export const useBarometerStore = defineStore({
 
         this.arrowRotation = this.arrowRotation + (angle - difference);
 
-        console.log("Difference:" + difference);
-        console.log("Angle:" + angle);
-        console.log("total:" + this.arrowRotation);
+        //console.log("Difference:" + difference);
+        //console.log("Angle:" + angle);
+        //console.log("total:" + this.arrowRotation);
       } else {
         this.arrowRotation = this.arrowRotation + angle;
       }

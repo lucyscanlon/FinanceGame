@@ -9,11 +9,13 @@ The parent of this component:
     import { useGameTimerStore } from '../../store/MoneyStore.js'
     import { useMoneyManageStore } from '../../store/MoneyStore.js'
     import { useGoalsStore } from '../../store/MainGameChoicesStore.js'
+    import { useBarometerStore } from '../../store/MainGameChoicesStore.js'
 
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageGameTimer = useGameTimerStore()
     const manageMoney = useMoneyManageStore()
     const manageGoals = useGoalsStore()
+    const manageBarometer = useBarometerStore()
 
 </script>
 <template>
@@ -72,7 +74,7 @@ The parent of this component:
         </div>
         <!-- Buttons for the first goal - pay bills on time -->
         <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal === 1)" class="pay-monthly-outgoings-container">
-                <button @click="manageMoney.payMonthlyOutgoings(), manageGoals.completedGoal()">Pay monthly outgoings</button>
+                <button @click="manageMoney.payMonthlyOutgoings(), manageGoals.completedGoal(), manageBarometer.increaseScore(3)">Pay monthly outgoings</button>
         </div>
         <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal === 1)" class="pay-monthly-outgoings-container bills-late-button">
                 <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill()">Pay monthly outgoings</button>
@@ -83,7 +85,7 @@ The parent of this component:
 
         <!-- Buttons for the rest of gameplay-->
         <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1)" class="pay-monthly-outgoings-container">
-                <button @click="manageMoney.payMonthlyOutgoings()">Pay monthly outgoings</button>
+                <button @click="manageMoney.payMonthlyOutgoings(), manageBarometer.increaseScore(2)">Pay monthly outgoings</button>
         </div>
         <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal > 1)" class="pay-monthly-outgoings-container bills-late-button">
                 <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill()">Pay monthly outgoings</button>

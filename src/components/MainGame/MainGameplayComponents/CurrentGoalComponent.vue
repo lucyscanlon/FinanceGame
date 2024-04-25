@@ -5,8 +5,9 @@
         <EmergencyFundGoal v-if="manageGameGoals.currentGoal === 3"></EmergencyFundGoal>
         <AppliancesFundGoal v-if="manageGameGoals.currentGoal === 4"></AppliancesFundGoal>
         <HolidayFundGoal v-if="manageGameGoals.currentGoal === 5"></HolidayFundGoal>
-        <InvestmentGoal  v-if="manageGameGoals.currentGoal === 6"></InvestmentGoal>
-        <HouseDepositGoal v-if="manageGameGoals.currentGoal === 7"></HouseDepositGoal>
+        <BuyStocksGoal v-if="manageGameGoals.currentGoal === 6"></BuyStocksGoal>
+        <InvestmentGoal  v-if="manageGameGoals.currentGoal === 7"></InvestmentGoal>
+        <HouseDepositGoal v-if="manageGameGoals.currentGoal === 8"></HouseDepositGoal>
     </div>
 </template>
 <script setup>
@@ -18,6 +19,7 @@ import AppliancesFundGoal from './GameGoals/AppliancesFund.vue'
 import HolidayFundGoal from './GameGoals/HolidayFund.vue'
 import InvestmentGoal from './GameGoals/InvestmentGoal.vue'
 import HouseDepositGoal from './GameGoals/HouseDepositGoal.vue'
+import BuyStocksGoal from './GameGoals/BuyStocks.vue'
 
 import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
 import { useGoalsStore } from '../../../store/MainGameChoicesStore.js'
@@ -38,6 +40,7 @@ export default {
         HolidayFundGoal,
         InvestmentGoal,
         HouseDepositGoal,
+        BuyStocksGoal
     }, 
 }
 

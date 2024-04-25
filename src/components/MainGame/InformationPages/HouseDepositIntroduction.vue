@@ -43,7 +43,7 @@ The parent of this component:
                 </div>
                 <div class="housedeposit-choices-container">
                     <HouseDepositChoiceFlexbox :Identifier="1" Name="Lifetime Isa" Desc="A bank account with a yearly limit" Perk="A 25% yearly bonus" Deposit="No Deposit" ContLimit="£4000"></HouseDepositChoiceFlexbox>
-                    <HouseDepositChoiceFlexbox :Identifier="2" Name="3 Year Fixed Rate Savings Account" Desc="A high interest bank account which cannot be accessed for 1 year" Perk="4.8% interest" Deposit="£1,500" ContLimit="None"></HouseDepositChoiceFlexbox>
+                    <HouseDepositChoiceFlexbox :Identifier="2" Name="1 Year Fixed Rate Savings Account" Desc="A high interest bank account which cannot be accessed for 1 year" Perk="4.8% interest" Deposit="£1,500" ContLimit="None"></HouseDepositChoiceFlexbox>
                     <HouseDepositChoiceFlexbox :Identifier="3" Name="Savings Account" Desc="An ordinary savings account" Perk="Withdraw at any time" Deposit="No Deposit" ContLimit="None"></HouseDepositChoiceFlexbox>
                 </div>
                 <div class="emergencyfundchoice-button-container">

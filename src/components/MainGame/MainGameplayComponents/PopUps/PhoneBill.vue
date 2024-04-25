@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="managePopUps.choosePhonePlan(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.increaseScore(5)">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container">
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="managePopUps.choosePhonePlan(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.increaseScore(10)">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container">
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="managePopUps.choosePhonePlan(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.decreaseScore(20)">Choose</button>
             </div>
             
         </div>
@@ -84,11 +84,13 @@ import { usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
 import { useMainGameplayNavigationStore } from "../../../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../../../store/MoneyStore.js";
 //import { useMoneyManageStore } from "../../../../store/MoneyStore.js";
+import { useBarometerStore } from "../../../../store/MainGameChoicesStore.js";
 
 const managePopUps = usePopUpStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
 //const manageMoney = useMoneyManageStore();
+const manageBarometer = useBarometerStore();
 
 </script>
 <script>
