@@ -377,6 +377,8 @@ export const usePopUpStore = defineStore({
     investmentOpportunityChoice(num) {
       if(num === 1) {
         useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 1500;
+        useMoneyManageStore().chosenToTakeInvestment = true;
+        console.log("Investment Choice yes: " + useMoneyManageStore().chosenToTakeInvestment);
       } else if (num === 2) {
         useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 0;
       }

@@ -17,7 +17,7 @@ export const useMoneyManageStore = defineStore({
         monthlyOutGoingsSum: 0,
         increaseordecreaseofPocketMoney: 0,
         currentAccountCurrentTotal: 0,
-        emergencyFundCurrentTotal: 4999,
+        emergencyFundCurrentTotal: 0,
         daysUntilPayday: 30,
         decreaseTime: true,
         houseDepositCurrentTotal: 0,
@@ -87,7 +87,7 @@ export const useMoneyManageStore = defineStore({
 
                 if(this.emergencyFundCurrentTotal >= 5000) {
                     useGoalsStore().completedGoals = 3;
-                    useBarometerStore().decreaseScore(10);
+                    useBarometerStore().increaseScore(10);
                 }
             } else {
                 return;
@@ -386,7 +386,10 @@ export const useGameTimerStore = defineStore({
         emergencyFundFixedRateUnlocked: false,
         queuePayRisePopUp: {},
         queueAfterInvestmentComponent: {},
+        queueAfterInvestmentOpPopUp: {},
         queueFinalGoalsAndPopUps: {},
+        investmentOpShown: false,
+        chosenToTakeInvestment: false,
 
     }),
     actions: {
@@ -434,7 +437,7 @@ export const useGameTimerStore = defineStore({
                     this.checkIfBillsAreLate()
                     this.resetCountdown()
                 }
-            }, 500)
+            }, 200)
         }, 
 
         flucuateStockPrices() {
@@ -506,8 +509,8 @@ export const useGameTimerStore = defineStore({
             // work out the total profit / loss from initial investment
             useMoneyManageStore().totalProfitOrLoss = useMoneyManageStore().InvestmentPortfolioCurrentValue - useMoneyManageStore().totalInvested;
 
-            if(useMoneyManageStore().totalProfitOrLoss >= 3000) {
-                useGoalsStore().completedGoals = 6;
+            if(useMoneyManageStore().totalProfitOrLoss >= 1500) {
+                useGoalsStore().completedGoals = 7;
             }
 
         },
@@ -643,7 +646,7 @@ export const useGameTimerStore = defineStore({
                 this.saveTheDateHouseDeposit(countdown, monthsPassed, currentYear)
             }
 
-            if((countdown === this.queuePayRisePopUp.day) && (monthsPassed === (this.queuePayRisePopUp.month + 1)) && (currentYear === this.queuePayRisePopUp.year)) {
+            if((countdown === this.queuePayRisePopUp.day - 10) && (monthsPassed === (this.queuePayRisePopUp.month)) && (currentYear === this.queuePayRisePopUp.year)) {
                 // one month after house deposit intro - pay rise pop up
                 useMainGameplayNavigationStore().currentPage = 18;
                 usePopUpStore().currentPopUp = 7;
@@ -673,44 +676,49 @@ export const useGameTimerStore = defineStore({
 
             }
 
-            if ((countdown === this.queueAfterInvestmentComponent.day) && (monthsPassed === (this.queueAfterInvestmentComponent.month + 2)) && (currentYear === this.queueAfterInvestmentComponent.year)){
-                // 2 months later - investment opportunity pop up
+            if ((countdown === 25) && (useGoalsStore().completedGoals === 6) && (this.investmentOpShown === false)) {
+                // investment opportunity pop up
                 useMainGameplayNavigationStore().currentPage = 18;
                 usePopUpStore().currentPopUp = 3;
+                this.investmentOpShown = true;
+
+                this.saveTheDateInvestmentOp(countdown, monthsPassed, currentYear);
 
             }
 
-            if ((countdown === this.queueAfterInvestmentComponent.day - 10) && (monthsPassed === (this.queueAfterInvestmentComponent.month + 2)) && (currentYear === this.queueAfterInvestmentComponent.year)){
+            if ((countdown === (this.queueAfterInvestmentOpPopUp.day - 10)) && (monthsPassed === this.queueAfterInvestmentOpPopUp.month) && (currentYear === this.queueAfterInvestmentOpPopUp.year)){
                 // ten days later - open investment goal - save 3000
-                useGoalsStore().currentGoal = 6;
+                useGoalsStore().currentGoal = 7;
                 useMainGameplayNavigationStore().currentPage = 11;
 
             }
 
-            if((countdown === 25) && (useGoalsStore().completedGoals === 6) && (useGoalsStore().currentGoal === 6)) {
+            if((countdown === 25) && (useGoalsStore().completedGoals === 7) && (useGoalsStore().currentGoal === 7)) {
                 // when they have made 3000 - open house deposit goal
-                useGoalsStore().currentGoal = 7;
+                useGoalsStore().currentGoal = 8;
                 // save the day
                 this.saveTheDateFinalGoals(countdown, monthsPassed, currentYear);
+                
             }
 
-            if ((countdown === this.queueFinalGoalsAndPopUps.day) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 1)) && (currentYear === this.queueFinalGoalsAndPopUps.year)){
-                
-                // 1 month later - navigate to main page
-                useMainGameplayNavigationStore().currentPage = 18;
-                
-                // get random number and display results from investment opportunity
-                let randomNum = Math.random(0, 10) * 10;
+            if ((countdown === (this.queueFinalGoalsAndPopUps.day)) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 1)) && (currentYear === this.queueFinalGoalsAndPopUps.year)){
+                //if(this.chosenToTakeInvestment === true) {
+                    // 1 month later - navigate to main page
+                    useMainGameplayNavigationStore().currentPage = 18;
+                    
+                    // get random number and display results from investment opportunity
+                    let randomNum = Math.random() * 10;
+    
+                    if(randomNum <= 5) {
+                        usePopUpStore().currentPopUp = 4;
+                    } else if (randomNum > 5) {
+                        usePopUpStore().currentPopUp = 5;
+                    }
 
-                if(randomNum <= 5) {
-                    usePopUpStore().currentPopUp = 4;
-                } else if (randomNum > 5) {
-                    usePopUpStore().currentPopUp = 5;
-                }
-
+                //}
             }
-
-            if ((countdown === this.queueFinalGoalsAndPopUps.day) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 4)) && (currentYear === this.queueFinalGoalsAndPopUps.year)){
+            
+            if ((countdown === (this.queueFinalGoalsAndPopUps.day)) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 3)) && (currentYear === this.queueFinalGoalsAndPopUps.year)){
                 // 3 months after - broken laptop goal
                 useMainGameplayNavigationStore().currentPage = 18;
                 usePopUpStore().currentPopUp = 8;
@@ -783,6 +791,14 @@ export const useGameTimerStore = defineStore({
             console.log("month: " + this.queueFinalGoalsAndPopUps.month);
             console.log("year: " + this.queueFinalGoalsAndPopUps.year);
         },
+
+        saveTheDateInvestmentOp(day, monthsPassed, year) {
+            this.queueAfterInvestmentOpPopUp = {day: day, month: monthsPassed, year: year};
+
+            console.log("day: " + this.queueAfterInvestmentOpPopUp.day);
+            console.log("month: " + this.queueAfterInvestmentOpPopUp.month);
+            console.log("year: " + this.queueAfterInvestmentOpPopUp.year);
+        }
 
 
     }
