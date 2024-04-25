@@ -3565,6 +3565,10 @@ input[type="number"] {
   color: rgba(199, 56, 51, 1);
 }
 
+.red-border {
+  border: solid 1px rgba(199, 56, 51, 1);
+}
+
 
 
 

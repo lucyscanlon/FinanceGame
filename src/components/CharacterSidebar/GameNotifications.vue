@@ -10,12 +10,18 @@ The parent of this component:
     import { useMoneyManageStore } from '../../store/MoneyStore.js'
     import { useGoalsStore } from '../../store/MainGameChoicesStore.js'
     import { useBarometerStore } from '../../store/MainGameChoicesStore.js'
+    import {registerLivingOptionChoiceStore} from '../../store/InitialGameChoicesStore.js'
+    import {supermarketChoiceStore} from '../../store/InitialGameChoicesStore.js'
+    import {transportChoiceStore} from '../../store/InitialGameChoicesStore.js'
 
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageGameTimer = useGameTimerStore()
     const manageMoney = useMoneyManageStore()
     const manageGoals = useGoalsStore()
     const manageBarometer = useBarometerStore()
+    const manageLiving = registerLivingOptionChoiceStore()
+    const manageSupermarket = supermarketChoiceStore()
+    const manageTransport = transportChoiceStore()
 
 </script>
 <template>
@@ -46,6 +52,20 @@ The parent of this component:
                             <p>35% of your income after tax is: <span class="colour-pink">£599.14</span></p>
                         </div>
             </div>
+            <div v-if="manageMainGameNav.currentPage === 5" class="notifications-padding">
+                        <div v-if="manageLiving.selectedLivingOptionInfo.street === '27 Pinecrest Avenue'" class="game-notification-container">
+                            <p>You chose an affordable apartment.</p>
+                        </div>
+                        <div v-if="manageLiving.selectedLivingOptionInfo.street === '19 Rodeo Square'" class="game-notification-container red-border">
+                            <p>You chose the most expensive apartment, the furthest away from work!</p>
+                        </div>
+                        <div v-if="manageLiving.selectedLivingOptionInfo.street === 'Apt E1, Harmony Lane'" class="game-notification-container">
+                            <p>You chose a location within walking distance to work.</p>
+                        </div>
+                        <div v-if="manageLiving.selectedLivingOptionInfo.street === '32 Brickyard Lane'" class="game-notification-container red-border">
+                            <p>You chose an apartment far away from work!</p>
+                        </div>
+            </div>
             <div v-if="manageMainGameNav.currentPage === 6" class="notifications-padding">
                         <div class="game-notification-container">
                             <p>Choose a supermarket to shop at from the available choices</p>
@@ -56,13 +76,34 @@ The parent of this component:
 
             </div>
             <div v-if="manageMainGameNav.currentPage === 7" class="notifications-padding">
+                        <div v-if="manageSupermarket.chosenSupermarketInfo.SMName === 'Saver Superstore'" class="game-notification-container">
+                            <p>You chose an affordable supermarket</p>
+                        </div>
+                        <div v-if="manageSupermarket.chosenSupermarketInfo.SMName === 'Gourmet Grove'" class="game-notification-container red-border">
+                            <p>You chose an expensive supermarket</p>
+                        </div>
+                        <div v-if="manageSupermarket.chosenSupermarketInfo.SMName === 'Swiftbite Delivery'" class="game-notification-container red-border">
+                            <p>You chose a very expensive supermarket</p>
+                        </div>
+                        <div v-if="manageSupermarket.chosenSupermarketInfo.SMName === 'Weekly Mart Deliveries'" class="game-notification-container red-border">
+                            <p>You chose an affordable supermarket</p>
+                        </div>
                         <div class="game-notification-container">
                             <p>Choose a method of transport to get around the city, including going to work if you don't live a walkable distance away.</p>
                         </div>
 
             </div>
+            <div v-if="manageMainGameNav.currentPage === 8" class="notifications-padding">
+                        <div v-if="manageTransport.chosenTransportChoice.TName === 'Uber Driving Service'" class="game-notification-container red-border">
+                            <p>You chose a very expensive method of transport</p>
+                        </div>
+                        <div v-if="manageTransport.chosenTransportChoice.TName === 'Public Transport'" class="game-notification-container">
+                            <p>You chose an affordable method of transport</p>
+                        </div>
+
+            </div>
             <div v-if="(manageMainGameNav.currentPage === 11) && (manageGameTimer.countdown <= 5) && (manageMoney.billsLate === false) && (manageMoney.billsPaid === manageGameTimer.monthsPassed)" class="notifications-padding">
-                        <div class="game-notification-container">
+                        <div class="game-notification-container red-border">
                             <p>Your bills are due!</p>
                         </div>
             </div>

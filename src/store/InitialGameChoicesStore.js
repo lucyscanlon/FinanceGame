@@ -36,8 +36,8 @@ export const registerLivingOptionChoiceStore = defineStore({
 
             }
 
-            //console.log("Living at: Street " + streetAd + ", district: " + districtInfo + ", rentPrice: " + rent + ", commutePrice: " + commute);
-
+            console.log("Living at: Street " + streetAd + ", district: " + districtInfo + ", rentPrice: " + rent + ", commutePrice: " + commute);
+            console.log(this.selectedLivingOptionInfo);
         }
     }
 })

@@ -437,7 +437,7 @@ export const useGameTimerStore = defineStore({
                     this.checkIfBillsAreLate()
                     this.resetCountdown()
                 }
-            }, 200)
+            }, 500)
         }, 
 
         flucuateStockPrices() {
