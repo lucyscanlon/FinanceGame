@@ -3571,6 +3571,172 @@ input[type="number"] {
 
 
 
+/* starting page */
+
+.startingpage-whole-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(circle, #15141d, #382b50, #6d3d81, #b147aa, #ff48c8);
+  /*background-image: radial-gradient(circle, #ff48c8, #b147aa, #6d3d81, #382b50, #15141d);*/
+}
+
+.startingpage-width-container {
+  width: 50%;
+  margin: 0 auto;
+  overflow: auto;
+  padding-top: 80px;
+}
+
+.startingpage-logo-container {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border: solid 1px white;
+  border-radius: 100px;
+  -webkit-box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
+-moz-box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
+box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
+}
+
+.startingpage-title-container {
+  text-align: center;
+  color: white;
+  font-family: unbounded-reg;
+  font-size: 30px;
+  padding-top: 40px;
+  
+}
+
+.startingpage-title-container h5 {
+  font-size: 16px;
+}
+
+.startingpage-title-container h4 {
+  font-size: 35px;
+  padding-top: 10px;
+  letter-spacing: 2px;
+  color: #7dab3d;
+}
+
+.startingpage-description-container {
+  text-align: center;
+  color: white;
+  font-family: unbounded-reg;
+  padding-top: 30px;
+  letter-spacing: 0px;
+  width: 70%;
+  margin: 0 auto;
+  line-height: 1.5em;
+  font-size: 15px;
+}
+
+.startingpage-buttons-container {
+  width: 40%;
+  margin: 0 auto;
+  overflow: auto;
+  padding-top: 70px;
+  
+}
+
+.startingpage-play-button {
+  width: 50%;
+  float: left;
+  height: 200px;
+}
+
+.startingpage-howtoplay-button {
+  width: 50%;
+  float: right;
+  height: 200px;
+}
+
+.startingpage-play-circle {
+  width: 70px;
+  height: 70px;
+  border: solid white 2px;
+  border-radius: 100px;
+  float: right;
+  margin-right: 50px;
+  transition-duration: 1s;
+}
+
+.startingpage-howtoplay-circle {
+  width: 70px;
+  height: 70px;
+  border: solid white 2px;
+  border-radius: 100px;
+  float: left;
+  margin-left: 50px;
+  transition-duration: 1s;
+}
+
+.startingpage-play-circle p {
+  text-align: center;
+  color: white;
+  font-size: 34px;
+  padding-top: 17px;
+  padding-left: 5px;
+  transition-duration: 1s;
+}
+
+.startingpage-howtoplay-circle p {
+  text-align: center;
+  color: white;
+  font-size: 34px;
+  padding-top: 17px;
+  padding-left: 0px;
+  transition-duration: 1s;
+}
+
+.startingpage-play-circle:hover {
+  border: solid 2px #7dab3d;
+  transition-duration: 1s;
+  cursor: pointer;
+  
+}
+
+.startingpage-howtoplay-circle:hover {
+  border: solid 2px #7dab3d;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.startingpage-play-circle:hover p {
+  color: #7dab3d;
+  transition-duration: 1s;
+}
+
+.startingpage-howtoplay-circle:hover p {
+  color: #7dab3d;
+  transition-duration: 1s;
+}
+
+.startingpage-play-text {
+  width: 92%;
+  float: left;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 13px;
+  text-align: left;
+  line-height: 1.3em;
+  padding-top: 10px;
+}
+
+.startingpage-howtoplay-text {
+  width: 90%;
+  float: right;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 13px;
+  text-align: right;
+  line-height: 1.3em;
+  padding-top: 10px;
+  padding-right: 9px;
+}
+
+
+
+
 
 
 
