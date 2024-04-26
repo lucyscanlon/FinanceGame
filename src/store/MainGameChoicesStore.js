@@ -5,7 +5,7 @@ export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
     mainGameComponentsUnlocked: 0,
-    currentPage: 1,
+    currentPage: 18,
   }),
   actions: {
     navigateToPage(num) {
@@ -354,8 +354,9 @@ export const useGoalsStore = defineStore({
 export const usePopUpStore = defineStore({
   id: 'PopUpStore',
   state: () => ({
-    currentPopUp: 0,
+    currentPopUp: 6,
     phonePlanChoice: 0,
+    holidayChoice: 0,
   }),
   actions: {
     choosePhonePlan(num) {
@@ -400,10 +401,13 @@ export const usePopUpStore = defineStore({
     HolidayBudgetChoice(num) {
       if(num === 1) {
         useGoalsStore().holidayBudget = 6000;
+        this.holidayChoice = 1;
       } else if (num === 2) {
         useGoalsStore().holidayBudget = 2000;
+        this.holidayChoice = 2;
       } else if (num === 3) {
         useGoalsStore().holidayBudget = 900;
+        this.holidayChoice = 3;
       }
     },
 
@@ -522,6 +526,7 @@ export const useNotificationStore = defineStore({
     incomeStreamsNotificationShow: false,
     houseDepositNotificationShow: false,
     investmentBuyStockNotificationShow: false,
+    holidayChoiceNotificationShow: false,
   }),
   actions: {
     timeoutGameNotification() {
@@ -567,6 +572,15 @@ export const useNotificationStore = defineStore({
 
       setTimeout(() => {
         this.investmentBuyStockNotificationShow = false;
+      }, 5000);
+      
+    },
+
+    timeoutHolidayChoiceNotification() {
+      this.holidayChoiceNotificationShow = true;
+
+      setTimeout(() => {
+        this.holidayChoiceNotificationShow = false;
       }, 5000);
       
     },

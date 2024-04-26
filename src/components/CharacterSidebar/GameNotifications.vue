@@ -195,7 +195,22 @@ The parent of this component:
                         </div>
             </div>
 
-
+            <!-- Holiday Choice Notifications -->
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.holidayChoiceNotificationShow === true && managePopUps.holidayChoice === 1" class="notifications-padding">
+                        <div class="game-notification-container red-border">
+                            <p>You chose a very expensive holiday</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.holidayChoiceNotificationShow === true && managePopUps.holidayChoice === 2" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You chosen a cheaper option for your holiday</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.holidayChoiceNotificationShow === true && managePopUps.holidayChoice === 3" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You chose an affordable holiday</p>
+                        </div>
+            </div>
 
             <div v-if="(manageMainGameNav.currentPage === 11) && (manageGameTimer.countdown <= 5) && (manageMoney.billsLate === false) && (manageMoney.billsPaid === manageGameTimer.monthsPassed)" class="notifications-padding">
                         <div class="game-notification-container">
