@@ -50,8 +50,12 @@
         <IncomeStreamsFlexbox :Identifier=6  Name="Do not set up a secondary income stream" :Hours=0 :SetUpCost=0 :MonthlyIncome=0 MonthlyCost="0" ExpansionPotential=""></IncomeStreamsFlexbox>
       </div>
       <div class="emergencyfundchoice-button-container">
-            <button
-              @click="manageIncomeStream.confirmIncomeStreamChoice(), nextSlide(), (manageIncomeStream.currentlySelectedIncomeStreamChoice.ISidentifier === 6) ? useMainGameplayNav.navigateToPage(1) : '' ">
+            <button v-if="manageIncomeStream.currentlySelectedIncomeStreamChoice.ISname === 'Do not set up a secondary income stream'"
+              @click="manageIncomeStream.confirmIncomeStreamChoice(), useMainGameplayNav.navigateToPage(11) ">
+              Confirm Choice
+            </button>
+            <button v-if="manageIncomeStream.currentlySelectedIncomeStreamChoice.ISname !== 'Do not set up a secondary income stream'"
+              @click="manageIncomeStream.confirmIncomeStreamChoice(), nextSlide(), (manageIncomeStream.currentlySelectedIncomeStreamChoice.ISidentifier === 6) ? useMainGameplayNav.navigateToPage(11) : '' ">
               Confirm Choice
             </button>
           </div>

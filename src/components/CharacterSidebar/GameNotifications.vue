@@ -14,7 +14,7 @@ The parent of this component:
     import {supermarketChoiceStore} from '../../store/InitialGameChoicesStore.js'
     import {transportChoiceStore} from '../../store/InitialGameChoicesStore.js'
     import {useNotificationStore } from '../../store/MainGameChoicesStore.js'
-    import {usePopUpStore, useEmergencyFundChoicesStore} from '../../store/MainGameChoicesStore.js'
+    import {usePopUpStore, useEmergencyFundChoicesStore, useIncomeStreamsChoicesStore } from '../../store/MainGameChoicesStore.js'
 
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageGameTimer = useGameTimerStore()
@@ -27,6 +27,7 @@ The parent of this component:
     const manageNotifications = useNotificationStore()
     const managePopUps = usePopUpStore()
     const manageEmergencyFund = useEmergencyFundChoicesStore()
+    const manageIncomeStreams = useIncomeStreamsChoicesStore()
 
 </script>
 <template>
@@ -140,6 +141,34 @@ The parent of this component:
                             <p>You missed out on an account for your emergency fund with a higher interest rate</p>
                         </div>
             </div>
+
+            <!-- income streams notifications -->
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.incomeStreamsNotificationShow === true && manageIncomeStreams.chosenIncomeStreamChoice.ISname === 'Open Online Store'" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You set up your online store '{{ manageIncomeStreams.onlineStoreName }}'</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.incomeStreamsNotificationShow === true && manageIncomeStreams.chosenIncomeStreamChoice.ISname === 'Start a podcast'" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>Your podcast '{{ manageIncomeStreams.podcastName }}' is now live</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.incomeStreamsNotificationShow === true && manageIncomeStreams.chosenIncomeStreamChoice.ISname === 'Part Time Bar Work'" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You started part time bar work at {{ manageIncomeStreams.barChoiceName }}</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.incomeStreamsNotificationShow === true && manageIncomeStreams.chosenIncomeStreamChoice.ISname === 'Post on Social Media'" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You started posting on social media on your account '@{{ manageIncomeStreams.socialMediaUsername }}'</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.incomeStreamsNotificationShow === true && manageIncomeStreams.chosenIncomeStreamChoice.ISname === 'Do freelance Work Online'" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You started online {{ manageIncomeStreams.freelanceChosenSkill }} work</p>
+                        </div>
+            </div>
+
 
 
 

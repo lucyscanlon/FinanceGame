@@ -172,34 +172,41 @@ export const useIncomeStreamsChoicesStore = defineStore({
         ISmonthlycost: monthlycost,
         ISexpansionpotential: expansionpotential,
       }
+
+      console.log(this.currentlySelectedIncomeStreamChoice)
     },
 
     confirmIncomeStreamChoice() {
       this.chosenIncomeStreamChoice = this.currentlySelectedIncomeStreamChoice;
 
-      //console.log(this.chosenIncomeStreamChoice)
+      console.log(this.chosenIncomeStreamChoice)
     },
 
     confirmOnlineStoreName(string) {
         this.onlineStoreName = string;
+        useNotificationStore().timeoutIncomeStreamsNotification();
     },
 
     confirmPodcastName(string) {
         this.podcastName = string;
+        useNotificationStore().timeoutIncomeStreamsNotification();
     },
 
     confirmBarChoiceName(string) {
         this.barChoiceName = string;
         //console.log(this.barChoiceName)
+        useNotificationStore().timeoutIncomeStreamsNotification();
     },
 
     confirmSocialMediaUsername(string) {
         this.socialMediaUsername = string;
+        useNotificationStore().timeoutIncomeStreamsNotification();
     },
 
     confirmFreelanceSkill(string) {
         this.freelanceChosenSkill = string;
         //console.log(this.freelanceChosenSkill)
+        useNotificationStore().timeoutIncomeStreamsNotification();
     },
 
     declareMonthlyCostProfit(num, val) {
@@ -511,6 +518,7 @@ export const useNotificationStore = defineStore({
   state: () => ({
     phonePlanNotificationShow: false, 
     emergencyFundNotificationShow: false,
+    incomeStreamsNotificationShow: false,
   }),
   actions: {
     timeoutGameNotification() {
@@ -525,10 +533,17 @@ export const useNotificationStore = defineStore({
     timeoutEmergencyFundNotification() {
       this.emergencyFundNotificationShow = true;
 
-      console.log("yo");
-
       setTimeout(() => {
         this.emergencyFundNotificationShow = false;
+      }, 5000);
+      
+    },
+
+    timeoutIncomeStreamsNotification() {
+      this.incomeStreamsNotificationShow = true;
+
+      setTimeout(() => {
+        this.incomeStreamsNotificationShow = false;
       }, 5000);
       
     }

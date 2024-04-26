@@ -7,21 +7,20 @@
             <IncomeStreamsType v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 5" :icon=5 type="Freelance Work" :name=manageIncomeStreams.freelanceChosenSkill :monthlyIncome=500 :monthlyCost=100></IncomeStreamsType>
             <IncomeStreamsType v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 3" :icon=3 type="Part Time Bar Work" :name=manageIncomeStreams.barChoiceName :monthlyIncome=250 :monthlyCost=0></IncomeStreamsType>
             <div v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 6" class="noincomestreamchosen-component-container">
-            <div class="incomestreams-interactive-title">
-                <h4>Secondary Income Stream</h4>
-            </div>
-            <div class="incomestreams-nochoice-icon">
-                <font-awesome-icon icon="fa-solid fa-ban" />
-            </div>
-            <div class="incomesteams-nochoice-desc">
-                <p>You have chosen to not set up a secondary income stream</p>
-            </div>
-            <div class="incomestreams-interactive-edit-choice setupincomestreams-button">
-                <button @click="manageMainGameNav.navigateToPage(14)">Set Up</button>
+                <div class="incomestreams-interactive-title">
+                    <h4>Secondary Income Stream</h4>
+                </div>
+                <div class="incomestreams-nochoice-icon">
+                    <font-awesome-icon icon="fa-solid fa-ban" />
+                </div>
+                <div class="incomesteams-nochoice-desc">
+                    <p>You have chosen to not set up a secondary income stream</p>
+                </div>
+                <div class="incomestreams-interactive-edit-choice setupincomestreams-button">
+                    <button @click="manageMainGameNav.navigateToPage(14)">Set Up</button>
+                </div>
             </div>
         </div>
-        </div>
-        
     </div>
 </template>
 <script setup>
