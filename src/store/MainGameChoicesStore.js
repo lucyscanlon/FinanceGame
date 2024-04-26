@@ -4,8 +4,8 @@ import { useMoneyManageStore } from './MoneyStore'
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
-    mainGameComponentsUnlocked: 5,
-    currentPage: 15,
+    mainGameComponentsUnlocked: 0,
+    currentPage: 1,
   }),
   actions: {
     navigateToPage(num) {
@@ -253,7 +253,6 @@ export const useHouseDepositChoiceStore = defineStore({
 
             useNotificationStore().timeoutHouseDepositNotification();
 
-            
         }
     }
 })
@@ -522,6 +521,7 @@ export const useNotificationStore = defineStore({
     emergencyFundNotificationShow: false,
     incomeStreamsNotificationShow: false,
     houseDepositNotificationShow: false,
+    investmentBuyStockNotificationShow: false,
   }),
   actions: {
     timeoutGameNotification() {
@@ -556,6 +556,17 @@ export const useNotificationStore = defineStore({
 
       setTimeout(() => {
         this.houseDepositNotificationShow = false;
+      }, 5000);
+      
+    },
+
+    timeoutInvestmentBuyMoreStockNotification() {
+      this.investmentBuyStockNotificationShow = true;
+
+      console.log("hello");
+
+      setTimeout(() => {
+        this.investmentBuyStockNotificationShow = false;
       }, 5000);
       
     },

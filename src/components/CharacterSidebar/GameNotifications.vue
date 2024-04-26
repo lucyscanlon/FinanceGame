@@ -188,6 +188,14 @@ The parent of this component:
             </div>
 
 
+            <!-- Investment portfolio notifications -->
+            <div v-if="((manageMainGameNav.currentPage === 11) || (manageMainGameNav.currentPage === 17)) && manageNotifications.investmentBuyStockNotificationShow === true" class="notifications-padding">
+                        <div class="game-notification-container red-border">
+                            <p>You invested in a stock which has been consistently declining in value</p>
+                        </div>
+            </div>
+
+
 
             <div v-if="(manageMainGameNav.currentPage === 11) && (manageGameTimer.countdown <= 5) && (manageMoney.billsLate === false) && (manageMoney.billsPaid === manageGameTimer.monthsPassed)" class="notifications-padding">
                         <div class="game-notification-container">

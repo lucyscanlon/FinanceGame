@@ -139,7 +139,7 @@
                     <input type="number" placeholder="__" v-model="PSWAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button @click="manageInvestmentPortfolio.buyMoreShare(4, PSWAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock5Value, PSWAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <button @click="manageInvestmentPortfolio.buyMoreShare(4, PSWAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock5Value, PSWAmountToBuyOrSell), rerenderComponent(), manageNotification.timeoutInvestmentBuyMoreStockNotification(), manageBarometer.decreaseScore(10)">Buy</button>
                     <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(4, PSWAmountToBuyOrSell), manageMoney.sellNumOfStocks(manageGameTimer.stock5Value, PSWAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
                     <span class="investing-port-sell-all-button"><button @click="manageMoney.sellAllOfStock(manageGameTimer.stock5Value, manageInvestmentPortfolio.ShareTotalAmounts[4]), manageInvestmentPortfolio.sellAllShare(4), rerenderComponent()">Sell All</button></span>
                 </div>
@@ -206,7 +206,7 @@
 
     import PortfolioLineChart from './PortfolioLineChart.vue'
     import { useInvestmentPortfolioChoiceStore } from '../../../store/MainGameChoicesStore.js'
-    import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import { useMainGameplayNavigationStore, useNotificationStore, useBarometerStore } from '../../../store/MainGameChoicesStore.js'
     import {useGameTimerStore} from '../../../store/MoneyStore.js'
     import { useMoneyManageStore } from '../../../store/MoneyStore'
     
@@ -214,6 +214,8 @@
     const useMainGameplayNav = useMainGameplayNavigationStore();
     const manageGameTimer = useGameTimerStore()
     const manageMoney = useMoneyManageStore()
+    const manageNotification = useNotificationStore()
+    const manageBarometer = useBarometerStore()
 
 </script>
 <script>
