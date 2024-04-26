@@ -34,6 +34,38 @@ The parent of this component:
                 <div class="endpage-stats-title-container">
                     <h4>Your Game Statistics</h4>
                 </div>
+                <div class="endpage-stats-table-container">
+                    <table>
+                        <tr>
+                            <th>In Game Time Span:</th>
+                            <th class="align-right">{{manageGameTimer.TotalTimeSpanOfGame }}</th>
+                        </tr>
+                        <tr>
+                            <th>Bills Paid:</th>
+                            <th class="align-right">{{ manageMoney.billsPaid }}</th>
+                        </tr>
+                        <tr>
+                            <th>Missed Bills</th>
+                            <th class="align-right">{{ manageMoney.totalMissedBills }}</th>
+                        </tr>
+                        <tr>
+                            <th>Current Pension Value:</th>
+                            <th class="align-right colour-green">£{{ Number(managePension.pensionCurrentTotal).toFixed(2)}}</th>
+                        </tr>
+                        <tr>
+                            <th>Predicted Pension Value:</th>
+                            <th class="align-right colour-green">£1,711.84</th>
+                        </tr>
+                        <tr>
+                            <th>Emergency Fund Total:</th>
+                            <th class="align-right colour-green">£{{ Number(manageMoney.emergencyFundCurrentTotal).toFixed(2) }}</th>
+                        </tr>
+                        <tr>
+                            <th>Investment Portfolio Value:</th>
+                            <th class="align-right colour-green">£{{ Number(manageMoney.InvestmentPortfolioCurrentValue).toFixed(2) }}</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
 
         </div>
@@ -43,12 +75,14 @@ The parent of this component:
 
   <script setup>
   
-    import {useBarometerStore} from '../../store/MainGameChoicesStore'
+    import {useBarometerStore, usePensionChoicesStore} from '../../store/MainGameChoicesStore'
+    import {useMoneyManageStore, useGameTimerStore} from '../../store/MoneyStore'
   
     const manageBarometer = useBarometerStore()
+    const manageMoney = useMoneyManageStore()
+    const managePension = usePensionChoicesStore()
+    const manageGameTimer = useGameTimerStore()
       
-  
-  
   </script>
   <script>
       // export component data

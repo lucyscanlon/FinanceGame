@@ -3766,7 +3766,7 @@ box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
   width: 80%;
   margin: 0 auto;
   overflow: auto;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .endpage-responsibilitywheel-container {
@@ -3805,7 +3805,7 @@ margin-bottom: 40px;
 
 .endpage-stats-panel {
   width: 80%;
-  height: 300px;
+  overflow: auto;
   margin-left: 20px;
   border-radius: 20px;
   background-color: rgba(31, 30, 47, 0.8);
@@ -3824,6 +3824,24 @@ margin-bottom: 40px;
   color: white;
   padding-top: 35px;
   font-size: 18px;
+}
+
+.endpage-stats-table-container table {
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-family: unbounded-reg;
+  color: white;
+  font-size: 13px;
+  text-align: left;
+  width: 80%;
+  border-radius: 10px;
+  border-collapse: collapse;
+}
+
+.endpage-stats-table-container th {
+  padding: 12px;
+  
 }
 
 

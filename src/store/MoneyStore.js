@@ -36,6 +36,7 @@ export const useMoneyManageStore = defineStore({
         incomeStreamProfit: 0,
         totalInvested: 0,
         totalProfitOrLoss: 0,
+        totalMissedBills: 0,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -277,6 +278,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         payLateBill() {
+            this.totalMissedBills = this.totalMissedBills + 1;
             this.billsLate = false;
         },
 
@@ -340,10 +342,7 @@ export const useMoneyManageStore = defineStore({
                 return;
             }
             
-        }
-
-
-
+        },
     }
 })
 
@@ -390,6 +389,7 @@ export const useGameTimerStore = defineStore({
         queueFinalGoalsAndPopUps: {},
         investmentOpShown: false,
         chosenToTakeInvestment: false,
+        TotalTimeSpanOfGame: '',
 
     }),
     actions: {
@@ -798,6 +798,18 @@ export const useGameTimerStore = defineStore({
             console.log("day: " + this.queueAfterInvestmentOpPopUp.day);
             console.log("month: " + this.queueAfterInvestmentOpPopUp.month);
             console.log("year: " + this.queueAfterInvestmentOpPopUp.year);
+        },
+
+        calculateTotalInGameTimeSpan() {
+            let totalYears = this.currentYear - 2023;
+            let totalMonths = this.monthsPassed%12;
+            let totalDays = (30 - this.countdown);
+
+            if(totalYears > 0) {
+                this.TotalTimeSpanOfGame = totalYears + ' Years, ' + totalMonths + ' Months, ' + totalDays + ' Days';
+            } else {
+                this.TotalTimeSpanOfGame = totalMonths + ' Months, ' + totalDays + ' Days';
+            }
         }
 
 
