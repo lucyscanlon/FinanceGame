@@ -14,7 +14,7 @@ The parent of this component:
     import {supermarketChoiceStore} from '../../store/InitialGameChoicesStore.js'
     import {transportChoiceStore} from '../../store/InitialGameChoicesStore.js'
     import {useNotificationStore } from '../../store/MainGameChoicesStore.js'
-    import {usePopUpStore, useEmergencyFundChoicesStore, useIncomeStreamsChoicesStore } from '../../store/MainGameChoicesStore.js'
+    import {usePopUpStore, useEmergencyFundChoicesStore, useIncomeStreamsChoicesStore, useHouseDepositChoiceStore } from '../../store/MainGameChoicesStore.js'
 
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageGameTimer = useGameTimerStore()
@@ -28,6 +28,7 @@ The parent of this component:
     const managePopUps = usePopUpStore()
     const manageEmergencyFund = useEmergencyFundChoicesStore()
     const manageIncomeStreams = useIncomeStreamsChoicesStore()
+    const manageHouseDeposit = useHouseDepositChoiceStore()
 
 </script>
 <template>
@@ -169,6 +170,22 @@ The parent of this component:
                         </div>
             </div>
 
+            <!-- House Deposit Notifications -->
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.houseDepositNotificationShow === true && manageHouseDeposit.chosenHouseDepositChoice === 1" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You chose a house deposit option with a great bonus</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.houseDepositNotificationShow === true && manageHouseDeposit.chosenHouseDepositChoice === 2" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You chose a house deposit option with a good bonus</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.houseDepositNotificationShow === true && manageHouseDeposit.chosenHouseDepositChoice === 3" class="notifications-padding">
+                        <div class="game-notification-container red-border">
+                            <p>You missed out on great perks for your house deposit account</p>
+                        </div>
+            </div>
 
 
 
