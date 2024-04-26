@@ -17,7 +17,7 @@
                 <p>Cost: <span class="colour-green">£1500</span></p>
             </div>
             <div class="popup-phonebill-button workdrinks-button">
-                <button @click="manageMainGameNav.navigateToPage(11), managePopUps.brokenLaptopChoice(1), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="manageMainGameNav.navigateToPage(11), managePopUps.brokenLaptopChoice(1), manageGameTimer.startCountdown(), manageBarometer.decreaseScore(10)">Choose</button>
             </div>
         </div>
         <div class="popup-work-drinks-flex-container investmentop-flex">
@@ -31,7 +31,7 @@
                 <p>Cost: <span class="colour-green">£1500</span></p>
             </div>
             <div class="popup-phonebill-button workdrinks-button">
-                <button @click="manageMainGameNav.navigateToPage(11), managePopUps.brokenLaptopChoice(2), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="manageMainGameNav.navigateToPage(11), managePopUps.brokenLaptopChoice(2), manageGameTimer.startCountdown(), manageBarometer.decreaseScore(15)">Choose</button>
             </div>
         </div>
     </div>
@@ -39,12 +39,13 @@
 <script setup>
 
 import { usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
-import { useMainGameplayNavigationStore } from "../../../../store/MainGameChoicesStore.js";
+import { useMainGameplayNavigationStore, useBarometerStore } from "../../../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../../../store/MoneyStore.js";
 
 const managePopUps = usePopUpStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
+const manageBarometer = useBarometerStore()
 
 </script>
 <script>

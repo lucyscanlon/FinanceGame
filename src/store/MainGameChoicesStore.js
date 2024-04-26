@@ -5,7 +5,7 @@ export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
     mainGameComponentsUnlocked: 0,
-    currentPage: 18,
+    currentPage: 1,
   }),
   actions: {
     navigateToPage(num) {
@@ -354,7 +354,7 @@ export const useGoalsStore = defineStore({
 export const usePopUpStore = defineStore({
   id: 'PopUpStore',
   state: () => ({
-    currentPopUp: 6,
+    currentPopUp: 0,
     phonePlanChoice: 0,
     holidayChoice: 0,
   }),
