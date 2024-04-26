@@ -13,6 +13,8 @@ The parent of this component:
     import {registerLivingOptionChoiceStore} from '../../store/InitialGameChoicesStore.js'
     import {supermarketChoiceStore} from '../../store/InitialGameChoicesStore.js'
     import {transportChoiceStore} from '../../store/InitialGameChoicesStore.js'
+    import {useNotificationStore } from '../../store/MainGameChoicesStore.js'
+    import {usePopUpStore, useEmergencyFundChoicesStore} from '../../store/MainGameChoicesStore.js'
 
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageGameTimer = useGameTimerStore()
@@ -22,6 +24,9 @@ The parent of this component:
     const manageLiving = registerLivingOptionChoiceStore()
     const manageSupermarket = supermarketChoiceStore()
     const manageTransport = transportChoiceStore()
+    const manageNotifications = useNotificationStore()
+    const managePopUps = usePopUpStore()
+    const manageEmergencyFund = useEmergencyFundChoicesStore()
 
 </script>
 <template>
@@ -102,13 +107,49 @@ The parent of this component:
                         </div>
 
             </div>
-            <div v-if="(manageMainGameNav.currentPage === 11) && (manageGameTimer.countdown <= 5) && (manageMoney.billsLate === false) && (manageMoney.billsPaid === manageGameTimer.monthsPassed)" class="notifications-padding">
+            <!-- phone plan choice notifications -->
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.phonePlanNotificationShow === true && managePopUps.phonePlanChoice === 1" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You chose a phone plan with no up front cost</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.phonePlanNotificationShow === true && managePopUps.phonePlanChoice === 2" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You chose a phone plan with a low monthly cost</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.phonePlanNotificationShow === true && managePopUps.phonePlanChoice === 3" class="notifications-padding">
                         <div class="game-notification-container red-border">
+                            <p>You chose a phone plan with a high monthly cost</p>
+                        </div>
+            </div>
+
+            <!-- Emergency fund notifications -->
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.emergencyFundNotificationShow === true && manageEmergencyFund.chosenEmergencyFundChoice.EmergFName === 'High Interest Savings Account'" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>Your emergency fund is accessible and has a high interest rate</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.emergencyFundNotificationShow === true && manageEmergencyFund.chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account'" class="notifications-padding">
+                        <div class="game-notification-container red-border">
+                            <p>Your emergency fund cannot be accessed for a year. You never know when an emergency will occur.</p>
+                        </div>
+            </div>
+            <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.emergencyFundNotificationShow === true && manageEmergencyFund.chosenEmergencyFundChoice.EmergFName === 'Regular Savings Account'" class="notifications-padding">
+                        <div class="game-notification-container red-border">
+                            <p>You missed out on an account for your emergency fund with a higher interest rate</p>
+                        </div>
+            </div>
+
+
+
+            <div v-if="(manageMainGameNav.currentPage === 11) && (manageGameTimer.countdown <= 5) && (manageMoney.billsLate === false) && (manageMoney.billsPaid === manageGameTimer.monthsPassed)" class="notifications-padding">
+                        <div class="game-notification-container">
                             <p>Your bills are due!</p>
                         </div>
             </div>
             <div v-if="(manageMainGameNav.currentPage === 11) && (manageMoney.billsLate === true)" class="notifications-padding">
-                        <div class="game-notification-container">
+                        <div class="game-notification-container red-border">
                             <p>Your bills are late!</p>
                         </div>
             </div>
@@ -144,6 +185,7 @@ export default {
     data() {
         return {
             currentPageVar: useMainGameplayNavigationStore().currentPage,
+            showNotification: true,
         }
     },
     watch: {
@@ -152,6 +194,6 @@ export default {
                 console.log("watched")
             }
         }
-    }
+    },
 }
 </script>

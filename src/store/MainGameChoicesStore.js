@@ -138,6 +138,7 @@ export const useEmergencyFundChoicesStore = defineStore({
       } else if (this.chosenEmergencyFundChoice.EmergFName === 'Regular Savings Account') {
         useBarometerStore().decreaseScore(10);
       }
+
     },
   },
 });
@@ -502,5 +503,34 @@ export const useBarometerStore = defineStore({
 
     }
 
+  }
+})
+
+export const useNotificationStore = defineStore({
+  id: "notificationStore",
+  state: () => ({
+    phonePlanNotificationShow: false, 
+    emergencyFundNotificationShow: false,
+  }),
+  actions: {
+    timeoutGameNotification() {
+      this.phonePlanNotificationShow = true;
+
+      setTimeout(() => {
+        this.phonePlanNotificationShow = false;
+      }, 5000);
+      
+    },
+
+    timeoutEmergencyFundNotification() {
+      this.emergencyFundNotificationShow = true;
+
+      console.log("yo");
+
+      setTimeout(() => {
+        this.emergencyFundNotificationShow = false;
+      }, 5000);
+      
+    }
   }
 })
