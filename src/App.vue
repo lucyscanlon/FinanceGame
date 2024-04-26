@@ -2,15 +2,19 @@
   <div v-if="manageMainGameNav.currentPage === -1" class="startingpage-whole-container">
     <StartingPage></StartingPage>
   </div>
-  <div v-if="manageMainGameNav.currentPage >= 0" class="wholegame-wrapper">
+  <div v-if="(manageMainGameNav.currentPage >= 0) && (manageMainGameNav.currentPage < 19)" class="wholegame-wrapper">
     <CharacterStatsSidebarWrapper></CharacterStatsSidebarWrapper>
     <MainGameWrapper></MainGameWrapper>
+  </div>
+  <div v-if="manageMainGameNav.currentPage === 19" class="startingpage-whole-container">
+    <EndingPage></EndingPage>
   </div>
 </template>
 <script setup>
   import MainGameWrapper from './components/MainGame/MainGame.vue'
   import CharacterStatsSidebarWrapper from './components/CharacterSidebar/CharacterStatsSidebar.vue'
   import StartingPage from './components/StartEndPages/StartPage.vue'
+  import EndingPage from './components/StartEndPages/EndPage.vue'
 
   import {useMainGameplayNavigationStore} from './store/MainGameChoicesStore'
 
@@ -25,6 +29,7 @@ export default {
     MainGameWrapper,
     CharacterStatsSidebarWrapper,
     StartingPage,
+    EndingPage,
   }
 }
 </script>
