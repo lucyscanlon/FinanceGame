@@ -1,8 +1,8 @@
 <template>
-  <div class="startingpage-whole-container">
-    <StartingPage v-if="manageMainGameNav.currentPage < 1"></StartingPage>
+  <div v-if="manageMainGameNav.currentPage === -1" class="startingpage-whole-container">
+    <StartingPage></StartingPage>
   </div>
-  <div v-if="manageMainGameNav.currentPage >= 1" class="wholegame-wrapper">
+  <div v-if="manageMainGameNav.currentPage >= 0" class="wholegame-wrapper">
     <CharacterStatsSidebarWrapper></CharacterStatsSidebarWrapper>
     <MainGameWrapper></MainGameWrapper>
   </div>

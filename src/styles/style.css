@@ -3641,13 +3641,13 @@ box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
 .startingpage-play-button {
   width: 50%;
   float: left;
-  height: 200px;
+  overflow: auto;
 }
 
 .startingpage-howtoplay-button {
   width: 50%;
   float: right;
-  height: 200px;
+  overflow: auto;
 }
 
 .startingpage-play-circle {
@@ -3732,6 +3732,15 @@ box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
   line-height: 1.3em;
   padding-top: 10px;
   padding-right: 9px;
+}
+
+.welcomepage-padding {
+  padding-top: 0px;
+}
+
+.welcomepage-button button {
+  width: 200px;
+  
 }
 
 

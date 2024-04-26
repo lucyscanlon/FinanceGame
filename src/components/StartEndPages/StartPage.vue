@@ -16,7 +16,7 @@ The parent of this component:
     </div>
     <div class="startingpage-buttons-container">
       <div class="startingpage-play-button">
-        <div class="startingpage-play-circle">
+        <div @click="manageMainNav.navigateToPage(0)" class="startingpage-play-circle">
           <p><font-awesome-icon icon="fa-solid fa-play" /></p>
         </div>
         <div class="startingpage-play-text">
@@ -37,6 +37,10 @@ The parent of this component:
    
 </template>
 <script setup>
+
+  import {useMainGameplayNavigationStore} from '../../store/MainGameChoicesStore'
+
+  const manageMainNav = useMainGameplayNavigationStore()
     
 
 

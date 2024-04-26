@@ -25,6 +25,7 @@ Components:
         </p>
       </div>
     </div>
+    <WelcomePage v-if="manageMainGameNav.currentPage === 0"></WelcomePage>
     <!-- display component dependant on the stage of game - located in the initialgamechoicesstore-->
     <salaryAndTaxInfoDisplay v-if="manageMainGameNav.currentPage === 1"></salaryAndTaxInfoDisplay>
     <currentAccountIntroduction v-if="manageMainGameNav.currentPage === 2"></currentAccountIntroduction>
@@ -107,6 +108,7 @@ import InvestmentPortfolioFull from "./MainGameplayComponents/InvestingPortfolio
 import CurrentGoalInteractiveComponent from "./MainGameplayComponents/CurrentGoalComponent.vue";
 import CurrentGoalIntroduction from "./InformationPages/CurrentGoalIntroduction.vue";
 import PopUpComponent from "./MainGameplayComponents/PopUpsComponent.vue";
+import WelcomePage from "./InformationPages/WelcomePage.vue";
 // export component data
 export default {
   name: "MainGameWrapper",
