@@ -11,21 +11,34 @@ The parent of this component:
     </div>
     <div class="endpage-content-container">
         <div class="endpage-responsibilitywheel-container">
-            <div class="endpage-wheel-panel">
-                <div :class="manageBarometer.glowColour" class="responsibility-barometer-wrapper">
-                    <div class="barometer-pie-container">
-                        <img class="wheelimage" src="/wheelColours.PNG"/>
-                        <div class="arrow-rotated-container">
-                            <img :style="{ transform: 'rotate(' + manageBarometer.arrowRotation + 'deg)' }" class="arrow" src="/Arrow2.PNG">
+            <div class="endpage-wheel-padding">
+                <div class="endpage-wheel-panel">
+                    <div :class="manageBarometer.glowColour" class="responsibility-barometer-wrapper">
+                        <div class="barometer-pie-container">
+                            <img class="wheelimage" src="/wheelColours.PNG"/>
+                            <div class="arrow-rotated-container">
+                                <img :style="{ transform: 'rotate(' + manageBarometer.arrowRotation + 'deg)' }" class="arrow" src="/Arrow2.PNG">
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="responsibility-score">
+                        <p>Final Responsibility Score: <span :class="manageBarometer.scoreColor">{{ manageBarometer.barometerScore }}%</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="endpage-button-padding">
+                <div class="endpage-playagain-container">
+                    <div class="endpage-playagain-button-container">
+                        <div @click="manageGameNav.navigateToPage(0)" class="endpage-playagain-circle">
+                            <p><font-awesome-icon icon="fa-solid fa-play" /></p>
                         </div>
-                    </div> 
-                    
-    
+                        <div class="endpage-playagain-text">
+                            <p @click="manageGameNav.navigateToPage(0)">Play Again</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="responsibility-score">
-                <p>Final Responsibility Score: <span :class="manageBarometer.scoreColor">{{ manageBarometer.barometerScore }}%</span></p>
-            </div>
-    </div>
+            
         </div>
         <div class="endpage-stats-container">
             <div class="endpage-stats-panel">
@@ -70,16 +83,7 @@ The parent of this component:
         
 
     </div>
-    <div class="endpage-playagain-container">
-            <div class="endpage-playagain-button-container">
-            <div @click="manageGameNav.navigateToPage(0)" class="endpage-playagain-circle">
-                <p><font-awesome-icon icon="fa-solid fa-play" /></p>
-            </div>
-            <div class="endpage-playagain-text">
-                <p @click="manageGameNav.navigateToPage(0)">Play Again</p>
-            </div>
-        </div>
-        </div>
+    
 </template>
 
   <script setup>

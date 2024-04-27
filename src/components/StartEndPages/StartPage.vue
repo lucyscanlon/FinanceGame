@@ -24,14 +24,6 @@ The parent of this component:
         </div>
 
       </div>
-      <div class="startingpage-howtoplay-button">
-        <div class="startingpage-howtoplay-circle">
-          <p><font-awesome-icon icon="fa-solid fa-question" /></p>
-        </div>
-        <div class="startingpage-howtoplay-text">
-          <p>How to play</p>
-        </div>
-      </div>
     </div>
   </div>
    

@@ -3640,7 +3640,7 @@ box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
 
 .startingpage-play-button {
   width: 50%;
-  float: left;
+  margin: 0 auto;
   overflow: auto;
 }
 
@@ -3653,10 +3653,9 @@ box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
 .startingpage-play-circle {
   width: 70px;
   height: 70px;
+  margin: 0 auto;
   border: solid white 2px;
   border-radius: 100px;
-  float: right;
-  margin-right: 50px;
   transition-duration: 1s;
 }
 
@@ -3666,8 +3665,8 @@ box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
   border: solid white 2px;
   border-radius: 100px;
   float: left;
-  margin-left: 50px;
   transition-duration: 1s;
+  text-align: center;
 }
 
 .startingpage-play-circle p {
@@ -3676,15 +3675,6 @@ box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
   font-size: 34px;
   padding-top: 17px;
   padding-left: 5px;
-  transition-duration: 1s;
-}
-
-.startingpage-howtoplay-circle p {
-  text-align: center;
-  color: white;
-  font-size: 34px;
-  padding-top: 17px;
-  padding-left: 0px;
   transition-duration: 1s;
 }
 
@@ -3713,26 +3703,15 @@ box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
 
 .startingpage-play-text {
   width: 92%;
-  float: left;
+  margin: 0 auto;
   font-family: unbounded-reg;
   color: white;
   font-size: 13px;
-  text-align: left;
+  text-align: center;
   line-height: 1.3em;
   padding-top: 10px;
 }
 
-.startingpage-howtoplay-text {
-  width: 90%;
-  float: right;
-  font-family: unbounded-reg;
-  color: white;
-  font-size: 13px;
-  text-align: right;
-  line-height: 1.3em;
-  padding-top: 10px;
-  padding-right: 9px;
-}
 
 .welcomepage-padding {
   padding-top: 0px;
@@ -3773,6 +3752,11 @@ box-shadow: 0px 2px 32px -1px rgba(125,171,61,1);
   width: 50%;
   overflow: auto;
   float: left;
+}
+
+.endpage-button-padding {
+  width: 100%;
+  overflow: auto;
 }
 
 .endpage-stats-container {
@@ -3844,6 +3828,11 @@ margin-bottom: 40px;
   
 }
 
+.endpage-wheel-padding {
+  width: 100%;
+  overflow: auto;
+}
+
 .endpage-playagain-button-container {
   width: 90px;
   margin: 0 auto;
@@ -3892,8 +3881,8 @@ margin-bottom: 40px;
 }
 
 .endpage-playagain-container {
-  width: 50%;
-  margin: 0 auto;
+  width: 420px;
+  float: right;
 }
 
 
