@@ -22,7 +22,7 @@ The parent of this component:
             </div>
             <div class="rentinfo-button-wrapper first-goal-button-padding">
                 <!-- Call store method on click -->
-                <button @click="manageMainGameNav.navigateToPage(11), manageMainGameNav.unlockComponent(), manageGameTimer.startCountdown()" class="rentinfo-button">Continue to main game</button>
+                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageMainGameNav.unlockComponent(), manageGameTimer.startCountdown()" class="rentinfo-button">Continue to main game</button>
             </div>
         </div>
     </div>
@@ -31,9 +31,11 @@ The parent of this component:
     // import stores
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
     import { useGameTimerStore } from '../../../store/MoneyStore.js'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
     
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageGameTimer = useGameTimerStore()
+    const manageSound = useSoundEffectsStore()
 
 </script>
 <script>

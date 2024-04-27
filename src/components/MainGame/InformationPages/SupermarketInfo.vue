@@ -21,7 +21,7 @@ The parent of this component:
             </div>
             <div class="rentinfo-button-wrapper">
                 <!-- Call store method on click -->
-                <button @click="manageMainGameNav.navigateToPage(6)" class="rentinfo-button">View Supermarket Options</button>
+                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(6)" class="rentinfo-button">View Supermarket Options</button>
             </div>
         </div>
     </div>
@@ -29,8 +29,10 @@ The parent of this component:
 <script setup>
     // import stores
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
     
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageSound = useSoundEffectsStore()
 </script>
 <script>
     // export component data

@@ -11,7 +11,12 @@ export const useSoundEffectsStore = defineStore({
             audio.play();
         },
         playClickSound() {
-            const audio = new Audio("./click3.mp3");
+            const audio = new Audio("./click4.mp3");
+            audio.play();
+        },
+
+        playBillsDue() {
+            const audio = new Audio("./BillsDue.mp3");
             audio.play();
         },
     }

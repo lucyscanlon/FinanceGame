@@ -435,6 +435,10 @@ export const useGameTimerStore = defineStore({
                             }
                         }
 
+                        if(this.countdown === 5) {
+                            useSoundEffectsStore().playBillsDue()
+                        }
+
                         // add pension automatically with each payday
                         // pension total = pension total + (salary before tax * player tax contribution)
                     }
