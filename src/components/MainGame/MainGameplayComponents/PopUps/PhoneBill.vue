@@ -3,7 +3,7 @@
         <h1><font-awesome-icon icon="fa-solid fa-phone" />Choose a phone plan</h1>
     </div> 
     <div class="popup-description-container">
-        <p>Choose a phone plan from the options below. Charges may be added to your monthly outgoings.</p>
+        <p>Choose a phone plan from the options below. Charges will be added to your monthly outgoings.</p>
     </div>
     <div class="popup-phonebill-options-container">
         <div class="popup-phonebill-flex-container">

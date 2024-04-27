@@ -90,7 +90,7 @@ The parent of this component:
                             <p>You chose an expensive supermarket</p>
                         </div>
                         <div v-if="manageSupermarket.chosenSupermarketInfo.SMName === 'Swiftbite Delivery'" class="game-notification-container red-border">
-                            <p>You chose a very expensive supermarket</p>
+                            <p>You chose a very expensive fast food delivery service instead of a supermarket</p>
                         </div>
                         <div v-if="manageSupermarket.chosenSupermarketInfo.SMName === 'Weekly Mart Deliveries'" class="game-notification-container red-border">
                             <p>You chose an affordable supermarket</p>
@@ -234,7 +234,7 @@ The parent of this component:
                 <button>Pay monthly outgoings</button>
         </div>
 
-        <!-- Buttons for the rest of gameplay-->
+        <!-- Buttons for the rest of gameplay - paying bills on time -->
         <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1)" class="pay-monthly-outgoings-container">
                 <button @click="manageMoney.payMonthlyOutgoings(), manageBarometer.increaseScore(2)">Pay monthly outgoings</button>
         </div>

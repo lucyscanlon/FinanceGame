@@ -17,7 +17,7 @@
                 <p>Cost: <span class="colour-green">£1500</span></p>
             </div>
             <div class="popup-phonebill-button workdrinks-button">
-                <button @click="manageMainGameNav.navigateToPage(11), managePopUps.brokenLaptopChoice(1), manageGameTimer.startCountdown(), manageBarometer.decreaseScore(10)">Choose</button>
+                <button @click="manageMainGameNav.navigateToPage(11), managePopUps.brokenLaptopChoice(1), manageGameTimer.startCountdown(), manageBarometer.increaseScore(10)">Choose</button>
             </div>
         </div>
         <div class="popup-work-drinks-flex-container investmentop-flex">

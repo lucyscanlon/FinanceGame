@@ -16,7 +16,7 @@ The parent of this component:
                             <p>Rent: <span class="colour-white">£{{rent}}pm</span></p>
                             <!-- Call component method -->
                             <p>Commute: <span class="colour-white">£{{ commuteDisplay(commute)}}</span></p>
-                            <p>Deposit: <span class="colour-white">£{{deposit}}</span></p>
+                            <p>Deposit: <span class="colour-white">£{{Number(deposit).toFixed(2)}}</span></p>
                         </div>
                     </div>
                     <!-- Call store methods on click -->
