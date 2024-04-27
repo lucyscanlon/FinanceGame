@@ -18,12 +18,12 @@
             <div class="pension-interactive-left">
                 <p>Your contribution:</p>
                 <p>Employer contribution:</p>
-                <p>FTSE Value:</p>
+                <p>Investment Value: </p>
             </div>
             <div class="pension-interactive-right">
                 <p>{{managePension.chosenPensionChoice.YContPercentage}}%</p>
                 <p>{{managePension.chosenPensionChoice.EContPercentage}}%</p>
-                <p>{{managePension.chosenPensionChoice.FTSEValue}}</p>
+                <p>{{Number(managePension.investmentValue).toFixed(0) }}%</p>
             </div>
         </div>
         <div class="pension-interactive-total-container">

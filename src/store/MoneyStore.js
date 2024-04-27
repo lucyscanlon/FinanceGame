@@ -445,6 +445,7 @@ export const useGameTimerStore = defineStore({
                     this.increaseMonth()
                     this.checkIfBillsAreLate()
                     this.resetCountdown()
+                    this.addReturnOnInvestmentsToPension()
                 }
             }, 200)
         }, 
@@ -825,6 +826,16 @@ export const useGameTimerStore = defineStore({
             this.calculateTotalInGameTimeSpan()
             useMainGameplayNavigationStore().navigateToPage(19)
         },
+
+        addReturnOnInvestmentsToPension() {
+            if((this.monthsPassed % 3) === 0) {
+                let investmentsPerc = usePensionChoicesStore().investmentValue / 100;
+                usePensionChoicesStore().pensionCurrentTotal = ((usePensionChoicesStore().pensionCurrentTotal) * (investmentsPerc))
+
+                usePensionChoicesStore().investmentValue = Number(((Math.random() * 10) + 100)).toFixed(2);
+            }
+
+        }
 
 
     }

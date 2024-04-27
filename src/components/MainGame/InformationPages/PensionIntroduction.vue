@@ -53,13 +53,14 @@ The parent of this component:
                 </div>
             </div>
             <div :class="currentSlide !== 3 && 'pensionSlideInactive'" class="pension-slidecontainer">
-                <p>What are the benefits of investing your pension?</p>
+                <p>How to get the most of your pension</p>
                 <div class="rentintro-list pensionintro pensionslideactive">
                     <ul>
-                        <li>Investing is a great way to help counteract the impact of <span class="colour-green">inflation</span> (the increase of prices and costs) over time on your savings.</li>
-                        <li>You are also able to benefit from <span class="colour-green">compound interest</span>. When you recieve a return from an investment, this is then able to be reinvested to continue making more money. Compound interest can have a large effect on your pension over your life.</li>
-                        <li>If investment values fall, they do tend to increase again over time.</li>
-                        <li>Whilst investment value can <span class="colour-green">never be guaranteed</span>, there are investment options which are deemed as safer options such as the <span class="colour-green">FTSE 100</span>, a share index of the top 100 companies listed in the UK in terms of their value.</li>
+                        <li>Pensions are <span class="colour-green">invested</span> in funds which are used by the government for a range of financial assets.</li>
+                        <li>Your pension <span class="colour-green">value</span> depends on the value of what it is invested in.</li>
+                        <li>Pensions tend to drastically <span class="colour-green">out perform</span> regular high interest savings accounts in terms of returning value.</li>
+                        <li>Pensions will naturally <span class="colour-green">rise and fall</span> in value over time. However, as pensions are a long time investment, the overall value of a pension tends to increase</li>
+                        <li>You are also able to benefit from <span class="colour-green">compound interest.</span> For example, your return on investment will be able to be reinvested and make even more money each year.</li>
                     </ul>
                 </div>
             </div>
@@ -72,23 +73,10 @@ The parent of this component:
                     <PensionChoiceFlexbox :PensionIdentifier=3 :PensionYCPerc=8 :PensionYCAmount=161.94 :PensionECPerc=4.5 :PensionECAmount=91.09 :PensionTCPerc=12.5 :PensionTCAmount=253.03></PensionChoiceFlexbox>
                 </div>
                 <div class="pension-contribution-button-container">
-                        <button v-if="manageMainGameNav.currentPage === 8" @click="managePension.confirmCurrentlySelectedPensionChoice(), nextSlide()">Confirm Choice</button>
-                        <button v-if="manageMainGameNav.currentPage === 9" @click="managePension.confirmCurrentlySelectedPensionChoice(), nextSlide()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 9" @click="managePension.confirmCurrentlySelectedPensionChoice(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageMainGameNav.unlockComponent()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 10" @click="managePension.confirmCurrentlySelectedPensionChoice(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Confirm Choice</button>
                  </div>
                 </div>
-            </div>
-            <div :class="currentSlide !== 5 && 'pensionSlideInactive'" class="pension-slidecontainer">
-                <p>Would you like to invest your pension in stocks and shares?</p>
-                <div class="pension-investment-container-padding">
-                <div class="pension-investment-container">
-                    <PensionInvestmentFlexbox :PensionInvIndentifier=1 PensionInvDesc="Do not invest pension."></PensionInvestmentFlexbox>
-                    <PensionInvestmentFlexbox :PensionInvIndentifier=2 PensionInvDesc="Invest pension in:"></PensionInvestmentFlexbox>
-                </div>
-                <div class="pension-contribution-button-container">
-                        <button v-if="manageMainGameNav.currentPage === 8" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), nextSlide(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Confirm Choice</button>
-                        <button v-if="manageMainGameNav.currentPage === 9" @click="managePension.confirmCurrentlySelectedPensionInvestmentChoice(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageMainGameNav.unlockComponent()">Confirm Choice</button>
-                 </div>
-            </div>
             </div>
             <div class="previous-next-container">
                 <div class="previous-container">
@@ -112,13 +100,11 @@ The parent of this component:
 <script>
 
     import PensionChoiceFlexbox from '../MainGameChoices/PensionChoicesFlexbox';
-    import PensionInvestmentFlexbox from '../MainGameChoices/PensionInvestmentChoiceFlexbox';
     // export component data
     export default {
       name: 'PensionInformationDisplay',
       components: {
         PensionChoiceFlexbox,
-        PensionInvestmentFlexbox,
       },
       props: {
         startingSlide: Number,

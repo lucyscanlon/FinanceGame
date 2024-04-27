@@ -5,7 +5,7 @@ export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
     mainGameComponentsUnlocked: 0,
-    currentPage: -1,
+    currentPage: 1,
   }),
   actions: {
     navigateToPage(num) {
@@ -27,12 +27,8 @@ export const usePensionChoicesStore = defineStore({
     currentlySelectedPensionChoice: [],
     chosenPensionChoice: [],
 
-    SelectedActivePensionInvestmentChoice: 0,
-    currentlySelectedPensionInvestmentChoice: 0,
-    chosenPensionInvestmentChoice: 0,
-
     pensionCurrentTotal: 0,
-    FTSEValue: 1.73,
+    investmentValue: 102,
   }),
   actions: {
     changeSelectedPensionChoice(num) {
@@ -71,21 +67,6 @@ export const usePensionChoicesStore = defineStore({
       } else if (this.chosenPensionChoice.YContPercentage === 8) {
         useBarometerStore().increaseScore(12);
       }
-    },
-
-    changeSelectedPensionInvestmentChoice(num) {
-      this.SelectedActivePensionInvestmentChoice = num;
-    },
-
-    updateCurrentlySelectedPensionInvestmentChoice(PIIdentifier) {
-      this.currentlySelectedPensionInvestmentChoice = PIIdentifier;
-    },
-
-    confirmCurrentlySelectedPensionInvestmentChoice() {
-      this.chosenPensionInvestmentChoice =
-        this.currentlySelectedPensionInvestmentChoice;
-
-      //console.log("Chosen pension choice: " + this.chosenPensionInvestmentChoice);
     },
 
     addContributionToPension(salaryBeforeTax, contributionPerc) {
