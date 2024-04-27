@@ -40,11 +40,14 @@ export const useMoneyManageStore = defineStore({
     }),
     actions: {
         increasePocketMoney(val) {
-            this.moneyInPocket = this.moneyInPocket + val;
+            this.moneyInPocket = this.moneyInPocket + Number(val);
         },
 
         decreasePocketMoney(val) {
-            this.moneyInPocket = this.moneyInPocket - val;
+            console.log(this.moneyInPocket)
+            console.log(val)
+            console.log(typeof val)
+            this.moneyInPocket = this.moneyInPocket - Number(val);
         },
 
         increaseMonthlyOutGoings(val) {

@@ -28,7 +28,7 @@ The parent of this component:
                 <p>£{{registerLivingChoice.selectedLivingOptionInfo.commutePrice}}</p>
             </div>
         </div>
-        <button @click="manageMainGameNav.navigateToPage(4)" className="moveout-button">Move Out</button>
+        <button @click="manageMainGameNav.navigateToPage(19)" className="moveout-button">Move Out</button>
         <hr />
     </div>
 </template>

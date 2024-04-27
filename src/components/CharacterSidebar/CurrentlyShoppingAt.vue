@@ -29,7 +29,7 @@ The parent of this component:
             </div>
         </div>
         <div class="currentlyshopping-wrap">
-            <button @click="manageMainGameNav.navigateToPage(6)" className="moveout-button">Change</button>
+            <button @click="manageMainGameNav.navigateToPage(20)" className="moveout-button">Change</button>
         </div>
         <hr />
     </div>

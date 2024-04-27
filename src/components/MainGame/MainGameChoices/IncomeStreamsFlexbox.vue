@@ -5,7 +5,7 @@ The parent of this component:
 
 -->
 <template>
-    <div :class="(manageIncomeStream.selectedIncomeStreamChoice === Identifier) ? 'pension-active' : ''" @click="manageIncomeStream.changeSelectedIncomeStream(Identifier), manageIncomeStream.updateCurrentlySelectedIncomeStreamChoice(Identifier, Name, Hours, SetUpCost, MonthlyIncome, MonthlyCost, ExpansionPotential)" class="incomestreams-choice">
+    <div :class="(manageIncomeStream.selectedIncomeStreamChoice === Identifier) ? 'pension-active' : ''" @click="manageIncomeStream.changeSelectedIncomeStream(Identifier), manageIncomeStream.updateCurrentlySelectedIncomeStreamChoice(Identifier, Name, SetUpCost, MonthlyIncome, MonthlyCost)" class="incomestreams-choice">
             <div v-if="Identifier === 1" class="incomestreams-icon-container">
                 <font-awesome-icon icon="fa-solid fa-shop" />
             </div>

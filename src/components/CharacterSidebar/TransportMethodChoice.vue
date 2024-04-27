@@ -23,7 +23,7 @@ The parent of this component:
             <h5>Cost: <span class="colour-green">£{{ manageTransport.chosenTransportChoice.TTotal }}</span></h5>
         </div>
         <div class="currentlyshopping-wrap">
-            <button @click="manageMainGameNav.navigateToPage(7)" className="moveout-button">Change</button>
+            <button @click="manageMainGameNav.navigateToPage(21)" className="moveout-button">Change</button>
         </div>
         <hr />
     </div>
