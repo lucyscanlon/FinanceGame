@@ -5,7 +5,7 @@ export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
     mainGameComponentsUnlocked: 0,
-    currentPage: -1,
+    currentPage: 13,
   }),
   actions: {
     navigateToPage(num) {
@@ -162,15 +162,13 @@ export const useIncomeStreamsChoicesStore = defineStore({
       this.selectedIncomeStreamChoice = num;
     },
 
-    updateCurrentlySelectedIncomeStreamChoice(identifier, name, hours, setupcost, monthlyincome, monthlycost, expansionpotential) {
+    updateCurrentlySelectedIncomeStreamChoice(identifier, name, setupcost, monthlyincome, monthlycost) {
       this.currentlySelectedIncomeStreamChoice = {
         ISidentifier: identifier,
         ISname: name, 
-        IShours: hours,
         ISsetupcost: setupcost,
         ISmonthlyincome: monthlyincome,
         ISmonthlycost: monthlycost,
-        ISexpansionpotential: expansionpotential,
       }
 
       console.log(this.currentlySelectedIncomeStreamChoice)

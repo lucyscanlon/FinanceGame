@@ -1,7 +1,7 @@
 <template>
     <div class="maingameplay-flex-container">
         <div v-if="manageMainGameNav.mainGameComponentsUnlocked > 3" class="incomestreams-content-container">
-            <IncomeStreamsType v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 1" :icon=1 type="Your Online Shop" :name=manageIncomeStreams.onlineStoreName :monthlyCost=250 :monthlyIncome=400></IncomeStreamsType>
+            <IncomeStreamsType v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 1" :icon=1 type="Your Online Shop" :name=manageIncomeStreams.onlineStoreName :monthlyCost=250 :monthlyIncome=400 :SetUpCost=50></IncomeStreamsType>
             <IncomeStreamsType v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 2" :icon=2 type="Your Podcast" :name=manageIncomeStreams.podcastName :monthlyIncome=250 :monthlyCost=50></IncomeStreamsType>
             <IncomeStreamsType v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 4" :icon=4 type="Your Social Media" :name=manageIncomeStreams.socialMediaUsername :monthlyIncome=350 :monthlyCost=0></IncomeStreamsType>
             <IncomeStreamsType v-if="manageIncomeStreams.chosenIncomeStreamChoice.ISidentifier === 5" :icon=5 type="Freelance Work" :name=manageIncomeStreams.freelanceChosenSkill :monthlyIncome=500 :monthlyCost=100></IncomeStreamsType>

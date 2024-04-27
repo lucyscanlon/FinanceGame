@@ -38,16 +38,16 @@
       <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="incomestreams-slidecontainer">
         <p>Would you like to set up a secondary income stream?</p>
         <div class="incomestreams-choices-container">
-          <IncomeStreamsFlexbox :Identifier=1  Name="Open Online Store" :Hours=20 :SetUpCost=20 :MonthlyIncome=250 MonthlyCost="10-200" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
-          <IncomeStreamsFlexbox :Identifier=2  Name="Start a podcast" :Hours=10 :SetUpCost=200 :MonthlyIncome=150 MonthlyCost="50" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
+          <IncomeStreamsFlexbox :Identifier=1  Name="Open Online Store" :SetUpCost=50 :MonthlyIncome=400 :MonthlyCost=250></IncomeStreamsFlexbox>
+          <IncomeStreamsFlexbox :Identifier=2  Name="Start a podcast" :SetUpCost=200 :MonthlyIncome=150 :MonthlyCost=50></IncomeStreamsFlexbox>
         </div>
         <div class="incomestreams-choices-container">
-          <IncomeStreamsFlexbox :Identifier=3  Name="Part Time Bar Work" :Hours=30 :SetUpCost=0 :MonthlyIncome=300 MonthlyCost="0" ExpansionPotential="+"></IncomeStreamsFlexbox>
-          <IncomeStreamsFlexbox :Identifier=4  Name="Post on Social Media" :Hours=20 :SetUpCost=0 :MonthlyIncome=200 MonthlyCost="0" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
+          <IncomeStreamsFlexbox :Identifier=3  Name="Part Time Bar Work" :SetUpCost=0 :MonthlyIncome=250 :MonthlyCost=0></IncomeStreamsFlexbox>
+          <IncomeStreamsFlexbox :Identifier=4  Name="Post on Social Media" :SetUpCost=0 :MonthlyIncome=350 :MonthlyCost=0></IncomeStreamsFlexbox>
       </div>
       <div class="incomestreams-choices-container">
-        <IncomeStreamsFlexbox :Identifier=5  Name="Do freelance Work Online" :Hours=20 :SetUpCost=0 :MonthlyIncome=200 MonthlyCost="30" ExpansionPotential="+ +"></IncomeStreamsFlexbox>
-        <IncomeStreamsFlexbox :Identifier=6  Name="Do not set up a secondary income stream" :Hours=0 :SetUpCost=0 :MonthlyIncome=0 MonthlyCost="0" ExpansionPotential=""></IncomeStreamsFlexbox>
+        <IncomeStreamsFlexbox :Identifier=5  Name="Do freelance Work Online" :SetUpCost=0 :MonthlyIncome=500 :MonthlyCost=100></IncomeStreamsFlexbox>
+        <IncomeStreamsFlexbox :Identifier=6  Name="Do not set up a secondary income stream" :SetUpCost=0 :MonthlyIncome=0 :MonthlyCost=0></IncomeStreamsFlexbox>
       </div>
       <div class="emergencyfundchoice-button-container">
             <button v-if="manageIncomeStream.currentlySelectedIncomeStreamChoice.ISname === 'Do not set up a secondary income stream'"
@@ -69,7 +69,7 @@
                 <input type="text" placeholder="Enter name" v-model="onlineStoreName">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmOnlineStoreName(onlineStoreName), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(250, 400), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmOnlineStoreName(onlineStoreName), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(250, 400), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost)">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
                 <input type="text" placeholder="Enter name" v-model="podcastName">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmPodcastName(podcastName), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(50, 250), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmPodcastName(podcastName), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(50, 250), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost)">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@
               <span :class="(barChoice === 'Martins Martini Bar') ? 'barwork-button-active' : ''"><button @click="barChoice = 'Martins Martini Bar'">Martin's Martini Bar</button></span>
             </div>
             <div class="barwork-confirm-container">
-               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmBarChoiceName(barChoice), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(0, 250), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmBarChoiceName(barChoice), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(0, 250), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost)">Confirm Name</button>
               </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
                 <input type="text" placeholder="Enter username" v-model="socialMediaUsername">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmSocialMediaUsername(socialMediaUsername), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(0, 350)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmSocialMediaUsername(socialMediaUsername), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(0, 350), manageMoney.decreasePocketMoney(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost)">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@
               <span :class="(freelanceChosenSkill === 'Digital Marketing') ? 'barwork-button-active' : ''"><button @click="freelanceChosenSkill = 'Digital Marketing'">Digital Marketing</button></span>
             </div>
             <div class="barwork-confirm-container">
-               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmFreelanceSkill(freelanceChosenSkill), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(100, 500), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost)">Confirm Name</button>
+               <button @click="useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmFreelanceSkill(freelanceChosenSkill), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(100, 500), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost)">Confirm Name</button>
               </div>
           </div>
         </div>

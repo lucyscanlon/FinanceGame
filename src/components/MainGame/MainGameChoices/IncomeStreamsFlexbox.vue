@@ -26,7 +26,6 @@ The parent of this component:
             </div>
             <div class="incomestreams-title-container">
               <h4>{{ Name }}</h4>
-              <p v-if="Identifier < 6">{{ Hours }} hrs per month</p>
             </div>
             <div v-if="Identifier < 6" class="incomestreams-costs-container">
               <h6 class="incomestreams-costs-title">Costs:</h6>
@@ -35,13 +34,11 @@ The parent of this component:
                   <p>Set up:</p>
                   <p>Monthly income:</p>
                   <p>Monthly costs:</p>
-                  <p>Expansion potential:</p>
                 </div>
                 <div class="incomestreams-price">
                   <p>£{{ SetUpCost }}</p>
                   <p>£{{ MonthlyIncome }}</p>
                   <p>£{{ MonthlyCost }}</p>
-                  <p>{{ ExpansionPotential }}</p>
                 </div>
               </div>
             </div>
