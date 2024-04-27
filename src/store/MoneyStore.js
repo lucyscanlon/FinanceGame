@@ -7,6 +7,7 @@ import { usePopUpStore } from './MainGameChoicesStore'
 import { useHouseDepositChoiceStore } from './MainGameChoicesStore'
 import { useEmergencyFundChoicesStore } from './MainGameChoicesStore'
 import { useBarometerStore } from './MainGameChoicesStore'
+import { useSoundEffectsStore } from './soundEffectsStore.js'
 
 export const useMoneyManageStore = defineStore({
     id: 'moveMoney',
@@ -446,6 +447,7 @@ export const useGameTimerStore = defineStore({
                     this.checkIfBillsAreLate()
                     this.resetCountdown()
                     this.addReturnOnInvestmentsToPension()
+                    useSoundEffectsStore().playGotPaidSound()
                 }
             }, 200)
         }, 

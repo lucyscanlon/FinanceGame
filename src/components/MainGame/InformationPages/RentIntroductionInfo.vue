@@ -22,7 +22,7 @@ The parent of this component:
             <p class="colour-green rentintro-rentrecommendation">35% of your monthly income after tax is: £599.14</p>
             <div class="rentinfo-button-wrapper">
                 <!-- Call store method on click -->
-                <button @click="manageMainGameNav.navigateToPage(4)" class="rentinfo-button">Choose a new place to rent</button>
+                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(4)" class="rentinfo-button">Choose a new place to rent</button>
             </div>
         </div>
     </div>
@@ -30,8 +30,9 @@ The parent of this component:
 <script setup>
     // import stores
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
     const manageMainGameNav = useMainGameplayNavigationStore()
-
+    const manageSound = useSoundEffectsStore()
 
 </script>
 <script>

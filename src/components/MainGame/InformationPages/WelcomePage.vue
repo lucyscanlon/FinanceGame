@@ -23,7 +23,7 @@ The parent of this component:
             </div>
             <div class="rentinfo-button-wrapper welcomepage-button">
                 <!-- Call store method on click -->
-                <button @click="manageMainGameNav.navigateToPage(1)" class="rentinfo-button">Start Game</button>
+                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(1)" class="rentinfo-button">Start Game</button>
             </div>
         </div>
     </div>
@@ -31,8 +31,9 @@ The parent of this component:
 <script setup>
     // import stores
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
-    
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageSound = useSoundEffectsStore()
 
 
 </script>

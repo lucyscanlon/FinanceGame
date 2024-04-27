@@ -21,7 +21,7 @@ The parent of this component:
             </div>
             <div class="rentinfo-button-wrapper">
                 <!-- Call store method on click -->
-                <button @click="manageMainGameNav.navigateToPage(3), manageBarometer.increaseScore(5)" class="currentaccount-button">Open current account</button>
+                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(3), manageBarometer.increaseScore(5)" class="currentaccount-button">Open current account</button>
             </div>
         </div>
     </div>
@@ -30,9 +30,11 @@ The parent of this component:
     // import stores
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
     import { useBarometerStore } from '../../../store/MainGameChoicesStore'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
 
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageBarometer = useBarometerStore()
+    const manageSound = useSoundEffectsStore()
 
 </script>
 <script>
