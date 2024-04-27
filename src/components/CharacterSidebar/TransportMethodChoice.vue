@@ -8,9 +8,11 @@ The parent of this component:
     //import stores 
     import { transportChoiceStore } from '../../store/InitialGameChoicesStore.js';
     import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
+    import { useMoneyManageStore } from '../../store/MoneyStore.js'
 
     const manageTransport = transportChoiceStore();
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageMoney = useMoneyManageStore()
 
 </script>
 <template>
@@ -23,7 +25,7 @@ The parent of this component:
             <h5>Cost: <span class="colour-green">£{{ manageTransport.chosenTransportChoice.TTotal }}</span></h5>
         </div>
         <div class="currentlyshopping-wrap">
-            <button @click="manageMainGameNav.navigateToPage(21)" className="moveout-button">Change</button>
+            <button @click="manageMainGameNav.navigateToPage(21), manageMoney.decreaseMonthlyOutGoings(manageTransport.chosenTransportChoice.TTotal)" className="moveout-button">Change</button>
         </div>
         <hr />
     </div>
