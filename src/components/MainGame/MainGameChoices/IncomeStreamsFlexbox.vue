@@ -59,11 +59,9 @@ The parent of this component:
         props: {
             Identifier: Number,
             Name: String,
-            Hours: Number,
             SetUpCost: Number,
             MonthlyIncome: Number,
             MonthlyCost: String,
-            ExpansionPotential: String,
         },
    }
 </script>
