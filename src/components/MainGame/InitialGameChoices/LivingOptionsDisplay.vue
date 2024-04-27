@@ -20,10 +20,10 @@ The parent of this component:
                         </div>
                     </div>
                     <!-- Call store methods on click -->
-                    <button v-if="manageMainGameNav.currentPage === 4" @click="manageMainGameNav.navigateToPage(5), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute)), manageMoney.decreasePocketMoney(deposit), manageMoney.increaseMonthlyOutGoings(rent), manageMoney.increaseOrDecreasePocketMoneyAnimation(deposit), manageBarometer.increaseScore(increasePerc), manageBarometer.decreaseScore(decreasePerc)" class="map-location-livehere-button">
+                    <button v-if="manageMainGameNav.currentPage === 4" @click="manageMainGameNav.navigateToPage(5), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute), deposit), manageMoney.decreasePocketMoney(deposit), manageMoney.increaseMonthlyOutGoings(rent), manageBarometer.increaseScore(increasePerc), manageBarometer.decreaseScore(decreasePerc)" class="map-location-livehere-button">
                         <p>Live Here</p>
                     </button>
-                    <button v-if="manageMainGameNav.currentPage === 19" @click="manageMainGameNav.navigateToPage(11), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute)), manageMoney.decreasePocketMoney(deposit), manageMoney.increaseMonthlyOutGoings(rent), manageMoney.increaseOrDecreasePocketMoneyAnimation(deposit), manageBarometer.increaseScore(increasePerc), manageBarometer.decreaseScore(decreasePerc), manageGameTimer.startCountdown()" class="map-location-livehere-button">
+                    <button v-if="manageMainGameNav.currentPage === 19" @click="manageMainGameNav.navigateToPage(11), registerLivingChoice.addLivingOptionInfo(streetAddress, districtDesc, rent, commuteDisplay(commute), deposit), manageMoney.decreasePocketMoney(deposit), manageMoney.increaseMonthlyOutGoings(rent), manageBarometer.increaseScore(increasePerc), manageBarometer.decreaseScore(decreasePerc), manageGameTimer.startCountdown()" class="map-location-livehere-button">
                         <p>Live Here</p>
                     </button>
 
@@ -57,7 +57,7 @@ export default {
         rent: Number,
         commute: Number,
         classtag: String,
-        deposit: String,
+        deposit: Number,
         increasePerc: Number,
         decreasePerc: Number,
     }, methods: {

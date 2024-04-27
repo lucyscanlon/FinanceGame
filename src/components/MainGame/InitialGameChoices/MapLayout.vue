@@ -16,10 +16,10 @@ Components:
             </div>
         </div>
         <!-- Use props to display living options data -->
-        <LivingOptionsDisplay streetAddress="27 Pinecrest Avenue" districtDesc="Riverside District" homeDesc="A room in a shared house, not too far from work" :rent=450 :commute=1 classtag="pinecrest27" deposit="562.50" :increasePerc=10 :decreasePerc=0></LivingOptionsDisplay>
-        <LivingOptionsDisplay streetAddress="19 Rodeo Square" districtDesc="Nebula Plaza" homeDesc="A luxury apartment, the other side of town" :rent=650 :commute=2 classtag="rodeo19" deposit="812.50" :increasePerc=0 :decreasePerc=30></LivingOptionsDisplay>
-        <LivingOptionsDisplay streetAddress="Apt E1, Harmony Lane" districtDesc="Arts Quarter" homeDesc="A standard apartment, a walkable distance to work" :rent=550 :commute=0 classtag="harmonyE1" deposit="687.50" :increasePerc=10 :decreasePerc=0></LivingOptionsDisplay>
-        <LivingOptionsDisplay streetAddress="32 Brickyard Lane" districtDesc="Industrial Quarter" homeDesc="A standard apartment, the other side of town" :rent=500 :commute=2 classtag="brickyard32" deposit="625" :increasePerc=0 :decreasePerc=20></LivingOptionsDisplay>
+        <LivingOptionsDisplay streetAddress="27 Pinecrest Avenue" districtDesc="Riverside District" homeDesc="A room in a shared house, not too far from work" :rent=450 :commute=1 classtag="pinecrest27" :deposit=562.50 :increasePerc=10 :decreasePerc=0></LivingOptionsDisplay>
+        <LivingOptionsDisplay streetAddress="19 Rodeo Square" districtDesc="Nebula Plaza" homeDesc="A luxury apartment, the other side of town" :rent=650 :commute=2 classtag="rodeo19" :deposit=812.50 :increasePerc=0 :decreasePerc=30></LivingOptionsDisplay>
+        <LivingOptionsDisplay streetAddress="Apt E1, Harmony Lane" districtDesc="Arts Quarter" homeDesc="A standard apartment, a walkable distance to work" :rent=550 :commute=0 classtag="harmonyE1" :deposit=687.50 :increasePerc=10 :decreasePerc=0></LivingOptionsDisplay>
+        <LivingOptionsDisplay streetAddress="32 Brickyard Lane" districtDesc="Industrial Quarter" homeDesc="A standard apartment, the other side of town" :rent=500 :commute=2 classtag="brickyard32" :deposit=625 :increasePerc=0 :decreasePerc=20></LivingOptionsDisplay>
     </div>
 </template>
 <script>

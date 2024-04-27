@@ -27,12 +27,13 @@ export const registerLivingOptionChoiceStore = defineStore({
         selectedLivingOptionInfo: [],
     }),
     actions: {
-        addLivingOptionInfo(streetAd, districtInfo, rent, commute) {
+        addLivingOptionInfo(streetAd, districtInfo, rent, commute, deposit) {
             this.selectedLivingOptionInfo = {
                 street: streetAd,
                 district: districtInfo,
                 rentPrice: rent,
                 commutePrice: commute,
+                depositPrice: deposit,
 
             }
 

@@ -8,8 +8,10 @@ The parent of this component:
     // import stores
     import { registerLivingOptionChoiceStore } from '../../store/InitialGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
+    import { useMoneyManageStore } from '../../store/MoneyStore.js'
     const registerLivingChoice = registerLivingOptionChoiceStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageMoney = useMoneyManageStore()
 
     
 </script>
@@ -28,7 +30,7 @@ The parent of this component:
                 <p>£{{registerLivingChoice.selectedLivingOptionInfo.commutePrice}}</p>
             </div>
         </div>
-        <button @click="manageMainGameNav.navigateToPage(19)" className="moveout-button">Move Out</button>
+        <button @click="manageMainGameNav.navigateToPage(19), manageMoney.decreaseMonthlyOutGoings(Number(registerLivingChoice.selectedLivingOptionInfo.rentPrice)), manageMoney.increasePocketMoney(registerLivingChoice.selectedLivingOptionInfo.depositPrice)" className="moveout-button">Move Out</button>
         <hr />
     </div>
 </template>

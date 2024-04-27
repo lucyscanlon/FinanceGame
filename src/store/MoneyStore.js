@@ -44,9 +44,6 @@ export const useMoneyManageStore = defineStore({
         },
 
         decreasePocketMoney(val) {
-            console.log(this.moneyInPocket)
-            console.log(val)
-            console.log(typeof val)
             this.moneyInPocket = this.moneyInPocket - Number(val);
         },
 
@@ -55,15 +52,10 @@ export const useMoneyManageStore = defineStore({
         },
 
         decreaseMonthlyOutGoings(val) {
-            this.monthlyOutGoingsSum = this.monthlyOutGoingsSum - val;
-        },
-
-        increaseOrDecreasePocketMoneyAnimation(val) {
-            this.increaseordecreaseofPocketMoney = val;
-        },
-
-        resetPocketMoneyAnimation() {
-            this.increaseordecreaseofPocketMoney = 0;
+            
+            this.monthlyOutGoingsSum = this.monthlyOutGoingsSum - Number(val);
+            console.log("Val TYpe: " + typeof val);
+            console.log("Monthly outs type: " + typeof this.monthlyOutGoingsSum);
         },
 
         addToCurrentAccountTotal(num) {

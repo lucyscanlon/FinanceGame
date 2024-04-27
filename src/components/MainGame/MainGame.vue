@@ -65,7 +65,7 @@ Components:
       <div className="monthly-outgoings-wrapper">
         <p>
           Total monthly outgoings:
-          <span className="colour-white">£{{ manageMoney.monthlyOutGoingsSum }}</span>
+          <span className="colour-white">£{{ Number(manageMoney.monthlyOutGoingsSum).toFixed(2) }}</span>
         </p>
       </div>
     </div>
