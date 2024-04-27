@@ -48,6 +48,7 @@ Components:
     <MapDisplay v-if="manageMainGameNav.currentPage === 19"></MapDisplay>
     <SupermarketChoiceDisplay v-if="manageMainGameNav.currentPage === 20"></SupermarketChoiceDisplay>
     <TransportMethodDisplay v-if="manageMainGameNav.currentPage === 21"></TransportMethodDisplay>
+    <PensionPredictions v-if="manageMainGameNav.currentPage === 22"></PensionPredictions>
     <div v-if="(manageMainGameNav.currentPage === 11) || (manageMainGameNav.currentPage === 18)" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
         <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>
@@ -112,6 +113,7 @@ import CurrentGoalInteractiveComponent from "./MainGameplayComponents/CurrentGoa
 import CurrentGoalIntroduction from "./InformationPages/CurrentGoalIntroduction.vue";
 import PopUpComponent from "./MainGameplayComponents/PopUpsComponent.vue";
 import WelcomePage from "./InformationPages/WelcomePage.vue";
+import PensionPredictions from './InformationPages/PensionPrediction.vue';
 // export component data
 export default {
   name: "MainGameWrapper",

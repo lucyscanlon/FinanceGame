@@ -9,18 +9,18 @@ The parent of this component:
     <div class="startingpage-logo-container">
     </div>
     <div class="startingpage-title-container">
-      <h4>Finance Simulator</h4>
+      <h4>Cash Course</h4>
     </div>
     <div class="startingpage-description-container">
-      <p>Develop your personal finance knowledge in a simulated, fun game environment</p>
+      <p>Develop your personal finance knowledge in a simulated, fun game environment. Have a crash course in cash.</p>
     </div>
     <div class="startingpage-buttons-container">
       <div class="startingpage-play-button">
-        <div @click="manageMainNav.navigateToPage(0)" class="startingpage-play-circle">
+        <div @click="manageSound.StartOfGame(), manageMainNav.navigateToPage(0)" class="startingpage-play-circle">
           <p><font-awesome-icon icon="fa-solid fa-play" /></p>
         </div>
         <div class="startingpage-play-text">
-          <p>Play new game</p>
+          <p @click="manageSound.StartOfGame()">Play new game</p>
         </div>
       </div>
     </div>
@@ -30,8 +30,10 @@ The parent of this component:
 <script setup>
 
   import {useMainGameplayNavigationStore} from '../../store/MainGameChoicesStore'
+  import {useSoundEffectsStore} from '../../store/soundEffectsStore'
 
   const manageMainNav = useMainGameplayNavigationStore()
+  const manageSound = useSoundEffectsStore()
     
 
 

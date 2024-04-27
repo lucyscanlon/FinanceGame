@@ -27,20 +27,22 @@
             </div>
         </div>
         <div class="emergencyfund-add-withdraw-buttons housedeposit-buttons">
-            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 1" @click="manageMoney.addToHouseDepositLISA(amountToChange), rerenderComponent()">Add</button>
-            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 2" @click="manageMoney.addToFixedRateHouseDeposit(amountToChange), rerenderComponent()">Add</button>
-            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 3" @click="manageMoney.addToHouseDeposit(amountToChange), rerenderComponent()">Add</button>
-            <span v-if="manageHouseDeposit.chosenHouseDepositChoice === 1" @click="manageMoney.withdrawFromHouseDepositLISA(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>
-            <span v-if="manageHouseDeposit.chosenHouseDepositChoice === 3" @click="manageMoney.withdrawFromHouseDeposit(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>
+            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 1" @click="manageSound.addButton(), manageMoney.addToHouseDepositLISA(amountToChange), rerenderComponent()">Add</button>
+            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 2" @click="manageSound.addButton(), manageMoney.addToFixedRateHouseDeposit(amountToChange), rerenderComponent()">Add</button>
+            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 3" @click="manageSound.addButton(), manageMoney.addToHouseDeposit(amountToChange), rerenderComponent()">Add</button>
+            <span v-if="manageHouseDeposit.chosenHouseDepositChoice === 1" @click="manageSound.WithdrawButton(), manageMoney.withdrawFromHouseDepositLISA(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>
+            <span v-if="manageHouseDeposit.chosenHouseDepositChoice === 3" @click="manageSound.WithdrawButton(), manageMoney.withdrawFromHouseDeposit(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>
         </div>
 </template>
 <script setup>
 
     import { useMoneyManageStore } from '../../../store/MoneyStore'
     import { useHouseDepositChoiceStore } from '../../../store/MainGameChoicesStore';
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore'
 
     const manageMoney = useMoneyManageStore()
     const manageHouseDeposit = useHouseDepositChoiceStore();
+    const manageSound = useSoundEffectsStore();
 
 </script>
 <script>

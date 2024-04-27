@@ -48,7 +48,7 @@ The parent of this component:
                 </div>
                 <div class="emergencyfundchoice-button-container">
             <button
-              @click="manageHouseDeposit.confirmHouseDepositChoice(), useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">
+              @click="manageSound.playClickSound(), manageHouseDeposit.confirmHouseDepositChoice(), useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">
               Confirm Choice
             </button>
           </div>
@@ -91,10 +91,12 @@ The parent of this component:
     import { useHouseDepositChoiceStore } from '../../../store/MainGameChoicesStore'
     import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
     import { useGameTimerStore } from "../../../store/MoneyStore.js";
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
 
     const manageHouseDeposit = useHouseDepositChoiceStore()
     const useMainGameplayNav = useMainGameplayNavigationStore();
     const manageGameTimer = useGameTimerStore();
+    const manageSound = useSoundEffectsStore()
     // import stores
 </script>
 <script>

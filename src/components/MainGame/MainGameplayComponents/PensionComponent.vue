@@ -1,9 +1,11 @@
 <script setup>
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore'
 
     const managePension = usePensionChoicesStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageSound = useSoundEffectsStore();
 
     console.log(manageMainGameNav.mainGameComponentsUnlocked);
 </script>
@@ -35,8 +37,8 @@
             </div>
         </div>
         <div class="pension-interactive-button-container">
-            <span class="border-pink"><button @click="manageMainGameNav.navigateToPage(10)">Change contributions</button></span>
-            <button>See predictions</button>
+            <span class="border-pink"><button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(10)">Change contributions</button></span>
+            <button @click="manageSound.playClickSound()">See predictions</button>
         </div>
         </div>
         

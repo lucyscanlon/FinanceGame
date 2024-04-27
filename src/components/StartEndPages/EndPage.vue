@@ -29,11 +29,11 @@ The parent of this component:
             <div class="endpage-button-padding">
                 <div class="endpage-playagain-container">
                     <div class="endpage-playagain-button-container">
-                        <div @click="manageGameNav.navigateToPage(0)" class="endpage-playagain-circle">
+                        <div @click="manageSound.StartOfGame(), manageGameNav.navigateToPage(0)" class="endpage-playagain-circle">
                             <p><font-awesome-icon icon="fa-solid fa-play" /></p>
                         </div>
                         <div class="endpage-playagain-text">
-                            <p @click="manageGameNav.navigateToPage(0)">Play Again</p>
+                            <p @click="manageSound.StartOfGame(), manageGameNav.navigateToPage(0)">Play Again</p>
                         </div>
                     </div>
                 </div>
@@ -90,12 +90,14 @@ The parent of this component:
   
     import {useBarometerStore, usePensionChoicesStore, useMainGameplayNavigationStore} from '../../store/MainGameChoicesStore'
     import {useMoneyManageStore, useGameTimerStore} from '../../store/MoneyStore'
+    import {useSoundEffectsStore} from '../../store/soundEffectsStore'
   
     const manageBarometer = useBarometerStore()
     const manageMoney = useMoneyManageStore()
     const managePension = usePensionChoicesStore()
     const manageGameTimer = useGameTimerStore()
     const manageGameNav = useMainGameplayNavigationStore()
+    const manageSound = useSoundEffectsStore()
       
   </script>
   <script>

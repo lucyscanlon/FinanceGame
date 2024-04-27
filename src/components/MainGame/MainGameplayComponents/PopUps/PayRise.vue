@@ -14,7 +14,7 @@
             <p class="colour-green investsucc-amount">£{{ Number(manageMoney.payRiseSalaryAfterTax).toFixed(2)}}</p>
         </div>
         <div class="popup-investsucc-button-container">
-            <button @click="manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageMoney.increaseSalary(), manageBarometer.increaseScore(10)">Accept pay rise</button>
+            <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageMoney.increaseSalary(), manageBarometer.increaseScore(10)">Accept pay rise</button>
         </div>
     </div>
 </template>
@@ -25,12 +25,14 @@ import { useMainGameplayNavigationStore } from "../../../../store/MainGameChoice
 import { useMoneyManageStore } from "../../../../store/MoneyStore.js";
 import { useGameTimerStore } from "../../../../store/MoneyStore.js";
 import { useBarometerStore } from "../../../../store/MainGameChoicesStore.js";
+import { useSoundEffectsStore } from '../../../../store/soundEffectsStore.js'
 
 //const managePopUps = usePopUpStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
 const manageMoney = useMoneyManageStore();
 const manageBarometer = useBarometerStore();
+const manageSound = useSoundEffectsStore()
 
 </script>
 <script>

@@ -1445,6 +1445,14 @@ th {
   padding-bottom: 10px;
 }
 
+.pensionpredictions-text-container {
+  padding-top: 20px;
+}
+
+.pension-predictions button {
+  width: 240px;
+}
+
 .pension-interactive-left {
   width: 80%;
   float: left;

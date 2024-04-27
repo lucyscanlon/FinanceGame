@@ -28,17 +28,19 @@
             </div>
         </div>
         <div class="currentgoal-add-withdraw-buttons">
-            <button @click="manageMoney.addToFurnitureFund(amountToChange), rerenderComponent()">Add</button>
-            <span @click="manageMoney.WithdrawFromFurnitureFund(amountToChange), rerenderComponent()" class="currentgoal-withdraw-button"><button>Withdraw</button></span>
+            <button @click="manageSound.addButton(), manageMoney.addToFurnitureFund(amountToChange), rerenderComponent()">Add</button>
+            <span @click="manageSound.WithdrawButton(), manageMoney.WithdrawFromFurnitureFund(amountToChange), rerenderComponent()" class="currentgoal-withdraw-button"><button>Withdraw</button></span>
         </div>
 </template>
 <script setup>
 
     import { useMoneyManageStore } from '../../../../store/MoneyStore'
     import { useGoalsStore } from "../../../../store/MainGameChoicesStore.js";
+    import { useSoundEffectsStore } from '../../../../store/soundEffectsStore.js'
 
     const manageMoney = useMoneyManageStore()
     const manageGoals = useGoalsStore();
+    const manageSound = useSoundEffectsStore()
 
 </script>
 <script>

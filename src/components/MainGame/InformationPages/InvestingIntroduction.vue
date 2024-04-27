@@ -54,7 +54,7 @@ The parent of this component:
                 </ul>
                 </div>
                 <div class="investingintro-portfoliolink-button-container">
-                    <button @click="useMainGameplayNav.navigateToPage(17), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">View Investment Portfolio</button>
+                    <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(17), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">View Investment Portfolio</button>
                 </div>
             </div>
             <div class="previous-next-container incomestreams-slide3">
@@ -95,9 +95,11 @@ The parent of this component:
     // import stores
     import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
     import {useGameTimerStore} from '../../../store/MoneyStore.js'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
 
     const useMainGameplayNav = useMainGameplayNavigationStore();
     const manageGameTimer = useGameTimerStore()
+    const manageSound = useSoundEffectsStore()
 
 </script>
 <script>

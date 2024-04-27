@@ -84,9 +84,9 @@
                     <input type="number" placeholder="__" v-model="EWGAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button @click="manageInvestmentPortfolio.buyMoreShare(0, EWGAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell), rerenderComponent()">Buy</button>
-                    <span class="investing-port-sell-button"><button @click="manageMoney.sellNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell), manageInvestmentPortfolio.sellShare(0, EWGAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
-                    <span class="investing-port-sell-all-button"><button @click="manageMoney.sellAllOfStock(manageGameTimer.stock1Value, manageInvestmentPortfolio.ShareTotalAmounts[0]), manageInvestmentPortfolio.sellAllShare(0), rerenderComponent()">Sell All</button></span>
+                    <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(0, EWGAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <span class="investing-port-sell-button"><button @click="manageSound.WithdrawButton(), manageMoney.sellNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell), manageInvestmentPortfolio.sellShare(0, EWGAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-all-button"><button @click="manageSound.WithdrawButton(), manageMoney.sellAllOfStock(manageGameTimer.stock1Value, manageInvestmentPortfolio.ShareTotalAmounts[0]), manageInvestmentPortfolio.sellAllShare(0), rerenderComponent()">Sell All</button></span>
                 </div>
             </div>
             <div class="investing-port-buy-sell-flex">
@@ -97,9 +97,9 @@
                     <input type="number" placeholder="__" v-model="FEUAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button @click="manageInvestmentPortfolio.buyMoreShare(1, FEUAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock2Value, FEUAmountToBuyOrSell), rerenderComponent()">Buy</button>
-                    <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(1, FEUAmountToBuyOrSell), manageMoney.sellNumOfStocks(manageGameTimer.stock2Value, FEUAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
-                    <span class="investing-port-sell-all-button"><button @click="manageMoney.sellAllOfStock(manageGameTimer.stock2Value, manageInvestmentPortfolio.ShareTotalAmounts[1]), manageInvestmentPortfolio.sellAllShare(1), rerenderComponent()">Sell All</button></span>
+                    <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(1, FEUAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock2Value, FEUAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <span class="investing-port-sell-button"><button @click="manageSound.WithdrawButton(), manageInvestmentPortfolio.sellShare(1, FEUAmountToBuyOrSell), manageMoney.sellNumOfStocks(manageGameTimer.stock2Value, FEUAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-all-button"><button @click="manageSound.WithdrawButton(), manageMoney.sellAllOfStock(manageGameTimer.stock2Value, manageInvestmentPortfolio.ShareTotalAmounts[1]), manageInvestmentPortfolio.sellAllShare(1), rerenderComponent()">Sell All</button></span>
                 </div>
                 
             </div>
@@ -111,9 +111,9 @@
                     <input type="number" placeholder="__" v-model="GHUAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button @click="manageInvestmentPortfolio.buyMoreShare(2, GHUAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock3Value, GHUAmountToBuyOrSell), rerenderComponent()">Buy</button>
-                    <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(2, GHUAmountToBuyOrSell), manageMoney.sellNumOfStocks(manageGameTimer.stock3Value, GHUAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
-                    <span class="investing-port-sell-all-button"><button @click="manageMoney.sellAllOfStock(manageGameTimer.stock3Value, manageInvestmentPortfolio.ShareTotalAmounts[2]), manageInvestmentPortfolio.sellAllShare(2), rerenderComponent()">Sell All</button></span>
+                    <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(2, GHUAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock3Value, GHUAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <span class="investing-port-sell-button"><button @click="manageSound.WithdrawButton(), manageInvestmentPortfolio.sellShare(2, GHUAmountToBuyOrSell), manageMoney.sellNumOfStocks(manageGameTimer.stock3Value, GHUAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-all-button"><button @click="manageSound.WithdrawButton(), manageMoney.sellAllOfStock(manageGameTimer.stock3Value, manageInvestmentPortfolio.ShareTotalAmounts[2]), manageInvestmentPortfolio.sellAllShare(2), rerenderComponent()">Sell All</button></span>
                 </div>
                 
             </div>
@@ -125,9 +125,9 @@
                     <input type="number" placeholder="__" v-model="WRFAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button @click="manageInvestmentPortfolio.buyMoreShare(3, WRFAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock4Value, WRFAmountToBuyOrSell), rerenderComponent()">Buy</button>
-                    <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(3, WRFAmountToBuyOrSell), manageMoney.sellNumOfStocks(manageGameTimer.stock4Value, WRFAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
-                    <span class="investing-port-sell-all-button"><button @click="manageMoney.sellAllOfStock(manageGameTimer.stock4Value, manageInvestmentPortfolio.ShareTotalAmounts[3]), manageInvestmentPortfolio.sellAllShare(3), rerenderComponent()">Sell All</button></span>
+                    <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(3, WRFAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock4Value, WRFAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <span class="investing-port-sell-button"><button @click="manageSound.WithdrawButton(), manageInvestmentPortfolio.sellShare(3, WRFAmountToBuyOrSell), manageMoney.sellNumOfStocks(manageGameTimer.stock4Value, WRFAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-all-button"><button @click="manageSound.WithdrawButton(), manageMoney.sellAllOfStock(manageGameTimer.stock4Value, manageInvestmentPortfolio.ShareTotalAmounts[3]), manageInvestmentPortfolio.sellAllShare(3), rerenderComponent()">Sell All</button></span>
                 </div>
                 
             </div>
@@ -139,9 +139,9 @@
                     <input type="number" placeholder="__" v-model="PSWAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button @click="manageInvestmentPortfolio.buyMoreShare(4, PSWAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock5Value, PSWAmountToBuyOrSell), rerenderComponent(), manageNotification.timeoutInvestmentBuyMoreStockNotification(), manageBarometer.decreaseScore(10)">Buy</button>
-                    <span class="investing-port-sell-button"><button @click="manageInvestmentPortfolio.sellShare(4, PSWAmountToBuyOrSell), manageMoney.sellNumOfStocks(manageGameTimer.stock5Value, PSWAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
-                    <span class="investing-port-sell-all-button"><button @click="manageMoney.sellAllOfStock(manageGameTimer.stock5Value, manageInvestmentPortfolio.ShareTotalAmounts[4]), manageInvestmentPortfolio.sellAllShare(4), rerenderComponent()">Sell All</button></span>
+                    <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(4, PSWAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock5Value, PSWAmountToBuyOrSell), rerenderComponent(), manageNotification.timeoutInvestmentBuyMoreStockNotification(), manageBarometer.decreaseScore(10)">Buy</button>
+                    <span class="investing-port-sell-button"><button @click="manageSound.WithdrawButton(), manageInvestmentPortfolio.sellShare(4, PSWAmountToBuyOrSell), manageMoney.sellNumOfStocks(manageGameTimer.stock5Value, PSWAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
+                    <span class="investing-port-sell-all-button"><button @click="manageSound.WithdrawButton(), manageMoney.sellAllOfStock(manageGameTimer.stock5Value, manageInvestmentPortfolio.ShareTotalAmounts[4]), manageInvestmentPortfolio.sellAllShare(4), rerenderComponent()">Sell All</button></span>
                 </div>
                 
             </div>
@@ -209,6 +209,7 @@
     import { useMainGameplayNavigationStore, useNotificationStore, useBarometerStore } from '../../../store/MainGameChoicesStore.js'
     import {useGameTimerStore} from '../../../store/MoneyStore.js'
     import { useMoneyManageStore } from '../../../store/MoneyStore'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore'
     
     const manageInvestmentPortfolio = useInvestmentPortfolioChoiceStore()
     const useMainGameplayNav = useMainGameplayNavigationStore();
@@ -216,12 +217,16 @@
     const manageMoney = useMoneyManageStore()
     const manageNotification = useNotificationStore()
     const manageBarometer = useBarometerStore()
+    const manageSound = useSoundEffectsStore();
 
 </script>
 <script>
 
 export default {
     name: 'InvestmentPortfolioFull',
+    components: {
+        PortfolioLineChart,
+    },
     data() {
         return {
             EWGAmountToBuyOrSell: '',

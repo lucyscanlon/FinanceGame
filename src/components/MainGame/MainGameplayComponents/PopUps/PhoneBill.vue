@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.increaseScore(5), manageNotification.timeoutGameNotification()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.choosePhonePlan(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.increaseScore(5), manageNotification.timeoutGameNotification()">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container">
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.increaseScore(10), manageNotification.timeoutGameNotification()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.choosePhonePlan(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.increaseScore(10), manageNotification.timeoutGameNotification()">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container">
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.choosePhonePlan(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.decreaseScore(20), manageNotification.timeoutGameNotification()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.choosePhonePlan(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.decreaseScore(20), manageNotification.timeoutGameNotification()">Choose</button>
             </div>
             
         </div>
@@ -86,6 +86,7 @@ import { useGameTimerStore } from "../../../../store/MoneyStore.js";
 //import { useMoneyManageStore } from "../../../../store/MoneyStore.js";
 import { useBarometerStore } from "../../../../store/MainGameChoicesStore.js";
 import { useNotificationStore } from "../../../../store/MainGameChoicesStore.js";
+import { useSoundEffectsStore } from '../../../../store/soundEffectsStore.js'
 
 const managePopUps = usePopUpStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
@@ -93,6 +94,7 @@ const manageGameTimer = useGameTimerStore();
 //const manageMoney = useMoneyManageStore();
 const manageBarometer = useBarometerStore();
 const manageNotification = useNotificationStore();
+const manageSound = useSoundEffectsStore()
 
 </script>
 <script>

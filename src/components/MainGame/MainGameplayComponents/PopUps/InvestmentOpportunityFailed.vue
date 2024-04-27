@@ -14,7 +14,7 @@
             <p class="colour-green investsucc-amount">£0</p>
         </div>
         <div class="popup-investsucc-button-container investfailed-button">
-            <button @click="manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Close</button>
+            <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Close</button>
         </div>
         
     </div>
@@ -24,9 +24,11 @@
 
 import { useMainGameplayNavigationStore } from "../../../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../../../store/MoneyStore.js";
+import { useSoundEffectsStore } from '../../../../store/soundEffectsStore.js'
 
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
+const manageSound = useSoundEffectsStore()
 
 </script>
 <script>

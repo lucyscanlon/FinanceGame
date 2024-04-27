@@ -19,6 +19,31 @@ export const useSoundEffectsStore = defineStore({
             const audio = new Audio("./BillsDue.mp3");
             audio.play();
         },
+
+        goalCompleted() {
+            const audio = new Audio("./GoalCompleted.mp3");
+            audio.play();
+        },
+
+        addButton() {
+            const audio = new Audio("./AddButton.mp3");
+            audio.play();
+        },
+
+        WithdrawButton() {
+            const audio = new Audio("./WithdrawButton.mp3");
+            audio.play();
+        },
+
+        EndOfGame() {
+            const audio = new Audio("./EndOfGame.mp3");
+            audio.play();
+        },
+
+        StartOfGame() {
+            const audio = new Audio("./startGame.mp3");
+            audio.play();
+        },
     }
 
 })

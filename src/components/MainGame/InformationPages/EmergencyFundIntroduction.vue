@@ -59,7 +59,7 @@ The parent of this component:
             ></EmergencyFundChoicesFlexbox>
           </div>
           <div class="emergencyfundchoice-button-container">
-            <button @click="manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(), useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown(); manageMoney.addToEmergencyFundTotal(parseInt(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit)), useMainGameplayNav.unlockComponent(), manageGoals.nextGoal(), manageNotifications.timeoutEmergencyFundNotification()">Confirm Choice</button>
+            <button @click="manageSound.playClickSound(), manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(), useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown(); manageMoney.addToEmergencyFundTotal(parseInt(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit)), useMainGameplayNav.unlockComponent(), manageGoals.nextGoal(), manageNotifications.timeoutEmergencyFundNotification()">Confirm Choice</button>
           </div>
         </div>
       </div>
@@ -91,6 +91,7 @@ import { useMoneyManageStore } from "../../../store/MoneyStore";
 import { useGameTimerStore } from "../../../store/MoneyStore";
 import { useGoalsStore, useNotificationStore} from "../../../store/MainGameChoicesStore.js";
 import EmergencyFundChoicesFlexbox from "../MainGameChoices/EmergencyFundFlexbox";
+import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
 
 const manageEmergencyFund = useEmergencyFundChoicesStore();
 const useMainGameplayNav = useMainGameplayNavigationStore();
@@ -98,6 +99,7 @@ const manageMoney = useMoneyManageStore();
 const manageGameTimer = useGameTimerStore();
 const manageGoals = useGoalsStore();
 const manageNotifications = useNotificationStore();
+const manageSound = useSoundEffectsStore()
 </script>
 <script>
 // export component data

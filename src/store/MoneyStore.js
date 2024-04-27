@@ -18,7 +18,7 @@ export const useMoneyManageStore = defineStore({
         monthlyOutGoingsSum: 0,
         increaseordecreaseofPocketMoney: 0,
         currentAccountCurrentTotal: 0,
-        emergencyFundCurrentTotal: 4000,
+        emergencyFundCurrentTotal: 0,
         daysUntilPayday: 30,
         decreaseTime: true,
         houseDepositCurrentTotal: 0,
@@ -83,6 +83,7 @@ export const useMoneyManageStore = defineStore({
                 this.moneyInPocket = this.moneyInPocket - num;
 
                 if(this.emergencyFundCurrentTotal >= 5000) {
+                    useSoundEffectsStore().goalCompleted()
                     useGoalsStore().completedGoals = 3;
                     useBarometerStore().increaseScore(10);
                 }
@@ -262,6 +263,7 @@ export const useMoneyManageStore = defineStore({
                 this.moneyInPocket = this.moneyInPocket - amount;
 
                 if(this.furnitureFundTotal >= 1000) {
+                    useSoundEffectsStore().goalCompleted()
                     useGoalsStore().completedGoals = 2;
                     useBarometerStore().increaseScore(10);
                 }
@@ -298,6 +300,7 @@ export const useMoneyManageStore = defineStore({
                 this.moneyInPocket = this.moneyInPocket - num;
 
                 if(this.appliancesFundTotal >= 2000) {
+                    useSoundEffectsStore().goalCompleted()
                     useGoalsStore().completedGoals = 4;
                     useBarometerStore().increaseScore(10);
                 }
@@ -322,6 +325,7 @@ export const useMoneyManageStore = defineStore({
                 this.moneyInPocket = this.moneyInPocket - num;
 
                 if(this.holidayFundTotal >= useGoalsStore().holidayBudget) {
+                    useSoundEffectsStore().goalCompleted()
                     useGoalsStore().completedGoals = 5;
                     useBarometerStore().increaseScore(15);
                 }
@@ -353,6 +357,7 @@ export const useMoneyManageStore = defineStore({
             }
             
         },
+
     }
 })
 
@@ -770,7 +775,7 @@ export const useGameTimerStore = defineStore({
             }
 
             if(useMoneyManageStore().houseDepositCurrentTotal >= 15000) {
-                useGoalsStore().completedGoals = 7;
+                useGoalsStore().completedGoals = 8;
             }
 
             if(useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'High Interest Savings Account') {
@@ -829,8 +834,9 @@ export const useGameTimerStore = defineStore({
         },
 
         triggerEndOfGame() {
+            useSoundEffectsStore().EndOfGame()
             this.calculateTotalInGameTimeSpan()
-            useMainGameplayNavigationStore().navigateToPage(19)
+            useMainGameplayNavigationStore().navigateToPage(23)
         },
 
         addReturnOnInvestmentsToPension() {
@@ -838,10 +844,10 @@ export const useGameTimerStore = defineStore({
                 let investmentsPerc = usePensionChoicesStore().investmentValue / 100;
                 usePensionChoicesStore().pensionCurrentTotal = ((usePensionChoicesStore().pensionCurrentTotal) * (investmentsPerc))
 
-                usePensionChoicesStore().investmentValue = Number(((Math.random() * 10) + 100)).toFixed(2);
+                usePensionChoicesStore().investmentValue = Number(((Math.random() / 8) / 10) + 1).toFixed(2);
             }
 
-        }
+        },
 
 
     }

@@ -25,10 +25,10 @@
             </div>
         </div>
         <div class="emergencyfund-add-withdraw-buttons">
-            <button @click="manageMoney.addToEmergencyFundTotal(amountToChange), rerenderComponent()">Add</button>
-            <span v-if="(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit !== '1000')" class="emergencyfund-withdraw-button"><button @click="manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
+            <button @click="manageSound.addButton(), manageMoney.addToEmergencyFundTotal(amountToChange), rerenderComponent()">Add</button>
+            <span v-if="(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit !== '1000')" class="emergencyfund-withdraw-button"><button @click="manageSound.WithdrawButton(), manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
             <span v-if="(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit === '1000') && (manageGameTimer.emergencyFundFixedRateUnlocked === false)" class="emergencyfund-withdraw-button-inactive"><button>Withdraw</button></span>
-            <span v-if="(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit === '1000') && (manageGameTimer.emergencyFundFixedRateUnlocked === true)" class="emergencyfund-withdraw-button"><button @click="manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
+            <span v-if="(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit === '1000') && (manageGameTimer.emergencyFundFixedRateUnlocked === true)" class="emergencyfund-withdraw-button"><button @click="manageSound.WithdrawButton(), manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
         </div>
         </div>
 
@@ -40,12 +40,14 @@
     import {useEmergencyFundChoicesStore} from '../../../store/MainGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
     import { useGameTimerStore } from '../../../store/MoneyStore'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore'
 
 const useMainGameplayNav = useMainGameplayNavigationStore();
 
     const manageMoney = useMoneyManageStore()
     const manageEmergencyFund = useEmergencyFundChoicesStore()
     const manageGameTimer = useGameTimerStore();
+    const manageSound = useSoundEffectsStore();
 
 </script>
 <script>

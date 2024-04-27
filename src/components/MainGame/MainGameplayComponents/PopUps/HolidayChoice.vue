@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.HolidayBudgetChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.decreaseScore(30), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.decreaseScore(30), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container holidaychoice-flex">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.HolidayBudgetChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(15), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(15), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container holidaychoice-flex">
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="managePopUps.HolidayBudgetChoice(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(20), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(20), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
             </div>
         </div>
     </div>
@@ -71,6 +71,7 @@ import { useBarometerStore, usePopUpStore } from "../../../../store/MainGameChoi
 import { useMainGameplayNavigationStore, useNotificationStore } from "../../../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../../../store/MoneyStore.js";
 import { useGoalsStore } from "../../../../store/MainGameChoicesStore.js";
+import { useSoundEffectsStore } from '../../../../store/soundEffectsStore.js'
 
 const managePopUps = usePopUpStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
@@ -78,6 +79,7 @@ const manageGameTimer = useGameTimerStore();
 const manageGameGoals = useGoalsStore();
 const manageBarometer = useBarometerStore();
 const manageNotifications = useNotificationStore();
+const manageSound = useSoundEffectsStore()
 
 </script>
 <script>

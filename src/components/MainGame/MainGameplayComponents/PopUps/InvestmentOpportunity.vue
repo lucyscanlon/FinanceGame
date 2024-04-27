@@ -17,7 +17,7 @@
                 <p>Cost: <span class="colour-green">£1500</span></p>
             </div>
             <div class="popup-phonebill-button workdrinks-button">
-                <button @click="managePopUps.investmentOpportunityChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.investmentOpportunityChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
         </div>
         <div class="popup-work-drinks-flex-container investmentop-flex">
@@ -31,7 +31,7 @@
                 <p>Cost: <span class="colour-green">£0</span></p>
             </div>
             <div class="popup-phonebill-button workdrinks-button">
-                <button @click="managePopUps.investmentOpportunityChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.investmentOpportunityChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
         </div>
     </div>
@@ -41,10 +41,12 @@
 import { usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
 import { useMainGameplayNavigationStore } from "../../../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../../../store/MoneyStore.js";
+import { useSoundEffectsStore } from '../../../../store/soundEffectsStore.js'
 
 const managePopUps = usePopUpStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
+const manageSound = useSoundEffectsStore()
 
 </script>
 <script>

@@ -25,14 +25,16 @@
             </div>
         </div>
         <div class="incomestreams-interactive-edit-choice">
-            <button @click="manageMainGameNav.navigateToPage(14)">Change income stream</button>
+            <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(14)">Change income stream</button>
         </div>
 </template>
 <script setup>
     
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore'
 
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageSound = useSoundEffectsStore();
 
 </script>
 <script>

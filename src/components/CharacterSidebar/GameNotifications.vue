@@ -15,6 +15,7 @@ The parent of this component:
     import {transportChoiceStore} from '../../store/InitialGameChoicesStore.js'
     import {useNotificationStore } from '../../store/MainGameChoicesStore.js'
     import {usePopUpStore, useEmergencyFundChoicesStore, useIncomeStreamsChoicesStore, useHouseDepositChoiceStore } from '../../store/MainGameChoicesStore.js'
+    import {useSoundEffectsStore} from '../../store/soundEffectsStore.js'
 
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageGameTimer = useGameTimerStore()
@@ -29,6 +30,7 @@ The parent of this component:
     const manageEmergencyFund = useEmergencyFundChoicesStore()
     const manageIncomeStreams = useIncomeStreamsChoicesStore()
     const manageHouseDeposit = useHouseDepositChoiceStore()
+    const manageSound = useSoundEffectsStore()
 
 </script>
 <template>
@@ -225,7 +227,7 @@ The parent of this component:
         </div>
         <!-- Buttons for the first goal - pay bills on time -->
         <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal === 1)" class="pay-monthly-outgoings-container">
-                <button @click="manageMoney.payMonthlyOutgoings(), manageGoals.completedGoal(), manageBarometer.increaseScore(3)">Pay monthly outgoings</button>
+                <button @click="manageSound.goalCompleted(), manageMoney.payMonthlyOutgoings(), manageGoals.completedGoal(), manageBarometer.increaseScore(3)">Pay monthly outgoings</button>
         </div>
         <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal === 1)" class="pay-monthly-outgoings-container bills-late-button">
                 <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill()">Pay monthly outgoings</button>

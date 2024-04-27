@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="investments-openportfolio-button">
-            <button @click="useMainGameplayNav.navigateToPage(17)">Open Trading Portfolio</button>
+            <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(17)">Open Trading Portfolio</button>
         </div>
         <div class="investments-stock-bar">
             <div class="investments-bar-overflow">
@@ -37,10 +37,12 @@
     import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
     import {useGameTimerStore} from '../../../store/MoneyStore.js'
     import { useMoneyManageStore } from '../../../store/MoneyStore'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore'
 
     const useMainGameplayNav = useMainGameplayNavigationStore();
     const manageGameTimer = useGameTimerStore()
     const manageMoney = useMoneyManageStore()
+    const manageSound = useSoundEffectsStore();
 
 </script>
 <script>

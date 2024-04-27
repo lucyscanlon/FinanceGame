@@ -28,7 +28,9 @@ export const usePensionChoicesStore = defineStore({
     chosenPensionChoice: [],
 
     pensionCurrentTotal: 0,
-    investmentValue: 102,
+    investmentValue: 1.02,
+    pensionPredictions: [],
+    pensionPredictionsCondensed: []
   }),
   actions: {
     changeSelectedPensionChoice(num) {
@@ -67,13 +69,48 @@ export const usePensionChoicesStore = defineStore({
       } else if (this.chosenPensionChoice.YContPercentage === 8) {
         useBarometerStore().increaseScore(12);
       }
+
     },
 
     addContributionToPension(salaryBeforeTax, contributionPerc) {
       var amountToAdd =
         Number(salaryBeforeTax) * Number(contributionPerc / 100);
+        console.log(amountToAdd);
       this.pensionCurrentTotal = this.pensionCurrentTotal + amountToAdd;
     },
+
+    workoutPensionPredictions(salaryBeforeTax, contributionPerc ) {
+      var amountToAdd = Number(salaryBeforeTax) * Number((contributionPerc / 100));
+
+      console.log(amountToAdd)
+      let PensionTotal = 0
+      
+      let randomInvestmentValue = 0
+
+      for(let i = 0; i < 30; i++) {
+        for(let e = 0; e < 12; e++) {
+          PensionTotal = PensionTotal + amountToAdd;
+
+          if(e % 3 === 0) {
+            randomInvestmentValue = (((Math.random() / 8) / 10) + 1);
+
+            console.log(randomInvestmentValue);
+            
+            PensionTotal = (PensionTotal * randomInvestmentValue);
+
+          }
+
+          this.pensionPredictions.push(PensionTotal);
+  
+        }
+      }
+
+      for(let i = 0; i < this.pensionPredictions.length; i=i+12) {
+        this.pensionPredictionsCondensed.push(this.pensionPredictions[i])
+      }
+
+      console.log(this.pensionPredictionsCondensed);
+    }
   },
 });
 
