@@ -25,9 +25,7 @@ The parent of this component:
             <div class="responsibility-score">
                 <p>Final Responsibility Score: <span :class="manageBarometer.scoreColor">{{ manageBarometer.barometerScore }}%</span></p>
             </div>
-            
     </div>
-
         </div>
         <div class="endpage-stats-container">
             <div class="endpage-stats-panel">
@@ -46,7 +44,7 @@ The parent of this component:
                         </tr>
                         <tr>
                             <th>Missed Bills</th>
-                            <th class="align-right">{{ manageMoney.totalMissedBills }}</th>
+                            <th class="align-right colour-red">{{ manageMoney.totalMissedBills }}</th>
                         </tr>
                         <tr>
                             <th>Current Pension Value:</th>
@@ -69,19 +67,31 @@ The parent of this component:
             </div>
 
         </div>
+        
 
     </div>
+    <div class="endpage-playagain-container">
+            <div class="endpage-playagain-button-container">
+            <div @click="manageGameNav.navigateToPage(0)" class="endpage-playagain-circle">
+                <p><font-awesome-icon icon="fa-solid fa-play" /></p>
+            </div>
+            <div class="endpage-playagain-text">
+                <p @click="manageGameNav.navigateToPage(0)">Play Again</p>
+            </div>
+        </div>
+        </div>
 </template>
 
   <script setup>
   
-    import {useBarometerStore, usePensionChoicesStore} from '../../store/MainGameChoicesStore'
+    import {useBarometerStore, usePensionChoicesStore, useMainGameplayNavigationStore} from '../../store/MainGameChoicesStore'
     import {useMoneyManageStore, useGameTimerStore} from '../../store/MoneyStore'
   
     const manageBarometer = useBarometerStore()
     const manageMoney = useMoneyManageStore()
     const managePension = usePensionChoicesStore()
     const manageGameTimer = useGameTimerStore()
+    const manageGameNav = useMainGameplayNavigationStore()
       
   </script>
   <script>

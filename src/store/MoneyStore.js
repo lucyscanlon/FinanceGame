@@ -116,7 +116,12 @@ export const useMoneyManageStore = defineStore({
                     this.moneyInPocket = this.moneyInPocket - num;
 
                     if(this.houseDepositCurrentTotal >= 15000) {
-                        useGoalsStore().completedGoals = 7;
+                        useGoalsStore().completedGoals = 8;
+
+                        setTimeout(() => {
+                            useGameTimerStore().triggerEndOfGame()
+                          }, 5000);
+
                     }
     
                 } else {
@@ -134,7 +139,11 @@ export const useMoneyManageStore = defineStore({
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
 
                     if(this.houseDepositCurrentTotal >= 15000) {
-                        useGoalsStore().completedGoals = 7;
+                        useGoalsStore().completedGoals = 8;
+
+                        setTimeout(() => {
+                            useGameTimerStore().triggerEndOfGame()
+                          }, 5000);
                     }
                 } else {
                     return
@@ -155,7 +164,12 @@ export const useMoneyManageStore = defineStore({
                     this.HouseDepositFixedYearOpen = false;
 
                     if(this.houseDepositCurrentTotal >= 15000) {
-                        useGoalsStore().completedGoals = 7;
+                        useGoalsStore().completedGoals = 8;
+
+                        setTimeout(() => {
+                            useGameTimerStore().triggerEndOfGame()
+                          }, 5000);
+
                     }
                 } else {
                     return;
@@ -810,7 +824,12 @@ export const useGameTimerStore = defineStore({
             } else {
                 this.TotalTimeSpanOfGame = totalMonths + ' Months, ' + totalDays + ' Days';
             }
-        }
+        },
+
+        triggerEndOfGame() {
+            this.calculateTotalInGameTimeSpan()
+            useMainGameplayNavigationStore().navigateToPage(19)
+        },
 
 
     }
