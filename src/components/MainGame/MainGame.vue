@@ -32,7 +32,7 @@ Components:
     <RentInformationDisplay v-if="manageMainGameNav.currentPage === 3"></RentInformationDisplay>
     <MapDisplay v-if="manageMainGameNav.currentPage === 4"></MapDisplay>
     <SupermarketInfoDisplay v-if="manageMainGameNav.currentPage === 5"></SupermarketInfoDisplay>
-    <SupermarketChoiceDisplay v-if="manageMainGameNav.currentPage === 6"></SupermarketChoiceDisplay>
+    <SupermarketChoiceDisplay v-if="(manageMainGameNav.currentPage === 6)"></SupermarketChoiceDisplay>
     <TransportMethodDisplay v-if="manageMainGameNav.currentPage === 7"></TransportMethodDisplay>
     <!--current goal info --> 
     <CurrentGoalIntroduction v-if="manageMainGameNav.currentPage === 8"></CurrentGoalIntroduction>
@@ -45,6 +45,9 @@ Components:
     <InvestingIntroduction v-if="manageMainGameNav.currentPage === 16"></InvestingIntroduction>
     <InvestmentPortfolioFull v-if="manageMainGameNav.currentPage === 17"></InvestmentPortfolioFull>
     <PopUpComponent v-if="manageMainGameNav.currentPage === 18"></PopUpComponent>
+    <MapDisplay v-if="manageMainGameNav.currentPage === 19"></MapDisplay>
+    <SupermarketChoiceDisplay v-if="manageMainGameNav.currentPage === 20"></SupermarketChoiceDisplay>
+    <TransportMethodDisplay v-if="manageMainGameNav.currentPage === 21"></TransportMethodDisplay>
     <div v-if="(manageMainGameNav.currentPage === 11) || (manageMainGameNav.currentPage === 18)" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
         <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>

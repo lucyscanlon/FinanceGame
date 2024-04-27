@@ -2,11 +2,11 @@
   <div v-if="manageMainGameNav.currentPage === -1" class="startingpage-whole-container">
     <StartingPage></StartingPage>
   </div>
-  <div v-if="(manageMainGameNav.currentPage >= 0) && (manageMainGameNav.currentPage < 19)" class="wholegame-wrapper">
+  <div v-if="(manageMainGameNav.currentPage >= 0) && (manageMainGameNav.currentPage < 22)" class="wholegame-wrapper">
     <CharacterStatsSidebarWrapper></CharacterStatsSidebarWrapper>
     <MainGameWrapper></MainGameWrapper>
   </div>
-  <div v-if="manageMainGameNav.currentPage === 19" class="startingpage-whole-container">
+  <div v-if="manageMainGameNav.currentPage === 22" class="startingpage-whole-container">
     <EndingPage></EndingPage>
   </div>
 </template>

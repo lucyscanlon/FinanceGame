@@ -22,7 +22,6 @@ The parent of this component:
         <div class="startingpage-play-text">
           <p>Play new game</p>
         </div>
-
       </div>
     </div>
   </div>

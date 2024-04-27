@@ -11,11 +11,12 @@ Components:
     // import stores 
     import { supermarketChoiceStore } from '../../../store/InitialGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
-    import { useMoneyManageStore } from '../../../store/MoneyStore.js'
+    import { useMoneyManageStore,  useGameTimerStore} from '../../../store/MoneyStore.js'
     
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageSupermarket = supermarketChoiceStore()
     const manageMoney = useMoneyManageStore()
+    const manageTimer = useGameTimerStore()
 </script>
 <template>
     <div class="supermarketchoice-display-wrapper">
@@ -29,9 +30,12 @@ Components:
             <SupermarketChoiceFlexBox :SupermarketIdentifier=4 SupermarketName="Weekly Mart Deliveries" SupermarketDesc="A weekly grocery delivery service with budget prices." :SupermarketCost=100 SupermarketTransportCost="0" SupermarketPerk="Free delivery for members."></SupermarketChoiceFlexBox>
         </div>
         <!-- Call methods from store on click -->
-        <div @click="(manageSupermarket.currentlySelectedSupermarketInfo != '') ? manageMainGameNav.navigateToPage(7) : '', manageSupermarket.confirmSupermarketChoice(), manageMoney.increaseMonthlyOutGoings(manageSupermarket.chosenSupermarketInfo.SMCost)" class="supermarketchoice-button-wrap">
+        <div v-if="manageMainGameNav.currentPage === 6" @click="(manageSupermarket.currentlySelectedSupermarketInfo != '') ? manageMainGameNav.navigateToPage(7) : '', manageSupermarket.confirmSupermarketChoice(), manageMoney.increaseMonthlyOutGoings(manageSupermarket.chosenSupermarketInfo.SMCost)" class="supermarketchoice-button-wrap">
                     <button>Shop here</button>
-         </div>
+        </div>
+        <div v-if="manageMainGameNav.currentPage === 20" @click="(manageSupermarket.currentlySelectedSupermarketInfo != '') ? manageMainGameNav.navigateToPage(11) : '', manageSupermarket.confirmSupermarketChoice(), manageMoney.increaseMonthlyOutGoings(manageSupermarket.chosenSupermarketInfo.SMCost), manageTimer.startCountdown()" class="supermarketchoice-button-wrap">
+                    <button>Shop here</button>
+        </div>
     </div>
 </template>
 <script>
