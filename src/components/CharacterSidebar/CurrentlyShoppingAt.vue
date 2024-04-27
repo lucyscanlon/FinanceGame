@@ -8,9 +8,11 @@ The parent of this component:
     // import stores
     import { supermarketChoiceStore } from '../../store/InitialGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
+    import { useMoneyManageStore } from '../../store/MoneyStore.js'
 
     const manageSupermarket = supermarketChoiceStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageMoney = useMoneyManageStore()
 </script>
 <template>
     <div className="characterstats-set currentlyshoppingatdisplay">
@@ -29,7 +31,7 @@ The parent of this component:
             </div>
         </div>
         <div class="currentlyshopping-wrap">
-            <button @click="manageMainGameNav.navigateToPage(20)" className="moveout-button">Change</button>
+            <button @click="manageMainGameNav.navigateToPage(20), manageMoney.decreaseMonthlyOutGoings(manageSupermarket.chosenSupermarketInfo.SMCost)" className="moveout-button">Change</button>
         </div>
         <hr />
     </div>
