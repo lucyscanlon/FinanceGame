@@ -417,7 +417,7 @@ export const useGameTimerStore = defineStore({
                 if(this.countdown > 0) {
                     if((useMainGameplayNavigationStore().currentPage === 11) || (useMainGameplayNavigationStore().currentPage === 17)) {
                         this.countdown = this.countdown - 1;
-                        this.checkTheDate(this.countdown, this.currentMonth, this.currentYear, this.monthsPassed);
+                        this.checkTheDate(this.countdown, this.currentMonth, this.currentYear, this.monthsPassed, this.monthCounter);
 
                         // flucuate prices of stocks
                         if(useMainGameplayNavigationStore().mainGameComponentsUnlocked > 5 ) {
@@ -457,6 +457,7 @@ export const useGameTimerStore = defineStore({
                     this.resetCountdown()
                     this.addReturnOnInvestmentsToPension()
                     useSoundEffectsStore().playGotPaidSound()
+                    console.log("months passed: " + this.monthsPassed);
                 }
             }, 400)
         }, 
@@ -677,8 +678,8 @@ export const useGameTimerStore = defineStore({
                 usePopUpStore().currentPopUp = 7;
 
             }
-
-            if(((countdown === this.queuePayRisePopUp.day) && (monthsPassed === (this.queuePayRisePopUp.month + 1)) && (currentYear === this.queuePayRisePopUp.year))) {
+                
+            if((countdown === this.queuePayRisePopUp.day - 10) && (monthsPassed === (this.queuePayRisePopUp.month))) {
                 // another month after - holiday choice pop up
                 useMainGameplayNavigationStore().currentPage = 18;
                 usePopUpStore().currentPopUp = 6;
@@ -694,7 +695,7 @@ export const useGameTimerStore = defineStore({
                 this.saveTheDateInvestmentComponent(countdown, monthsPassed, currentYear);
             }
 
-            if ((countdown === this.queueAfterInvestmentComponent.day - 10) && (monthsPassed === (this.queueAfterInvestmentComponent.month)) && (currentYear === this.queueAfterInvestmentComponent.year)){
+            if ((countdown === this.queueAfterInvestmentComponent.day - 10) && (monthsPassed === (this.queueAfterInvestmentComponent.month))){
                 // 10 days later - set the goal to buy 10 stocks
                 useGoalsStore().currentGoal = 6;
                 useMainGameplayNavigationStore().currentPage = 11;
@@ -712,7 +713,7 @@ export const useGameTimerStore = defineStore({
 
             }
 
-            if ((countdown === (this.queueAfterInvestmentOpPopUp.day - 10)) && (monthsPassed === this.queueAfterInvestmentOpPopUp.month) && (currentYear === this.queueAfterInvestmentOpPopUp.year)){
+            if ((countdown === (this.queueAfterInvestmentOpPopUp.day - 10)) && (monthsPassed === this.queueAfterInvestmentOpPopUp.month)){
                 // ten days later - open investment goal - save 3000
                 useGoalsStore().currentGoal = 7;
                 useMainGameplayNavigationStore().currentPage = 11;
@@ -727,7 +728,7 @@ export const useGameTimerStore = defineStore({
                 
             }
 
-            if ((countdown === (this.queueFinalGoalsAndPopUps.day)) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 1)) && (currentYear === this.queueFinalGoalsAndPopUps.year)){
+            if ((countdown === (this.queueFinalGoalsAndPopUps.day)) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 1))){
                 //if(this.chosenToTakeInvestment === true) {
                     // 1 month later - navigate to main page
                     useMainGameplayNavigationStore().currentPage = 18;
@@ -744,7 +745,7 @@ export const useGameTimerStore = defineStore({
                 //}
             }
             
-            if ((countdown === (this.queueFinalGoalsAndPopUps.day)) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 3)) && (currentYear === this.queueFinalGoalsAndPopUps.year)){
+            if ((countdown === (this.queueFinalGoalsAndPopUps.day)) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 3))){
                 // 3 months after - broken laptop goal
                 useMainGameplayNavigationStore().currentPage = 18;
                 usePopUpStore().currentPopUp = 8;
@@ -846,7 +847,7 @@ export const useGameTimerStore = defineStore({
 
         addReturnOnInvestmentsToPension() {
             if((this.monthsPassed % 3) === 0) {
-                let investmentsPerc = usePensionChoicesStore().investmentValue / 100;
+                let investmentsPerc = usePensionChoicesStore().investmentValue;
                 usePensionChoicesStore().pensionCurrentTotal = ((usePensionChoicesStore().pensionCurrentTotal) * (investmentsPerc))
 
                 usePensionChoicesStore().investmentValue = Number(((Math.random() / 8) / 10) + 1).toFixed(2);
