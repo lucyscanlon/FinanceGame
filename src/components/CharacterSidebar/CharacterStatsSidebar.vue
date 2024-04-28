@@ -25,7 +25,10 @@ Components that will be inside this container include:
             <div class="charactersidebar-pocketmoney-container">
               <h5>£{{Number(manageMoney.moneyInPocket).toFixed(2)}}</h5>
             </div>
-            <hr />
+            <div class="pocketmoney-hr">
+              <hr/>
+            </div>
+
           </div>
           <GameNotificationPanel></GameNotificationPanel>
           <!-- Display this component depending on the stage of the game e.g. if they have accepted the job offer -->

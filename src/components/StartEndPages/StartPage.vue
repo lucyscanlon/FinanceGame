@@ -7,6 +7,7 @@ The parent of this component:
 <template>
   <div class="startingpage-width-container">
     <div class="startingpage-logo-container">
+      <img src="/GameLogo.PNG">
     </div>
     <div class="startingpage-title-container">
       <h4>Cash Course</h4>

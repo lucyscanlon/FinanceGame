@@ -458,7 +458,7 @@ export const useGameTimerStore = defineStore({
                     this.addReturnOnInvestmentsToPension()
                     useSoundEffectsStore().playGotPaidSound()
                 }
-            }, 200)
+            }, 400)
         }, 
 
         flucuateStockPrices() {
@@ -613,6 +613,7 @@ export const useGameTimerStore = defineStore({
         checkTheDate(countdown, currentMonth, currentYear, monthsPassed) {
 
             if((countdown === 15) && (currentMonth === 'January') && (currentYear === 2023)) {
+                useSoundEffectsStore().bellSound()
                 useMainGameplayNavigationStore().currentPage = 9;
                 // pension introduction
             }
@@ -630,6 +631,7 @@ export const useGameTimerStore = defineStore({
             }
 
             if((useGoalsStore().completedGoals === 2) && (countdown === 20) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 2)) {
+                useSoundEffectsStore().bellSound()
                 useMainGameplayNavigationStore().currentPage = 12;
                 // emergency fund intro
             }
@@ -650,6 +652,7 @@ export const useGameTimerStore = defineStore({
             }
 
             if((useGoalsStore().completedGoals === 3) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 3)) {
+                useSoundEffectsStore().bellSound()
                 useMainGameplayNavigationStore().currentPage = 13;
                 // income streams introduction
                 
@@ -661,6 +664,7 @@ export const useGameTimerStore = defineStore({
             }
 
             if((useGoalsStore().completedGoals === 4) && (countdown === 25) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 4)) {
+                useSoundEffectsStore().bellSound()
                 // house deposit introduction
                 useMainGameplayNavigationStore().currentPage = 15;
                 // save the date of house deposit intro
@@ -674,7 +678,7 @@ export const useGameTimerStore = defineStore({
 
             }
 
-            if(((countdown === this.queuePayRisePopUp.day) && (monthsPassed === (this.queuePayRisePopUp.month + 2)) && (currentYear === this.queuePayRisePopUp.year)) && (useGoalsStore().completedGoals < 5) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 5)) {
+            if(((countdown === this.queuePayRisePopUp.day) && (monthsPassed === (this.queuePayRisePopUp.month + 1)) && (currentYear === this.queuePayRisePopUp.year))) {
                 // another month after - holiday choice pop up
                 useMainGameplayNavigationStore().currentPage = 18;
                 usePopUpStore().currentPopUp = 6;
@@ -684,6 +688,7 @@ export const useGameTimerStore = defineStore({
 
             if((countdown === 25) && (useGoalsStore().completedGoals === 5) && (useMainGameplayNavigationStore().mainGameComponentsUnlocked === 5)) {
                 // when holiday fund completed - open investment intro
+                useSoundEffectsStore().bellSound()
                 useMainGameplayNavigationStore().currentPage = 16;
                 // save the date 
                 this.saveTheDateInvestmentComponent(countdown, monthsPassed, currentYear);

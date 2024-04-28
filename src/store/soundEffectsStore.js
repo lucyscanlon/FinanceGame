@@ -44,6 +44,12 @@ export const useSoundEffectsStore = defineStore({
             const audio = new Audio("./startGame.mp3");
             audio.play();
         },
+
+        bellSound() {
+            const audio = new Audio("./Bell.mp3");
+            audio.play();
+        },
+
     }
 
 })
