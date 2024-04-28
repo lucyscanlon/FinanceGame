@@ -10,10 +10,10 @@ The parent of this component:
       <img src="/GameLogo.PNG">
     </div>
     <div class="startingpage-title-container">
-      <h4>Cash Course</h4>
+      <h4>Cash Course: An interactive Game</h4>
     </div>
     <div class="startingpage-description-container">
-      <p>Develop your personal finance knowledge in a simulated, fun game environment. Have a crash course in cash.</p>
+      <p>Develop your personal finance knowledge in a simulated, fun game environment. Experience a crash course in cash.</p>
     </div>
     <div class="startingpage-buttons-container">
       <div class="startingpage-play-button">
