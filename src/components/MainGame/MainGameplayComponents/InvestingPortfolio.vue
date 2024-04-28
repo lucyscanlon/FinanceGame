@@ -152,7 +152,7 @@
                     <h5>Total Balance: <span :class="(manageMoney.totalBalancePercentageChange >= 0) ? 'colour-green' : 'colour-red'">({{ Number(manageMoney.totalBalancePercentageChange).toFixed(2)}}%)<font-awesome-icon v-if="manageMoney.totalBalancePercentageChange > 0" icon="fa-solid fa-arrow-up" /><font-awesome-icon v-if="manageMoney.totalBalancePercentageChange < 0" icon="fa-solid fa-arrow-down" /></span></h5>
                 </div>
                 <div class="investing-port-totalbalance-figure">
-                    <p>£{{ manageMoney.InvestmentPortfolioCurrentValue.toFixed(2) }}</p>
+                    <p>£{{ manageMoney.InvestmentPortfolioCurrentValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</p>
                 </div>
             </div>
             <div class="investing-port-visual-container">
@@ -183,13 +183,13 @@
         <div class="investmentport-total-profitloss-container">
                 <div class="investmentport-invested-amount">
                     <div class="investment-port-total-invested">
-                        <p>Total Invested: <span class="colour-green right-align">£{{ Number(manageMoney.totalInvested).toFixed(2) }}</span></p>
+                        <p>Total Invested: <span class="colour-green right-align">£{{ manageMoney.totalInvested.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</span></p>
                     </div>
                 </div>
                 <div class="investmentport-lossprof-container">
                     <div class="investment-port-total-invested">
-                        <p v-if="manageMoney.totalProfitOrLoss >= 0">Total Profit/Loss: <span class="colour-green right-align">£{{ Number(manageMoney.totalProfitOrLoss).toFixed(2) }} <font-awesome-icon icon="fa-solid fa-arrow-up" /></span></p>
-                        <p v-if="manageMoney.totalProfitOrLoss < 0">Total Profit/Loss: <span class="colour-red right-align">£{{ Number(manageMoney.totalProfitOrLoss).toFixed(2) }} <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
+                        <p v-if="manageMoney.totalProfitOrLoss >= 0">Total Profit/Loss: <span class="colour-green right-align">£{{ manageMoney.totalProfitOrLoss.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }} <font-awesome-icon icon="fa-solid fa-arrow-up" /></span></p>
+                        <p v-if="manageMoney.totalProfitOrLoss < 0">Total Profit/Loss: <span class="colour-red right-align">£{{ manageMoney.totalProfitOrLoss.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }} <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
                     </div>
                 </div>
             </div>
