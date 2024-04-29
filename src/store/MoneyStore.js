@@ -18,7 +18,7 @@ export const useMoneyManageStore = defineStore({
         monthlyOutGoingsSum: 0,
         increaseordecreaseofPocketMoney: 0,
         currentAccountCurrentTotal: 0,
-        emergencyFundCurrentTotal: 0,
+        emergencyFundCurrentTotal: 4500,
         daysUntilPayday: 30,
         decreaseTime: true,
         houseDepositCurrentTotal: 0,
