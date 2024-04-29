@@ -221,7 +221,7 @@ body {
 
 .pay-monthly-outgoings-container {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .pay-monthly-outgoings-container button {
@@ -3926,7 +3926,6 @@ margin-bottom: 40px;
 
 .bills-interactive h1 {
   font-size: 20px;
-  padding-top: 15px;
 }
 
 .billsinteractive-total-title-container {
@@ -3934,8 +3933,8 @@ margin-bottom: 40px;
   margin: 0 auto;
   text-align: center;
   color: white;
-  padding-top: 30px;
-  font-size: 14px;
+  padding-top: 20px;
+  font-size: 13px;
 }
 
 .billsinteractive-total-container {
@@ -3943,13 +3942,16 @@ margin-bottom: 40px;
   margin: 0 auto;
   text-align: center;
   color: #7dab3d;
-  padding-top: 20px;
+  padding-top: 10px;
+  font-size: 13px;
 }
 
 .bills-interactive p {
+  width: 90%;
+  margin: 0 auto;
   color: white;
   padding-top: 15px;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.7em;
 }
 
