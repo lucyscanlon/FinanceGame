@@ -28,7 +28,7 @@
         <div class="rentintro-list">
           <ul>
             <li>It's important to first decide if setting up a secondary income stream is an avenue that you are interested in and whether it would be feasible with your current lifestyle.</li>
-            <li>It's completely down to each individuals <span class="colour-green">circumstances</span> and <span class="colour-green">preferences</span> to determine this decision.</li>
+            <li>It's completely down to each individual's <span class="colour-green">circumstances</span> and <span class="colour-green">preferences</span> to determine this decision.</li>
             <li><span class="colour-green">Part time jobs:</span> These can provide stability, socialisation, a regular income and regular hours. However they can be limiting in their potential for development and expansion.</li>
             <li><span class="colour-green">Self Started Side Hustles:</span> Can be a creative outlet, a chance to build something bigger. However can have large start up costs and unpredictable earnings.</li>
             
