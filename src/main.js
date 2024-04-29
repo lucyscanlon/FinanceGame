@@ -37,6 +37,7 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 import { faMoneyCheckDollar } from '@fortawesome/free-solid-svg-icons'
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons'
+import { faChampagneGlasses } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMapPin)
 library.add(faArrowRight)
@@ -72,6 +73,7 @@ library.add(faPlay)
 library.add(faQuestion)
 library.add(faMoneyCheckDollar)
 library.add(faCalendarDays)
+library.add(faChampagneGlasses)
 
 const app = createApp(App);
 

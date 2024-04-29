@@ -424,6 +424,7 @@ export const useGameTimerStore = defineStore({
         appliancesGoalSchedule: 0,
         purchase10stocksSchedule: 0,
         investmentGoalSchedule: 0,
+        happyNewYearPassed: false,
 
     }),
     actions: {
@@ -813,10 +814,24 @@ export const useGameTimerStore = defineStore({
                 }
             }
 
+            if((currentMonth === 'January') && (currentYear > 2023) && (useHouseDepositChoiceStore().chosenHouseDepositChoice === 1) && (this.happyNewYearPassed === false)) {
+                useMainGameplayNavigationStore().currentPage = 18;
+                usePopUpStore().currentPopUp = 11;
+
+                this.happyNewYearPassed = true;
+            }
+
+            if(currentMonth !== 'January') {
+                this.happyNewYearPassed = false;
+            }
+
 
         },
 
         financialYearPassed() {
+
+            useMainGameplayNavigationStore().currentPage = 18;
+            usePopUpStore().currentPopUp = 10;
 
             if(useHouseDepositChoiceStore().chosenHouseDepositChoice === 1) {
                 useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().LISAYearlyAdditions * 0.25);

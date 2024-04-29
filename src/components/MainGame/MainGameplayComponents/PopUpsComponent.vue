@@ -9,6 +9,7 @@
         <brokenLaptopPopUp v-if="managePopUps.currentPopUp === 8"></brokenLaptopPopUp>
         <newGoalPopUp v-if="managePopUps.currentPopUp === 9"></newGoalPopUp>
         <AprilPopUp v-if="managePopUps.currentPopUp === 10"></AprilPopUp>
+        <LISAReminderPopUp v-if="managePopUps.currentPopUp === 11"></LISAReminderPopUp>
 </template>
 <script setup>
 
@@ -21,7 +22,8 @@ import HolidayChoicePopUp from '../MainGameplayComponents/PopUps/HolidayChoice.v
 import PayRisePopUp from '../MainGameplayComponents/PopUps/PayRise.vue'
 import brokenLaptopPopUp from '../MainGameplayComponents/PopUps/BrokenLaptop.vue'
 import AprilPopUp from '../MainGameplayComponents/PopUps/newFinancialYear.vue'
-import newGoalPopUp from '../MainGameplayComponents/PopUps/NewGoal.vue'
+import newGoalPopUp from '../MainGameplayComponents/PopUps/NewGoalPopUp.vue'
+import LISAReminderPopUp from '../MainGameplayComponents/PopUps/NewYear.vue'
 import {usePopUpStore} from '../../../store/MainGameChoicesStore';
 
 
@@ -46,6 +48,7 @@ export default {
         //NewGoalPopUp,
         AprilPopUp,
         newGoalPopUp,
+        LISAReminderPopUp,
     }
 }
 
