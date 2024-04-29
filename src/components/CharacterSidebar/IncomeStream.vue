@@ -16,6 +16,7 @@ The parent of this component:
     
 </script>
 <template>
+    <div v-if="manageMainGameNav.mainGameComponentsUnlocked > 3" class="incomestreams-content-container">
     <div className="characterstats-set livingstatsdisplay">
         <h4>Extra Income Stream:</h4>
         <!--Use values from the store -->
@@ -48,6 +49,7 @@ The parent of this component:
             <hr />
             
         </div>
+    </div>
     </div>
 </template>
 <script>

@@ -43,11 +43,14 @@
 <script setup>
 
     import { useMoneyManageStore, useGameTimerStore} from '../../../store/MoneyStore'
-    import { useGoalsStore, useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore'
+    import { useGoalsStore, useMainGameplayNavigationStore, useBarometerStore } from '../../../store/MainGameChoicesStore'
+    import { useSoundEffectsStore } from '../../../store/soundEffectsStore'
     const manageMoney = useMoneyManageStore()
     const manageGameTimer = useGameTimerStore()
     const manageGoals = useGoalsStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageSound = useSoundEffectsStore()
+    const manageBarometer = useBarometerStore()
 
 </script>
 <script>
