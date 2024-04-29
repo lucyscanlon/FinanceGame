@@ -52,6 +52,7 @@ Components that will be inside this container include:
           <CurrentlyShoppingAt v-if="manageMainGameNav.currentPage >= 7"></CurrentlyShoppingAt>
           <!-- Display this component depending on the stage of the game e.g. if they have chosen a transport method -->
           <TransportMethodSidebar v-if="manageMainGameNav.currentPage >= 8"></TransportMethodSidebar>
+          <IncomeStreamSidebar></IncomeStreamSidebar>
         </div>
     </div>
   </template>
@@ -64,6 +65,7 @@ import CurrentlyShoppingAt from './CurrentlyShoppingAt.vue'
 import TransportMethodSidebar from './TransportMethodChoice.vue'
 import GameNotificationPanel from './GameNotifications.vue'
 import BarometerComponent from './Barometer.vue'
+import IncomeStreamSidebar from './IncomeStream.vue'
 
 // export component data
 export default {
@@ -73,7 +75,8 @@ export default {
       CurrentlyShoppingAt,
       TransportMethodSidebar,
       GameNotificationPanel,
-      BarometerComponent
+      BarometerComponent,
+      IncomeStreamSidebar,
     },
     data() {
       return {
