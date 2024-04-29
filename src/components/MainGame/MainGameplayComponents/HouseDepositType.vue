@@ -3,7 +3,7 @@
             <h1><font-awesome-icon icon="fa-solid fa-house" />House Deposit</h1>
         </div>
         <div class="home-dep-comp-goal">
-            <p class="colour-red">Goal: £15,000</p>
+            <p><span class="colour-red">Goal: £8,000</span><span class="LISA-yearly-additions">Added this year: £{{ manageMoney.LISAYearlyAdditions }}</span></p>
         </div>
         <div class="home-dep-comp-desc">
             <p>{{ name }}: <span class="colour-green">{{ Desc }}</span></p>

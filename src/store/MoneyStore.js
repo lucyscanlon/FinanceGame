@@ -102,12 +102,12 @@ export const useMoneyManageStore = defineStore({
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
                     this.moneyInPocket = this.moneyInPocket - num;
 
-                    if(this.houseDepositCurrentTotal >= 15000) {
+                    if(this.houseDepositCurrentTotal >= 8000) {
                         useGoalsStore().completedGoals = 8;
 
                         setTimeout(() => {
                             useGameTimerStore().triggerEndOfGame()
-                          }, 5000);
+                          }, 3000);
 
                     }
     
@@ -127,12 +127,12 @@ export const useMoneyManageStore = defineStore({
                     this.moneyInPocket = this.moneyInPocket - num;
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
 
-                    if(this.houseDepositCurrentTotal >= 15000) {
+                    if(this.houseDepositCurrentTotal >= 8000) {
                         useGoalsStore().completedGoals = 8;
 
                         setTimeout(() => {
                             useGameTimerStore().triggerEndOfGame()
-                          }, 5000);
+                          }, 3000);
                     }
                 } else {
                     return
@@ -154,12 +154,12 @@ export const useMoneyManageStore = defineStore({
 
                     this.HouseDepositFixedYearOpen = false;
 
-                    if(this.houseDepositCurrentTotal >= 15000) {
+                    if(this.houseDepositCurrentTotal >= 800) {
                         useGoalsStore().completedGoals = 8;
 
                         setTimeout(() => {
                             useGameTimerStore().triggerEndOfGame()
-                          }, 5000);
+                          }, 3000);
 
                     }
                 } else {
@@ -551,7 +551,7 @@ export const useGameTimerStore = defineStore({
             // work out the total profit / loss from initial investment
             useMoneyManageStore().totalProfitOrLoss = useMoneyManageStore().InvestmentPortfolioCurrentValue - useMoneyManageStore().totalInvested;
 
-            if(useMoneyManageStore().totalProfitOrLoss >= 1500) {
+            if(useMoneyManageStore().totalProfitOrLoss >= 500) {
                 useGoalsStore().completedGoals = 7;
             }
 

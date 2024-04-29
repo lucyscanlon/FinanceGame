@@ -2371,7 +2371,7 @@ input[type="number"] {
 }
 
 .home-dep-comp-goal {
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
   text-align: center;
   color: white;
@@ -2380,7 +2380,7 @@ input[type="number"] {
 }
 
 .home-dep-comp-goal p {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .home-dep-comp-desc {
@@ -4027,6 +4027,10 @@ margin-bottom: 40px;
 
 .newyearpopuptitle {
   padding-top: 40px;
+}
+
+.LISA-yearly-additions {
+  margin-left: 10px;
 }
 
 
