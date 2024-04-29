@@ -214,14 +214,19 @@ The parent of this component:
                         </div>
             </div>
 
-            <div v-if="(manageGameTimer.countdown <= 5) && (manageMoney.billsLate === false) && (manageMoney.billsPaid === manageGameTimer.monthsPassed)" class="notifications-padding">
+            <div v-if="(manageGameTimer.countdown <= 10) && (manageMoney.billsLate === false) && (manageMoney.billsPaid === manageGameTimer.monthsPassed)" class="notifications-padding">
                         <div class="game-notification-container">
-                            <p>Your bills are due!</p>
+                            <p>Your bill payment is coming up!</p>
                         </div>
             </div>
             <div v-if="(manageMoney.billsLate === true)" class="notifications-padding">
                         <div class="game-notification-container red-border">
                             <p>Your bills are late!</p>
+                        </div>
+            </div>
+            <div v-if="(manageMoney.billsPaidLateNotif === true)" class="notifications-padding">
+                        <div class="game-notification-container red-border">
+                            <p>You paid your bills late!</p>
                         </div>
             </div>
         </div>

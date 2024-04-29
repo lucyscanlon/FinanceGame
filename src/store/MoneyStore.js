@@ -38,6 +38,7 @@ export const useMoneyManageStore = defineStore({
         totalInvested: 0,
         totalProfitOrLoss: 0,
         totalMissedBills: 0,
+        billsPaidLateNotif: false,
     }),
     actions: {
         increasePocketMoney(val) {
@@ -287,6 +288,15 @@ export const useMoneyManageStore = defineStore({
         payMonthlyOutgoings() {
             this.moneyInPocket = this.moneyInPocket - this.monthlyOutGoingsSum;
             this.billsPaid = this.billsPaid + 1;
+
+            if(this.billsLate === true) {
+                this.billsPaidLateNotif = true;
+
+                setTimeout(() => {
+                    this.billsPaidLateNotif = false;
+                  }, 4000);
+
+            }
         },
 
         payLateBill() {
@@ -440,7 +450,7 @@ export const useGameTimerStore = defineStore({
                             }
                         }
 
-                        if(this.countdown === 5) {
+                        if(this.countdown === 10) {
                             useSoundEffectsStore().playBillsDue()
                         }
 
@@ -854,6 +864,7 @@ export const useGameTimerStore = defineStore({
             }
 
         },
+
 
 
     }
