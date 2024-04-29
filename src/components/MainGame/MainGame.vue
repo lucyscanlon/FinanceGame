@@ -53,11 +53,11 @@ Components:
       <div class="maingameplay-top-row-container">
         <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>
         <PensionInteractionComponent></PensionInteractionComponent>
-        <!--<EverydaySavingInteractiveComponent></EverydaySavingInteractiveComponent>-->
         <EmergencyFundsInteractiveComponent></EmergencyFundsInteractiveComponent>
       </div>
       <div class="maingameplay-bottom-row-container">
-        <IncomeStreamsInteractiveComponent></IncomeStreamsInteractiveComponent>
+        <!--<IncomeStreamsInteractiveComponent></IncomeStreamsInteractiveComponent>-->
+        <PayBillsComponent></PayBillsComponent>
         <HouseDepositInteractiveComponent></HouseDepositInteractiveComponent>
         <InvestmentPortfolioInteractiveComponent></InvestmentPortfolioInteractiveComponent>
       </div>
@@ -101,7 +101,7 @@ import PensionInteractionComponent from "./MainGameplayComponents/PensionCompone
 //import EverydaySavingInteractiveComponent from "./MainGameplayComponents/EverydaySavingsComponent.vue";
 import EmergencyFundsInteractiveComponent from "./MainGameplayComponents/EmergencyFundsComponent.vue";
 import HouseDepositInteractiveComponent from "./MainGameplayComponents/HouseDepositComponent.vue";
-import IncomeStreamsInteractiveComponent from "./MainGameplayComponents/IncomeStreamsComponent.vue";
+//import IncomeStreamsInteractiveComponent from "./MainGameplayComponents/IncomeStreamsComponent.vue";
 import InvestmentPortfolioInteractiveComponent from "./MainGameplayComponents/InvestmentPortfolioComponent.vue";
 import currentAccountIntroduction from "./InformationPages/CurrentAccountIntroduction.vue";
 import EmergencyFundIntroduction from "./InformationPages/EmergencyFundIntroduction.vue";
@@ -114,6 +114,7 @@ import CurrentGoalIntroduction from "./InformationPages/CurrentGoalIntroduction.
 import PopUpComponent from "./MainGameplayComponents/PopUpsComponent.vue";
 import WelcomePage from "./InformationPages/WelcomePage.vue";
 import PensionPredictions from './InformationPages/PensionPrediction.vue';
+import PayBillsComponent from "./MainGameplayComponents/BillsComponent.vue";
 // export component data
 export default {
   name: "MainGameWrapper",
@@ -129,7 +130,7 @@ export default {
     //EverydaySavingInteractiveComponent,
     EmergencyFundsInteractiveComponent,
     HouseDepositInteractiveComponent,
-    IncomeStreamsInteractiveComponent,
+    //IncomeStreamsInteractiveComponent,
     InvestmentPortfolioInteractiveComponent,
     currentAccountIntroduction,
     EmergencyFundIntroduction,
@@ -140,6 +141,7 @@ export default {
     CurrentGoalInteractiveComponent,
     CurrentGoalIntroduction,
     PopUpComponent,
+    PayBillsComponent,
   },
 };
 </script>

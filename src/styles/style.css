@@ -221,18 +221,19 @@ body {
 
 .pay-monthly-outgoings-container {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .pay-monthly-outgoings-container button {
-  width: 250px;
+  width: 150px;
   background-color: #ff48c8;
   height: 35px;
   border-radius: 20px;
   border: solid 1px #ff48c8;
   font-family: unbounded-reg;
   color: white;
-  font-size: 13px;
+  font-size: 15px;
+  
 }
 
 .pay-monthly-outgoings-container button:hover {
@@ -3917,6 +3918,39 @@ margin-bottom: 40px;
 
 .incomestream-sidebar-type p {
   color: #7dab3d;
+}
+
+.maingameplay-flex-container .fa-money-check-dollar {
+  padding-right: 7px;
+}
+
+.bills-interactive h1 {
+  font-size: 20px;
+  padding-top: 15px;
+}
+
+.billsinteractive-total-title-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+  font-size: 14px;
+}
+
+.billsinteractive-total-container {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  color: #7dab3d;
+  padding-top: 20px;
+}
+
+.bills-interactive p {
+  color: white;
+  padding-top: 15px;
+  font-size: 13px;
+  line-height: 1.7em;
 }
 
 

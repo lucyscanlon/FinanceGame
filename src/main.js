@@ -35,6 +35,7 @@ import { faMoneyBills } from '@fortawesome/free-solid-svg-icons'
 import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faQuestion } from '@fortawesome/free-solid-svg-icons'
+import { faMoneyCheckDollar } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMapPin)
 library.add(faArrowRight)
@@ -68,6 +69,7 @@ library.add(faMoneyBills)
 library.add(faRectangleXmark)
 library.add(faPlay)
 library.add(faQuestion)
+library.add(faMoneyCheckDollar)
 
 const app = createApp(App);
 
