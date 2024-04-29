@@ -7,7 +7,7 @@
             <p v-if="manageGoals.completedGoals < 8">Status: <span class="colour-red">Uncompleted</span></p>
             <p v-if="manageGoals.completedGoals === 8">Status: <span class="colour-green">Completed</span></p>
         </div>
-        <div :class="(manageGoals.completedGoals === 8) ? 'currentgoal-completed-border' : ''" class="currentgoal-goal-container pay-bills-goal">
+        <div class="currentgoal-goal-container pay-bills-goal">
             <p><span class="colour-green">Goal:</span> Save £15,000 for your house deposit!</p>
         </div>
         <div class="currentgoal-tips-container">

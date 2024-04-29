@@ -2945,12 +2945,11 @@ input[type="number"] {
   margin: 0 auto;
   text-align: center;
   color: black;
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 10px;
   line-height: 1.5em;
   color: white;
   border-radius: 10px;
-  border: solid 1px #ff48c8;
 }
 
 .currentgoal-goal-container p {

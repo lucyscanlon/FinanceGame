@@ -6,7 +6,7 @@
             <p v-if="manageMoney.furnitureFundTotal < 1000">Status: <span class="colour-red">Uncompleted</span></p>
             <p v-if="manageMoney.furnitureFundTotal >= 1000">Status: <span class="colour-green">Completed</span></p>
         </div>
-        <div :class="(manageGoals.completedGoals > 0) ? 'currentgoal-completed-border' : ''" class="currentgoal-goal-container">
+        <div class="currentgoal-goal-container">
             <p><span class="colour-green">Goal:</span> Save £1000 for new furniture for your apartment</p>
         </div>
         <div class="currentgoal-info-total-container">
