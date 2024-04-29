@@ -60,25 +60,9 @@ export const useMoneyManageStore = defineStore({
             console.log("Monthly outs type: " + typeof this.monthlyOutGoingsSum);
         },
 
-        addToCurrentAccountTotal(num) {
-            if(this.moneyInPocket > num) {
-                this.currentAccountCurrentTotal = this.currentAccountCurrentTotal + num;
-                this.moneyInPocket = this.moneyInPocket - num;
-            } else {
-                return;
-            }
-        },
-
-        withdrawFromCurrentAccountTotal(num) {
-            if(this.currentAccountCurrentTotal > num) {
-                this.currentAccountCurrentTotal = this.currentAccountCurrentTotal - num;
-                this.moneyInPocket = this.moneyInPocket + num;
-            } else {
-                return;
-            }
-        },
-
         addToEmergencyFundTotal(num) {
+
+            num = Number(num);
             if(this.moneyInPocket >= num) {
                 this.emergencyFundCurrentTotal = this.emergencyFundCurrentTotal + num;
                 this.moneyInPocket = this.moneyInPocket - num;
@@ -95,6 +79,9 @@ export const useMoneyManageStore = defineStore({
         },
 
         withdrawFromEmergencyFundTotal(num) {
+
+            num = Number(num);
+
             if(this.emergencyFundCurrentTotal >= num) {
                 this.emergencyFundCurrentTotal = this.emergencyFundCurrentTotal - num;
                 this.moneyInPocket = this.moneyInPocket + num;
@@ -109,6 +96,8 @@ export const useMoneyManageStore = defineStore({
         },
 
         addToHouseDeposit(num) {
+            num = Number(num);
+
                 if(this.moneyInPocket >= num) {
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
                     this.moneyInPocket = this.moneyInPocket - num;
@@ -129,6 +118,8 @@ export const useMoneyManageStore = defineStore({
         },
 
         addToHouseDepositLISA(num) {
+            num = Number(num);
+
             if((this.LISAYearlyAdditions + num) <= 4000) {
                 this.LISAYearlyAdditions = this.LISAYearlyAdditions + num;
 
@@ -152,6 +143,8 @@ export const useMoneyManageStore = defineStore({
         },
 
         addToFixedRateHouseDeposit(num) {
+            num = Number(num);
+
             console.log("house deposit added");
             if(this.HouseDepositFixedYearOpen === true) {
                 console.log("house deposit added");
@@ -178,6 +171,8 @@ export const useMoneyManageStore = defineStore({
         },
 
         withdrawFromHouseDeposit(num) {
+            num = Number(num);
+
             if(this.houseDepositCurrentTotal >= num) {
                 this.houseDepositCurrentTotal = this.houseDepositCurrentTotal - num;
                 this.moneyInPocket = this.moneyInPocket + num;
@@ -188,6 +183,8 @@ export const useMoneyManageStore = defineStore({
         },
 
         withdrawFromHouseDepositLISA(num) {
+            num = Number(num);
+
             if(this.houseDepositCurrentTotal >= num) {
                 this.houseDepositCurrentTotal = this.houseDepositCurrentTotal - num;
                 this.moneyInPocket = this.moneyInPocket + num;
@@ -257,6 +254,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         addToFurnitureFund(num) {
+            num = Number(num);
             if(this.moneyInPocket >= num) {
 
                 let amount = Number(num)
@@ -274,6 +272,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         WithdrawFromFurnitureFund(num) {
+            num = Number(num);
             if(this.furnitureFundTotal >= num) {
 
                 let amount = Number(num)
@@ -305,6 +304,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         addToAppliancesFund(num) {
+            num = Number(num);
             if(this.moneyInPocket >= num) {
                 this.appliancesFundTotal = this.appliancesFundTotal + num;
                 this.moneyInPocket = this.moneyInPocket - num;
@@ -321,6 +321,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         withdrawFromAppliancesFund(num) {
+            num = Number(num);
             if(this.appliancesFundTotal <= num) {
                 this.moneyInPocket = this.moneyInPocket + num;
                 this.appliancesFundTotal = this.appliancesFundTotal - num;
@@ -330,6 +331,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         addToHolidayFund(num) {
+            num = Number(num);
             if(this.moneyInPocket >= num) {
                 this.holidayFundTotal = this.holidayFundTotal + num;
                 this.moneyInPocket = this.moneyInPocket - num;
@@ -345,6 +347,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         withdrawFromHolidayFund(num) {
+            num = Number(num);
             if(this.holidayFundTotal <= num) {
                 this.moneyInPocket = this.moneyInPocket + num;
                 this.holidayFundTotal = this.holidayFundTotal - num;
@@ -359,6 +362,7 @@ export const useMoneyManageStore = defineStore({
         },
 
         useEmergencyFund(num) {
+            num = Number(num);
 
             if( this.emergencyFundCurrentTotal >= num) {
                 this.emergencyFundCurrentTotal = this.emergencyFundCurrentTotal - num;
