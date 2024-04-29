@@ -61,19 +61,19 @@ The parent of this component:
                         </tr>
                         <tr>
                             <th>Current Pension Value:</th>
-                            <th class="align-right colour-green">£{{ Number(managePension.pensionCurrentTotal).toFixed(2)}}</th>
+                            <th class="align-right colour-green">£{{ managePension.pensionCurrentTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}}</th>
                         </tr>
                         <tr>
                             <th>Predicted Pension Value:</th>
-                            <th class="align-right colour-green">£1,711.84</th>
+                            <th class="align-right colour-green">£{{ managePension.pensionPredictionsCondensed[29].toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</th>
                         </tr>
                         <tr>
                             <th>Emergency Fund Total:</th>
-                            <th class="align-right colour-green">£{{ Number(manageMoney.emergencyFundCurrentTotal).toFixed(2) }}</th>
+                            <th class="align-right colour-green">£{{manageMoney.emergencyFundCurrentTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}}</th>
                         </tr>
                         <tr>
                             <th>Investment Portfolio Value:</th>
-                            <th class="align-right colour-green">£{{ Number(manageMoney.InvestmentPortfolioCurrentValue).toFixed(2) }}</th>
+                            <th class="align-right colour-green">£{{manageMoney.InvestmentPortfolioCurrentValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}}</th>
                         </tr>
                     </table>
                 </div>

@@ -40,8 +40,8 @@ Components that will be inside this container include:
                 <p>After Tax:</p>
               </div>
               <div class="charactersidebar-salaryamount">
-                <p>£{{Number(manageMoney.monthlySalaryBeforeTax).toFixed(2)}}</p>
-                <p>£{{Number(manageMoney.monthlySalaryAfterTax).toFixed(2)}}</p>
+                <p>£{{manageMoney.monthlySalaryBeforeTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</p>
+                <p>£{{manageMoney.monthlySalaryAfterTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</p>
               </div>
             </div>
             <hr />
