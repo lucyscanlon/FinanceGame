@@ -415,6 +415,7 @@ export const useGameTimerStore = defineStore({
         investmentOpShown: false,
         chosenToTakeInvestment: false,
         TotalTimeSpanOfGame: '',
+        phonePopUpScheduledMonth: 0,
 
     }),
     actions: {
@@ -631,12 +632,18 @@ export const useGameTimerStore = defineStore({
 
             if((useGoalsStore().completedGoals === 1) && (countdown === 25)) {
                 useGoalsStore().currentGoal = 2;
+
+                if(this.phonePopUpScheduledMonth === 0) {
+                    this.phonePopUpScheduledMonth = monthsPassed;
+                }
+                console.log("Months Passed: Furniture " + this.phonePopUpScheduledMonth);
                 // furniture fund goal
             }
 
-            if((useGoalsStore().completedGoals === 1) && (countdown === 20)) {
+            if((useGoalsStore().completedGoals === 1) && (countdown === 20) && (monthsPassed === this.phonePopUpScheduledMonth)) {
                 useMainGameplayNavigationStore().currentPage = 18;
                 usePopUpStore().currentPopUp = 1;
+                console.log("Months Passed PopUp " + monthsPassed);
                 // phone bill
 
             }

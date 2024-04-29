@@ -81,7 +81,7 @@
                     <p>Owned Shares: <span class="shares-owned colour-green">{{ manageInvestmentPortfolio.ShareTotalAmounts[0] }}</span></p>
                 </div>
                 <form>
-                    <input type="number" placeholder="__" v-model="EWGAmountToBuyOrSell">
+                    <input placeholder="Enter Number" v-model="EWGAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
                     <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(0, EWGAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell), rerenderComponent()">Buy</button>
@@ -94,7 +94,7 @@
                     <p>Owned Shares: <span class="shares-owned colour-green">{{ manageInvestmentPortfolio.ShareTotalAmounts[1] }}</span></p>
                 </div>
                 <form>
-                    <input type="number" placeholder="__" v-model="FEUAmountToBuyOrSell">
+                    <input placeholder="Enter Number" v-model="FEUAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
                     <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(1, FEUAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock2Value, FEUAmountToBuyOrSell), rerenderComponent()">Buy</button>
@@ -108,7 +108,7 @@
                     <p>Owned Shares: <span class="shares-owned colour-green">{{ manageInvestmentPortfolio.ShareTotalAmounts[2] }}</span></p>
                 </div>
                 <form>
-                    <input type="number" placeholder="__" v-model="GHUAmountToBuyOrSell">
+                    <input placeholder="Enter Number" v-model="GHUAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
                     <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(2, GHUAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock3Value, GHUAmountToBuyOrSell), rerenderComponent()">Buy</button>
@@ -122,7 +122,7 @@
                     <p>Owned Shares: <span class="shares-owned colour-green">{{ manageInvestmentPortfolio.ShareTotalAmounts[3] }}</span></p>
                 </div>
                 <form>
-                    <input type="number" placeholder="__" v-model="WRFAmountToBuyOrSell">
+                    <input placeholder="Enter Number" v-model="WRFAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
                     <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(3, WRFAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock4Value, WRFAmountToBuyOrSell), rerenderComponent()">Buy</button>
@@ -136,7 +136,7 @@
                     <p>Owned Shares: <span class="shares-owned colour-green">{{ manageInvestmentPortfolio.ShareTotalAmounts[4] }}</span></p>
                 </div>
                 <form>
-                    <input type="number" placeholder="__" v-model="PSWAmountToBuyOrSell">
+                    <input placeholder="Enter Number" v-model="PSWAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
                     <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(4, PSWAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock5Value, PSWAmountToBuyOrSell), rerenderComponent(), manageNotification.timeoutInvestmentBuyMoreStockNotification(), manageBarometer.decreaseScore(10)">Buy</button>
@@ -193,11 +193,6 @@
                     </div>
                 </div>
             </div>
-        <!--<div class="investing-port-close-portfolio-button">
-            <button @click="useMainGameplayNav.navigateToPage(11)">Close Portfolio</button>
-        </div>-->
-        
-
     </div>
    
 </template>

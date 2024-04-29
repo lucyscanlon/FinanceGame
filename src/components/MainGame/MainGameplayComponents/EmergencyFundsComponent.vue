@@ -20,7 +20,7 @@
         <div class="emergencyfund-addwithdraw-box-container">
             <div class="emergencyfund-addwithdraw-change">
                 <form>
-                    <input type="number" placeholder="__" v-model="amountToChange">
+                    <input placeholder="Enter Number" v-model="amountToChange">
                 </form>
             </div>
         </div>
