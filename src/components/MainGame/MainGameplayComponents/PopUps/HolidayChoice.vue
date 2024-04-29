@@ -1,4 +1,5 @@
 <template>
+    <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
         <h1><font-awesome-icon icon="fa-solid fa-map-location-dot" />New Goal: You're going on holiday!</h1>
     </div> 
@@ -22,7 +23,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.decreaseScore(30), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(1), manageMainGameNav.navigateToPage(18), managePopUps.setSpecificPopup(9), manageGameGoals.setUpSpecificGoal(5), manageBarometer.decreaseScore(30), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container holidaychoice-flex">
@@ -41,7 +42,7 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(15), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(2), manageMainGameNav.navigateToPage(18), managePopUps.setSpecificPopup(9), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(15), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
             </div>
         </div>
         <div class="popup-phonebill-flex-container holidaychoice-flex">
@@ -60,22 +61,21 @@
                 </div>
             </div>
             <div class="popup-phonebill-button">
-                <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(20), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
+                <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(3), manageMainGameNav.navigateToPage(18), managePopUps.setSpecificPopup(9), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(20), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
             </div>
         </div>
+    </div>
     </div>
 </template>
 <script setup>
 
 import { useBarometerStore, usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
 import { useMainGameplayNavigationStore, useNotificationStore } from "../../../../store/MainGameChoicesStore.js";
-import { useGameTimerStore } from "../../../../store/MoneyStore.js";
 import { useGoalsStore } from "../../../../store/MainGameChoicesStore.js";
 import { useSoundEffectsStore } from '../../../../store/soundEffectsStore.js'
 
 const managePopUps = usePopUpStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
-const manageGameTimer = useGameTimerStore();
 const manageGameGoals = useGoalsStore();
 const manageBarometer = useBarometerStore();
 const manageNotifications = useNotificationStore();

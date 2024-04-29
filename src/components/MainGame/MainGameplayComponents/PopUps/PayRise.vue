@@ -1,4 +1,5 @@
 <template>
+    <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
         <h1><font-awesome-icon icon="fa-solid fa-money-bills" />You got a pay rise!</h1>
     </div> 
@@ -16,6 +17,7 @@
         <div class="popup-investsucc-button-container">
             <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageMoney.increaseSalary(), manageBarometer.increaseScore(10)">Accept pay rise</button>
         </div>
+    </div>
     </div>
 </template>
 <script setup>

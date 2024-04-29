@@ -1,4 +1,5 @@
 <template>
+    <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
         <h1><font-awesome-icon icon="fa-solid fa-sack-dollar" />Your friend's launch was unsuccessful</h1>
     </div> 
@@ -17,6 +18,7 @@
             <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Close</button>
         </div>
         
+    </div>
     </div>
    
 </template>

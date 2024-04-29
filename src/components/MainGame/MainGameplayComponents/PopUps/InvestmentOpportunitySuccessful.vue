@@ -1,4 +1,5 @@
 <template>
+    <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
         <h1><font-awesome-icon icon="fa-solid fa-sack-dollar" />Your friend's launch was successful!</h1>
     </div> 
@@ -17,6 +18,7 @@
             <button @click="manageSound.playClickSound(), managePopUps.InvestmentOpportunitySuccessful(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Deposit into account</button>
         </div>
         
+    </div>
     </div>
    
 </template>

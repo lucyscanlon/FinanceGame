@@ -2945,7 +2945,7 @@ input[type="number"] {
   margin: 0 auto;
   text-align: center;
   color: black;
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 10px;
   line-height: 1.5em;
   color: white;
@@ -3952,6 +3952,73 @@ margin-bottom: 40px;
   padding-top: 15px;
   font-size: 12px;
   line-height: 1.7em;
+}
+
+.newgoalpopup-title-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: #ff48c8;
+  padding-top: 50px;
+}
+
+.newgoalpopup-title-container h1 {
+  font-size: 25px;
+}
+
+.newgoalpopup-description-container {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 1.7em;
+  padding-top: 20px;
+}
+
+.newgoalpopup-home-button {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.newgoalpopup-home-button button {
+  width: 150px;
+  height: 40px;
+  background-color: #ff48c8;
+  border-radius: 100px;
+  font-family: unbounded-reg;
+  color: white;
+  border: solid 2px #ff48c8;
+  transition-duration: 0.5s;
+  font-size: 15px;
+}
+
+.newgoalpopup-home-button button:hover {
+  background-color:#1F1E2F;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.popups-main-container-newgoal-container {
+  width: 40%;
+  margin: 0 auto;
+  height: 300px;
+  background-color: #1f1e2f;
+  z-index: 999;
+  position: absolute;
+  top: 27%;
+  left: 44%;
+  border-radius: 25px;
+  font-family: unbounded-reg;
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
+  -moz-box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
+  box-shadow: 0px 0px 24px 0px rgba(255, 72, 200, 1);
+}
+
+.newgoalpopup-title-container .fa-calendar-days {
+  padding-right: 10px;
 }
 
 

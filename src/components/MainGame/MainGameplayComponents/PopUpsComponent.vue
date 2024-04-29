@@ -1,5 +1,4 @@
 <template>
-    <div class="popups-main-container-wrapper">
         <PhoneBillPopUp v-if="managePopUps.currentPopUp === 1"></PhoneBillPopUp>
         <WorkDrinksPopUp v-if="managePopUps.currentPopUp === 2"></WorkDrinksPopUp>
         <InvestmentOpportunityPopUp v-if="managePopUps.currentPopUp === 3"></InvestmentOpportunityPopUp>
@@ -8,8 +7,8 @@
         <HolidayChoicePopUp v-if="managePopUps.currentPopUp === 6"></HolidayChoicePopUp>
         <PayRisePopUp v-if="managePopUps.currentPopUp === 7"></PayRisePopUp>
         <brokenLaptopPopUp v-if="managePopUps.currentPopUp === 8"></brokenLaptopPopUp>
-   
-    </div>
+        <newGoalPopUp v-if="managePopUps.currentPopUp === 9"></newGoalPopUp>
+        <AprilPopUp v-if="managePopUps.currentPopUp === 10"></AprilPopUp>
 </template>
 <script setup>
 
@@ -21,9 +20,14 @@ import InvestmentOpportunityFailedPopUp from '../MainGameplayComponents/PopUps/I
 import HolidayChoicePopUp from '../MainGameplayComponents/PopUps/HolidayChoice.vue'
 import PayRisePopUp from '../MainGameplayComponents/PopUps/PayRise.vue'
 import brokenLaptopPopUp from '../MainGameplayComponents/PopUps/BrokenLaptop.vue'
+import AprilPopUp from '../MainGameplayComponents/PopUps/newFinancialYear.vue'
+import newGoalPopUp from '../MainGameplayComponents/PopUps/NewGoal.vue'
 import {usePopUpStore} from '../../../store/MainGameChoicesStore';
 
+
 const managePopUps = usePopUpStore();
+
+
 
 </script>
 <script>
@@ -39,6 +43,9 @@ export default {
         HolidayChoicePopUp,
         PayRisePopUp,
         brokenLaptopPopUp,
+        //NewGoalPopUp,
+        AprilPopUp,
+        newGoalPopUp,
     }
 }
 

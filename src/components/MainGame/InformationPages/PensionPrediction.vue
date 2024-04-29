@@ -19,7 +19,7 @@ The parent of this component:
             </div>
             <div class="rentinfo-button-wrapper pension-predictions">
                 <!-- Call store method on click -->
-                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(3), manageMainGameNav.navigateToPage(11), manageMainGameNav.unlockComponent()" class="currentaccount-button">Continue to game</button>
+                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageMainGameNav.unlockComponent()" class="currentaccount-button">Continue to game</button>
             </div>
         </div>
     </div>
@@ -30,11 +30,13 @@ The parent of this component:
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
     import { useSoundEffectsStore } from '../../../store/soundEffectsStore'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
+    import {useGameTimerStore} from '../../../store/MoneyStore.js'
 
 
     const managePension = usePensionChoicesStore()
     const manageSound = useSoundEffectsStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
+    const manageGameTimer = useGameTimerStore()
 
 
 </script>

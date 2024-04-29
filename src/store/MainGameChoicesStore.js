@@ -5,7 +5,7 @@ export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
     mainGameComponentsUnlocked: 0,
-    currentPage: -1,
+    currentPage: 18,
   }),
   actions: {
     navigateToPage(num) {
@@ -288,6 +288,8 @@ export const useInvestmentPortfolioChoiceStore = defineStore({
     }),
     actions: {
         buyMoreShare(num, amount) {
+
+            amount = Number(amount);
             this.ShareTotalAmounts[num] = this.ShareTotalAmounts[num] + amount;
             this.TotalNumberOfShares = this.TotalNumberOfShares + amount;
 
@@ -311,6 +313,8 @@ export const useInvestmentPortfolioChoiceStore = defineStore({
         },
 
         sellShare(num, amount) {
+
+            amount = Number(amount)
             this.ShareTotalAmounts[num] = this.ShareTotalAmounts[num] - amount;
             this.TotalNumberOfShares = this.TotalNumberOfShares - amount;
 
@@ -370,7 +374,7 @@ export const useGoalsStore = defineStore({
 export const usePopUpStore = defineStore({
   id: 'PopUpStore',
   state: () => ({
-    currentPopUp: 0,
+    currentPopUp: 10,
     phonePlanChoice: 0,
     holidayChoice: 0,
   }),
@@ -407,6 +411,7 @@ export const usePopUpStore = defineStore({
         console.log("Investment Choice yes: " + useMoneyManageStore().chosenToTakeInvestment);
       } else if (num === 2) {
         useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 0;
+        useMoneyManageStore().chosenToTakeInvestment = false;
       }
     },
 
@@ -433,6 +438,10 @@ export const usePopUpStore = defineStore({
       } else if(num === 2) {
         useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket = 1500;
       }
+    },
+
+    setSpecificPopup(num) {
+      this.currentPopUp = num;
     }
   }
 })

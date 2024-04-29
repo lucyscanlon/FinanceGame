@@ -36,6 +36,7 @@ import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 import { faMoneyCheckDollar } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMapPin)
 library.add(faArrowRight)
@@ -70,6 +71,7 @@ library.add(faRectangleXmark)
 library.add(faPlay)
 library.add(faQuestion)
 library.add(faMoneyCheckDollar)
+library.add(faCalendarDays)
 
 const app = createApp(App);
 

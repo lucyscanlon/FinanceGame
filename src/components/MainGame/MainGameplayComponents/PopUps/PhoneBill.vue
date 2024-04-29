@@ -1,4 +1,5 @@
 <template>
+    <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
         <h1><font-awesome-icon icon="fa-solid fa-phone" />Choose a phone plan</h1>
     </div> 
@@ -76,6 +77,7 @@
             </div>
             
         </div>
+    </div>
     </div>
 </template>
 <script setup>

@@ -16,7 +16,7 @@ The parent of this component:
                     <li>Goals will appear on your <span class="colour-green">game homepage.</span></li>
                     <li><span class="colour-green">Complete the tasks</span> to complete the goal</li>
                     <li>When the end of the month approaches, press the <span class="colour-green">'Pay monthly outgoings'</span> button to pay your bills.</li>
-                    <li>Bills can be paid up to <span class="colour-green">five days</span> before the end of the month.</li>
+                    <li>Bills can be paid up to <span class="colour-green">ten days</span> before the end of the month.</li>
                     <li>Not paying bills can have <span class="colour-green">consequences.</span></li>
                 </ul>
             </div>
@@ -36,6 +36,7 @@ The parent of this component:
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageGameTimer = useGameTimerStore()
     const manageSound = useSoundEffectsStore()
+    
 
 </script>
 <script>

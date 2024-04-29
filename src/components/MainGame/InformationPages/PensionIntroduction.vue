@@ -7,12 +7,11 @@ The parent of this component:
 <script setup>
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
-    import {useGameTimerStore, useMoneyManageStore} from '../../../store/MoneyStore.js'
+    import { useMoneyManageStore} from '../../../store/MoneyStore.js'
     import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
 
     const managePension = usePensionChoicesStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
-    const manageGameTimer = useGameTimerStore()
     const manageSound = useSoundEffectsStore()
     const manageMoney = useMoneyManageStore()
 
@@ -77,7 +76,7 @@ The parent of this component:
                 </div>
                 <div class="pension-contribution-button-container">
                         <button v-if="manageMainGameNav.currentPage === 9" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), managePension.workoutPensionPredictions(manageMoney.monthlySalaryBeforeTax, managePension.chosenPensionChoice.TContPercentage), manageMainGameNav.navigateToPage(22)">Confirm Choice</button>
-                        <button v-if="manageMainGameNav.currentPage === 10" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 10" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), manageMainGameNav.navigateToPage(11)">Confirm Choice</button>
                  </div>
                 </div>
             </div>

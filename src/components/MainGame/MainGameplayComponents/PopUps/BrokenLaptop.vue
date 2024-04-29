@@ -1,4 +1,5 @@
 <template>
+    <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
         <h1><font-awesome-icon icon="fa-solid fa-triangle-exclamation" />Your laptop broke!</h1>
     </div> 
@@ -34,6 +35,7 @@
                 <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), managePopUps.brokenLaptopChoice(2), manageGameTimer.startCountdown(), manageBarometer.decreaseScore(15)">Choose</button>
             </div>
         </div>
+    </div>
     </div>
 </template>
 <script setup>

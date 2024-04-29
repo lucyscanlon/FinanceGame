@@ -1,4 +1,5 @@
 <template>
+    <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
         <h1><font-awesome-icon icon="fa-solid fa-sack-dollar" />An Investment Opportunity</h1>
     </div> 
@@ -34,6 +35,7 @@
                 <button @click="manageSound.playClickSound(), managePopUps.investmentOpportunityChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
         </div>
+    </div>
     </div>
 </template>
 <script setup>
