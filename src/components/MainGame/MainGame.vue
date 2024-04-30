@@ -53,6 +53,8 @@ Components:
     <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 24" :NumofSlides=2></EmergencyFundIntroduction>
     <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 25" :NumOfSlides=2></HouseDepositIntroduction>
     <InvestingIntroduction v-if="manageMainGameNav.currentPage === 26" :NumOfSlides=4></InvestingIntroduction>
+    <payingBillsIntroduction v-if="manageMainGameNav.currentPage === 27"></payingBillsIntroduction>
+    <payingBillsIntroduction v-if="manageMainGameNav.currentPage === 28"></payingBillsIntroduction>
     <div v-if="(manageMainGameNav.currentPage === 11) || (manageMainGameNav.currentPage === 18)" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
         <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>
@@ -119,6 +121,7 @@ import PopUpComponent from "./MainGameplayComponents/PopUpsComponent.vue";
 import WelcomePage from "./InformationPages/WelcomePage.vue";
 import PensionPredictions from './InformationPages/PensionPrediction.vue';
 import PayBillsComponent from "./MainGameplayComponents/BillsComponent.vue";
+import payingBillsIntroduction from "./InformationPages/PayingBillsIntroduction.vue";
 // export component data
 export default {
   name: "MainGameWrapper",
@@ -146,6 +149,7 @@ export default {
     CurrentGoalIntroduction,
     PopUpComponent,
     PayBillsComponent,
+    payingBillsIntroduction,
   },
 };
 </script>

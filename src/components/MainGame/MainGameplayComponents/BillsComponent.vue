@@ -1,6 +1,6 @@
 <template>
     <div class="maingameplay-flex-container">
-        <div class="pension-info-button-container">
+        <div @click="manageMainGameNav.navigateToPage(28)" class="pension-info-button-container">
             <p><font-awesome-icon icon="fa-solid fa-question" /></p>
         </div>
         <div v-if="manageMainGameNav.mainGameComponentsUnlocked > 0" class="housedeposit-content-container">
