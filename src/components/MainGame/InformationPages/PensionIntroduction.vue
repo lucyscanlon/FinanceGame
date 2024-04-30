@@ -19,7 +19,7 @@ The parent of this component:
 </script>
 <template>
     <div class="rentintro-mainwrapper">
-        <div @click="manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
+        <div v-if="manageMainGameNav.currentPage === 23" @click="manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
             <p><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
         </div>
         <div class="pensionintro-title-wrapper">

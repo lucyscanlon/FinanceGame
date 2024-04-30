@@ -705,7 +705,7 @@ body {
 
 .rentinfo-button {
   width: 330px;
-  height: 50px;
+  height: 40px;
   background-color: #ff48c8;
   border: 2px solid #ff48c8;
   font-family: unbounded-reg;
@@ -3119,12 +3119,12 @@ input[type="number"] {
 }
 
 .first-goal-button-padding {
-  padding-top: 50px;
+  padding-top: 10px;
 
 }
 
 .first-goal-button-padding button {
-  width: 280px;
+  width: 130px;
 }
 
 .pay-bills-goal {

@@ -6,7 +6,7 @@ The parent of this component:
 -->
 <template>
     <div class="rentintro-mainwrapper supermarket-info-wrap">
-        <div @click="useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
+        <div v-if="manageMainGameNav.currentPage === 25" @click="useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
             <p><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
         </div>
         <div class="rentintro-title-wrapper housedepositinfo-title">
