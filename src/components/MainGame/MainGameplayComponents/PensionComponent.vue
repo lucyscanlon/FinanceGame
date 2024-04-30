@@ -12,6 +12,9 @@
 
 <template>
     <div class="pension-interactive-component-container maingameplay-flex-container">
+        <div @click="manageMainGameNav.navigateToPage(23)" class="pension-info-button-container">
+            <p><font-awesome-icon icon="fa-solid fa-question" /></p>
+        </div>
         <div v-if="manageMainGameNav.mainGameComponentsUnlocked > 1" class="pension-component-content">
             <div class="pension-interactive-title-container">
             <h1><font-awesome-icon icon="fa-solid fa-person-cane" />Pension</h1>

@@ -81,7 +81,7 @@ The parent of this component:
                 </span>
             </div>
         <div
-          v-if="currentSlide < 4" class="next-container">
+          v-if="currentSlide < 4" :class="removeNextButton && 'displaynone'" class="next-container">
           <p @click="nextSlide()">
             Next <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </p>
@@ -106,18 +106,30 @@ The parent of this component:
     // export component data
     export default {
         name: 'InvestingIntroduction',
+        props: {
+            NumOfSlides: Number,
+        },
         data() {
             return {
                 currentSlide: 0,
+                removeNextButton: false,
             }
         },
         methods: {
             nextSlide() {
                 this.currentSlide = this.currentSlide + 1;
+
+                if (this.currentSlide === (this.NumOfSlides -1)) {
+                    this.removeNextButton = true;
+                }
             },
 
             previousSlide() {
                 this.currentSlide = this.currentSlide - 1;
+
+                if (this.currentSlide !== (this.NumOfSlides -1)) {
+                    this.removeNextButton = false;
+                }
             },
         },
     }

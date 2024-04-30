@@ -7,17 +7,21 @@ The parent of this component:
 <script setup>
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'
-    import { useMoneyManageStore} from '../../../store/MoneyStore.js'
+    import { useGameTimerStore, useMoneyManageStore} from '../../../store/MoneyStore.js'
     import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
 
     const managePension = usePensionChoicesStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageSound = useSoundEffectsStore()
     const manageMoney = useMoneyManageStore()
+    const manageGameTimer = useGameTimerStore()
 
 </script>
 <template>
     <div class="rentintro-mainwrapper">
+        <div @click="manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
+            <p><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
+        </div>
         <div class="pensionintro-title-wrapper">
             <h1>Setting up your pension</h1>
         </div>
@@ -89,7 +93,7 @@ The parent of this component:
                     <span :class="currentSlide === 1 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
                     <span :class="currentSlide === 2 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
                     <span :class="currentSlide === 3 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
-                    <span :class="currentSlide === 4 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
+                    <span v-if="NumOfSlides > 4" :class="currentSlide === 4 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle" /></span>
                 </div>
                 <div :class="removeNextButton && 'displaynone'" class="next-container">
                     <p @click="nextSlide()">Next <font-awesome-icon icon="fa-solid fa-arrow-right" /></p>
@@ -110,6 +114,7 @@ The parent of this component:
       },
       props: {
         startingSlide: Number,
+        NumOfSlides: Number,
       },
       data() {
         return {
@@ -122,7 +127,7 @@ The parent of this component:
                 this.currentSlide = this.currentSlide + 1;
             }
 
-            if (this.currentSlide === 4) {
+            if (this.currentSlide === (this.NumOfSlides -1)) {
                 this.removeNextButton = true;
             }
         },
@@ -130,7 +135,7 @@ The parent of this component:
             if(this.currentSlide > 0) {
                 this.currentSlide = this.currentSlide - 1;
                 
-                if (this.currentSlide < 4) {
+                if (this.currentSlide !== (this.NumOfSlides -1)) {
                     this.removeNextButton = false;
                 }
             }

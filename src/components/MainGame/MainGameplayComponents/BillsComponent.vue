@@ -1,5 +1,8 @@
 <template>
     <div class="maingameplay-flex-container">
+        <div class="pension-info-button-container">
+            <p><font-awesome-icon icon="fa-solid fa-question" /></p>
+        </div>
         <div v-if="manageMainGameNav.mainGameComponentsUnlocked > 0" class="housedeposit-content-container">
             <div class="pension-interactive-title-container everydaysavings-title bills-interactive">
                 <h1><font-awesome-icon icon="fa-solid fa-money-check-dollar" />Your Bills</h1>

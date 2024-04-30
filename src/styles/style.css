@@ -658,6 +658,7 @@ body {
   margin: 0 auto;
   padding-top: 30px;
   padding-bottom: 30px;
+  position: relative;
 }
 
 .rentintro-title-wrapper h1 {
@@ -1416,6 +1417,7 @@ th {
   margin-right: 10px;
   background-color: #1f1e2f;
   border-radius: 15px;
+  position: relative;
 }
 
 .pension-interactive-title-container {
@@ -4031,6 +4033,54 @@ margin-bottom: 40px;
 
 .LISA-yearly-additions {
   margin-left: 10px;
+}
+
+.pension-info-button-container {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 89%;
+  top: 5%;
+  border: solid 1.5px #605C91;
+  border-radius: 100px;
+  transition-duration: 0.3s;
+}
+
+.pension-info-button-container p {
+  text-align: center;
+  color: #605C91;
+  padding-top: 2px;
+  font-size: 12px;
+  transition-duration: 0.3s;
+}
+
+.pension-info-button-container:hover {
+  border: solid 1.5px white;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.pension-info-button-container:hover p {
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.exitout-introduction-button-container {
+  position: absolute;
+  top: 10%;
+  left: 92%;
+  color: #605C91;
+  transition-duration: 0.3s;
+}
+
+.exitout-introduction-button-container p {
+  font-size: 25px;
+}
+
+.exitout-introduction-button-container:hover {
+  color: #FFFFFF;
+  transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 

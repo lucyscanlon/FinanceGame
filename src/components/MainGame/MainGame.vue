@@ -36,8 +36,8 @@ Components:
     <TransportMethodDisplay v-if="manageMainGameNav.currentPage === 7"></TransportMethodDisplay>
     <!--current goal info --> 
     <CurrentGoalIntroduction v-if="manageMainGameNav.currentPage === 8"></CurrentGoalIntroduction>
-    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 9" :startingSlide="0"></PensionInformationDisplay>
-    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 10" :startingSlide="4"></PensionInformationDisplay>
+    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 9" :startingSlide="0" :NumOfSlides=5></PensionInformationDisplay>
+    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 10" :startingSlide="4" :NumOfSlides=5></PensionInformationDisplay>
     <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 12"></EmergencyFundIntroduction>
     <incomeStreamsIntroduction v-if="manageMainGameNav.currentPage === 13" :startingSlide="0"></incomeStreamsIntroduction>
     <incomeStreamsIntroduction v-if="manageMainGameNav.currentPage === 14" :startingSlide="2"></incomeStreamsIntroduction>
@@ -49,6 +49,10 @@ Components:
     <SupermarketChoiceDisplay v-if="manageMainGameNav.currentPage === 20"></SupermarketChoiceDisplay>
     <TransportMethodDisplay v-if="manageMainGameNav.currentPage === 21"></TransportMethodDisplay>
     <PensionPredictions v-if="manageMainGameNav.currentPage === 22"></PensionPredictions>
+    <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 23" :startingSlide="0" :NumOfSlides=4></PensionInformationDisplay>
+    <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 24" :NumofSlides=2></EmergencyFundIntroduction>
+    <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 25" :NumOfSlides=2></HouseDepositIntroduction>
+    <InvestingIntroduction v-if="manageMainGameNav.currentPage === 26" :NumOfSlides=4></InvestingIntroduction>
     <div v-if="(manageMainGameNav.currentPage === 11) || (manageMainGameNav.currentPage === 18)" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
         <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>

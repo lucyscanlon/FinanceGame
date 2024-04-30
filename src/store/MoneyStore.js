@@ -845,9 +845,6 @@ export const useGameTimerStore = defineStore({
                 useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().houseDepositCurrentTotal * 0.048);
             }
 
-            if(useMoneyManageStore().houseDepositCurrentTotal >= 15000) {
-                useGoalsStore().completedGoals = 8;
-            }
 
             if(useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'High Interest Savings Account') {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.044);
@@ -857,6 +854,15 @@ export const useGameTimerStore = defineStore({
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.04);
             } else if (useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'Regular Savings Account') {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.028);
+            }
+
+            if(useMoneyManageStore().emergencyFundCurrentTotal >= 5000) {
+                useGoalsStore().completedGoals = 3;
+                useBarometerStore().increaseScore(10);
+            }
+
+            if(useMoneyManageStore().houseDepositCurrentTotal >= 8000) {
+                useGoalsStore().completedGoals = 8;
             }
         },
 

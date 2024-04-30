@@ -6,6 +6,9 @@ The parent of this component:
 -->
 <template>
   <div class="rentintro-mainwrapper">
+    <div @click="useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
+            <p><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
+    </div>
     <div class="emergencyfund-intro-title-wrapper everydayaccount-info-title">
       <h1>Creating an emergency fund</h1>
     </div>
@@ -69,12 +72,12 @@ The parent of this component:
             <font-awesome-icon icon="fa-solid fa-arrow-left" /> Previous
           </p>
         </div>
-        <div v-if="currentSlide < 2" :class="removeNextButton && 'displaynone'" class="currentslide-circles-container">
+        <div :class="removeNextButton && 'displaynone'" class="currentslide-circles-container">
           <span :class="currentSlide === 0 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle"/></span>
           <span :class="currentSlide === 1 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle"/></span>
-          <span :class="currentSlide === 2 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle"/></span>
+          <span v-if="NumofSlides > 2" :class="currentSlide === 2 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle"/></span>
         </div>
-        <div v-if="currentSlide < 2" :class="removeNextButton && 'displaynone'" class="next-container">
+        <div :class="removeNextButton && 'displaynone'" class="next-container">
           <p @click="nextSlide()">
             Next <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </p>
@@ -109,18 +112,30 @@ export default {
   components: {
     EmergencyFundChoicesFlexbox,
   },
+  props: {
+    NumofSlides: Number,
+  },
   data() {
     return {
       currentSlide: 0,
+      removeNextButton: false,
     };
   },
   methods: {
     nextSlide() {
       this.currentSlide = this.currentSlide + 1;
+
+      if(this.currentSlide === (this.NumofSlides -1)) {
+        this.removeNextButton = true;
+      }
     },
 
     previousSlide() {
       this.currentSlide = this.currentSlide - 1;
+
+      if(this.currentSlide !== (this.NumofSlides -1)) {
+        this.removeNextButton = false;
+      }
     },
   },
 };
