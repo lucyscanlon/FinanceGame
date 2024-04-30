@@ -1,9 +1,9 @@
 <template>
     <div class="maingameplay-flex-container">
-        <div @click="useMainGameplayNav.navigateToPage(24)" class="pension-info-button-container">
-            <p><font-awesome-icon icon="fa-solid fa-question" /></p>
-        </div>
         <div v-if="useMainGameplayNav.mainGameComponentsUnlocked > 2" class="emergencyfund-content-container">
+            <div @click="useMainGameplayNav.navigateToPage(24)" class="pension-info-button-container">
+            <p><font-awesome-icon icon="fa-solid fa-question" /></p>
+            </div>
             <div class="pension-interactive-title-container emergencyfund-interactive-title">
             <h1><font-awesome-icon icon="fa-solid fa-triangle-exclamation" />Emergency Fund</h1>
             <p>{{ manageEmergencyFund.chosenEmergencyFundChoice.EmergFName }}</p>

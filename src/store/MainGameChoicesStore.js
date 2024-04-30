@@ -4,8 +4,8 @@ import { useMoneyManageStore } from './MoneyStore'
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
-    mainGameComponentsUnlocked: 6,
-    currentPage: 8,
+    mainGameComponentsUnlocked: 3,
+    currentPage: 11,
   }),
   actions: {
     navigateToPage(num) {
@@ -374,9 +374,11 @@ export const useGoalsStore = defineStore({
 export const usePopUpStore = defineStore({
   id: 'PopUpStore',
   state: () => ({
-    currentPopUp: 0,
+    currentPopUp: 8,
     phonePlanChoice: 0,
     holidayChoice: 0,
+    InvestmentOpChoice: 0,
+    brokenLaptopChoice: 0,
   }),
   actions: {
     choosePhonePlan(num) {
@@ -409,10 +411,15 @@ export const usePopUpStore = defineStore({
         useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 1500;
         useMoneyManageStore().chosenToTakeInvestment = true;
         console.log("Investment Choice yes: " + useMoneyManageStore().chosenToTakeInvestment);
+        useBarometerStore().decreaseScore(20)
       } else if (num === 2) {
         useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket - 0;
         useMoneyManageStore().chosenToTakeInvestment = false;
+        useBarometerStore().increaseScore(10)
       }
+
+      useNotificationStore().timeoutInvestmentOpNotification();
+
     },
 
     InvestmentOpportunitySuccessful() {
@@ -435,8 +442,14 @@ export const usePopUpStore = defineStore({
     brokenLaptopChoice(num) {
       if(num === 1) {
         useMoneyManageStore().useEmergencyFund(1500);
+        useBarometerStore().increaseScore(10)
+        this.brokenLaptopChoice = 1
+        useNotificationStore().timeoutBrokenLaptopNotification()
       } else if(num === 2) {
         useMoneyManageStore().moneyInPocket = useMoneyManageStore().moneyInPocket = 1500;
+        useBarometerStore().decreaseScore(15)
+        this.brokenLaptopChoice = 2
+        useNotificationStore().timeoutBrokenLaptopNotification()
       }
     },
 
@@ -552,6 +565,8 @@ export const useNotificationStore = defineStore({
     houseDepositNotificationShow: false,
     investmentBuyStockNotificationShow: false,
     holidayChoiceNotificationShow: false,
+    investmentOpNotificationShow: false,
+    brokenLaptopNotificationShow: false,
   }),
   actions: {
     timeoutGameNotification() {
@@ -609,5 +624,23 @@ export const useNotificationStore = defineStore({
       }, 5000);
       
     },
+
+    timeoutInvestmentOpNotification() {
+      this.investmentOpNotificationShow = true;
+
+      setTimeout(() => {
+        this.investmentOpNotificationShow = false;
+      }, 5000);
+      
+    },
+
+    timeoutBrokenLaptopNotification() {
+      this.brokenLaptopNotificationShow = true;
+
+      setTimeout(() => {
+        this.brokenLaptopNotificationShow = false;
+      }, 5000);
+
+    }
   }
 })

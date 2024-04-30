@@ -38,10 +38,10 @@ Components:
     <CurrentGoalIntroduction v-if="manageMainGameNav.currentPage === 8"></CurrentGoalIntroduction>
     <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 9" :startingSlide="0" :NumOfSlides=5></PensionInformationDisplay>
     <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 10" :startingSlide="4" :NumOfSlides=5></PensionInformationDisplay>
-    <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 12"></EmergencyFundIntroduction>
+    <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 12" :NumofSlides=3></EmergencyFundIntroduction>
     <incomeStreamsIntroduction v-if="manageMainGameNav.currentPage === 13" :startingSlide="0"></incomeStreamsIntroduction>
     <incomeStreamsIntroduction v-if="manageMainGameNav.currentPage === 14" :startingSlide="2"></incomeStreamsIntroduction>
-    <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 15"></HouseDepositIntroduction>
+    <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 15" :NumofSlides="3"></HouseDepositIntroduction>
     <InvestingIntroduction v-if="manageMainGameNav.currentPage === 16"></InvestingIntroduction>
     <InvestmentPortfolioFull v-if="manageMainGameNav.currentPage === 17"></InvestmentPortfolioFull>
     <PopUpComponent v-if="manageMainGameNav.currentPage === 18"></PopUpComponent>

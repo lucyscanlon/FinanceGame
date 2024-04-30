@@ -22,7 +22,7 @@ The parent of this component:
             </div>
             <div class="rentinfo-button-wrapper first-goal-button-padding">
                 <!-- Call store method on click -->
-                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(27), manageMainGameNav.unlockComponent()" class="rentinfo-button">Continue</button>
+                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(27)" class="rentinfo-button">Continue</button>
             </div>
         </div>
     </div>

@@ -214,6 +214,31 @@ The parent of this component:
                         </div>
             </div>
 
+            <!-- Investment Opportunity Pop Ups -->
+            <div v-if="manageNotifications.investmentOpNotificationShow === true && manageMoney.chosenToTakeInvestment === true" class="notifications-padding">
+                        <div class="game-notification-container red-border">
+                            <p>That was a lot of money to spend on a situation with an unknown outcome</p>
+                        </div>
+            </div>
+            <div v-if="manageNotifications.investmentOpNotificationShow === true && manageMoney.chosenToTakeInvestment === false" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>You politely declined. You need to know more before giving away a large sum like that.</p>
+                        </div>
+            </div>
+
+            <!-- Broken Laptop Pop Up Notifications -->
+            <div v-if="manageNotifications.brokenLaptopNotificationShow === true && managePopUps.brokenLaptopChoice === 1" class="notifications-padding">
+                        <div class="game-notification-container">
+                            <p>Your emergency fund is for situations like this</p>
+                        </div>
+            </div>
+            <div v-if="manageNotifications.brokenLaptopNotificationShow === true && managePopUps.brokenLaptopChoice === 2" class="notifications-padding">
+                        <div class="game-notification-container red-border">
+                            <p>Your emergency fund is for situations like this</p>
+                        </div>
+            </div>
+
+            <!-- Bills payment notifications -->
             <div v-if="(manageGameTimer.countdown <= 10) && (manageMoney.billsLate === false) && (manageMoney.billsPaid === manageGameTimer.monthsPassed)" class="notifications-padding">
                         <div class="game-notification-container">
                             <p>Your bill payment is coming up!</p>

@@ -1,9 +1,9 @@
 <template>
     <div class="maingameplay-flex-container">
-        <div @click="useMainGameplayNav.navigateToPage(26)" class="pension-info-button-container">
+        <div v-if="useMainGameplayNav.mainGameComponentsUnlocked > 5" class="investingcomponent-content-container">
+            <div @click="useMainGameplayNav.navigateToPage(26)" class="pension-info-button-container">
             <p><font-awesome-icon icon="fa-solid fa-question" /></p>
         </div>
-        <div v-if="useMainGameplayNav.mainGameComponentsUnlocked > 5" class="investingcomponent-content-container">
             <div class="pension-interactive-title-container investment-interactive-title">
             <h1><font-awesome-icon icon="fa-solid fa-chart-line" />Investments</h1>
         </div>
