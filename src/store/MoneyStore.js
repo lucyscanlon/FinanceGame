@@ -852,7 +852,7 @@ export const useGameTimerStore = defineStore({
                 this.happyNewYearPassed = false;
             }
 
-            if(this.fixedRateUnlocked === 0 && (this.monthCounter === useMoneyManageStore().houseDepositFixedOpenMonth)) {
+            if(this.fixedRateUnlocked === 0 && (this.monthCounter === useMoneyManageStore().houseDepositFixedOpenMonth) && (useHouseDepositChoiceStore().chosenHouseDepositChoice === 2)) {
                 console.log("fixed account unlocked");
                 
                 useMainGameplayNavigationStore().currentPage = 18;

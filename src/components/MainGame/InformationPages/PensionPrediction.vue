@@ -17,9 +17,13 @@ The parent of this component:
             <div class="pensionpredictions-text-container">
                 <p>Total predicted pension value after 30 years: <span class="colour-green">£{{ managePension.pensionPredictionsCondensed[29].toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</span></p>
             </div>
-            <div class="rentinfo-button-wrapper pension-predictions">
+            <div v-if="manageMainGameNav.currentPage === 22" class="rentinfo-button-wrapper pension-predictions">
                 <!-- Call store method on click -->
                 <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageMainGameNav.unlockComponent()" class="currentaccount-button">Continue to game</button>
+            </div>
+            <div v-if="manageMainGameNav.currentPage === 29" class="rentinfo-button-wrapper pension-predictions">
+                <!-- Call store method on click -->
+                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()" class="currentaccount-button">Back to game</button>
             </div>
         </div>
     </div>

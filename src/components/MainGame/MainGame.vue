@@ -55,6 +55,7 @@ Components:
     <InvestingIntroduction v-if="manageMainGameNav.currentPage === 26" :NumOfSlides=4></InvestingIntroduction>
     <payingBillsIntroduction v-if="manageMainGameNav.currentPage === 27"></payingBillsIntroduction>
     <payingBillsIntroduction v-if="manageMainGameNav.currentPage === 28"></payingBillsIntroduction>
+    <PensionPredictions v-if="manageMainGameNav.currentPage === 29"></PensionPredictions>
     <div v-if="(manageMainGameNav.currentPage === 11) || (manageMainGameNav.currentPage === 18)" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
         <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>

@@ -41,7 +41,7 @@
         </div>
         <div class="pension-interactive-button-container">
             <span class="border-pink"><button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(10)">Change contributions</button></span>
-            <button @click="manageSound.playClickSound()">See predictions</button>
+            <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(29)">See predictions</button>
         </div>
         </div>
         
