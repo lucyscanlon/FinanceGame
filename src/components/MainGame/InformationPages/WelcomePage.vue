@@ -18,7 +18,6 @@ The parent of this component:
                     <li>In this game you will explore various topics of personal finance and then apply your new knowledge to make informed decisions.</li>
                     <li>Read each topic carefully and aim to make the correct choices.</li>
                     <li>Maintain a high responsibility score by choosing wisely.</li>
-                    <li>Best of luck!</li>
                 </ul>
             </div>
             <div class="rentinfo-button-wrapper welcomepage-button">

@@ -33,7 +33,6 @@ The parent of this component:
                         <li>A pension is a way to put money aside for when you <span class="colour-green">retire</span>.</li>
                         <li>You can then have access to this money when you reach <span class="colour-green">55 years old</span> or you retire from work. </li>
                         <li>You can pay into <span class="colour-green">multiple pensions</span> during your life.</li>
-                        <li>Pensions are usually invested in <span class="colour-green">stocks and shares</span>.</li>
                     </ul>
                 </div>
             </div>
@@ -43,7 +42,7 @@ The parent of this component:
                     <ul>
                         <li><span class="colour-green">Workplace pensions:</span> A pension set up by your employer.</li>
                         <li><span class="colour-green">Personal Pension or private pension</span> A type of pension you can set up yourself.</li>
-                        <li><span class="colour-green">A state pension: </span> The pension you will recieve from the government when you reach retirement age, if you have paid at least ten years of national insurance contributions.</li>
+                        <li><span class="colour-green">A state pension: </span> The pension you will recieve from the government when you reach retirement age.</li>
                         <li>It is often recommended to set up a workplace or personal pension alongside your state pension so you can retire more comfortably.</li>
                     </ul>
                 </div>
@@ -64,7 +63,6 @@ The parent of this component:
                     <ul>
                         <li>Pensions are <span class="colour-green">invested</span> in funds which are used by the government for a range of financial assets.</li>
                         <li>Your pension <span class="colour-green">value</span> depends on the value of what it is invested in.</li>
-                        <li>Pensions tend to drastically <span class="colour-green">out perform</span> regular high interest savings accounts in terms of returning value.</li>
                         <li>Pensions will naturally <span class="colour-green">rise and fall</span> in value over time. However, as pensions are a long time investment, the overall value of a pension tends to increase</li>
                         <li>You are also able to benefit from <span class="colour-green">compound interest.</span> For example, your return on investment will be able to be reinvested and make even more money each year.</li>
                     </ul>

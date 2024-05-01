@@ -14,7 +14,6 @@ The parent of this component:
             <div class="supermarketinfo-list">
                 <ul>
                     <li>Keep factors such as <span class="colour-green">location</span> and <span class="colour-green">accessibility</span> in mind as these can increase overall costs.</li>
-                    <li>Opt for a supermarket that is either close to home, or delivers to save in transport costs.</li>
                     <li>Take advantage of <span class="colour-green">deals, discounts, memberships</span> and <span class="colour-green">loyalty programmes</span>. Joining a loyalty scheme can save you an average of <span class="colour-green">£360</span> a year!</li>
                     <li>Minimise spending on fast food delivery apps. A survey from BBC Good Food found that under 24s spend an average of <span class="colour-green">£20</span> a week using these services.</li>
                 </ul>

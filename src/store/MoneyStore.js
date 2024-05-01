@@ -808,7 +808,7 @@ export const useGameTimerStore = defineStore({
             }
 
             if((countdown === 25) && (useGoalsStore().completedGoals === 7) && (useGoalsStore().currentGoal === 7)) {
-                // when they have made 3000 - open house deposit goal
+                // when they have made 500 - open house deposit goal
                 useMainGameplayNavigationStore().currentPage = 18
                 usePopUpStore().currentPopUp = 9;
                 
@@ -818,7 +818,7 @@ export const useGameTimerStore = defineStore({
                 
             }
 
-            if ((countdown === (this.queueFinalGoalsAndPopUps.day)) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 1))){
+            if ((countdown === (this.queueFinalGoalsAndPopUps.day - 10)) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month))){
                 if(this.chosenToTakeInvestment === true) {
                     // 1 month later - navigate to main page
                     useMainGameplayNavigationStore().currentPage = 18;
@@ -835,7 +835,7 @@ export const useGameTimerStore = defineStore({
                 }
             }
             
-            if ((countdown === (this.queueFinalGoalsAndPopUps.day)) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 3))){
+            if ((countdown === (this.queueFinalGoalsAndPopUps.day)) && (monthsPassed === (this.queueFinalGoalsAndPopUps.month + 1))){
                 // 3 months after - broken laptop goal
                 useMainGameplayNavigationStore().currentPage = 18;
                 usePopUpStore().currentPopUp = 8;

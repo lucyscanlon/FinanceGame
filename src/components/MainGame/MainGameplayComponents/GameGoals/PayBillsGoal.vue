@@ -12,8 +12,8 @@
         </div>
         <div class="currentgoal-tips-container">
             <ul>
-                <li>When the end of the month approaches, press the 'Pay monthly outgoings' button in the sidebar to pay your bills.</li>
-                <li>Bills can be paid up to five days before the end of the month.</li>
+                <li>When the end of the month approaches, press the 'Pay Bills' button to pay your bills.</li>
+                <li>Bills can be paid up to 10 days before the end of the month.</li>
             </ul>
         </div>
     </div>  

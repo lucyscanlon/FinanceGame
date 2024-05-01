@@ -14,7 +14,7 @@ The parent of this component:
             <div class="supermarketinfo-list first-goal-padding">
                 <ul>
                     <li>Goals will appear on your <span class="colour-green">game homepage.</span></li>
-                    <li><span class="colour-green">Complete the tasks</span> to complete the goal</li>
+                    <li><span class="colour-green">Complete the tasks</span> to complete the goal.</li>
                 </ul>
                 <div class="billsintro-diagram-container">
                     <img src="/GoalScreenshot.png">

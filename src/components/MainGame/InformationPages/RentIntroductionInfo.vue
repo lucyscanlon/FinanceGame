@@ -15,7 +15,6 @@ The parent of this component:
                 <ul>
                     <li>The UK government recommends allocating <span class="colour-green">30-35%</span> of your monthly income to be spent on rent. (This is known as the 30% rule).</li>
                     <li>You are expected to pay <span class="colour-green">5 weeks</span> worth of rent upfront as a deposit.</li>
-                    <li>Many factors can also influence how much you have to spend on rent such as marital status and having family or child dependancies.</li>
                     <li>For this game, you are a new graduate, looking for a cozy one bedroom space to call home!</li>
                 </ul>
             </div>
