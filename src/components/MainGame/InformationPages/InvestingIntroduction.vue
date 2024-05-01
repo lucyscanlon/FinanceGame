@@ -56,6 +56,48 @@ The parent of this component:
                     <li>Avoid investing in <span class="colour-green">volatile and unpredictable</span> stocks which rise and fall in value rapidly.</li>
                 </ul>
                 </div>
+            </div>
+            <div :class="currentSlide !== 4 && 'pensionSlideInactive'" class="housedepositslide-container">
+                <p>How to invest</p>
+                <div class="supermarketinfo-list">
+                <ul>
+                    <li>Each stock can be identified by an individual <span class="colour-green">3 letter name</span> e.g. 'EWG'.</li>
+                    <li>The percentage next to the name signifys <span class="colour-green">what percentage it has risen or fallen</span> from its previous price.</li>
+                    <li>Red negative values signify a fall in value, and green positive values mean it has risen.</li>
+                </ul>
+                </div>
+                <div class="investingintro-screenshot-container">
+                    <img src="/InvestingScreenshot1.png">
+                </div>
+            </div>
+            <div :class="currentSlide !== 5 && 'pensionSlideInactive'" class="housedepositslide-container">
+                <p>How to invest</p>
+                <div class="supermarketinfo-list">
+                <ul>
+                    <li>The line graph displays trends in the previous six values of the stock. This is where you can see if a stock has been <span class="colour-green">increasing or decreasing</span> in value.</li>
+                    <li>The price of the stock is displayed under the line graph. This is how much it will cost to buy one.</li>
+                    <li>The number you own of that particular stock is also displayed.</li>
+                    <li>To buy or a sell a number of that stock, enter a number into the input box and press either 'buy' or 'sell'</li>
+                    <li>Press the 'sell all' button to sell all of your owned shares of that particular stock.</li>
+                </ul>
+                </div>
+                <div class="investingintro-screenshot-container">
+                    <img src="/InvestingScreenshot1.png">
+                </div>
+            </div>
+            <div :class="currentSlide !== 6 && 'pensionSlideInactive'" class="housedepositslide-container">
+                <p>How to invest</p>
+                <div class="supermarketinfo-list">
+                <ul>
+                    <li>The total balance shows you how much all of your investments are worth. The percentage shows how much your total balance has <span class="colour-green">fluctuated</span> as the stock values have changed.</li>
+                    <li>The 'Investment Portfolio Split' is divided by colour, and displays the amount of each individual stocks make up your total investments.</li>
+                    <li>'Total Invested' shows much money you originally put into the stock market when you bought each stock.</li>
+                    <li>Finally, 'Total profit / Loss' displays how much <span class="colour-green">profit or loss</span> you have made.</li>
+                </ul>
+                </div>
+                <div class="investingintro-screenshot2-container">
+                    <img src="/InvestingScreenshot2.png">
+                </div>
                 <div class="investingintro-portfoliolink-button-container">
                     <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(17), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">View Investment Portfolio</button>
                 </div>
@@ -67,7 +109,7 @@ The parent of this component:
                     </p>
                 </div>
             <div
-                v-if="currentSlide < 4"
+                v-if="currentSlide < 6"
                 :class="removeNextButton && 'displaynone'"
                 class="currentslide-circles-container">
                 <span :class="currentSlide === 0 && 'circleactive'">
@@ -82,9 +124,18 @@ The parent of this component:
                 <span :class="currentSlide === 3 && 'circleactive'">
                     <font-awesome-icon icon="fa-solid fa-circle"/>
                 </span>
+                <span :class="currentSlide === 4 && 'circleactive'">
+                    <font-awesome-icon icon="fa-solid fa-circle"/>
+                </span>
+                <span :class="currentSlide === 5 && 'circleactive'">
+                    <font-awesome-icon icon="fa-solid fa-circle"/>
+                </span>
+                <span :class="currentSlide === 6 && 'circleactive'">
+                    <font-awesome-icon icon="fa-solid fa-circle"/>
+                </span>
             </div>
         <div
-          v-if="currentSlide < 3" :class="removeNextButton && 'displaynone'" class="next-container">
+          v-if="currentSlide < 6" :class="removeNextButton && 'displaynone'" class="next-container">
           <p @click="nextSlide()">
             Next <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </p>

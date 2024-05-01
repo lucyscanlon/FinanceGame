@@ -470,7 +470,7 @@ export const useGameTimerStore = defineStore({
 
                         // flucuate prices of stocks
                         if(useMainGameplayNavigationStore().mainGameComponentsUnlocked > 5 ) {
-                            if(this.countdown%5 === 0) {
+                            if(this.countdown%10 === 0) {
 
                                 // change the prices
                                 this.flucuateStockPrices();

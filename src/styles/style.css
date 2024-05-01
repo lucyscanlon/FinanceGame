@@ -2424,7 +2424,8 @@ input[type="number"] {
 .investingintro-portfoliolink-button-container {
   width: 80%;
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .investingintro-portfoliolink-button-container button {
@@ -4146,6 +4147,34 @@ margin-bottom: 40px;
   color: white;
   text-align: center;
   font-size: 17px;
+}
+
+.investingintro-screenshot-container{
+  width: 200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  border-radius: 20px;
+}
+
+.investingintro-screenshot-container img {
+  width: inherit;
+  height: auto;
+  border-radius: 20px;
+}
+
+.investingintro-screenshot2-container {
+  width: 650px;
+  margin: 0 auto;
+  overflow: auto;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-radius: 20px;
+}
+
+.investingintro-screenshot2-container img {
+  width: inherit;
+  height: auto;
+  border-radius: 10px;
 }
 
 
