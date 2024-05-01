@@ -62,7 +62,7 @@ The parent of this component:
             </div>
             <div class="previous-next-container incomestreams-slide3">
                 <div class="previous-container">
-                    <p @click="previousSlide()">
+                    <p v-if="currentSlide !== 0" @click="previousSlide()">
                         <font-awesome-icon icon="fa-solid fa-arrow-left" /> Previous
                     </p>
                 </div>
@@ -84,7 +84,7 @@ The parent of this component:
                 </span>
             </div>
         <div
-          v-if="currentSlide < 4" :class="removeNextButton && 'displaynone'" class="next-container">
+          v-if="currentSlide < 3" :class="removeNextButton && 'displaynone'" class="next-container">
           <p @click="nextSlide()">
             Next <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </p>

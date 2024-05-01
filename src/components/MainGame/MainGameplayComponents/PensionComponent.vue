@@ -36,7 +36,7 @@
                 <p>Current Total:</p>
             </div>
             <div class="pension-interactive-money-container">
-                <p>£{{Number(managePension.pensionCurrentTotal).toFixed(2)}}</p>
+                <p>£{{ managePension.pensionCurrentTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}}</p>
             </div>
         </div>
         <div class="pension-interactive-button-container">

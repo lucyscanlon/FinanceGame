@@ -6,7 +6,7 @@ import { useGoalsStore } from './MainGameChoicesStore'
 import { usePopUpStore } from './MainGameChoicesStore'
 import { useHouseDepositChoiceStore } from './MainGameChoicesStore'
 import { useEmergencyFundChoicesStore } from './MainGameChoicesStore'
-import { useBarometerStore } from './MainGameChoicesStore'
+import { useBarometerStore, useNotificationStore } from './MainGameChoicesStore'
 import { useSoundEffectsStore } from './soundEffectsStore.js'
 
 export const useMoneyManageStore = defineStore({
@@ -40,6 +40,7 @@ export const useMoneyManageStore = defineStore({
         totalMissedBills: 0,
         billsPaidLateNotif: false,
         houseDepositFixedOpenMonth: 0,
+        PocketMoneyNegativeBalance: false,
     
     }),
     actions: {
@@ -386,6 +387,17 @@ export const useMoneyManageStore = defineStore({
             }
             
         },
+
+        checkIfBankBalanceNegative() {
+            if(this.moneyInPocket < 0) {
+                this.PocketMoneyNegativeBalance = true;
+
+                useNotificationStore().negativeBankBalanceNotification()
+                useBarometerStore().decreaseScore(40);
+
+                this.PocketMoneyNegativeBalance = false;
+            }
+        }
 
     }
 })
@@ -953,7 +965,7 @@ export const useGameTimerStore = defineStore({
         triggerEndOfGame() {
             useSoundEffectsStore().EndOfGame()
             this.calculateTotalInGameTimeSpan()
-            useMainGameplayNavigationStore().navigateToPage(29)
+            useMainGameplayNavigationStore().navigateToPage(30)
         },
 
         addReturnOnInvestmentsToPension() {

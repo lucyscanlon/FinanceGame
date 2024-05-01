@@ -23,7 +23,7 @@ Components that will be inside this container include:
             <h4 v-if="manageMainGameNav.currentPage < 3"><font-awesome-icon icon="fa-solid fa-money-bill" />Money In Pocket:</h4>
             <!--Use values from moneyStore.js-->
             <div class="charactersidebar-pocketmoney-container">
-              <h5>£{{manageMoney.moneyInPocket.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}}</h5>
+              <h5 :class="(manageMoney.moneyInPocket < 0) ? 'colour-red' : ''">£{{manageMoney.moneyInPocket.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}}</h5>
             </div>
             <div class="pocketmoney-hr">
               <hr/>

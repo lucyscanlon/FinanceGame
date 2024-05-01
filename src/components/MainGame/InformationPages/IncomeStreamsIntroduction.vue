@@ -51,7 +51,7 @@
       </div>
       <div class="emergencyfundchoice-button-container">
             <button v-if="manageIncomeStream.currentlySelectedIncomeStreamChoice.ISname === 'Do not set up a secondary income stream'"
-              @click="manageSound.playClickSound(), manageIncomeStream.confirmIncomeStreamChoice(), useMainGameplayNav.navigateToPage(11) ">
+              @click="manageSound.playClickSound(), manageIncomeStream.confirmIncomeStreamChoice(), useMainGameplayNav.navigateToPage(11), useMainGameplayNav.unlockComponent() ">
               Confirm Choice
             </button>
             <button v-if="manageIncomeStream.currentlySelectedIncomeStreamChoice.ISname !== 'Do not set up a secondary income stream'"
@@ -131,7 +131,7 @@
       </div>
       <div class="previous-next-container incomestreams-slide3">
         <div class="previous-container">
-          <p @click="previousSlide()">
+          <p v-if="currentSlide !== 0" @click="previousSlide()">
             <font-awesome-icon icon="fa-solid fa-arrow-left" /> Previous
           </p>
         </div>
@@ -146,9 +146,6 @@
             ><font-awesome-icon icon="fa-solid fa-circle"
           /></span>
           <span :class="currentSlide === 2 && 'circleactive'"
-            ><font-awesome-icon icon="fa-solid fa-circle"
-          /></span>
-          <span :class="currentSlide === 3 && 'circleactive'"
             ><font-awesome-icon icon="fa-solid fa-circle"
           /></span>
         </div>

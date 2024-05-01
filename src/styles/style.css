@@ -1888,7 +1888,7 @@ input[type="number"] {
 }
 
 .colour-red {
-  color: #f02e2e;
+  color: #f02e2e!important;
 }
 
 .emergencyfund-add-withdraw-buttons {

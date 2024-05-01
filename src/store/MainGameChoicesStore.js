@@ -569,6 +569,7 @@ export const useNotificationStore = defineStore({
     holidayChoiceNotificationShow: false,
     investmentOpNotificationShow: false,
     brokenLaptopNotificationShow: false,
+    negativeBalanceNotificationShow: false,
   }),
   actions: {
     timeoutGameNotification() {
@@ -641,6 +642,15 @@ export const useNotificationStore = defineStore({
 
       setTimeout(() => {
         this.brokenLaptopNotificationShow = false;
+      }, 5000);
+
+    },
+
+    negativeBankBalanceNotification() {
+      this.negativeBalanceNotificationShow = true;
+
+      setTimeout(() => {
+        this.negativeBalanceNotificationShow = false;
       }, 5000);
 
     }

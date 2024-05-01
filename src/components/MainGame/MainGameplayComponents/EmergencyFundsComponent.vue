@@ -14,7 +14,7 @@
                 <p>Current Total:</p>
             </div>
             <div class="currentaccount-total-number-container">
-                <p>£{{ Number(manageMoney.emergencyFundCurrentTotal).toFixed(2) }}</p>
+                <p>£{{ manageMoney.emergencyFundCurrentTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</p>
             </div>
         </div>
         <div class="currentaccount-addwithdraw-title-container">

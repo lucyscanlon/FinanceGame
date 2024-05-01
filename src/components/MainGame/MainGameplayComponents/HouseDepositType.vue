@@ -13,7 +13,7 @@
                 <p>Current Total:</p>
             </div>
             <div class="currentaccount-total-number-container">
-                <p>£{{manageMoney.houseDepositCurrentTotal}}</p>
+                <p>£{{manageMoney.houseDepositCurrentTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}}</p>
             </div>
         </div>
         <div class="currentaccount-addwithdraw-title-container">

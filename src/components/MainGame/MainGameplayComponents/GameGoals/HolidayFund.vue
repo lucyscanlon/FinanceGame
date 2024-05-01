@@ -14,7 +14,7 @@
             <p>Holiday Fund Total:</p>
         </div>
         <div class="currentgoal-total-number-container">
-            <p>£{{ manageMoney.holidayFundTotal }}</p>
+            <p>£{{ manageMoney.holidayFundTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</p>
         </div>
     </div>
     <div class="currentgoal-addwithdraw-title-container">

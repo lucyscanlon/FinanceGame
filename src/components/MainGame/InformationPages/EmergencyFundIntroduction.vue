@@ -68,7 +68,7 @@ The parent of this component:
       </div>
       <div class="previous-next-container">
         <div class="previous-container">
-          <p @click="previousSlide()">
+          <p v-if="currentSlide !== 0" @click="previousSlide()">
             <font-awesome-icon icon="fa-solid fa-arrow-left" /> Previous
           </p>
         </div>
@@ -78,7 +78,7 @@ The parent of this component:
           <span v-if="NumofSlides > 2" :class="currentSlide === 2 && 'circleactive'"><font-awesome-icon icon="fa-solid fa-circle"/></span>
         </div>
         <div :class="removeNextButton && 'displaynone'" class="next-container">
-          <p @click="nextSlide()">
+          <p v-if="currentSlide !== 2" @click="nextSlide()">
             Next <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </p>
         </div>

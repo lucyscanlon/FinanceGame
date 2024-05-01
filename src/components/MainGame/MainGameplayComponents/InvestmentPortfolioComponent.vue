@@ -15,7 +15,7 @@
                 <p>Current Total:</p>
             </div>
             <div class="currentaccount-total-number-container">
-                <p>£{{ Number(manageMoney.InvestmentPortfolioCurrentValue).toFixed(2) }}</p>
+                <p>£{{ manageMoney.InvestmentPortfolioCurrentValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</p>
             </div>
         </div>
         <div class="investments-openportfolio-button">
