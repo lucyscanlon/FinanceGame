@@ -68,7 +68,7 @@ The parent of this component:
                         <li>Paying bills late and having a negative bank balance will have <span class="colour-green">consequences.</span></li>
                     </ul>
                 </div>
-                <div class="rentinfo-button-wrapper billsintro-button">
+                <div v-if="manageMainGameNav.currentPage === 27" class="rentinfo-button-wrapper billsintro-button">
                     <!-- Call store method on click -->
                     <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageMainGameNav.unlockComponent(), manageGameTimer.startCountdown()" class="rentinfo-button">Continue to main game</button>
                 </div>

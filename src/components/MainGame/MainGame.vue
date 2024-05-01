@@ -14,7 +14,7 @@ Components:
     <div class="gameplay-topbanner-wrapper">
       <div class="current-date-wrapper">
         <p>
-          Days until payday:
+          Days until payday and bills due:
           <span class="colour-white">{{ manageGameTimer.countdown }}</span>
         </p>
       </div>

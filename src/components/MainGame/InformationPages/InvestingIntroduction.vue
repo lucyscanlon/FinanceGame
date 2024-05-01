@@ -52,7 +52,7 @@ The parent of this component:
                 <ul>
                     <li>Invest in the stock market <span class="colour-green">for the long run.</span> This is a marathon not a sprint!</li>
                     <li>Determine <span class="colour-green">how much you can afford to invest</span> and how regularly by accessing your financial circumstances.</li>
-                    <li>Invest in stable stocks with a <span class="colour-green">steady forecasted growth</span> such as the FTSE 100.</li>
+                    <li>Invest in stable stocks with a <span class="colour-green">steady forecasted growth.</span></li>
                     <li>Avoid investing in <span class="colour-green">volatile and unpredictable</span> stocks which rise and fall in value rapidly.</li>
                 </ul>
                 </div>
