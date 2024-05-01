@@ -10,7 +10,7 @@ The parent of this component:
             <h1>Choosing a supermarket to shop at</h1>
         </div>
         <div class="rentintro-description-wrapper">
-            <p>Your next task is to choose a place to shop for groceries! There are a wide range of different supermarkets to shop from in the UK, each providing different benefits. Heres some tips for how to choose the best supermarket for your budget!</p>
+            <p>Your next task is to choose a place to shop for groceries. Heres some tips for how to choose the best supermarket for your budget!</p>
             <div class="supermarketinfo-list">
                 <ul>
                     <li>Keep factors such as <span class="colour-green">location</span> and <span class="colour-green">accessibility</span> in mind as these can increase overall costs.</li>

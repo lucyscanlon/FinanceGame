@@ -209,7 +209,7 @@ body {
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  color: white;
+  color: #D5D2EB;
   font-family: unbounded-reg;
   font-size: 12px;
   line-height: 1.5em;
@@ -531,13 +531,13 @@ body {
 
 .map-location-content-wrapper h4 {
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   font-size: 16px;
 }
 
 .map-location-content-wrapper p {
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   font-size: 11px;
   padding-top: 7px;
 }
@@ -566,7 +566,7 @@ body {
 }
 
 .colour-white {
-  color: white;
+  color: #D5D2EB;
 }
 
 .map-location-content-wrapper button {
@@ -672,7 +672,7 @@ body {
 
 .rentintro-description-wrapper {
   font-family: unbounded-reg;
-  color: white;
+  color: #D5D2EB;
   font-size: 15px;
   text-align: center;
   line-height: 1.9em;
@@ -705,12 +705,12 @@ body {
 
 .rentinfo-button {
   width: 330px;
-  height: 40px;
+  height: 50px;
   background-color: #ff48c8;
   border: 2px solid #ff48c8;
   font-family: unbounded-reg;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 200px;
   transition-duration: 0.5s;
 }
@@ -742,7 +742,7 @@ body {
 
 .joboffer-description-wrapper {
   font-family: unbounded-reg;
-  color: white;
+  color: #D5D2EB;
   font-size: 14px;
   text-align: center;
   line-height: 1.9em;
@@ -922,7 +922,7 @@ body {
 }
 
 .supermarketchoice-description {
-  color: white;
+  color: #D5D2EB;
   font-family: unbounded-reg;
   text-align: center;
   font-size: 13px;
@@ -938,7 +938,7 @@ body {
 
 .supermarket-choice-perk p {
   font-family: unbounded-reg;
-  color: white;
+  color: #D5D2EB;
   font-size: 13px;
 }
 
@@ -950,7 +950,7 @@ body {
 
 .supermarketchoice-heading-wrap h4 {
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   font-family: unbounded-reg;
 }
 
@@ -966,7 +966,7 @@ body {
   width: 85%;
   margin: 0 auto;
   text-align: left;
-  color: white;
+  color: #D5D2EB;
   font-family: unbounded-reg;
   font-size: 15px;
   padding-top: 20px;
@@ -1114,7 +1114,7 @@ body {
 
 .transport-perk-wrap {
   padding-top: 20px;
-  color: white;
+  color: #D5D2EB;
   font-size: 14px;
   font-family: unbounded-reg;
   text-align: center;
@@ -1140,17 +1140,17 @@ body {
   width: 95%;
   font-family: unbounded-reg;
   font-size: 13px;
-  color: white;
+  color: #D5D2EB;
   border-radius: 20px;
 }
 
 .transport-total-cost-wrap tr {
-  border: solid 1px white;
+  border: solid 1px #D5D2EB;
   border-collapse: collapse;
 }
 
 th {
-  border: solid 1px white;
+  border: solid 1px #D5D2EB;
   padding: 10px;
 }
 
@@ -1259,19 +1259,19 @@ th {
 
 .pension-contribution-percentage-container {
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   padding-top: 10px;
 }
 
 .pension-contribution-amount-container {
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   padding-top: -30px;
 }
 
 .pensionintro-description-wrapper {
   font-family: unbounded-reg;
-  color: white;
+  color: #D5D2EB;
   font-size: 15px;
   text-align: center;
   line-height: 1.9em;
@@ -1463,7 +1463,7 @@ th {
   width: 80%;
   float: left;
   overflow: auto;
-  color: white;
+  color: #D5D2EB;
 }
 
 .pension-interactive-right {
@@ -1488,7 +1488,7 @@ th {
   margin: 0 auto;
   font-family: unbounded-reg;
   padding-top: 10px;
-  color: white;
+  color: #D5D2EB;
   text-align: center;
   font-size: 14px;
 }
@@ -1593,7 +1593,7 @@ th {
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   font-family: unbounded-reg;
   font-size: 14px;
   padding-top: 10px;
@@ -1813,7 +1813,7 @@ input[type="number"] {
 
 .emergencyfund-description-wrapper {
   font-family: unbounded-reg;
-  color: white;
+  color: #D5D2EB;
   font-size: 15px;
   text-align: center;
   line-height: 1.9em;
@@ -1861,7 +1861,7 @@ input[type="number"] {
 
 .emergencyfund-interactive-title p {
   font-size: 13px;
-  color: white;
+  color: #D5D2EB;
   padding-top: 9px;
 }
 
@@ -1940,6 +1940,7 @@ input[type="number"] {
   color: #7dab3d;
   font-family: unbounded-reg;
   margin-top: 5px;
+  font-size: 12px;
 }
 
 .emergencyfund-withdraw-button-inactive button {
@@ -2330,7 +2331,7 @@ input[type="number"] {
 .housedep-desc {
   width: 85%;
   margin: 0 auto;
-  color: white;
+  color: #D5D2EB;
   font-size: 13px;
   padding-top: 10px;
 }
@@ -2353,7 +2354,7 @@ input[type="number"] {
 
 .homedeposit-description-wrapper {
   font-family: unbounded-reg;
-  color: white;
+  color: #D5D2EB;
   font-size: 15px;
   text-align: center;
   line-height: 1.9em;
@@ -2376,7 +2377,7 @@ input[type="number"] {
   width: 85%;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   font-family: unbounded-reg;
   padding-top: 5px;
 }
@@ -2390,7 +2391,7 @@ input[type="number"] {
   margin: 0 auto;
   text-align: center;
   padding-top: 10px;
-  color: white;
+  color: #D5D2EB;
   font-family: unbounded-reg;
   
 }
@@ -2481,7 +2482,7 @@ input[type="number"] {
   width: 70%;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   font-family: unbounded-reg;
   padding-top: 10px;
   font-size: 13px;
@@ -2551,7 +2552,7 @@ input[type="number"] {
 .investing-port-totalbalance-title {
   width: 85%;
   margin: 0 auto;
-  color:#ffffff;
+  color: #D5D2EB;
   padding-top: 20px;
   
 }
@@ -2566,7 +2567,7 @@ input[type="number"] {
 
 .investing-port-stock-flex {
   font-size: 14px;
-  color: white;
+  color: #D5D2EB;
   
 }
 
@@ -2607,7 +2608,7 @@ input[type="number"] {
   width: 85%;
   margin: 0 auto;
   font-size: 15px;
-  color: white;
+  color: #D5D2EB;
   padding-top: 10px;
 }
 
@@ -2638,8 +2639,9 @@ input[type="number"] {
 }
 
 .investing-port-buy-sell-flex input::placeholder {
-  color:#7dab3d;
+  color:#C0C0C0;
   font-family: unbounded-reg;
+  font-size: 12px;
 }
 
 .investingport-buy-sell-buttons {
@@ -2715,7 +2717,7 @@ input[type="number"] {
   width: 90%;
   margin: 0 auto;
   padding-top: 20px;
-  color: white;
+  color: #D5D2EB;
 }
 
 .fa-ghost {
@@ -2923,7 +2925,7 @@ input[type="number"] {
 .investment-port-total-invested {
   width: 90%;
   margin: 0 auto;
-  color: white;
+  color: #D5D2EB;
   padding-top: 15px;
   font-size: 14px;
 
@@ -2950,7 +2952,7 @@ input[type="number"] {
   font-size: 13px;
   margin-top: 10px;
   line-height: 1.5em;
-  color: white;
+  color: #D5D2EB;
   border-radius: 10px;
 }
 
@@ -2963,7 +2965,7 @@ input[type="number"] {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   padding-top: 10px;
   font-size: 13px;
 }
@@ -2971,7 +2973,7 @@ input[type="number"] {
 .currentgoal-tips-container {
   width: 80%;
   margin: 0 auto;
-  color: white;
+  color: #D5D2EB;
   font-size: 12.5px;
   padding-top: 15px;
   text-align: center;
@@ -2991,7 +2993,7 @@ input[type="number"] {
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   font-family: unbounded-reg;
   font-size: 12px;
   padding-top: 10px;
@@ -3137,7 +3139,7 @@ input[type="number"] {
 
 .currentgoal-tips-container {
   text-align: left;
-  color: white;
+  color: #D5D2EB;
   width: 70%;
   margin: 0 auto;
 }
@@ -3209,7 +3211,7 @@ input[type="number"] {
   width: 75%;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   font-size: 13px;
   padding-top: 10px;
   line-height: 1.5em;
@@ -3248,7 +3250,7 @@ input[type="number"] {
 .popup-phonebill-desc-container {
   width: 80%;
   margin: 0 auto;
-  color: white;
+  color: #D5D2EB;
   text-align: center;
   font-size: 12.5px;
   padding-top: 10px;
@@ -3258,7 +3260,7 @@ input[type="number"] {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   padding-top: 15px;
 }
 
@@ -3522,7 +3524,7 @@ input[type="number"] {
   text-align: center;
   padding-bottom: 30px;
   font-family: unbounded-reg;
-  color: white;
+  color: #D5D2EB;
   font-size: 13px;
   padding-top: 10px;
 }
@@ -3929,11 +3931,12 @@ margin-bottom: 40px;
   font-size: 20px;
 }
 
+
 .billsinteractive-total-title-container {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   padding-top: 20px;
   font-size: 13px;
 }
@@ -3950,7 +3953,7 @@ margin-bottom: 40px;
 .bills-interactive p {
   width: 90%;
   margin: 0 auto;
-  color: white;
+  color: #D5D2EB;
   padding-top: 15px;
   font-size: 12px;
   line-height: 1.7em;
@@ -3972,7 +3975,7 @@ margin-bottom: 40px;
   width: 70%;
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   font-size: 14px;
   line-height: 1.7em;
   padding-top: 20px;
@@ -4131,6 +4134,18 @@ margin-bottom: 40px;
 
 .billsintro-title {
   padding-top: 0px;
+}
+
+.newgoalpopup-title-container .fa-house {
+  padding-right: 10px;
+}
+
+.housedeposit-locked {
+  width: 60%;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  font-size: 17px;
 }
 
 

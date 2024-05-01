@@ -39,6 +39,8 @@ export const useMoneyManageStore = defineStore({
         totalProfitOrLoss: 0,
         totalMissedBills: 0,
         billsPaidLateNotif: false,
+        houseDepositFixedOpenMonth: 0,
+    
     }),
     actions: {
         increasePocketMoney(val) {
@@ -102,6 +104,8 @@ export const useMoneyManageStore = defineStore({
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
                     this.moneyInPocket = this.moneyInPocket - num;
 
+                    console.log(this.houseDepositCurrentTotal);
+
                     if(this.houseDepositCurrentTotal >= 8000) {
                         useGoalsStore().completedGoals = 8;
 
@@ -152,9 +156,20 @@ export const useMoneyManageStore = defineStore({
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
                     this.moneyInPocket = this.moneyInPocket - num;
 
-                    this.HouseDepositFixedYearOpen = false;
+                    this.HouseDepositFixedYearOpen = false; 
+                    
+                    if(useGameTimerStore().monthCounter < 6) {
+                        this.houseDepositFixedOpenMonth = useGameTimerStore().monthCounter + 6;
+                    } else if (useGameTimerStore().monthCounter > 6) {
+                        this.houseDepositFixedOpenMonth = (useGameTimerStore().monthCounter + 6) % 12;
+                    }
 
-                    if(this.houseDepositCurrentTotal >= 800) {
+                    console.log("OPEN MONTH: " + this.houseDepositFixedOpenMonth);
+                    console.log("MONTH COUNTER: " + useGameTimerStore().MonthCounter);
+                    
+                    if(useGameTimerStore().MonthCounter >= 6)(useGameTimerStore().MonthCounter % 12);
+
+                    if(this.houseDepositCurrentTotal >= 8000) {
                         useGoalsStore().completedGoals = 8;
 
                         setTimeout(() => {
@@ -425,6 +440,8 @@ export const useGameTimerStore = defineStore({
         purchase10stocksSchedule: 0,
         investmentGoalSchedule: 0,
         happyNewYearPassed: false,
+        fixedRateHouseDepositNotif: 0,
+        fixedRateUnlocked: 0,
 
     }),
     actions: {
@@ -708,6 +725,16 @@ export const useGameTimerStore = defineStore({
                 useMainGameplayNavigationStore().currentPage = 15;
                 // save the date of house deposit intro
                 this.saveTheDateHouseDeposit(countdown, monthsPassed, currentYear)
+
+            }
+
+            if((useHouseDepositChoiceStore().chosenHouseDepositChoice === 2) && (this.fixedRateHouseDepositNotif === 0)) {
+                useMainGameplayNavigationStore().currentPage = 18;
+                usePopUpStore().currentPopUp = 12;
+
+                if(this.fixedRateHouseDepositNotif === 0) {
+                    this.fixedRateHouseDepositNotif = 1
+                }
             }
 
             if((countdown === this.queuePayRisePopUp.day - 10) && (monthsPassed === (this.queuePayRisePopUp.month)) && (currentYear === this.queuePayRisePopUp.year)) {
@@ -825,6 +852,20 @@ export const useGameTimerStore = defineStore({
                 this.happyNewYearPassed = false;
             }
 
+            if(this.fixedRateUnlocked === 0 && (this.monthCounter === useMoneyManageStore().houseDepositFixedOpenMonth)) {
+                console.log("fixed account unlocked");
+                
+                useMainGameplayNavigationStore().currentPage = 18;
+                usePopUpStore().currentPopUp = 13;
+
+                useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().houseDepositCurrentTotal * 0.048);
+
+                if(this.fixedRateUnlocked === 0) {
+                    this.fixedRateUnlocked = 1;
+                    
+                }
+            }
+
 
         },
 
@@ -839,22 +880,21 @@ export const useGameTimerStore = defineStore({
 
             }
 
-            useMoneyManageStore().HouseDepositFixedYearOpen = true;
-
-            if(useHouseDepositChoiceStore().chosenHouseDepositChoice === 2) {
-                useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().houseDepositCurrentTotal * 0.048);
+            if((this.fixedRateUnlocked === 1) && (useHouseDepositChoiceStore().chosenHouseDepositChoice === 2)) {
+                useMoneyManageStore().houseDepositCurrentTotal = (useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().houseDepositCurrentTotal * 0.028));
             }
 
 
             if(useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'High Interest Savings Account') {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.044);
-            } else if((useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account') && (this.currentYear < 2024))  {
+              } else if((useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '6 Month Fixed Rate Bond Account') && (this.currentYear < 2024))  {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.07);
-            } else if ((useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account') && (this.currentYear >= 2024)) {
+              } else if ((useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account') && (this.currentYear >= 2024)) {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.04);
-            } else if (useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'Regular Savings Account') {
+              } else if (useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'Regular Savings Account') {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.028);
-            }
+              }
+
 
             if(useMoneyManageStore().emergencyFundCurrentTotal >= 5000) {
                 useGoalsStore().completedGoals = 3;
@@ -913,7 +953,7 @@ export const useGameTimerStore = defineStore({
         triggerEndOfGame() {
             useSoundEffectsStore().EndOfGame()
             this.calculateTotalInGameTimeSpan()
-            useMainGameplayNavigationStore().navigateToPage(23)
+            useMainGameplayNavigationStore().navigateToPage(29)
         },
 
         addReturnOnInvestmentsToPension() {

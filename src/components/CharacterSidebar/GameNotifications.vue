@@ -124,7 +124,7 @@ The parent of this component:
             </div>
             <div v-if="(manageMainGameNav.currentPage === 11) && manageNotifications.phonePlanNotificationShow === true && managePopUps.phonePlanChoice === 3" class="notifications-padding">
                         <div class="game-notification-container red-border">
-                            <p>You chose a phone plan with a high monthly cost</p>
+                            <p>You chose a phone plan with a high up front cost</p>
                         </div>
             </div>
 

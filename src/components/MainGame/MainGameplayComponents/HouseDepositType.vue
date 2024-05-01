@@ -28,21 +28,28 @@
         </div>
         <div class="emergencyfund-add-withdraw-buttons housedeposit-buttons">
             <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 1" @click="manageSound.addButton(), manageMoney.addToHouseDepositLISA(amountToChange), rerenderComponent()">Add</button>
-            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 2" @click="manageSound.addButton(), manageMoney.addToFixedRateHouseDeposit(amountToChange), rerenderComponent()">Add</button>
-            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 3" @click="manageSound.addButton(), manageMoney.addToHouseDeposit(amountToChange), rerenderComponent()">Add</button>
             <span v-if="manageHouseDeposit.chosenHouseDepositChoice === 1" @click="manageSound.WithdrawButton(), manageMoney.withdrawFromHouseDepositLISA(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>
+            
+            <button v-if="(manageHouseDeposit.chosenHouseDepositChoice === 2) && (manageGameTimer.fixedRateUnlocked === 0) && manageMoney.HouseDepositFixedYearOpen === true" @click="manageSound.addButton(), manageMoney.addToFixedRateHouseDeposit(amountToChange), rerenderComponent()">Add</button>
+            <button v-if="(manageHouseDeposit.chosenHouseDepositChoice === 2) && manageGameTimer.fixedRateUnlocked === 1" @click="manageSound.addButton(), manageMoney.addToHouseDeposit(amountToChange), rerenderComponent()">Add</button>
+            <span v-if="(manageHouseDeposit.chosenHouseDepositChoice === 2) && manageGameTimer.fixedRateUnlocked === 1" @click="manageSound.WithdrawButton(), manageMoney.withdrawFromHouseDeposit(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>
+            <div v-if="(manageHouseDeposit.chosenHouseDepositChoice === 2) && (manageGameTimer.fixedRateUnlocked === 0) && manageMoney.HouseDepositFixedYearOpen === false" class="housedeposit-locked">
+                <p><font-awesome-icon icon="fa-solid fa-lock" /></p>
+            </div>
+            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 3" @click="manageSound.addButton(), manageMoney.addToHouseDeposit(amountToChange), rerenderComponent()">Add</button>
             <span v-if="manageHouseDeposit.chosenHouseDepositChoice === 3" @click="manageSound.WithdrawButton(), manageMoney.withdrawFromHouseDeposit(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>
         </div>
 </template>
 <script setup>
 
-    import { useMoneyManageStore } from '../../../store/MoneyStore'
+    import { useMoneyManageStore, useGameTimerStore } from '../../../store/MoneyStore'
     import { useHouseDepositChoiceStore } from '../../../store/MainGameChoicesStore';
     import { useSoundEffectsStore } from '../../../store/soundEffectsStore'
 
     const manageMoney = useMoneyManageStore()
     const manageHouseDeposit = useHouseDepositChoiceStore();
     const manageSound = useSoundEffectsStore();
+    const manageGameTimer = useGameTimerStore();
 
 </script>
 <script>

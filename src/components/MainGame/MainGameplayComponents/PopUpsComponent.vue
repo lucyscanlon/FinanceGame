@@ -10,6 +10,8 @@
         <newGoalPopUp v-if="managePopUps.currentPopUp === 9"></newGoalPopUp>
         <AprilPopUp v-if="managePopUps.currentPopUp === 10"></AprilPopUp>
         <LISAReminderPopUp v-if="managePopUps.currentPopUp === 11"></LISAReminderPopUp>
+        <FixedHouseDepositPopUp v-if="managePopUps.currentPopUp === 12"></FixedHouseDepositPopUp>
+        <FixedHouseDepositAccountUnlocked v-if="managePopUps.currentPopUp === 13"></FixedHouseDepositAccountUnlocked>
 </template>
 <script setup>
 
@@ -24,6 +26,8 @@ import brokenLaptopPopUp from '../MainGameplayComponents/PopUps/BrokenLaptop.vue
 import AprilPopUp from '../MainGameplayComponents/PopUps/newFinancialYear.vue'
 import newGoalPopUp from '../MainGameplayComponents/PopUps/NewGoalPopUp.vue'
 import LISAReminderPopUp from '../MainGameplayComponents/PopUps/NewYear.vue'
+import FixedHouseDepositPopUp from '../MainGameplayComponents/PopUps/FixedHouseDeposit.vue'
+import FixedHouseDepositAccountUnlocked from '../MainGameplayComponents/PopUps/FixedRateAccountUnlocked.vue'
 import {usePopUpStore} from '../../../store/MainGameChoicesStore';
 
 
@@ -49,6 +53,8 @@ export default {
         AprilPopUp,
         newGoalPopUp,
         LISAReminderPopUp,
+        FixedHouseDepositPopUp,
+        FixedHouseDepositAccountUnlocked,
     }
 }
 

@@ -4,8 +4,8 @@ import { useMoneyManageStore } from './MoneyStore'
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
-    mainGameComponentsUnlocked: 3,
-    currentPage: 11,
+    mainGameComponentsUnlocked: 6,
+    currentPage: 15,
   }),
   actions: {
     navigateToPage(num) {
@@ -262,7 +262,9 @@ export const useHouseDepositChoiceStore = defineStore({
             if(this.chosenHouseDepositChoice === 1) {
               useBarometerStore().increaseScore(10);
             } else if (this.chosenHouseDepositChoice === 2) {
-              useBarometerStore().increaseScore(10);
+              useBarometerStore().decreaseScore(5);
+              useMoneyManageStore().decreasePocketMoney(1500);
+              useMoneyManageStore().houseDepositCurrentTotal = 1500
             } else if (this.chosenHouseDepositChoice === 3) {
               useBarometerStore().decreaseScore(20);
             }
@@ -374,7 +376,7 @@ export const useGoalsStore = defineStore({
 export const usePopUpStore = defineStore({
   id: 'PopUpStore',
   state: () => ({
-    currentPopUp: 8,
+    currentPopUp: 12,
     phonePlanChoice: 0,
     holidayChoice: 0,
     InvestmentOpChoice: 0,
@@ -463,11 +465,11 @@ export const usePopUpStore = defineStore({
 export const useBarometerStore = defineStore({
   id: 'barometerStore',
   state: () => ({
-    arrowRotation: 180,
-    barometerScore: 50,
+    arrowRotation: 90,
+    barometerScore: 25,
     modulatedAngle: 0,
-    glowColour: 'orange-glow',
-    scoreColor: 'orange-score',
+    glowColour: 'red-glow',
+    scoreColor: 'red-score',
   }),
   actions: {
     decreaseScore(num) {
