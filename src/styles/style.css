@@ -4177,6 +4177,17 @@ margin-bottom: 40px;
   border-radius: 10px;
 }
 
+.inactive-add-button {
+  border: solid 1px #3f3f5e!important;
+  color: #3f3f5e!important;
+}
+
+.inactive-add-button:hover {
+  border: solid 1px #3f3f5e!important;
+  color: #3f3f5e!important;
+  background-color: #1F1E2F!important;
+}
+
 
 
 

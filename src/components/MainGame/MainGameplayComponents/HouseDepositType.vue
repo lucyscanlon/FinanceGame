@@ -27,7 +27,8 @@
             </div>
         </div>
         <div class="emergencyfund-add-withdraw-buttons housedeposit-buttons">
-            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 1" @click="manageSound.addButton(), manageMoney.addToHouseDepositLISA(amountToChange), rerenderComponent()">Add</button>
+            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 1 && (manageMoney.LISAYearlyAdditions < 4000)" @click="manageSound.addButton(), manageMoney.addToHouseDepositLISA(amountToChange), rerenderComponent()">Add</button>
+            <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 1 && (manageMoney.LISAYearlyAdditions === 4000)" class="inactive-add-button">Add</button>
             <span v-if="manageHouseDeposit.chosenHouseDepositChoice === 1" @click="manageSound.WithdrawButton(), manageMoney.withdrawFromHouseDepositLISA(amountToChange), rerenderComponent()" class="emergencyfund-withdraw-button"><button>Withdraw</button></span>
             
             <button v-if="(manageHouseDeposit.chosenHouseDepositChoice === 2) && (manageGameTimer.fixedRateUnlocked === 0) && manageMoney.HouseDepositFixedYearOpen === true" @click="manageSound.addButton(), manageMoney.addToFixedRateHouseDeposit(amountToChange), rerenderComponent()">Add</button>
