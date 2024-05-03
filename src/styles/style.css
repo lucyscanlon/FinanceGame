@@ -4189,6 +4189,159 @@ margin-bottom: 40px;
 }
 
 
+/* responsive styling */
+
+@media only screen and (max-width: 643px) {
+  
+  /* opening page */
+  
+  .startingpage-width-container {
+    width: 85%;
+  }
+
+
+  .startingpage-buttons-container {
+    width: 70%;
+  }
+
+  
+}
+
+
+/* welcome page and intro pages before map page */
+
+@media only screen and (max-width: 1025px) {
+  .maingame-wrapper {
+    width: 100%;
+  }
+
+  .characterstats-sidebar-wrapper {
+    display: none;
+  }
+
+  .joboffer-button-wrapper button {
+    margin-bottom: 20px;
+  }
+
+  .joboffer-button-wrapper {
+    padding-bottom: 80px;
+  }
+}
+
+
+/* supermarket choices page */
+
+@media only screen and (max-width: 960px) {
+  .supermarketchoice-display-wrapper {
+    width: 80%;
+  }
+
+  .supermarketchoice-button-wrap {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 835px) {
+  .supermarketchoice-box {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  /* bills introduction */
+
+  .billsintro-diagram-container {
+    margin-bottom: 40px;
+  }
+}
+
+/* transport choices page */
+
+@media only screen and (max-width: 1415px) {
+  .supermarketchoice-display-wrapper {
+    width: 80%;
+  }
+
+  .transport-choice-button {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 1237px) {
+  .transport-choice-box {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+}
+
+
+/* main game page - page 11 */
+
+@media only screen and (max-width: 1260px) {
+  .maingameplay-flex-container {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .maingameplay-top-row-container {
+    flex-wrap: wrap;
+    overflow: auto;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .maingameplay-bottom-row-container {
+    flex-wrap: wrap;
+    overflow: auto;
+    height: auto;
+
+  }
+
+  .housedeposit-content-container {
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+
+  .current-goal-colour-container {
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+
+  .pension-component-content {
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+
+  .emergencyfund-content-container {
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+
+  .investingcomponent-content-container {
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+
+  .maingameplay-interaction-container {
+    height: auto;
+    margin-bottom: 50px;
+  }
+
+}
+
+@media only screen and (max-width: 607px) {
+  .maingameplay-flex-container {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+}
+
+
+
+
 
 
 
