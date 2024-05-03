@@ -4226,6 +4226,52 @@ margin-bottom: 40px;
   .joboffer-button-wrapper {
     padding-bottom: 80px;
   }
+
+  .bottombanner-mobileapps-container {
+    width: 100%;
+    font-family: unbounded-reg;
+  }
+
+  .monthlyoutgoingstext-mobileapp-container {
+    width: 100%;
+    color: #D5D2EB;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .monthlyoutgoingsvalue-mobileapp-container {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 170px;
+  }
+
+  .paybills-button-overlay-mobileapps {
+    width: 100%;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
+
+  .paybills-button-overlay-mobileapps button {
+    width: 160px;
+    background-color:#ff48c8;
+    color: white;
+    border: solid 1px #ff48c8;
+    font-family: unbounded-reg;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 100px;
+    margin-top: 30px;
+  }
+
+  .gameplay-bottombanner-wrapper {
+    display: none;
+  }
 }
 
 
@@ -4329,6 +4375,46 @@ margin-bottom: 40px;
     margin-bottom: 50px;
   }
 
+  .responsibilityscore-mobileapp-container {
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #1F1E2F;
+    margin-bottom: 20px;
+    color: #D5D2EB;
+    font-family: unbounded-reg;
+  }
+
+  .responsibilityscore-mobile-app-padding {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 25px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+  }
+
+  .current-count-title-mobileapp-container {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 25px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+
+  .currentaccountbalance-mobileapp {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 25px;
+    color: #7dab3d;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+
 }
 
 @media only screen and (max-width: 607px) {
@@ -4337,7 +4423,78 @@ margin-bottom: 40px;
     margin: 0 auto;
     margin-bottom: 30px;
   }
+
+  .gameplay-topbanner-wrapper {
+    display: none;
+  }
+
+  .monthly-outgoings-wrapper {
+    display: none;
+  }
+
+  .topbanner-mobileapp-container {
+    width: 100%;
+    font-family: unbounded-reg;
+
+  }
+
+  .monthyear-mobileapp-container {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    color: #ff48c8;
+  }
+
+  .currentday-mobileapp-container {
+    padding-top: 5px;
+    width: 100%;
+    text-align: center;
+    color: #D5D2EB;
+    font-size: 16px;
+  }
+
+  .countdowndisplay-mobileapps-container {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 20px;
+  }
+
+  .responsibilityscore-mobileapp-container {
+    width: 80%;
+  }
+
+
 }
+
+@media only screen and (min-width: 608px) {
+  .bottombanner-mobileapps-container {
+    display: none;
+  }
+
+  .topbanner-mobileapp-container {
+    display: none;
+  }
+
+
+}
+
+@media only screen and (min-width: 1028px) {
+  .responsibilityscore-mobileapp-container {
+    display: none;
+  }
+
+  .topbanner-mobileapp-container {
+    display: none;
+  }
+
+
+}
+
 
 
 

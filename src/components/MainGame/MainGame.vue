@@ -10,6 +10,7 @@ Components:
 
 -->
 <template>
+  <!-- Top banner for desktop apps -->
   <div class="maingame-wrapper">
     <div class="gameplay-topbanner-wrapper">
       <div class="current-date-wrapper">
@@ -23,6 +24,18 @@ Components:
           Current Month and Year:
           <span class="colour-white">{{ manageGameTimer.currentMonth }} {{ manageGameTimer.currentYear }}</span>
         </p>
+      </div>
+    </div>
+    <!-- Top banner for mobile apps -->
+    <div class="topbanner-mobileapp-container">
+      <div class="monthyear-mobileapp-container">
+        <p>{{ manageGameTimer.currentMonth }} {{ manageGameTimer.currentYear }} </p>
+      </div>
+      <div class="currentday-mobileapp-container">
+        <p>Days until payday and bills due:</p>
+      </div>
+      <div class="countdowndisplay-mobileapps-container">
+        <p> {{ manageGameTimer.countdown }}</p>
       </div>
     </div>
     <WelcomePage v-if="manageMainGameNav.currentPage === 0"></WelcomePage>
@@ -58,6 +71,21 @@ Components:
     <PensionPredictions v-if="manageMainGameNav.currentPage === 29"></PensionPredictions>
     <div v-if="(manageMainGameNav.currentPage === 11) || (manageMainGameNav.currentPage === 18)" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
+        <div class="responsibilityscore-mobileapp-container">
+          <!-- game stats for smaller devices -->
+          <div class="responsibilityscore-mobile-app-padding">
+            <p>Responsibility Score: <span :class="manageBarometer.scoreColor">{{ manageBarometer.barometerScore }}%</span></p>
+          </div>
+        </div>
+          <div class="responsibilityscore-mobileapp-container">
+            <div class="current-count-title-mobileapp-container">
+              <p v-if="manageMainGameNav.currentPage >= 3"><font-awesome-icon icon="fa-solid fa-piggy-bank" />Current Account:</p>
+              <p v-if="manageMainGameNav.currentPage < 3"><font-awesome-icon icon="fa-solid fa-money-bill"/>Money In Pocket:</p>
+            </div>
+            <div class="currentaccountbalance-mobileapp">
+              <p :class="(manageMoney.moneyInPocket < 0) ? 'colour-red' : ''">£{{manageMoney.moneyInPocket.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}}</p>
+            </div>
+          </div>
         <CurrentGoalInteractiveComponent></CurrentGoalInteractiveComponent>
         <PensionInteractionComponent></PensionInteractionComponent>
         <EmergencyFundsInteractiveComponent></EmergencyFundsInteractiveComponent>
@@ -69,14 +97,46 @@ Components:
         <InvestmentPortfolioInteractiveComponent></InvestmentPortfolioInteractiveComponent>
       </div>
     </div>
+    <!-- Bottom banner for larger screens -->
     <div className="gameplay-bottombanner-wrapper">
       <div className="monthly-outgoings-wrapper">
         <p>
-          Total monthly outgoings:
+          Total Bills:
           <span className="colour-white">£{{ Number(manageMoney.monthlyOutGoingsSum).toFixed(2) }}</span>
         </p>
       </div>
     </div>
+    <!-- Bottom banner for smaller screens -->
+    <div class="bottombanner-mobileapps-container">
+      <div class="monthlyoutgoingstext-mobileapp-container">
+        <p>Total Bills:</p>
+      </div>
+      <div class="monthlyoutgoingsvalue-mobileapp-container">
+        <p>£{{ Number(manageMoney.monthlyOutGoingsSum).toFixed(2) }}</p>
+      </div>
+    </div>
+    <!-- Pay Bills button for mobile apps -->
+    <!-- First bill payment -->
+    <div v-if="(manageGameTimer.countdown <= 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal === 1)" class="paybills-button-overlay-mobileapps">
+      <button @click="manageSound.goalCompleted(), manageMoney.payMonthlyOutgoings(), manageGoals.completedGoal(), manageBarometer.increaseScore(3), manageMoney.checkIfBankBalanceNegative()">Pay Bills</button>
+    </div>
+    <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal === 1)" class="paybills-button-overlay-mobileapps bills-late-button">
+      <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill(), manageMoney.checkIfBankBalanceNegative()">Pay Bills</button>
+    </div>
+    <div v-if="(manageGameTimer.countdown > 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal === 1)" class="paybills-button-overlay-mobileapps pay-monthly-inactive">
+      <button>Pay Bills</button>
+    </div>
+    <!-- Other Bills payments -->
+    <div v-if="(manageGameTimer.countdown <= 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1)" class="paybills-button-overlay-mobileapps">
+      <button @click="manageMoney.payMonthlyOutgoings(), manageBarometer.increaseScore(2), manageMoney.checkIfBankBalanceNegative()">Pay Bills</button>
+    </div>
+    <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal > 1)" class="paybills-button-overlay-mobileapps bills-late-button">
+      <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill(), manageMoney.checkIfBankBalanceNegative()">Pay Bills</button>
+    </div>
+    <div v-if="(manageGameTimer.countdown > 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1)" class="paybills-button-overlay-mobileapps pay-monthly-inactive">
+      <button>Pay Bills</button>
+    </div>
+    
     <div v-if="manageMainGameNav.currentPage === 18" class="popups-maingameplay-black-overlay">
         <!-- Black overlay for popups-->
     </div>
@@ -86,13 +146,15 @@ Components:
 // import stores
 //import { useLivingOptionsStore } from "../../store/InitialGameChoicesStore";
 import { useMoneyManageStore } from "../../store/MoneyStore.js";
-import { useMainGameplayNavigationStore } from "../../store/MainGameChoicesStore.js";
+import { useMainGameplayNavigationStore, useBarometerStore, useGoalsStore } from "../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../store/MoneyStore.js";
 
 //const livingOptions = useLivingOptionsStore();
 const manageMoney = useMoneyManageStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
+const manageBarometer = useBarometerStore()
+const manageGoals = useGoalsStore();
 
 </script>
 <script>
