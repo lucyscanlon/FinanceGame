@@ -18,7 +18,7 @@ export const useMoneyManageStore = defineStore({
         monthlyOutGoingsSum: 0,
         increaseordecreaseofPocketMoney: 0,
         currentAccountCurrentTotal: 0,
-        emergencyFundCurrentTotal: 4500,
+        emergencyFundCurrentTotal: 0,
         daysUntilPayday: 30,
         decreaseTime: true,
         houseDepositCurrentTotal: 0,
@@ -580,7 +580,7 @@ export const useGameTimerStore = defineStore({
             // work out the total profit / loss from initial investment
             useMoneyManageStore().totalProfitOrLoss = useMoneyManageStore().InvestmentPortfolioCurrentValue - useMoneyManageStore().totalInvested;
 
-            if(useMoneyManageStore().totalProfitOrLoss >= 500) {
+            if(useMoneyManageStore().totalProfitOrLoss >= 200) {
                 useGoalsStore().completedGoals = 7;
             }
 
@@ -889,6 +889,14 @@ export const useGameTimerStore = defineStore({
             if(useHouseDepositChoiceStore().chosenHouseDepositChoice === 1) {
                 useMoneyManageStore().houseDepositCurrentTotal = useMoneyManageStore().houseDepositCurrentTotal + (useMoneyManageStore().LISAYearlyAdditions * 0.25);
                 useMoneyManageStore().LISAYearlyAdditions = 0;
+
+                if(useMoneyManageStore().houseDepositCurrentTotal >= 8000) {
+                    useGoalsStore().completedGoals = 8;
+
+                    setTimeout(() => {
+                        useGameTimerStore().triggerEndOfGame()
+                      }, 3000);
+                }
 
             }
 

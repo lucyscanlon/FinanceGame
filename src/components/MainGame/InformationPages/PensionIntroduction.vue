@@ -77,8 +77,8 @@ The parent of this component:
                     <PensionChoiceFlexbox :PensionIdentifier=3 :PensionYCPerc=8 :PensionYCAmount=161.94 :PensionECPerc=4.5 :PensionECAmount=91.09 :PensionTCPerc=12.5 :PensionTCAmount=253.03></PensionChoiceFlexbox>
                 </div>
                 <div class="pension-contribution-button-container">
-                        <button v-if="manageMainGameNav.currentPage === 9" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), managePension.workoutPensionPredictions(manageMoney.monthlySalaryBeforeTax, managePension.chosenPensionChoice.TContPercentage), manageMainGameNav.navigateToPage(22)">Confirm Choice</button>
-                        <button v-if="manageMainGameNav.currentPage === 10" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), manageMainGameNav.navigateToPage(11)">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 9" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), managePension.workoutPensionPredictions(manageMoney.monthlySalaryBeforeTax, managePension.chosenPensionChoice.TContPercentage), (managePension.currentlySelectedPensionChoice != '') ? manageMainGameNav.navigateToPage(22) : ''">Confirm Choice</button>
+                        <button v-if="manageMainGameNav.currentPage === 10" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), (managePension.currentlySelectedPensionChoice != '') ? manageMainGameNav.navigateToPage(11) : ''">Confirm Choice</button>
                  </div>
                 </div>
             </div>

@@ -32,10 +32,10 @@ Components:
             <TransportChoicesFlex TransportName="Public Transport" TransportDesc="A well connected public transport service." TransportPerk="Under 25s get 33% off" TransportCost="150" TransportCommuteCost="40" TransportGroceryCost="15" :TransportDiscount=33 :TransportIdentifier=2></TransportChoicesFlex>
         </div>
         <!-- call store methods on click -->
-        <div v-if="useMainGameNav.currentPage === 7" @click="manageSound.playClickSound(), manageTransport.confirmChosenTransport(), manageMoney.increaseMonthlyOutGoings(manageTransport.chosenTransportChoice.TTotal), useMainGameNav.navigateToPage(8)" class="supermarketchoice-button-wrap transport-choice-button">
+        <div v-if="useMainGameNav.currentPage === 7" @click="manageSound.playClickSound(), manageTransport.confirmChosenTransport(), (manageTransport.currentlySelectedTransportChoice != '') ? (useMainGameNav.navigateToPage(8), manageMoney.increaseMonthlyOutGoings(manageTransport.chosenTransportChoice.TTotal)) : ''" class="supermarketchoice-button-wrap transport-choice-button">
                     <button>Choose this method</button>
         </div>
-        <div v-if="useMainGameNav.currentPage === 21" @click="manageSound.playClickSound(), manageTransport.confirmChosenTransport(), manageMoney.increaseMonthlyOutGoings(manageTransport.chosenTransportChoice.TTotal), useMainGameNav.navigateToPage(11), manageTimer.startCountdown()" class="supermarketchoice-button-wrap transport-choice-button">
+        <div v-if="useMainGameNav.currentPage === 21" @click="manageSound.playClickSound(), manageTransport.confirmChosenTransport(), (manageTransport.currentlySelectedTransportChoice != '') ? (useMainGameNav.navigateToPage(11), manageMoney.increaseMonthlyOutGoings(manageTransport.chosenTransportChoice.TTotal)) : '', manageTimer.startCountdown()" class="supermarketchoice-button-wrap transport-choice-button">
                     <button>Choose this method</button>
         </div>
     </div> 

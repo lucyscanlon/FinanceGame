@@ -62,7 +62,7 @@ The parent of this component:
             ></EmergencyFundChoicesFlexbox>
           </div>
           <div class="emergencyfundchoice-button-container">
-            <button @click="manageSound.playClickSound(), manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(), managePopUps.setSpecificPopup(9), useMainGameplayNav.navigateToPage(18), manageGameTimer.startCountdown(); manageMoney.addToEmergencyFundTotal(parseInt(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit)), useMainGameplayNav.unlockComponent(), manageGoals.nextGoal(), manageNotifications.timeoutEmergencyFundNotification()">Confirm Choice</button>
+            <button @click="manageSound.playClickSound(), manageEmergencyFund.confirmCurrentlySelectedEmergencyFundChoice(), managePopUps.setSpecificPopup(9), (manageEmergencyFund.currentlySelectedEmergencyFundChoice != '') ? useMainGameplayNav.navigateToPage(18) : '', manageGameTimer.startCountdown(); manageMoney.addToEmergencyFundTotal(parseInt(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit)), useMainGameplayNav.unlockComponent(), manageGoals.nextGoal(), manageNotifications.timeoutEmergencyFundNotification()">Confirm Choice</button>
           </div>
         </div>
       </div>

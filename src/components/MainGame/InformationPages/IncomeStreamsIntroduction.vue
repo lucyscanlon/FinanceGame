@@ -51,11 +51,11 @@
       </div>
       <div class="emergencyfundchoice-button-container">
             <button v-if="manageIncomeStream.currentlySelectedIncomeStreamChoice.ISname === 'Do not set up a secondary income stream'"
-              @click="manageSound.playClickSound(), manageIncomeStream.confirmIncomeStreamChoice(), useMainGameplayNav.navigateToPage(11), useMainGameplayNav.unlockComponent() ">
+              @click="manageSound.playClickSound(), manageIncomeStream.confirmIncomeStreamChoice(),  (manageIncomeStream.currentlySelectedIncomeStreamChoice != '') ? useMainGameplayNav.navigateToPage(11) : '', useMainGameplayNav.unlockComponent() ">
               Confirm Choice
             </button>
             <button v-if="manageIncomeStream.currentlySelectedIncomeStreamChoice.ISname !== 'Do not set up a secondary income stream'"
-              @click="manageSound.playClickSound(), manageIncomeStream.confirmIncomeStreamChoice(), nextSlide(), (manageIncomeStream.currentlySelectedIncomeStreamChoice.ISidentifier === 6) ? useMainGameplayNav.navigateToPage(11) : '' ">
+              @click="manageSound.playClickSound(), manageIncomeStream.confirmIncomeStreamChoice(), (manageIncomeStream.currentlySelectedIncomeStreamChoice != '') ? nextSlide() : ''">
               Confirm Choice
             </button>
           </div>
@@ -69,7 +69,7 @@
                 <input type="text" placeholder="Enter name" v-model="onlineStoreName">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmOnlineStoreName(onlineStoreName), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(250, 400), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(Number(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost))">Confirm Name</button>
+               <button @click="manageSound.playClickSound(), (onlineStoreName !== '') ? useMainGameplayNav.navigateToPage(11) : '', manageIncomeStream.confirmOnlineStoreName(onlineStoreName), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(250, 400), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(Number(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost))">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
                 <input type="text" placeholder="Enter name" v-model="podcastName">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmPodcastName(podcastName), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(50, 250), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(Number(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost))">Confirm Name</button>
+               <button @click="manageSound.playClickSound(), (podcastName !== '') ? useMainGameplayNav.navigateToPage(11) : '', manageIncomeStream.confirmPodcastName(podcastName), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(50, 250), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(Number(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost))">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@
               <span :class="(barChoice === 'Martins Martini Bar') ? 'barwork-button-active' : ''"><button @click="barChoice = 'Martins Martini Bar'">Martin's Martini Bar</button></span>
             </div>
             <div class="barwork-confirm-container">
-               <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmBarChoiceName(barChoice), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(0, 250), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(Number(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost))">Confirm Name</button>
+               <button @click="manageSound.playClickSound(), (barChoice !== '') ? useMainGameplayNav.navigateToPage(11) : '', manageIncomeStream.confirmBarChoiceName(barChoice), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(0, 250), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(Number(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost))">Confirm Name</button>
               </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
                 <input type="text" placeholder="Enter username" v-model="socialMediaUsername">
               </form>
               <div class="incomestreams-namechoice-button-container">
-               <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmSocialMediaUsername(socialMediaUsername), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(0, 350), manageMoney.decreasePocketMoney(Number(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost))">Confirm Name</button>
+               <button @click="manageSound.playClickSound(), (socialMediaUsername !== '') ? useMainGameplayNav.navigateToPage(11) : '', manageIncomeStream.confirmSocialMediaUsername(socialMediaUsername), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(0, 350), manageMoney.decreasePocketMoney(Number(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost))">Confirm Name</button>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@
               <span :class="(freelanceChosenSkill === 'Digital Marketing') ? 'barwork-button-active' : ''"><button @click="freelanceChosenSkill = 'Digital Marketing'">Digital Marketing</button></span>
             </div>
             <div class="barwork-confirm-container">
-               <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(11), manageIncomeStream.confirmFreelanceSkill(freelanceChosenSkill), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(100, 500), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(Number(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost))">Confirm Name</button>
+               <button @click="manageSound.playClickSound(), (freelanceChosenSkill !== '') ? useMainGameplayNav.navigateToPage(11) : '', manageIncomeStream.confirmFreelanceSkill(freelanceChosenSkill), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent(), manageIncomeStream.declareMonthlyCostProfit(100, 500), manageMoney.increaseMonthlyOutGoings(manageIncomeStream.IncomeStreamMonthlyCost), manageMoney.decreasePocketMoney(Number(manageIncomeStream.chosenIncomeStreamChoice.ISsetupcost))">Confirm Name</button>
               </div>
           </div>
         </div>
