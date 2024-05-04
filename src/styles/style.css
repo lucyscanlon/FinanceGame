@@ -638,7 +638,7 @@ body {
 
 .map-work-location-wrapper {
   font-size: 30px;
-  color: #1f1e2f;
+  color: white;
   position: relative;
   top: 100px;
   left: 50px;
@@ -659,12 +659,16 @@ body {
 
 .map-work-location-circle p {
   text-align: center;
-  color: white;
+  color: #D5D2EB;
   font-family: unbounded-reg;
   font-size: 15px;
   padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.map-mapicon .fa-map-pin {
+  color: #D5D2EB;
 }
 
 /*  choose a place to live styling */
@@ -4915,6 +4919,33 @@ margin-bottom: 40px;
 
 
 }
+
+@media only screen and (max-width: 1118px) {
+  .map-display-wrapper {
+    height: auto;
+    overflow: auto;
+    background-repeat: repeat;
+  }
+
+  .map-location-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .map-work-location-wrapper {
+    display: none;
+  }
+  
+  .mapdisplay-flex-container {
+    bottom: 0px;
+    left: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+}
+
 
 
 
