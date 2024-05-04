@@ -2537,13 +2537,11 @@ input[type="number"] {
   height: 100px;
   background-color: #15141d;
   border-radius: 15px;
-  float: left;
   margin-left: 5px;
 }
 
 .investing-port-visual-container {
   width: 57%;
-  float: right;
   margin-right: 5px;
   height: 100px;
   background-color: #15141d;
@@ -3596,6 +3594,13 @@ input[type="number"] {
   /*background-image: radial-gradient(circle, #ff48c8, #b147aa, #6d3d81, #382b50, #15141d);*/
 }
 
+.endingpage-whole-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(circle, #15141d, #382b50, #6d3d81, #b147aa, #ff48c8);
+  /*background-image: radial-gradient(circle, #ff48c8, #b147aa, #6d3d81, #382b50, #15141d);*/
+}
+
 .startingpage-width-container {
   width: 60%;
   margin: 0 auto;
@@ -4237,6 +4242,10 @@ margin-bottom: 40px;
     box-shadow: 3px 5px 14px 0px rgba(0,0,0,0.75);
   }
 
+  .previous-next-container {
+    padding-bottom: 170px;
+  }
+
   .charactersidebar-closed {
     left: -350px;
     position: absolute;
@@ -4530,7 +4539,7 @@ margin-bottom: 40px;
     text-align: center;
   }
 
-  .startingpage-whole-container {
+  .endingpage-whole-container {
     height: auto;
     
   }
@@ -4724,7 +4733,65 @@ margin-bottom: 40px;
     text-align: center;
   }
 
+  .current-goal-title {
+    padding-top: 30px;
 
+  }
+
+  .currentgoal-add-withdraw-buttons {
+    padding-bottom: 30px;
+    padding-top: 20px;
+  }
+
+  .incomestreams-input-container input {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .investing-port-total-number-container {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 0px;
+  
+  }
+
+  .investing-port-visual-container {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 10px;
+  
+  }
+
+  .investmentport-invested-amount {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .investmentport-lossprof-container {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  .investmentport-total-profitloss-container {
+    height: auto;
+    overflow: auto;
+  }
+
+  .investing-close-portfolio-button {
+    right: 20px;
+    top: 15px;
+  }
+
+}
+
+@media only screen and (min-width: 1261px) {
+  .investing-port-total-number-container {
+    float: left;
+  }
+
+  .investing-port-visual-container {
+    float: right;
+  }
 }
 
 @media only screen and (max-width: 607px) {
@@ -4778,10 +4845,6 @@ margin-bottom: 40px;
     width: 80%;
   }
 
-  .previous-next-container {
-    padding-bottom: 70px;
-  }
-
   .pension-contributionchoices-container {
     flex-wrap: wrap;
   }
@@ -4807,6 +4870,8 @@ margin-bottom: 40px;
   .rentintro-description-wrapper {
     padding-bottom: 50px;
   }
+
+  
 
 
 }

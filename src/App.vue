@@ -6,7 +6,7 @@
     <CharacterStatsSidebarWrapper></CharacterStatsSidebarWrapper>
     <MainGameWrapper></MainGameWrapper>
   </div>
-  <div v-if="manageMainGameNav.currentPage === 30" class="startingpage-whole-container">
+  <div v-if="manageMainGameNav.currentPage === 30" class="endingpage-whole-container">
     <EndingPage></EndingPage>
   </div>
 </template>

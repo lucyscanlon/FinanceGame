@@ -362,7 +362,7 @@ export const useInvestmentPortfolioChoiceStore = defineStore({
 export const useGoalsStore = defineStore({
   id: "CurrentGoalsStore",
   state: () => ({
-    currentGoal: 1,
+    currentGoal: 2,
     completedGoals: 0,
     holidayBudget: 0,
   }),
