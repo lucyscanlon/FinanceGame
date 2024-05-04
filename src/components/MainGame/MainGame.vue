@@ -130,13 +130,13 @@ Components:
       <button>Pay Bills</button>
     </div>
     <!-- Other Bills payments -->
-    <div v-if="(manageGameTimer.countdown <= 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1) && manageMainGameNav.currentPage === 11" class="paybills-button-overlay-mobileapps">
+    <div v-if="(manageGameTimer.countdown <= 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1)" class="paybills-button-overlay-mobileapps">
       <button @click="manageMoney.payMonthlyOutgoings(), manageBarometer.increaseScore(2), manageMoney.checkIfBankBalanceNegative()">Pay Bills</button>
     </div>
-    <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal > 1) && manageMainGameNav.currentPage === 11" class="paybills-button-overlay-mobileapps bills-late-button">
+    <div v-if="(manageMoney.billsLate === true)" class="paybills-button-overlay-mobileapps bills-late-button">
       <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill(), manageMoney.checkIfBankBalanceNegative()">Pay Bills</button>
     </div>
-    <div v-if="(manageGameTimer.countdown > 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1) && manageMainGameNav.currentPage === 11" class="paybills-button-overlay-mobileapps pay-monthly-inactive">
+    <div v-if="(manageGameTimer.countdown > 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1)" class="paybills-button-overlay-mobileapps pay-monthly-inactive">
       <button>Pay Bills</button>
     </div>
     
@@ -151,6 +151,7 @@ Components:
 import { useMoneyManageStore } from "../../store/MoneyStore.js";
 import { useMainGameplayNavigationStore, useBarometerStore, useGoalsStore } from "../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../store/MoneyStore.js";
+import { useSoundEffectsStore } from "../../store/soundEffectsStore.js";
 
 //const livingOptions = useLivingOptionsStore();
 const manageMoney = useMoneyManageStore();
@@ -158,6 +159,7 @@ const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
 const manageBarometer = useBarometerStore()
 const manageGoals = useGoalsStore();
+const manageSound = useSoundEffectsStore();
 
 </script>
 <script>
