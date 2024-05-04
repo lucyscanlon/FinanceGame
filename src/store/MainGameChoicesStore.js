@@ -4,8 +4,9 @@ import { useMoneyManageStore } from './MoneyStore'
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
-    mainGameComponentsUnlocked: 0,
-    currentPage: 17,
+    mainGameComponentsUnlocked: 6,
+    currentPage: 11,
+    menuOpen: false,
   }),
   actions: {
     navigateToPage(num) {
@@ -16,6 +17,17 @@ export const useMainGameplayNavigationStore = defineStore({
     unlockComponent() {
       this.mainGameComponentsUnlocked = this.mainGameComponentsUnlocked + 1;
       //console.log(this.mainGameComponentsUnlocked);
+    },
+
+    toggleMenu() {
+
+      if(this.menuOpen) {
+        this.menuOpen = false;
+      } else if (this.menuOpen === false) {
+        this.menuOpen = true;
+      }
+    
+      console.log("click")
     },
   },
 });

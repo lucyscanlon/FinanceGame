@@ -27,6 +27,9 @@ Components:
       </div>
     </div>
     <!-- Top banner for mobile apps -->
+    <div class="mobiledisplay-menu-button">
+      <button @click="manageMainGameNav.toggleMenu()"><font-awesome-icon icon="fa-solid fa-bars" /></button>
+    </div>
     <div class="topbanner-mobileapp-container">
       <div class="monthyear-mobileapp-container">
         <p>{{ manageGameTimer.currentMonth }} {{ manageGameTimer.currentYear }} </p>

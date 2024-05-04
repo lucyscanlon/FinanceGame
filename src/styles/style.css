@@ -4204,7 +4204,23 @@ margin-bottom: 40px;
     width: 70%;
   }
 
+  .mobiledisplay-menu-button {
+    position: absolute;
+    top: 1.5%;
+    left: 8%;
+    font-size: 20px;
+  }
+
   
+}
+
+@media only screen and (min-width: 605px) {
+  .mobiledisplay-menu-button {
+    position: absolute;
+    top: 6%;
+    left: 8%;
+    font-size: 20px;
+  }
 }
 
 
@@ -4216,7 +4232,33 @@ margin-bottom: 40px;
   }
 
   .characterstats-sidebar-wrapper {
-    display: none;
+    width: 350px;
+  }
+
+  .charactersidebar-open {
+    left: 0px;
+    z-index: 999;
+    position: absolute;
+    -webkit-box-shadow: 3px 5px 14px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 5px 14px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 5px 14px 0px rgba(0,0,0,0.75);
+  }
+
+  .charactersidebar-closed {
+    left: -350px;
+    position: absolute;
+  }
+
+  .mobilemenu-closesidebar-container {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+  }
+
+  .mobilemenu-closesidebar-container p {
+    font-size: 35px;
+    color: #ff48c8;
   }
 
   .joboffer-button-wrapper button {
@@ -4439,6 +4481,15 @@ margin-bottom: 40px;
     font-size: 18px;
   }
 
+
+  .mobiledisplay-menu-button button {
+    font-size:40px;
+    background-color:#15141d;
+    border: none;
+    color: #ff48c8;
+  }
+
+
 }
 
 @media only screen and (min-width: 1026px) {
@@ -4447,6 +4498,14 @@ margin-bottom: 40px;
   }
 
   .investingport-mobilescreens {
+    display: none;
+  }
+
+  .mobiledisplay-menu-button {
+    display: none;
+  }
+
+  .mobilemenu-closesidebar-container {
     display: none;
   }
 

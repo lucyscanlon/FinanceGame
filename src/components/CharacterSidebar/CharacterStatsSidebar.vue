@@ -15,8 +15,11 @@ Components that will be inside this container include:
   const manageMoney = useMoneyManageStore()
 </script>
 <template>
-    <div class="characterstats-sidebar-wrapper">
-        <div class="charactertstats-padding">
+    <div :class="(manageMainGameNav.menuOpen === false) ? 'charactersidebar-closed' : 'charactersidebar-open'" class="characterstats-sidebar-wrapper">
+        <div class="mobilemenu-closesidebar-container">
+          <p @click="manageMainGameNav.toggleMenu()"><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
+        </div>
+      <div class="charactertstats-padding">
             <BarometerComponent></BarometerComponent>
           <div class="characterstats-set">
             <h4 v-if="manageMainGameNav.currentPage >= 3"><font-awesome-icon icon="fa-solid fa-piggy-bank" />Current Account:</h4>

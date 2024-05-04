@@ -339,11 +339,8 @@
                     </div>
                 </div>
             </div>
-            </div>
-
-   
+        </div>
 </template>
-
 <script setup>
 
     import PortfolioLineChart from './PortfolioLineChart.vue'
