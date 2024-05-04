@@ -4271,8 +4271,192 @@ margin-bottom: 40px;
 
   .gameplay-bottombanner-wrapper {
     display: none;
+    left: 0px!important;
+    top: 0;
+    position: absolute;
   }
+
+  .popups-maingameplay-black-overlay {
+    width: 100vw;
+    left: 0px;
+    overflow: auto;
+
+  }
+
+  .popups-main-container-wrapper {
+    left: 10%;
+    width: 80%;
+    height: auto;
+    margin-bottom: 100px;
+  }
+
+  .popup-phonebill-options-container {
+    flex-wrap: wrap;
+  }
+
+  .popup-phonebill-flex-container {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .wholegame-wrapper {
+    overflow: auto;
+  }
+
+  html {
+    background-color: #060608;
+  }
+
+  .popup-work-drinks-choice-container {
+    flex-wrap: wrap;
+  }
+
+  .popup-work-drinks-flex-container {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .popup-work-drinks-choice-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+
+  .popup-investmentsuccessful-flex-container {
+    margin-bottom: 40px;
+  }
+
+  .popups-main-container-newgoal-container {
+    width: 80%;
+    left: 10%;
+    height: auto;
+  }
+
+  .newgoalpopup-title-container {
+    padding-top: 35px;
+  }
+
+  .newgoalpopup-home-button {
+    margin-bottom: 30px;
+  }
+
+  .emergencyfund-box-container {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  
+  .emergencyfund-flexbox-container {
+    flex-wrap: wrap;
+  }
+
+  .incomestreams-choices-container {
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+
+  .incomestreams-choice {
+    width: 100%;
+    margin-bottom: 20px;
+    min-height: 220px;
+  }
+
+  .previous-next-container {
+    padding-top: 50px;
+  }
+
+  .incomestreams-editinfo-container {
+    width: 80%;
+  }
+
+  .incomestreams-slidecontainer {
+    min-height: 200px;
+  }
+
+  .housedeposit-choices-container {
+    flex-wrap: wrap;
+  }
+
+  .housedeposit-choice-flex {
+    width: 100%;
+  }
+
+  .investingintro-screenshot2-container {
+    width: 100%;
+  }
+
+  .investing-port-stock-flex {
+    width: 70%;
+    margin-bottom: 30px;
+    margin: 0 auto;
+  }
+
+  .investingport-fullscreen {
+    display: none;
+  }
+
+  .investing-port-buy-sell-flex {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .investing-port-buy-sell-flex {
+    margin-bottom: 30px;
+  }
+
+  .investing-port-full-container {
+    height: auto;
+  }
+
+  .investing-port-full-stock-container {
+    display: none;
+  }
+
+  .investing-port-buy-sell-buttons-container {
+    display: none;
+  }
+
+  .investingport-mobilescreens {
+    padding-top: 40px;
+  }
+
+  .investmentport-total-profitloss-container {
+    margin-bottom: 30px;
+    padding-bottom: 50px;
+  
+  }
+
+  .investmentport-invested-amount {
+    height: 70px;
+  }
+
+  .investmentport-lossprof-container {
+    height: 70px;
+  }
+
+  .investing-port-totalbalance-figure {
+    font-size: 18px;
+  }
+
 }
+
+@media only screen and (min-width: 1026px) {
+  .paybills-button-overlay-mobileapps {
+    display: none;
+  }
+
+  .investingport-mobilescreens {
+    display: none;
+  }
+
+ 
+
+
+}
+
+
+
 
 
 /* supermarket choices page */
@@ -4466,6 +4650,36 @@ margin-bottom: 40px;
 
   .responsibilityscore-mobileapp-container {
     width: 80%;
+  }
+
+  .previous-next-container {
+    padding-bottom: 70px;
+  }
+
+  .pension-contributionchoices-container {
+    flex-wrap: wrap;
+  }
+
+  .pension-contribution-box {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .pension-slidecontainer {
+    padding-bottom: 50px;
+  }
+
+  .rentintro-mainwrapper {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .pension-predictions button {
+    margin-bottom: 50px;
+  }
+
+  .rentintro-description-wrapper {
+    padding-bottom: 50px;
   }
 
 

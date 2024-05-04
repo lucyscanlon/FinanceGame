@@ -107,7 +107,7 @@ Components:
       </div>
     </div>
     <!-- Bottom banner for smaller screens -->
-    <div class="bottombanner-mobileapps-container">
+    <div v-if="manageMainGameNav.currentPage === 11" class="bottombanner-mobileapps-container">
       <div class="monthlyoutgoingstext-mobileapp-container">
         <p>Total Bills:</p>
       </div>
@@ -117,23 +117,23 @@ Components:
     </div>
     <!-- Pay Bills button for mobile apps -->
     <!-- First bill payment -->
-    <div v-if="(manageGameTimer.countdown <= 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal === 1)" class="paybills-button-overlay-mobileapps">
+    <div v-if="(manageGameTimer.countdown <= 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal === 1) && manageMainGameNav.currentPage === 11" class="paybills-button-overlay-mobileapps">
       <button @click="manageSound.goalCompleted(), manageMoney.payMonthlyOutgoings(), manageGoals.completedGoal(), manageBarometer.increaseScore(3), manageMoney.checkIfBankBalanceNegative()">Pay Bills</button>
     </div>
-    <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal === 1)" class="paybills-button-overlay-mobileapps bills-late-button">
+    <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal === 1) && manageMainGameNav.currentPage === 11" class="paybills-button-overlay-mobileapps bills-late-button">
       <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill(), manageMoney.checkIfBankBalanceNegative()">Pay Bills</button>
     </div>
-    <div v-if="(manageGameTimer.countdown > 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal === 1)" class="paybills-button-overlay-mobileapps pay-monthly-inactive">
+    <div v-if="(manageGameTimer.countdown > 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal === 1) && manageMainGameNav.currentPage === 11" class="paybills-button-overlay-mobileapps pay-monthly-inactive">
       <button>Pay Bills</button>
     </div>
     <!-- Other Bills payments -->
-    <div v-if="(manageGameTimer.countdown <= 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1)" class="paybills-button-overlay-mobileapps">
+    <div v-if="(manageGameTimer.countdown <= 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1) && manageMainGameNav.currentPage === 11" class="paybills-button-overlay-mobileapps">
       <button @click="manageMoney.payMonthlyOutgoings(), manageBarometer.increaseScore(2), manageMoney.checkIfBankBalanceNegative()">Pay Bills</button>
     </div>
-    <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal > 1)" class="paybills-button-overlay-mobileapps bills-late-button">
+    <div v-if="(manageMoney.billsLate === true) && (manageGoals.currentGoal > 1) && manageMainGameNav.currentPage === 11" class="paybills-button-overlay-mobileapps bills-late-button">
       <button @click="manageMoney.payMonthlyOutgoings(), manageMoney.payLateBill(), manageMoney.checkIfBankBalanceNegative()">Pay Bills</button>
     </div>
-    <div v-if="(manageGameTimer.countdown > 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1)" class="paybills-button-overlay-mobileapps pay-monthly-inactive">
+    <div v-if="(manageGameTimer.countdown > 10) && (manageMoney.billsPaid === manageGameTimer.monthsPassed) && (manageMoney.billsLate === false) && (manageGoals.currentGoal > 1) && manageMainGameNav.currentPage === 11" class="paybills-button-overlay-mobileapps pay-monthly-inactive">
       <button>Pay Bills</button>
     </div>
     

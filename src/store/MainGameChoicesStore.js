@@ -4,8 +4,8 @@ import { useMoneyManageStore } from './MoneyStore'
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
-    mainGameComponentsUnlocked: 6,
-    currentPage: 11,
+    mainGameComponentsUnlocked: 0,
+    currentPage: 17,
   }),
   actions: {
     navigateToPage(num) {
@@ -241,7 +241,7 @@ export const useHouseDepositChoiceStore = defineStore({
     state: () => ({
         selectedHouseDepositChoice: 0,
         currentlySelectedHouseDepositChoice: '',
-        chosenHouseDepositChoice: 2,
+        chosenHouseDepositChoice: 0,
         houseDepositGoal: 8000,
 
     }),
@@ -376,7 +376,7 @@ export const useGoalsStore = defineStore({
 export const usePopUpStore = defineStore({
   id: 'PopUpStore',
   state: () => ({
-    currentPopUp: 12,
+    currentPopUp:1,
     phonePlanChoice: 0,
     holidayChoice: 0,
     InvestmentOpChoice: 0,
