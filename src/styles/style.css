@@ -4947,6 +4947,90 @@ margin-bottom: 40px;
 }
 
 
+@media only screen and (min-width: 1240px) {
+
+  .startingpage-width-container {
+    max-width: 700px;
+  }
+
+  .rentintro-mainwrapper {
+    max-width: 750px;
+  }
+
+  .job-offer-padding {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
+  .rentintro-mainwrapper {
+    max-width: 800px;
+  }
+
+  .currentaccount-wrapper {
+    max-width: 700px;
+    padding-top: 80px;
+  }
+
+  .choseplacetolive-wrapper {
+    padding-top: 80px;
+  }
+
+  .mapdisplay-flex-container {
+    max-width: 700px;
+    padding-top: 50px;
+  }
+
+  .supermarket-info-wrap {
+    padding-top: 80px;
+  }
+
+  .supermarketchoice-display-wrapper {
+    max-width: 700px;
+  }
+
+  .transportdisplay {
+    max-width: 800px;
+  }
+  .pensionintrowrapper {
+    padding-top: 80px;
+  }
+ 
+  .maingameplay-bottom-row-container {
+    max-width: 1100px;
+    max-height: 370px;
+  }
+
+  .maingameplay-top-row-container {
+    max-width: 1100px;
+    max-height: 370px;
+    margin-top: 50px;
+  }
+
+  .emergencyfund-intro {
+    padding-top: 70px;
+  }
+
+  .investing-port-full-stock-container {
+    max-width: 900px;
+    margin-top: 80px;
+  }
+
+  .investing-port-buy-sell-buttons-container {
+    max-width: 900px;
+  }
+
+  .investing-port-total-visual-container {
+    max-width: 900px;
+  }
+
+  .endpage-content-container {
+    max-width: 1000px;
+    padding-top: 50px;
+  }
+}
+
+
+
 
 
 

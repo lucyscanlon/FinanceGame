@@ -5,7 +5,7 @@ The parent of this component:
 
 -->
 <template>
-    <div class="rentintro-mainwrapper">
+    <div class="rentintro-mainwrapper choseplacetolive-wrapper">
         <div class="rentintro-title-wrapper">
             <h1>Choosing a place to rent</h1>
         </div>

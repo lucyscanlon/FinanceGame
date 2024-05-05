@@ -24,7 +24,7 @@ Components:
 
 </script>
 <template>
-    <div class="supermarketchoice-display-wrapper">
+    <div class="supermarketchoice-display-wrapper transportdisplay">
         <h1>Choose a method of transport</h1>
         <p class="supermarketchoice-description">Choose from one of the options below.</p>
         <div class="transportchoice-flexbox-wrap">

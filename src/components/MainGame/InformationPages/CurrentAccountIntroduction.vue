@@ -5,7 +5,7 @@ The parent of this component:
 
 -->
 <template>
-    <div class="rentintro-mainwrapper">
+    <div class="rentintro-mainwrapper currentaccount-wrapper">
         <div class="rentintro-title-wrapper everydayaccount-info-title">
             <h1>Setting up an everyday bank account</h1>
         </div>
