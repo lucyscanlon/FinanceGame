@@ -127,11 +127,13 @@ export const useMoneyManageStore = defineStore({
             num = Number(num);
 
             if((this.LISAYearlyAdditions + num) <= 4000) {
-                this.LISAYearlyAdditions = this.LISAYearlyAdditions + num;
+                
 
                 if(this.moneyInPocket >= num) {
                     this.moneyInPocket = this.moneyInPocket - num;
                     this.houseDepositCurrentTotal = this.houseDepositCurrentTotal + num;
+
+                    this.LISAYearlyAdditions = this.LISAYearlyAdditions + num;
 
                     if(this.houseDepositCurrentTotal >= 8000) {
                         useGoalsStore().completedGoals = 8;
