@@ -909,7 +909,7 @@ export const useGameTimerStore = defineStore({
 
             if(useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === 'High Interest Savings Account') {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.044);
-              } else if((useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '6 Month Fixed Rate Bond Account') && (this.currentYear < 2024))  {
+              } else if((useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account') && (this.currentYear < 2024))  {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.07);
               } else if ((useEmergencyFundChoicesStore().chosenEmergencyFundChoice.EmergFName === '1 Year Fixed Rate Bond Account') && (this.currentYear >= 2024)) {
                 useMoneyManageStore().emergencyFundCurrentTotal = useMoneyManageStore().emergencyFundCurrentTotal + (useMoneyManageStore().emergencyFundCurrentTotal * 0.04);

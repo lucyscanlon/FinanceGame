@@ -14,6 +14,7 @@ The parent of this component:
     </div>
     <div class="startingpage-description-container">
       <p>Develop your personal finance knowledge in a simulated, fun game environment. Experience a crash course in cash.</p>
+      <p class="play-instructions">For the best experience play Cash Course on a laptop or computer.</p>
     </div>
     <div class="startingpage-buttons-container">
       <div class="startingpage-play-button">

@@ -19,6 +19,12 @@ body {
   height: 100%;
 }
 
+input:focus {outline: none; }
+
+.play-instructions {
+  padding-top: 20px;
+}
+
 /* fonts */
 
 @font-face {
@@ -667,7 +673,7 @@ body {
   width: 70%;
   margin: 0 auto;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 70px;
   position: relative;
 }
 
@@ -831,6 +837,7 @@ body {
 
 .job-offer-padding {
   padding-top: 20px;
+  padding-bottom: 50px;
 }
 
 .joboffer-description-wrapper table {
@@ -3599,7 +3606,8 @@ input[type="number"] {
 
 .startingpage-whole-container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background-image: radial-gradient(circle, #15141d, #382b50, #6d3d81, #b147aa, #ff48c8);
   /*background-image: radial-gradient(circle, #ff48c8, #b147aa, #6d3d81, #382b50, #15141d);*/
 }
@@ -3616,6 +3624,8 @@ input[type="number"] {
   margin: 0 auto;
   overflow: auto;
   padding-top: 80px;
+  height: auto;
+  min-height: 100vh;
 }
 
 .startingpage-logo-container {
@@ -3658,7 +3668,7 @@ text-align: center;
   letter-spacing: 0px;
   width: 70%;
   margin: 0 auto;
-  line-height: 1.5em;
+  line-height: 1.9em;
   font-size: 15px;
 }
 
@@ -3667,6 +3677,7 @@ text-align: center;
   margin: 0 auto;
   overflow: auto;
   padding-top: 70px;
+  margin-bottom: 70px;
   
 }
 
@@ -4871,6 +4882,7 @@ margin-bottom: 40px;
   .rentintro-mainwrapper {
     width: 85%;
     margin: 0 auto;
+    padding-bottom: 70px;
   }
 
   .pension-predictions button {
@@ -4937,7 +4949,7 @@ margin-bottom: 40px;
 }
 
 
-@media only screen and (min-width: 1240px) {
+@media only screen and (min-width: 1640px) {
 
   .startingpage-width-container {
     max-width: 700px;
