@@ -12,7 +12,7 @@
         </div>
         <div class="investments-interactive-total-container">
             <div class="currentaccount-total-text-container">
-                <p>Current Total:</p>
+                <p>Portfolio Balance:</p>
             </div>
             <div class="currentaccount-total-number-container">
                 <p>£{{ manageMoney.InvestmentPortfolioCurrentValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</p>

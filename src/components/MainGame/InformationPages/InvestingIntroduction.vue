@@ -6,7 +6,7 @@ The parent of this component:
 -->
 <template>
     <div class="rentintro-mainwrapper supermarket-info-wrap">
-        <div v-if="useMainGameplayNav.currentPage === 27" @click="useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
+        <div v-if="useMainGameplayNav.currentPage === 26" @click="useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
             <p><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
         </div>
         <div class="rentintro-title-wrapper housedepositinfo-title">
@@ -91,12 +91,10 @@ The parent of this component:
                 <ul>
                     <li>The total balance shows you how much all of your investments are worth. The percentage shows how much your total balance has <span class="colour-green">fluctuated</span> as the stock values have changed.</li>
                     <li>The 'Investment Portfolio Split' is divided by colour, and displays the amount of each individual stocks make up your total investments.</li>
-                    <li>'Total Invested' shows much money you originally put into the stock market when you bought each stock.</li>
-                    <li>Finally, 'Total profit / Loss' displays how much <span class="colour-green">profit or loss</span> you have made.</li>
                 </ul>
                 </div>
                 <div class="investingintro-screenshot2-container">
-                    <img src="/InvestingScreenshot2.png">
+                    <img src="/InvestingScreenshot3.png">
                 </div>
                 <div class="investingintro-portfoliolink-button-container">
                     <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(17), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">View Investment Portfolio</button>

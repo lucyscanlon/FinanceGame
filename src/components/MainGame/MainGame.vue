@@ -68,7 +68,7 @@ Components:
     <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 23" :startingSlide="0" :NumOfSlides=4></PensionInformationDisplay>
     <EmergencyFundIntroduction v-if="manageMainGameNav.currentPage === 24" :NumofSlides=2></EmergencyFundIntroduction>
     <HouseDepositIntroduction v-if="manageMainGameNav.currentPage === 25" :NumOfSlides=2></HouseDepositIntroduction>
-    <InvestingIntroduction v-if="manageMainGameNav.currentPage === 26" :NumOfSlides=4></InvestingIntroduction>
+    <InvestingIntroduction v-if="manageMainGameNav.currentPage === 26"></InvestingIntroduction>
     <payingBillsIntroduction v-if="manageMainGameNav.currentPage === 27"></payingBillsIntroduction>
     <payingBillsIntroduction v-if="manageMainGameNav.currentPage === 28"></payingBillsIntroduction>
     <PensionPredictions v-if="manageMainGameNav.currentPage === 29"></PensionPredictions>

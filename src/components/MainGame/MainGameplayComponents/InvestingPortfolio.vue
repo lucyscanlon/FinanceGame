@@ -85,7 +85,7 @@
                     <input type="number" placeholder="__" v-model="EWGAmountToBuyOrSell">
                 </form>
                 <div class="investingport-buy-sell-buttons">
-                    <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(0, EWGAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell), rerenderComponent()">Buy</button>
+                    <button @click="manageSound.addButton(), manageInvestmentPortfolio.buyMoreShare(0, EWGAmountToBuyOrSell), manageMoney.buyNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell, 0), rerenderComponent()">Buy</button>
                     <span class="investing-port-sell-button"><button @click="manageSound.WithdrawButton(), manageMoney.sellNumOfStocks(manageGameTimer.stock1Value, EWGAmountToBuyOrSell), manageInvestmentPortfolio.sellShare(0, EWGAmountToBuyOrSell), rerenderComponent()">Sell</button></span>
                     <span class="investing-port-sell-all-button"><button @click="manageSound.WithdrawButton(), manageMoney.sellAllOfStock(manageGameTimer.stock1Value, manageInvestmentPortfolio.ShareTotalAmounts[0]), manageInvestmentPortfolio.sellAllShare(0), rerenderComponent()">Sell All</button></span>
                 </div>
@@ -284,13 +284,7 @@
                     <span class="investing-port-sell-all-button"><button @click="manageSound.WithdrawButton(), manageMoney.sellAllOfStock(manageGameTimer.stock5Value, manageInvestmentPortfolio.ShareTotalAmounts[4]), manageInvestmentPortfolio.sellAllShare(4), rerenderComponent()">Sell All</button></span>
                 </div>
                 </div>
-                </div>
-     
-            
-
-
-
-
+            </div>
         <!-- Total Balances -->
         <div class="investing-port-total-visual-container">
             <div class="investing-port-total-number-container">
@@ -326,19 +320,6 @@
 
             </div>
         </div>
-        <div class="investmentport-total-profitloss-container">
-                <div class="investmentport-invested-amount">
-                    <div class="investment-port-total-invested">
-                        <p>Total Invested: <span class="colour-green right-align">£{{ manageMoney.totalInvested.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</span></p>
-                    </div>
-                </div>
-                <div class="investmentport-lossprof-container">
-                    <div class="investment-port-total-invested">
-                        <p v-if="manageMoney.totalProfitOrLoss >= 0">Total Profit/Loss: <span class="colour-green right-align">£{{ manageMoney.totalProfitOrLoss.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }} <font-awesome-icon icon="fa-solid fa-arrow-up" /></span></p>
-                        <p v-if="manageMoney.totalProfitOrLoss < 0">Total Profit/Loss: <span class="colour-red right-align">£{{ manageMoney.totalProfitOrLoss.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }} <font-awesome-icon icon="fa-solid fa-arrow-down" /></span></p>
-                    </div>
-                </div>
-            </div>
         </div>
 </template>
 <script setup>

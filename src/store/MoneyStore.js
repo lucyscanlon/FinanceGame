@@ -6,8 +6,9 @@ import { useGoalsStore } from './MainGameChoicesStore'
 import { usePopUpStore } from './MainGameChoicesStore'
 import { useHouseDepositChoiceStore } from './MainGameChoicesStore'
 import { useEmergencyFundChoicesStore } from './MainGameChoicesStore'
-import { useBarometerStore, useNotificationStore } from './MainGameChoicesStore'
+import { useBarometerStore, useNotificationStore, useIncomeStreamsChoicesStore } from './MainGameChoicesStore'
 import { useSoundEffectsStore } from './soundEffectsStore.js'
+import { registerLivingOptionChoiceStore, supermarketChoiceStore, transportChoiceStore } from './InitialGameChoicesStore'
 
 export const useMoneyManageStore = defineStore({
     id: 'moveMoney',
@@ -223,6 +224,7 @@ export const useMoneyManageStore = defineStore({
             } else {
                 return;
             }
+
         },
 
         sellNumOfStocks(stockValue, amount) {
@@ -230,6 +232,7 @@ export const useMoneyManageStore = defineStore({
 
             this.moneyInPocket = this.moneyInPocket + cost;
             this.totalInvested = this.totalInvested - cost;
+            
             
         },
 
@@ -243,6 +246,7 @@ export const useMoneyManageStore = defineStore({
             console.log(cost)
 
             this.moneyInPocket = this.moneyInPocket + cost;
+
         },
 
         workOutPortfolioValue() {
@@ -255,6 +259,10 @@ export const useMoneyManageStore = defineStore({
             let stock5portfoliobalance = useGameTimerStore().stock5Value * useInvestmentPortfolioChoiceStore().ShareTotalAmounts[4]
 
             this.InvestmentPortfolioCurrentValue = stock1portfoliobalance + stock2portfoliobalance + stock3portfoliobalance + stock4portfoliobalance + stock5portfoliobalance
+
+            if(this.InvestmentPortfolioCurrentValue >= 1000) {
+                useGoalsStore().completedGoals = 7;
+            }
 
         },
 
@@ -577,12 +585,6 @@ export const useGameTimerStore = defineStore({
             this.stock4Value = Math.max(this.stock4Value, 1);
             this.stock5Value = Math.max(this.stock5Value, 1);
 
-            // work out the total profit / loss from initial investment
-            useMoneyManageStore().totalProfitOrLoss = useMoneyManageStore().InvestmentPortfolioCurrentValue - useMoneyManageStore().totalInvested;
-
-            if(useMoneyManageStore().totalProfitOrLoss >= 200) {
-                useGoalsStore().completedGoals = 7;
-            }
 
         },
 
@@ -984,6 +986,170 @@ export const useGameTimerStore = defineStore({
                 usePensionChoicesStore().investmentValue = Number(((Math.random() / 8) / 10) + 1).toFixed(2);
             }
 
+        },
+
+        resetGameStats() {
+            useMoneyManageStore().moneyInPocket = 3000
+            useMoneyManageStore().monthlySalaryBeforeTax = 2024.25
+            useMoneyManageStore().monthlySalaryAfterTax = 1711.84
+            useMoneyManageStore().monthlyOutGoingsSum = 0
+            useMoneyManageStore().increaseordecreaseofPocketMoney = 0
+            useMoneyManageStore().currentAccountCurrentTotal = 0
+            useMoneyManageStore().emergencyFundCurrentTotal = 0
+            useMoneyManageStore().daysUntilPayday = 30
+            useMoneyManageStore().decreaseTime = true
+            useMoneyManageStore().houseDepositCurrentTotal = 0
+            useMoneyManageStore().InvestmentPortfolioCurrentValue = 0
+            useMoneyManageStore().totalBalancePreviousValue = 0
+            useMoneyManageStore().totalBalancePercentageChange = 0
+            useMoneyManageStore().furnitureFundTotal = 0
+            useMoneyManageStore().billsPaid = 0
+            useMoneyManageStore().billsLate = false
+            useMoneyManageStore().appliancesFundTotal = 0
+            useMoneyManageStore().holidayFundTotal = 0
+            useMoneyManageStore().LISAYearlyAdditions = 0
+            useMoneyManageStore().HouseDepositFixedYearOpen = true
+            useMoneyManageStore().payRiseSalaryBeforeTax = 2328.00
+            useMoneyManageStore().payRiseSalaryAfterTax = 1969.61
+            useMoneyManageStore().incomeStreamProfit = 0
+            useMoneyManageStore().totalInvested = 0
+            useMoneyManageStore().totalProfitOrLoss = 0
+            useMoneyManageStore().totalMissedBills = 0
+            useMoneyManageStore().billsPaidLateNotif = false
+            useMoneyManageStore().houseDepositFixedOpenMonth = 0
+            useMoneyManageStore().PocketMoneyNegativeBalance = false
+
+            this.timer = null
+            this.countdown = 30
+            this.monthCounter = 1
+            this.monthsPassed = 0
+            this.currentMonth = 'January'
+            this.currentYear = 2023
+            this.stock1Value = 25.50
+            this.stock2Value = 67.03
+            this.stock3Value = 50.51
+            this.stock4Value = 16.98
+            this.stock5Value = 35.67
+            this.stock1PreviousPrice = 25.22
+            this.stock2PreviousPrice = 64.56
+            this.stock3PreviousPrice = 47.08
+            this.stock4PreviousPrice = 16.23
+            this.stock5PreviousPrice = 33.23
+            this.stock1CrashProbability = 0.05
+            this.stock2CrashProbability = 0.05
+            this.stock3CrashProbability = 0.1
+            this.stock4CrashProbability = 0.02
+            this.stock5CrashProbability = 0.01
+            this.stock1ChangePerc = 1.12
+            this.stock2ChangePerc = 3.61
+            this.stock3ChangePerc = 7.29
+            this.stock4ChangePerc = 4.62
+            this.stock5ChangePerc = 7.34
+            this.stock1SixPrices = [22.12, 22.32, 22.83, 23.12, 25.22, 25.50]
+            this.stock2SixPrices = [62.10, 63.21, 64.83, 66.78, 64.56, 67.03]
+            this.stock3SixPrices = [42.54, 43.34, 47.87, 48.67, 47.08, 50.51]
+            this.stock4SixPrices = [16.31, 16.38, 18.98, 17.78, 16.23, 16.98]
+            this.stock5SixPrices = [28.03, 30.29, 31.67, 31.82, 33.23, 35.67]
+            this.workDrinksLoopCounter = 0
+            this.workDrinksDisplayed = false
+            this.emergencyFundFixedRateUnlocked = false
+            this.queuePayRisePopUp = {}
+            this.queueAfterInvestmentComponent = {}
+            this.queueAfterInvestmentOpPopUp = {}
+            this.queueFinalGoalsAndPopUps = {}
+            this.investmentOpShown = false
+            this.chosenToTakeInvestment = false
+            this.TotalTimeSpanOfGame = ''
+            this.phonePopUpSchedule = 0
+            this.furnitureFundSchedule = 0
+            this.appliancesGoalSchedule = 0
+            this.purchase10stocksSchedule = 0
+            this.investmentGoalSchedule = 0
+            this.happyNewYearPassed = false
+            this.fixedRateHouseDepositNotif = 0
+            this.fixedRateUnlocked = 0
+
+
+            registerLivingOptionChoiceStore().selectedLivingOptionInfo = []
+
+            supermarketChoiceStore().selectedActiveSupermarket = 0 
+            supermarketChoiceStore().currentlySelectedSupermarketInfo = []
+            supermarketChoiceStore().chosenSupermarketInfo = []
+
+            transportChoiceStore().selectedActiveTransportChoice = 0
+            transportChoiceStore().currentlySelectedTransportChoice = []
+            transportChoiceStore().chosenTransportChoice = []
+            transportChoiceStore().totalTransportCost = 0
+
+            useMainGameplayNavigationStore().mainGameComponentsUnlocked = 0
+            useMainGameplayNavigationStore().currentPage = 0
+            useMainGameplayNavigationStore().menuOpen = false
+
+            usePensionChoicesStore().selectedActivePensionChoice = 0
+            usePensionChoicesStore().currentlySelectedPensionChoice = []
+            usePensionChoicesStore().chosenPensionChoice = []
+        
+            usePensionChoicesStore().pensionCurrentTotal = 0
+            usePensionChoicesStore().investmentValue = 1.02
+            usePensionChoicesStore().pensionPredictions = []
+            usePensionChoicesStore().pensionPredictionsCondensed = []
+
+            useEmergencyFundChoicesStore().selectedEmergencyFundChoice = 0
+            useEmergencyFundChoicesStore().currentlySelectedEmergencyFundChoice = []
+            useEmergencyFundChoicesStore().chosenEmergencyFundChoice = []
+            useEmergencyFundChoicesStore().emergencyFundGoal = 5000
+
+            useIncomeStreamsChoicesStore().selectedIncomeStreamChoice = 0
+            useIncomeStreamsChoicesStore().currentlySelectedIncomeStreamChoice = []
+            useIncomeStreamsChoicesStore().chosenIncomeStreamChoice = []
+            useIncomeStreamsChoicesStore().onlineStoreName = ''
+            useIncomeStreamsChoicesStore().podcastName = ''
+            useIncomeStreamsChoicesStore().socialMediaUsername = ''
+            useIncomeStreamsChoicesStore().barChoiceName = ''
+            useIncomeStreamsChoicesStore().freelanceChosenSkill = ''
+            useIncomeStreamsChoicesStore().IncomeStreamMonthlyCost = 0
+            useIncomeStreamsChoicesStore().IncomeStreamMonthlyProfit = 0
+
+            useHouseDepositChoiceStore().selectedHouseDepositChoice = 0
+            useHouseDepositChoiceStore().currentlySelectedHouseDepositChoice = ''
+            useHouseDepositChoiceStore().chosenHouseDepositChoice = 0
+            useHouseDepositChoiceStore().houseDepositGoal = 8000
+
+            useInvestmentPortfolioChoiceStore().ShareTotalAmounts = [0, 0, 0, 0, 0]
+            useInvestmentPortfolioChoiceStore().TotalNumberOfShares = 0
+            useInvestmentPortfolioChoiceStore().ShareBarPercentages = [0, 0, 0, 0, 0]
+            useInvestmentPortfolioChoiceStore().Share1BarPercentage = 0
+            useInvestmentPortfolioChoiceStore().Share2BarPercentage = 0
+            useInvestmentPortfolioChoiceStore().Share3BarPercentage = 0
+            useInvestmentPortfolioChoiceStore().Share4BarPercentage = 0
+            useInvestmentPortfolioChoiceStore().Share5BarPercentage = 0
+            useInvestmentPortfolioChoiceStore().totalInvested = 0
+
+            useGoalsStore().currentGoal = 2
+            useGoalsStore().completedGoals = 0
+            useGoalsStore().holidayBudget = 0
+
+            usePopUpStore().currentPopUp = 1
+            usePopUpStore().phonePlanChoice = 0
+            usePopUpStore().holidayChoice = 0
+            usePopUpStore().InvestmentOpChoice = 0
+            usePopUpStore().brokenLaptopChoice = 0
+
+            useBarometerStore().arrowRotation = 90
+            useBarometerStore().barometerScore = 25
+            useBarometerStore().modulatedAngle = 0
+            useBarometerStore().glowColour = 'red-glow'
+            useBarometerStore().scoreColor = 'red-score'
+
+            useNotificationStore().phonePlanNotificationShow = false
+            useNotificationStore().emergencyFundNotificationShow = false
+            useNotificationStore().incomeStreamsNotificationShow = false
+            useNotificationStore().houseDepositNotificationShow = false
+            useNotificationStore().investmentBuyStockNotificationShow = false
+            useNotificationStore().holidayChoiceNotificationShow = false
+            useNotificationStore().investmentOpNotificationShow = false
+            useNotificationStore().brokenLaptopNotificationShow = false
+            useNotificationStore().negativeBalanceNotificationShow = false
         },
 
 

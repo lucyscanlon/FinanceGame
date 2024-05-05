@@ -6,6 +6,9 @@ The parent of this component:
 -->
 <template>
     <div class="rentintro-mainwrapper supermarket-info-wrap">
+        <div v-if="useMainGameplayNav.currentPage === 25" @click="useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
+            <p><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
+        </div>
         <div class="rentintro-title-wrapper housedepositinfo-title">
             <h1>Saving for a house deposit</h1>
         </div>
@@ -39,7 +42,7 @@ The parent of this component:
             <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>How would you like to save for your deposit?</p>
                 <div class="housedeposit-goal-container">
-                    <p class="colour-green deposit-goal">Deposit Goal: £15,000</p>
+                    <p class="colour-green deposit-goal">Deposit Goal: £8,000</p>
                 </div>
                 <div class="housedeposit-choices-container">
                     <HouseDepositChoiceFlexbox :Identifier="1" Name="Lifetime Isa" Desc="A bank account with a yearly limit" Perk="A 25% yearly bonus" Deposit="No Deposit" ContLimit="£4000"></HouseDepositChoiceFlexbox>

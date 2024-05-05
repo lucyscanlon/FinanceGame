@@ -29,11 +29,11 @@ The parent of this component:
             <div class="endpage-button-padding">
                 <div class="endpage-playagain-container">
                     <div class="endpage-playagain-button-container">
-                        <div @click="manageSound.StartOfGame(), manageGameNav.navigateToPage(0)" class="endpage-playagain-circle">
+                        <div @click="manageSound.StartOfGame(), manageGameNav.navigateToPage(0), manageGameTimer.resetGameStats()" class="endpage-playagain-circle">
                             <p><font-awesome-icon icon="fa-solid fa-play" /></p>
                         </div>
                         <div class="endpage-playagain-text">
-                            <p @click="manageSound.StartOfGame(), manageGameNav.navigateToPage(0)">Play Again</p>
+                            <p @click="manageSound.StartOfGame(), manageGameNav.navigateToPage(0), manageGameTimer.resetGameStats()">Play Again</p>
                         </div>
                     </div>
                 </div>

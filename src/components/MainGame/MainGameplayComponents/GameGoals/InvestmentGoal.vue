@@ -8,12 +8,12 @@
             <p v-if="manageGoals.completedGoals >= 7">Status: <span class="colour-green">Completed</span></p>
         </div>
         <div class="currentgoal-goal-container pay-bills-goal">
-            <p><span class="colour-green">Goal:</span> Earn £500 through the stock market!</p>
+            <p><span class="colour-green">Goal:</span> Have a total of £1000 in your investment portfolio!</p>
         </div>
         <div class="currentgoal-tips-container">
             <ul>
                 <li>Invest in stocks on the portfolio page.</li>
-                <li>Earn £500 <span class="colour-green">profit</span> to achieve this goal!</li>
+                <li>Have a total balance of £1000 to complete this goal</li>
             </ul>
         </div>
     </div>  
