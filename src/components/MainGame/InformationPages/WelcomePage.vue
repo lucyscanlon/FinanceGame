@@ -13,9 +13,9 @@ The parent of this component:
             <p class="colour-green">It's time to prepare for financial independence.</p>
             <div class="supermarketinfo-list first-goal-padding welcomepage-padding">
                 <ul>
-                    <li>Prepare for a journey towards independence as you are now ready to leave the comfort of your family home!</li>
-                    <li>Equip yourself with the knowledge of personal finance to lay a solid foundation for your future.</li>
-                    <li>In this game you will explore various topics of personal finance and then apply your new knowledge to make informed decisions.</li>
+                    <li>Prepare for a journey towards financial independence as you prepare to move out of your family home!</li>
+                    <li>Learn about topics within personal finance and lay a solid foundation for your financial future.</li>
+                    <li>Apply your new knowledge to make informed decisions in scenario.</li>
                     <li>Read each topic carefully and aim to make the correct choices.</li>
                     <li>Maintain a high responsibility score by choosing wisely.</li>
                 </ul>

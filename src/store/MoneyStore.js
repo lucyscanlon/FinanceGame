@@ -985,7 +985,7 @@ export const useGameTimerStore = defineStore({
                 let investmentsPerc = usePensionChoicesStore().investmentValue;
                 usePensionChoicesStore().pensionCurrentTotal = ((usePensionChoicesStore().pensionCurrentTotal) * (investmentsPerc))
 
-                usePensionChoicesStore().investmentValue = Number(((Math.random() / 8) / 10) + 1).toFixed(2);
+                usePensionChoicesStore().investmentValue = Number(((Math.random() / 2) / 10) + 1).toFixed(2);
             }
 
         },

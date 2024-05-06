@@ -28,7 +28,7 @@
             <div class="pension-interactive-right">
                 <p>{{managePension.chosenPensionChoice.YContPercentage}}%</p>
                 <p>{{managePension.chosenPensionChoice.EContPercentage}}%</p>
-                <p>{{Number(managePension.investmentValue).toFixed(0) }}%</p>
+                <p>{{Number(managePension.investmentValue).toFixed(2) }}%</p>
             </div>
         </div>
         <div class="pension-interactive-total-container">
