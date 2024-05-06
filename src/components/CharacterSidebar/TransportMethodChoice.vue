@@ -1,7 +1,10 @@
-<!-- Template for displaying the method of transport the player has chosen
+<!-- Template for displaying the transport method choice information in sidebar
 
 The parent of this component:
-- Character Stats Sidebar
+- CharacterStatsSidebar
+
+The children of this component:
+- None
 
 -->
 <script setup>

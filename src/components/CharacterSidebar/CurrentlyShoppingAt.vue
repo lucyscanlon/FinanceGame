@@ -1,7 +1,10 @@
-<!-- Template for displaying the supermarket option the player has chosen
+<!-- Template for displaying the currently shopping at info in the sidebar
 
 The parent of this component:
-- Character Stats Sidebar
+- CharacterStatsSidebar
+
+The children of this component:
+- None
 
 -->
 <script setup>
@@ -30,6 +33,7 @@ The parent of this component:
                 <p>£{{ manageSupermarket.chosenSupermarketInfo.SMTCost }}</p>
             </div>
         </div>
+        <!-- If user changes where they shop, remove the current amount from their bills -->
         <div class="currentlyshopping-wrap">
             <button @click="manageMainGameNav.navigateToPage(20), manageMoney.decreaseMonthlyOutGoings(manageSupermarket.chosenSupermarketInfo.SMCost)" className="moveout-button">Change</button>
         </div>

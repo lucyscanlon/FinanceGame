@@ -1,7 +1,10 @@
-<!-- Template for displaying the home the player has chosen to live
+<!-- Template for displaying the income stream information on the sidebar
 
 The parent of this component:
-- Character Stats Sidebar
+- CharacterStatsSidebar
+
+The children of this component:
+- None
 
 -->
 <script setup>
@@ -20,6 +23,7 @@ The parent of this component:
     <div className="characterstats-set livingstatsdisplay">
         <h4>Extra Income Stream:</h4>
         <!--Use values from the store -->
+        <!-- Display the correct icon for their choice -->
         <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier < 6" class="incomestream-choice-container">
             <div class="incomestream-sidebar-type">
                 <p v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 1"><font-awesome-icon icon="fa-solid fa-shop" /> {{ manageIncomeStream.onlineStoreName }}</p>
@@ -41,13 +45,13 @@ The parent of this component:
             <button @click="manageMainGameNav.navigateToPage(14), manageMoney.decreaseMonthlyOutGoings(Number(manageIncomeStream.chosenIncomeStreamChoice.ISmonthlycost))" className="moveout-button">Change</button>
             <hr />
         </div>
+        <!-- Display for if user has chosen no income stream -->
         <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 6" class="incomestreams-nochoice-container">
             <div class="incomestream-sidebar-type">
                 <p><font-awesome-icon icon="fa-solid fa-ban" /> No Income Stream</p>
             </div>
             <button @click="manageMainGameNav.navigateToPage(14), manageMoney.decreaseMonthlyOutGoings(Number(manageIncomeStream.chosenIncomeStreamChoice.ISmonthlycost))" className="moveout-button">Set one up</button>
             <hr />
-            
         </div>
     </div>
     </div>

@@ -1,10 +1,15 @@
-<!-- Template for displaying the home the player has chosen to live
+<!-- Template for displaying the game notifications panel
 
 The parent of this component:
-- Character Stats Sidebar
+- CharacterStatsSidebar
+
+The children of this component:
+- None
 
 -->
 <script setup>
+
+    // import pinia stores
     import { useMainGameplayNavigationStore } from '../../store/MainGameChoicesStore.js'
     import { useGameTimerStore } from '../../store/MoneyStore.js'
     import { useMoneyManageStore } from '../../store/MoneyStore.js'
@@ -37,6 +42,7 @@ The parent of this component:
     <div class="characterstats-set">
         <h4>Notifications</h4>
         <div class="characterstats-notifications-panel">
+            <!-- Notifications for if the player accepts the job -->
             <div v-if="manageMainGameNav.currentPage === 1" class="notifications-padding">
                         <div class="game-notification-container">
                             <p>Accept your job offer!</p>
@@ -45,11 +51,13 @@ The parent of this component:
                             <p>Use the UK Tax calculator to see tax contributions for different incomes</p>
                         </div>
             </div>
+            <!-- Notifications for page 2 -->
             <div v-if="manageMainGameNav.currentPage === 2" class="notifications-padding">
                         <div class="game-notification-container">
                             <p>Set up your bank account</p>
                         </div>
             </div>
+            <!-- Notifications for page 4 - when choosing a place to live -->
             <div v-if="manageMainGameNav.currentPage === 4" class="notifications-padding">
                         <div class="game-notification-container">
                             <p>Choose a place to call home</p>
@@ -61,6 +69,7 @@ The parent of this component:
                             <p>35% of your income after tax is: <span class="colour-pink">£599.14</span></p>
                         </div>
             </div>
+            <!-- Notifications for page 5 - Feedback on the players living choice -->
             <div v-if="manageMainGameNav.currentPage === 5" class="notifications-padding">
                         <div v-if="manageLiving.selectedLivingOptionInfo.street === '27 Pinecrest Avenue'" class="game-notification-container">
                             <p>You chose an affordable apartment.</p>
@@ -75,6 +84,7 @@ The parent of this component:
                             <p>You chose an apartment far away from work!</p>
                         </div>
             </div>
+            <!-- Notifications for page 6 - instructions for choosing a supermarket -->
             <div v-if="manageMainGameNav.currentPage === 6" class="notifications-padding">
                         <div class="game-notification-container">
                             <p>Choose a supermarket to shop at from the available choices</p>
@@ -82,8 +92,8 @@ The parent of this component:
                         <div class="game-notification-container">
                             <p>Keep prices, perks and location in mind!</p>
                         </div>
-
             </div>
+            <!-- Notifications for page 7 - Feedback for their supermarket choice -->
             <div v-if="manageMainGameNav.currentPage === 7" class="notifications-padding">
                         <div v-if="manageSupermarket.chosenSupermarketInfo.SMName === 'Saver Superstore'" class="game-notification-container">
                             <p>You chose an affordable supermarket</p>
@@ -102,6 +112,7 @@ The parent of this component:
                         </div>
 
             </div>
+            <!-- Notifications for page 8 - feedback for their chosen transport choice -->
             <div v-if="manageMainGameNav.currentPage === 8" class="notifications-padding">
                         <div v-if="manageTransport.chosenTransportChoice.TName === 'Uber Driving Service'" class="game-notification-container red-border">
                             <p>You chose a very expensive method of transport</p>

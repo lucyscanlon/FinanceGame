@@ -1,7 +1,10 @@
-<!-- Template for displaying the home the player has chosen to live
+<!-- Template for displaying the currently living information in the sidebar
 
 The parent of this component:
-- Character Stats Sidebar
+- CharacterStatsSidebar
+
+The children of this component:
+- None
 
 -->
 <script setup>
@@ -12,13 +15,12 @@ The parent of this component:
     const registerLivingChoice = registerLivingOptionChoiceStore()
     const manageMainGameNav = useMainGameplayNavigationStore()
     const manageMoney = useMoneyManageStore()
-
     
 </script>
 <template>
     <div className="characterstats-set livingstatsdisplay">
         <h4>Living:</h4>
-        <!--Use values from the store -->
+        <!--Display values from pinia store -->
         <p>{{registerLivingChoice.selectedLivingOptionInfo.street}}, <br/> {{registerLivingChoice.selectedLivingOptionInfo.district}}</p>
         <div class="livingstats-display-rent-commute-cost-container">
             <div class="livingstats-rent-display">
@@ -30,6 +32,7 @@ The parent of this component:
                 <p>£{{registerLivingChoice.selectedLivingOptionInfo.commutePrice}}</p>
             </div>
         </div>
+        <!-- If players move out then their deposit is given back, takes user back to map choice display, decreases bills until they next decide where to live -->
         <button @click="manageMainGameNav.navigateToPage(19), manageMoney.decreaseMonthlyOutGoings(Number(registerLivingChoice.selectedLivingOptionInfo.rentPrice)), manageMoney.increasePocketMoney(registerLivingChoice.selectedLivingOptionInfo.depositPrice)" className="moveout-button">Move Out</button>
         <hr />
     </div>
