@@ -38,7 +38,7 @@ The parent of this component:
                     </ul>
                 </div>
                 <div class="billsintro-diagram-container">
-                    <img src="/PayBillsScreenshot.png">
+                    <img alt="An image displaying the pink pay bills button" src="/PayBillsScreenshot.png">
                 </div>
             </div>
             
@@ -53,7 +53,7 @@ The parent of this component:
                     </ul>
                 </div>
                 <div class="billsintro-diagram-container">
-                    <img src="/BillsLateScreenshot.png">
+                    <img alt="An image displaying the red pay bills button" src="/BillsLateScreenshot.png">
                 </div>
             </div>
             

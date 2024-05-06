@@ -67,7 +67,7 @@ The parent of this component:
                 </ul>
                 </div>
                 <div class="investingintro-screenshot-container">
-                    <img src="/InvestingScreenshot1.png">
+                    <img alt="An image displaying the layout of each stock." src="/InvestingScreenshot1.png">
                 </div>
             </div>
             <div :class="currentSlide !== 5 && 'pensionSlideInactive'" class="housedepositslide-container">
@@ -82,7 +82,7 @@ The parent of this component:
                 </ul>
                 </div>
                 <div class="investingintro-screenshot-container">
-                    <img src="/InvestingScreenshot1.png">
+                    <img alt="An image displaying the layout of each stock." src="/InvestingScreenshot1.png">
                 </div>
             </div>
             <div :class="currentSlide !== 6 && 'pensionSlideInactive'" class="housedepositslide-container">
@@ -94,7 +94,7 @@ The parent of this component:
                 </ul>
                 </div>
                 <div class="investingintro-screenshot2-container">
-                    <img src="/InvestingScreenshot3.png">
+                    <img alt="An image displaying the layout of the total balance and portfolio split portion of the investment portfolio page" src="/InvestingScreenshot3.png">
                 </div>
                 <div class="investingintro-portfoliolink-button-container">
                     <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(17), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">View Investment Portfolio</button>

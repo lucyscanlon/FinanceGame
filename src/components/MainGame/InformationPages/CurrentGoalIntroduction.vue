@@ -17,7 +17,7 @@ The parent of this component:
                     <li><span class="colour-green">Complete the tasks</span> to complete the goal.</li>
                 </ul>
                 <div class="billsintro-diagram-container">
-                    <img src="/GoalScreenshot.png">
+                    <img alt="image of the current goal component" src="/GoalScreenshot.png">
                 </div>
             </div>
             <div class="rentinfo-button-wrapper first-goal-button-padding">
