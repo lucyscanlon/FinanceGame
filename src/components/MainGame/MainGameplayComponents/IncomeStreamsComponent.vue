@@ -1,3 +1,8 @@
+<!-- Template for income streams component
+
+Not used
+
+-->
 <template>
     <div class="maingameplay-flex-container">
         <div v-if="manageMainGameNav.mainGameComponentsUnlocked > 3" class="incomestreams-content-container">

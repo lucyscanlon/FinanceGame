@@ -1,3 +1,12 @@
+<!-- Template for work drinks pop up
+
+The parent of this component:
+- Popupscomponent
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
@@ -17,6 +26,7 @@
             <div class="popup-workdrinks-cost">
                 <p>Cost: <span class="colour-green">£100</span></p>
             </div>
+            <!-- play sound, register choice, navigate to main page, start countdown -->
             <div class="popup-phonebill-button workdrinks-button">
                 <button @click="manageSound.playClickSound(), managePopUps.workDrinksChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
@@ -31,6 +41,7 @@
             <div class="popup-workdrinks-cost">
                 <p>Cost: <span class="colour-green">£0</span></p>
             </div>
+            <!-- play sound, register choice, navigate to main page, start countdown -->
             <div class="popup-phonebill-button workdrinks-button workdrinks-button-padding">
                 <button @click="manageSound.playClickSound(), managePopUps.workDrinksChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>

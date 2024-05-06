@@ -1,3 +1,12 @@
+<!-- Template for investment opportunity successful pop up
+
+The parent of this component:
+- Popupscomponent
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="popups-main-container-wrapper">
     <div class="popup-title-container">

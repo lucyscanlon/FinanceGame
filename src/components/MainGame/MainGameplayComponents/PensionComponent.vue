@@ -1,3 +1,13 @@
+<!-- Template for pension component
+
+The parent of this component:
+- Main Game
+
+The children of this component:
+- None
+
+-->
+
 <script setup>
     import { usePensionChoicesStore } from '../../../store/MainGameChoicesStore'
     import { useMainGameplayNavigationStore } from '../../../store/MainGameChoicesStore.js'

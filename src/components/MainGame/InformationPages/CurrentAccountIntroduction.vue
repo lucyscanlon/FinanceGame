@@ -1,7 +1,10 @@
-<!-- Template for displaying the text information introducing rent to the player
+<!-- Template for displaying the current account introduction page
 
 The parent of this component:
-- Main game
+- MainGame
+
+The children of this component:
+- None
 
 -->
 <template>
@@ -20,7 +23,7 @@ The parent of this component:
                 </ul>
             </div>
             <div class="rentinfo-button-wrapper">
-                <!-- Call store method on click -->
+                <!-- play sound effect, navigate to next page, increase score -->
                 <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(3), manageBarometer.increaseScore(5)" class="currentaccount-button">Open current account</button>
             </div>
         </div>

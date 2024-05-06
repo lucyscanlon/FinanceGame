@@ -1,4 +1,14 @@
+<!-- Template for emergency fund goal
+
+The parent of this component:
+- currentGoalComponent
+
+The children of this component:
+- None
+
+-->
 <template>
+     <!-- change styling depending if the goal is completed -->
     <div class="current-goal-colour-container">
         <div :class="(manageGoals.completedGoals > 2) ? 'goal-completed-styling' : ''" class="pension-interactive-title-container current-goal-title pay-bills-title">
             <h1><font-awesome-icon icon="fa-solid fa-bullseye" />Current Goal</h1>

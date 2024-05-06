@@ -1,3 +1,12 @@
+<!-- Template for investing interface component
+
+The parent of this component:
+- Main Game
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="maingameplay-flex-container">
         <div v-if="useMainGameplayNav.mainGameComponentsUnlocked > 5" class="investingcomponent-content-container">
@@ -18,6 +27,7 @@
                 <p>£{{ manageMoney.InvestmentPortfolioCurrentValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</p>
             </div>
         </div>
+        <!-- play sound, navigate to next page -->
         <div class="investments-openportfolio-button">
             <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(17)">Open Trading Portfolio</button>
         </div>

@@ -1,3 +1,12 @@
+<!-- Template for phone bill pop up
+
+The parent of this component:
+- Popupscomponent
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
@@ -26,6 +35,7 @@
                     </div>
                 </div>
             </div>
+            <!-- play sound, register phone plan, navigate to main game, start countdown, increase score, start notification timeout -->
             <div class="popup-phonebill-button">
                 <button @click="manageSound.playClickSound(), managePopUps.choosePhonePlan(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.increaseScore(5), manageNotification.timeoutGameNotification()">Choose</button>
             </div>
@@ -49,6 +59,7 @@
                     </div>
                 </div>
             </div>
+            <!-- play sound, register phone plan, navigate to main game, start countdown, increase score, start notification timeout -->
             <div class="popup-phonebill-button">
                 <button @click="manageSound.playClickSound(), managePopUps.choosePhonePlan(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.increaseScore(10), manageNotification.timeoutGameNotification()">Choose</button>
             </div>
@@ -72,6 +83,7 @@
                     </div>
                 </div>
             </div>
+            <!-- play sound, register phone plan, navigate to main game, start countdown, decrease score, start notification timeout -->
             <div class="popup-phonebill-button">
                 <button @click="manageSound.playClickSound(), managePopUps.choosePhonePlan(3), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageBarometer.decreaseScore(20), manageNotification.timeoutGameNotification()">Choose</button>
             </div>
@@ -85,7 +97,6 @@
 import { usePopUpStore } from "../../../../store/MainGameChoicesStore.js";
 import { useMainGameplayNavigationStore } from "../../../../store/MainGameChoicesStore.js";
 import { useGameTimerStore } from "../../../../store/MoneyStore.js";
-//import { useMoneyManageStore } from "../../../../store/MoneyStore.js";
 import { useBarometerStore } from "../../../../store/MainGameChoicesStore.js";
 import { useNotificationStore } from "../../../../store/MainGameChoicesStore.js";
 import { useSoundEffectsStore } from '../../../../store/soundEffectsStore.js'
@@ -93,7 +104,6 @@ import { useSoundEffectsStore } from '../../../../store/soundEffectsStore.js'
 const managePopUps = usePopUpStore();
 const manageMainGameNav = useMainGameplayNavigationStore();
 const manageGameTimer = useGameTimerStore();
-//const manageMoney = useMoneyManageStore();
 const manageBarometer = useBarometerStore();
 const manageNotification = useNotificationStore();
 const manageSound = useSoundEffectsStore()

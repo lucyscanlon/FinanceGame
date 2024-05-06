@@ -1,7 +1,10 @@
-<!-- Template for displaying the text introduction to grocery shopping recommendations
+<!-- Template for display welcome page
 
 The parent of this component:
-- Main game
+- Main Game
+
+The children of this component:
+- None
 
 -->
 <template>
@@ -21,7 +24,7 @@ The parent of this component:
                 </ul>
             </div>
             <div class="rentinfo-button-wrapper welcomepage-button">
-                <!-- Call store method on click -->
+                <!-- Play sound, navigate to next page -->
                 <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(1)" class="rentinfo-button">Start Game</button>
             </div>
         </div>

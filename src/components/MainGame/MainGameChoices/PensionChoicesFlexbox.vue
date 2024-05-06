@@ -1,7 +1,10 @@
-<!-- Template containing the layout and information for each supermarket choice
+<!-- Template for display pension choice info
 
 The parent of this component:
-- Supermarket Choice
+- pension introduction
+
+The children of this component:
+- None
 
 -->
 <script setup>

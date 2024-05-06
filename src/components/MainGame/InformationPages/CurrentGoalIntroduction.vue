@@ -1,7 +1,10 @@
-<!-- Template for displaying the text introduction to grocery shopping recommendations
+<!-- Template for displaying the current goal introduction 
 
 The parent of this component:
-- Main game
+- MainGame
+
+The children of this component:
+- None
 
 -->
 <template>
@@ -21,7 +24,7 @@ The parent of this component:
                 </div>
             </div>
             <div class="rentinfo-button-wrapper first-goal-button-padding">
-                <!-- Call store method on click -->
+                <!-- play sound effect, navigate to next page -->
                 <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(27)" class="rentinfo-button">Continue</button>
             </div>
         </div>

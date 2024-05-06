@@ -1,7 +1,10 @@
-<!-- Template for displaying the text introduction to grocery shopping recommendations
+<!-- Template for display supermarket introduction page
 
 The parent of this component:
-- Main game
+- Main Game
+
+The children of this component:
+- None
 
 -->
 <template>
@@ -19,7 +22,7 @@ The parent of this component:
                 </ul>
             </div>
             <div class="rentinfo-button-wrapper">
-                <!-- Call store method on click -->
+                <!-- Play sound, navigate to next page -->
                 <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(6)" class="rentinfo-button">View Supermarket Options</button>
             </div>
         </div>

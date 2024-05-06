@@ -1,7 +1,10 @@
-<!-- Template for displaying the text information introducing rent to the player
+<!-- Template for display rent introduction page
 
 The parent of this component:
-- Main game
+- Main Game
+
+The children of this component:
+- None
 
 -->
 <template>
@@ -20,7 +23,7 @@ The parent of this component:
             </div>
             <p class="colour-green rentintro-rentrecommendation">35% of your monthly income after tax is: £599.14</p>
             <div class="rentinfo-button-wrapper">
-                <!-- Call store method on click -->
+                <!-- play sound, navigate to the map display -->
                 <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(4)" class="rentinfo-button">Choose a new place to rent</button>
             </div>
         </div>

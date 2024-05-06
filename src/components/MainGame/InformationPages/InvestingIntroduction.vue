@@ -1,11 +1,15 @@
-<!-- Template for displaying the text introduction to grocery shopping recommendations
+<!-- Template for displaying the investing introduction
 
 The parent of this component:
-- Main game
+- MainGame
+
+The children of this component:
+- None
 
 -->
 <template>
     <div class="rentintro-mainwrapper supermarket-info-wrap">
+        <!-- show exit icon is user has accessed this page by clicking on the info button on the main interface -->
         <div v-if="useMainGameplayNav.currentPage === 26" @click="useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
             <p><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
         </div>
@@ -13,6 +17,7 @@ The parent of this component:
             <h1>Investing in the Stock Market</h1>
         </div>
         <div class="homedeposit-description-wrapper">
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 0 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>What is the stock market?</p>
                 <div class="supermarketinfo-list">
@@ -24,6 +29,7 @@ The parent of this component:
                 </ul>
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 1 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>What are the benefits to investing in the stock market?</p>
                 <div class="supermarketinfo-list">
@@ -35,6 +41,7 @@ The parent of this component:
                 </ul>
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>What are the risks of investing in the stock market?</p>
                 <div class="supermarketinfo-list">
@@ -46,6 +53,7 @@ The parent of this component:
                 </ul>
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 3 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>How to manage the risk of investing in the stock market</p>
                 <div class="supermarketinfo-list">
@@ -57,6 +65,7 @@ The parent of this component:
                 </ul>
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 4 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>How to invest</p>
                 <div class="supermarketinfo-list">
@@ -70,6 +79,7 @@ The parent of this component:
                     <img alt="An image displaying the layout of each stock." src="/InvestingScreenshot1.png">
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 5 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>How to invest</p>
                 <div class="supermarketinfo-list">
@@ -85,6 +95,7 @@ The parent of this component:
                     <img alt="An image displaying the layout of each stock." src="/InvestingScreenshot1.png">
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 6 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>How to invest</p>
                 <div class="supermarketinfo-list">
@@ -96,10 +107,12 @@ The parent of this component:
                 <div class="investingintro-screenshot2-container">
                     <img alt="An image displaying the layout of the total balance and portfolio split portion of the investment portfolio page" src="/InvestingScreenshot3.png">
                 </div>
+                <!-- play sound, navigate to investment portfolio page, start countdown, unclock the investing interface component -->
                 <div class="investingintro-portfoliolink-button-container">
                     <button @click="manageSound.playClickSound(), useMainGameplayNav.navigateToPage(17), manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">View Investment Portfolio</button>
                 </div>
             </div>
+            <!-- navigate through slides -->
             <div class="previous-next-container incomestreams-slide3">
                 <div class="previous-container">
                     <p v-if="currentSlide !== 0" @click="previousSlide()">

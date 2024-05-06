@@ -1,3 +1,12 @@
+<!-- Template for house deposit interface component
+
+The parent of this component:
+- house deposit component
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="housedeposit-interactive-title-container everydaysavings-title">
             <h1><font-awesome-icon icon="fa-solid fa-house" />House Deposit</h1>
@@ -26,6 +35,7 @@
                 </form>
             </div>
         </div>
+        <!-- Add and withdraw buttons - show different buttons with different functions depending on the house deposit state -->
         <div class="emergencyfund-add-withdraw-buttons housedeposit-buttons">
             <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 1 && (manageMoney.LISAYearlyAdditions < 4000)" @click="manageSound.addButton(), manageMoney.addToHouseDepositLISA(amountToChange), rerenderComponent()">Add</button>
             <button v-if="manageHouseDeposit.chosenHouseDepositChoice === 1 && (manageMoney.LISAYearlyAdditions === 4000)" class="inactive-add-button">Add</button>

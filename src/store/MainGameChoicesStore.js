@@ -1,6 +1,9 @@
 import { defineStore } from "pinia";
 import { useMoneyManageStore } from './MoneyStore'
 
+// holds variable which controls which page the game is currently on
+// main navigation throughout the game
+// toggle sidebar for smaller devices 
 export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
@@ -32,6 +35,11 @@ export const useMainGameplayNavigationStore = defineStore({
   },
 });
 
+// holds selected pension choice info
+// saves currently selected info as players clicks on each option
+// saves currently selected as final choice when player clicks button on page
+// works out pension predictions from chosen choice
+// holds the value for the pension interest
 export const usePensionChoicesStore = defineStore({
   id: "PensionChoicesStore",
   state: () => ({
@@ -126,6 +134,8 @@ export const usePensionChoicesStore = defineStore({
   },
 });
 
+// holds the chosen emergency fund choice
+// holds the emergency fund goal
 export const useEmergencyFundChoicesStore = defineStore({
   id: "EmergencyFundChoicesStore",
   state: () => ({
@@ -173,6 +183,8 @@ export const useEmergencyFundChoicesStore = defineStore({
   },
 });
 
+// holds the chosen income streams choice
+// holds the name of chosen income streams
 export const useIncomeStreamsChoicesStore = defineStore({
   id: 'IncomeStreamsStore',
   state: () => ({
@@ -248,6 +260,8 @@ export const useIncomeStreamsChoicesStore = defineStore({
   },
 });
 
+// holds the house deposit choice 
+// holds the house deposit goal
 export const useHouseDepositChoiceStore = defineStore({
     id: 'HouseDepositStore',
     state: () => ({
@@ -287,6 +301,9 @@ export const useHouseDepositChoiceStore = defineStore({
     }
 })
 
+// holds array to hold the amount of each stock is bought
+// holds variables which make up the percentage bar
+// holds variables for the total amount invested
 export const useInvestmentPortfolioChoiceStore = defineStore({
     id: 'InvestmentPortfolioStore',
     state: () => ({
@@ -359,6 +376,8 @@ export const useInvestmentPortfolioChoiceStore = defineStore({
 })
 
 
+// tracks which goal the player is on
+// tracks which goals have been completed
 export const useGoalsStore = defineStore({
   id: "CurrentGoalsStore",
   state: () => ({
@@ -385,6 +404,7 @@ export const useGoalsStore = defineStore({
   }
 })
 
+// tracks which pop up the player is on
 export const usePopUpStore = defineStore({
   id: 'PopUpStore',
   state: () => ({
@@ -474,6 +494,8 @@ export const usePopUpStore = defineStore({
 })
 
 
+// holds the responsibility score, and arrow rotation
+// has methods to increase or decrease scores
 export const useBarometerStore = defineStore({
   id: 'barometerStore',
   state: () => ({
@@ -570,6 +592,7 @@ export const useBarometerStore = defineStore({
   }
 })
 
+// has timeout variables to display notifications for 5 seconds 
 export const useNotificationStore = defineStore({
   id: "notificationStore",
   state: () => ({

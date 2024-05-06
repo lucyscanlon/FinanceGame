@@ -1,3 +1,12 @@
+<!-- Template for pay rise pop up
+
+The parent of this component:
+- Popupscomponent
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
@@ -14,6 +23,8 @@
             <p>You will be paid monthly (After Tax):</p>
             <p class="colour-green investsucc-amount">£{{ Number(manageMoney.payRiseSalaryAfterTax).toFixed(2)}}</p>
         </div>
+        <!-- play sound, navigate to main page, start countdown, increase salary, increase score -->
+
         <div class="popup-investsucc-button-container">
             <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown(), manageMoney.increaseSalary(), manageBarometer.increaseScore(10)">Accept pay rise</button>
         </div>

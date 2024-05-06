@@ -1,3 +1,13 @@
+<!-- Template for display pension predictions line chart
+
+The parent of this component:
+- Pension Prediction
+
+The children of this component:
+- None
+
+-->
+<!-- Display a line chart with empty labels -->
 <template>
     <CChart
         type="line"
@@ -37,6 +47,7 @@
 </template>
 <script setup>
 
+    // import chart.js 
     import { CChart } from '@coreui/vue-chartjs'
 
 </script>

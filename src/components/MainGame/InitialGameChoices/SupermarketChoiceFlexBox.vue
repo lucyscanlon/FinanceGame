@@ -1,7 +1,10 @@
-<!-- Template containing the layout and information for each supermarket choice
+<!-- Template for display supermarket choice information
 
 The parent of this component:
 - Supermarket Choice
+
+The children of this component:
+- None
 
 -->
 <script setup>

@@ -1,10 +1,14 @@
-<!-- Template for displaying the text introduction to grocery shopping recommendations
+<!-- Template for paying bills introduction
 
 The parent of this component:
-- Main game
+- MainGame
+
+The children of this component:
+- None
 
 -->
 <template>
+    <!-- display close button only if the user has accessed this page throughout the info button on the interface component -->
     <div class="rentintro-mainwrapper supermarket-info-wrap">
         <div v-if="manageMainGameNav.currentPage === 28" @click="manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
             <p><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
@@ -12,6 +16,7 @@ The parent of this component:
         <div class="rentintro-title-wrapper billsintro-title">
             <h1>Your monthly bills!</h1>
         </div>
+        <!-- display slide depending on the value of currentSlide -->
         <div :class="currentSlide !== 0 && 'pensionSlideInactive'" class="pension-slidecontainer billsintro-slide">
             <div class="rentintro-description-wrapper">
                 <p>How much are your bills?</p>
@@ -28,6 +33,7 @@ The parent of this component:
             </div>
         </div>
         </div>
+        <!-- display slide depending on the value of currentSlide -->
         <div :class="currentSlide !== 1 && 'pensionSlideInactive'" class="pension-slidecontainer billsintro-slide">
             <div class="rentintro-description-wrapper">
                 <p>How to pay your bills</p>
@@ -43,6 +49,7 @@ The parent of this component:
             </div>
             
         </div>
+        <!-- display slide depending on the value of currentSlide -->
         <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="pension-slidecontainer billsintro-slide">
             <div class="rentintro-description-wrapper">
                 <p>How to pay your bills</p>
@@ -58,6 +65,7 @@ The parent of this component:
             </div>
             
         </div>
+        <!-- display slide depending on the value of currentSlide -->
         <div :class="currentSlide !== 3 && 'pensionSlideInactive'" class="pension-slidecontainer billsintro-slide">
             <div class="rentintro-description-wrapper">
                 <p>Paying bills late</p>
@@ -73,8 +81,8 @@ The parent of this component:
                     <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageMainGameNav.unlockComponent(), manageGameTimer.startCountdown()" class="rentinfo-button">Continue to main game</button>
                 </div>
             </div>
-            
         </div>
+        <!-- Navigate through slides -->
             <div class="previous-next-container">
                 <div class="previous-container">
                     <p v-if="currentSlide !== 0" @click="previousSlide()"><font-awesome-icon icon="fa-solid fa-arrow-left" /> Previous</p>
@@ -102,7 +110,6 @@ The parent of this component:
     const manageSound = useSoundEffectsStore()
     const manageMoney = useMoneyManageStore()
     
-
 </script>
 <script>
     // export component data

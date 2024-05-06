@@ -1,3 +1,12 @@
+<!-- Template for stock line chart 
+
+The parent of this component:
+- investing portfolio
+
+The children of this component:
+- None
+
+-->
 <template>
     <CChart
         type="line"

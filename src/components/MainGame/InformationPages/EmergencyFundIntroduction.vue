@@ -1,7 +1,10 @@
-<!-- Template for displaying the text information introducing rent to the player
+<!-- Template for displaying the emergency fund introduction 
 
 The parent of this component:
-- Main game
+- MainGame
+
+The children of this component:
+- EmergencyFundFlexbox
 
 -->
 <template>

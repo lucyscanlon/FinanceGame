@@ -1,4 +1,12 @@
-<template>
+<!-- Template for investment opportunity pop up
+
+The parent of this component:
+- Popupscomponent
+
+The children of this component:
+- None
+
+--><template>
     <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
         <h1><font-awesome-icon icon="fa-solid fa-sack-dollar" />An Investment Opportunity</h1>
@@ -17,6 +25,7 @@
             <div class="popup-workdrinks-cost">
                 <p>Cost: <span class="colour-green">£1500</span></p>
             </div>
+            <!-- play sound, register choice, navigate back to main page, start countdown -->
             <div class="popup-phonebill-button workdrinks-button">
                 <button @click="manageSound.playClickSound(), managePopUps.investmentOpportunityChoice(1), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>
@@ -31,6 +40,7 @@
             <div class="popup-workdrinks-cost">
                 <p>Cost: <span class="colour-green">£0</span></p>
             </div>
+            <!-- play sound, register choice, navigate back to main page, start countdown -->
             <div class="popup-phonebill-button workdrinks-button">
                 <button @click="manageSound.playClickSound(), managePopUps.investmentOpportunityChoice(2), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Choose</button>
             </div>

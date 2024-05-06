@@ -1,7 +1,7 @@
-<!-- Template for displaying the text information introducing rent to the player
+<!-- Template for displaying the starting page 
 
 The parent of this component:
-- Main game
+- App.vue
 
 -->
 <template>

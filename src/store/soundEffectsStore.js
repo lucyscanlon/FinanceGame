@@ -1,5 +1,6 @@
 import { defineStore } from "pinia"
 
+// plays sound effects
 export const useSoundEffectsStore = defineStore({
     id: 'SoundEffectsStore',
     state: () => ({

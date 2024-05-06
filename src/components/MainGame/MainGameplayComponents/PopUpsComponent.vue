@@ -1,3 +1,24 @@
+<!-- Template for pop ups component
+
+The parent of this component:
+- Main Game
+
+The children of this component:
+- PhoneBillPopUp,
+- WorkDrinksPopUp,
+- InvestmentOpportunityPopUp,
+- InvestmentOpportunitySuccessfulPopUp,
+- InvestmentOpportunityFailedPopUp,
+- HolidayChoicePopUp,
+- PayRisePopUp,
+- brokenLaptopPopUp,
+- AprilPopUp,
+- newGoalPopUp,
+- LISAReminderPopUp,
+- FixedHouseDepositPopUp,
+- FixedHouseDepositAccountUnlocked,
+
+-->
 <template>
         <PhoneBillPopUp v-if="managePopUps.currentPopUp === 1"></PhoneBillPopUp>
         <WorkDrinksPopUp v-if="managePopUps.currentPopUp === 2"></WorkDrinksPopUp>

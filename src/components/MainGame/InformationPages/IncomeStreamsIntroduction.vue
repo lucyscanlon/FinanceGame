@@ -1,10 +1,19 @@
+<!-- Template for displaying the income streams introduction
 
+The parent of this component:
+- MainGame
+
+The children of this component:
+- IncomeStreamsFlexbox
+
+-->
 <template>
   <div class="rentintro-mainwrapper">
     <div class="rentintro-title-wrapper everydayaccount-info-title">
       <h1>Setting up a secondary income stream</h1>
     </div>
     <div class="rentintro-description-wrapper">
+      <!-- display slide depending on the value of currentSlide -->
       <div :class="currentSlide !== 0 && 'pensionSlideInactive'"
         class="incomestreams-slidecontainer">
         <p>Here are some benefits of diversifying your income:</p>
@@ -23,6 +32,7 @@
           </ul>
         </div>
       </div>
+      <!-- display slide depending on the value of currentSlide -->
       <div :class="currentSlide !== 1 && 'pensionSlideInactive'" class="incomestreams-slidecontainer">
         <p>Part time employment vs side hustles, which is right for you?</p>
         <div class="rentintro-list">
@@ -35,9 +45,11 @@
           </ul>
         </div>
       </div>
+      <!-- display slide depending on the value of currentSlide -->
       <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="incomestreams-slidecontainer">
         <p>Would you like to set up a secondary income stream?</p>
         <div class="incomestreams-choices-container">
+          <!-- Display options for income stream using template -->
           <IncomeStreamsFlexbox :Identifier=1  Name="Open Online Store" :SetUpCost=50 :MonthlyIncome=400 :MonthlyCost=250></IncomeStreamsFlexbox>
           <IncomeStreamsFlexbox :Identifier=2  Name="Start a podcast" :SetUpCost=200 :MonthlyIncome=150 :MonthlyCost=50></IncomeStreamsFlexbox>
         </div>
@@ -50,16 +62,19 @@
         <IncomeStreamsFlexbox :Identifier=6  Name="Do not set up a secondary income stream" :SetUpCost=0 :MonthlyIncome=0 :MonthlyCost=0></IncomeStreamsFlexbox>
       </div>
       <div class="emergencyfundchoice-button-container">
+        <!-- confirm choice for if they have selected to set up an income stream -  play sound, confirm choice, unlock component, next slide -->
             <button v-if="manageIncomeStream.currentlySelectedIncomeStreamChoice.ISname === 'Do not set up a secondary income stream'"
               @click="manageSound.playClickSound(), manageIncomeStream.confirmIncomeStreamChoice(),  (manageIncomeStream.currentlySelectedIncomeStreamChoice != '') ? useMainGameplayNav.navigateToPage(11) : '', useMainGameplayNav.unlockComponent() ">
               Confirm Choice
             </button>
+            <!-- confirm choice for if they have selected not to set up an income stream - play sound, confirm choice -->
             <button v-if="manageIncomeStream.currentlySelectedIncomeStreamChoice.ISname !== 'Do not set up a secondary income stream'"
               @click="manageSound.playClickSound(), manageIncomeStream.confirmIncomeStreamChoice(), (manageIncomeStream.currentlySelectedIncomeStreamChoice != '') ? nextSlide() : ''">
               Confirm Choice
             </button>
           </div>
       </div>
+      <!-- display if user has chosen to set up an online store -->
       <div :class="currentSlide !== 3 && 'pensionSlideInactive'" class="incomestreams-slidecontainer">
         <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 1" class="onlinestore-choosename-slide">
           <p>Choose a name for your online shop</p>
@@ -74,6 +89,7 @@
             </div>
           </div>
         </div>
+        <!-- display if user has chosen to set up a podcast -->
         <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 2" class="onlinestore-choosename-slide">
           <p>Choose a name for your podcast</p>
           <div class="incomestreams-editinfo-container">
@@ -87,6 +103,7 @@
             </div>
           </div>
         </div>
+        <!-- display if user has chosen to do bar work -->
         <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 3" class="onlinestore-choosename-slide">
           <p>Choose where you would like to work</p>
           <div class="incomestreams-editinfo-container barwork-container">
@@ -101,6 +118,7 @@
               </div>
           </div>
         </div>
+        <!-- display if user has chosen to set up a social media -->
         <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 4" class="onlinestore-choosename-slide">
           <p>Choose your social media username</p>
           <div class="incomestreams-editinfo-container">
@@ -114,6 +132,7 @@
             </div>
           </div>
         </div>
+        <!-- display if user has chosen do freelance work -->
         <div v-if="manageIncomeStream.chosenIncomeStreamChoice.ISidentifier === 5" class="onlinestore-choosename-slide">
           <p>Choose a skill for your freelance work</p>
           <div class="incomestreams-editinfo-container barwork-container">
@@ -129,6 +148,7 @@
           </div>
         </div>
       </div>
+      <!-- navigate through slides -->
       <div class="previous-next-container incomestreams-slide3">
         <div class="previous-container">
           <p v-if="currentSlide !== 0" @click="previousSlide()">
@@ -163,10 +183,8 @@
 // import stores
 import IncomeStreamsFlexbox from "../MainGameChoices/IncomeStreamsFlexbox";
 import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
-
 import { useIncomeStreamsChoicesStore } from '../../../store/MainGameChoicesStore.js'
 import { useGameTimerStore } from "../../../store/MoneyStore.js";
-//import { useGoalsStore } from '../../../store/MainGameChoicesStore.js'
 import { useMoneyManageStore } from "../../../store/MoneyStore.js";
 import { useSoundEffectsStore } from '../../../store/soundEffectsStore.js'
 

@@ -1,3 +1,12 @@
+<!-- Template for bills component
+
+The parent of this component:
+- MainGame
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="maingameplay-flex-container">
         <div @click="manageMainGameNav.navigateToPage(28)" class="pension-info-button-container">

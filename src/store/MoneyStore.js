@@ -10,6 +10,7 @@ import { useBarometerStore, useNotificationStore, useIncomeStreamsChoicesStore }
 import { useSoundEffectsStore } from './soundEffectsStore.js'
 import { registerLivingOptionChoiceStore, supermarketChoiceStore, transportChoiceStore } from './InitialGameChoicesStore'
 
+// this store manages money in the application
 export const useMoneyManageStore = defineStore({
     id: 'moveMoney',
     state: () => ({
@@ -45,18 +46,22 @@ export const useMoneyManageStore = defineStore({
     
     }),
     actions: {
+        // increase current account value
         increasePocketMoney(val) {
             this.moneyInPocket = this.moneyInPocket + Number(val);
         },
 
+        // decrease current account value 
         decreasePocketMoney(val) {
             this.moneyInPocket = this.moneyInPocket - Number(val);
         },
 
+        // increase bills
         increaseMonthlyOutGoings(val) {
             this.monthlyOutGoingsSum = this.monthlyOutGoingsSum + val;
         },
 
+        // decrease bills
         decreaseMonthlyOutGoings(val) {
             
             this.monthlyOutGoingsSum = this.monthlyOutGoingsSum - Number(val);
@@ -64,6 +69,7 @@ export const useMoneyManageStore = defineStore({
             console.log("Monthly outs type: " + typeof this.monthlyOutGoingsSum);
         },
 
+        // add to emergency fund
         addToEmergencyFundTotal(num) {
 
             num = Number(num);
@@ -71,6 +77,7 @@ export const useMoneyManageStore = defineStore({
                 this.emergencyFundCurrentTotal = this.emergencyFundCurrentTotal + num;
                 this.moneyInPocket = this.moneyInPocket - num;
 
+                // if its over 5000 then complete the goal
                 if(this.emergencyFundCurrentTotal >= 5000) {
                     useSoundEffectsStore().goalCompleted()
                     useGoalsStore().completedGoals = 3;
@@ -82,6 +89,7 @@ export const useMoneyManageStore = defineStore({
             
         },
 
+        // withdraw from emergency fund
         withdrawFromEmergencyFundTotal(num) {
 
             num = Number(num);
@@ -99,6 +107,7 @@ export const useMoneyManageStore = defineStore({
             
         },
 
+        // add to house deposit
         addToHouseDeposit(num) {
             num = Number(num);
 
@@ -108,9 +117,11 @@ export const useMoneyManageStore = defineStore({
 
                     console.log(this.houseDepositCurrentTotal);
 
+                    // if total is 8000 then complete the goal
                     if(this.houseDepositCurrentTotal >= 8000) {
                         useGoalsStore().completedGoals = 8;
 
+                        // end the game
                         setTimeout(() => {
                             useGameTimerStore().triggerEndOfGame()
                           }, 3000);
@@ -123,9 +134,11 @@ export const useMoneyManageStore = defineStore({
             
         },
 
+        // add to lisa house deposit
         addToHouseDepositLISA(num) {
             num = Number(num);
 
+            // check if they have added 4000 already that year
             if((this.LISAYearlyAdditions + num) <= 4000) {
                 
 
@@ -135,6 +148,7 @@ export const useMoneyManageStore = defineStore({
 
                     this.LISAYearlyAdditions = this.LISAYearlyAdditions + num;
 
+                    // if its over 8000 then end game
                     if(this.houseDepositCurrentTotal >= 8000) {
                         useGoalsStore().completedGoals = 8;
 
@@ -150,9 +164,11 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // add to fixed rate house deposit
         addToFixedRateHouseDeposit(num) {
             num = Number(num);
 
+            // check if its open
             console.log("house deposit added");
             if(this.HouseDepositFixedYearOpen === true) {
                 console.log("house deposit added");
@@ -162,6 +178,7 @@ export const useMoneyManageStore = defineStore({
 
                     this.HouseDepositFixedYearOpen = false; 
                     
+                    // lock the account - set open month
                     if(useGameTimerStore().monthCounter < 6) {
                         this.houseDepositFixedOpenMonth = useGameTimerStore().monthCounter + 6;
                     } else if (useGameTimerStore().monthCounter > 6) {
@@ -173,6 +190,7 @@ export const useMoneyManageStore = defineStore({
                     
                     if(useGameTimerStore().MonthCounter >= 6)(useGameTimerStore().MonthCounter % 12);
 
+                    // if total is 8000 end game
                     if(this.houseDepositCurrentTotal >= 8000) {
                         useGoalsStore().completedGoals = 8;
 
@@ -189,6 +207,7 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // withdraw from house deposit
         withdrawFromHouseDeposit(num) {
             num = Number(num);
 
@@ -201,6 +220,7 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // withdraw from LISA
         withdrawFromHouseDepositLISA(num) {
             num = Number(num);
 
@@ -208,6 +228,7 @@ export const useMoneyManageStore = defineStore({
                 this.houseDepositCurrentTotal = this.houseDepositCurrentTotal - num;
                 this.moneyInPocket = this.moneyInPocket + num;
 
+                // minus from yearly additions
                 this.LISAYearlyAdditions = this.LISAYearlyAdditions - num;
 
             } else {
@@ -215,6 +236,7 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // buy an amount of a stock
         buyNumOfStocks(stockValue, amount) {
             let cost = stockValue * amount
 
@@ -229,6 +251,7 @@ export const useMoneyManageStore = defineStore({
 
         },
 
+        // sell an amount of a stock
         sellNumOfStocks(stockValue, amount) {
             let cost = stockValue * amount
 
@@ -238,6 +261,7 @@ export const useMoneyManageStore = defineStore({
             
         },
 
+        // sell all of a stock
         sellAllOfStock(stockValue, totalAmount) {
             let cost = stockValue * totalAmount
 
@@ -251,6 +275,7 @@ export const useMoneyManageStore = defineStore({
 
         },
 
+        // determine the value of your investment portfolio as the price flucuates
         workOutPortfolioValue() {
 
             // stock one value 
@@ -262,16 +287,19 @@ export const useMoneyManageStore = defineStore({
 
             this.InvestmentPortfolioCurrentValue = stock1portfoliobalance + stock2portfoliobalance + stock3portfoliobalance + stock4portfoliobalance + stock5portfoliobalance
 
+            // if you have over 1000 then complete the goal
             if(this.InvestmentPortfolioCurrentValue >= 1000) {
                 useGoalsStore().completedGoals = 7;
             }
 
         },
 
+        // set the previous portfolio balance - to determine the percentage difference
         setTotalBalancePreviousPrice() {
             this.totalBalancePreviousValue = this.InvestmentPortfolioCurrentValue
         },
 
+        // workout the percentage difference between previous portfolio price and current price
         workoutInvestmentTotalBalancePercentage() {
             this.totalBalancePercentageChange = ((this.InvestmentPortfolioCurrentValue - this.totalBalancePreviousValue) / this.totalBalancePreviousValue) * 100
             if((this.InvestmentPortfolioCurrentValue === 0) && (this.totalBalancePreviousValue === 0)) {
@@ -279,6 +307,7 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // add money to furniture fund
         addToFurnitureFund(num) {
             num = Number(num);
             if(this.moneyInPocket >= num) {
@@ -287,6 +316,7 @@ export const useMoneyManageStore = defineStore({
                 this.furnitureFundTotal = this.furnitureFundTotal + amount;
                 this.moneyInPocket = this.moneyInPocket - amount;
 
+                // if above 1000 then complete goal
                 if(this.furnitureFundTotal >= 1000) {
                     useSoundEffectsStore().goalCompleted()
                     useGoalsStore().completedGoals = 2;
@@ -297,6 +327,7 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // withdraw from furniture fund
         WithdrawFromFurnitureFund(num) {
             num = Number(num);
             if(this.furnitureFundTotal >= num) {
@@ -310,6 +341,7 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // pay bills
         payMonthlyOutgoings() {
             this.moneyInPocket = this.moneyInPocket - this.monthlyOutGoingsSum;
             this.billsPaid = this.billsPaid + 1;
@@ -324,17 +356,20 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // pay a bill late
         payLateBill() {
             this.totalMissedBills = this.totalMissedBills + 1;
             this.billsLate = false;
         },
 
+        // add to appliance fund
         addToAppliancesFund(num) {
             num = Number(num);
             if(this.moneyInPocket >= num) {
                 this.appliancesFundTotal = this.appliancesFundTotal + num;
                 this.moneyInPocket = this.moneyInPocket - num;
 
+                // if over 2000 complete goal
                 if(this.appliancesFundTotal >= 2000) {
                     useSoundEffectsStore().goalCompleted()
                     useGoalsStore().completedGoals = 4;
@@ -346,6 +381,7 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // withdraw from appliances fund
         withdrawFromAppliancesFund(num) {
             num = Number(num);
             if(this.appliancesFundTotal <= num) {
@@ -356,12 +392,14 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // add to holiday fund
         addToHolidayFund(num) {
             num = Number(num);
             if(this.moneyInPocket >= num) {
                 this.holidayFundTotal = this.holidayFundTotal + num;
                 this.moneyInPocket = this.moneyInPocket - num;
 
+                // if over goal amount then complete goal
                 if(this.holidayFundTotal >= useGoalsStore().holidayBudget) {
                     useSoundEffectsStore().goalCompleted()
                     useGoalsStore().completedGoals = 5;
@@ -372,6 +410,7 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // withdraw from holiday fund
         withdrawFromHolidayFund(num) {
             num = Number(num);
             if(this.holidayFundTotal <= num) {
@@ -382,11 +421,13 @@ export const useMoneyManageStore = defineStore({
             }
         },
 
+        // increase salary after pop up
         increaseSalary() {
             this.monthlySalaryBeforeTax = this.payRiseSalaryBeforeTax;
             this.monthlySalaryAfterTax = this.payRiseSalaryAfterTax;
         },
 
+        // use the emergency fund from broken laptop pop up
         useEmergencyFund(num) {
             num = Number(num);
 
@@ -398,6 +439,7 @@ export const useMoneyManageStore = defineStore({
             
         },
 
+        // check if the bank balance is negative when players pay bills
         checkIfBankBalanceNegative() {
             if(this.moneyInPocket < 0) {
                 this.PocketMoneyNegativeBalance = true;
@@ -412,6 +454,8 @@ export const useMoneyManageStore = defineStore({
     }
 })
 
+// holds variables that control time
+// holds variables that control the stock market component
 export const useGameTimerStore = defineStore({
     id: 'GameTimerStore',
     state: () => ({
@@ -467,6 +511,7 @@ export const useGameTimerStore = defineStore({
 
     }),
     actions: {
+        // action to reduce countdown from 30 to 10 - main time loop
         startCountdown() {
             if (this.timer) {
                 clearInterval(this.timer)
@@ -474,8 +519,11 @@ export const useGameTimerStore = defineStore({
 
             this.timer = setInterval (() => {
                 if(this.countdown > 0) {
+                    // if its on the main page or portfolio page then start countdown
                     if((useMainGameplayNavigationStore().currentPage === 11) || (useMainGameplayNavigationStore().currentPage === 17)) {
                         this.countdown = this.countdown - 1;
+
+                        // check the date to trigger gameplay elements
                         this.checkTheDate(this.countdown, this.currentMonth, this.currentYear, this.monthsPassed, this.monthCounter);
 
                         // flucuate prices of stocks
@@ -499,6 +547,7 @@ export const useGameTimerStore = defineStore({
                             }
                         }
 
+                        // trigger bills due - button turns pink
                         if(this.countdown === 10) {
                             useSoundEffectsStore().playBillsDue()
                         }
@@ -507,6 +556,13 @@ export const useGameTimerStore = defineStore({
                         // pension total = pension total + (salary before tax * player tax contribution)
                     }
                 } else {
+                    // end of the month 
+                    // add salary minus pension contribution
+                    // add pension contribtion to pension
+                    // increase months passed
+                    // check if bills have been paid
+                    // add investment to pension
+                    // play the got paid sound
                     useMoneyManageStore().increasePocketMoney((useMoneyManageStore().monthlySalaryAfterTax + useMoneyManageStore().incomeStreamProfit) - ((useMoneyManageStore().monthlySalaryBeforeTax) * (usePensionChoicesStore().chosenPensionChoice.YContPercentage / 100)))
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.YContPercentage)
                     usePensionChoicesStore().addContributionToPension(useMoneyManageStore().monthlySalaryBeforeTax, usePensionChoicesStore().chosenPensionChoice.EContPercentage)
@@ -538,6 +594,7 @@ export const useGameTimerStore = defineStore({
             let fluctuation4 = Math.random() * 5 - 1;
             let fluctuation5 = Math.random() * 0.2 - 0.2;
 
+            // see if stocks will crash based on the assigned probability
             if (Math.random() < this.stock1CrashProbability) {
                 fluctuation1 = -Math.random() * 5; 
                 //console.log("Stock 1 crashed")
@@ -590,6 +647,7 @@ export const useGameTimerStore = defineStore({
 
         },
 
+        // reset the timer when it reaches zero
         resetCountdown() {
             this.countdown = 30
             clearInterval(this.timer)
@@ -599,6 +657,7 @@ export const useGameTimerStore = defineStore({
 
         increaseMonth() {
 
+            // display the correct month and increase the year 
             if (this.monthCounter === 0 ) {
                 this.currentMonth = 'January'
                 if(this.monthsPassed > 1) {
@@ -648,6 +707,7 @@ export const useGameTimerStore = defineStore({
 
         },
 
+        // increase the year
         increaseYear() {
             this.currentYear = this.currentYear + 1
         },
@@ -664,6 +724,7 @@ export const useGameTimerStore = defineStore({
             }
         },
 
+        // use the current date, and goal status to trigger new gameplay elements
         checkTheDate(countdown, currentMonth, currentYear, monthsPassed) {
 
             if((countdown === 15) && (currentMonth === 'January') && (currentYear === 2023)) {
@@ -868,6 +929,7 @@ export const useGameTimerStore = defineStore({
                 this.happyNewYearPassed = false;
             }
 
+            // unlock the fixed house deposit account
             if(this.fixedRateUnlocked === 0 && (this.monthCounter === useMoneyManageStore().houseDepositFixedOpenMonth) && (useHouseDepositChoiceStore().chosenHouseDepositChoice === 2)) {
                 console.log("fixed account unlocked");
                 
@@ -885,6 +947,7 @@ export const useGameTimerStore = defineStore({
 
         },
 
+        // add interest and reset account limits every april
         financialYearPassed() {
 
             useMainGameplayNavigationStore().currentPage = 18;
@@ -930,6 +993,7 @@ export const useGameTimerStore = defineStore({
             }
         },
 
+        // save certain dates in order to trigger functions after this
         saveTheDateHouseDeposit(day, monthsPassed, year) {
             this.queuePayRisePopUp = {day: day, month: monthsPassed, year: year};
 
@@ -974,12 +1038,14 @@ export const useGameTimerStore = defineStore({
             }
         },
 
+        // trigger end of the game
         triggerEndOfGame() {
             useSoundEffectsStore().EndOfGame()
             this.calculateTotalInGameTimeSpan()
             useMainGameplayNavigationStore().navigateToPage(30)
         },
 
+        // add investment to pension
         addReturnOnInvestmentsToPension() {
             if((this.monthsPassed % 3) === 0) {
                 let investmentsPerc = usePensionChoicesStore().investmentValue;
@@ -990,6 +1056,7 @@ export const useGameTimerStore = defineStore({
 
         },
 
+        // reset game stats when player presses play again
         resetGameStats() {
             useMoneyManageStore().moneyInPocket = 3000
             useMoneyManageStore().monthlySalaryBeforeTax = 2024.25

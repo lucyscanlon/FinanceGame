@@ -1,4 +1,21 @@
+<!-- Template for current goal interface component
+
+The parent of this component:
+- MainGame
+
+The children of this component:
+- FurnitureFundGoal,
+- PayBillsGoal,
+- EmergencyFundGoal,
+- AppliancesFundGoal,
+- HolidayFundGoal,
+- InvestmentGoal,
+- HouseDepositGoal,
+- BuyStocksGoal
+
+-->
 <template>
+    <!-- Show current goal depending on the store value -->
     <div v-if="useMainGameplayNav.mainGameComponentsUnlocked > 0" class="maingameplay-flex-container">
         <PayBillsGoal v-if="manageGameGoals.currentGoal === 1"></PayBillsGoal>
         <FurnitureFundGoal v-if="manageGameGoals.currentGoal === 2"></FurnitureFundGoal>

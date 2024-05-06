@@ -1,3 +1,12 @@
+<!-- Template for holiday choice pop up
+
+The parent of this component:
+- Popupscomponent
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
@@ -22,6 +31,7 @@
                     </div>
                 </div>
             </div>
+            <!-- play sound, navigate to main page, register choice, start countdown, increase or decrease score, queue next pop up, queue specific goal, start timeout for holiday choice notification -->
             <div class="popup-phonebill-button">
                 <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(1), manageMainGameNav.navigateToPage(18), managePopUps.setSpecificPopup(9), manageGameGoals.setUpSpecificGoal(5), manageBarometer.decreaseScore(30), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
             </div>
@@ -41,6 +51,7 @@
                     </div>
                 </div>
             </div>
+            <!-- play sound, navigate to main page, register choice, start countdown, increase or decrease score, queue next pop up, queue specific goal, start timeout for holiday choice notification -->
             <div class="popup-phonebill-button">
                 <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(2), manageMainGameNav.navigateToPage(18), managePopUps.setSpecificPopup(9), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(15), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
             </div>
@@ -60,6 +71,7 @@
                     </div>
                 </div>
             </div>
+            <!-- play sound, navigate to main page, register choice, start countdown, increase or decrease score, queue next pop up, queue specific goal, start timeout for holiday choice notification -->
             <div class="popup-phonebill-button">
                 <button @click="manageSound.playClickSound(), managePopUps.HolidayBudgetChoice(3), manageMainGameNav.navigateToPage(18), managePopUps.setSpecificPopup(9), manageGameGoals.setUpSpecificGoal(5), manageBarometer.increaseScore(20), manageNotifications.timeoutHolidayChoiceNotification()">Choose</button>
             </div>

@@ -1,7 +1,10 @@
-<!-- Template containing the layout and information for each supermarket choice
+<!-- Template for display emergency fund choices
 
 The parent of this component:
-- Supermarket Choice
+- Emergency fund intro
+
+The children of this component:
+- None
 
 -->
 <script setup>

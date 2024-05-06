@@ -1,7 +1,10 @@
-<!-- Template containing the layout and information for each transport choice
+<!-- Template for display for transport choice info
 
 The parent of this component:
-- Transport Options Display
+- Transport options display
+
+The children of this component:
+- None
 
 -->
 <template>

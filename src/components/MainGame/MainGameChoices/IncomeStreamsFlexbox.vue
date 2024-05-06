@@ -1,7 +1,10 @@
-<!-- Template containing the layout and information for each supermarket choice
+<!-- Template for display income streams choice info
 
 The parent of this component:
-- Supermarket Choice
+- income streams introduction
+
+The children of this component:
+- None
 
 -->
 <template>

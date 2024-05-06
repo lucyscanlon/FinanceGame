@@ -1,7 +1,10 @@
-<!-- Template for displaying the text information introducing salaries and taxes
+<!-- Template for display job offer page
 
 The parent of this component:
-- Main game
+- Main Game
+
+The children of this component:
+- None
 
 -->
 <template>
@@ -19,6 +22,7 @@ The parent of this component:
                     <li><span class="colour-green">£12,750</span> of your income will not be taxed, as this called your 'Personal Allowance'.</li>
                 </ul>
             </div>
+            <!-- Table displaying taxes information  -->
             <table>
                 <tr>
                     <th>Monthly pay (before tax)</th>
@@ -38,7 +42,7 @@ The parent of this component:
                 </tr>
             </table>
             <div class="joboffer-button-wrapper">
-                <!-- Call store method on click -->
+                <!-- play sound, navigate to next page, increase score -->
                 <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(2), manageBarometer.increaseScore(5)" class="joboffer-button">Accept job offer</button>
                 <a href="https://www.tax.service.gov.uk/estimate-paye-take-home-pay/your-pay" target="blank">
                     <button class="joboffer-calculator">Check out the UK tax calculator</button>

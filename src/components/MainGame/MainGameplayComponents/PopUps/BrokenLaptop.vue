@@ -1,3 +1,12 @@
+<!-- Template for broken laptop pop up
+
+The parent of this component:
+- Popupscomponent
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="popups-main-container-wrapper">
     <div class="popup-title-container">
@@ -17,8 +26,9 @@
             <div class="popup-workdrinks-cost">
                 <p>Cost: <span class="colour-green">£1500</span></p>
             </div>
+            <!-- navigate to main page, register choice, start countdown, increase or decrease score -->
             <div class="popup-phonebill-button workdrinks-button">
-                <button @click="manageMainGameNav.navigateToPage(11), managePopUps.brokenLaptopChoice(1), manageGameTimer.startCountdown(), manageBarometer.increaseScore(10)">Choose</button>
+                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), managePopUps.brokenLaptopChoice(1), manageGameTimer.startCountdown(), manageBarometer.increaseScore(10)">Choose</button>
             </div>
         </div>
         <div class="popup-work-drinks-flex-container investmentop-flex">
@@ -31,6 +41,7 @@
             <div class="popup-workdrinks-cost">
                 <p>Cost: <span class="colour-green">£1500</span></p>
             </div>
+            <!-- navigate to main page, register choice, start countdown, increase or decrease score -->
             <div class="popup-phonebill-button workdrinks-button">
                 <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), managePopUps.brokenLaptopChoice(2), manageGameTimer.startCountdown(), manageBarometer.decreaseScore(15)">Choose</button>
             </div>

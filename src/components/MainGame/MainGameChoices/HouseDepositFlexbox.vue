@@ -1,7 +1,10 @@
-<!-- Template containing the layout and information for each supermarket choice
+<!-- Template for display house deposit choice info 
 
 The parent of this component:
-- Supermarket Choice
+-  house deposit intro
+
+The children of this component:
+- None
 
 -->
 <template>

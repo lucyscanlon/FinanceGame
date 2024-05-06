@@ -1,3 +1,12 @@
+<!-- Template for house deposit interface component
+
+The parent of this component:
+- MainGame
+
+The children of this component:
+- HouseDepositType
+
+-->
 <template>
     <div class="maingameplay-flex-container">
         <div v-if="useMainGameplayNav.mainGameComponentsUnlocked > 4" class="housedeposit-content-container">

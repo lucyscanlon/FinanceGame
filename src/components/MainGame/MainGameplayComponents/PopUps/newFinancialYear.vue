@@ -1,3 +1,12 @@
+<!-- Template for new financial year pop up
+
+The parent of this component:
+- Popupscomponent
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="popups-main-container-newgoal-container">
     <div class="newgoalpopup-title-container">
@@ -6,6 +15,7 @@
     <div class="popup-description-container workdrinks-desc investmentop-popup-desc">
         <p>April is here and that means that we now enter a new financial year. Interest and bonuses will now be added to necessary accounts and account limits will now reset.</p>
     </div>
+    <!-- play sound, navigate to main page, start countdown -->
     <div class="newgoalpopup-home-button">
             <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()">Continue</button>
     </div>

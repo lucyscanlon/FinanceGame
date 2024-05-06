@@ -1,3 +1,12 @@
+<!-- Template for emergency fund interface component
+
+The parent of this component:
+- MainGame
+
+The children of this component:
+- None
+
+-->
 <template>
     <div class="maingameplay-flex-container">
         <div v-if="useMainGameplayNav.mainGameComponentsUnlocked > 2" class="emergencyfund-content-container">
@@ -27,6 +36,7 @@
                 </form>
             </div>
         </div>
+        <!-- Buttons to add and withdraw from emergency fund account - display different buttons based upon the state of the component -->
         <div class="emergencyfund-add-withdraw-buttons">
             <button @click="manageSound.addButton(), manageMoney.addToEmergencyFundTotal(amountToChange), rerenderComponent()">Add</button>
             <span v-if="(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit !== '1000')" class="emergencyfund-withdraw-button"><button @click="manageSound.WithdrawButton(), manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>

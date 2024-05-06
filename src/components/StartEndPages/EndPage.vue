@@ -1,7 +1,7 @@
-<!-- Template for displaying the text information introducing rent to the player
+<!-- Template for displaying the end page 
 
 The parent of this component:
-- Main game
+- App.vue
 
 -->
 <template>
@@ -40,6 +40,7 @@ The parent of this component:
             </div>
             
         </div>
+        <!-- Table of stats -->
         <div class="endpage-stats-container">
             <div class="endpage-stats-panel">
                 <div class="endpage-stats-title-container">

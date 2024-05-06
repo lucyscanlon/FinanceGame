@@ -1,3 +1,8 @@
+<!-- Template for income streams type component
+
+Not used
+
+-->
 <template>
         <div class="incomestreams-interactive-title">
             <h4>Secondary Income Stream</h4>

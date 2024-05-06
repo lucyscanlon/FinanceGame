@@ -1,11 +1,15 @@
-<!-- Template for displaying the text introduction to grocery shopping recommendations
+<!-- Template for displaying the house deposit introduction page
 
 The parent of this component:
-- Main game
+- MainGame
+
+The children of this component:
+- HouseDepositFlexbox
 
 -->
 <template>
     <div class="rentintro-mainwrapper supermarket-info-wrap">
+        <!-- close button - displays if users have accessed this page by clicking the info button on main interface -->
         <div v-if="useMainGameplayNav.currentPage === 25" @click="useMainGameplayNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
             <p><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
         </div>
@@ -13,6 +17,7 @@ The parent of this component:
             <h1>Saving for a house deposit</h1>
         </div>
         <div class="homedeposit-description-wrapper">
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 0 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>Your career has been going well and you feel its time to start saving for a house! The first step is to save for a house deposit</p>
                 <div class="supermarketinfo-list">
@@ -24,6 +29,7 @@ The parent of this component:
                 </ul>
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 1 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>What is the process for buying a home for the first time?</p>
                 <div class="supermarketinfo-list">
@@ -39,23 +45,27 @@ The parent of this component:
                 </ul>
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>How would you like to save for your deposit?</p>
                 <div class="housedeposit-goal-container">
                     <p class="colour-green deposit-goal">Deposit Goal: £8,000</p>
                 </div>
                 <div class="housedeposit-choices-container">
+                    <!-- Use template to display each option -->
                     <HouseDepositChoiceFlexbox :Identifier="1" Name="Lifetime Isa" Desc="A bank account with a yearly limit" Perk="A 25% yearly bonus" Deposit="No Deposit" ContLimit="£4000"></HouseDepositChoiceFlexbox>
                     <HouseDepositChoiceFlexbox :Identifier="2" Name="6 Month Fixed Rate Savings Account" Desc="A high interest bank account which locks for 6 months" Perk="4.8% interest" Deposit="£1,500" ContLimit="None"></HouseDepositChoiceFlexbox>
                     <HouseDepositChoiceFlexbox :Identifier="3" Name="Savings Account" Desc="An ordinary savings account" Perk="Withdraw at any time" Deposit="No Deposit" ContLimit="None"></HouseDepositChoiceFlexbox>
                 </div>
                 <div class="emergencyfundchoice-button-container">
+                    <!-- play sound effect, confirm chosen house deposit choice, navigate to main page, start countdown, unlock house deposit component -->
             <button
               @click="manageSound.playClickSound(), manageHouseDeposit.confirmHouseDepositChoice(), (manageHouseDeposit.currentlySelectedHouseDepositChoice != '') ? useMainGameplayNav.navigateToPage(11) : '', manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">
               Confirm Choice
             </button>
           </div>
             </div>
+            <!-- Navigate between slides -->
             <div class="previous-next-container incomestreams-slide3">
                 <div class="previous-container">
                     <p @click="previousSlide()">
@@ -88,8 +98,8 @@ The parent of this component:
 </template>
 <script setup>
 
+    // import pinia stores
     import HouseDepositChoiceFlexbox from "../MainGameChoices/HouseDepositFlexbox.vue";
-
     import { useHouseDepositChoiceStore } from '../../../store/MainGameChoicesStore'
     import { useMainGameplayNavigationStore } from "../../../store/MainGameChoicesStore.js";
     import { useGameTimerStore } from "../../../store/MoneyStore.js";

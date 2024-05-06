@@ -1,12 +1,5 @@
 <!-- Component which holds all main elements of game play. 
 
-Components:
-
-- You have a job offer
-- Rent information display
-- Map layout
-- Supermarket Choice 
-- Transports Options Display
 
 -->
 <template>
@@ -41,8 +34,8 @@ Components:
         <p> {{ manageGameTimer.countdown }}</p>
       </div>
     </div>
+    <!-- Displays template based on current page - tracked in useMainGameplayNavigationStore-->
     <WelcomePage v-if="manageMainGameNav.currentPage === 0"></WelcomePage>
-    <!-- display component dependant on the stage of game - located in the initialgamechoicesstore-->
     <salaryAndTaxInfoDisplay v-if="manageMainGameNav.currentPage === 1"></salaryAndTaxInfoDisplay>
     <currentAccountIntroduction v-if="manageMainGameNav.currentPage === 2"></currentAccountIntroduction>
     <RentInformationDisplay v-if="manageMainGameNav.currentPage === 3"></RentInformationDisplay>
@@ -50,7 +43,6 @@ Components:
     <SupermarketInfoDisplay v-if="manageMainGameNav.currentPage === 5"></SupermarketInfoDisplay>
     <SupermarketChoiceDisplay v-if="(manageMainGameNav.currentPage === 6)"></SupermarketChoiceDisplay>
     <TransportMethodDisplay v-if="manageMainGameNav.currentPage === 7"></TransportMethodDisplay>
-    <!--current goal info --> 
     <CurrentGoalIntroduction v-if="manageMainGameNav.currentPage === 8"></CurrentGoalIntroduction>
     <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 9" :startingSlide="0" :NumOfSlides=5></PensionInformationDisplay>
     <PensionInformationDisplay v-if="manageMainGameNav.currentPage === 10" :startingSlide="4" :NumOfSlides=5></PensionInformationDisplay>
@@ -72,6 +64,7 @@ Components:
     <payingBillsIntroduction v-if="manageMainGameNav.currentPage === 27"></payingBillsIntroduction>
     <payingBillsIntroduction v-if="manageMainGameNav.currentPage === 28"></payingBillsIntroduction>
     <PensionPredictions v-if="manageMainGameNav.currentPage === 29"></PensionPredictions>
+    <!-- Main interface page -->
     <div v-if="(manageMainGameNav.currentPage === 11) || (manageMainGameNav.currentPage === 18)" class="maingameplay-interaction-container">
       <div class="maingameplay-top-row-container">
         <div class="responsibilityscore-mobileapp-container">
@@ -172,10 +165,8 @@ import SupermarketInfoDisplay from "./InformationPages/SupermarketInfo.vue";
 import TransportMethodDisplay from "./InitialGameChoices/TransportOptionsDisplay.vue";
 import PensionInformationDisplay from "./InformationPages/PensionIntroduction.vue";
 import PensionInteractionComponent from "./MainGameplayComponents/PensionComponent.vue";
-//import EverydaySavingInteractiveComponent from "./MainGameplayComponents/EverydaySavingsComponent.vue";
 import EmergencyFundsInteractiveComponent from "./MainGameplayComponents/EmergencyFundsComponent.vue";
 import HouseDepositInteractiveComponent from "./MainGameplayComponents/HouseDepositComponent.vue";
-//import IncomeStreamsInteractiveComponent from "./MainGameplayComponents/IncomeStreamsComponent.vue";
 import InvestmentPortfolioInteractiveComponent from "./MainGameplayComponents/InvestmentPortfolioComponent.vue";
 import currentAccountIntroduction from "./InformationPages/CurrentAccountIntroduction.vue";
 import EmergencyFundIntroduction from "./InformationPages/EmergencyFundIntroduction.vue";
@@ -202,10 +193,8 @@ export default {
     TransportMethodDisplay,
     PensionInformationDisplay,
     PensionInteractionComponent,
-    //EverydaySavingInteractiveComponent,
     EmergencyFundsInteractiveComponent,
     HouseDepositInteractiveComponent,
-    //IncomeStreamsInteractiveComponent,
     InvestmentPortfolioInteractiveComponent,
     currentAccountIntroduction,
     EmergencyFundIntroduction,

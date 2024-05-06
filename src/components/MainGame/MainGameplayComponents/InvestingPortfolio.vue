@@ -1,3 +1,12 @@
+<!-- Template for investing portfolio interface component
+
+The parent of this component:
+- Main Game
+
+The children of this component:
+- PortfolioLineChart
+
+-->
 <template>
     <div class="investing-port-full-container">
         <div class="investing-close-portfolio-button">

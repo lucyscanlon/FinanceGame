@@ -1,4 +1,14 @@
+<!-- Template for appliances fund goal
+
+The parent of this component:
+- currentGoalComponent
+
+The children of this component:
+- None
+
+-->
 <template>
+    <!-- change styling depending if the goal is completed -->
     <div :class="(manageGoals.completedGoals > 4) ? 'goal-completed-styling' : ''" class="pension-interactive-title-container current-goal-title">
         <h1><font-awesome-icon icon="fa-solid fa-bullseye" />Current Goal</h1>
     </div>
@@ -27,6 +37,7 @@
             </form>
         </div>
     </div>
+    <!-- buttons to add of withdraw from the account -->
     <div class="currentgoal-add-withdraw-buttons">
         <button @click="manageSound.addButton(), manageMoney.addToHolidayFund(amountToChange), rerenderComponent()">Add</button>
         <span @click="manageSound.WithdrawButton(), manageMoney.withdrawFromHolidayFund(amountToChange), rerenderComponent()" class="currentgoal-withdraw-button"><button>Withdraw</button></span>

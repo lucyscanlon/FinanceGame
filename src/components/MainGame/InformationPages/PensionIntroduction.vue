@@ -1,7 +1,10 @@
-<!-- Template for displaying the text information introducing rent to the player
+<!-- Template for display pension introduction
 
 The parent of this component:
-- Main game
+- MainGame
+
+The children of this component:
+- PensionChoiceFlexbox
 
 -->
 <script setup>
@@ -18,6 +21,7 @@ The parent of this component:
 
 </script>
 <template>
+    <!-- display close button only if users have accessed this page by pressing the info button on the interface component -->
     <div class="rentintro-mainwrapper pensionintrowrapper">
         <div v-if="manageMainGameNav.currentPage === 23" @click="manageMainGameNav.navigateToPage(11), manageGameTimer.startCountdown()" class="exitout-introduction-button-container">
             <p><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
@@ -26,6 +30,7 @@ The parent of this component:
             <h1>Setting up your pension</h1>
         </div>
         <div class="pensionintro-description-wrapper">
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 0 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>What is a pension?</p>
                 <div class="rentintro-list pensionintro pensionslideactive">
@@ -36,6 +41,7 @@ The parent of this component:
                     </ul>
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 1 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>What different types of pensions are there?</p>
                 <div class="rentintro-list pensionintro pensionslideactive">
@@ -47,6 +53,7 @@ The parent of this component:
                     </ul>
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>What is a workplace pension?</p>
                 <div class="rentintro-list pensionintro pensionslideactive">
@@ -57,6 +64,7 @@ The parent of this component:
                     </ul>
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 3 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>How to get the most of your pension</p>
                 <div class="rentintro-list pensionintro pensionslideactive">
@@ -68,20 +76,24 @@ The parent of this component:
                     </ul>
                 </div>
             </div>
+            <!-- display slide depending on the value of currentSlide -->
             <div :class="currentSlide !== 4 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>How much would you like to contribute each month?</p>
                 <div class="pension-contribution-choices-padding">
                 <div class="pension-contributionchoices-container">
+                    <!-- Show the pension choices using the template -->
                     <PensionChoiceFlexbox :PensionIdentifier=1 :PensionYCPerc=5 :PensionYCAmount=101.21 :PensionECPerc=3 :PensionECAmount=60.73 :PensionTCPerc=8 :PensionTCAmount=161.94></PensionChoiceFlexbox>
                     <PensionChoiceFlexbox :PensionIdentifier=2 :PensionYCPerc=7 :PensionYCAmount=141.70 :PensionECPerc=4 :PensionECAmount=80.97 :PensionTCPerc=11 :PensionTCAmount=222.67></PensionChoiceFlexbox>
                     <PensionChoiceFlexbox :PensionIdentifier=3 :PensionYCPerc=8 :PensionYCAmount=161.94 :PensionECPerc=4.5 :PensionECAmount=91.09 :PensionTCPerc=12.5 :PensionTCAmount=253.03></PensionChoiceFlexbox>
                 </div>
+                <!-- play sound, confirm the chosen pension choice, workout the pension predictions, navigate to pension predictions page -->
                 <div class="pension-contribution-button-container">
                         <button v-if="manageMainGameNav.currentPage === 9" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), managePension.workoutPensionPredictions(manageMoney.monthlySalaryBeforeTax, managePension.chosenPensionChoice.TContPercentage), (managePension.currentlySelectedPensionChoice != '') ? manageMainGameNav.navigateToPage(22) : ''">Confirm Choice</button>
                         <button v-if="manageMainGameNav.currentPage === 10" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), (managePension.currentlySelectedPensionChoice != '') ? manageMainGameNav.navigateToPage(11) : ''">Confirm Choice</button>
                  </div>
                 </div>
             </div>
+            <!-- Navigate through slides -->
             <div class="previous-next-container">
                 <div class="previous-container">
                     <p v-if="currentSlide !== 0" @click="previousSlide()"><font-awesome-icon icon="fa-solid fa-arrow-left" /> Previous</p>
