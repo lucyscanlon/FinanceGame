@@ -27,7 +27,6 @@ The parent of this component:
       </div>
     </div>
   </div>
-   
 </template>
 <script setup>
 

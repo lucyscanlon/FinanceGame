@@ -79,12 +79,8 @@ The parent of this component:
                     </table>
                 </div>
             </div>
-
         </div>
-        
-
     </div>
-    
 </template>
 
   <script setup>

@@ -33,16 +33,16 @@ The children of this component:
             <div :class="currentSlide !== 1 && 'pensionSlideInactive'" class="housedepositslide-container">
                 <p>What is the process for buying a home for the first time?</p>
                 <div class="supermarketinfo-list">
-                <ul>
-                    <li><span class="colour-green">Start saving your deposit.</span> The larger your deposit, the more varied mortgage options will be available to you.</li>
-                    <li><span class="colour-green">Check your credit score,</span> a good credit score will be beneficial when applying for mortgages.</li>
-                    <li>Consider all your options and opportunities:</li>
                     <ul>
-                        <li class="housedeposit-list-tab"><span class="colour-green">Shared Ownership</span> - this allows you to purchase a portion of the property and pay rent on the remaining portion.</li>
-                        <li class="housedeposit-list-tab"><span class="colour-green">First Homes Scheme</span> - this scheme offers new builds to first time buyers at a discounted rate of up to 30% compared to the market value.</li>
-                        <li class="housedeposit-list-tab"><span class="colour-green">Lifetime ISA</span> - this scheme helps you save a deposit for your first time. Contribute up to £4000 a year and recieve a 25% bonus from the government to use for your deposit.</li>
+                        <li><span class="colour-green">Start saving your deposit.</span> The larger your deposit, the more varied mortgage options will be available to you.</li>
+                        <li><span class="colour-green">Check your credit score,</span> a good credit score will be beneficial when applying for mortgages.</li>
+                        <li>Consider all your options and opportunities:</li>
+                        <ul>
+                            <li class="housedeposit-list-tab"><span class="colour-green">Shared Ownership</span> - this allows you to purchase a portion of the property and pay rent on the remaining portion.</li>
+                            <li class="housedeposit-list-tab"><span class="colour-green">First Homes Scheme</span> - this scheme offers new builds to first time buyers at a discounted rate of up to 30% compared to the market value.</li>
+                            <li class="housedeposit-list-tab"><span class="colour-green">Lifetime ISA</span> - this scheme helps you save a deposit for your first time. Contribute up to £4000 a year and recieve a 25% bonus from the government to use for your deposit.</li>
+                        </ul>
                     </ul>
-                </ul>
                 </div>
             </div>
             <!-- display slide depending on the value of currentSlide -->
@@ -59,11 +59,8 @@ The children of this component:
                 </div>
                 <div class="emergencyfundchoice-button-container">
                     <!-- play sound effect, confirm chosen house deposit choice, navigate to main page, start countdown, unlock house deposit component -->
-            <button
-              @click="manageSound.playClickSound(), manageHouseDeposit.confirmHouseDepositChoice(), (manageHouseDeposit.currentlySelectedHouseDepositChoice != '') ? useMainGameplayNav.navigateToPage(11) : '', manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">
-              Confirm Choice
-            </button>
-          </div>
+                    <button @click="manageSound.playClickSound(), manageHouseDeposit.confirmHouseDepositChoice(), (manageHouseDeposit.currentlySelectedHouseDepositChoice != '') ? useMainGameplayNav.navigateToPage(11) : '', manageGameTimer.startCountdown(), useMainGameplayNav.unlockComponent()">Confirm Choice</button>
+                </div>
             </div>
             <!-- Navigate between slides -->
             <div class="previous-next-container incomestreams-slide3">
@@ -91,9 +88,8 @@ The children of this component:
             Next <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </p>
         </div>
-      </div>
-            
-        </div>
+      </div> 
+    </div>
     </div>
 </template>
 <script setup>

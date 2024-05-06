@@ -30,7 +30,6 @@ The children of this component:
             </div>
         </div>
     </div>
-    
 </template>
 <script setup>
 

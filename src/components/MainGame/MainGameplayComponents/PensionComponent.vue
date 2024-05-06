@@ -29,32 +29,31 @@ The children of this component:
             <div class="pension-interactive-title-container">
                 <h1><font-awesome-icon icon="fa-solid fa-person-cane" />Pension</h1>
             </div>
-        <div class="pension-interactive-contributions-container">
-            <div class="pension-interactive-left">
-                <p>Your contribution:</p>
-                <p>Employer contribution:</p>
-                <p>Investment Value: </p>
+            <div class="pension-interactive-contributions-container">
+                <div class="pension-interactive-left">
+                    <p>Your contribution:</p>
+                    <p>Employer contribution:</p>
+                    <p>Investment Value: </p>
+                </div>
+                <div class="pension-interactive-right">
+                    <p>{{managePension.chosenPensionChoice.YContPercentage}}%</p>
+                    <p>{{managePension.chosenPensionChoice.EContPercentage}}%</p>
+                    <p>{{Number(managePension.investmentValue).toFixed(2) }}%</p>
+                </div>
             </div>
-            <div class="pension-interactive-right">
-                <p>{{managePension.chosenPensionChoice.YContPercentage}}%</p>
-                <p>{{managePension.chosenPensionChoice.EContPercentage}}%</p>
-                <p>{{Number(managePension.investmentValue).toFixed(2) }}%</p>
+            <div class="pension-interactive-total-container">
+                <div class="pension-interactive-total-title-container">
+                    <p>Current Total:</p>
+                </div>
+                <div class="pension-interactive-money-container">
+                    <p>£{{ managePension.pensionCurrentTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}}</p>
+                </div>
+            </div>
+            <div class="pension-interactive-button-container">
+                <span class="border-pink"><button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(10)">Change contributions</button></span>
+                <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(29)">See predictions</button>
             </div>
         </div>
-        <div class="pension-interactive-total-container">
-            <div class="pension-interactive-total-title-container">
-                <p>Current Total:</p>
-            </div>
-            <div class="pension-interactive-money-container">
-                <p>£{{ managePension.pensionCurrentTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}}</p>
-            </div>
-        </div>
-        <div class="pension-interactive-button-container">
-            <span class="border-pink"><button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(10)">Change contributions</button></span>
-            <button @click="manageSound.playClickSound(), manageMainGameNav.navigateToPage(29)">See predictions</button>
-        </div>
-        </div>
-        
     </div>
 </template>
 <script>

@@ -20,19 +20,19 @@ The children of this component:
 
 -->
 <template>
-        <PhoneBillPopUp v-if="managePopUps.currentPopUp === 1"></PhoneBillPopUp>
-        <WorkDrinksPopUp v-if="managePopUps.currentPopUp === 2"></WorkDrinksPopUp>
-        <InvestmentOpportunityPopUp v-if="managePopUps.currentPopUp === 3"></InvestmentOpportunityPopUp>
-        <InvestmentOpportunitySuccessfulPopUp v-if="managePopUps.currentPopUp === 4"></InvestmentOpportunitySuccessfulPopUp>
-        <InvestmentOpportunityFailedPopUp v-if="managePopUps.currentPopUp === 5"></InvestmentOpportunityFailedPopUp>
-        <HolidayChoicePopUp v-if="managePopUps.currentPopUp === 6"></HolidayChoicePopUp>
-        <PayRisePopUp v-if="managePopUps.currentPopUp === 7"></PayRisePopUp>
-        <brokenLaptopPopUp v-if="managePopUps.currentPopUp === 8"></brokenLaptopPopUp>
-        <newGoalPopUp v-if="managePopUps.currentPopUp === 9"></newGoalPopUp>
-        <AprilPopUp v-if="managePopUps.currentPopUp === 10"></AprilPopUp>
-        <LISAReminderPopUp v-if="managePopUps.currentPopUp === 11"></LISAReminderPopUp>
-        <FixedHouseDepositPopUp v-if="managePopUps.currentPopUp === 12"></FixedHouseDepositPopUp>
-        <FixedHouseDepositAccountUnlocked v-if="managePopUps.currentPopUp === 13"></FixedHouseDepositAccountUnlocked>
+    <PhoneBillPopUp v-if="managePopUps.currentPopUp === 1"></PhoneBillPopUp>
+    <WorkDrinksPopUp v-if="managePopUps.currentPopUp === 2"></WorkDrinksPopUp>
+    <InvestmentOpportunityPopUp v-if="managePopUps.currentPopUp === 3"></InvestmentOpportunityPopUp>
+    <InvestmentOpportunitySuccessfulPopUp v-if="managePopUps.currentPopUp === 4"></InvestmentOpportunitySuccessfulPopUp>
+    <InvestmentOpportunityFailedPopUp v-if="managePopUps.currentPopUp === 5"></InvestmentOpportunityFailedPopUp>
+    <HolidayChoicePopUp v-if="managePopUps.currentPopUp === 6"></HolidayChoicePopUp>
+    <PayRisePopUp v-if="managePopUps.currentPopUp === 7"></PayRisePopUp>
+    <brokenLaptopPopUp v-if="managePopUps.currentPopUp === 8"></brokenLaptopPopUp>
+    <newGoalPopUp v-if="managePopUps.currentPopUp === 9"></newGoalPopUp>
+    <AprilPopUp v-if="managePopUps.currentPopUp === 10"></AprilPopUp>
+    <LISAReminderPopUp v-if="managePopUps.currentPopUp === 11"></LISAReminderPopUp>
+    <FixedHouseDepositPopUp v-if="managePopUps.currentPopUp === 12"></FixedHouseDepositPopUp>
+    <FixedHouseDepositAccountUnlocked v-if="managePopUps.currentPopUp === 13"></FixedHouseDepositAccountUnlocked>
 </template>
 <script setup>
 

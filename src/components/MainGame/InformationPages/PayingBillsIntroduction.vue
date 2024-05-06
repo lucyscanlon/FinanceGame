@@ -27,11 +27,11 @@ The children of this component:
                         <li>You are also able to <span class="colour-green">change your previous decisions</span> that make up your bills sum by clicking the 'change' buttons found in the sidebar.</li>
                     </ul>
                 </div>
-            <div class="billsintro-billstotal-container payingbills-subheading">
-                <h4>Your current total bills amount:</h4>
-                <p>£{{ manageMoney.monthlyOutGoingsSum.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</p>
+                <div class="billsintro-billstotal-container payingbills-subheading">
+                    <h4>Your current total bills amount:</h4>
+                    <p>£{{ manageMoney.monthlyOutGoingsSum.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2}) }}</p>
+                </div>
             </div>
-        </div>
         </div>
         <!-- display slide depending on the value of currentSlide -->
         <div :class="currentSlide !== 1 && 'pensionSlideInactive'" class="pension-slidecontainer billsintro-slide">
@@ -47,7 +47,6 @@ The children of this component:
                     <img alt="An image displaying the pink pay bills button" src="/PayBillsScreenshot.png">
                 </div>
             </div>
-            
         </div>
         <!-- display slide depending on the value of currentSlide -->
         <div :class="currentSlide !== 2 && 'pensionSlideInactive'" class="pension-slidecontainer billsintro-slide">
@@ -63,7 +62,6 @@ The children of this component:
                     <img alt="An image displaying the red pay bills button" src="/BillsLateScreenshot.png">
                 </div>
             </div>
-            
         </div>
         <!-- display slide depending on the value of currentSlide -->
         <div :class="currentSlide !== 3 && 'pensionSlideInactive'" class="pension-slidecontainer billsintro-slide">

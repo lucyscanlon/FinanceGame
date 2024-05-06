@@ -23,14 +23,14 @@ The children of this component:
    <!-- Classes added for responsive styling - makes into a sidebar with slides in from the left -->
     <div :class="(manageMainGameNav.menuOpen === false) ? 'charactersidebar-closed' : 'charactersidebar-open'" class="characterstats-sidebar-wrapper">
         <div class="mobilemenu-closesidebar-container">
-           <!-- Close sidebar button -->
+          <!-- Close sidebar button -->
           <p @click="manageMainGameNav.toggleMenu()"><font-awesome-icon icon="fa-solid fa-rectangle-xmark" /></p>
         </div>
-      <div class="charactertstats-padding">
-            <!-- Display Responsibility barometer -->
-            <BarometerComponent></BarometerComponent>
+        <div class="charactertstats-padding">
+          <!-- Display Responsibility barometer -->
+          <BarometerComponent></BarometerComponent>
           <div class="characterstats-set">
-             <!-- Displays Money In Pocket or Current Account depending on whether the player has opened a bank account yet -->
+            <!-- Displays Money In Pocket or Current Account depending on whether the player has opened a bank account yet -->
             <h4 v-if="manageMainGameNav.currentPage >= 3"><font-awesome-icon icon="fa-solid fa-piggy-bank" />Current Account:</h4>
             <h4 v-if="manageMainGameNav.currentPage < 3"><font-awesome-icon icon="fa-solid fa-money-bill" />Money In Pocket:</h4>
              <!-- Bind colour to number, if its negative it displays red, green if positive -->

@@ -8,7 +8,7 @@ export const useMainGameplayNavigationStore = defineStore({
   id: "MainGameNavigationStore",
   state: () => ({
     mainGameComponentsUnlocked: 0,
-    currentPage: 16,
+    currentPage: -1,
     menuOpen: false,
   }),
   actions: {

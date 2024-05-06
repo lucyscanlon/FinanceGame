@@ -324,12 +324,10 @@ The children of this component:
                     <div :style="{ width: manageInvestmentPortfolio.Share5BarPercentage + '%' }" class="investment5-bar stock-bar">
                         
                     </div>
-                    
                 </div>
-
             </div>
         </div>
-        </div>
+    </div>
 </template>
 <script setup>
 

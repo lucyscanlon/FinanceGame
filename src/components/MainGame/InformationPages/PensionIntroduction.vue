@@ -80,17 +80,17 @@ The children of this component:
             <div :class="currentSlide !== 4 && 'pensionSlideInactive'" class="pension-slidecontainer">
                 <p>How much would you like to contribute each month?</p>
                 <div class="pension-contribution-choices-padding">
-                <div class="pension-contributionchoices-container">
-                    <!-- Show the pension choices using the template -->
-                    <PensionChoiceFlexbox :PensionIdentifier=1 :PensionYCPerc=5 :PensionYCAmount=101.21 :PensionECPerc=3 :PensionECAmount=60.73 :PensionTCPerc=8 :PensionTCAmount=161.94></PensionChoiceFlexbox>
-                    <PensionChoiceFlexbox :PensionIdentifier=2 :PensionYCPerc=7 :PensionYCAmount=141.70 :PensionECPerc=4 :PensionECAmount=80.97 :PensionTCPerc=11 :PensionTCAmount=222.67></PensionChoiceFlexbox>
-                    <PensionChoiceFlexbox :PensionIdentifier=3 :PensionYCPerc=8 :PensionYCAmount=161.94 :PensionECPerc=4.5 :PensionECAmount=91.09 :PensionTCPerc=12.5 :PensionTCAmount=253.03></PensionChoiceFlexbox>
-                </div>
-                <!-- play sound, confirm the chosen pension choice, workout the pension predictions, navigate to pension predictions page -->
-                <div class="pension-contribution-button-container">
+                    <div class="pension-contributionchoices-container">
+                        <!-- Show the pension choices using the template -->
+                        <PensionChoiceFlexbox :PensionIdentifier=1 :PensionYCPerc=5 :PensionYCAmount=101.21 :PensionECPerc=3 :PensionECAmount=60.73 :PensionTCPerc=8 :PensionTCAmount=161.94></PensionChoiceFlexbox>
+                        <PensionChoiceFlexbox :PensionIdentifier=2 :PensionYCPerc=7 :PensionYCAmount=141.70 :PensionECPerc=4 :PensionECAmount=80.97 :PensionTCPerc=11 :PensionTCAmount=222.67></PensionChoiceFlexbox>
+                        <PensionChoiceFlexbox :PensionIdentifier=3 :PensionYCPerc=8 :PensionYCAmount=161.94 :PensionECPerc=4.5 :PensionECAmount=91.09 :PensionTCPerc=12.5 :PensionTCAmount=253.03></PensionChoiceFlexbox>
+                    </div>
+                    <!-- play sound, confirm the chosen pension choice, workout the pension predictions, navigate to pension predictions page -->
+                    <div class="pension-contribution-button-container">
                         <button v-if="manageMainGameNav.currentPage === 9" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), managePension.workoutPensionPredictions(manageMoney.monthlySalaryBeforeTax, managePension.chosenPensionChoice.TContPercentage), (managePension.currentlySelectedPensionChoice != '') ? manageMainGameNav.navigateToPage(22) : ''">Confirm Choice</button>
                         <button v-if="manageMainGameNav.currentPage === 10" @click="manageSound.playClickSound(), managePension.confirmCurrentlySelectedPensionChoice(), (managePension.currentlySelectedPensionChoice != '') ? manageMainGameNav.navigateToPage(11) : ''">Confirm Choice</button>
-                 </div>
+                    </div>
                 </div>
             </div>
             <!-- Navigate through slides -->
@@ -108,8 +108,7 @@ The children of this component:
                 <div v-if="(currentSlide !== 4)" :class="removeNextButton && 'displaynone'" class="next-container">
                     <p @click="nextSlide()">Next <font-awesome-icon icon="fa-solid fa-arrow-right" /></p>
                 </div>
-            </div>
-            
+            </div>  
         </div>
     </div>
 </template>

@@ -11,13 +11,13 @@ The children of this component:
     <div class="maingameplay-flex-container">
         <div v-if="useMainGameplayNav.mainGameComponentsUnlocked > 2" class="emergencyfund-content-container">
             <div @click="useMainGameplayNav.navigateToPage(24)" class="pension-info-button-container">
-            <p><font-awesome-icon icon="fa-solid fa-question" /></p>
+                <p><font-awesome-icon icon="fa-solid fa-question" /></p>
             </div>
             <div class="pension-interactive-title-container emergencyfund-interactive-title">
-            <h1><font-awesome-icon icon="fa-solid fa-triangle-exclamation" />Emergency Fund</h1>
-            <p>{{ manageEmergencyFund.chosenEmergencyFundChoice.EmergFName }}</p>
-            <p>Interest: {{manageEmergencyFund.chosenEmergencyFundChoice.EmergFInterest}}% <span v-bind:class="(manageEmergencyFund.emergencyFundGoal > manageMoney.emergencyFundCurrentTotal) ? 'colour-red' : 'colour-green'" class="emergencyfund-goal-container">Goal: £{{ manageEmergencyFund.emergencyFundGoal}}</span></p>
-        </div>
+                <h1><font-awesome-icon icon="fa-solid fa-triangle-exclamation" />Emergency Fund</h1>
+                <p>{{ manageEmergencyFund.chosenEmergencyFundChoice.EmergFName }}</p>
+                <p>Interest: {{manageEmergencyFund.chosenEmergencyFundChoice.EmergFInterest}}% <span v-bind:class="(manageEmergencyFund.emergencyFundGoal > manageMoney.emergencyFundCurrentTotal) ? 'colour-red' : 'colour-green'" class="emergencyfund-goal-container">Goal: £{{ manageEmergencyFund.emergencyFundGoal}}</span></p>
+            </div>
         <div class="emergencyfund-interactive-info-total-container">
             <div class="currentaccount-total-text-container">
                 <p>Current Total:</p>
@@ -44,7 +44,6 @@ The children of this component:
             <span v-if="(manageEmergencyFund.chosenEmergencyFundChoice.EmergFDeposit === '1000') && (manageGameTimer.emergencyFundFixedRateUnlocked === true)" class="emergencyfund-withdraw-button"><button @click="manageSound.WithdrawButton(), manageMoney.withdrawFromEmergencyFundTotal(amountToChange), rerenderComponent()">Withdraw</button></span>
         </div>
         </div>
-
     </div>
 </template>
 <script setup>
